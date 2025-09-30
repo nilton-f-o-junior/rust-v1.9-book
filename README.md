@@ -1,1 +1,53 @@
-# rust-developer
+# Rust Developer - Roadmap
+
+- [x] 1. The Rust Programming Language
+    - [x] 1.1. Foreword
+    - [x] 1.2. Introduction
+- [x] 2. Getting Started
+    - [x] 2.1. Rust Playground
+    - [x] 2.2. Installing Rust
+    - [x] 2.3. Uninstall
+    - [x] 2.4. Editors and IDEs
+- [x] 3. Common Programming Concepts
+    - [x] 3.1. Comments
+    - [x] 3.2. Print
+    - [x] 3.3. Line break
+    - [x] 3.4. Variables
+    - [x] 3.5. Mutability
+    - [x] 3.6. Constant
+    - [x] 3.7. Format
+    - [x] 3.8. Shadowing
+    - [x] 3.9. Scope
+    - [x] 3.10. Question
+- [x] 4. Data Structures
+    - [x] 4.1. u - integers
+    - [x] 4.2. i - integers
+    - [x] 4.3. Floating
+    - [x] 4.4. Boolean
+    - [x] 4.5. Char
+    - [x] 4.6. String and &str
+    - [x] 4.7. Tuples
+    - [x] 4.8. Arrays
+    - [x] 4.9. Questions
+- [x] 5. Operators
+    - [x] 5.1. Arithmetic Operators
+    - [x] 5.2. Assignment Operators
+    - [x] 5.3. Precedence
+    - [x] 5.4. Logical
+    - [x] 5.5. String and &str
+    - [x] 5.6. Tuples
+    - [x] 5.7. Array
+    - [x] 5.8. Questions
+- [x] 6. Control Flow
+    - [x] 6.1. If
+    - [x] 6.2. Else
+    - [x] 6.3. Else if
+    - [ ] 6.4. Loop
+    - [ ] 6.5. While
+    - [ ] 6.6. For
+    - [ ] 6.7. Match
+    - [ ] 6.8. Questions - If and Else
+    - [ ] 6.9. Questions - Loop
+    - [ ] 6.10. Questions - While
+    - [ ] 6.11. Questions - For
+    - [ ] 6.12. Questions - Match
