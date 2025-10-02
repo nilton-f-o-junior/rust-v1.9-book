@@ -1,0 +1,1062 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Questions - If and Else - Rust Developer - Roadmap</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Rust Developer - Roadmap</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="questions---if-and-else"><a class="header" href="#questions---if-and-else">Questions - If and Else</a></h1>
+<blockquote>
+<p>The code repetition in the answers is intentional. When we get to the chapter on "Functions and Modules", we will return to these questions to refactor them.</p>
+</blockquote>
+<p>01 - Write a program that asks the user for an integer and determines whether it's even or odd.</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter a number:");
+
+    //
+    let mut input: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input)
+        .expect("Error in the value entered!");
+
+    //
+    let num: i32 = match input.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    //
+    if num % 2 == 0 {
+        println!("Num = {}\nEven!", num);
+    } else {
+        println!("Num = {}\nOdd!", num);
+    }
+}</code></pre></pre>
+</details>
+<p>02 - Create a program that reads a number and prints whether it's positive, negative, or zero.</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter a number: ");
+
+    //
+    let mut input_num: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_num)
+        .expect("Error in the value entered!");
+
+    let num: i8 = input_num.trim().parse().expect("Error converting data!");
+
+    //
+    if num &gt; 0 {
+        println!("Num = {}!\nPositive", num);
+    } else if num &lt; 0 {
+        println!("Num = {}!\nNegative", num);
+    } else {
+        println!("Num = {}!\nZero", num);
+    }
+}</code></pre></pre>
+</details>
+<p>03 - Develop a program that receives two numbers and shows which one is larger.</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter a number (a):");
+    let mut input_num_a: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_num_a)
+        .expect("Error in the value entered!");
+
+    //
+    println!("Enter a number (b):");
+    let mut input_num_b: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_num_b)
+        .expect("Error in the value entered!");
+
+    //
+    let num_a: i8 = match input_num_a.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting data (A)!");
+            return;
+        }
+    };
+
+    let num_b: i8 = match input_num_b.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting data (B)!");
+            return;
+        }
+    };
+
+    //
+    if num_a &gt; num_b {
+        println!("Num A &gt; Num B");
+    } else if num_a &lt; num_b {
+        println!("Num A &lt; Num B");
+    } else {
+        println!("Num A == Num B");
+    }
+}</code></pre></pre>
+</details>
+<p>04 - Create a program that receives 3 grades from a student (from 0 to 10) and then calculates the average of the grades and reports:</p>
+<ul>
+<li>passed (grade &gt;= 7)</li>
+<li>failed (grade &lt; 5)</li>
+<li>in recovery (grade &gt;= 5 and &lt; 7).</li>
+</ul>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    println!("Enter you grade for your first test:");
+    let mut input_test_a: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_test_a)
+        .expect("Error entering the first grade!");
+
+    //
+    println!("Enter the grade for your second test:");
+    let mut input_test_b: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_test_b)
+        .expect("Error entering the second grade!");
+
+    //
+    println!("Enter the grade for your third test:");
+    let mut input_test_c: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_test_c)
+        .expect("Error entering the third test!");
+
+    //
+    let test_a: f32 = match input_test_a.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting: Test A!");
+            return;
+        }
+    };
+
+    let test_b: f32 = match input_test_b.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting: Test B!");
+            return;
+        }
+    };
+
+    let test_c: f32 = match input_test_c.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting: Test C!");
+            return;
+        }
+    };
+
+    let ava: f32 = (test_a + test_b + test_c) / 3.;
+
+    //
+    if ava &lt; 5. {
+        println!("You failed!");
+    } else if ava &gt;= 5. &amp;&amp; ava &lt; 7. {
+        println!("You are in recovery!");
+    } else {
+        println!("You passed!");
+    }
+}</code></pre></pre>
+</details>
+<p>05 - Write a program that reads a person's age and determines if they can vote (16 years or older).</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter your age:");
+
+    let mut input_age: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_age)
+        .expect("Error in the entered!");
+
+    //
+    let age: u8 = match input_age.trim().parse() {
+        Ok(age) =&gt; age,
+        Err(_) =&gt; {
+            println!("Error converting age!");
+            return;
+        }
+    };
+
+    //
+    if age &gt;= 16 &amp;&amp; age &lt;= 59 {
+        println!("You are required to vote!");
+    } else if age &gt;= 60 &amp;&amp; age &lt;= 100 {
+        println!("Your vote is optional!");
+    } else {
+        println!("You cannot vote!");
+    }
+}</code></pre></pre>
+</details>
+<p>06 - Develop a program that asks for three numbers and determines which one is the largest.</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    // a
+    println!("Enter with number! A: ");
+    let mut input_a: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_a)
+        .expect("Error in the entered!");
+
+    // b
+    println!("Enter with number! B: ");
+    let mut input_b: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_b)
+        .expect("Error in the entered!");
+
+    // c
+    println!("Enter with number! C: ");
+    let mut input_c: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_c)
+        .expect("Error in the entered!");
+
+    //
+    let num_a: i8 = match input_a.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num A!");
+            return;
+        }
+    };
+
+    let num_b: i8 = match input_b.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num B!");
+            return;
+        }
+    };
+
+    let num_c: i8 = match input_c.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num C!");
+            return;
+        }
+    };
+
+    //
+    if num_a == num_b &amp;&amp; num_b == num_c {
+        println!("A = B = C = {}", num_a);
+    } else if num_a == num_b &amp;&amp; num_a &gt; num_c {
+        println!("A = B = {} &gt; C = {}", num_a, num_c);
+    } else if num_a == num_b &amp;&amp; num_a &lt; num_c {
+        println!("C = {} &gt; A = B = {}", num_c, num_a);
+    } else if num_a == num_c &amp;&amp; num_a &gt; num_b {
+        println!("A = C = {} &gt; B = {}", num_a, num_b);
+    } else if num_a == num_c &amp;&amp; num_a &lt; num_b {
+        println!("B = {} &gt; A = C = {}", num_b, num_a);
+    } else if num_b == num_c &amp;&amp; num_b &gt; num_a {
+        println!("B = C = {} &gt; A = {}", num_b, num_a);
+    } else if num_b == num_c &amp;&amp; num_b &lt; num_a {
+        println!("A = {} &gt; B = C = {}", num_a, num_b);
+    } else if num_a &gt; num_b &amp;&amp; num_a &gt; num_c {
+        println!("A = {}", num_a);
+    } else if num_b &gt; num_a &amp;&amp; num_b &gt; num_c {
+        println!("B = {}", num_b);
+    } else {
+        println!("C = {}", num_c);
+    }
+}    </code></pre></pre>
+</details>
+<p>07 - Ceate a program that converts a numerical score (0 to 100) to a letter grade, following these rules:</p>
+<ul>
+<li>A: 90-100</li>
+<li>B: 80-89</li>
+<li>C: 70-79</li>
+<li>D: 60-69</li>
+<li>F: 0-59</li>
+</ul>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter with number (0 - 100):");
+    let mut input_num: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_num)
+        .expect("Error in the entered!");
+
+    let num: u8 = match input_num.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num:");
+            return;
+        }
+    };
+
+    //
+    if num &gt; 0 &amp;&amp; num &lt;= 59 {
+        println!("F");
+    } else if num &gt;= 60 &amp;&amp; num &lt;= 69 {
+        println!("D");
+    } else if num &gt;= 70 &amp;&amp; num &lt;= 79 {
+        println!("C");
+    } else if num &gt;= 80 &amp;&amp; num &lt;= 89 {
+        println!("B");
+    } else if num &gt;= 90 &amp;&amp; num &lt;= 100 {
+        println!("A");
+    } else {
+        println!("Error!");
+    }
+}</code></pre></pre>
+</details>
+<p>08 - Write a program that receives the lengths of the three sides of a triangle and determines if it is equilateral (all sides equal), isosceles (two sides equal), or scalene (all sides different).</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    // a
+    println!("Enter the size of side A:");
+    let mut input_a: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_a)
+        .expect("Error in the entered!");
+
+    // b
+    println!("Enter the size of side B:");
+    let mut input_b: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_b)
+        .expect("Error in the entered!");
+
+    // c
+    println!("Enter the size of side C:");
+    let mut input_c: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_c)
+        .expect("Error in the entered!");
+
+    //
+    let a: f32 = match input_a.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num A:");
+            return;
+        }
+    };
+    let b: f32 = match input_b.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num B:");
+            return;
+        }
+    };
+    let c: f32 = match input_c.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num C:");
+            return;
+        }
+    };
+
+    //
+    if a == b &amp;&amp; b == c {
+        println!("Equilateral");
+    } else if a == b || b == c || a == c {
+        println!("Isosceles");
+    } else {
+        println!("Scalene");
+    }
+}</code></pre></pre>
+</details>
+<p>09 - Write a program that receives a number from 1 to 7 and prints the corresponding day of the week (1 for Sunday, 2 for Monday, etc.), also indicating if it's a "Weekday" or "Weekend."use std::io;</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter a number from 1 to 7:");
+    let mut input_day: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_day)
+        .expect("Error in the entered!");
+
+    let day: u8 = match input_day.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting day!");
+            return;
+        }
+    };
+
+    //
+    if day == 1 || day == 7 {
+        if day == 1 {
+            println!("Sunday - Weekend!");
+        } else {
+            println!("Saturday - Weekend!");
+        }
+    } else if day == 2 {
+        println!("Monday - Weekday!");
+    } else if day == 3 {
+        println!("Tuesday - Weekday!");
+    } else if day == 4 {
+        println!("Wednesday - Weekday!");
+    } else if day == 5 {
+        println!("Thursday - Weekday!");
+    } else if day == 6 {
+        println!("Friday - Weekday!");
+    } else {
+        println!("Error!");
+    }
+}</code></pre></pre>
+</details>
+<p>10 - Write a program that reads a person's age and classifies them into the following categories:</p>
+<ul>
+<li>Child: 0-12 years</li>
+<li>Teenager: 13-17 years</li>
+<li>Adult: 18-59 years</li>
+<li>Elderly: 60 years or more</li>
+</ul>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter you age:");
+    let mut input_age: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_age)
+        .expect("Error in the entered!");
+
+    let age: u8 = match input_age.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting age!");
+            return;
+        }
+    };
+
+    //
+    if age &gt;= 1 &amp;&amp; age &lt;= 12 {
+        println!("Child!");
+    } else if age &gt;= 13 &amp;&amp; age &lt;= 17 {
+        println!("Teenager!");
+    } else if age &gt;= 18 &amp;&amp; age &lt;= 59 {
+        println!("Adult");
+    } else if age &gt;= 60 &amp;&amp; age &lt;= 112 {
+        println!("Elderly!");
+    } else {
+        println!("Error: Age &gt; 112!");
+    }
+}</code></pre></pre>
+</details>
+<p>11 - Create a program that functions as a calculator. It should receive two numbers and an operator (+, -, *, /). The program should perform the corresponding operation and show the result. Also, handle division by zero.</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter the first number:");
+    let mut input_first_number: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_first_number)
+        .expect("Error receiving first number!");
+
+    //
+    println!("Enter the second number:");
+    let mut input_second_number: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_second_number)
+        .expect("Error receiving first number!");
+
+    //
+    println!("Insert the mathematical operator:");
+    let mut input_operator: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_operator)
+        .expect("Error receiving mathematical operator!");
+
+    //
+    let first_number: f32 = match input_first_number.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting number!");
+            return;
+        }
+    };
+
+    //
+    let second_number: f32 = match input_second_number.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting number!");
+            return;
+        }
+    };
+
+    //
+    let operator: char = match input_operator.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting number!");
+            return;
+        }
+    };
+
+    //
+    if operator == '+' {
+        println!(
+            "{} {} {} = {}",
+            first_number,
+            operator,
+            second_number,
+            first_number + second_number
+        );
+    } else if operator == '-' {
+        println!(
+            "{} {} {} = {}",
+            first_number,
+            operator,
+            second_number,
+            first_number - second_number
+        );
+    } else if operator == '*' {
+        println!(
+            "{} {} {} = {}",
+            first_number,
+            operator,
+            second_number,
+            first_number * second_number
+        );
+    } else if operator == '/' {
+        if second_number == 0. {
+            println!("[Error] Second number equal 0.");
+        } else {
+            println!(
+                "{} {} {} = {}",
+                first_number,
+                operator,
+                second_number,
+                first_number / second_number
+            );
+        }
+    } else {
+        println!("[Error] Mathematical operator not allowed!");
+    }
+}
+</code></pre></pre>
+</details>
+<p>12 - Develop a program that calculates a discount based on the purchase amount:</p>
+<ul>
+<li>Purchases below R$ 100: no discount;</li>
+<li>Purchases from R$ 100 to R$ 500: 10% discount;</li>
+<li>Purchases above R$ 500: 20% discount.</li>
+</ul>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter the value:");
+    let mut input_value: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_value)
+        .expect("Error receiving value!");
+
+    let value: f32 = match input_value.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting value!");
+            return;
+        }
+    };
+
+    //
+    if value &lt; 100. {
+        println!("Value: {} - No discount!", value);
+    } else if value &gt;= 100. &amp;&amp; value &lt;= 500. {
+        let discount = value - ((value * 10.) / 100.);
+        println!("Value: {} - Discount 10%\nNew value: {}", value, discount);
+    } else if value &gt; 500. {
+        let discount = value - ((value * 20.) / 100.);
+        println!("Value: {} - Discount 20%\nNew value: {}", value, discount);
+    } else {
+        println!("Error!");
+    }
+}</code></pre></pre>
+</details>
+<p>13 - Write a program that calculates a person's BMI (weight / height²) and classifies the result:</p>
+<ul>
+<li>Below 18.5: Underweight</li>
+<li>18.5 - 24.9: Normal weight</li>
+<li>25.0 - 29.9: Overweight</li>
+<li>30.0 or more: Obesity</li>
+</ul>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    const ERROR_INPUT: &amp;str = "Error receiving valeu!";
+    const ERROR_CONVERTING: &amp;str = "Error converting value!";
+
+    //
+    println!("Enter the Weight:");
+    let mut input_weight: String = String::new();
+    io::stdin().read_line(&amp;mut input_weight).expect(ERROR_INPUT);
+
+    let weight: f32 = match input_weight.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("{}", ERROR_CONVERTING);
+            return;
+        }
+    };
+
+    //
+    println!("Enter the Height:");
+    let mut input_height: String = String::new();
+    io::stdin().read_line(&amp;mut input_height).expect(ERROR_INPUT);
+
+    let height: f32 = match input_height.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("{}", ERROR_CONVERTING);
+            return;
+        }
+    };
+
+    //
+    let bmi: f32 = weight / (height * height);
+
+    if bmi &lt;= 18.5 {
+        println!("Underweight!");
+    } else if bmi &lt;= 24.9 {
+        println!("Normal weight!");
+    } else if bmi &lt;= 29.9 {
+        println!("Overweight!");
+    } else if bmi &gt;= 30.0 {
+        println!("Obesity!");
+    } else {
+        println!("Error calculating BMI or invalid range!");
+    }
+}</code></pre></pre>
+</details>
+<p>14 - Create a program that asks for a username and a password. If the username is "admin" and the password is "1234", display "Access granted". Otherwise, display "Access denied".</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+const ERROR_INPUT: &amp;str = "Data entry error!";
+
+fn main() {
+    //
+    println!("Username:");
+    let mut input_username: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_username)
+        .expect(ERROR_INPUT);
+    let username: &amp;str = input_username.trim();
+
+    //
+    println!("Password:");
+    let mut input_password: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_password)
+        .expect(ERROR_INPUT);
+    let password: &amp;str = input_password.trim();
+
+    //
+    if username == "admin" &amp;&amp; password == "1234" {
+        println!("Access Granted!");
+    } else {
+        println!("Access Denied!");
+    }
+}</code></pre></pre>
+</details>
+<p>15 - Create the game "Rock, Paper, Scissors." Ask for the choices of two players and determine the winner based on the classic rules.</p>
+<p><a href="">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    //
+    println!("--- Start ---");
+    println!("Player 1");
+    println!("Computer");
+    println!("");
+
+    //
+    println!("-- Select --");
+    println!("  Player 1  ");
+    println!("");
+    println!("[1] Rock");
+    println!("[2] Paper");
+    println!("[3] Scissors");
+    println!("");
+    println!("1 | 2 | 3");
+
+    //
+    let mut input_player1: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_player1)
+        .expect("Data entry error!");
+    let mut player1: &amp;str = input_player1.trim();
+
+    //
+    if player1 == "1" {
+        player1 = "Rock";
+    } else if player1 == "2" {
+        player1 = "Paper";
+    } else {
+        player1 = "Scissors";
+    }
+
+    //
+    println!("");
+    println!("-- Select --");
+    println!("  Player 2  ");
+    println!("");
+    println!("-- Raffling --");
+    println!("[1] Rock");
+    println!("[2] Paper");
+    println!("[3] Scissors");
+    println!("");
+
+    //
+    let nanos = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .expect("Error")
+        .as_nanos();
+
+    let nano_computer = (nanos % 3 + 1) as u8;
+    let computer: &amp;str;
+
+    if nano_computer == 1 {
+        computer = "Rock";
+    } else if nano_computer == 2 {
+        computer = "Paper";
+    } else {
+        computer = "Scissors";
+    }
+
+    //
+    if player1 == computer {
+        println!("Player 1: {} and Computer: {}", player1, computer);
+        println!("The game is a draw!");
+    } else if player1 == "Rock" {
+        if computer == "Paper" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Loser!");
+        }
+        if computer == "Scissors" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Win!");
+        }
+    } else if player1 == "Paper" {
+        if computer == "Rock" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Win!");
+        }
+        if computer == "Scissors" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Loser!");
+        }
+    } else {
+        if computer == "Rock" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Loser!");
+        }
+        if computer == "Paper" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Win!");
+        }
+    }
+}</code></pre></pre>
+</details>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../05-control-flow/match.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../05-control-flow/questions-loop.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../05-control-flow/match.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../05-control-flow/questions-loop.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

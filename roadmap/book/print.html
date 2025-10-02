@@ -1,0 +1,4494 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rust Developer - Roadmap</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Rust Developer - Roadmap</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="a-code-journey-together"><a class="header" href="#a-code-journey-together">A code journey, together.</a></h1>
+<p>Rust is known for its speed, safety, and ability to prevent compile-time bugs. But where to start? The official book is excellent, but sometimes all we want i
+s to get straight to the point.</p>
+<p>That's why this book exists.</p>
+<p>It was created to facilitate your introduction to the language, regardless of your knowledge level. It's the bridge between complex theory and functional code
+. The approach is simple: less theory, more practice. Here you'll find the essence of Rust in bite-sized doses, followed by numerous examples, questions, and
+projects that will solidify each new concept.</p>
+<p>This isn't a reference guide; it's a guide for your journey. Get ready to build amazing things and discover why Rust is the language that's revolutionizing th
+e way we program.</p>
+<p>Shall we start coding?</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id=""><a class="header" href="#"></a></h1>
+<p>"The beauty that lives in the act of sharing something with others." – Monja Coen</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-rust"><a class="header" href="#introduction-to-rust">Introduction to Rust</a></h1>
+<p>Rust was created by <strong>Graydon Hoare</strong> at Mozilla Research in <strong>2010</strong>. The first stable version, 1.0, was released in <strong>2015</strong>, marking the beginning of its popularity and broader adoption in the industry.</p>
+<p>Rust is a <strong>systems programming language</strong> that is compiled and open-source, meaning it is directly translated into machine code, which makes it extremely fast, without the need for an interpreter like Python or JavaScript. It positions itself as an alternative to languages like C and C++, which are known for their performance but are also more susceptible to memory errors, such as <em>null pointers</em> or <em>data races</em>.</p>
+<p>Rust's major innovation is the <strong>Ownership Model</strong>, a system that guarantees memory safety at compile time. This means that the Rust compiler checks if your code is free of memory errors before it's even executed. The compiler becomes a memory "guardian," and if it doesn't approve your code, it won't compile. This approach eliminates an entire class of bugs that are common in other languages.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+<p>This project was conceived and developed so that you can study alongside me, writing code and creating practical projects. To make this possible, I need to teach you about the tools and resources that will allow you to put what you're learning into practice.</p>
+<ul>
+<li><a href="https://play.rust-lang.org/">Rust Playground</a>;</li>
+<li><a href="https://www.rust-lang.org/tools/install">Install Rust</a>;</li>
+<li><a href="00-enviroment-setup/editors-and-ides.html">Editors and IDEs</a>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rust-playground"><a class="header" href="#rust-playground">Rust Playground</a></h1>
+<p>The Rust Playground is the quickest way to start experimenting with Rust. It's an online environment where you can:</p>
+<ul>
+<li>Write and run Rust code directly in your browser;</li>
+<li>Test small examples and concepts;</li>
+<li>Share code with other developers;</li>
+<li>Experiment without needing to install anything.</li>
+</ul>
+<p>Ideal for: first steps, quick tests, and experimentation.</p>
+<blockquote>
+<p>Access: <a href="https://play.rust-lang.org">https://play.rust-lang.org</a></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="install-rust"><a class="header" href="#install-rust">Install Rust</a></h1>
+<p>To install on macOS, Linux, or other Unix-like operating system, run the following in your terminal and follow the on-screen instructions.</p>
+<pre><code class="language-md">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<p>Be sure to visit the official Rust website to better understand the installation process and other tools.</p>
+<pre><code class="language-md">https://www.rust-lang.org/tools/install
+</code></pre>
+<p>Other Installation Methods" if you are on Windows.</p>
+<pre><code class="language-md">https://forge.rust-lang.org/infra/other-installation-methods.html
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uninstall"><a class="header" href="#uninstall">Uninstall</a></h1>
+<p>If at any point you would like to uninstall Rust:</p>
+<pre><code class="language-md">rustup self uninstall
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="editors-and-ides"><a class="header" href="#editors-and-ides">Editors and IDEs</a></h1>
+<p>Here are some recommended Rust code editors:</p>
+<p>Zed</p>
+<pre><code class="language-md">https://zed.dev/
+</code></pre>
+<p>RustRover: Rust IDE by JetBrains</p>
+<pre><code class="language-md">https://www.jetbrains.com/rust/
+</code></pre>
+<p>VS Code: with the rust-analyzer extension</p>
+<pre><code class="language-md">https://code.visualstudio.com/
+</code></pre>
+<pre><code class="language-md">https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
+</code></pre>
+<p>Helix:</p>
+<pre><code class="language-md">https://helix-editor.com/
+</code></pre>
+ <details>
+   <summary>Config: languages.toml</summary>
+<pre><code class="language-md">[[language]]
+name = "rust"
+auto-format = true
+
+roots = [
+  "Cargo.toml",
+  "Cargo.lock"
+]
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.rust-analyzer.config]
+inlayHints.bindingModeHints.enable = false
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = false    
+</code></pre>
+ </details>
+<p>Neovim: with Rust-specific plugins</p>
+<pre><code class="language-md">https://neovim.io/
+</code></pre>
+<pre><code class="language-md">https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="common-programming-concepts"><a class="header" href="#common-programming-concepts">Common Programming Concepts</a></h1>
+<p>This chapter was developed to introduce the fundamental concepts of the Rust programming language. However, the topics covered here are also present in other programming languages, so if you understand how they work, it will be quite similar to what you're already familiar with. If this is your first time encountering these concepts, I hope you'll be able to understand each point clearly, as this forms the essential foundation for what's to come in the following chapters.</p>
+<p>At the end, you'll have some questions to answer as practice, allowing you to verify that you haven't missed any concepts while studying. Don't worry though—the questions are quite straightforward and include the answers.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="comments"><a class="header" href="#comments">Comments</a></h1>
+<p>Comments are used to document your code, making it more understandable for you and other developers. They
+are ignored by the compiler, meaning they don't affect how your program runs, only its readability.</p>
+<ul>
+<li><strong>Clarity:</strong> use them to explain something complex or important.</li>
+<li><strong>Maintenance:</strong> make it easier to work with your code in the future.</li>
+<li><strong>Collaboration:</strong> create comments that are understandable to anyone.</li>
+<li><strong>Debugging:</strong> temporarily disable a line or block of code for testing.</li>
+</ul>
+<p><code>//</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// This is a single-line comment.
+<span class="boring">}</span></code></pre></pre>
+<p><code>/**/</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>/*
+  ...
+  This is a multi-line comment.
+  ...
+*/
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="print"><a class="header" href="#print">Print</a></h1>
+<p>The print! macro and its variations are used for debugging, informing the user, and generating formatted
+output.</p>
+<p><code>print!</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// prints text without a line break
+print!("Hello,");
+print!("world!");
+print!("...");
+<span class="boring">}</span></code></pre></pre>
+<p><code>println!</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// prints text with a line break
+println!("Hello,");
+println!("world!");
+println!("...");
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="line-break"><a class="header" href="#line-break">Line break</a></h1>
+<p>Line breaks are used when you want to improve text formatting.</p>
+<p><code>println!</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// used to print something and then move to a new line.
+println!("Whats is your name?");
+println!("  ");
+println!("My name is Rodolfo!");
+<span class="boring">}</span></code></pre></pre>
+<p><code>\n</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// used to insert a new line character anywhere within the text.
+println!("What is your name?\nMy name is Rodolfo!");
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<p>Variables are named spaces in memory that can hold a value.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let name = "Roberto";
+println!("What is your name: {}", name);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let num = 24;
+println!("What number did you choose? {}", num);
+<span class="boring">}</span></code></pre></pre>
+<blockquote>
+<p>Learn more about <a href="https://play.rust-lang.org">variables</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mutability"><a class="header" href="#mutability">Mutability</a></h1>
+<p>Once a variable's value is set, you cannot change it later. However, using "mut" after "let" makes the created variable mutable.</p>
+<p><code>let mut</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut name = "Alice";
+println!("What is your name: {}", name);
+
+name = "Roberto";
+println!("What is your name: {}", name);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut num = 24;
+println!("Which number did you choose? {}", num);
+
+num = 12;
+println!("Which number did you choose? {}", num);
+<span class="boring">}</span></code></pre></pre>
+<p><code>not mut</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// error
+let name = "Alice";
+println!("What is your name: {}", name);
+
+name = "Roberto";
+println!("What is your name: {}", name);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="constant"><a class="header" href="#constant">Constant</a></h1>
+<p>The constant is a variable with a fixed, immutable value, explicit type, and can be declared in any scope.</p>
+<pre><pre class="playground"><code class="language-rust">//
+const PI: f32 = 3.14159;
+
+fn main () {
+    println!("{:.2}", PI);
+}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">//
+const ERROR_404: &amp;str = "Error 404!";
+
+fn main () {
+    println!("{}", ERROR_404);
+}</code></pre></pre>
+<blockquote>
+<p>The topic of <strong>data types</strong> will be covered in the next chapter.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="format"><a class="header" href="#format">Format</a></h1>
+<p>The format! macro in Rust is used to improve data output formatting by using curly braces "{}" as placeholders that will be filled with the information.</p>
+<p><code>{}</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let name = "Alice";
+let years = 30;
+println!("Hi, I'm {}, {} years old", name, years);
+<span class="boring">}</span></code></pre></pre>
+<p><code>format!</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let name = "Alice";
+let years = 30;
+
+let text = format!("Hi, I'm {}, {} years old", name, years);
+println!("{}", text);
+<span class="boring">}</span></code></pre></pre>
+<blockquote>
+<p>For more information, see the <a href="https://doc.rust-lang.org/std/fmt/">Rust std::fmt documentation</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shadowing"><a class="header" href="#shadowing">Shadowing</a></h1>
+<p>You can declare a new variable with the same name as an existing one, but the previous one will have its value replaced.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let food = "bread";
+println!("{}", food);
+
+let food = "milk";
+println!("{}", food);
+
+let food = "pizza";
+println!("{}", food);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let animal = "Cat";
+println!("{}", animal);
+
+let animal = "Dog";
+println!("{}", animal);
+
+let animal = "Bird";
+println!("{}", animal);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="scope"><a class="header" href="#scope">Scope</a></h1>
+<p>Enclosing a block of code within curly braces {} creates a new scope that limits the visibility of variables defined within it. Variables defined in outer sco
+pes remain accessible, but can be "shadowed" by variables with the same name in the inner scope.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let x = 1;
+println!("{}", x);
+
+{
+  let x = 2;
+  println!("{}", x);
+}
+
+println!("{}", x);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let name = "Alice";
+println!("{}", name);
+
+{
+  let name = "Rodolfo";
+  println!("{}", name);
+}
+
+println!("{}", name);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---common-programming-concepts"><a class="header" href="#questions---common-programming-concepts">Questions - Common Programming Concepts</a></h1>
+<hr />
+<p>01 - How would you write a single-line comment in Rust?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // This is a single-line comment    
+}</code></pre></pre>
+</details>
+<p>02 - What is the syntax for block comments in Rust?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    /*
+      This is a
+      block comment
+      that spans multiple lines
+    */
+}</code></pre></pre>
+</details>
+<p>03 - Can you nest block comments in Rust? Give an example.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    /*
+       This is an outer comment
+       /* This is a nested comment */
+       End of outer comment
+    */    
+}</code></pre></pre>
+</details>
+<p>04 - Which macro would you use to print text on the same line, without adding a newline at the end?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    print!("Print without adding a newline at the end!");
+}</code></pre></pre>
+</details>
+<p>05 - Which macro would you use to print text and automatically add a newline at the end?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!("Print and add newline at the end!");
+}</code></pre></pre>
+</details>
+<p>06 - Write code that prints "Hello" and "World" on the same line using the print! macro.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    print!("Hello ");
+    print!("World");
+}</code></pre></pre>
+</details>
+<p>07 - How do you insert an explicit newline within a string that is being printed with println!?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!("First line\nSecond line");
+}</code></pre></pre>
+</details>
+<p>08 - What other escape sequences can you use in Rust strings? Give examples of at least 3.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!("Tab character:\tTabbed text");
+    println!("Backslash: \\");
+    println!("Quote: \"Hello\"");
+    println!("Carriage return:\rOverwritten");
+}</code></pre></pre>
+</details>
+<p>09 - How do you declare a variable named score and assign it the value 100?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let score = 100;
+    println!("Score: {}", score);
+}</code></pre></pre>
+</details>
+<p>10 - Write a line of code that declares a variable city with the value "Paris" and then prints it to the screen.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let city = "Paris";
+    println!("City: {}", city);
+}</code></pre></pre>
+</details>
+<p>11 - What happens if you try to use a variable before declaring it in Rust?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // This would cause a compile-time error:
+    // println!("{}", x);
+    // let x = 5;    </code></pre></pre>
+</details>
+<p>12 - Can you declare a variable without initializing it in Rust? If yes, show how to use it safely.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let x: i32; 
+    x = 42;     
+    println!("x = {}", x);
+}</code></pre></pre>
+</details>
+<p>13 - Which keyword is used to declare a variable that can have its value changed after initialization?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut x = 5;
+    x = 10;
+    println!("x = {}", x);
+}</code></pre></pre>
+</details>
+<p>14 - Declare a mutable variable named counter initialized with 0. Then, write the code to change the value of counter to 5 and print it.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut counter = 0;
+    println!("Counter = {}", counter);
+    
+    counter = 5;
+    println!("Counter = {}", counter);
+}</code></pre></pre>
+</details>
+<p>15 - What happens if you try to modify an immutable variable in Rust?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let x = 1;
+    
+    x = 2;
+    println!("x = {}", x);
+}</code></pre></pre>
+</details>
+<p>16 - How do you declare a constant named <code>MAX_SPEED</code> with the value 9000 of type i32?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">const MAX_SPEED: i32 = 9000;
+
+fn main() {
+    println!("Max Speed: {}", MAX_SPEED);
+}</code></pre></pre>
+</details>
+<p>17 - Is it possible to change the value of a constant after its declaration?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    const MAX_VALUE: i32 = 100;
+    MAX_VALUE = 200;
+}</code></pre></pre>
+</details>
+<p>18 - What are the main differences between constants and immutable variables in Rust?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">const GLOBAL_CONSTANT: i32 = 100;
+
+fn main() {
+let immutable_var = 200;
+// Constants:
+// - Always immutable (no mut keyword allowed)
+// - Must have explicit type annotation
+// - Can be declared in global scope
+// - Must be set to constant expressions only
+
+// Immutable variables:
+// - Can be made mutable with mut
+// - Type can be inferred
+// - Local to their scope
+// - Can be set to any expression
+
+println!("Constant: {}, Variable: {}", GLOBAL_CONSTANT, immutable_var);
+}</code></pre></pre>
+</details>
+<p>19 - How would you use the format! macro to create the string "The value is: 42" from the number 42?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number = 42;
+    let formatted = format!("The value is: {}", number);
+    println!("{}", formatted);
+}</code></pre></pre>
+</details>
+<p>20 - How can you format the number 7 so that it is displayed as "0007" using format!?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number = 7;
+
+    let formatted = format!("{:04}", number);
+    println!("{}", formatted);
+
+    println!("{:04}", number);
+}</code></pre></pre>
+</details>
+<p>21 - How would you format a floating-point number to show exactly 2 decimal places?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let pi = 3.14159265359;
+    
+    let formatted = format!("{:.2}", pi);
+    println!("Pi with 2 decimals: {}", formatted);
+
+    println!("Pi: {:.2}", pi);
+}</code></pre></pre>
+</details>
+<p>22 - Demonstrate how to use positional arguments in format strings.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let name = "Alice";
+    let age = 30;
+    let city = "New York";
+    
+    // Positional arguments
+    println!("{0} is {1} years old and lives in {2}", name, age, city);
+    
+    // Named arguments
+    println!("{name} is {age} years old and lives in {city}");
+             
+    // Mixed
+    println!("{} is {age} years old and lives in {city}", name);
+}</code></pre></pre>
+</details>
+<p>23 - What is "shadowing" in Rust? Explain with a code example and what the output would be.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let x = 5;
+    println!("First x: {}", x);
+
+    let x = x + 1;
+    println!("Second x: {}", x);
+
+    let x = x * 2;
+    println!("Third x: {}", x);
+
+    let x = "hello";
+    println!("Fourth x: {}", x);
+}</code></pre></pre>
+</details>
+<p>24 - What will be the output of the following code?</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let x = 5;
+    let x = x + 1;
+    {
+        let x = x * 2;
+        println!("The inner value of x is: {}", x);
+    }
+    println!("The outer value of x is: {}", x);
+}</code></pre></pre>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let x = 5;
+    let x = x + 1; // x = 6
+    {
+        let x = x * 2; // x = 12 
+        println!("The inner value of x is: {}", x); // Output: 12
+    }
+    println!("The outer value of x is: {}", x); // Output: 6
+}</code></pre></pre>
+</details>
+<p>25 - What will be the output of the following code? Explain why.</p>
+<p><a href="01-common-programming-concepts/">Playground!</a></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = 10;
+{
+    let b = 20;
+    println!("Inside the block: a = {}, b = {}", a, b);
+}
+println!("Outside the block: b = {}", b);
+<span class="boring">}</span></code></pre></pre>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let a = 10;
+    {
+        let b = 20;
+        println!("Inside the block: a = {}, b = {}", a, b);
+        // Output: Inside the block: a = 10, b = 20
+    }
+    // println!("Outside the block: b = {}", b);
+    // b is not in scope outside the block where it was declared
+}</code></pre></pre>
+</details>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-types"><a class="header" href="#data-types">Data Types</a></h1>
+<p>This chapter explores the fundamental data types available in Rust, covering the essential building blocks you'll use to store and manipulate information in your programs. Understanding these data types is crucial for writing effective Rust code, as each type has specific characteristics, memory requirements, and use cases.</p>
+<p>We'll begin with numeric types, examining both unsigned (u) and signed (i) integers, followed by floating-point numbers for handling decimal values. You'll then learn about Boolean types for logical operations, character types for individual Unicode values, and the important distinction between String and &amp;str for text handling.</p>
+<p>The chapter concludes with compound data types—tuples for grouping related values of different types, and arrays for storing multiple elements of the same type. These structures form the foundation for more complex data organization patterns you'll encounter later.</p>
+<p>One of Rust's key strengths is its statically typed system, which means the compiler knows the exact type of every variable at compile time. This provides both safety and performance benefits that you'll appreciate as you work through these examples.</p>
+<p>By mastering these fundamental data types, you'll gain the knowledge needed to choose the right type for your specific programming needs. As with previous chapters, practice questions are provided at the end to reinforce your understanding and ensure you're ready to move forward confidently.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="u-unsigned-integers"><a class="header" href="#u-unsigned-integers">u: unsigned integers</a></h1>
+<p>Whole numbers that can only be positive.</p>
+<p><code>u8</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// u8 = 0 - 255
+let number_u8: u8 = 255;
+println!("{}", number_u8);
+<span class="boring">}</span></code></pre></pre>
+<p><code>u16</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// u16 = 0 - 65.535
+let number_u16: u16 = 255;
+println!("{}", number_u16);
+<span class="boring">}</span></code></pre></pre>
+<p><code>u32</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// u32 = 0 - 4.294.967.295
+let number_u32: u32 = 255;
+println!("{}", number_u32);
+<span class="boring">}</span></code></pre></pre>
+<p><code>u64</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// u64 = 0 - 18.446.744.073.709.551.615
+let number_u64: u64 = 255;
+println!("{}", number_u64);
+<span class="boring">}</span></code></pre></pre>
+<p><code>u128</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// u128 = 0 - ...
+let number_u128: u128 = 255;
+println!("{}", number_u128);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="i-signed-integers"><a class="header" href="#i-signed-integers">i: signed integers</a></h1>
+<p>Whole numbers that can be either positive or negative.</p>
+<p><code>i8</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// i8 = -128 - 127
+let number_i8: i8 =  127;
+println!("{}", number_i8);
+<span class="boring">}</span></code></pre></pre>
+<p><code>i16</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// i16 = -32.768 - 32.767
+let number_i16: i16 =  127;
+println!("{}", number_i16);
+<span class="boring">}</span></code></pre></pre>
+<p><code>i32</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// i32 = -2.147.483.648 - 2.147.483.647
+let number_i32: i32 =  127;
+println!("{}", number_i32);
+<span class="boring">}</span></code></pre></pre>
+<p><code>i64</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// i64 = -9.223.372.036.854.775.808 - 9.223.372.036.854.775.807
+let number_i64: i64 =  127;
+println!("{}", number_i64);
+<span class="boring">}</span></code></pre></pre>
+<p><code>i128</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// i128 =  ... and ...
+let number_i128: i128 =  127;
+println!("{}", number_i128);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="f-32-and-f64-floating-point-numbers"><a class="header" href="#f-32-and-f64-floating-point-numbers">f (32 and f64): floating-point numbers</a></h1>
+<p>Numbers that have a decimal point.</p>
+<p><code>f32</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// f32 = -3.4e+38 to +3.4e+38
+let number_f32: f32 =  179.76;
+println!("{}", number_f32);
+<span class="boring">}</span></code></pre></pre>
+<p><code>f64</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// f64 = -1.8e+308 to +1.8e+308
+let number_f64: f64 =  179.76;
+println!("{}", number_f64);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bool-boolean"><a class="header" href="#bool-boolean">bool: boolean</a></h1>
+<p>Represents only two types of values: true or false.</p>
+<p><code>true</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let checked: bool = true;
+println!("The data was checked? {}", checked);
+<span class="boring">}</span></code></pre></pre>
+<p><code>false</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let checked: bool = false;
+println!("The data was checked? {}", checked);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="char-character"><a class="header" href="#char-character">char: character</a></h1>
+<p>Used to represent a single character and requires the use of single quotes (e.g., 'a').</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let character: char = 'a';
+println!("{}", character);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let symbol: char = ' ';
+println!("{}", symbol);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="string-and-str"><a class="header" href="#string-and-str">String and &amp;str</a></h1>
+<p>Sequence of UTF-8 characters that can form a word or a phrase, including letters, numbers, symbols, or any other type of special character.</p>
+<p><code>String</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let name: String = String::from("Alice");
+println!("{:?}", name);
+<span class="boring">}</span></code></pre></pre>
+<p><code>&amp;str</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let name: &amp;str = "Rodolfo";
+println!("{:?}", name);
+<span class="boring">}</span></code></pre></pre>
+<blockquote>
+<p>The topic <strong>String and &amp;str</strong> will be covered better in a later chapter.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tuples"><a class="header" href="#tuples">Tuples</a></h1>
+<p>Combine multiple values of different types into a single compound data structure with a fixed size.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let data_types = ("a", 1);
+println!("{:?}", data_types);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let data_types = (1., 2);
+println!("{:#?}", data_types);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let data_types : (char, u8);
+data_types = ('c', 3);
+println!("{:?}", data_types);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let (name, num) : (&amp;str, i8);
+(name, num) = ("Alice", 4);
+println!("{} and {}", name, num);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let (letter, yes) : (char, bool) = ('d', true);
+let test =  (letter, yes);
+println!("{:?}", test);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let person = ("Gregor", 64, 1.82);
+let (name, weight, height) = person;
+println!("My name is {}, i'm {} years old and my height is {}", name, weight, height);
+<span class="boring">}</span></code></pre></pre>
+<h2 id="tuples-and-mut"><a class="header" href="#tuples-and-mut">Tuples and mut</a></h2>
+<p>When changing tuple values, you need to specify the index of the element you want to modify. Tuple indices start at 0 and correspond to the position of each element:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//                   0      1    2 
+let mut person = ("Alice", 25, 1.70);
+
+println!("Name: {:?}", person.0);
+println!("Age: {:?}", person.1);
+println!("Height: {:?}\n", person.2);
+
+//
+person.1 = 40;
+person.2 = 1.55;
+
+println!("Name: {:?}", person.0);  
+println!("Age: {:?}", person.1);   
+println!("Height: {:?}", person.2);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut person = ("Roberto", 90, 1.98);
+println!("{:#?}", person);
+
+person.0 = "Moana";
+person.1 = 58;
+person.2 = 1.62;
+println!("{:#?}", person);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="array"><a class="header" href="#array">Array</a></h1>
+<p>A fixed-size sequence of elements where all items must be of the same data type.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let list: [u8; 3] = [1, 2, 3];
+println!("{:?}", list);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let list: [u8; 3] = [4, 3, 2];
+println!("{:#?}", list);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let list = ['a', 'b', 'c' , 'd'];
+println!("{:?}", list);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let list: [&amp;str; 3];
+list = ["ab", "cd", "de"];
+println!("{:#?}", list);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let [a, b, c]: [&amp;str; 3] = ["xy", "yz", "zw"];
+let list = [a, b, c];
+println!("{:?}", list);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let list = ["12", "23", "34"];
+let [a, b, c] = list;
+println!("{:?} {:?} {:?}", a, b, c);
+<span class="boring">}</span></code></pre></pre>
+<h2 id="array-and-mut"><a class="header" href="#array-and-mut">Array and mut</a></h2>
+<p>When changing array values, you need to specify the index of the element you want to modify. Array indices start at 0 and correspond to the position of each element:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//                 0   1   2   3   4
+let mut scores = [85, 92, 78, 90, 88];
+
+println!("First score: {}", scores[0]); 
+println!("Second score: {}", scores[1]);
+println!("Third score: {}\n", scores[2]);
+
+//
+scores[0] = 90;
+scores[2] = 82; 
+
+println!("First score: {}", scores[0]); 
+println!("Second score: {}", scores[1]);
+println!("Third score: {}\n", scores[2]);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut number: [i32; 5] = [10, 20, 30, 40, 50];
+println!("{:?}", number);
+
+number[0] = 100;
+number[2] = 300;
+println!("{:?}", number);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut names: [&amp;str; 3] = ["Alice", "Bob", "Charlie"];
+println!("{:?}", names);
+
+names[0] = "Ane";
+names[1] = "Bren";
+println!("{:?}", names);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---data-structures"><a class="header" href="#questions---data-structures">Questions - Data Structures</a></h1>
+<hr />
+<p>01 - Declare a variable positive_only of type u32 with the value 100. Declare another variable can_be_negative of type i32 with the value -100. Print both. Now, try to assign -5 to the positive_only variable. What happens when you try to compile and why?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=60ee836e6ff396e3ac5a69bbb0e00927">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let positive_only: u32 = 100;
+    println!("{:?}", positive_only);
+
+    //
+    let can_be_negative: i32 = -100;
+    println!("{:?}", can_be_negative);
+
+    // error: attempt to compute `u8::MAX + 1_u8`, which would overflow
+    // let positive_only: u32 = -5;
+    // println!("{:?}", positive_only);
+}</code></pre></pre>
+  </details>
+<p>02 - Write Rust code to declare a variable max_u8 of type u8 and assign it the largest possible value for this type. Print this value. Then, in your code, try to assign max_u8 + 1 to a new u8 variable. What happens during compilation or execution (especially in debug vs. release mode, if you know)?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=6274ca481f8f0fd52a451f05a82a61b4">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let max_u8: u8 = u8::MAX;
+    println!("{:?}", max_u8);
+
+    // error: attempt to compute `u8::MAX + 1_u8`, which would overflow
+    // let max_u8: u8 = u8::MAX + 1;
+    // println!("{:?}");
+}</code></pre></pre>
+  </details>
+<p>03 - Declare a variable named world_population of type u64 and assign it the value 7800000000. Then, print the variable's value formatted with thousand separators (research how to do this if necessary, or just print the number).</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=832da0159cb82e6a068efd9b923b24f0">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let world_population: u64 = 7_800_000_000;
+    println!("World Population: {world_population:?}");
+}</code></pre></pre>
+  </details>
+<p>04 - You need to store the number of video views, which can reach billions but will never be negative. Choose the most appropriate unsigned type (u32 or u64). Declare a variable video_views with this type, assign 2500000000 to it, and print.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=133cef87057e36e26a2df2b2b0b91765">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let video_views: u64 = 2_500_000_000;
+    println!("{:?}", video_views);
+}</code></pre></pre>
+  </details>
+<p>05 - Declare two variables, min_val_i8 and max_val_i8, both of type i8. Assign them the smallest an largest possible value, respectively, for the i8 type. Print both values.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=ba79725b1daeebae28b1f8eff37f3ef6">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let min_val_i8: i8 = i8::MIN;
+    println!("{:?}", min_val_i8);
+
+    //
+    let max_val_i8: i8 = i8::MAX;
+    println!("{:?}", max_val_i8);
+}</code></pre></pre>
+  </details>
+<p>06 - Declare a variable named current_altitude_change of type i16 to represent an altitude change in meters. Assign it the value -350 (a descent of 350 meters). Print this value.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=e2634beea3fd8c7958ad78107fdccf0c">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let current_altitude_change: i16 = -350;
+    println!("Altitude: {:?} meters", current_altitude_change);
+}</code></pre></pre>
+  </details>
+<p>07 - You are processing financial transactions where the values can be very large and represent both credits and debits (in cents, to avoid floating-point issues). Declare a variable transaction_value_cents of type i64 and assign it a value like -12345678900 (representing a debit of over 123million). Print it.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=3fbd70f6487531637264b9ee3280ea1d">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let transaction_value_cents: i64 = -12_345_678_900;
+    println!("Debit = {:.3} million", transaction_value_cents);
+}
+
+/*
+    Debugging: The code below attempts to assign a value that exceeds the limit of i32. Correct the code by choosing a larger i type that can accommodate th
+e value 2_200_000_000.
+
+    fn main() {
+        let large_positive: i32 = 2_200_000_000; // Exceeds the limit of i32 println!("{}", large_positive);
+    }
+*/
+
+// the literal `2_200_000_000` does not fit into the type `i32` whose range is `-2147483648..=2147483647`</code></pre></pre>
+  </details>
+<p>08 - Try declaring a variable value_a of type u8 with 10 and value_b of type u8 with -10. What happens to value_b during compilation?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=d4a06055b3c5af0c8761fed7b89da839">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let value_a: u8 = 10;
+    println!("{:?}", value_a);
+
+    //
+    let value_b: u8 = -10;
+    println!("{:?}", value_b);
+}</code></pre></pre>
+  </details>
+<p>09 - Declare a variable precise_measurement of type f64 with the value 123.456789123456. Print it.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=9ccc624dcf4dcde8ba60cad9cd694932">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let precise_measurement: f64 = 123.456_789_123_456;
+    println!("{:?}", precise_measurement);
+}</code></pre></pre>
+  </details>
+<p>10 - In an embedded system with limited memory, you need to store a sensor reading that ranges from -10.0 to +10.0 with two decimal places of precision. Declare a variable sensor_reading using f32 and assign 7.89. Print it. Justify why f32 might be suitable here.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a42032c341e71ba8e776fdec44592f51">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let limited_memory: f32 = 10.00;
+    println!("{:?}", limited_memory);
+
+    //
+    let limited_memory: f32 = -10.00;
+    println!("{:?}", limited_memory);
+
+    //
+    let sensor_reading: f32 = 7.89;
+    println!("{:?}", sensor_reading);
+}</code></pre></pre>
+  </details>
+<p>11 - Declare a character char_ascii = 'Z'; and a Unicode character char_unicode = 'Ω'; (Greek letter Omega). Use std::mem::size_of_val(&amp;char_ascii) and std::mem::size_of_val(&amp;char_unicode) to print the size in bytes of each. What do you observe?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=f9e7bfb04bce6059ef65d775c6a47bed">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let char_ascii: char = 'Z';
+    println!("{:?}", char_ascii);
+
+    //
+    //let char_unicode: char = ' ';
+    //println!("{:?}", char_unicode);
+
+    //
+    let char_unicode: char = 'Ω';
+    println!("{:?}", char_unicode);
+
+    //
+    println!("{:?}", std::mem::size_of_val(&amp;char_ascii));
+    println!("{:?}", std::mem::size_of_val(&amp;char_unicode));
+}</code></pre></pre>
+  </details>
+<p>12 - Declare a variable my_initial of type char and assign it the first letter of your name. Print it.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a5ff5a70e060980ad52a8efa53d4a03b">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let my_ini: char = 'n';      
+
+    //
+    println!("{}", my_ini);
+}</code></pre></pre>
+  </details>
+<p>13 - Declare three char variables: emoji_char with '😊', math_symbol with '∑', and arrow_char with '→'. Print all of them.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=30486e7e3a0fdc86a2ec84adda9a9140">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let emoji_char: char = '😊';
+    let math_symbol: char = '∑';
+    let arrow_char: char = '→';
+
+    //
+    println!("{}\n{}\n{}", emoji_char, math_symbol, arrow_char);
+}</code></pre></pre>
+  </details>
+<p>14 - Try to declare a char variable with more than one character, for example: let not_a_char: char = 'ab';. What happens when you try to compile?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=45efd1bdc0da80b32f1543e839e98faa">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // syntax Error: Literal must be one character long
+    let not_a_char : char = 'ab';
+}</code></pre></pre>
+  </details>
+<p>15 - Declare a variable is_file_loaded and assign it true. Declare has_errors and assign false. Print both. Then, try to assign the integer 1 to a boolean variable. What does the Rust compiler say?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=df1360079b5d4efb448a2d3cff84f6cd">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let is_file_loaded: bool = true;
+    println!("{:?}", is_file_loaded);
+
+    //
+    let has_errors: bool = false;
+    println!("{:?}", has_errors);
+
+    // mismatched types  expected `bool`, found integer
+    // let assing: bool = 1;
+    // println!("{:?}", assing);
+}</code></pre></pre>
+  </details>
+<p>16 - Create a tuple record that contains a name (&amp;str), an age (u8), and a passing grade (f32). For example: ("Maria", 22, 7.5). Print the entire tuple.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=d2aa6a5fe5a2c228a0c4cdf01a986637">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let record: (&amp;str, u8, f32) = ("Maria", 22, 7.5);
+    println!("{:#?}", record);
+}</code></pre></pre>
+  </details>
+<p>17 - Create a tuple called server_response that contains an HTTP status code (u16) and a response message (&amp;str), such as (404, "Not Found"). Print the tuple.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=b2df2d26c5e24946753e76295327c42e">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let server_response: (u16, &amp;str) = (404, "Not Found");
+    println!("{:?}", server_response);
+}</code></pre></pre>
+  </details>
+<p>18 - Given the tuple let product_info = ("Laptop XPTO", 1250.99, 15); (name, price, quantity in stock), access and print the product price and the quantity in stock using tuple indexing (e.g., product_info.1).</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=9f27f40f83d95ebebb192508b357c23f">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let product_info: (&amp;str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
+    let (name, price, quantity_and_stock) = product_info;
+
+    //
+    println!(
+        "Product: {} \nQuantity and Stock: {}",
+        product_info.0, product_info.2
+    );
+
+    //
+    println!("{:#?}", product_info);
+
+    //
+    println!(
+        "Product: {} \nPrice: {:.3} \nQuantity and Stock: {}",
+        name, price, quantity_and_stock
+    );
+}</code></pre></pre>
+  </details>
+<p>19 - Given the tuple let color_rgb = (255, 128, 0); (representing Orange), destructure it into the variables red, green, and blue. Print each variable separately.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=f50c766a98c72e95fbd4aaa7e3d3120a">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let color_rgb: (u8, u8, u8) = (255, 128, 0);
+    let (red, green, blue) = color_rgb;
+
+    //
+    println!("Red: {} \nGreen: {} \nBlue: {}", red, green, blue);
+}</code></pre></pre>
+  </details>
+<p>20 - Declare a tuple api_result with a boolean indicating success, a u64 for an ID, and a String for a message. Ex: (true, 1234567890, String::from("Successful operation")). Print using {:#?}.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=b8880d9ebc342019b093dca67f56f9c2">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let api_result: (bool, u64, String) = (true, 1234567890, String::from("Successful operation"));
+    println!("{:#?}", api_result);
+}</code></pre></pre>
+  </details>
+<p>21 - Declare a tuple let config = ("localhost", 8080);. Try to modify the second element to 8081 (e.g., config.1 = 8081;). What happens when compiling? Now, redeclare it as let mut config = ("localhost", 8080); and try the same modification. Print config.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=12452da20c411cf36530f1ee4e16e5ce">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // let config: (&amp;str, u16) = ("localhost", 8080);
+    //println!("{:?}", config);
+    //config.1 = 8180; // cannot assign to `config.1`, as `config` is not declared as mutable  cannot assign
+
+    //
+    let mut config: (&amp;str, u16) = ("localhost", 8080);
+    println!("{:?}", config);
+
+    config.1 = 8180;
+    println!("{:?}", config);
+}</code></pre></pre>
+  </details>
+<p>22 - Declare a mutable tuple player_stats to store name (&amp;str), score (i32), and lives (u8). Initialize with ("Hero", 0, 3). Then, modify the score to 1500 and the lives to 2. Print the updated tuple.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=728088262a4b76b297ec133ab582d176">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut player_stats: (&amp;str, i32, u8) = ("Hero", 0, 3);
+    println!("{:#?}", player_stats);
+
+    //
+    player_stats.1 = 1500;
+    player_stats.2 = 2;
+    println!("{:#?}", player_stats);
+}</code></pre></pre>
+  </details>
+<p>23 - Create a mutable tuple let mut point = (10.0, 20.0);. Modify the first element to 15.5 and the second to 25.0 using index access syntax. Imprint the tuple.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=56d79e590ba12fc230dfda7b382e1444">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut point: (f32, f32) = (10., 20.);
+    println!("{:#?}", point);
+
+    //
+    point.0 = 15.5;
+    point.1 = 25.;
+    println!("{:#?}", point);
+}</code></pre></pre>
+  </details>
+<p>24 - Create a mutable tuple file_details containing file name (String), size (u64), and whether it's editable (bool). Initialize it. Then, modify the file name (appending "_v2" to the original name) and change the editable status. Print the tuple.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=6b5e3c0a5e0c5f98b6c0fb95a097ed66">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    //
+    let file_details: (String, u64, bool) = (String::from("test.txt"), 127, true);
+    println!("{:#?}", file_details);
+
+    //
+    let mut file_details_v2 = file_details;
+    file_details_v2.0 = String::from("teste_v2.txt");
+    file_details_v2.1 = 256;
+
+    //
+    println!("{:#?}", file_details_v2);
+}</code></pre></pre>
+  </details>
+<p>25 - Declare an array months containing the names of the first three months of the year as string slices. Print the name of the second month (remember zero-basedindexing).</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=53a62f786fc4470c6e2b3dca6917b82e">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    //
+    let months: [&amp;str; 3] = ["January", "February", "March"];
+    println!("{:#?}", months);
+
+    //
+    println!("{:#?}", months[1])
+}</code></pre></pre>
+  </details>
+<p>26 - Declare an array powers_of_two of 6 elements of type u32. Initialize it with the values [1, 2, 4, 8, 16, 32]. Print the last element of the array using indexing.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=092ca765f10e5f1653747f806d02dd5a">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let powers_of_two: [u32; 6] = [1, 2, 4, 8, 16, 32];
+    println!("{:?}, {:?}, {:?}", powers_of_two[3], powers_of_two[4], powers_of_two[5]);
+}</code></pre></pre>
+  </details>
+<p>27 - Declare an array let fixed_scores = [100, 90, 80];. Try to modify the second element to 95 (e.g., fixed_scores[1] = 95;). What happens? Now, declare it as let mut fixed_scores = [100, 90, 80];, make the modification, and print it.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=af8c4e2b513d6360eaa771836c3675c1">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    //
+    let fixed_scores = [100, 90, 80];
+    println!("{:?}", fixed_scores);
+
+    // fixed_scores[1] = 95;
+    // println!("{:?}", fixed_scores);
+
+    //
+    let mut fixed_scores = [10, 30, 60];
+    println!("{:?}", fixed_scores);
+
+    fixed_scores[1] = 0;
+    println!("{:?}", fixed_scores);
+}</code></pre></pre>
+  </details>
+<p>28 - Declare a mutable array inventory_counts of 4 elements of type u16, initialized with [10, 25, 5, 30]. Modify the count of the first item to 12 and the third to 8. Print the updated array.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=6a12c6b14485e4d9bdef556132eee612">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    //
+    let mut inventory_counts: [u16; 4] = [10, 25, 5, 30];
+
+    //
+    inventory_counts[0] = 12;
+    inventory_counts[3] = 8;
+
+    //
+    println!("{:?}", inventory_counts);
+}</code></pre></pre>
+  </details>
+<p>29 - Create a mutable array active_services: [bool; 3] initialized as [true, false, true]. Modify the second service to true and the last to false. Print the array.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=8be14543c295e538007025d9270d9005">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+
+    //
+    let mut active_services:[bool; 3] = [true, false, true];
+    println!("{:?}", active_services);
+
+    //
+    active_services[1] = true;
+    active_services[2] = false;
+    println!("{:?}", active_services);
+
+    //
+    println!("{:?}, {:?}, {:?}", active_services[0], active_services[1], active_services[2]);
+}</code></pre></pre>
+  </details>
+<p>30 - Create a mutable array pixel_colors: [[u8; 3]; 2] to represent two pixels, each with R, G, B components. Initialize it as [[255, 0, 0], [0, 255, 0]] (one red pixel, one green). Modify the first pixel to be blue ([0, 0, 255]) and the second to be yellow ([255, 255, 0]). Print the pixel array.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a7f882b0c2e13c1e6c15c743714d21e1">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    //
+    let mut pixel_colors: [[u8; 3]; 3] = [[255, 0, 0], [0, 255, 0], [0, 0, 255]];
+    println!("{:#?}", pixel_colors);
+
+    //
+    pixel_colors[0][0] = 0;
+    pixel_colors[0][1] = 255;
+    pixel_colors[1][0] = 255;
+    println!("{:#?}", pixel_colors);
+}</code></pre></pre>
+  </details>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="operators"><a class="header" href="#operators">Operators</a></h1>
+<p>This chapter delves into the various operators available in Rust, which are essential tools for performing operations on data and controlling program flow. Operators allow you to manipulate values, make comparisons, and execute logical operations that form the core of any programming logic.</p>
+<p>We'll start with arithmetic operators for mathematical calculations, followed by assignment operators for modifying variable values. You'll then explore comparison operators for evaluating relationships between values, and logical operators for combining boolean expressions. The chapter also covers how these operators work specifically with different data types like strings (&amp;str), tuples, and arrays.</p>
+<p>Mastering these operators is fundamental to writing expressive and efficient Rust code. They serve as the building blocks for more complex operations and algorithms you'll develop as you progress.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="arithmetic-operators"><a class="header" href="#arithmetic-operators">Arithmetic Operators</a></h1>
+<p>Used for basic mathematical calculations.</p>
+<p><code>+</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let sum = 1 + 1;
+println!("Sum = {:?}", sum);
+<span class="boring">}</span></code></pre></pre>
+<p><code>-</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let sub = 2 - 2;
+println!("Sub = {:?}", sub);
+<span class="boring">}</span></code></pre></pre>
+<p><code>*</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mul = 3 * 3;
+println!("Mul = {:?}", mul);
+<span class="boring">}</span></code></pre></pre>
+<p><code>/</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let div = 4 / 4;
+println!("Div = {:?}", div);
+<span class="boring">}</span></code></pre></pre>
+<p><code>%</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// remainder: %
+let rem = 5 % 5;
+println!("Rem = {:?}", rem);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="assignment-operators"><a class="header" href="#assignment-operators">Assignment Operators</a></h1>
+<p>Used to assign values to variables.</p>
+<p><code>+=</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut num: u8 = 10;
+
+// addition and assignment: +=
+num += 1;
+println!("10 += 1 = {}", num);
+<span class="boring">}</span></code></pre></pre>
+<p><code>-=</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut num: u8 = 10;
+
+// subtraction and assignment: -=
+num -= 1;
+println!("10 -= 1 = {}", num);
+<span class="boring">}</span></code></pre></pre>
+<p><code>*=</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut num: u8 = 10;
+
+// multiplication and assignment: *=
+num *= 2;
+println!("10 *= 2 = {}", num);
+<span class="boring">}</span></code></pre></pre>
+<p><code>/=</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut num: u8 = 20;
+
+// division and assignment: /=
+num /= 3;
+println!("20 /= 3 = {}", num);
+<span class="boring">}</span></code></pre></pre>
+<p><code>%=</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut num: u8 = 6;
+
+// remainder and assignment: %=
+num %= 4;
+println!("6 %= 4 = {}", num);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="precedence"><a class="header" href="#precedence">Precedence</a></h1>
+<p>The order in which operations are performed in an expression.</p>
+<p><code>()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 
+let preced: [i8; 2] = [5, 3];
+println!("{:?}", preced[0] + preced[1] * preced[1]);
+
+// ()
+println!("{:?}", (preced[0] + preced[1]) * preced[1]);
+<span class="boring">}</span></code></pre></pre>
+<p><code>*, / and %</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let preced: [i8; 2] = [5, 3];
+println!("{:?}", preced[0] + preced[1] * preced[1]);
+
+// *, / and %
+println!("{:?}", preced[0] * preced[1] / preced[1] % preced[1]);
+<span class="boring">}</span></code></pre></pre>
+<p><code>+ and -</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 
+let preced: [i8; 2] = [5, 3];
+println!("{:?}", preced[0] + preced[1] * preced[1]);
+
+// + and -
+println!("{:?}", preced[0] + preced[1] - preced[0] + preced[0] * preced[0]);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="logical"><a class="header" href="#logical">Logical</a></h1>
+<p>Relating to operations that combine or modify Boolean (true/false) values to produce a single Boolean result.</p>
+<p><code>AND - Only true when both are true</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// AND = &amp;&amp;
+println!("true &amp;&amp; true = {}", true &amp;&amp; true);
+println!("true &amp;&amp; false = {}", true &amp;&amp; false);
+println!("false &amp;&amp; true = {}", false &amp;&amp; true);
+println!("false &amp;&amp; false = {}", false &amp;&amp; false);
+<span class="boring">}</span></code></pre></pre>
+<p><code>OR - True when at least one is true</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// OR = ||
+println!("true || true = {}", true || true);
+println!("true || false = {}", true || false);
+println!("false || true = {}", false || true);
+println!("false || false = {}", false || false);
+<span class="boring">}</span></code></pre></pre>
+<p><code>NOT - Always invert the value</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// NOT = !
+println!("!true = {}", !true);
+println!("!false = {}", !false);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="string-and-str-1"><a class="header" href="#string-and-str-1">String and &amp;str</a></h1>
+<p>String and &amp;str concatenation is the process of joining character sequences. In Rust, you can use the + operator or the format!() macro to concatenate strings</p>
+<p><code>string</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let conc_text1: String = String::from("1");
+let conc_text2: String = String::from("2");
+println!("{:?}", conc_text1 + &amp;conc_text2);
+<span class="boring">}</span></code></pre></pre>
+<p><code>&amp;str</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let conc_text1: &amp;str = "1";
+let conc_text2: &amp;str = "2";
+println!("{:?}", conc_text1.to_owned() + conc_text2);
+<span class="boring">}</span></code></pre></pre>
+<p><code>string + &amp;str</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let part_01: &amp;str = "10";
+let part_02: String = String::from("20");
+println!("{}", part_01.to_owned() + &amp;part_02);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let part_01: String = String::from("Hello, ");
+let part_02: &amp;str = "World";
+
+let result: String =  part_01 + part_02;
+println!("Reseult = {}", result);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tuples-1"><a class="header" href="#tuples-1">Tuples</a></h1>
+<p>Store multiple data items of different types in a fixed-size structure.</p>
+<p><code>tuple</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let tup: (u8, u8) = (1, 4);
+println!("{:?}", tup.0 + tup.1);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let tup: (u8, u8);
+tup = (3, 8);
+println!("{:?}", tup.0 + tup.1);
+<span class="boring">}</span></code></pre></pre>
+<p><code>tuple + tuple</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let tup: ((u8, u8),(u8, u8)) = ((2, 4),(6, 16));
+println!("{:?}", tup.0.0 + tup.0.1);
+println!("{:?}", tup.1.0 + tup.1.1);
+println!("{:?}", tup.0.0 + tup.1.0);
+println!("{:?}", tup.0.1 + tup.1.1);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let tup_01: (u8, u8) = (1, 4);
+let tup_02: (u8, u8) = (14, 9);
+
+let result = tup_01.0 + tup_01.1 + tup_02.0 + tup_02.1;
+println!("{:?}", result);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="array-1"><a class="header" href="#array-1">Array</a></h1>
+<p>A list of data items that are all of the same type and have a fixed size.</p>
+<p><code>array</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let arr: [u8; 2] = [1, 4];
+println!("{:?}", arr[0] + arr[1]);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let arr: [u8; 2];
+arr = [3, 8];
+println!("{:?}", arr[0] + arr[1]);
+<span class="boring">}</span></code></pre></pre>
+<p><code>array + array</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let arr: [[u8; 2]; 2] = [[2, 4], [6, 16]];
+println!("{:?}", arr[0][0] + arr[0][1]);
+println!("{:?}", arr[1][0] + arr[1][1]);
+println!("{:?}", arr[0][0] + arr[1][0]);
+println!("{:?}", arr[0][1] + arr[1][1]);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 
+let arr_01: [u8; 2] = [1, 4];
+let arr_02: [u8; 2] = [14, 9];
+
+let result = arr_01[0] + arr_01[1] + arr_02[0] + arr_02[1];
+println!("{:?}", result);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---operators"><a class="header" href="#questions---operators">Questions - Operators</a></h1>
+<hr />
+<p>01 - Write a program that declares two integer variables, 'a' with the value 15 and 'b' with the value 7, and prints their sum.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let a: u8 = 15;
+    let b: u8 = 7;
+
+    //
+    println!("{:?}", a + b);
+}</code></pre></pre>
+  </details>
+<p>02 - Create code that subtracts the value 3 from a variable called 'total' that initially equals 10, and displays the result.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let total = 10;
+    let sub = total - 3;
+    println!("{:?}", sub);
+
+    //
+    let mut total = 10;
+    total -= 3;
+    println!("{:?}", total);
+}</code></pre></pre>
+  </details>
+<p>03 - Develop a program that multiplies two variables, 'x' equals 6 and 'y' equals 8, and shows the product.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let x: u8 = 6;
+    let y: u8 = 8;
+
+    //
+    let result: u8 = x * y;
+    println!("{:?}", result);
+}</code></pre></pre>
+  </details>
+<p>04 - Implement code that divides the number 20 by 5 and prints the quotient.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let result = 20 / 5;
+    println!("{}", result);
+}</code></pre></pre>
+  </details>
+<p>05 - Write a program that calculates the remainder of the division of 23 by 4 and prints the result.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut remainder: u8 = 23;
+    remainder %= 4;
+
+    //
+    println!("{:?}", remainder);
+}</code></pre></pre>
+  </details>
+<p>06 - Declare two variables num1 (12) and num2 (5) and print the result of their sum directly within the println! macro.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let num1: u8 = 12;
+    let num2: u8 = 5;
+
+    //
+    println!("{:?}", num1 + num2);
+}</code></pre></pre>
+  </details>
+<p>07 - Create an immutable variable called 'value' that is the sum of 9 and 2, and print its value.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let value: u8 = 9 + 2;
+    println!("{:?}", value);
+}</code></pre></pre>
+  </details>
+<p>08 - Declare two variables 'first' (7) and 'second' (3) and print the result of their multiplication.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let first: u8 = 7;
+    let second: u8 = 3;
+
+    //
+    println!("{:?}", first * second);
+}</code></pre></pre>
+  </details>
+<p>09 - Declare two variables 'dividend' (18) and 'divisor' (3) and store the result of the division in a variable called 'result', printing it.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let dividend: u8 = 18;
+    let divisor: u8 = 3;
+
+    //
+    let result: u8 = dividend / divisor;
+    println!("{:?}", result);
+}</code></pre></pre>
+  </details>
+<p>10 - Declare two variables n1 (25) and n2 (7). Calculate and print the remainder of the division of n1 by n2.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let n1: u8 = 25;
+    let n2: u8 = 7;
+
+    //
+    println!("{:?}", n1 % n2);
+}</code></pre></pre>
+  </details>
+<p>11 - Declare a mutable variable named counter with an initial value of 5. Increment it by 3 using the addition assignment operator and print the new value.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut counter: u8 = 5;
+    counter += 3;
+
+    //
+    println!("{:?}", counter);
+}</code></pre></pre>
+  </details>
+<p>12 - Create a mutable variable score initialized with 20. Decrement it by 5 using the subtraction assignment operator and display the final value.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut score: u8 = 20;
+    score -= 5;
+
+    //
+    println!("{:?}", score);
+}</code></pre></pre>
+  </details>
+<p>13 - Declare a mutable variable number with the value 2. Multiply it by 4 using the multiplication assignment operator and print the result.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut number: u8 = 2;
+    number *= 4;
+
+    //
+    println!("{:?}", number);
+}</code></pre></pre>
+  </details>
+<p>14 - Initialize a mutable variable size with 30. Divide it by 6 using the division assignment operator and show the resulting value.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut size: u8 = 30;
+    size /= 6;
+
+    //
+    println!("{:?}", size);
+}</code></pre></pre>
+  </details>
+<p>15 - Declare a mutable variable number with the value 17. Calculate the remainder of the division by 5 using the remainder assignment operator and print the value.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut number: u8 = 17;
+    number %= 5;
+
+    //
+    println!("{:?}", number);
+}</code></pre></pre>
+  </details>
+<p>16 - Declare two variables of type &amp;str, part1 with "Hello, " and part2 with "Rust!". Concatenate them and print the result.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let part1: &amp;str = "Hello, ";
+    let part2: &amp;str = "Rust!";
+
+    //
+    println!("{}{}", part1, part2);
+}</code></pre></pre>
+  </details>
+<p>17 - Create two String variables, s1 with "Language" and s2 with "Rust.". Concatenate them and print the resulting string.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let s1: String = String::from("Language ");
+    let s2: String = String::from("Rust.");
+
+    //
+    println!("{:?}", s1 + &amp;s2);
+}</code></pre></pre>
+  </details>
+<p>18 - Declare a variable of type &amp;str called number with the value "Number: ". Create a variable of type String called number_str with the value "42". Concatenate them and print the result.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let number: &amp;str = "Number: ";
+    let number_str: String = String::from("42");
+
+    //
+    println!("{:?}", number.to_owned() + &amp;number_str);
+}</code></pre></pre>
+  </details>
+<p>19 - Create a String variable called initial_message with "Welcome ". Declare a &amp;str variable called name with "User". Concatenate them and print the complete message.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let initial_message: String = String::from("Welcome ");
+    let name: &amp;str = "User";
+
+    //
+    println!("{:?}", initial_message.to_owned() + name);
+}</code></pre></pre>
+  </details>
+<p>20 - Declare two variables greeting of type String with "Good " and period of type &amp;str with "day!". Concatenate them and print the complete greeting.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let greeting: String = String::from("Good ");
+    let period: &amp;str = "day!";
+
+    //
+    println!("{}", greeting + period);
+}</code></pre></pre>
+  </details>
+<p>21 - Declare a tuple of two i32. Initialize it with the values (5, -2). Print the multiplication of these two values.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let tup: (i32, i32) = (5, -2);
+    println!("{:?}", tup.0 * tup.1);
+}</code></pre></pre>
+  </details>
+<p>22 - Create a nested tuple: ((1, 2), (3, 4)). Add the first element of the first tuple to the second element of the second tuple and print the result.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let tup: ((u8, u8), (u8, u8)) = ((1, 2), (3, 4));
+    println!("{:?}", tup.0 .0 + tup.1 .1);
+}</code></pre></pre>
+  </details>
+<p>23 - Declare two tuples, t1 with (2, 5) and t2 with (8, 1). Add all the elements of the two tuples and print the total.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let t1: (u8, u8) = (2, 5);
+    let t2: (u8, u8) = (8, 1);
+
+    //
+    println!("{:?}", t1.0 + t1.1 + t2.0 + t2.1);
+}</code></pre></pre>
+  </details>
+<p>24 - Create a tuple with an f32 and an i32. Print each element separately.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut t1: (f32, i32) = (0.0, 0);
+    t1.0 = -2.;
+    t1.1 = 2;
+
+    //
+    println!("{:#?}", t1);
+}</code></pre></pre>
+  </details>
+<p>25 - Declare an array of 5 i32 with the values [1, 3, 5, 7, 9]. Print the sum of the first and last elements.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let arr: [i32; 5] = [1, 3, 5, 7, 9];
+    println!("{:?} + {:?} = {:?}", arr[0], arr[4], arr[0] + arr[4]);
+}</code></pre></pre>
+  </details>
+<p>26 - Create an array of 3 u16. Initialize it with the values [10, 20, 30]. Print the product of all elements.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let arr: [i32; 3];
+    arr = [10, 20, 30];
+
+    //
+    println!("{:?}", arr[0] * arr[1] * arr[2]);
+}</code></pre></pre>
+  </details>
+<p>27 - Declare a 2x2 multidimensional array with integers.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let arr: [[i8; 2]; 2];
+    arr = [[2, 2], [4, 4]];
+
+    //
+    println!("{:?}", arr[0][0] * arr[0][1] * arr[1][0] * arr[1][1]);
+}</code></pre></pre>
+  </details>
+<p>28 - Create two arrays of two f32. Sum the corresponding elements of the two arrays and print the results of the sums.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let arr1: [i8; 2] = [5, 3];
+    let arr2: [i8; 2] = [3, 8];
+
+    //
+    println!("{:?} + {:?} = {:?}", arr1[0], arr1[1], arr1[0] + arr1[1]);
+    println!("{:?} + {:?} = {:?}", arr2[0], arr2[1], arr2[0] + arr2[1]);
+}</code></pre></pre>
+  </details>
+<p>29 - Declare two arrays a1 with [4, 2] and a2 with [3, 6]. Calculate and print the product of all elements from both arrays.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let a1: [u8; 2] = [4, 2];
+    let a2: [u8; 2] = [3, 6];
+
+    //
+    println!("{:?}, {:?}", a1[0] * a1[1], a2[0] * a2[1]);
+}</code></pre></pre>
+  </details>
+<p>30 - Declare a variable x with value 1. Create an inner block where you declare a variable y with value 2. Inside the block, print the sum of x and y. Outside the block, try to print y (what will happen?).</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let x: u8 = 1;
+    {
+        let y: u8 = 2;
+        println!("{:?}", x + y);
+    }
+    println!("{:?}", x);
+    // println!("{:?}", y); cannot find value `y` in this scope
+}</code></pre></pre>
+  </details>
+<p>31 - Declare a variable level1 with value 10. Open a new block and declare a variable level2 with value 20. Inside this block, create another block and declare level3 with value 30. Print the sum of level1 and level3 inside the innermost block.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let level1: u8 = 10;
+    {
+        let level2: u8 = 20;
+        {
+            //
+            let level3: u8 = 30;
+            println!("{:?}", level1 + level2 + level3);
+        }
+        println!("{:?}", level2);
+    }
+    println!("{:?}", level1);
+}</code></pre></pre>
+  </details>
+<p>32 - Declare a main variable with value 100. Create a block where you declare a variable with the same name and assign the value 50.0. Print the value of the variable inside the block and outside the block.
+<a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let num: u8 = 100;
+    println!("{:?}", num);
+
+    {
+      let num: f32 = 50.;
+      println!("{:?}", num);
+    }
+
+    println!("{:?}", num);
+}</code></pre></pre>
+  </details>
+<p>33 - Using the same array values, write code that calculates and prints the result of (values[0] + values[1]) * values[1].</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let var: [u8; 2] = [2, 3];
+    println!("{:?}", (var[0] + var[1]) * var[1]);
+}</code></pre></pre>
+  </details>
+<p>34 - Still with values, calculate and print values[0] * values[1] / values[1] % values[1].</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust"> fn main() {
+    //
+    let var: [u8; 2] = [2, 3];
+    println!("{:?}", var[0] * var[1] / var[1] % var[1]);
+}</code></pre></pre>
+  </details>
+<p>35 - Calculate and print values[0] + values[1] − values[0] + values[0] * values[0].</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let var: [u8; 2] = [2, 3];
+    println!("{:?}", var[0] + var[1] - var[0] + var[0] * var[0]);
+}</code></pre></pre>
+  </details>
+<p>36 - Calculate and print ((values[0] + values[1]) − (values[0] + values[0]) * values[0]).</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust"> fn main() {
+    //
+    let var: [i8; 2] = [2, 3];
+    println!("{:?}", (var[0] + var[1]) - (var[0] + var[0]) * var[0]);
+}</code></pre></pre>
+  </details>
+<p>37 - Declare two integer variables, num1 with value 10 and num2 with value 10. Write code that prints if num1 is equal to num2.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let num1: i8 = 10;
+    let num2: i8 = 10;
+
+    //
+    println!("Num1 = Num2? {:?} ", num1 == num2);
+}</code></pre></pre>
+  </details>
+<p>38 - Declare two floating-point variables, f1 with 3.14 and f2 with 2.71. Write code that prints if f1 is different from f2.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let f1: f32 = 3.14;
+    let f2: f32 = 2.71;
+
+    //
+    println!("f1 != f2? {}", f1 != f2);
+}</code></pre></pre>
+  </details>
+<p>39 - Declare two integer variables, age1 with 25 and age2 with 30. Write code that prints if age1 is greater than age2.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust"> fn main() {
+    //
+    let age1: u8 = 25;
+    let age2: u8 = 30;
+
+    //
+    println!("Age-1 &gt; Age-2? {}", age1 &gt; age2);
+}</code></pre></pre>
+  </details>
+<p>40 - Declare two integer variables, point1 with 5 and point2 with 8. Write code that prints if point1 is less than point2.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let point_1: u8 = 5;
+    let point_2: u8 = 8;
+
+    //
+    println!("Point-1 &lt; Point-2? {}", point_1 &lt; point_2);
+}</code></pre></pre>
+  </details>
+<p>41 - Declare two integer variables, grade1 with 7 and grade2 with 7. Write code that prints if grade1 is greater than or equal to grade2.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust"> fn main() {
+    //
+    let grade_1: u8 = 7;
+    let grade_2: u8 = 7;
+
+    //
+    println!("Grade-1 &gt;= Grade-2? {}", grade_1 &gt;= grade_2);
+}</code></pre></pre>
+  </details>
+<p>42 - Declare two float variables, height1 with 1.70 and height2 with 1.65. Write code that prints if height1 is less than or equal to height2.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let height_1: f32 = 1.70;
+    let height_2: f32 = 1.65;
+
+    //
+    println!("Height_1 &lt;= Height_2? {}", height_1 &lt;= height_2);
+}</code></pre></pre>
+  </details>
+<p>43 - Declare an integer variable x with 5 and another y with 10. Check if x is not equal to y and print the result.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let x: u8 = 5;
+    let y: u8 = 10;
+
+    //
+    println!("x != y? {}", x != y);
+}</code></pre></pre>
+  </details>
+<p>44 - Declare a variable temp1 with 22.5 and temp2 with 20.0. Check if temp1 is greater than temp2 and print.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust"> fn main() {
+    //
+    let temp_1: f32 = 22.5;
+    let temp_2: f32 = 20.;
+
+    //
+    println!("Temp1 &gt; Temp2? {}", temp_1 &gt; temp_2);
+}</code></pre></pre>
+  </details>
+<p>45 - Declare a variable count1 with 100 and count2 with 99. Check if count1 is less than count2 and print.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust"> fn main() {
+    //
+    let count_1: u8 = 100;
+    let count_2: u8 = 99;
+
+    //
+    println!("Count 1 &lt; Count 2? {}", count_1 &lt; count_2);
+}</code></pre></pre>
+  </details>
+<p>46 - Declare two u8 variables, val1 with 8 and val2 with 3. Calculate the sum, subtract 1 from the result, and print.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let val_1: u8 = 8;
+    let val_2: u8 = 3;
+
+    //
+    println!("{:?}", (val_1 + val_2) - 1);
+}</code></pre></pre>
+  </details>
+<p>47 - Create a tuple (u32, u32) with values (5, 10). Multiply the two elements and assign the result to a new variable, then print it.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let arr_1: (u32, u32) = (5, 10);
+    let arr_2 = arr_1.0 * arr_1.1;
+
+    //
+    println!("{:?}", arr_2);
+}</code></pre></pre>
+  </details>
+<p>48 - Declare an array [i32; 3] with values [2, 4, 6]. Divide each element by 2 (using division assignment if applicable) and print the resulting array.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut arr: [i32; 3] = [2, 4, 6];
+    arr[0] /= 2;
+    arr[1] /= 2;
+    arr[2] /= 2;
+
+    //
+    println!("{:#?}", arr);
+}</code></pre></pre>
+  </details>
+<p>49 - Declare a tuple (f64, f64) with (2.5, 3.5). Sum the elements and print the result formatted to two decimal places.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let tup: (f64, f64) = (2.5, 3.5);
+    let result: f64 = tup.0 + tup.1;
+
+    //
+    println!("{:.2}", result);
+}</code></pre></pre>
+  </details>
+<p>50 - Declare an array [u16; 2] with [100, 200]. Multiply the first element by 2 and the second by 3, then sum the results and print.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let arr: [u16; 2] = [100, 200];
+    println!("{:?}", (arr[0] * 2) + (arr[1] * 3));
+}</code></pre></pre>
+  </details>
+<p>51 - Declare a variable message with "&amp;str" "Start". Append to it the String " -&gt; End". Print the final value of message.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //&amp;str
+    let message: &amp;str = "Start";
+    println!("{}", message.to_owned() + " -&gt; End");
+
+    // string
+    let mut message: String = String::from("Start");
+    message += " -&gt; End";
+    println!("{}", message);
+}</code></pre></pre>
+  </details>
+<p>52 - Create a tuple (i8, i8, i8) with (1, 2, 3). Sum all three numbers and print the result.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let tup: (i8, i8, i8) = (1, 2, 3);
+    println!("{:?}", tup.0 + tup.1 + tup.2);
+}</code></pre></pre>
+  </details>
+<p>53 - Given an array data with [3, 2], calculate and print the result of data[0] + data[1] * 5 . Then, calculate and print (data[0] + data[1]) * 5.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let data: [u8; 2] = [3, 2];
+
+    //
+    println!("{:?}", data[0] + data[1] * 5);
+    println!("{:?}", (data[0] + data[1]) * 5);
+}</code></pre></pre>
+  </details>
+<p>54 - Given an array calc_values with [10, 3, 2], calculate and print calc_values[0] / calc_values[1] + calc_values[2]. Then, calculate and print calc_values[0] / (calc_values[1] + calc_values[2]).</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let calc_values: [u8; 3] = [10, 3, 2];
+
+    //
+    println!("{:?}", calc_values[0] / calc_values[1] + calc_values[2]);
+    println!("{:?}", calc_values[0] / (calc_values[1] + calc_values[2]));
+}</code></pre></pre>
+  </details>
+<p>55 - Declare a global_factor variable with 2. Inside a block, declare an array nums with [1, 2, 3]. Sum the array elements and multiply the result by global_factor, printing the final result inside the block.</p>
+<p><a href="03-operators/">Playground!</a></p>
+  <details>
+  <summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let global_factor: u8 = 2;
+    {
+        let block: [u8; 3] = [1, 2, 3];
+        let result = (block[0] + block[1] + block[2]) * global_factor;
+        println!("{:?}", result);
+    }
+}</code></pre></pre>
+  </details>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="string-and-str-2"><a class="header" href="#string-and-str-2">String and &amp;str</a></h1>
+<p>This chapter covers Rust's string types – the fundamental tools for handling text data in your programs.</p>
+<p>We'll start with string literals: &amp;str for compile-time text, string slices for referencing parts of strings, and their immutable nature. Then we
+'ll explore owned strings: String for dynamic text creation, push and push_str for building strings, and methods for manipulation and transformation.</p>
+<p>We'll also cover conversions – Rust's seamless transitions between &amp;str and String, when to use each type, and how ownership affects your choice.</p>
+<p>Each section includes practice questions to reinforce your understanding of these essential text-handling constructs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="strings"><a class="header" href="#strings">Strings</a></h1>
+<p>Sequence of UTF-8 characters that can form a word or a phrase, including letters, numbers, symbols, or any other type of special character.</p>
+<p>Think of your memory as a cabinet, a variable as a drawer, and a string as a piece of paper.</p>
+<p>When you create a "string" variable, you use the entire drawer. But when you create a "&amp;str" variable, you use a piece of paper to write down the information and then put it inside the drawer.</p>
+<p><code>new()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// new()
+let create_string: String = String::new();
+println!("{}", create_string);
+<span class="boring">}</span></code></pre></pre>
+<p><code>from()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// from()
+let create_string: String = String::from("Create text!");
+println!("{}", create_string);
+<span class="boring">}</span></code></pre></pre>
+<p><code>to_string()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// to_string()
+let create_string: String = "Create text!".to_string();
+println!("{}", create_string);
+<span class="boring">}</span></code></pre></pre>
+<p><code>mut</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// mut
+let mut create_string: String = String::from("Create text!");
+println!("{}", create_string);
+
+create_string = "Create new text!".to_string();
+println!("{}", create_string);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="str"><a class="header" href="#str">&amp;str</a></h1>
+<p><code>&amp;str</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// &amp;str
+let create_str: &amp;str = "Hello, word!";
+println!("{}", create_str);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 
+let create_str = "Hello, word!";
+println!("{}", create_str);
+<span class="boring">}</span></code></pre></pre>
+<p><code>slice</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let create_str = "Hello, word!";
+let slice_str = &amp;create_str[0..4];
+println!("{}", slice_str);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="methods---part-1"><a class="header" href="#methods---part-1">Methods - Part 1</a></h1>
+<p>Used for manipulating and modifying text content.</p>
+<p><code>push()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// adds a character
+let mut text = String::from("Hello");
+text.push(',');
+text.push(' ');
+text.push('w');
+text.push('o');
+text.push('r');
+text.push('d');
+text.push('!');
+println!("{:?}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>push_str()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// adds a string slice
+let mut text = String::from("Hello");
+text.push_str(", word!");
+println!("{:?}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>pop()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// removes the last character
+let mut text = String::from("Hello, word!");
+let _text_last = text.pop();
+let _text_last = text.pop();
+let text_last = text.pop();
+println!("{:?}", text_last);
+println!("{:?}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>insert()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// inserts character at specific position
+// 0 1 2 3 4 5 6
+// H e e l l o ,
+let mut text = String::from("Hello,");
+text.insert(6, ' ');
+text.insert(7, 'w');
+text.insert(8, 'o');
+text.insert(9, 'r');
+text.insert(10, 'd');
+text.insert(11, '!');
+println!("{:?}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>remove()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// removes character at specific position
+// 1 2 3 4 5 6 7 8 9 10 11 12
+// H e l l o ,   w o r  d  !
+let mut text: String = String::from("Hello, word!");
+let _text_letter = text.remove(11);
+let _text_letter = text.remove(10);
+let _text_letter = text.remove(9);
+println!("{}", text);c
+<span class="boring">}</span></code></pre></pre>
+<p><code>len()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// returns the length of the string in bytes
+// 1 2 3 4 5 6 7 8 9 10 11 12
+// H e l l o ,   w o r  d  !
+let text: String = String::from("Hello, word!");
+let number = text.len();
+println!("{}", number);
+<span class="boring">}</span></code></pre></pre>
+<p><code>clear()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// removes all content
+let mut text: String = String::from("Hello, word!");
+text.clear();
+println!("{}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>truncate()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// cuts the string at a given index
+// 1 2 3 4 5 6 7 8 9 10 11 12 
+// H e l l o ,   w o r  d  !
+let mut text: String = String::from("Hello, word");
+text.truncate(5);
+println!("{}", text);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="methods---part-2"><a class="header" href="#methods---part-2">Methods - Part 2</a></h1>
+<p>Used for manipulating and modifying text content.</p>
+<p><code>is_empty()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// verifica se está vazia
+let text = "Hello, word!";
+println!("{}", text.is_empty());
+<span class="boring">}</span></code></pre></pre>
+<p><code>contains()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// verifica se contém substring
+let text = "Hello, word!";
+println!("{}", text.contains("ello"));
+<span class="boring">}</span></code></pre></pre>
+<p><code>starts_with() and ends_with()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// verifica início/fim
+let text = "Hello, word!";
+println!("{}", text.starts_with("He"));
+println!("{}", text.ends_with("d!"));
+<span class="boring">}</span></code></pre></pre>
+<p><code>find()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// encontra posição de substring
+let text = "Hello, word!";
+println!("{:?}", text.find("H"));
+<span class="boring">}</span></code></pre></pre>
+<p><code>to_uppercase() and to_lowercase()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// conversão de case
+let text = "Hello, word!";
+println!("{:?}", text.to_uppercase());
+println!("{:?}", text.to_lowercase());
+<span class="boring">}</span></code></pre></pre>
+<p><code>trim()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// remove espaços das extremidades
+let text = "  Hello, word!  ";
+println!("{:?}", text.trim());
+<span class="boring">}</span></code></pre></pre>
+<p><code>replace()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// substitui todas as ocorrências
+let text = "Hello, word!";
+println!("{:?}", text.replace("word", "hello"));
+<span class="boring">}</span></code></pre></pre>
+<p><code>replacen()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// substitui apenas N ocorrências
+let text = "Hello, word!";
+println!("{:?}", text.replacen("o", "a", 1));
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-entry"><a class="header" href="#data-entry">Data Entry</a></h1>
+<p><code>std::io</code></p>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main () {
+    //
+    println!("Enter text:");
+    let mut input:String = Sring::new();
+    io::stdin().read_line(&amp;mut input).expect("Data entry error!");
+    // io::stdin().read_line(&amp;mut input).unwrap();
+}</code></pre></pre>
+<ul>
+<li>unwrap() - If an error occurs, the program crashes with a panic;</li>
+<li>expect() - If an error occurs, it crashes but with your custom message.</li>
+</ul>
+<p><code>match</code></p>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    // 
+    let mut input = String::new();
+    io::stdin().read_line(&amp;mut input).unwrap();
+
+    match input.trim().parse::&lt;u8&gt;() {
+        Ok(input) =&gt; input,
+        Err(_) =&gt; {
+            println!("Err!");
+            return;
+        }
+    };
+}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main () {
+    //
+    let mut input = String::new();
+    io::stdin().read_line(&amp;mut input).expect("Data entry error!");
+
+    let num: u8 = match input.trim().parse() {
+        Ok(n) =&gt; n,
+        Err(_) =&gt; {
+          println!("Input error!");
+          return;
+        }
+    };  
+}</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---string-and-str"><a class="header" href="#questions---string-and-str">Questions - String and &amp;str</a></h1>
+<p>01 - Write code that creates an empty String and prints it.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let empty_string: String = String::new();
+    println!("{}", empty_string);
+}</code></pre></pre>
+</details>
+<p>02 - Create a String from the string literal "Hello, Rust!".</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let literal_string: String = String::from("Hello, Rust!");
+    println!("{}", literal_string);
+}</code></pre></pre>
+</details>
+<p>03 - Declare a variable that holds a string slice (&amp;str) with the value "Learning Rust".</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let hold_string: &amp;str = "Learning Rust";
+    println!("{}", hold_string);
+}</code></pre></pre>
+</details>
+<p>04 - Given a String, write the code to get a &amp;str that represents the entire String.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let input_string: String = String::from("Learning Rust!");
+    let input_str: &amp;str = &amp;input_string;
+    println!("{}", input_str);
+}
+
+// or
+
+fn main() {
+    //
+    let input_string: String = String::from("Learning Rust!");
+    let input_str: &amp;str = input_string.as_str();
+    println!("{}", input_str);
+}</code></pre></pre>
+</details>
+<p>05 - Write a code that receives a text in "string" and converts it to "str" and then prints it on the screen.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_string: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_string)
+        .expect("Data entry error!");
+    let text_string: &amp;str = input_string.as_str();
+    println!("\nText converted to &amp;str: {}", text_string.trim());
+}</code></pre></pre>
+</details>
+<p>06 - Convert the integer 123 into a String.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let text: &amp;str = "123";
+    let num: u8 = text.parse().expect("Error converting data!");
+    println!("{}", num);
+
+    // or
+
+    //
+    match text.parse::&lt;u8&gt;() {
+        Ok(num) =&gt; num,
+        Err(_) =&gt; {
+            println!("Error converting data!");
+            return;
+        }
+    };
+    println!("{}", num);
+}</code></pre></pre>
+</details>
+<p>07 - Use the .to_string() method or String::from() to create a new String by concatenating a &amp;str and an existing String.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_text)
+        .expect("Data entry error!");
+
+    //
+    let text_01: &amp;str = &amp;input_text.as_str();
+    let text_02: String = String::from("string");
+
+    //
+    println!("\n{}", text_01.to_string() + &amp;text_02);
+}</code></pre></pre>
+</details>
+<p>08 - Create a mutable String and append a &amp;str to it using the push_str() method.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut mutable_string: String = String::from("Hello, ");
+    mutable_string.push_str("word!");
+    println!("{}", mutable_string);
+}</code></pre></pre>
+</details>
+<p>09 - Add a single character (char) to the end of a mutable String.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut single_char: String = String::from("Hello, word");
+    let character: char = '!';
+    single_char.push(character);
+    println!("{}", single_char);
+}</code></pre></pre>
+</details>
+<p>10 - Combine a &amp;str, a String, and a number into a new String using the format! macro.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let var_str: &amp;str = "1";
+    let var_string: String = String::from("2");
+    let var_u8: u8 = 3;
+
+    //
+    let result = format!("{}{}{}", var_str, var_string, var_u8);
+    println!("{}", result);
+}</code></pre></pre>
+</details>
+<p>11 - Create a new String by removing all whitespace from a string.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&amp;mut input_text).err();
+
+    //
+    let remove_wspace = input_text.replace(" ", "");
+    println!("\nFirst Letter = {}", remove_wspace.trim());
+}</code></pre></pre>
+</details>
+<p>12 - Replace all occurrences of the substring "error" with "success" in a &amp;str, creating a new String.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&amp;mut input_text).err();
+
+    //
+    let new_text = input_text.replace("error", "success");
+    println!("{}", new_text.trim());
+}</code></pre></pre>
+</details>
+<p>13 - Replace only the first occurrence of "old" with "new" in a &amp;str, creating a new String.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&amp;mut input_phrase).err();
+
+    //
+    let phrase = input_phrase.replacen("old", "new", 1);
+    println!("{}", phrase.trim());
+}</code></pre></pre>
+</details>
+<p>14 - Check if a &amp;str contains the substring "Rust".</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&amp;mut input_text).err();
+
+    //
+    if input_text.contains("Rust") {
+        println!("\n'{}' contains 'Rust'", input_text.trim());
+    } else {
+        println!("\n'{}' does not contain 'Rust'", input_text.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>15 - Check if a filename in a string ends with the suffix .rs.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter filename:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&amp;mut input_text).err();
+
+    //
+    if input_text.trim().ends_with(".rs") {
+        println!("\n'{}' ends with '.rs'", input_text.trim());
+    } else {
+        println!("\n'{}' does not ends with '.rs'", input_text.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>16 - Check if a &amp;str starts with the prefix "https://".</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&amp;mut input_text).err();
+
+    //
+    if input_text.starts_with("https://") {
+        println!("\n'{}' start with 'https://'", input_text.trim());
+    } else {
+        println!("\n'{}' does not start with 'https://'", input_text.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>20 - Create code that takes a String and returns a slice containing only the first word. Assume that words are separated by spaces.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&amp;mut input_phrase).err();
+
+    //
+    let phrase = input_phrase.split_whitespace().next();
+    println!("{}", phrase.unwrap());
+}</code></pre></pre>
+</details>
+<p>21 - Find the starting byte index of the first occurrence of the substring "world".</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter filename:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&amp;mut input_text).err();
+
+    //
+    if let Some(index) = input_text.find("world") {
+        println!("\nByte index: world = {}", index);
+    } else {
+        println!("\nNo word: world");
+    }
+}</code></pre></pre>
+</details>
+<p>22 - Write a function that accepts a String and returns its first character as a char.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    let mut input_word: String = String::new();
+    io::stdin().read_line(&amp;mut input_word).err();
+
+    //
+    let mut first_letter: char = ' ';
+    for i in input_word.trim_start().chars() {
+        first_letter = i;
+        break;
+    }
+    println!("First Letter = {}", first_letter);
+}
+
+// or
+use std::io;
+
+fn main() {
+    //
+    let mut input_word: String = String::new();
+    io::stdin().read_line(&amp;mut input_word).err();
+
+    //
+    let first_letter: char = input_word.trim_start().chars().next().unwrap_or(' ');
+    println!("First Letter = {}", first_letter);
+}</code></pre></pre>
+</details>
+<p>23 - Write a code that counts the number of characters (char) in a &amp;str, not the number of bytes.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter word:");
+    let mut input_word: String = String::new();
+    io::stdin().read_line(&amp;mut input_word).err();
+
+    //
+    let word = input_word.trim().replace(" ", "");
+    println!("{}", word);
+    println!("{:?}", word.len());
+}
+
+// or
+
+use std::io;
+
+fn main() {
+    //
+    println!("Enter word:");
+    let mut input_word: String = String::new();
+    io::stdin().read_line(&amp;mut input_word).err();
+
+    //
+    let word = input_word.trim();
+    let mut count: u8 = 0;
+
+    //
+    for _i in word.chars() {
+        count += 1;
+    }
+
+    println!("{}", count);
+}</code></pre></pre>
+</details>
+<p>24 - Write a code that counts the number of characters (char) in a sentence, excluding whitespace.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&amp;mut input_phrase).err();
+
+    //
+    let phrase = input_phrase.trim().replace(" ", "");
+    let mut count: u8 = 0;
+
+    //
+    for _i in phrase.chars() {
+        count += 1;
+    }
+
+    println!("{}", count);
+}</code></pre></pre>
+</details>
+<p>25 - Write a code that takes a &amp;mut String and replaces all lowercase 'a' characters with uppercase 'A's, modifying the original String.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    // create new var
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&amp;mut input_phrase).err();
+
+    //
+    let phrase = input_phrase.trim().replace("a", "A");
+    println!("{}", phrase);
+
+    // mut input_phrase
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&amp;mut input_phrase).err();
+
+    //
+    let bytes = unsafe { input_phrase.as_bytes_mut() };
+
+    for i in bytes.iter_mut() {
+        if *i == b'a' {
+            *i = b'A';
+        }
+    }
+    println!("{}", phrase);
+}</code></pre></pre>
+</details>
+<p>26 - Write code that removes the last character from a String.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_character: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_character)
+        .expect("Data entry erro!");
+
+    let mut character: String = input_character.trim_end().to_string();
+    character.pop();
+    println!("{}", character);
+}
+
+// or
+
+use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_character: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_character)
+        .expect("Data entry erro!");
+
+    //
+    let mut count = 0;
+    let mut character: String = String::new();
+
+    for i in input_character.trim_end().chars() {
+        count += 1;
+
+        if count &lt; input_character.len() - 1 {
+            character.push(i);
+        }
+    }
+    println!("{}", character);
+}</code></pre></pre>
+</details>
+<p>27 - Use the .clear() method to empty a String without deallocating its memory capacity.</p>
+<p><a href="04-strings-and-str/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    let mut var_string: String = String::with_capacity(50);
+    var_string.push_str("Hello, world!");
+
+    //
+    println!("String = {}", var_string);
+    println!("Capacity = {}", var_string.capacity());
+    println!("Len = {}", var_string.len());
+    println!("");
+
+    //
+    var_string.clear();
+    println!("String = {}", var_string);
+    println!("Capacity = {}", var_string.capacity());
+    println!("Len = {}", var_string.len());
+}</code></pre></pre>
+</details>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="control-flow"><a class="header" href="#control-flow">Control Flow</a></h1>
+<p>This chapter covers Rust's control flow structures – the fundamental tools for making decisions and repeating actions in your programs.</p>
+<p>We'll start with conditional statements: if for basic decisions, else for alternatives, and combined if-else for multiple scenarios. Then we'll explore loops: loop for infinite iterations, while for condition-based repetition, and for for iterating over collections.</p>
+<p>We'll also cover match – Rust's powerful pattern matching feature that handles complex conditions with precision and safety.</p>
+<p>Each section includes practice questions to reinforce your understanding of these essential programming constructs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="if"><a class="header" href="#if">If</a></h1>
+<p>The "if" statement works simply: if a condition is met, execute some code.</p>
+<p>If 1 + 1 equals 2, print "Hello, world!"</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let num_1 = 1;
+let num_2 = 1;
+
+if num_1 + num_2 == 2 {
+    println!("Hello, world!");
+};
+<span class="boring">}</span></code></pre></pre>
+<p><code>if</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let num: u8 = 2;
+
+if num &gt; 1 {
+    println!("Num &gt; 1!");
+};
+<span class="boring">}</span></code></pre></pre>
+<p><code>if expression</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let code: u8;
+code = 8;
+
+let result = if code &gt; 1 &amp;&amp; code % 2 == 0 {
+    println!("Code = {:?} even", code);
+};
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="else"><a class="header" href="#else">Else</a></h1>
+<p>Now that we understand how "if" works, "else" is the complement. Think of it like this: if something is true, do this; otherwise, do that.</p>
+<p>If 1 + 1 equals 2, print "Hello, world!"; otherwise, print "Goodbye, World."</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let num_1 = 1;
+let num_2 = 1;
+
+if num_1 + num_2 == 3 {
+    println!("Hello, world!");
+}
+
+else {
+    println!("Goodbye, World!");
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>if and else</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let num: u8 = 5;
+
+if num &gt;= 6 {
+    println!("Num &gt; or = 6!");
+} else {
+    println!("Num &lt;= 5!");
+};
+<span class="boring">}</span></code></pre></pre>
+<p><code>expression</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let score = 51;
+let grade = if score &gt;= 50 { "+50"} else { "-50" };
+println!("{}", grade);
+
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let num: u8 = 24;
+
+let result: String = if num &gt; 20 || num &lt;= 30 {
+      String::from("Temp &gt; 20 or &lt;= 30!")
+} else {
+      String::from("Temp &lt; 20 or &gt;= 30!")
+};
+
+println!("Temp: {}", num);
+println!("{}", result);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="else-if"><a class="header" href="#else-if">Else if</a></h1>
+<p>Building on "if" and "else", "else if" allows you to check multiple conditions in sequence. Think of it as: if the first condition is true, do this; if the second condition is true, do that; otherwise, do something else.</p>
+<p>If score equals 90, print "Excellent"; else if score equals 80, print "Good"; else, print "Try harder"</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let score = 84;
+
+if score &gt;= 90 {
+    println!("Excellent!");
+}
+
+else if score &gt;= 80 {
+    println!("Good!");
+}
+
+else {
+    println!("Try harder!");
+}
+
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let temp: i8 = 30;
+
+//
+if temp &lt; 0 {
+    println!("Temp == 0°C");
+} else if temp &gt;= 0 &amp;&amp; temp &lt; 10 {
+    println!("Temp &gt;= 0°C and &lt; 10°C");
+} else if temp &gt;= 10 &amp;&amp; temp &lt; 20 {
+    println!("Temp &gt;= 10°C and &lt; 20°C");
+} else if temp &gt;= 20 &amp;&amp; temp &lt; 30 {
+    println!("Temp &gt;= 20°C and &lt; 30°C");
+} else {
+    println!("Temp &gt;= 30°C!");
+};
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="loop"><a class="header" href="#loop">Loop</a></h1>
+<p>For infinite repetitions that continue until explicitly stopped with "break".</p>
+<blockquote>
+<p>Access: <a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=9b6c6ebd14320801175b48fba7a10b6c">Loop without the break</a></p>
+</blockquote>
+<p><code>loop + break</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+loop {
+    println!("Hello, world!");
+    break;
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>loop + if</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut count = 0;
+
+loop {
+    println!("Cont: {}", count);
+    count += 1;
+
+    if count == 5 {
+        break;
+    }
+}
+
+println!("End of loop!");
+<span class="boring">}</span></code></pre></pre>
+<p><code>loop + break + continue</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut count = 0;
+let max_value = 7;
+
+loop {
+    count += 1;
+
+    if count % 2 == 0 {
+        continue;
+    }
+
+    println!(" Odd = {}", count);
+    
+    if count &gt;= max_value {
+        break;
+    }
+
+    println!("---")
+}
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="while"><a class="header" href="#while">While</a></h1>
+<p>Repeats a block of code as long as a condition remains true.</p>
+<p>Checks the condition before each iteration.</p>
+<p><code>while</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut count = 0;
+
+while count &lt;= 5 {
+    println!("Count = {}", count);
+    count += 1;
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>while + continue</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let mut count = 0;
+let max_value = 4;
+
+while count &lt;= max_value {
+    //
+    count += 1;
+
+    if count % 2 == 0 {
+        println!("Count is even! Value = {}", count);
+        continue;
+    }
+    println!("---");
+}
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="for"><a class="header" href="#for">For</a></h1>
+<p>Iterates over collections, ranges, or any iterable.</p>
+<p>Safer than manual indexing, handles bounds automatically.</p>
+<p><code>for</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+for element in collection {
+
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>0..4</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+for i in 0..5 {
+    println!("{}", i);
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>0..=5</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+for i in 0..=5 {
+    println!("{}", i);
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>.rev = 4..3..2..1..</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+for i in (0..5).rev() {
+    println!("{}", i);
+}
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 5 - 0
+for i in (0..=5).rev() {
+    println!("{}", i);
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>for + &amp;str</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let name: &amp;str = "Rust";
+for i in name.chars() {
+    println!("{}", i);
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>for + array</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let arr = ["apple", "banana", "orange", "guava"];
+for i in arr {
+    println!("{:#?}", i)
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>for + array bidimensional</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let arr: [[i32; 3]; 3] = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+];
+
+for i in arr {
+    for j in i {
+        print!("{}", j);
+    }
+    println!();
+}
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="match"><a class="header" href="#match">Match</a></h1>
+<p>Match compares a value against different patterns and executes the code corresponding to the first pattern that matches. It's like a more powerful and safer switch.</p>
+<p>It ensures that all possible cases are covered, preventing common bugs. Unlike traditional switch, it doesn't need break and always returns a value.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let a = 3;
+
+match a {
+  1 =&gt; println!("1"),
+  2 =&gt; println!("2"),
+  3 =&gt; println!("3"),
+  _ =&gt; println!("else"),
+};
+<span class="boring">}</span></code></pre></pre>
+<p><code>range</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let age = 63;
+
+let category = match age {
+  0..=11 =&gt; "child",
+  12..=17 =&gt; "teenager",
+  18..=64 =&gt; "adult",
+  _ =&gt; "elderly",
+};
+
+println!("{}", category);
+<span class="boring">}</span></code></pre></pre>
+<p><code>println!()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let alph = 'g';
+
+println!("{:?}", match alph {
+  'A'..='Z' =&gt; "A ... Z",
+  'a'..='z' =&gt; "a ... z",
+  _ =&gt; "other",
+});
+<span class="boring">}</span></code></pre></pre>
+<p><code>operation</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let number = 20;
+
+let result = match number {
+  1 | 3 | 5 | 7 | 9 =&gt; "odd",
+  2 | 4 | 6 | 8 | 10 =&gt; "even",
+  _=&gt; "else",
+};
+
+println!("{}", result);
+<span class="boring">}</span></code></pre></pre>
+<p><code>equal</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//
+let even = (2, -2);
+
+let result = match even {
+  (x, y) if x == y =&gt; "equal",
+  (x, _) if x % 2 == 0 =&gt; "first even",
+  _=&gt; "none",
+};
+
+println!("{:?}", result);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---if-and-else"><a class="header" href="#questions---if-and-else">Questions - If and Else</a></h1>
+<blockquote>
+<p>The code repetition in the answers is intentional. When we get to the chapter on "Functions and Modules", we will return to these questions to refactor them.</p>
+</blockquote>
+<p>01 - Write a program that asks the user for an integer and determines whether it's even or odd.</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter a number:");
+
+    //
+    let mut input: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input)
+        .expect("Error in the value entered!");
+
+    //
+    let num: i32 = match input.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    //
+    if num % 2 == 0 {
+        println!("Num = {}\nEven!", num);
+    } else {
+        println!("Num = {}\nOdd!", num);
+    }
+}</code></pre></pre>
+</details>
+<p>02 - Create a program that reads a number and prints whether it's positive, negative, or zero.</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter a number: ");
+
+    //
+    let mut input_num: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_num)
+        .expect("Error in the value entered!");
+
+    let num: i8 = input_num.trim().parse().expect("Error converting data!");
+
+    //
+    if num &gt; 0 {
+        println!("Num = {}!\nPositive", num);
+    } else if num &lt; 0 {
+        println!("Num = {}!\nNegative", num);
+    } else {
+        println!("Num = {}!\nZero", num);
+    }
+}</code></pre></pre>
+</details>
+<p>03 - Develop a program that receives two numbers and shows which one is larger.</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter a number (a):");
+    let mut input_num_a: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_num_a)
+        .expect("Error in the value entered!");
+
+    //
+    println!("Enter a number (b):");
+    let mut input_num_b: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_num_b)
+        .expect("Error in the value entered!");
+
+    //
+    let num_a: i8 = match input_num_a.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting data (A)!");
+            return;
+        }
+    };
+
+    let num_b: i8 = match input_num_b.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting data (B)!");
+            return;
+        }
+    };
+
+    //
+    if num_a &gt; num_b {
+        println!("Num A &gt; Num B");
+    } else if num_a &lt; num_b {
+        println!("Num A &lt; Num B");
+    } else {
+        println!("Num A == Num B");
+    }
+}</code></pre></pre>
+</details>
+<p>04 - Create a program that receives 3 grades from a student (from 0 to 10) and then calculates the average of the grades and reports:</p>
+<ul>
+<li>passed (grade &gt;= 7)</li>
+<li>failed (grade &lt; 5)</li>
+<li>in recovery (grade &gt;= 5 and &lt; 7).</li>
+</ul>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    //
+    println!("Enter you grade for your first test:");
+    let mut input_test_a: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_test_a)
+        .expect("Error entering the first grade!");
+
+    //
+    println!("Enter the grade for your second test:");
+    let mut input_test_b: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_test_b)
+        .expect("Error entering the second grade!");
+
+    //
+    println!("Enter the grade for your third test:");
+    let mut input_test_c: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_test_c)
+        .expect("Error entering the third test!");
+
+    //
+    let test_a: f32 = match input_test_a.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting: Test A!");
+            return;
+        }
+    };
+
+    let test_b: f32 = match input_test_b.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting: Test B!");
+            return;
+        }
+    };
+
+    let test_c: f32 = match input_test_c.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting: Test C!");
+            return;
+        }
+    };
+
+    let ava: f32 = (test_a + test_b + test_c) / 3.;
+
+    //
+    if ava &lt; 5. {
+        println!("You failed!");
+    } else if ava &gt;= 5. &amp;&amp; ava &lt; 7. {
+        println!("You are in recovery!");
+    } else {
+        println!("You passed!");
+    }
+}</code></pre></pre>
+</details>
+<p>05 - Write a program that reads a person's age and determines if they can vote (16 years or older).</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter your age:");
+
+    let mut input_age: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_age)
+        .expect("Error in the entered!");
+
+    //
+    let age: u8 = match input_age.trim().parse() {
+        Ok(age) =&gt; age,
+        Err(_) =&gt; {
+            println!("Error converting age!");
+            return;
+        }
+    };
+
+    //
+    if age &gt;= 16 &amp;&amp; age &lt;= 59 {
+        println!("You are required to vote!");
+    } else if age &gt;= 60 &amp;&amp; age &lt;= 100 {
+        println!("Your vote is optional!");
+    } else {
+        println!("You cannot vote!");
+    }
+}</code></pre></pre>
+</details>
+<p>06 - Develop a program that asks for three numbers and determines which one is the largest.</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    // a
+    println!("Enter with number! A: ");
+    let mut input_a: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_a)
+        .expect("Error in the entered!");
+
+    // b
+    println!("Enter with number! B: ");
+    let mut input_b: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_b)
+        .expect("Error in the entered!");
+
+    // c
+    println!("Enter with number! C: ");
+    let mut input_c: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_c)
+        .expect("Error in the entered!");
+
+    //
+    let num_a: i8 = match input_a.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num A!");
+            return;
+        }
+    };
+
+    let num_b: i8 = match input_b.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num B!");
+            return;
+        }
+    };
+
+    let num_c: i8 = match input_c.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num C!");
+            return;
+        }
+    };
+
+    //
+    if num_a == num_b &amp;&amp; num_b == num_c {
+        println!("A = B = C = {}", num_a);
+    } else if num_a == num_b &amp;&amp; num_a &gt; num_c {
+        println!("A = B = {} &gt; C = {}", num_a, num_c);
+    } else if num_a == num_b &amp;&amp; num_a &lt; num_c {
+        println!("C = {} &gt; A = B = {}", num_c, num_a);
+    } else if num_a == num_c &amp;&amp; num_a &gt; num_b {
+        println!("A = C = {} &gt; B = {}", num_a, num_b);
+    } else if num_a == num_c &amp;&amp; num_a &lt; num_b {
+        println!("B = {} &gt; A = C = {}", num_b, num_a);
+    } else if num_b == num_c &amp;&amp; num_b &gt; num_a {
+        println!("B = C = {} &gt; A = {}", num_b, num_a);
+    } else if num_b == num_c &amp;&amp; num_b &lt; num_a {
+        println!("A = {} &gt; B = C = {}", num_a, num_b);
+    } else if num_a &gt; num_b &amp;&amp; num_a &gt; num_c {
+        println!("A = {}", num_a);
+    } else if num_b &gt; num_a &amp;&amp; num_b &gt; num_c {
+        println!("B = {}", num_b);
+    } else {
+        println!("C = {}", num_c);
+    }
+}    </code></pre></pre>
+</details>
+<p>07 - Ceate a program that converts a numerical score (0 to 100) to a letter grade, following these rules:</p>
+<ul>
+<li>A: 90-100</li>
+<li>B: 80-89</li>
+<li>C: 70-79</li>
+<li>D: 60-69</li>
+<li>F: 0-59</li>
+</ul>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter with number (0 - 100):");
+    let mut input_num: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_num)
+        .expect("Error in the entered!");
+
+    let num: u8 = match input_num.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num:");
+            return;
+        }
+    };
+
+    //
+    if num &gt; 0 &amp;&amp; num &lt;= 59 {
+        println!("F");
+    } else if num &gt;= 60 &amp;&amp; num &lt;= 69 {
+        println!("D");
+    } else if num &gt;= 70 &amp;&amp; num &lt;= 79 {
+        println!("C");
+    } else if num &gt;= 80 &amp;&amp; num &lt;= 89 {
+        println!("B");
+    } else if num &gt;= 90 &amp;&amp; num &lt;= 100 {
+        println!("A");
+    } else {
+        println!("Error!");
+    }
+}</code></pre></pre>
+</details>
+<p>08 - Write a program that receives the lengths of the three sides of a triangle and determines if it is equilateral (all sides equal), isosceles (two sides equal), or scalene (all sides different).</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    // a
+    println!("Enter the size of side A:");
+    let mut input_a: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_a)
+        .expect("Error in the entered!");
+
+    // b
+    println!("Enter the size of side B:");
+    let mut input_b: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_b)
+        .expect("Error in the entered!");
+
+    // c
+    println!("Enter the size of side C:");
+    let mut input_c: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_c)
+        .expect("Error in the entered!");
+
+    //
+    let a: f32 = match input_a.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num A:");
+            return;
+        }
+    };
+    let b: f32 = match input_b.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num B:");
+            return;
+        }
+    };
+    let c: f32 = match input_c.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting num C:");
+            return;
+        }
+    };
+
+    //
+    if a == b &amp;&amp; b == c {
+        println!("Equilateral");
+    } else if a == b || b == c || a == c {
+        println!("Isosceles");
+    } else {
+        println!("Scalene");
+    }
+}</code></pre></pre>
+</details>
+<p>09 - Write a program that receives a number from 1 to 7 and prints the corresponding day of the week (1 for Sunday, 2 for Monday, etc.), also indicating if it's a "Weekday" or "Weekend."use std::io;</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter a number from 1 to 7:");
+    let mut input_day: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_day)
+        .expect("Error in the entered!");
+
+    let day: u8 = match input_day.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting day!");
+            return;
+        }
+    };
+
+    //
+    if day == 1 || day == 7 {
+        if day == 1 {
+            println!("Sunday - Weekend!");
+        } else {
+            println!("Saturday - Weekend!");
+        }
+    } else if day == 2 {
+        println!("Monday - Weekday!");
+    } else if day == 3 {
+        println!("Tuesday - Weekday!");
+    } else if day == 4 {
+        println!("Wednesday - Weekday!");
+    } else if day == 5 {
+        println!("Thursday - Weekday!");
+    } else if day == 6 {
+        println!("Friday - Weekday!");
+    } else {
+        println!("Error!");
+    }
+}</code></pre></pre>
+</details>
+<p>10 - Write a program that reads a person's age and classifies them into the following categories:</p>
+<ul>
+<li>Child: 0-12 years</li>
+<li>Teenager: 13-17 years</li>
+<li>Adult: 18-59 years</li>
+<li>Elderly: 60 years or more</li>
+</ul>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter you age:");
+    let mut input_age: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_age)
+        .expect("Error in the entered!");
+
+    let age: u8 = match input_age.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting age!");
+            return;
+        }
+    };
+
+    //
+    if age &gt;= 1 &amp;&amp; age &lt;= 12 {
+        println!("Child!");
+    } else if age &gt;= 13 &amp;&amp; age &lt;= 17 {
+        println!("Teenager!");
+    } else if age &gt;= 18 &amp;&amp; age &lt;= 59 {
+        println!("Adult");
+    } else if age &gt;= 60 &amp;&amp; age &lt;= 112 {
+        println!("Elderly!");
+    } else {
+        println!("Error: Age &gt; 112!");
+    }
+}</code></pre></pre>
+</details>
+<p>11 - Create a program that functions as a calculator. It should receive two numbers and an operator (+, -, *, /). The program should perform the corresponding operation and show the result. Also, handle division by zero.</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter the first number:");
+    let mut input_first_number: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_first_number)
+        .expect("Error receiving first number!");
+
+    //
+    println!("Enter the second number:");
+    let mut input_second_number: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_second_number)
+        .expect("Error receiving first number!");
+
+    //
+    println!("Insert the mathematical operator:");
+    let mut input_operator: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_operator)
+        .expect("Error receiving mathematical operator!");
+
+    //
+    let first_number: f32 = match input_first_number.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting number!");
+            return;
+        }
+    };
+
+    //
+    let second_number: f32 = match input_second_number.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting number!");
+            return;
+        }
+    };
+
+    //
+    let operator: char = match input_operator.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting number!");
+            return;
+        }
+    };
+
+    //
+    if operator == '+' {
+        println!(
+            "{} {} {} = {}",
+            first_number,
+            operator,
+            second_number,
+            first_number + second_number
+        );
+    } else if operator == '-' {
+        println!(
+            "{} {} {} = {}",
+            first_number,
+            operator,
+            second_number,
+            first_number - second_number
+        );
+    } else if operator == '*' {
+        println!(
+            "{} {} {} = {}",
+            first_number,
+            operator,
+            second_number,
+            first_number * second_number
+        );
+    } else if operator == '/' {
+        if second_number == 0. {
+            println!("[Error] Second number equal 0.");
+        } else {
+            println!(
+                "{} {} {} = {}",
+                first_number,
+                operator,
+                second_number,
+                first_number / second_number
+            );
+        }
+    } else {
+        println!("[Error] Mathematical operator not allowed!");
+    }
+}
+</code></pre></pre>
+</details>
+<p>12 - Develop a program that calculates a discount based on the purchase amount:</p>
+<ul>
+<li>Purchases below R$ 100: no discount;</li>
+<li>Purchases from R$ 100 to R$ 500: 10% discount;</li>
+<li>Purchases above R$ 500: 20% discount.</li>
+</ul>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    //
+    println!("Enter the value:");
+    let mut input_value: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_value)
+        .expect("Error receiving value!");
+
+    let value: f32 = match input_value.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("Error converting value!");
+            return;
+        }
+    };
+
+    //
+    if value &lt; 100. {
+        println!("Value: {} - No discount!", value);
+    } else if value &gt;= 100. &amp;&amp; value &lt;= 500. {
+        let discount = value - ((value * 10.) / 100.);
+        println!("Value: {} - Discount 10%\nNew value: {}", value, discount);
+    } else if value &gt; 500. {
+        let discount = value - ((value * 20.) / 100.);
+        println!("Value: {} - Discount 20%\nNew value: {}", value, discount);
+    } else {
+        println!("Error!");
+    }
+}</code></pre></pre>
+</details>
+<p>13 - Write a program that calculates a person's BMI (weight / height²) and classifies the result:</p>
+<ul>
+<li>Below 18.5: Underweight</li>
+<li>18.5 - 24.9: Normal weight</li>
+<li>25.0 - 29.9: Overweight</li>
+<li>30.0 or more: Obesity</li>
+</ul>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    const ERROR_INPUT: &amp;str = "Error receiving valeu!";
+    const ERROR_CONVERTING: &amp;str = "Error converting value!";
+
+    //
+    println!("Enter the Weight:");
+    let mut input_weight: String = String::new();
+    io::stdin().read_line(&amp;mut input_weight).expect(ERROR_INPUT);
+
+    let weight: f32 = match input_weight.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("{}", ERROR_CONVERTING);
+            return;
+        }
+    };
+
+    //
+    println!("Enter the Height:");
+    let mut input_height: String = String::new();
+    io::stdin().read_line(&amp;mut input_height).expect(ERROR_INPUT);
+
+    let height: f32 = match input_height.trim().parse() {
+        Ok(val) =&gt; val,
+        Err(_) =&gt; {
+            println!("{}", ERROR_CONVERTING);
+            return;
+        }
+    };
+
+    //
+    let bmi: f32 = weight / (height * height);
+
+    if bmi &lt;= 18.5 {
+        println!("Underweight!");
+    } else if bmi &lt;= 24.9 {
+        println!("Normal weight!");
+    } else if bmi &lt;= 29.9 {
+        println!("Overweight!");
+    } else if bmi &gt;= 30.0 {
+        println!("Obesity!");
+    } else {
+        println!("Error calculating BMI or invalid range!");
+    }
+}</code></pre></pre>
+</details>
+<p>14 - Create a program that asks for a username and a password. If the username is "admin" and the password is "1234", display "Access granted". Otherwise, display "Access denied".</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+const ERROR_INPUT: &amp;str = "Data entry error!";
+
+fn main() {
+    //
+    println!("Username:");
+    let mut input_username: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_username)
+        .expect(ERROR_INPUT);
+    let username: &amp;str = input_username.trim();
+
+    //
+    println!("Password:");
+    let mut input_password: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_password)
+        .expect(ERROR_INPUT);
+    let password: &amp;str = input_password.trim();
+
+    //
+    if username == "admin" &amp;&amp; password == "1234" {
+        println!("Access Granted!");
+    } else {
+        println!("Access Denied!");
+    }
+}</code></pre></pre>
+</details>
+<p>15 - Create the game "Rock, Paper, Scissors." Ask for the choices of two players and determine the winner based on the classic rules.</p>
+<p><a href="05-control-flow/">Playground!</a></p>
+<details>
+<summary>Answers</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    //
+    println!("--- Start ---");
+    println!("Player 1");
+    println!("Computer");
+    println!("");
+
+    //
+    println!("-- Select --");
+    println!("  Player 1  ");
+    println!("");
+    println!("[1] Rock");
+    println!("[2] Paper");
+    println!("[3] Scissors");
+    println!("");
+    println!("1 | 2 | 3");
+
+    //
+    let mut input_player1: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut input_player1)
+        .expect("Data entry error!");
+    let mut player1: &amp;str = input_player1.trim();
+
+    //
+    if player1 == "1" {
+        player1 = "Rock";
+    } else if player1 == "2" {
+        player1 = "Paper";
+    } else {
+        player1 = "Scissors";
+    }
+
+    //
+    println!("");
+    println!("-- Select --");
+    println!("  Player 2  ");
+    println!("");
+    println!("-- Raffling --");
+    println!("[1] Rock");
+    println!("[2] Paper");
+    println!("[3] Scissors");
+    println!("");
+
+    //
+    let nanos = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .expect("Error")
+        .as_nanos();
+
+    let nano_computer = (nanos % 3 + 1) as u8;
+    let computer: &amp;str;
+
+    if nano_computer == 1 {
+        computer = "Rock";
+    } else if nano_computer == 2 {
+        computer = "Paper";
+    } else {
+        computer = "Scissors";
+    }
+
+    //
+    if player1 == computer {
+        println!("Player 1: {} and Computer: {}", player1, computer);
+        println!("The game is a draw!");
+    } else if player1 == "Rock" {
+        if computer == "Paper" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Loser!");
+        }
+        if computer == "Scissors" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Win!");
+        }
+    } else if player1 == "Paper" {
+        if computer == "Rock" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Win!");
+        }
+        if computer == "Scissors" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Loser!");
+        }
+    } else {
+        if computer == "Rock" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Loser!");
+        }
+        if computer == "Paper" {
+            println!("Player 1: {} and Computer: {}", player1, computer);
+            println!("Player 1: You Win!");
+        }
+    }
+}</code></pre></pre>
+</details>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---loop"><a class="header" href="#questions---loop">Questions - Loop</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---while"><a class="header" href="#questions---while">Questions - While</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---for"><a class="header" href="#questions---for">Questions - For</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questions---match"><a class="header" href="#questions---match">Questions - Match</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

@@ -42,11 +42,11 @@
     - [x] 6.1. If
     - [x] 6.2. Else
     - [x] 6.3. Else if
-    - [ ] 6.4. Loop
-    - [ ] 6.5. While
-    - [ ] 6.6. For
-    - [ ] 6.7. Match
-    - [ ] 6.8. Questions - If and Else
+    - [x] 6.4. Loop
+    - [x] 6.5. While
+    - [x] 6.6. For
+    - [x] 6.7. Match
+    - [x] 6.8. Questions - If and Else
     - [ ] 6.9. Questions - Loop
     - [ ] 6.10. Questions - While
     - [ ] 6.11. Questions - For
