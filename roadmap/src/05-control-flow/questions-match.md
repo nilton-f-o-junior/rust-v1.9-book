@@ -2,6 +2,12 @@
 
 01 - Write a program that inputs a character and indicates whether it is a vowel (a, e, i, o, u) or a consonant. Use match to validate.
 
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
 use std::io;
 
 fn main() {
@@ -21,7 +27,8 @@ fn main() {
         _ => println!("The character {} is consonant!", character),
     };
 }
-
+```
+</details>
 
 02 - Create a program that inputs a grade (0 to 10) and converts it to a grade.
 
@@ -32,6 +39,12 @@ D: 3 - 4
 E: 2 - 1
 F: 0
 
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
 use std::io;
 
 fn main() {
@@ -61,7 +74,8 @@ fn main() {
         _ => println!("The data provided is not valid!"),
     };
 }
-
+```
+</details>
 
 03 - Enter an age and classify it as:
 
@@ -70,6 +84,12 @@ fn main() {
 18-59: Adult
 60+: Senior
 
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
 use std::io;
 
 fn main() {
@@ -97,12 +117,24 @@ fn main() {
         _ => println!("Your Dead!"),
     };
 }
+```
+</details>
 
 04 - Receive username and password. Use tuple matching to validate:
 
 ("admin", "1234"): Admin logged in
 ("user", "pass"): User logged in
 _: Invalid credentials
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>
 
 05 - Receive a temperature in Celsius and classify it:
 
@@ -111,30 +143,62 @@ Below 0: Freezing
 16-25: Pleasant
 26-35: Warm
 Above 35: Very warm
-Playground!
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>
 
 Answers
 06 - Receive a number from 1-7 and print the corresponding day of the week, indicating whether it is "Workday" or "Weekend".
 
-Playground!
+[Playground!]()
 
-Answers
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>
+
 07 - Receive the month number (1-12) and return:
 
 Month name
 How many days does it have (consider February with 28)
-Playground!
 
-Answers
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>
+
 08 - Receive a character and sort it using match:
 
 '0'..='9': Digit
 'a'..='z' | 'A'..='Z': Letter
 ' ': Space
 _: Special symbol
-Playground!
 
-Answers
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>
+
 09 - Receive coordinates (x, y) and indicate which quadrant it is in:
 
 (positive, positive): Quadrant I
@@ -142,24 +206,52 @@ Answers
 (negative, negative): Quadrant III
 (positive, negative): Quadrant IV
 Origin if both are 0
-Playground!
 
-Answers
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>
+
 10 - Receive the quantity of items purchased and the customer type ('N' = Normal, 'V' = VIP):
 
 Use match with tuples (quantity, type)
 VIP: 20% discount always
 Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
-Playground!
 
-Answers
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>
+
 11 - Make a calculator that takes two numbers and an operator (+, -, *, /) and returns the result using match for the operator.
 
-Playground!
+[Playground!]()
 
-Answers
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>
+
 12 - Receive the choices of two players (1 = Rock, 2 = Paper, 3 = Scissors) and determine the winner using tuple matching: match(player1, player2) { ... }
 
-Playground!
+[Playground!]()
 
-Answers
+<details>
+<summary>Answers</summary>
+
+```rust
+```
+</details>
