@@ -150,12 +150,45 @@ Above 35: Very warm
 <summary>Answers</summary>
 
 ```rust
+use std::io;
 
+fn main() {
+    //
+    println!("Enter temperature:");
+
+    let mut input: String = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Error entered data!");
+
+    let temperature: f32 = match input.trim().parse() {
+        Ok(valid) => valid,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    match temperature {
+        f32::MIN..=-1.0 => println!("Freezing"),
+        0.0..=15.0 => println!("Cold"),
+        16.0..=25.0 => println!("Pleasant"),
+        26.0..=35.0 => println!("Warm"),
+        _ => println!("Very warm"),
+    };
+}
 ```
 </details>
 
-Answers
-06 - Receive a number from 1-7 and print the corresponding day of the week, indicating whether it is "Workday" or "Weekend".
+06 - Receive a number from 1-7 and print the corresponding day of the week.
+
+1 - Sunday
+2 - Monday
+3 - Tuesday
+4 - Wednesday
+5 - Thursday
+6 - Friday
+7 - Saturday
 
 [Playground!]()
 
@@ -163,7 +196,36 @@ Answers
 <summary>Answers</summary>
 
 ```rust
+use std::io;
 
+fn main() {
+    //
+    println!("Enter number");
+
+    let mut input: String = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Error entered data!");
+
+    let number: u8 = match input.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    match number {
+        1 => println!("Sunday"),
+        2 => println!("Monday"),
+        3 => println!("Tuesday"),
+        4 => println!("Wednesday"),
+        5 => println!("Thursday"),
+        6 => println!("Friday"),
+        7 => println!("Saturday"),
+        _ => println!("Enter a valid value!"),
+    }
+}
 ```
 </details>
 
@@ -178,7 +240,41 @@ How many days does it have (consider February with 28)
 <summary>Answers</summary>
 
 ```rust
+use std::io;
 
+fn main() {
+    //
+    println!("Enter number");
+
+    let mut input: String = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Error entered data!");
+
+    let number: u8 = match input.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    match number {
+        1 => println!("January - 31 Days"),
+        2 => println!("February - 28 Days"),
+        3 => println!("March - 31 Days"),
+        4 => println!("April - 30 Days"),
+        5 => println!("May - 31 Days"),
+        6 => println!("June - 30 Days"),
+        7 => println!("July - 31 Days"),
+        8 => println!("August - 31 Days"),
+        9 => println!("September - 30 Days"),
+        10 => println!("October - 31 Days"),
+        11 => println!("November - 30 Days"),
+        12 => println!("December - 31 Days"),
+        _ => println!("Enter a valid value!"),
+    }
+}
 ```
 </details>
 
