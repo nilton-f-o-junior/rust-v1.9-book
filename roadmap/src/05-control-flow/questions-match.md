@@ -122,8 +122,8 @@ fn main() {
 
 04 - Receive username and password. Use tuple matching to validate:
 
-("admin", "1234"): Admin logged in
-("user", "pass"): User logged in
+("admin", "1234"): Admin logged
+("user", "pass"): User logged
 _: Invalid credentials
 
 [Playground!]()
@@ -132,7 +132,29 @@ _: Invalid credentials
 <summary>Answers</summary>
 
 ```rust
+use std::io;
 
+fn main() {
+    println!("Enter character:");
+    let mut login = String::new();
+    io::stdin()
+        .read_line(&mut login)
+        .expect("Error entered data!");
+
+    println!("Enter character:");
+    let mut password = String::new();
+    io::stdin()
+        .read_line(&mut password)
+        .expect("Error entered data!");
+
+    let data: (&str, &str) = (login.trim(), password.trim());
+
+    match data {
+        ("admin", "1234") => println!("\nAdmin logged!"),
+        ("user", "pass") => println!("\nUser logged!"),
+        _ => println!("\nInvalid credentials!"),
+    };
+}
 ```
 </details>
 
@@ -326,7 +348,48 @@ Origin if both are 0
 <summary>Answers</summary>
 
 ```rust
+use std::io;
 
+fn main() {
+    println!("Enter coordinate (x):");
+
+    let mut input_x = String::new();
+    io::stdin()
+        .read_line(&mut input_x)
+        .expect("Error entered data!");
+
+    let x: i16 = match input_x.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error coverting data!");
+            return;
+        }
+    };
+
+    println!("Enter coordinate (y):");
+
+    let mut input_y = String::new();
+    io::stdin()
+        .read_line(&mut input_y)
+        .expect("Error entered data!");
+
+    let y: i16 = match input_y.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    match (x, y) {
+        (0, 0) => println!("Origin"),
+        (x, y) if x > 0 && y > 0 => println!("Quadrant I"),
+        (x, y) if x < 0 && y > 0 => println!("Quadrant II"),
+        (x, y) if x < 0 && y < 0 => println!("Quadrant III"),
+        (x, y) if x > 0 && y < 0 => println!("Quadrant IV"),
+        _ => println!("On axis!"),
+    };
+}
 ```
 </details>
 
