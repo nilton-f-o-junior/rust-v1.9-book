@@ -16,6 +16,24 @@ fn main () {
 - unwrap() - If an error occurs, the program crashes with a panic;
 - expect() - If an error occurs, it crashes but with your custom message.
 
+`char`
+
+```rust
+use std::io;
+
+fn main() {
+    println!("Enter character:");
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Error entered data!");
+
+    let ch: char = input.trim().chars().next().unwrap();
+
+    println!("{}", ch);
+}
+```
+
 `match`
 
 ```rust

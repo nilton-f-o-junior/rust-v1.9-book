@@ -291,7 +291,24 @@ _: Special symbol
 <summary>Answers</summary>
 
 ```rust
+use std::io;
 
+fn main() {
+    println!("Enter character:");
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Error entered data!");
+
+    let ch: char = input.chars().next().unwrap();
+
+    match ch {
+        '0'..='9' => println!("Number: 0-9!"),
+        'a'..='z' | 'A'..='Z' => println!("Letter: aA - zZ!"),
+        ' ' => println!("Space!"),
+        _ => println!("Special symbol!"),
+    }
+}
 ```
 </details>
 
