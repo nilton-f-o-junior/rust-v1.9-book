@@ -395,7 +395,7 @@ fn main() {
 
 10 - Receive the quantity of items purchased and the customer type ('N' = Normal, 'V' = VIP):
 
-Use match with tuples (quantity, type)
+Use match with tuples (type, quantity)
 VIP: 20% discount always
 Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
 
@@ -405,7 +405,43 @@ Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
 <summary>Answers</summary>
 
 ```rust
+use std::{io, u8};
 
+fn main() {
+    //
+    println!("Enter type:");
+
+    let mut input_type: String = String::new();
+    io::stdin()
+        .read_line(&mut input_type)
+        .expect("Error entered data!");
+
+    let ty: char = input_type.chars().next().unwrap();
+
+    //
+    println!("Enter quantity:");
+
+    let mut input_quantity: String = String::new();
+    io::stdin()
+        .read_line(&mut input_quantity)
+        .expect("Error entered data!");
+
+    let quantity: u8 = match input_quantity.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    //
+    match (ty, quantity) {
+        ('V' | 'v', u8::MIN..=u8::MAX) => println!("2o% discount always!"),
+        ('N' | 'n', 10..=u8::MAX) => println!("10% discount!"),
+        ('N' | 'n', 5..=9) => println!("5% discount!"),
+        _ => println!("No discount!"),
+    };
+}
 ```
 </details>
 
@@ -417,7 +453,59 @@ Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
 <summary>Answers</summary>
 
 ```rust
+use std::io;
 
+fn main() {
+    //
+    println!("Enter number (A):");
+
+    let mut input_a: String = String::new();
+    io::stdin()
+        .read_line(&mut input_a)
+        .expect("Error entered data!");
+
+    let a: f32 = match input_a.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    //
+    println!("Enter number (B):");
+
+    let mut input_b: String = String::new();
+    io::stdin()
+        .read_line(&mut input_b)
+        .expect("Error entered data!");
+
+    let b: f32 = match input_b.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    //
+    println!("Enter operator: +, -, *, /");
+
+    let mut input_operator: String = String::new();
+    io::stdin()
+        .read_line(&mut input_operator)
+        .expect("Error entered data!");
+
+    let operator: char = input_operator.trim().chars().next().unwrap();
+
+    let _result = match operator {
+        '+' => println!("\n{} + {} = {}", a, b, a + b),
+        '-' => println!("\n{} - {} = {}", a, b, a - b),
+        '*' => println!("\n{} * {} = {}", a, b, a * b),
+        '/' => println!("\n{} / {} = {}", a, b, a / b),
+        _ => println!("\nCalculation error!"),
+    };
+}
 ```
 </details>
 
@@ -429,5 +517,58 @@ Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
 <summary>Answers</summary>
 
 ```rust
+use std::io;
+
+fn main() {
+    //
+    println!("-- Start Game --");
+    println!("");
+    println!("Select:");
+    println!("[1] Rock");
+    println!("[2] Paper");
+    println!("[3] Scissors");
+    println!("");
+
+    println!("Player 1:");
+    let mut input_player1: String = String::new();
+    io::stdin()
+        .read_line(&mut input_player1)
+        .expect("Entered error data!");
+
+    let player1: u8 = match input_player1.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    println!("\nPlayer 2:");
+    let mut input_player2: String = String::new();
+    io::stdin()
+        .read_line(&mut input_player2)
+        .expect("Entered error data!");
+
+    let player2: u8 = match input_player2.trim().parse() {
+        Ok(value) => value,
+        Err(_) => {
+            println!("Error converting data!");
+            return;
+        }
+    };
+
+    let _result = match (player1, player2) {
+        (1, 1) => println!("Game tied!"),
+        (1, 2) => println!("Player 2 - Win!"),
+        (1, 3) => println!("Player 1 - Win!"),
+        (2, 1) => println!("Player 1 - Win!"),
+        (2, 2) => println!("Game tied!"),
+        (2, 3) => println!("Player 2 - Win!"),
+        (3, 1) => println!("Player 2 - Win!"),
+        (3, 2) => println!("Player 1 - Win!"),
+        (3, 3) => println!("Game tied!"),
+        _ => println!("Error processing game!"),
+    };
+}
 ```
 </details>
