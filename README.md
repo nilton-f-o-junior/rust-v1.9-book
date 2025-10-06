@@ -47,7 +47,7 @@
     - [x] 6.6. For
     - [x] 6.7. Match
     - [x] 6.8. Questions - If and Else
-    - [ ] 6.9. Questions - Loop
-    - [ ] 6.10. Questions - While
-    - [ ] 6.11. Questions - For
+    - [x] 6.9. Questions - Loop
+    - [x] 6.10. Questions - While
+    - [x] 6.11. Questions - For
     - [ ] 6.12. Questions - Match
