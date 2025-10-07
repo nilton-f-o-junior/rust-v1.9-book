@@ -54,7 +54,7 @@ fn main() {
 
 04 - Which macro would you use to print text on the same line, without adding a newline at the end?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4e02ed5b47aad35837a799a8a0a0c4d7)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e4856d8e5db1a230eabd7a373b7c19cb)
 
 <details>
 <summary>Answers</summary>
@@ -68,7 +68,7 @@ fn main() {
 
 05 - Which macro would you use to print text and automatically add a newline at the end?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a5eea68123268d97baee293221c6756e)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d2179429b394b45721d1c73919bacf49)
 
 <details>
 <summary>Answers</summary>
@@ -82,7 +82,7 @@ fn main() {
 
 06 - Write code that prints "Hello" and "World" on the same line using the print! macro.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=686866a6b4a19384ac1eb0b52760c5bc)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=42cccc24de7c5815f291bc3d8d22caf5)
 
 <details>
 <summary>Answers</summary>
@@ -97,7 +97,7 @@ fn main() {
 
 07 - How do you insert an explicit newline within a string that is being printed with println!?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6013598006585c63a7e0770fe792420c)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b7951efa7e6e49085d65ff93f7e691e5)
 
 <details>
 <summary>Answers</summary>
@@ -111,7 +111,7 @@ fn main() {
 
 08 - What other escape sequences can you use in Rust strings? Give examples of at least 3.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6634c445572d88f455155b7b1b46fe12)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7403a31127d2a3aec8e5392ed02c8d14)
 
 <details>
 <summary>Answers</summary>
@@ -128,7 +128,7 @@ fn main() {
 
 09 - How do you declare a variable named score and assign it the value 100?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e5dd834f9998a707399dfb6651cb03b5)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b826a42d72b75aba5ebda90fedf9c1fd)
 
 <details>
 <summary>Answers</summary>
@@ -143,7 +143,7 @@ fn main() {
 
 10 - Write a line of code that declares a variable city with the value "Paris" and then prints it to the screen.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9a2895ed4e82f3c19abd6b8ec95088bd)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d0409df2308bf11252f542cc17da5d6c)
 
 <details>
 <summary>Answers</summary>
@@ -158,7 +158,7 @@ fn main() {
 
 11 - What happens if you try to use a variable before declaring it in Rust?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a9aa6e4f7515cc541b42e4db75ca663d)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1b390015e150ce46ca78f5ac05918f8a)
 
 <details>
 <summary>Answers</summary>
@@ -173,7 +173,7 @@ fn main() {
 
 12 - Can you declare a variable without initializing it in Rust? If yes, show how to use it safely.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=eb0651b37f9b2fa6c63d168c1a45d9d0)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8e1a79593881a2efa5921eadf72988b3)
 
 <details>
 <summary>Answers</summary>
@@ -189,7 +189,7 @@ fn main() {
 
 13 - Which keyword is used to declare a variable that can have its value changed after initialization?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=548092becfd664d530907c9eee56d38a)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=333bd38f140229dd1849bf931614771a)
 
 <details>
 <summary>Answers</summary>
@@ -205,7 +205,7 @@ fn main() {
 
 14 - Declare a mutable variable named counter initialized with 0. Then, write the code to change the value of counter to 5 and print it.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0795b5acd1166e2678bda3a5b29a0178)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fdacf6a4c3ef56dc9aeec90fcbce98c3)
 
 <details>
 <summary>Answers</summary>
@@ -223,7 +223,7 @@ fn main() {
 
 15 - What happens if you try to modify an immutable variable in Rust?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=486320f5b8aa62db833f89ebe2c30034)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0202c11ee739741dc5bab62b3836b601)
 
 <details>
 <summary>Answers</summary>
@@ -240,7 +240,7 @@ fn main() {
 
 16 - How do you declare a constant named `MAX_SPEED` with the value 9000 of type i32?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f286434d3dd401bcde002918e1458345)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=21cc6b6e3cb2de5673f6986b49d64531)
 
 <details>
 <summary>Answers</summary>
@@ -256,7 +256,7 @@ fn main() {
 
 17 - Is it possible to change the value of a constant after its declaration?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b76b5d986e417394cb9c633eb3963232)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=dea23027498cecfc6d7494ee0f6a29e9)
 
 <details>
 <summary>Answers</summary>
@@ -271,7 +271,7 @@ fn main() {
 
 18 - What are the main differences between constants and immutable variables in Rust?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b60d2a9f6bd14c3b757e6344611c942d)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9e24ca67cecd27352a1f9203ecad0fb6)
 
 <details>
 <summary>Answers</summary>
@@ -300,7 +300,7 @@ println!("Constant: {}, Variable: {}", GLOBAL_CONSTANT, immutable_var);
 
 19 - How would you use the format! macro to create the string "The value is: 42" from the number 42?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2e62fb1c39369ab5990cc9dfecf30f5a)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a60096c69cc3047dad9f363176b6f0f1)
 
 <details>
 <summary>Answers</summary>
@@ -316,7 +316,7 @@ fn main() {
 
 20 - How can you format the number 7 so that it is displayed as "0007" using format!?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=70323570b221dc4c61f4b898cea8e4af)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2b98281fe106689fb495a18383396d85)
 
 <details>
 <summary>Answers</summary>
@@ -335,7 +335,7 @@ fn main() {
 
 21 - How would you format a floating-point number to show exactly 2 decimal places?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e3abe04bf06f34178ef7b1740cd9dd6f)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f8d665c04afe27ca181d60ea22323e86)
 
 <details>
 <summary>Answers</summary>
@@ -354,7 +354,7 @@ fn main() {
 
 22 - Demonstrate how to use positional arguments in format strings.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=91818e7dff05501474500359c5290376)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7a767d904e3c00be1be74226f86f288c)
 
 <details>
 <summary>Answers</summary>
@@ -379,7 +379,7 @@ fn main() {
     
 23 - What is "shadowing" in Rust? Explain with a code example and what the output would be.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d34fb4b6af83324f752d40fb382e6d0e)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7836ee1978357c059a77ad33327147f0)
 
 <details>
 <summary>Answers</summary>

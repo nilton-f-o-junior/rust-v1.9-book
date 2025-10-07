@@ -100,7 +100,7 @@ fn main() {
 
 06 - Declare a variable named current_altitude_change of type i16 to represent an altitude change in meters. Assign it the value -350 (a descent of 350 meters). Print this value.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7a2a01f04910de51356178ecc0027263)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5fefa9d7ce4cc1d65c3f62254be008ee)
 
 <details>
 <summary>Answers</summary>
@@ -143,7 +143,7 @@ fn main() {
 
 08 - Try declaring a variable value_a of type u8 with 10 and value_b of type u8 with -10. What happens to value_b during compilation?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f790bcdace498e317a1d478d7b62bc4c)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d22d2b41277ecb5d06e61a19b994c7d8)
 
 <details>
 <summary>Answers</summary>
@@ -163,7 +163,7 @@ fn main() {
 
 09 - Declare a variable precise_measurement of type f64 with the value 123.456789123456. Print it.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=52d0f2160d00f1f2d3abd971c86e892c)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=774ca7ceba9370f8c4efd0e791727faf)
 
 <details>
 <summary>Answers</summary>
@@ -203,7 +203,7 @@ fn main() {
 
 11 - Declare a character char_ascii = 'Z'; and a Unicode character char_unicode = 'Ω'; (Greek letter Omega). Use std::mem::size_of_val(&char_ascii) and std::mem::size_of_val(&char_unicode) to print the size in bytes of each. What do you observe?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a6361949dbd0aea670af5d2504cc32ca)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9a25a88b9bf2bd2fddf69e5dd32e8bfe)
 
 <details>
 <summary>Answers</summary>
@@ -231,7 +231,7 @@ fn main() {
 
 12 - Declare a variable my_initial of type char and assign it the first letter of your name. Print it.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b86a08ed0c61cc1857bd7d689f682424)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b146d46c965a35609541cc2ce8a0fa56)
 
 <details>
 <summary>Answers</summary>
@@ -249,7 +249,7 @@ fn main() {
 
 13 - Declare three char variables: emoji_char with '😊', math_symbol with '∑', and arrow_char with '→'. Print all of them.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c6e416d34505c59e193ca71b6e171769)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b26ad1efbfb8a3599d6a0cddaaade0b9)
 
 <details>
 <summary>Answers</summary>
@@ -269,7 +269,7 @@ fn main() {
 
 14 - Try to declare a char variable with more than one character, for example: let not_a_char: char = 'ab';. What happens when you try to compile?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=23ff3145ae8169c406f66892aa5b22ac)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f5c00b54ac22ede25fb827b4b0a5e772)
 
 <details>
 <summary>Answers</summary>
@@ -284,7 +284,7 @@ fn main() {
 
 15 - Declare a variable is_file_loaded and assign it true. Declare has_errors and assign false. Print both. Then, try to assign the integer 1 to a boolean variable. What does the Rust compiler say?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=31a9f92ab0a85d0309a760bd15d7cf66)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=dbef312edf852d777c30b58ff75f0f70)
 
 <details>
 <summary>Answers</summary>
@@ -308,7 +308,7 @@ fn main() {
 
 16 - Create a tuple record that contains a name (&str), an age (u8), and a passing grade (f32). For example: ("Maria", 22, 7.5). Print the entire tuple.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ebece7d67db9829fe0aa599689efa218)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0c600bfa3b6760850c4ead99dba25809)
 
 <details>
 <summary>Answers</summary>
@@ -324,7 +324,7 @@ fn main() {
 
 17 - Create a tuple called server_response that contains an HTTP status code (u16) and a response message (&str), such as (404, "Not Found"). Print the tuple.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f2f945d7daaef3a25c8da07038be2b6c)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=868e32891563fa84cf656dec9b178ba2)
 
 <details>
 <summary>Answers</summary>
@@ -371,7 +371,7 @@ fn main() {
 
 19 - Given the tuple let color_rgb = (255, 128, 0); (representing Orange), destructure it into the variables red, green, and blue. Print each variable separately.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=58e87c27ef693190a8eec0fdf972ad4c)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c5c1f723885d4f0b13a77de39255b301)
 
 <details>
 <summary>Answers</summary>
@@ -390,7 +390,7 @@ fn main() {
 
 20 - Declare a tuple api_result with a boolean indicating success, a u64 for an ID, and a String for a message. Ex: (true, 1234567890, String::from("Successful operation")). Print using {:#?}.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e45616380145fb857d0854fd544bc02b)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9e4ed3d61f81b80b5c2569ddba149db3)
 
 <details>
 <summary>Answers</summary>
@@ -450,7 +450,7 @@ fn main() {
 
 23 - Create a mutable tuple let mut point = (10.0, 20.0);. Modify the first element to 15.5 and the second to 25.0 using index access syntax. Imprint the tuple.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0fa0b270d9463b6f65ce2103eabe5a0e)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=158f2254800b8b22ebc49564654e724d)
 
 <details>
 <summary>Answers</summary>
@@ -495,7 +495,7 @@ fn main () {
 
 25 - Declare an array months containing the names of the first three months of the year as string slices. Print the name of the second month (remember zero-basedindexing).
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=18d763ce872ce2d7d06fe5f28a14434a)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9a2be874096ce8f12a83c7f28e609e7b)
 
 <details>
 <summary>Answers</summary>
@@ -556,7 +556,7 @@ fn main () {
 
 28 - Declare a mutable array inventory_counts of 4 elements of type u16, initialized with [10, 25, 5, 30]. Modify the count of the first item to 12 and the third to 8. Print the updated array.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9f4c47570d7aff881ecd87bbe974a88d)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9dffc18405335409699ed4f444113923)
 
 <details>
 <summary>Answers</summary>
@@ -578,7 +578,7 @@ fn main () {
 
 29 - Create a mutable array active_services: [bool; 3] initialized as [true, false, true]. Modify the second service to true and the last to false. Print the array.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=888bf61d11d42a44f22194985ff4d52e)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b9df12fc30ffb9767ef0c67908dd667e)
 
 <details>
 <summary>Answers</summary>
@@ -603,7 +603,7 @@ fn main () {
 
 30 - Create a mutable array pixel_colors: [[u8; 3]; 2] to represent two pixels, each with R, G, B components. Initialize it as [[255, 0, 0], [0, 255, 0]] (one red pixel, one green). Modify the first pixel to be blue ([0, 0, 255]) and the second to be yellow ([255, 255, 0]). Print the pixel array.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4522f764adcb89fe3145617b7144e9fa)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c6f8dcaaef0ad4bc945db471d36818cd)
 
 <details>
 <summary>Answers</summary>
