@@ -2,7 +2,7 @@
 
 01 - Write code that creates an empty String and prints it.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7aea145765bf6be2bbefce651de75e4e)
 
 <details>
 <summary>Answers</summary>
@@ -18,7 +18,7 @@ fn main() {
 
 02 - Create a String from the string literal "Hello, Rust!".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fdaad16ebb9588c436f8a9501d9c03d7)
 
 <details>
 <summary>Answers</summary>
@@ -34,7 +34,7 @@ fn main() {
 
 03 - Declare a variable that holds a string slice (&str) with the value "Learning Rust".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d1b8ee95f41e7ab974d2a5f8b46d1aad)
 
 <details>
 <summary>Answers</summary>
@@ -50,7 +50,7 @@ fn main() {
 
 04 - Given a String, write the code to get a &str that represents the entire String.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bdd1e7a349470247951f7f8471d3b2b0)
 
 <details>
 <summary>Answers</summary>
@@ -76,7 +76,7 @@ fn main() {
 
 05 - Write a code that receives a text in "string" and converts it to "str" and then prints it on the screen.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c550cdd209d4af05269027de2ccae961)
 
 <details>
 <summary>Answers</summary>
@@ -99,7 +99,7 @@ fn main() {
 
 06 - Convert the integer 123 into a String.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f2c46ec186b839b95ceee748af3c19ad)
 
 <details>
 <summary>Answers</summary>
@@ -128,7 +128,7 @@ fn main() {
 
 07 - Use the .to_string() method or String::from() to create a new String by concatenating a &str and an existing String.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9f3097900ca8be5c2062bfb29c933bd8)
 
 <details>
 <summary>Answers</summary>
@@ -156,7 +156,7 @@ fn main() {
 
 08 - Create a mutable String and append a &str to it using the push_str() method.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=15f4cd05746c4bb68bd931b88fb6ca85)
 
 <details>
 <summary>Answers</summary>
@@ -173,7 +173,7 @@ fn main() {
 
 09 - Add a single character (char) to the end of a mutable String.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0cb500fc28e7fa7999fd8352a9d67dd3)
 
 <details>
 <summary>Answers</summary>
@@ -191,7 +191,7 @@ fn main() {
 
 10 - Combine a &str, a String, and a number into a new String using the format! macro.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4efe44c7f1f6e9f4e0f3102ba03d9ebd)
 
 <details>
 <summary>Answers</summary>
@@ -213,7 +213,7 @@ fn main() {
 
 11 - Create a new String by removing all whitespace from a string.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5044fbae8e51c1fa3a04564aa01ca3db)
 
 <details>
 <summary>Answers</summary>
@@ -236,7 +236,7 @@ fn main() {
 
 12 - Replace all occurrences of the substring "error" with "success" in a &str, creating a new String.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=69904616c1b31cd39677788ab6adc0c9)
 
 <details>
 <summary>Answers</summary>
@@ -259,7 +259,7 @@ fn main() {
 
 13 - Replace only the first occurrence of "old" with "new" in a &str, creating a new String.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6338d0e70e6dfedca8c0b7d538548cdc)
 
 <details>
 <summary>Answers</summary>
@@ -282,7 +282,7 @@ fn main() {
 
 14 - Check if a &str contains the substring "Rust".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f644247e1effd0423311eff7923b0af8)
 
 <details>
 <summary>Answers</summary>
@@ -308,7 +308,7 @@ fn main() {
 
 15 - Check if a filename in a string ends with the suffix .rs.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=63ae48f98d8297989711d77629590cdb)
 
 <details>
 <summary>Answers</summary>
@@ -335,7 +335,7 @@ fn main() {
 
 16 - Check if a &str starts with the prefix "https://".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=37f9d53e128b026be4633253019abec9)
 
 <details>
 <summary>Answers</summary>
@@ -360,9 +360,9 @@ fn main() {
 
 </details>
 
-20 - Create code that takes a String and returns a slice containing only the first word. Assume that words are separated by spaces.
+17 - Create code that takes a String and returns a slice containing only the first word. Assume that words are separated by spaces.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=596417527fb58dee641d99f0acf0a156)
 
 <details>
 <summary>Answers</summary>
@@ -383,9 +383,9 @@ fn main() {
 ```
 </details>
 
-21 - Find the starting byte index of the first occurrence of the substring "world".
+18 - Find the starting byte index of the first occurrence of the substring "world".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d0ab76c70724e09ff4d36f1b17f52ab3)
 
 <details>
 <summary>Answers</summary>
@@ -409,9 +409,9 @@ fn main() {
 ```
 </details>
 
-22 - Write a function that accepts a String and returns its first character as a char.
+19 - Write a function that accepts a String and returns its first character as a char.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0004b9c07066ea8dab69835372d9b4c6)
 
 <details>
 <summary>Answers</summary>
@@ -448,9 +448,9 @@ fn main() {
 ```
 </details>
 
-23 - Write a code that counts the number of characters (char) in a &str, not the number of bytes.
+20 - Write a code that counts the number of characters (char) in a &str, not the number of bytes.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=767d85d4c8aec2d9174642527c749407)
 
 <details>
 <summary>Answers</summary>
@@ -494,9 +494,9 @@ fn main() {
 ```
 </details>
 
-24 - Write a code that counts the number of characters (char) in a sentence, excluding whitespace.
+21 - Write a code that counts the number of characters (char) in a sentence, excluding whitespace.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=090220e67985598ea2d1697a2bf94134)
 
 <details>
 <summary>Answers</summary>
@@ -524,9 +524,9 @@ fn main() {
 ```
 </details>
 
-25 - Write a code that takes a &mut String and replaces all lowercase 'a' characters with uppercase 'A's, modifying the original String.
+22 - Write a code that takes a &mut String and replaces all lowercase 'a' characters with uppercase 'A's, modifying the original String.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f08072efb40d187ad8c63c2211896178)
 
 <details>
 <summary>Answers</summary>
@@ -562,9 +562,9 @@ fn main() {
 ```
 </details>
 
-26 - Write code that removes the last character from a String.
+23 - Write code that removes the last character from a String.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0d60d14338cc1beb77035891ff3b4f9b)
 
 <details>
 <summary>Answers</summary>
@@ -613,9 +613,9 @@ fn main() {
 ```
 </details>
 
-27 - Use the .clear() method to empty a String without deallocating its memory capacity.
+24 - Use the .clear() method to empty a String without deallocating its memory capacity.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7916fc43c5baff6074f486aa90fd94b7)
 
 <details>
 <summary>Answers</summary>
