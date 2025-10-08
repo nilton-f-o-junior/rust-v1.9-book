@@ -4,7 +4,7 @@
 
 01 - Write a program that asks the user for an integer and determines whether it's even or odd.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=97e4e828d33e883d10af3ee733cc7b5c)
 
 <details>
 <summary>Answers</summary>
@@ -43,7 +43,7 @@ fn main() {
 
 02 - Create a program that reads a number and prints whether it's positive, negative, or zero.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=79a01aa358a23b7f6c9c08b588baa183)
 
 <details>
 <summary>Answers</summary>
@@ -77,7 +77,7 @@ fn main() {
 
 03 - Develop a program that receives two numbers and shows which one is larger.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6f981cff940e9c27ec515c3596d8517f)
 
 <details>
 <summary>Answers</summary>
@@ -135,7 +135,7 @@ fn main() {
 - failed (grade < 5)
 - in recovery (grade >= 5 and < 7).
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a34ad4409bff2134fa71c880520e241a)
 
 <details>
 <summary>Answers</summary>
@@ -204,7 +204,7 @@ fn main() {
 
 05 - Write a program that reads a person's age and determines if they can vote (16 years or older).
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=79880f1fab49c523e122dea6d6f16217)
 
 <details>
 <summary>Answers</summary>
@@ -244,7 +244,7 @@ fn main() {
 
 06 - Develop a program that asks for three numbers and determines which one is the largest.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=28e60e8023f481072e02e3e27c5f44de)
 
 <details>
 <summary>Answers</summary>
@@ -333,7 +333,7 @@ fn main() {
 - D: 60-69
 - F: 0-59
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1b309cc5140306ea58e2be3a2c7a3361)
 
 <details>
 <summary>Answers</summary>
@@ -377,7 +377,7 @@ fn main() {
 
 08 - Write a program that receives the lengths of the three sides of a triangle and determines if it is equilateral (all sides equal), isosceles (two sides equal), or scalene (all sides different).
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=599fd9484afe3d370b725789bc57bd29)
 
 <details>
 <summary>Answers</summary>
@@ -442,9 +442,9 @@ fn main() {
 ```
 </details>
 
-09 - Write a program that receives a number from 1 to 7 and prints the corresponding day of the week (1 for Sunday, 2 for Monday, etc.), also indicating if it's a "Weekday" or "Weekend."use std::io;
+09 - Write a program that receives a number from 1 to 7 and prints the corresponding day of the week (1 for Sunday, 2 for Monday, etc.), also indicating if it's a "Weekday" or "Weekend." use std::io;
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=47e510e0e0ebebc1b97e6e4a202cdee3)
 
 <details>
 <summary>Answers</summary>
@@ -499,7 +499,7 @@ fn main() {
 - Adult: 18-59 years
 - Elderly: 60 years or more
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8e4f1822fa2d2eb10017ef2534e07f75)
 
 <details>
 <summary>Answers</summary>
@@ -541,7 +541,7 @@ fn main() {
 
 11 - Create a program that functions as a calculator. It should receive two numbers and an operator (+, -, *, /). The program should perform the corresponding operation and show the result. Also, handle division by zero.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=226bff4c0339736480c98919c2b4e8a9)
 
 <details>
 <summary>Answers</summary>
@@ -649,7 +649,7 @@ fn main() {
 - Purchases from R$ 100 to R$ 500: 10% discount;
 - Purchases above R$ 500: 20% discount.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8b7eb0b78868337a82244e3795ca03e3)
 
 <details>
 <summary>Answers</summary>
@@ -696,7 +696,7 @@ fn main() {
 - 25.0 - 29.9: Overweight
 - 30.0 or more: Obesity
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6ca8088beb3ce44019bbe205756167b0)
 
 <details>
 <summary>Answers</summary>
@@ -754,7 +754,7 @@ fn main() {
 
 14 - Create a program that asks for a username and a password. If the username is "admin" and the password is "1234", display "Access granted". Otherwise, display "Access denied".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=423565c03a65c22e3d490eb497d5529a)
 
 <details>
 <summary>Answers</summary>
@@ -793,7 +793,7 @@ fn main() {
 
 15 - Create the game "Rock, Paper, Scissors." Ask for the choices of two players and determine the winner based on the classic rules.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0b9e056c8bd22574241d0d5dd7002412)
 
 <details>
 <summary>Answers</summary>
