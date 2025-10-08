@@ -63,4 +63,4 @@
     * [Expression](06-functions-and-method-syntax/expression.md)
     * [Methods](06-functions-and-method-syntax/methods.md)
     * [Modules](06-functions-and-method-syntax/modules.md)
-    * [QUestions](06-functions-and-method-syntax/questions.md)
+    * [Questions](06-functions-and-method-syntax/questions.md)

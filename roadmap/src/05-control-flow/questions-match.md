@@ -212,7 +212,7 @@ fn main() {
 
 06 - Receive a number from 1-7 and print the corresponding day of the week.
 
-| | |
+| |          |
 |-|----------|
 |1| Sunday   |
 |2| Monday   |
@@ -266,7 +266,7 @@ fn main() {
 - Month name
 - How many days does it have (consider February with 28)
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ae07367c7e3ed29d3d203e3349981302)
 
 <details>
 <summary>Answers</summary>
@@ -314,13 +314,13 @@ fn main() {
 
 |      |        |
 |------|--------|
-|0-9   | Digit  |
+|0 - 9 | Digit  |
 |a - z | Letter |
 |A - Z | Letter |
-|'&nbsp;&nbsp;' | Space  |
+|'&nbsp;&nbsp;' | Space |
 | _    | Special Symbol |
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=70ed86af2cd4f451693fa897b9022ad7)
 
 <details>
 <summary>Answers</summary>
@@ -357,7 +357,7 @@ fn main() {
 | (negative, negative) | Quadrant III|
 | (positive, negative) | Quadrant IV |
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5453d9ba570618c2d20683bd346516c9)
 
 <details>
 <summary>Answers</summary>
@@ -414,7 +414,7 @@ fn main() {
 - VIP: 20% discount always
 - Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0feed8258308895eef51077f8b2056d6)
 
 <details>
 <summary>Answers</summary>
@@ -462,7 +462,7 @@ fn main() {
 
 11 - Make a calculator that takes two numbers and an operator (+, -, *, /) and returns the result using match for the operator.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a889b682d749bb15ad92761dc6eedbdd)
 
 <details>
 <summary>Answers</summary>
@@ -526,7 +526,7 @@ fn main() {
 
 12 - Receive the choices of two players (1 = Rock, 2 = Paper, 3 = Scissors) and determine the winner using tuple matching: match(player1, player2) { ... }
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2894bb2a020555eb7bc2bd1e1897f0a1)
 
 <details>
 <summary>Answers</summary>
