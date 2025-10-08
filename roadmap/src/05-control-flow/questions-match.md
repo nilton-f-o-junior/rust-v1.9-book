@@ -2,7 +2,7 @@
 
 01 - Write a program that inputs a character and indicates whether it is a vowel (a, e, i, o, u) or a consonant. Use match to validate.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4a083a004ec7b5f6ca4b4ddb393b9510)
 
 <details>
 <summary>Answers</summary>
@@ -32,14 +32,16 @@ fn main() {
 
 02 - Create a program that inputs a grade (0 to 10) and converts it to a grade.
 
-A: 9 - 10
-B: 7 - 8
-C: 5 - 6
-D: 3 - 4
-E: 2 - 1
-F: 0
+|   |        |
+|---|--------|
+| A | 9 - 10 |
+| B | 7 - 8  |
+| C | 5 - 6  |
+| D | 3 - 4  |
+| E | 1 - 2  |
+| F |   0    |
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=73982e827eda1f6ac231ec9b0efb3fb4)
 
 <details>
 <summary>Answers</summary>
@@ -79,12 +81,14 @@ fn main() {
 
 03 - Enter an age and classify it as:
 
-0-12: Child
-13-17: Teen
-18-59: Adult
-60+: Senior
+|          |           |
+|----------|-----------|
+|  0 - 12  | Child     |
+| 13 - 17  | Teen      |
+| 18 - 59  | Adult     |
+|   +60    | Senior    |
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2c16bc60eb88ad00cb81ef516e3a0089)
 
 <details>
 <summary>Answers</summary>
@@ -122,11 +126,13 @@ fn main() {
 
 04 - Receive username and password. Use tuple matching to validate:
 
-("admin", "1234"): Admin logged
-("user", "pass"): User logged
-_: Invalid credentials
+|                   |                     |
+|-------------------|---------------------|
+| ("admin", "1234") | Admin logged        |
+| ("user", "pass")  | User logged         |
+|        _          | Invalid credentials |
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=271c2d14814579f5521d1b98fb07c366)
 
 <details>
 <summary>Answers</summary>
@@ -160,13 +166,15 @@ fn main() {
 
 05 - Receive a temperature in Celsius and classify it:
 
-Below 0: Freezing
-0-15: Cold
-16-25: Pleasant
-26-35: Warm
-Above 35: Very warm
+|          |           |
+|----------|-----------|
+| Below 0  | Freezing  |
+| 0 - 15   | Cold      |
+| 16 - 25  | Pleasant  |
+| 26 - 35  | Warm      |
+| Above 35 | Very warm |
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bd6854ea08c65ab5b05bb9429aca8d62)
 
 <details>
 <summary>Answers</summary>
@@ -204,15 +212,17 @@ fn main() {
 
 06 - Receive a number from 1-7 and print the corresponding day of the week.
 
-1 - Sunday
-2 - Monday
-3 - Tuesday
-4 - Wednesday
-5 - Thursday
-6 - Friday
-7 - Saturday
+| | |
+|-|----------|
+|1| Sunday   |
+|2| Monday   |
+|3| Tuesday  |
+|4| Wednesday|
+|5| Thursday |
+|6| Friday   |
+|7| Saturday |
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=575e0c3d4f772c17f42807eb4d5d928f)
 
 <details>
 <summary>Answers</summary>
@@ -253,8 +263,8 @@ fn main() {
 
 07 - Receive the month number (1-12) and return:
 
-Month name
-How many days does it have (consider February with 28)
+- Month name
+- How many days does it have (consider February with 28)
 
 [Playground!]()
 
@@ -302,10 +312,13 @@ fn main() {
 
 08 - Receive a character and sort it using match:
 
-'0'..='9': Digit
-'a'..='z' | 'A'..='Z': Letter
-' ': Space
-_: Special symbol
+|      |        |
+|------|--------|
+|0-9   | Digit  |
+|a - z | Letter |
+|A - Z | Letter |
+|'&nbsp;&nbsp;' | Space  |
+| _    | Special Symbol |
 
 [Playground!]()
 
@@ -336,11 +349,13 @@ fn main() {
 
 09 - Receive coordinates (x, y) and indicate which quadrant it is in:
 
-(positive, positive): Quadrant I
-(negative, positive): Quadrant II
-(negative, negative): Quadrant III
-(positive, negative): Quadrant IV
-Origin if both are 0
+|                      |             |
+|----------------------|-------------|
+|      (0, 0)          | Origin      |
+| (positive, positive) | Quadrant I  |
+| (negative, positive) | Quadrant II |
+| (negative, negative) | Quadrant III|
+| (positive, negative) | Quadrant IV |
 
 [Playground!]()
 
@@ -395,9 +410,9 @@ fn main() {
 
 10 - Receive the quantity of items purchased and the customer type ('N' = Normal, 'V' = VIP):
 
-Use match with tuples (type, quantity)
-VIP: 20% discount always
-Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
+- Use match with tuples (type, quantity)
+- VIP: 20% discount always
+- Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
 
 [Playground!]()
 

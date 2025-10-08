@@ -131,11 +131,13 @@ fn main() {
 
 04 - Create a program that receives 3 grades from a student (from 0 to 10) and then calculates the average of the grades and reports:
 
-- passed (grade >= 7)
-- failed (grade < 5)
-- in recovery (grade >= 5 and < 7).
+|              |             |
+|--------------|-------------|
+| >= 7         | passed      |
+| < 5          | failed      |
+| >= 5 and < 7 | in recovery |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a34ad4409bff2134fa71c880520e241a)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=645abb78749d46a9decba5847f228398)
 
 <details>
 <summary>Answers</summary>
@@ -168,7 +170,7 @@ fn main() {
         Ok(val) => val,
         Err(_) => {
             println!("Error converting: Test A!");
-            return;
+            <!-- return; -->
         }
     };
 
@@ -327,11 +329,13 @@ fn main() {
 
 07 - Ceate a program that converts a numerical score (0 to 100) to a letter grade, following these rules:
 
-- A: 90-100
-- B: 80-89
-- C: 70-79
-- D: 60-69
-- F: 0-59
+|   |          |
+|---|----------|
+| A | 90 - 100 |
+| B | 80 - 89  |
+| C | 70 - 79  |
+| D | 60 - 69  |
+| F | 0 - 59   |
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1b309cc5140306ea58e2be3a2c7a3361)
 
@@ -494,12 +498,14 @@ fn main() {
 
 10 - Write a program that reads a person's age and classifies them into the following categories:
 
-- Child: 0-12 years
-- Teenager: 13-17 years
-- Adult: 18-59 years
-- Elderly: 60 years or more
+|          |               |
+|----------|---------------|
+| Child    | 0 - 12 years  |
+| Teenager | 13 - 17 years |
+| Adult    | 18 - 59 years |
+| Elderly  | + 60 years    |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8e4f1822fa2d2eb10017ef2534e07f75)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0203eeb863ed9e094be119f90475cf9f)
 
 <details>
 <summary>Answers</summary>
@@ -691,12 +697,14 @@ fn main() {
 
 13 - Write a program that calculates a person's BMI (weight / height²) and classifies the result:
 
-- Below 18.5: Underweight
-- 18.5 - 24.9: Normal weight
-- 25.0 - 29.9: Overweight
-- 30.0 or more: Obesity
+|              |               |
+|--------------|---------------|
+| Below 18.5   | Underweight   |
+| 18.5 - 24.9  | Normal weight |
+| 25.0 - 29.9  | Overweight    |
+| + 30.0       | Obesity       |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6ca8088beb3ce44019bbe205756167b0)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1a227e44686000dd59904e7a7890a7e5)
 
 <details>
 <summary>Answers</summary>
