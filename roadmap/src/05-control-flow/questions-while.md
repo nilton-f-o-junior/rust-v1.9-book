@@ -1,8 +1,8 @@
 # Questions - While
 
-Write a Rust program that uses a while loop to print numbers from 1 to 5, one per line.
+01 - Write a Rust program that uses a while loop to print numbers from 1 to 5, one per line.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6c606193a0612c9484434406017eff98)
 
 <details>
 <summary>Answers</summary>
@@ -20,9 +20,9 @@ fn main() {
 ```
 </details>
 
-Using a while loop, create a program that prints a countdown from 10 to 1, and then the message "Launch!".
+02 - Using a while loop, create a program that prints a countdown from 10 to 1, and then the message "Launch!".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=af0ecf913e30cf4e96042d5bc31f5570)
 
 <details>
 <summary>Answers</summary>
@@ -44,9 +44,9 @@ fn main() {
 ```
 </details>
 
-Write a program that calculates the sum of all integers from 1 to 100, using a while loop. Print the final result.
+03 - Write a program that calculates the sum of all integers from 1 to 100, using a while loop. Print the final result.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f17968f81015350d5d69a32adb5fe38f)
 
 <details>
 <summary>Answers</summary>
@@ -67,10 +67,10 @@ fn main() {
 ```
 </details>
 
-Create a while loop that is intentionally infinite, but uses the break keyword to exit the loop when a counter reaches the value 7. Print the counter's value
+04 - Create a while loop that is intentionally infinite, but uses the break keyword to exit the loop when a counter reaches the value 7. Print the counter's value
 in each iteration before checking the exit condition.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=cb3b6772003cd26fc05f75d3ecff21b8)
 
 <details>
 <summary>Answers</summary>
@@ -92,9 +92,9 @@ fn main() {
 ```
 </details>
 
-Check if a given number (e.g., num = 32) is a power of 2 using a while loop. Print true or false.
+05 - Check if a given number (e.g., num = 32) is a power of 2 using a while loop. Print true or false.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=84ede3138e7c8a3570712d1bfff7eddf)
 
 <details>
 <summary>Answers</summary>
@@ -133,10 +133,10 @@ fn main() {
 ```
 </details>
 
-Write a program with a while loop that iterates from 0 to 10. If the current number is odd, use continue to skip printing that number. Print only the even num
+06 - Write a program with a while loop that iterates from 0 to 10. If the current number is odd, use continue to skip printing that number. Print only the even num
 bers.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=26e94d0fdc56bc1a8e18a1954b142007)
 
 <details>
 <summary>Answers</summary>
@@ -159,9 +159,9 @@ fn main() {
 ```
 </details>
 
-Write a program that asks the user to enter a number greater than 10. Use a while loop to keep asking for input until a valid number is provided.
+07 - Write a program that asks the user to enter a number greater than 10. Use a while loop to keep asking for input until a valid number is provided.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d2ef6ded76e0c624916c42dd0039ae05)
 
 <details>
 <summary>Answers</summary>
@@ -197,9 +197,9 @@ fn main() {
 ```
 </details>
 
-Calculate the factorial of a number (e.g., 5!) using a while loop. Print the result.
+08 - Calculate the factorial of a number (e.g., 5!) using a while loop. Print the result.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=12eeeb3aaa2ea442b27a068766ed040a)
 
 <details>
 <summary>Answers</summary>
@@ -237,9 +237,9 @@ fn main() {
 ```
 </details>
 
-Given an integer (e.g., 12345), use a while loop to print it in reverse (i.e., 54321). Hint: use the % (modulo) and / (division) operators.
+09 - Given an integer (e.g., 12345), use a while loop to print it in reverse (i.e., 54321). Hint: use the % (modulo) and / (division) operators.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e18fea358b844939d6d963c1f23df47f)
 
 <details>
 <summary>Answers</summary>
@@ -277,9 +277,9 @@ fn main() {
 ```
 </details>
 
-Write a program that counts the number of digits in a positive integer using a while loop. For example, 12345 has 5 digits.
+10 - Write a program that counts the number of digits in a positive integer using a while loop. For example, 12345 has 5 digits.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=84d604c67276b5442d1de02035c1d3ba)
 
 <details>
 <summary>Answers</summary>
@@ -314,9 +314,9 @@ fn main() {
 ```
 </details>
 
-Print the squares of numbers from 1 to 7 using a while loop.
+11 - Print the squares of numbers from 1 to 7 using a while loop.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f4b8bf705ddbc9a7d4175f825df9fef7)
 
 <details>
 <summary>Answers</summary>
@@ -336,9 +336,9 @@ fn main() {
 ```
 </details>
 
-Given a number let mut num = 64;, use a while loop to repeatedly divide it by 2 until the result is less than or equal to 1. Print each division result.
+12 - Given a number let mut num = 64;, use a while loop to repeatedly divide it by 2 until the result is less than or equal to 1. Print each division result.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1a35c940aa55015ab3d60fec178b295a)
 
 <details>
 <summary>Answers</summary>
@@ -357,9 +357,9 @@ fn main() {
 ```
 </details>
 
-Find and print the first even number greater than 50 using a while loop.
+13 - Find and print the first even number greater than 50 using a while loop.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4a7ad5515ab4546ff981a00eb2dceb97)
 
 <details>
 <summary>Answers</summary>
@@ -378,10 +378,10 @@ fn main() {
 ```
 </details>
 
-Create a secret number (e.g., secret = 42). Ask the user to guess the number. Use a while loop to continue the game until the user guesses correctly. Give hin
+14 - Create a secret number (e.g., secret = 42). Ask the user to guess the number. Use a while loop to continue the game until the user guesses correctly. Give hin
 ts ("too high", "too low"). (Requires std::io for user input).
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f1f171bfec92179a17e67b78a000252f)
 
 <details>
 <summary>Answers</summary>
@@ -420,9 +420,9 @@ fn main() {
 ```
 </details>
 
-Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
+15 - Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6cdacad8eb74c441d0b2d67486c32dc8)
 
 <details>
 <summary>Answers</summary>
@@ -457,13 +457,9 @@ fn main() {
 ```
 </details>
 
-Using nested while loops to print a 3x3 square of asterisks.
+16 - Using nested while loops to print a 3x3 square of asterisks.
 
-***
-***
-***
-
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9b9d56184faad52a32e6150cffeb5f21)
 
 <details>
 <summary>Answers</summary>
@@ -506,10 +502,10 @@ fn main() {
 ```
 </details>
 
-Write a Rust program that prompts the user to enter a positive integer. Then, find and display the first five divisors of that number. If fewer than five divi
+17 - Write a Rust program that prompts the user to enter a positive integer. Then, find and display the first five divisors of that number. If fewer than five divi
 sors are found, the program should state that 'This is first 5 multiple numbers were not found!'.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c58a3551f1c999359e625eb943958a92)
 
 <details>
 <summary>Answers</summary>
