@@ -50,4 +50,14 @@
     - [x] 6.9. Questions - Loop
     - [x] 6.10. Questions - While
     - [x] 6.11. Questions - For
-    - [ ] 6.12. Questions - Match
+    - [x] 6.12. Questions - Match
+- [x] 7. Functions and Method Syntax
+    - [x] 7.1. Functions
+    - [ ] 7.3. Function - Input
+    - [x] 7.4. Expression
+    - [ ] 7.5. Methods
+    - [x] 7.6. Modules - Inline
+    - [x] 7.7. Modules - Extern
+    - [x] 7.8. Modules - mod.rs
+    - [ ] 7.9. Modules - Questions
+- [ ] 8. Vectors
