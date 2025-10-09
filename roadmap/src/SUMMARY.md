@@ -62,5 +62,7 @@
     * [Functions](06-functions-and-method-syntax/functions.md)
     * [Expression](06-functions-and-method-syntax/expression.md)
     * [Methods](06-functions-and-method-syntax/methods.md)
-    * [Modules](06-functions-and-method-syntax/modules.md)
+    * [Modules - Inline](06-functions-and-method-syntax/modules-inline.md)
+    * [Modules - Extern](06-functions-and-method-syntax/modules-extern.md)
+    * [Modules - mod.rs](06-functions-and-method-syntax/modules-mod.md)
     * [Questions](06-functions-and-method-syntax/questions.md)

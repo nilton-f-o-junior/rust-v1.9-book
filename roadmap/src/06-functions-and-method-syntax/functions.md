@@ -1,6 +1,8 @@
 # Functions and Parameters
 
-`fn`
+To declare a function in Rust just use:
+
+`fn name( ) { }`
 
 ```rust
 fn basic() {
@@ -12,6 +14,8 @@ fn main() {
     basic();
 }
 ```
+
+Within the parentheses we can add the input parameters, which are variables with their respective data types that the function will receive and use in its body.
 
 `(let:type)`
 
@@ -25,6 +29,10 @@ fn main() {
     parameter(1);
 }
 ```
+
+We can pass multiple parameters separated by commas
+
+`(let: type, let: type)`
 
 ```rust
 fn parameter_00(x: i8, y: i8) {
