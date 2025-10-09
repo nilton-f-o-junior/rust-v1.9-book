@@ -1,5 +1,7 @@
 # &str
 
+Represents an immutable reference to a UTF-8 text sequence, used as strings without needing to allocate memory on the heap.
+
 `&str`
 
 ```rust

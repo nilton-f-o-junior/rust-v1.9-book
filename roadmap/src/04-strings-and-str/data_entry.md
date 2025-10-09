@@ -1,5 +1,7 @@
 # Data Entry
 
+Refers to data input, thus capturing, validating, and processing.
+
 `std::io`
 
 ```rust

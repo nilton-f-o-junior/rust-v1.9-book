@@ -1,4 +1,6 @@
-# Modules - Mod.rs
+# Modules - mod.rs
+
+Special file used to define a module in a directory, making it public and serving as an entry point for hierarchical structures.
 
 ```rust
 // Tree

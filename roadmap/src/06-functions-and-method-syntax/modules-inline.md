@@ -1,5 +1,7 @@
 # Modules - Inline
 
+Modules defined directly in the same file, useful for organizing without creating separate files.
+
 `mod`
 
 ```rust

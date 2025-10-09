@@ -1,5 +1,7 @@
 # Modules - Extern
 
+Allow importing functionalities from external libraries to the project.
+
 ```rust
 // Tree
 /*
