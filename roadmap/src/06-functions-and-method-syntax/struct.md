@@ -47,7 +47,7 @@ fn main() {
     };
 
     println!(
-        "Client Data: \nName:{} \nAge:{} \nCity:{} \nPost Code{} \nNumber:{}",
+        "Client Data: \nName: {} \nAge: {} \nCity: {} \nPost Code: {} \nNumber: {}",
         client.name,
         client.age,
         client.address.city,
