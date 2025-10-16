@@ -1,28 +1,39 @@
+# Function - Input
+
+`input`
+
+```rust
 use std::io;
 
-fn input_number() -> u8 {
+fn function_input(prompt: &str) -> f32 {
+    //
     loop {
-        println!("Enter number (0-255):");
+        println!("{}", prompt);
         let mut input = String::new();
 
-        if let Err(_) = io::stdin().read_line(&mut input) {
-            println!("Data entry error!");
-            continue;
-        }
-
-        match input.trim().parse::<u8>() {
-            Ok(numero) => return numero,
+        match io::stdin().read_line(&mut input) {
             Err(_) => {
-                println!(
-                    "'{}'is not a valid number! Enter only numbers from 0 to 255.",
-                    input.trim()
-                );
+                println!("Data entry error!");
+                continue;
             }
+
+            Ok(_) => match input.trim().parse::<f32>() {
+                Ok(number) => return number,
+                Err(_) => {
+                    println!("'{}' is not a valid number!", input.trim());
+                    continue;
+                }
+            },
         }
     }
 }
 
 fn main() {
-    let numero = input_number();
-    println!("Number chosen: {}", numero);
+    //
+    let number = function_input("Enter number:");
+    println!("Number chosen: {}", number);
 }
+```
+
+
+
