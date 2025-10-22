@@ -1,18 +1,17 @@
-- insert
+# Insert
+
+Adds an element at a specific index, shifting all elements after it to the right.
+
+`vector.inset[index, element]`
 
 ```rust
-// vector.insert[index, element]
 let mut vector_add: Vec<u8> = Vec::new();
 
-vector_add.insert(0, 0);
-println!("Vector Insert = {:?}", vector_add);
+vector_add.insert(0, 10);
+vector_add.insert(1, 20);
 
-vector_add.insert(1, 1);
-println!("Vector Insert = {:?}", vector_add);
-
-vector_add.insert(0, 2);
-println!("Vector Insert = {:?}", vector_add);
-
-vector_add.insert(1, 3);
-println!("Vector Insert = {:?}", vector_add);
+println!(
+  "Vector[0] = {:#?} \nVector[1] = {:#?}",
+  vector_add[0], vector_add[1]
+);
 ```
