@@ -49,5 +49,6 @@ println!("Vector = {:#?}", vector);
 `vector = tuple`
 
 ```rust
-
+let vector_tuple: Vec<(f32, &str)> = vec![(2., "Vector 1"), (7., "Vector 2")];
+println!("{:#?}", vector_tuple);
 ```
