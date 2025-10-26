@@ -1,4 +1,4 @@
-# Remove Elements
+# Methods
 
 `pop`
 
@@ -30,3 +30,4 @@ println!("{:?}", vector_delete);
 
 vector_delete.remove(3);
 println!("{:?}", vector_delete);
+```

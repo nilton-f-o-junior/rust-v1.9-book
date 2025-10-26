@@ -9,7 +9,6 @@ When you create a "string" variable, you use the entire drawer. But when you cre
 `new()`
 
 ```rust
-// new()
 let create_string: String = String::new();
 println!("{}", create_string);
 ```
@@ -17,7 +16,6 @@ println!("{}", create_string);
 `from()`
 
 ```rust
-// from()
 let create_string: String = String::from("Create text!");
 println!("{}", create_string);
 ```
@@ -25,7 +23,6 @@ println!("{}", create_string);
 `to_string()`
 
 ```rust
-// to_string()
 let create_string: String = "Create text!".to_string();
 println!("{}", create_string);
 ```
@@ -33,7 +30,6 @@ println!("{}", create_string);
 `mut`
 
 ```rust
-// mut
 let mut create_string: String = String::from("Create text!");
 println!("{}", create_string);
 

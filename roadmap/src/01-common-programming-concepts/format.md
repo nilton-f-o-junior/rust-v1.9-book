@@ -5,7 +5,6 @@ The format! macro in Rust is used to improve data output formatting by using cur
 `{}`
 
 ```rust
-//
 let name = "Alice";
 let years = 30;
 println!("Hi, I'm {}, {} years old", name, years);
@@ -13,7 +12,6 @@ println!("Hi, I'm {}, {} years old", name, years);
 
 `format!`
 ```rust
-//
 let name = "Alice";
 let years = 30;
 

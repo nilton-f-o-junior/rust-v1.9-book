@@ -1,4 +1,4 @@
-# Functions and Method Syntax
+# Functions
 
 This chapter covers Rust's approach to functions and code organization – the essential tools for structuring reusable and maintainable programs.
 

@@ -5,7 +5,6 @@ Used to assign values to variables.
 `+=`
 
 ```rust
-//
 let mut num: u8 = 10;
 
 // addition and assignment: +=
@@ -16,7 +15,6 @@ println!("10 += 1 = {}", num);
 `-=`
 
 ```rust
-//
 let mut num: u8 = 10;
 
 // subtraction and assignment: -=
@@ -27,7 +25,6 @@ println!("10 -= 1 = {}", num);
 `*=`
 
 ```rust
-//
 let mut num: u8 = 10;
 
 // multiplication and assignment: *=
@@ -38,7 +35,6 @@ println!("10 *= 2 = {}", num);
 `/=`
 
 ```rust
-//
 let mut num: u8 = 20;
 
 // division and assignment: /=
@@ -49,7 +45,6 @@ println!("20 /= 3 = {}", num);
 `%=`
 
 ```rust
-//
 let mut num: u8 = 6;
 
 // remainder and assignment: %=

@@ -5,13 +5,11 @@ Represents an immutable reference to a UTF-8 text sequence, used as strings with
 `&str`
 
 ```rust
-// &str
 let create_str: &str = "Hello, word!";
 println!("{}", create_str);
 ```
 
 ```rust
-// 
 let create_str = "Hello, word!";
 println!("{}", create_str);
 ```

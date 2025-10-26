@@ -3,7 +3,6 @@
 You can declare a new variable with the same name as an existing one, but the previous one will have its value replaced.
 
 ```rust
-//
 let food = "bread";
 println!("{}", food);
 
@@ -15,7 +14,6 @@ println!("{}", food);
 ```
 
 ```rust
-//
 let animal = "Cat";
 println!("{}", animal);
 

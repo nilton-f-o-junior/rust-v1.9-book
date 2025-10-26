@@ -1,4 +1,4 @@
-# Adding Elements
+# Methods
 
 `push`
 
@@ -21,7 +21,7 @@ println!("{:?}", vector_push_add);
 
 Adds an element at a specific index, shifting all elements after it to the right.
 
-`vector.inset[index, element]`
+`vector.insert[index, element]`
 
 ```rust
 let mut vector_add: Vec<u8> = Vec::new();

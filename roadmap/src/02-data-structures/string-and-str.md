@@ -5,7 +5,6 @@ Sequence of UTF-8 characters that can form a word or a phrase, including letters
 `String`
 
 ```rust
-//
 let name: String = String::from("Alice");
 println!("{:?}", name);
 ```
@@ -13,7 +12,6 @@ println!("{:?}", name);
 `&str`
 
 ```rust
-//
 let name: &str = "Rodolfo";
 println!("{:?}", name);
 ```
