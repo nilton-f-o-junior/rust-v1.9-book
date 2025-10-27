@@ -1,7 +1,5 @@
 Methods
 
-capacity(),
-len(),
 with_capacity(),
 shrink_to_fit():
 
@@ -21,6 +19,7 @@ get() (acesso seguro, retorna Option)
 swap()
 reverse()
 sort()
+.collect();
 
 Slices
 
