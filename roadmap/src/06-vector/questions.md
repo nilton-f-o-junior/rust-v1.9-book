@@ -122,12 +122,36 @@ Crie um vetor vazio e solicite ao usuário 3 valores inteiros. Adicione esses va
 <summary>Answers</summary>
 
 ```rust
+use std::io;
 
+fn main() {
+    let mut input_vector: Vec<i8> = vec![];
+
+    while input_vector.len() < 3 {
+        println!("Enter new number {}/3: ", input_vector.len() + 1);
+        let mut input = String::new();
+
+        match io::stdin().read_line(&mut input) {
+            Err(_) => {
+                println!("Data entry error!");
+            }
+            Ok(_) => match input.trim().parse::<i8>() {
+                Ok(number) => {
+                    input_vector.push(number);
+                    println!("Number {} added!\n", number);
+                }
+                Err(_) => {
+                    println!("'{}' is not a valid number!", input.trim());
+                }
+            },
+        }
+    }
+    println!("Vector complete: {:?}", input_vector);
+}
 ```
 </details>
 
-Crie uma função que recebe um vetor de números decimais (f64) e retorna a soma de todos os elementos.
-
+Crie um programa que contenha pelo menos 3 numeros decimais e retorna a soma dos elementos, usando o sum e usando um loop. Exemplo: [3.2, 5.8, 1.2]
 
 [Playground!]()
 
@@ -135,8 +159,26 @@ Crie uma função que recebe um vetor de números decimais (f64) e retorna a som
 <summary>Answers</summary>
 
 ```rust
-
+fn main() {
+    let vector: Vec<f32> = vec![3.2, 5.8, 1.2];
+    let sum: f32 = vector.iter().sum();
+    println!("{}", sum);
+}
 ```
+
+```rust
+fn main() {
+    let input_vector: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut result: f64 = 0.0;
+
+    for &i in &input_vector {
+        result += i;
+    }
+
+    println!("{:?}", result);
+}
+```
+
 </details>
 
 Crie um vetor com os valores ["a", "b", "c", "d"] e remova os dois últimos elementos. Imprima o vetor resultante.
