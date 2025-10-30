@@ -112,6 +112,25 @@ fn main () {
 }
 ```
 
+```rust
+fn main() {    
+    let input_vector_mult: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut result: f64 = input_vector_mult[0];
+    let mut i = 1;
+
+    loop {
+        result *= input_vector_mult[i];
+        i += 1;
+
+        if i >= input_vector_mult.len() {
+            break;
+        }
+    }
+    
+    println!("Mult = {:.2}", result);
+}
+```
+
 </details>
 
 Crie um vetor vazio e solicite ao usuário 3 valores inteiros. Adicione esses valores ao vetor e imprima o resultado final.
@@ -151,7 +170,7 @@ fn main() {
 ```
 </details>
 
-Crie um programa que contenha pelo menos 3 numeros decimais e retorna a soma dos elementos, usando o sum e usando um loop. Exemplo: [3.2, 5.8, 1.2]
+Crie um programa que contenha pelo menos 3 numeros decimais e retorna a soma e multiplicacao dos elementos, usando o sum e product. Exemplo: [3.2, 5.8, 1.2]
 
 [Playground!]()
 
@@ -167,22 +186,16 @@ fn main() {
 ```
 
 ```rust
-fn main() {
-    let input_vector: Vec<f64> = vec![3.2, 5.8, 1.2];
-    let mut result: f64 = 0.0;
-
-    for &i in &input_vector {
-        result += i;
-    }
-
-    println!("{:?}", result);
+fn main () {
+    let vector: Vec<f32> = vec![3.2, 5.8, 1.2];
+    let product: f32 = vector.iter().product();
+    println!("Product = {:.2}", product);
 }
 ```
 
 </details>
 
-Crie um vetor com os valores ["a", "b", "c", "d"] e remova os dois últimos elementos. Imprima o vetor resultante.
-
+Crie um programa que contenha pelo menos 3 numeros decimais e retorna a soma, subtracao, multiplicacao e divisao dos elementos, usando um loop. Exemplo: [3.2, 5.8, 1.2]
 
 [Playground!]()
 
@@ -190,8 +203,116 @@ Crie um vetor com os valores ["a", "b", "c", "d"] e remova os dois últimos elem
 <summary>Answers</summary>
 
 ```rust
+fn main() {
+    // sum
+    let input_vector: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut result: f64 = 0.0;
 
+    for &i in &input_vector {
+        result += i;
+    }
+
+    println!("Sum = {:?}", result);
+}
 ```
+
+```rust
+fn main() {
+    // sub
+    let input_vector_sub: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut result: f64 = input_vector_sub[0];
+    let mut i = 1;
+
+    while i < input_vector_sub.len() {
+        result -= input_vector_sub[i];
+        i += 1;
+    }
+    println!("Sub = {:?}", result);
+}
+```
+
+```rust
+fn main() {
+    // mult
+    let input_vector_mult: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut result: f64 = input_vector_mult[0];
+    let mut i = 1;
+
+    loop {
+        result *= input_vector_mult[i];
+        i += 1;
+
+        if i >= input_vector_mult.len() {
+            break;
+        }
+    }
+
+    println!("Mult = {:.2}", result);
+}
+```
+
+```rust
+fn main() {
+    // div
+    let input_vector_div: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut result = input_vector_div[0];
+
+    // for &i in input_vector_div.iter().skip(1) {
+    for &i in &input_vector_div[1..] {
+        result /= i;
+    }
+
+    println!("Div = {:.2}", result);
+}
+```
+
+</details>
+
+Crie um vetor com os valores ["a", "b", "c", "d"] e remova os dois últimos elementos. Imprima o vetor resultante.
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+fn main() {
+    // pop
+    let mut input_vector: Vec<&str> = vec!["a", "b", "c", "d"];
+    input_vector.pop();
+    input_vector.pop();
+    println!("{:?}", input_vector);
+}
+```
+
+```rust
+fn main() {
+    // remove
+    let mut input_vector: Vec<&str> = vec!["a", "b", "c", "d"];
+    input_vector.remove(3);
+    input_vector.remove(2);
+    println!("{:?}", input_vector);
+}
+```
+
+```rust
+fn main() {
+    // truncate
+    let mut input_vector: Vec<&str> = vec!["a", "b", "c", "d"];
+    input_vector.truncate(2);
+    println!("{:?}", input_vector);    
+}
+```
+
+```rust
+fn main() {
+    // drain
+    let mut input_vector: Vec<&str> = vec!["a", "b", "c", "d"];
+    input_vector.drain(2..);
+    println!("{:?}", input_vector);
+}
+```
+
 </details>
 
 Crie um vetor com alguns valores e adicione um novo elemento em um índice específico (por exemplo, índice 2).
