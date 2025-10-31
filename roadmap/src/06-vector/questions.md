@@ -315,8 +315,7 @@ fn main() {
 
 </details>
 
-Crie um vetor com alguns valores e adicione um novo elemento em um índice específico (por exemplo, índice 2).
-
+Crie um vetor com alguns valores e adicione dois novos elementos ao vetor. Adicione tambem usando um índice específico (por exemplo, (2, 0)).
 
 [Playground!]()
 
@@ -324,12 +323,45 @@ Crie um vetor com alguns valores e adicione um novo elemento em um índice espec
 <summary>Answers</summary>
 
 ```rust
+fn main() {
+    // push
+    let mut input_vector: Vec<u8> = vec![10, 20, 30, 40];
+    input_vector.push(90);
+    println!("{:?}", input_vector);
+}
+```
 
+```rust
+fn main() {
+    // insert
+    let mut input_vector: Vec<u8> = vec![10, 20, 30, 40];
+    input_vector.insert(2, 70);
+    println!("{:?}", input_vector);  
+}
+```
+
+```rust
+fn main() {
+    // extend
+    let mut input_vector: Vec<u8> = vec![10, 20, 30, 40];
+    input_vector.extend([50, 60, 70]);
+    println!("{:?}", input_vector);    
+}
+```
+
+```rust
+fn main() {
+    // append
+    let mut vector_a: Vec<u8> = vec![10, 20, 30];
+    let mut vector_b: Vec<u8> = vec![40, 50, 60];
+    vector_a.append(&mut vector_b);
+    println!("{:?}", vector_a);
+    println!("{:?}", vector_b);
+}
 ```
 </details>
 
-Crie um vetor de inteiros, imprima-o e solicite ao usuário um valor. Remova a primeira ocorrência desse valor do vetor e imprima o resultado.
-
+Crie um vetor de inteiros, imprima-o e solicite ao usuário um valor e remova a primeira ocorrência desse valor do vetor e imprima o resultado.
 
 [Playground!]()
 
