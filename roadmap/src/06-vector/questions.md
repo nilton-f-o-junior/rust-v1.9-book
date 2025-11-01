@@ -361,6 +361,12 @@ fn main() {
 ```
 </details>
 
+
+
+
+
+
+
 Crie um vetor de inteiros, imprima-o e solicite ao usuário um valor e remova a primeira ocorrência desse valor do vetor e imprima o resultado.
 
 [Playground!]()
@@ -375,7 +381,6 @@ Crie um vetor de inteiros, imprima-o e solicite ao usuário um valor e remova a 
 
 Crie um vetor de strings e solicite ao usuário um valor. Verifique se esse valor está presente no vetor e exiba uma mensagem apropriada.
 
-
 [Playground!]()
 
 <details>
@@ -388,19 +393,130 @@ Crie um vetor de strings e solicite ao usuário um valor. Verifique se esse valo
 
 Dado um vetor com pelo menos 4 elementos, imprima os 2 primeiros e os 2 últimos valores.
 
-
 [Playground!]()
 
 <details>
 <summary>Answers</summary>
 
 ```rust
+fn main() {
+    let mut vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    println!("{:?}", vector_input[0]);
+    println!("{:?}", vector_input[1]);
 
+    vector_input.reverse();
+    println!("{:?}", vector_input[0]);
+    println!("{:?}", vector_input[1]);
+}
 ```
+
+```rust
+fn main() {
+    let vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    let len = vector_input.len();
+
+    println!("{:?}", vector_input[0]);
+    println!("{:?}", vector_input[1]);
+    println!("{:?}", vector_input[len - 2]);
+    println!("{:?}", vector_input[len - 1]);
+}
+```
+
+```rust
+fn main() {
+    let vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    let len = vector_input.len();
+
+    println!("{:?}", &vector_input[..2]);
+    println!("{:?}", &vector_input[len - 2..]);
+}
+```
+
+```rust
+fn main() {
+    let mut vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    let mut count = 0;
+
+    for i in &vector_input {
+        println!("{:?}", i);
+        count += 1;
+
+        if count >= 2 {
+            break;
+        }
+    }
+
+    vector_input.reverse();
+    count = 0;
+
+    for i in &vector_input {
+        println!("{:?}", i);
+        count += 1;
+
+        if count >= 2 {
+            break;
+        }
+    }
+}
+```
+
+```rust
+fn main() {
+    let vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+
+    for i in &vector_input[..2] {
+        println!("{:?}", i);
+    }
+
+    for i in &vector_input[vector_input.len() - 2..] {
+        println!("{:?}", i);
+    }
+}
+```
+
 </details>
 
 Encontre e retorne o maior valor do vetor: [27, 3, 16, 8, 12, 7, 2, 19].
 
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+fn main() {
+    let mut vector: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    vector.sort();
+    vector.reverse();
+    println!("{:?}", vector[0]);
+}
+```
+
+```rust
+fn main() {
+    let vector: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    println!("{:?}", vector.iter().max());
+}
+```
+
+```rust
+fn main() {
+    let input_vector: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    let mut value = &input_vector[0];
+
+    for i in &input_vector {
+        if i > value {
+            value = i;
+        }
+    }
+
+    println!("{:?}", value);
+}
+```
+
+</details>
+
+Copie os dados do vetor a seguir para outro vetor vazio: vector_a = [10, 20, 30, 40].
 
 [Playground!]()
 
@@ -408,17 +524,100 @@ Encontre e retorne o maior valor do vetor: [27, 3, 16, 8, 12, 7, 2, 19].
 <summary>Answers</summary>
 
 ```rust
-
+// .clone()
+fn main () {
+    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
+    let vector_b = vector_a.clone();
+    
+    println!("{:?}", vector_a);
+    println!("{:?}", vector_b);
+}
 ```
+
+```rust
+// .to_vec
+fn main () {
+    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
+    let vector_b: Vec<u8> = vector_a.to_vec();
+
+    println!("{:?}", vector_a);
+    println!("{:?}", vector_b);
+}
+```
+
+```rust
+// iter().copied().collect()
+fn main () {
+    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
+    let vector_b: Vec<u8> = vector_a.iter().copied().collect();
+
+    println!("{:?}", vector_a);
+    println!("{:?}", vector_b);
+}
+```
+
+```rust
+// .extend()
+fn main () {
+    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
+    let mut vector_b: Vec<u8> = Vec::new();
+    vector_b.extend(&vector_a);
+
+    println!("{:?}", vector_a);
+    println!("{:?}", vector_b);
+}
+```
+
+```rust
+// for
+fn main () {
+    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
+    let mut vector_b: Vec<u8> = Vec::new();
+
+    for i in &vector_a {
+        vector_b.push(*i);
+    }
+
+    println!("{:?}", vector_a);
+    println!("{:?}", vector_b);
+}
+```
+
 </details>
 
-Escreva um código que dobra o valor de todos os elementos de um vetor (modifique o vetor original).
-
+Escreva um código que dobra o valor de todos os elementos de um vetor e adicione a outro vetor.
 
 [Playground!]()
 
 <details>
 <summary>Answers</summary>
+
+```rust
+fn main() {
+    let input_vector: Vec<i16> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    let mut vector: Vec<i16> = vec![];
+
+    for i in &input_vector {
+        vector.push(i * 2);
+    }
+
+    println!("{:?}", input_vector);
+    println!("{:?}", vector);
+}
+```
+
+```rust
+fn main() {
+    let input_vector: Vec<i16> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    let mut vector: Vec<i16> = input_vector.clone();
+
+    for i in 0..vector.len() {
+        vector[i] *= 2;
+    }
+
+    println!("Vector 01 = {:?} \nVector 02 = {:?}", input_vector, vector);
+}
+```
 
 ```rust
 
