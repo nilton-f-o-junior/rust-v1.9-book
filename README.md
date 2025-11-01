@@ -51,13 +51,29 @@
     - [x] 6.10. Questions - While
     - [x] 6.11. Questions - For
     - [x] 6.12. Questions - Match
-- [x] 7. Functions and Method Syntax
-    - [x] 7.1. Functions
-    - [ ] 7.3. Function - Input
-    - [x] 7.4. Expression
-    - [ ] 7.5. Methods
-    - [x] 7.6. Modules - Inline
-    - [x] 7.7. Modules - Extern
-    - [x] 7.8. Modules - mod.rs
-    - [ ] 7.9. Modules - Questions
-- [ ] 8. Vectors
+- [x] 7. Vectors
+    - [x] 7.1 Index
+    - [x] 7.2 Methods - Part 1
+    - [x] 7.3 Methods - Part 2
+    - [x] 7.4 Methods - Part 3
+    - [x] 7.5 Methods - Part 4
+    - [ ] 7.6 Questions
+- [x] Constructs
+    - [x] 8.1 Struct
+    - [ ] 8.2 Struct - Example
+    - [x] 8.2 Impl
+    - [ ] 8.3 Impl - Example
+    - [ ] 8.4 Enum
+    - [ ] 8.5 Enum - Example
+    - [ ] 8.6 Traits
+    - [ ] 8.7 Traits - Example    
+    - [ ] 8.8 Questions
+- [x] 9. Functions and Method Syntax
+    - [x] 9.1. Functions
+    - [ ] 9.2. Function - Input
+    - [x] 9.3. Expression
+    - [ ] 9.4. Methods
+    - [x] 9.5. Modules - Inline
+    - [x] 9.6. Modules - Extern
+    - [x] 9.7. Modules - mod.rs
+    - [ ] 9.8. Modules - Questions
