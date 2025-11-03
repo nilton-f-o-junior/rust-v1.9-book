@@ -11,11 +11,9 @@
 
 ```rust
 fn main() {
-    //
     let a: u8 = 15;
     let b: u8 = 7;
 
-    //
     println!("{:?}", a + b);
 }
 ```
@@ -30,7 +28,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let total = 10;
     let sub = total - 3;
     println!("{:?}", sub);
@@ -52,11 +49,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let x: u8 = 6;
     let y: u8 = 8;
 
-    //
     let result: u8 = x * y;
     println!("{:?}", result);
 }
@@ -72,7 +67,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let result = 20 / 5;
     println!("{}", result);
 }
@@ -88,11 +82,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut remainder: u8 = 23;
     remainder %= 4;
 
-    //
     println!("{:?}", remainder);
 }
 ```
@@ -107,11 +99,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let num1: u8 = 12;
     let num2: u8 = 5;
 
-    //
     println!("{:?}", num1 + num2);
 }
 ```
@@ -126,7 +116,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let value: u8 = 9 + 2;
     println!("{:?}", value);
 }
@@ -142,11 +131,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let first: u8 = 7;
     let second: u8 = 3;
 
-    //
     println!("{:?}", first * second);
 }
 ```
@@ -161,11 +148,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let dividend: u8 = 18;
     let divisor: u8 = 3;
 
-    //
     let result: u8 = dividend / divisor;
     println!("{:?}", result);
 }
@@ -181,11 +166,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let n1: u8 = 25;
     let n2: u8 = 7;
 
-    //
     println!("{:?}", n1 % n2);
 }
 ```
@@ -200,11 +183,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut counter: u8 = 5;
     counter += 3;
 
-    //
     println!("{:?}", counter);
 }
 ```
@@ -219,11 +200,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut score: u8 = 20;
     score -= 5;
 
-    //
     println!("{:?}", score);
 }
 ```
@@ -238,11 +217,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut number: u8 = 2;
     number *= 4;
 
-    //
     println!("{:?}", number);
 }
 ```
@@ -257,11 +234,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut size: u8 = 30;
     size /= 6;
 
-    //
     println!("{:?}", size);
 }
 ```
@@ -279,7 +254,6 @@ fn main() {
     let mut number: u8 = 17;
     number %= 5;
 
-    //
     println!("{:?}", number);
 }
 ```
@@ -294,11 +268,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let part1: &str = "Hello, ";
     let part2: &str = "Rust!";
 
-    //
     println!("{}{}", part1, part2);
 }
 ```
@@ -313,11 +285,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let s1: String = String::from("Language ");
     let s2: String = String::from("Rust.");
 
-    //
     println!("{:?}", s1 + &s2);
 }
 ```
@@ -332,11 +302,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let number: &str = "Number: ";
     let number_str: String = String::from("42");
 
-    //
     println!("{:?}", number.to_owned() + &number_str);
 }
 ```
@@ -351,11 +319,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let initial_message: String = String::from("Welcome ");
     let name: &str = "User";
 
-    //
     println!("{:?}", initial_message.to_owned() + name);
 }
 ```
@@ -370,11 +336,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let greeting: String = String::from("Good ");
     let period: &str = "day!";
 
-    //
     println!("{}", greeting + period);
 }
 ```
@@ -389,7 +353,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let tup: (i32, i32) = (5, -2);
     println!("{:?}", tup.0 * tup.1);
 }
@@ -405,7 +368,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let tup: ((u8, u8), (u8, u8)) = ((1, 2), (3, 4));
     println!("{:?}", tup.0 .0 + tup.1 .1);
 }
@@ -421,11 +383,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let t1: (u8, u8) = (2, 5);
     let t2: (u8, u8) = (8, 1);
 
-    //
     println!("{:?}", t1.0 + t1.1 + t2.0 + t2.1);
 }
 ```
@@ -440,12 +400,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut t1: (f32, i32) = (0.0, 0);
     t1.0 = -2.;
     t1.1 = 2;
 
-    //
     println!("{:#?}", t1);
 }
 ```
@@ -460,7 +418,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr: [i32; 5] = [1, 3, 5, 7, 9];
     println!("{:?} + {:?} = {:?}", arr[0], arr[4], arr[0] + arr[4]);
 }
@@ -476,11 +433,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr: [i32; 3];
     arr = [10, 20, 30];
 
-    //
     println!("{:?}", arr[0] * arr[1] * arr[2]);
 }
 ```
@@ -495,11 +450,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr: [[i8; 2]; 2];
     arr = [[2, 2], [4, 4]];
 
-    //
     println!("{:?}", arr[0][0] * arr[0][1] * arr[1][0] * arr[1][1]);
 }
 ```
@@ -514,11 +467,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr1: [i8; 2] = [5, 3];
     let arr2: [i8; 2] = [3, 8];
 
-    //
     println!("{:?} + {:?} = {:?}", arr1[0], arr1[1], arr1[0] + arr1[1]);
     println!("{:?} + {:?} = {:?}", arr2[0], arr2[1], arr2[0] + arr2[1]);
 }
@@ -534,11 +485,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let a1: [u8; 2] = [4, 2];
     let a2: [u8; 2] = [3, 6];
 
-    //
     println!("{:?}, {:?}", a1[0] * a1[1], a2[0] * a2[1]);
 }
 ```
@@ -553,12 +502,12 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let x: u8 = 1;
     {
         let y: u8 = 2;
         println!("{:?}", x + y);
     }
+    
     println!("{:?}", x);
     // println!("{:?}", y); cannot find value `y` in this scope
 }
@@ -574,12 +523,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let level1: u8 = 10;
     {
         let level2: u8 = 20;
         {
-            //
             let level3: u8 = 30;
             println!("{:?}", level1 + level2 + level3);
         }
@@ -599,15 +546,12 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let num: u8 = 100;
     println!("{:?}", num);
-
     {
       let num: f32 = 50.;
       println!("{:?}", num);
     }
-
     println!("{:?}", num);
 }
 ```
@@ -622,7 +566,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let var: [u8; 2] = [2, 3];
     println!("{:?}", (var[0] + var[1]) * var[1]);
 }
@@ -638,7 +581,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let var: [u8; 2] = [2, 3];
     println!("{:?}", var[0] * var[1] / var[1] % var[1]);
 }
@@ -654,7 +596,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let var: [u8; 2] = [2, 3];
     println!("{:?}", var[0] + var[1] - var[0] + var[0] * var[0]);
 }
@@ -670,7 +611,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let var: [i8; 2] = [2, 3];
     println!("{:?}", (var[0] + var[1]) - (var[0] + var[0]) * var[0]);
 }
@@ -686,11 +626,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let num1: i8 = 10;
     let num2: i8 = 10;
 
-    //
     println!("Num1 = Num2? {:?} ", num1 == num2);
 }
 ```
@@ -705,11 +643,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let f1: f32 = 3.14;
     let f2: f32 = 2.71;
 
-    //
     println!("f1 != f2? {}", f1 != f2);
 }
 ```
@@ -724,11 +660,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let age1: u8 = 25;
     let age2: u8 = 30;
 
-    //
     println!("Age-1 > Age-2? {}", age1 > age2);
 }
 ```
@@ -743,11 +677,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let point_1: u8 = 5;
     let point_2: u8 = 8;
 
-    //
     println!("Point-1 < Point-2? {}", point_1 < point_2);
 }
 ```
@@ -762,11 +694,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let grade_1: u8 = 7;
     let grade_2: u8 = 7;
 
-    //
     println!("Grade-1 >= Grade-2? {}", grade_1 >= grade_2);
 }
 ```
@@ -781,11 +711,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let height_1: f32 = 1.70;
     let height_2: f32 = 1.65;
 
-    //
     println!("Height_1 <= Height_2? {}", height_1 <= height_2);
 }
 ```
@@ -800,13 +728,12 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let x: u8 = 5;
     let y: u8 = 10;
 
-    //
     println!("x != y? {}", x != y);
 }
+
 ```
 </details>
 
@@ -819,11 +746,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let temp_1: f32 = 22.5;
     let temp_2: f32 = 20.;
 
-    //
     println!("Temp1 > Temp2? {}", temp_1 > temp_2);
 }
 ```
@@ -838,11 +763,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let count_1: u8 = 100;
     let count_2: u8 = 99;
 
-    //
     println!("Count 1 < Count 2? {}", count_1 < count_2);
 }
 ```
@@ -857,11 +780,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let val_1: u8 = 8;
     let val_2: u8 = 3;
 
-    //
     println!("{:?}", (val_1 + val_2) - 1);
 }
 ```
@@ -876,11 +797,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr_1: (u32, u32) = (5, 10);
     let arr_2 = arr_1.0 * arr_1.1;
 
-    //
     println!("{:?}", arr_2);
 }
 ```
@@ -895,13 +814,12 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut arr: [i32; 3] = [2, 4, 6];
+
     arr[0] /= 2;
     arr[1] /= 2;
     arr[2] /= 2;
 
-    //
     println!("{:#?}", arr);
 }
 ```
@@ -916,11 +834,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let tup: (f64, f64) = (2.5, 3.5);
     let result: f64 = tup.0 + tup.1;
 
-    //
     println!("{:.2}", result);
 }
 ```
@@ -935,7 +851,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr: [u16; 2] = [100, 200];
     println!("{:?}", (arr[0] * 2) + (arr[1] * 3));
 }
@@ -972,7 +887,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let tup: (i8, i8, i8) = (1, 2, 3);
     println!("{:?}", tup.0 + tup.1 + tup.2);
 }
@@ -988,10 +902,8 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let data: [u8; 2] = [3, 2];
 
-    //
     println!("{:?}", data[0] + data[1] * 5);
     println!("{:?}", (data[0] + data[1]) * 5);
 }
@@ -1007,10 +919,8 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let calc_values: [u8; 3] = [10, 3, 2];
 
-    //
     println!("{:?}", calc_values[0] / calc_values[1] + calc_values[2]);
     println!("{:?}", calc_values[0] / (calc_values[1] + calc_values[2]));
 }
@@ -1026,7 +936,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let global_factor: u8 = 2;
     {
         let block: [u8; 3] = [1, 2, 3];

@@ -35,7 +35,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let max_u8: u8 = u8::MAX;
     println!("{:?}", max_u8);
 
@@ -55,7 +54,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let world_population: u64 = 7_800_000_000;
     println!("World Population: {world_population:?}");
 }
@@ -71,7 +69,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let video_views: u64 = 2_500_000_000;
     println!("{:?}", video_views);
 }
@@ -107,7 +104,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let current_altitude_change: i16 = -350;
     println!("Altitude: {:?} meters", current_altitude_change);
 }
@@ -123,7 +119,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let transaction_value_cents: i64 = -12_345_678_900;
     println!("Debit = {:.3} million", transaction_value_cents);
 }
@@ -169,8 +164,7 @@ fn main() {
 <summary>Answers</summary>
 
 ```rust
-fn main() {
-    //
+fn main() {  
     let precise_measurement: f64 = 123.456_789_123_456;
     println!("{:?}", precise_measurement);
 }
@@ -237,11 +231,8 @@ fn main() {
 <summary>Answers</summary>
 
 ```rust
-fn main() {
-    //
+fn main() {    
     let my_ini: char = 'n';      
-
-    //
     println!("{}", my_ini);
 }
 ```
@@ -256,12 +247,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let emoji_char: char = '😊';
     let math_symbol: char = '∑';
     let arrow_char: char = '→';
 
-    //
     println!("{}\n{}\n{}", emoji_char, math_symbol, arrow_char);
 }
 ```
@@ -315,7 +304,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let record: (&str, u8, f32) = ("Maria", 22, 7.5);
     println!("{:#?}", record);
 }
@@ -331,7 +319,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let server_response: (u16, &str) = (404, "Not Found");
     println!("{:?}", server_response);
 }
@@ -346,8 +333,7 @@ fn main() {
 <summary>Answers</summary>
 
 ```rust
-fn main() {
-    //
+fn main() {    
     let product_info: (&str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
     let (name, price, quantity_and_stock) = product_info;
 
@@ -378,11 +364,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let color_rgb: (u8, u8, u8) = (255, 128, 0);
     let (red, green, blue) = color_rgb;
 
-    //
     println!("Red: {} \nGreen: {} \nBlue: {}", red, green, blue);
 }
 ```
@@ -397,7 +381,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let api_result: (bool, u64, String) = (true, 1234567890, String::from("Successful operation"));
     println!("{:#?}", api_result);
 }
@@ -436,13 +419,12 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut player_stats: (&str, i32, u8) = ("Hero", 0, 3);
     println!("{:#?}", player_stats);
 
-    //
     player_stats.1 = 1500;
     player_stats.2 = 2;
+    
     println!("{:#?}", player_stats);
 }
 ```
@@ -457,11 +439,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut point: (f32, f32) = (10., 20.);
     println!("{:#?}", point);
 
-    //
     point.0 = 15.5;
     point.1 = 25.;
     println!("{:#?}", point);
@@ -487,7 +467,6 @@ fn main () {
     file_details_v2.0 = String::from("teste_v2.txt");
     file_details_v2.1 = 256;
 
-    //
     println!("{:#?}", file_details_v2);
 }
 ```
@@ -502,11 +481,9 @@ fn main () {
 
 ```rust
 fn main () {
-    //
     let months: [&str; 3] = ["January", "February", "March"];
     println!("{:#?}", months);
 
-    //
     println!("{:#?}", months[1])
 }
 ```
@@ -521,7 +498,6 @@ fn main () {
 
 ```rust
 fn main() {
-    //
     let powers_of_two: [u32; 6] = [1, 2, 4, 8, 16, 32];
     println!("{:?}, {:?}, {:?}", powers_of_two[3], powers_of_two[4], powers_of_two[5]);
 }
@@ -563,14 +539,11 @@ fn main () {
 
 ```rust
 fn main () {
-    //
     let mut inventory_counts: [u16; 4] = [10, 25, 5, 30];
 
-    //
     inventory_counts[0] = 12;
     inventory_counts[3] = 8;
 
-    //
     println!("{:?}", inventory_counts);
 }
 ```
@@ -585,17 +558,13 @@ fn main () {
 
 ```rust
 fn main () {
-
-    //
     let mut active_services:[bool; 3] = [true, false, true];
     println!("{:?}", active_services);
 
-    //
     active_services[1] = true;
     active_services[2] = false;
     println!("{:?}", active_services);
 
-    //
     println!("{:?}, {:?}, {:?}", active_services[0], active_services[1], active_services[2]);
 }
 ```
@@ -610,14 +579,13 @@ fn main () {
 
 ```rust
 fn main () {
-    //
     let mut pixel_colors: [[u8; 3]; 3] = [[255, 0, 0], [0, 255, 0], [0, 0, 255]];
     println!("{:#?}", pixel_colors);
 
-    //
     pixel_colors[0][0] = 0;
     pixel_colors[0][1] = 255;
     pixel_colors[1][0] = 255;
+    
     println!("{:#?}", pixel_colors);
 }
 ```
