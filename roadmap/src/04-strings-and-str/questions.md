@@ -9,7 +9,6 @@
 
 ```rust
 fn main() {
-    //
     let empty_string: String = String::new();
     println!("{}", empty_string);
 }
@@ -25,7 +24,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let literal_string: String = String::from("Hello, Rust!");
     println!("{}", literal_string);
 }
@@ -41,7 +39,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let hold_string: &str = "Learning Rust";
     println!("{}", hold_string);
 }
@@ -57,16 +54,14 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let input_string: String = String::from("Learning Rust!");
     let input_str: &str = &input_string;
     println!("{}", input_str);
 }
+```
 
-// or
-
+```rust
 fn main() {
-    //
     let input_string: String = String::from("Learning Rust!");
     let input_str: &str = input_string.as_str();
     println!("{}", input_str);
@@ -105,16 +100,18 @@ fn main() {
 <summary>Answers</summary>
 
 ```rust
-fn main() {
-    //
+fn main() {    
     let text: &str = "123";
     let num: u8 = text.parse().expect("Error converting data!");
-    println!("{}", num);
+    println!("{}", num);    
+}
+```
 
-    // or
-
-    //
-    match text.parse::<u8>() {
+```rust
+fn main() {
+    let text: &str = "123";
+     
+    let num = match text.parse::<u8>() {
         Ok(num) => num,
         Err(_) => {
             println!("Error converting data!");
@@ -137,18 +134,15 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
     let mut input_text: String = String::new();
     io::stdin()
         .read_line(&mut input_text)
         .expect("Data entry error!");
 
-    //
     let text_01: &str = &input_text.as_str();
     let text_02: String = String::from("string");
 
-    //
     println!("\n{}", text_01.to_string() + &text_02);
 }
 ```
@@ -163,9 +157,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut mutable_string: String = String::from("Hello, ");
     mutable_string.push_str("word!");
+
     println!("{}", mutable_string);
 }
 ```
@@ -179,10 +173,10 @@ fn main() {
 <summary>Answers</summary>
 
 ```rust
-fn main() {
-    //
+fn main() {    
     let mut single_char: String = String::from("Hello, word");
     let character: char = '!';
+
     single_char.push(character);
     println!("{}", single_char);
 }
@@ -198,17 +192,14 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let var_str: &str = "1";
     let var_string: String = String::from("2");
     let var_u8: u8 = 3;
 
-    //
     let result = format!("{}{}{}", var_str, var_string, var_u8);
     println!("{}", result);
 }
 ```
-
 </details>
 
 11 - Create a new String by removing all whitespace from a string.
@@ -222,12 +213,10 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
-    //
     let remove_wspace = input_text.replace(" ", "");
     println!("\nFirst Letter = {}", remove_wspace.trim());
 }
@@ -245,12 +234,10 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
-    //
     let new_text = input_text.replace("error", "success");
     println!("{}", new_text.trim());
 }
@@ -268,12 +255,10 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter phrase:");
     let mut input_phrase: String = String::new();
     io::stdin().read_line(&mut input_phrase).err();
 
-    //
     let phrase = input_phrase.replacen("old", "new", 1);
     println!("{}", phrase.trim());
 }
@@ -291,12 +276,10 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
-    //
     if input_text.contains("Rust") {
         println!("\n'{}' contains 'Rust'", input_text.trim());
     } else {
@@ -317,12 +300,10 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter filename:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
-    //
     if input_text.trim().ends_with(".rs") {
         println!("\n'{}' ends with '.rs'", input_text.trim());
     } else {
@@ -330,7 +311,6 @@ fn main() {
     }
 }
 ```
-
 </details>
 
 16 - Check if a &str starts with the prefix "https://".
@@ -344,12 +324,10 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
-    //
     if input_text.starts_with("https://") {
         println!("\n'{}' start with 'https://'", input_text.trim());
     } else {
@@ -357,7 +335,6 @@ fn main() {
     }
 }
 ```
-
 </details>
 
 17 - Create code that takes a String and returns a slice containing only the first word. Assume that words are separated by spaces.
@@ -371,12 +348,10 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter phrase:");
     let mut input_phrase: String = String::new();
     io::stdin().read_line(&mut input_phrase).err();
 
-    //
     let phrase = input_phrase.split_whitespace().next();
     println!("{}", phrase.unwrap());
 }
@@ -394,12 +369,10 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter filename:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
-    //
     if let Some(index) = input_text.find("world") {
         println!("\nByte index: world = {}", index);
     } else {
@@ -420,11 +393,9 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     let mut input_word: String = String::new();
     io::stdin().read_line(&mut input_word).err();
 
-    //
     let mut first_letter: char = ' ';
     for i in input_word.trim_start().chars() {
         first_letter = i;
@@ -432,16 +403,15 @@ fn main() {
     }
     println!("First Letter = {}", first_letter);
 }
+```
 
-// or
+```rust
 use std::io;
 
 fn main() {
-    //
     let mut input_word: String = String::new();
     io::stdin().read_line(&mut input_word).err();
 
-    //
     let first_letter: char = input_word.trim_start().chars().next().unwrap_or(' ');
     println!("First Letter = {}", first_letter);
 }
@@ -459,32 +429,27 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter word:");
     let mut input_word: String = String::new();
     io::stdin().read_line(&mut input_word).err();
 
-    //
     let word = input_word.trim().replace(" ", "");
     println!("{}", word);
     println!("{:?}", word.len());
 }
+```
 
-// or
-
+```rust
 use std::io;
 
 fn main() {
-    //
     println!("Enter word:");
     let mut input_word: String = String::new();
     io::stdin().read_line(&mut input_word).err();
 
-    //
     let word = input_word.trim();
     let mut count: u8 = 0;
 
-    //
     for _i in word.chars() {
         count += 1;
     }
@@ -505,16 +470,13 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter phrase:");
     let mut input_phrase: String = String::new();
     io::stdin().read_line(&mut input_phrase).err();
 
-    //
     let phrase = input_phrase.trim().replace(" ", "");
     let mut count: u8 = 0;
 
-    //
     for _i in phrase.chars() {
         count += 1;
     }
@@ -540,7 +502,6 @@ fn main() {
     let mut input_phrase: String = String::new();
     io::stdin().read_line(&mut input_phrase).err();
 
-    //
     let phrase = input_phrase.trim().replace("a", "A");
     println!("{}", phrase);
 
@@ -549,7 +510,6 @@ fn main() {
     let mut input_phrase: String = String::new();
     io::stdin().read_line(&mut input_phrase).err();
 
-    //
     let bytes = unsafe { input_phrase.as_bytes_mut() };
 
     for i in bytes.iter_mut() {
@@ -557,6 +517,7 @@ fn main() {
             *i = b'A';
         }
     }
+    
     println!("{}", phrase);
 }
 ```
@@ -573,7 +534,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
     let mut input_character: String = String::new();
     io::stdin()
@@ -584,20 +544,18 @@ fn main() {
     character.pop();
     println!("{}", character);
 }
+```
 
-// or
-
+```rust
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
     let mut input_character: String = String::new();
     io::stdin()
         .read_line(&mut input_character)
         .expect("Data entry erro!");
 
-    //
     let mut count = 0;
     let mut character: String = String::new();
 
@@ -622,17 +580,14 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut var_string: String = String::with_capacity(50);
     var_string.push_str("Hello, world!");
 
-    //
     println!("String = {}", var_string);
     println!("Capacity = {}", var_string.capacity());
     println!("Len = {}", var_string.len());
     println!("");
 
-    //
     var_string.clear();
     println!("String = {}", var_string);
     println!("Capacity = {}", var_string.capacity());
