@@ -13,16 +13,13 @@
 use std::io;
 
 fn main() {
-    //
     println!("Enter a number:");
 
-    //
     let mut input: String = String::new();
     io::stdin()
         .read_line(&mut input)
         .expect("Error in the value entered!");
 
-    //
     let num: i32 = match input.trim().parse() {
         Ok(val) => val,
         Err(_) => {
@@ -31,7 +28,6 @@ fn main() {
         }
     };
 
-    //
     if num % 2 == 0 {
         println!("Num = {}\nEven!", num);
     } else {
@@ -52,10 +48,8 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter a number: ");
 
-    //
     let mut input_num: String = String::new();
     io::stdin()
         .read_line(&mut input_num)
@@ -63,7 +57,6 @@ fn main() {
 
     let num: i8 = input_num.trim().parse().expect("Error converting data!");
 
-    //
     if num > 0 {
         println!("Num = {}!\nPositive", num);
     } else if num < 0 {
@@ -86,21 +79,18 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter a number (a):");
     let mut input_num_a: String = String::new();
     io::stdin()
         .read_line(&mut input_num_a)
         .expect("Error in the value entered!");
 
-    //
     println!("Enter a number (b):");
     let mut input_num_b: String = String::new();
     io::stdin()
         .read_line(&mut input_num_b)
         .expect("Error in the value entered!");
-
-    //
+    
     let num_a: i8 = match input_num_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
@@ -117,7 +107,6 @@ fn main() {
         }
     };
 
-    //
     if num_a > num_b {
         println!("Num A > Num B");
     } else if num_a < num_b {
@@ -151,14 +140,12 @@ fn main() {
         .read_line(&mut input_test_a)
         .expect("Error entering the first grade!");
 
-    //
     println!("Enter the grade for your second test:");
     let mut input_test_b: String = String::new();
     io::stdin()
         .read_line(&mut input_test_b)
         .expect("Error entering the second grade!");
 
-    //
     println!("Enter the grade for your third test:");
     let mut input_test_c: String = String::new();
     io::stdin()
@@ -190,9 +177,9 @@ fn main() {
         }
     };
 
+    //
     let ava: f32 = (test_a + test_b + test_c) / 3.;
 
-    //
     if ava < 5. {
         println!("You failed!");
     } else if ava >= 5. && ava < 7. {
@@ -215,7 +202,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter your age:");
 
     let mut input_age: String = String::new();
@@ -223,7 +209,6 @@ fn main() {
         .read_line(&mut input_age)
         .expect("Error in the entered!");
 
-    //
     let age: u8 = match input_age.trim().parse() {
         Ok(age) => age,
         Err(_) => {
@@ -232,7 +217,6 @@ fn main() {
         }
     };
 
-    //
     if age >= 16 && age <= 59 {
         println!("You are required to vote!");
     } else if age >= 60 && age <= 100 {
@@ -346,7 +330,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter with number (0 - 100):");
     let mut input_num: String = String::new();
     io::stdin()
@@ -361,7 +344,6 @@ fn main() {
         }
     };
 
-    //
     if num > 0 && num <= 59 {
         println!("F");
     } else if num >= 60 && num <= 69 {
@@ -419,6 +401,7 @@ fn main() {
             return;
         }
     };
+
     let b: f32 = match input_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
@@ -426,6 +409,7 @@ fn main() {
             return;
         }
     };
+
     let c: f32 = match input_c.trim().parse() {
         Ok(val) => val,
         Err(_) => {
@@ -457,7 +441,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter a number from 1 to 7:");
     let mut input_day: String = String::new();
     io::stdin()
@@ -472,7 +455,6 @@ fn main() {
         }
     };
 
-    //
     if day == 1 || day == 7 {
         if day == 1 {
             println!("Sunday - Weekend!");
@@ -514,7 +496,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter you age:");
     let mut input_age: String = String::new();
     io::stdin()
@@ -529,7 +510,6 @@ fn main() {
         }
     };
 
-    //
     if age >= 1 && age <= 12 {
         println!("Child!");
     } else if age >= 13 && age <= 17 {
@@ -563,14 +543,12 @@ fn main() {
         .read_line(&mut input_first_number)
         .expect("Error receiving first number!");
 
-    //
     println!("Enter the second number:");
     let mut input_second_number: String = String::new();
     io::stdin()
         .read_line(&mut input_second_number)
         .expect("Error receiving first number!");
 
-    //
     println!("Insert the mathematical operator:");
     let mut input_operator: String = String::new();
     io::stdin()
@@ -586,7 +564,6 @@ fn main() {
         }
     };
 
-    //
     let second_number: f32 = match input_second_number.trim().parse() {
         Ok(val) => val,
         Err(_) => {
@@ -595,7 +572,6 @@ fn main() {
         }
     };
 
-    //
     let operator: char = match input_operator.trim().parse() {
         Ok(val) => val,
         Err(_) => {
@@ -664,7 +640,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter the value:");
     let mut input_value: String = String::new();
     io::stdin()
@@ -679,7 +654,6 @@ fn main() {
         }
     };
 
-    //
     if value < 100. {
         println!("Value: {} - No discount!", value);
     } else if value >= 100. && value <= 500. {
@@ -716,7 +690,6 @@ fn main() {
     const ERROR_INPUT: &str = "Error receiving valeu!";
     const ERROR_CONVERTING: &str = "Error converting value!";
 
-    //
     println!("Enter the Weight:");
     let mut input_weight: String = String::new();
     io::stdin().read_line(&mut input_weight).expect(ERROR_INPUT);
@@ -729,7 +702,6 @@ fn main() {
         }
     };
 
-    //
     println!("Enter the Height:");
     let mut input_height: String = String::new();
     io::stdin().read_line(&mut input_height).expect(ERROR_INPUT);
@@ -742,7 +714,6 @@ fn main() {
         }
     };
 
-    //
     let bmi: f32 = weight / (height * height);
 
     if bmi <= 18.5 {
@@ -773,7 +744,6 @@ use std::io;
 const ERROR_INPUT: &str = "Data entry error!";
 
 fn main() {
-    //
     println!("Username:");
     let mut input_username: String = String::new();
     io::stdin()
@@ -781,7 +751,6 @@ fn main() {
         .expect(ERROR_INPUT);
     let username: &str = input_username.trim();
 
-    //
     println!("Password:");
     let mut input_password: String = String::new();
     io::stdin()
@@ -789,7 +758,6 @@ fn main() {
         .expect(ERROR_INPUT);
     let password: &str = input_password.trim();
 
-    //
     if username == "admin" && password == "1234" {
         println!("Access Granted!");
     } else {
@@ -817,7 +785,6 @@ fn main() {
     println!("Computer");
     println!("");
 
-    //
     println!("-- Select --");
     println!("  Player 1  ");
     println!("");

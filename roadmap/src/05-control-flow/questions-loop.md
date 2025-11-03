@@ -9,12 +9,9 @@
 
 ```rust
 fn main() {
-    //
     let mut count_number: u8 = 0;
 
-    //
     loop {
-        //
         count_number += 1;
         println!("Count = {}", count_number);
         if count_number >= 5 {
@@ -37,10 +34,8 @@ eds LIMIT and print the final value of sum.
 const LIMIT: u8 = 100;
 
 fn main() {
-    //
     let mut start_sum: u8 = 1;
 
-    //
     loop {
         println!("{}", start_sum);
 
@@ -64,12 +59,9 @@ ion.
 
 ```rust
 fn main() {
-    //
     let mut count_num: u8 = 0;
 
-    //
     loop {
-        //
         count_num += 1;
 
         if count_num >= 4 {
@@ -92,7 +84,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut count_number: u8 = 0;
 
     loop {
@@ -122,12 +113,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut count_number: f32 = 0.;
 
-    //
     loop {
-        //
         count_number += 0.5;
         println!("{}", count_number);
 
@@ -169,17 +157,14 @@ fn main() {
     let mut health_player: i8 = 100;
     let mut health_monster: i8 = 100;
 
-    //
     let mut round = 0;
 
-    //
     println!("--- Start Game ---");
     println!("Player vs Monster");
     println!("");
 
     //
     loop {
-        //
         round += 1;
 
         println!("---- Statistics ----");
@@ -270,7 +255,6 @@ fn main() {
 ```
 </details>
 
-
 07 - Create a counter that starts from 1 and goes onwards. Inside a loop, check the following conditions:
 
 - If the number is divisible by both 3 and 5, print "FizzBuzz".
@@ -287,13 +271,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     println!("Count 1 .. 100!");
     let mut count_number: u8 = 0;
 
-    //
     loop {
-        //
         count_number += 1;
 
         if count_number % 3 == 0 && count_number % 5 == 0 {
@@ -323,12 +304,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut cap: f32 = 1000.;
     let mut year: u8 = 0;
 
     loop {
-        //
         cap *= 1.07;
         year += 1;
         println!("Cap = {} and Year = {}", cap, year);
@@ -352,13 +331,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut input_char: char = 'a';
     println!("-- Start --");
 
-    //
     loop {
-        //
         println!("Char: {}", input_char);
         let char_init = input_char as u8;
         let char_next = char_init + 1;
@@ -381,14 +357,12 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut data: (u8, bool) = (0, false);
 
     loop {
         println!("{:?}", data);
         data.0 += 1;
 
-        //
         if data.0 > 5 {
             data.1 = true;
             println!("{:?}", data);
@@ -410,15 +384,12 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     let mut person: (String, u8, f32) = ("Person".to_string(), 0, 0.);
     println!("{:#?}", person);
 
     let mut amount: u8 = 0;
 
-    //
     loop {
-        //
         println!("Whats your name?");
         let mut input_person: String = String::new();
         io::stdin()
@@ -426,7 +397,6 @@ fn main() {
             .expect("Error entered data!");
         let name: String = input_person.trim().to_string();
 
-        //
         println!("Whats your age?");
         let mut input_age: String = String::new();
         io::stdin()
@@ -434,7 +404,6 @@ fn main() {
             .expect("Error entered data!");
         let age: u8 = input_age.trim().parse().expect("Error convert data!");
 
-        //
         println!("Whats your height?");
         let mut input_height: String = String::new();
         io::stdin()
@@ -442,10 +411,8 @@ fn main() {
             .expect("Error entered data!");
         let height: f32 = input_height.trim().parse().expect("Error convert data!");
 
-        //
         amount += 1;
 
-        //
         person = (name, age, height);
         println!("{:#?}", person);
 
@@ -466,18 +433,14 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let init_array: [u8; 5] = [10, 20, 30, 40, 50];
     let mut i = 0;
 
-    //
     loop {
-        //
         if i >= init_array.len() {
             break;
         }
 
-        //
         println!("{}", init_array[i]);
         i += 1;
     }
@@ -494,12 +457,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let init_array: [u8; 5] = [1, 2, 3, 4, 5];
     let mut i = init_array.len() - 1;
 
     loop {
-        //
         if i <= 0 {
             println!("{}", init_array[i]);
             break;
@@ -521,16 +482,14 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let init_array_int: [u8; 2] = [1, 2];
     let init_array_float: [f32; 3] = [2.5, 7.3, 9.2];
     let init_array_char: [char; 4] = ['A', 'B', 'C', 'D'];
     let init_array_str: [&str; 5] = ["Ana", "Bruno", "Carla", "Daniel", "Elza"];
 
-    //
     let mut i = 0;
+    
     loop {
-        //
         if i >= init_array_int.len() {
             break;
         }
@@ -540,7 +499,6 @@ fn main() {
     }
     println!("");
 
-    //
     i = 0;
     loop {
         //
@@ -553,7 +511,6 @@ fn main() {
     }
     println!("");
 
-    //
     i = 0;
     loop {
         //
@@ -566,7 +523,6 @@ fn main() {
     }
     println!("");
 
-    //
     i = 0;
     loop {
         //
@@ -590,10 +546,8 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let init_array: [u8; 4] = [1, 2, 4, 5];
 
-    //
     let mut i = 0;
     let mut sum = 0;
 
@@ -619,14 +573,11 @@ fn main() {
 <summary>Answers</summary>
 
 ```rust
-fn main() {
-    //
+ fn main() {
     let mut init_array: [i32; 5] = [0; 5];
     let mut i = 0;
 
-    //
     loop {
-        //
         if i >= init_array.len() {
             break;
         }
@@ -649,12 +600,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut count: u8 = 1;
     let mut factorial: u8 = 1;
 
     loop {
-        //
         println!("Facto = {}", factorial);
 
         factorial *= count;
@@ -679,21 +628,16 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut number: f32 = 123.;
 
     loop {
-        //
         let division = number / 2.;
         let remainder = number % 2.;
 
-        //
         number = division;
 
-        //
         println!("123 / 2 = {:.2}\n123 % 2 = {:.2}\n", division, remainder);
 
-        //
         if number < 1. {
             break;
         }
@@ -711,12 +655,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut count: u8 = 0;
 
-    //
     loop {
-        //
         println!("Count = {} | 5 + count * 2 = {}", count, 5 + count * 2);
         println!("Count = {} | (5 + count) * 2 = {}", count, (5 + count) * 2);
 
@@ -790,11 +731,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     println!("-- Start --");
     let mut init_count: i8 = 10;
 
-    //
     loop {
         println!("Countdown: {}", init_count);
 
@@ -818,24 +757,20 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut init_array: [i8; 10] = [0; 10];
     let mut i = 0;
 
     loop {
-        //
         if i >= init_array.len() {
             break;
         }
 
-        //
         if i % 2 == 0 {
             init_array[i] = i as i8;
         } else {
             init_array[i] = i as i8 * 2;
         }
 
-        //
         println!("Array = {:?}", init_array);
         i += 1;
     }

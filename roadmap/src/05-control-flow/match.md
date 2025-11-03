@@ -5,7 +5,6 @@ Match compares a value against different patterns and executes the code correspo
 It ensures that all possible cases are covered, preventing common bugs. Unlike traditional switch, it doesn't need break and always returns a value.
 
 ```rust
-//
 let a = 3;
 
 match a {
@@ -19,7 +18,6 @@ match a {
 `range`
 
 ```rust
-//
 let age = 63;
 
 let category = match age {
@@ -35,7 +33,6 @@ println!("{}", category);
 `println!()`
 
 ```rust
-//
 let alph = 'g';
 
 println!("{:?}", match alph {
@@ -48,7 +45,6 @@ println!("{:?}", match alph {
 `operation`
 
 ```rust
-//
 let number = 20;
 
 let result = match number {
@@ -63,7 +59,6 @@ println!("{}", result);
 `equal`
 
 ```rust
-//
 let even = (2, -2);
 
 let result = match even {

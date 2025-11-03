@@ -9,7 +9,6 @@
 
 ```rust
 fn main() {
-    //
     let mut count: u8 = 0;
 
     while count <= 5 {
@@ -29,7 +28,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut count: u8 = 10;
 
     while count >= 1 {
@@ -53,12 +51,10 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut sum: u16 = 0;
     let mut count: u8 = 1;
 
     while count <= 100 {
-        //
         sum += count as u16;
         count += 1;
     }
@@ -77,7 +73,6 @@ in each iteration before checking the exit condition.
 
 ```rust
 fn main() {
-    //
     let mut count: u8 = 0;
 
     while count >= 0 {
@@ -103,17 +98,14 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number:");
     let mut input_number: String = String::new();
     io::stdin()
         .read_line(&mut input_number)
         .expect("Data entry error!");
 
-    //
     let mut number: u16 = input_number.trim().parse().expect("Converting error data!");
 
-    //
     if number <= 0 {
         println!("{}", false);
     } else if number == 1 {
@@ -143,7 +135,6 @@ bers.
 
 ```rust
 fn main() {
-    //
     let mut count: u8 = 0;
 
     while count <= 10 {
@@ -170,11 +161,9 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     let mut cond: u8 = 0;
 
     while cond <= 10 {
-        //
         println!("Enter number:");
         let mut input_number: String = String::new();
         io::stdin()
@@ -185,7 +174,6 @@ fn main() {
 
         cond = number;
 
-        //
         if cond <= 10 {
             println!("Number < 10");
             println!("Try again!\n");
@@ -208,21 +196,18 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number:");
     let mut input_number: String = String::new();
     io::stdin()
         .read_line(&mut input_number)
         .expect("Data entry error!!");
 
-    //
     let number: u16 = input_number.trim().parse().expect("Error conveting data!");
 
-    //
     if number == 0 {
         println!("Factorial: 0 = 1");
     } else {
-        //
+
         let mut factorial: u16 = 1;
         let mut i: u16 = 1;
 
@@ -248,19 +233,16 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number:");
     let mut input_number: String = String::new();
     io::stdin()
         .read_line(&mut input_number)
         .expect("Code entry error!");
 
-    //
     let mut number: u16 = input_number.trim().parse().expect("Error converting data!");
     let save_number = number;
     let mut reverse_count: u16 = 0;
 
-    //
     if number == 0 {
         reverse_count = number;
     } else {
@@ -288,14 +270,12 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number:");
     let mut input_number: String = String::new();
     io::stdin()
         .read_line(&mut input_number)
         .expect("Code entry error!");
 
-    //
     let mut number: u16 = input_number.trim().parse().expect("Error converting data!");
     let save_number: u16 = number;
     let mut count: u8 = 0;
@@ -323,11 +303,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut count: u16 = 0;
 
     while count <= 7 {
-        //
         let number: u16 = count * count;
         println!("Square: {} = {}", count, number);
         count += 1;
@@ -345,10 +323,8 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut number: u8 = 64;
 
-    //
     while number > 1 {
         number /= 2;
         println!("Result = {}", number);
@@ -366,10 +342,8 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut number: u8 = 51;
 
-    //
     while number % 2 > 0 {
         number += 1;
     }
@@ -390,20 +364,16 @@ ts ("too high", "too low"). (Requires std::io for user input).
 use std::io;
 
 fn main() {
-    //
     let mut number: u8 = 0;
     let sort_number: u8 = 42;
 
-    //
     while number != sort_number {
-        //
         println!("Enter number:");
         let mut input_number: String = String::new();
         io::stdin()
             .read_line(&mut input_number)
             .expect("Data entry error!");
 
-        //
         number = input_number
             .trim()
             .parse()
@@ -431,22 +401,18 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Entry number:");
     let mut input_number: String = String::new();
     io::stdin()
         .read_line(&mut input_number)
         .expect("Data entry error!");
 
-    //
     let number: u8 = input_number.trim().parse().expect("Error converting data!");
     let mut count: u8 = 0;
     let mut result: u8;
 
-    //
     println!();
 
-    //
     while count < 5 {
         count += 1;
         result = count * number;
@@ -468,26 +434,22 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number of rows: ");
     let mut input_row: String = String::new();
     io::stdin()
         .read_line(&mut input_row)
         .expect("Data entry error!");
 
-    //
     println!("Enter number of columns: ");
     let mut input_column: String = String::new();
     io::stdin()
         .read_line(&mut input_column)
         .expect("Data entry error!");
 
-    //
     let number_row: u8 = input_row.trim().parse().expect("Error converting data!");
     let number_column: u8 = input_column.trim().parse().expect("Error converting data!");
     let symbol: String = String::from("*");
 
-    //
     let mut row_count: u8 = 0;
     while row_count < number_row {
         let mut column_count: u8 = 0;
@@ -514,19 +476,16 @@ sors are found, the program should state that 'This is first 5 multiple numbers 
 use std::io;
 
 fn main() {
-    //
     println!("Entry number:");
     let mut input_number: String = String::new();
     io::stdin()
         .read_line(&mut input_number)
         .expect("Data entry error!");
 
-    //
     let number: u8 = input_number.trim().parse().expect("Error converting data!");
     let mut count: u8 = 0;
     let mut count_division: u8 = 0;
 
-    //
     while count_division < 5 {
         count += 1;
 
@@ -548,4 +507,3 @@ fn main() {
 }
 ```
 </details>
-

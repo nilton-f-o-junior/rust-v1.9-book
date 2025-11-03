@@ -9,7 +9,6 @@
 
 ```rust
 fn main() {
-    //
     for i in 1..=10 {
         println!("{}", i);
     }
@@ -26,14 +25,15 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let mut sum: u16 = 0;
+
     for i in 1..=100 {
         sum += i;
         println!("{}", i);
         println!("{}", sum);
         println!();
     }
+
     println!("{}", sum);
 }
 ```
@@ -48,7 +48,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     for i in 0..=20 {
         if i % 2 == 0 {
             println!("{}", i);
@@ -69,13 +68,11 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number:");
     let mut input_number: String = String::new();
     io::stdin().read_line(&mut input_number).err();
     let number: i16 = input_number.trim().parse().expect("");
 
-    //
     println!("");
     for i in 0..=number {
         println!("Number: {:02} = {:b}", i, i);
@@ -93,15 +90,14 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     for i in 0..=100 {
         println!("{:02}", i);
     }
 }
+```
 
-// or
+```rust
 fn main() {
-    //
     for i in 0..=100 {
         if i < 10 {
             println!("0{}", i)
@@ -111,6 +107,7 @@ fn main() {
     }
 }
 ```
+
 </details>
 
 06 - Write a program that prints the multiplication table for a user-provided number (from 1 to 10) using a for loop.
@@ -124,18 +121,15 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number:");
     let mut input_number: String = String::new();
     io::stdin()
         .read_line(&mut input_number)
         .expect("Data entry error!");
 
-    //
     let number: i16 = input_number.trim().parse().expect("Error converting data!");
     println!();
 
-    //
     for i in 1..=10 {
         let mult: i16 = number * i;
         println!("{} x {} = {}", number, i, mult);
@@ -155,7 +149,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
 
     let mut input_string: String = String::new();
@@ -187,7 +180,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number:");
     let mut input_number: String = String::new();
     io::stdin().read_line(&mut input_number).err();
@@ -198,7 +190,7 @@ fn main() {
         let convert_number: i16 = i.to_string().parse().expect("Error converting data!");
         result_sum += convert_number;
     }
-
+    
     println!("{}", result_sum);
 }
 ```
@@ -215,7 +207,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter text:");
 
     let mut input_string: String = String::new();
@@ -231,6 +222,7 @@ fn main() {
             qtd_vowels += 1;
         }
     }
+
     println!("Qtd. = {}", qtd_vowels);
 }
 ```
@@ -245,7 +237,6 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr: [u8; 5] = [17, 43, 5, 54, 93];
     let mut number_larger: u8 = 0;
 
@@ -254,6 +245,7 @@ fn main() {
             number_larger = *j;
         }
     }
+
     println!("{}", number_larger);
 }
 ```
@@ -268,18 +260,15 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr: [u8; 5] = [63, 36, 57, 7, 82];
     let mut number_larger: u8 = arr[1];
 
-    //
     for (_i, j) in arr.iter().enumerate() {
         if *j < number_larger {
             number_larger = *j;
         }
     }
 
-    //
     println!("{}", number_larger);
 }
 ```
@@ -296,20 +285,16 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number:");
     let mut input_number: String = String::new();
     io::stdin()
         .read_line(&mut input_number)
         .expect("Data entry error!");
 
-    //
     let number: u8 = input_number.trim().parse().expect("Error converting data!");
     let mut factorial: u8 = 1;
 
-    //
     for i in 1..=number {
-        //
         factorial *= i;
         println!("Facto = {}", factorial);
     }
@@ -326,10 +311,8 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr: [u8; 5] = [1, 2, 3, 4, 5];
 
-    //
     for i in arr.iter().rev() {
         println!("{:#?}", i);
     }
@@ -348,7 +331,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter word:");
 
     let mut input_word: String = String::new();
@@ -362,6 +344,7 @@ fn main() {
     for i in word.chars().rev() {
         rever_word.push(i);
     }
+    
     if word == rever_word {
         println!("Word {} is polindrome!", word)
     } else {
@@ -382,7 +365,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter word:");
 
     let mut input_word: String = String::new();
@@ -392,7 +374,6 @@ fn main() {
 
     let word: String = input_word.trim().to_lowercase().to_string();
 
-    //
     println!("\nEnter character: ");
 
     let mut input_character: String = String::new();
@@ -402,12 +383,9 @@ fn main() {
 
     let character: char = input_character.trim().parse().expect("Data entry error!");
 
-    //
     let mut count: u8 = 0;
 
-    //
     for i in word.chars() {
-        //
         if i == character {
             count += 1;
         }
@@ -431,11 +409,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let arr: [u8; 5] = [1, 2, 3, 4, 5];
     let mut mult: u8 = 1;
 
-    //
     for i in arr.iter() {
         mult *= i;
         println!("Stage {:?} = {:?}", i, mult);
@@ -455,7 +431,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     let mut input_array: [i8; 5] = [0; 5];
 
     for i in 0..input_array.len() {
@@ -465,6 +440,7 @@ fn main() {
         io::stdin().read_line(&mut input_number).err();
         input_array[i] = input_number.trim().parse().expect("Error converting data!");
     }
+    
     println!("\n{:?}", input_array);
 }
 ```
@@ -481,12 +457,11 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     let mut init_array: [i8; 10] = [0; 10];
     let mut sum: u8 = 0;
 
     for i in 0..init_array.len() {
-        //
+    
         println!("Enter number:");
         let mut input_array: String = String::new();
         io::stdin()
@@ -494,7 +469,6 @@ fn main() {
             .expect("Data entry error!");
         init_array[i] = input_array.trim().parse().expect("Erro converting data!");
 
-        //
         sum += init_array[i] as u8;
     }
 
@@ -515,13 +489,12 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter with 5 numbers:");
     let mut input_array: [i8; 5] = [0; 5];
     let mut count: u8 = 0;
 
     for i in 0..input_array.len() {
-        //
+        
         let mut input_number: String = String::new();
         io::stdin()
             .read_line(&mut input_number)
@@ -549,13 +522,12 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter with 5 numbers:");
     let mut input_array: [i8; 5] = [0; 5];
     let mut even_array: [i8; 5] = [0; 5];
 
     for i in 0..input_array.len() {
-        //
+
         let mut input_number: String = String::new();
         io::stdin()
             .read_line(&mut input_number)
@@ -583,17 +555,14 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter the number of users you want to add:");
     let mut input_count: String = String::new();
     io::stdin().read_line(&mut input_count).err();
     let count: u8 = input_count.trim().parse().expect("Error converting data!");
 
-    //
     let mut input_array: (String, u8);
 
     for _i in 0..count {
-        //
         println!("\nEnter name:");
         let mut input_name: String = String::new();
         io::stdin().read_line(&mut input_name).err();
@@ -604,7 +573,6 @@ fn main() {
         io::stdin().read_line(&mut input_age).err();
         let age: u8 = input_age.trim().parse().expect("Error converting data!");
 
-        //
         input_array = (name, age);
         println!("\nName:{}Age={}", input_array.0, input_array.1);
     }

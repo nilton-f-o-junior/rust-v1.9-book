@@ -11,7 +11,6 @@
 use std::io;
 
 fn main() {
-    //
     println!("Enter with character:");
 
     let mut input: String = String::new();
@@ -50,7 +49,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter your note:");
 
     let mut input: String = String::new();
@@ -97,7 +95,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter your age:");
 
     let mut input: String = String::new();
@@ -183,7 +180,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter temperature:");
 
     let mut input: String = String::new();
@@ -231,7 +227,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number");
 
     let mut input: String = String::new();
@@ -275,7 +270,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("Enter number");
 
     let mut input: String = String::new();
@@ -471,7 +465,7 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
+    // a
     println!("Enter number (A):");
 
     let mut input_a: String = String::new();
@@ -487,7 +481,7 @@ fn main() {
         }
     };
 
-    //
+    // b
     println!("Enter number (B):");
 
     let mut input_b: String = String::new();
@@ -535,7 +529,6 @@ fn main() {
 use std::io;
 
 fn main() {
-    //
     println!("-- Start Game --");
     println!("");
     println!("Select:");
