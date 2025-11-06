@@ -25,4 +25,8 @@
 
 
 
+Hashmap and Hashset + Dicionario
 
+Pegar as questoes de controle de fluxo e usar em funcoes
+
+Ainda falta criar o teste depois do capitulo de funcoes. 
