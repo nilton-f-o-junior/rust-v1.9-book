@@ -12,7 +12,7 @@ struct Coordinate {
 }
 
 impl Coordinate {
-    //
+    
     fn coordinate_x(&self) {
         println!("Point X: {}", self.x);
     }
@@ -26,8 +26,7 @@ impl Coordinate {
     }
 }
 
-fn main() {
-    //
+fn main() {  
     let init_coordinate = Coordinate::new_coordinate(10., 10.);
 
     init_coordinate.coordinate_x();
@@ -56,7 +55,6 @@ fn new_coordinate(x: f32, y: f32) -> Coordinate {
 }
 
 fn main() {
-    //
     let init_coordinate = new_coordinate(10., 10.);
     coordinate_x(&init_coordinate);
     coordinate_y(&init_coordinate);

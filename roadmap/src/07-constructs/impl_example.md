@@ -10,7 +10,7 @@ struct User {
 }
 
 impl User {
-    //
+   
     fn new_user(name: String, password: String) -> User {
         User {
             name,
@@ -19,8 +19,7 @@ impl User {
         }
     }
 
-    //
-    fn login(&mut self, input_password: String) -> bool {
+   fn login(&mut self, input_password: String) -> bool {
         if self.password == input_password {
             self.logged_in = true;
             println!("Login Successful!");
@@ -30,13 +29,11 @@ impl User {
             false
         }
     }
-
-    //
+  
     fn logout(&self) -> bool {
         self.logged_in
     }
 
-    //
     fn forgot_my_password(&mut self, old_password: String, new_password: String) {
         if self.password == old_password {
             self.password = new_password;
@@ -48,9 +45,8 @@ impl User {
 }
 
 fn main() {
-    //
-    let mut user = User::new_user(String::from("Rodolfo"), String::from("admin"));
 
+    let mut user = User::new_user(String::from("Rodolfo"), String::from("admin"));
     user.login(String::from("admin"));
 
     if user.logout() {
@@ -71,7 +67,6 @@ struct User {
     logged_in: bool,
 }
 
-//
 fn new_user(name: String, password: String) -> User {
     User {
         name,
@@ -80,7 +75,6 @@ fn new_user(name: String, password: String) -> User {
     }
 }
 
-//
 fn login(name: &mut User, input_password: String) -> bool {
     if name.password == input_password {
         name.logged_in = true;
@@ -92,12 +86,10 @@ fn login(name: &mut User, input_password: String) -> bool {
     }
 }
 
-//
 fn loggout(user: &mut User) -> bool {
     user.logged_in
 }
 
-//
 fn forgot_my_password(user: &mut User, old_password: String, new_password: String) {
     if user.password == old_password {
         user.password = new_password;
@@ -107,11 +99,9 @@ fn forgot_my_password(user: &mut User, old_password: String, new_password: Strin
     }
 }
 
-//
 fn main() {
-    //
+  
     let mut user = new_user(String::from("Rodolfo"), String::from("admin"));
-
     login(&mut user, String::from("admin"));
 
     if loggout(&mut user) {
