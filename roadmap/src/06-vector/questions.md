@@ -1,6 +1,6 @@
 # Questions
 
-1. Crie um vetor vazio de inteiros em Rust.
+01 - Crie um vetor vazio de inteiros em Rust.
 
 [Playground!]()
 
@@ -24,7 +24,7 @@ fn main() {
 ```
 </details>
 
-2. Crie um vetor contendo os números de 1 a 4.
+02 - Crie um vetor contendo os números de 1 a 4.
 
 [Playground!]()
 
@@ -57,7 +57,7 @@ fn main() {
 
 </details>
 
-3. Crie um vetor contendo os números de 1 a 10 e imprima cada elemento usando um loop.
+03 - Crie um vetor contendo os números de 1 a 10 e imprima cada elemento usando um loop.
 
 [Playground!]()
 
@@ -133,7 +133,7 @@ fn main() {
 
 </details>
 
-4. Crie um vetor vazio e solicite ao usuário 3 valores inteiros. Adicione esses valores ao vetor e imprima o resultado final.
+04 - Crie um vetor vazio e solicite ao usuário 3 valores inteiros. Adicione esses valores ao vetor e imprima o resultado final.
 
 [Playground!]()
 
@@ -170,7 +170,7 @@ fn main() {
 ```
 </details>
 
-5. Crie um programa que contenha pelo menos 3 numeros decimais e retorna a soma e multiplicacao dos elementos, usando o sum e product. Exemplo: [3.2, 5.8, 1.2]
+05 - Crie um programa que contenha pelo menos 3 numeros decimais e retorna a soma e multiplicacao dos elementos, usando o sum e product. Exemplo: [3.2, 5.8, 1.2]
 
 [Playground!]()
 
@@ -195,7 +195,7 @@ fn main () {
 
 </details>
 
-6. Crie um programa que contenha pelo menos 3 numeros decimais e retorna a soma, subtracao, multiplicacao e divisao dos elementos, usando um loop. Exemplo: [3.2, 5.8, 1.2]
+06 - Crie um programa que contenha pelo menos 3 numeros decimais e retorna a soma, subtracao, multiplicacao e divisao dos elementos, usando um loop. Exemplo: [3.2, 5.8, 1.2]
 
 [Playground!]()
 
@@ -268,7 +268,7 @@ fn main() {
 
 </details>
 
-7. Crie um vetor com os valores ["a", "b", "c", "d"] e remova os dois últimos elementos. Imprima o vetor resultante.
+07 - Crie um vetor com os valores ["a", "b", "c", "d"] e remova os dois últimos elementos. Imprima o vetor resultante.
 
 [Playground!]()
 
@@ -315,7 +315,7 @@ fn main() {
 
 </details>
 
-8. Crie um vetor com alguns valores e adicione dois novos elementos ao vetor. Adicione tambem usando um índice específico (por exemplo, (2, 0)).
+08 - Crie um vetor com alguns valores e adicione dois novos elementos ao vetor. Adicione tambem usando um índice específico (por exemplo, (2, 0)).
 
 [Playground!]()
 
@@ -361,7 +361,7 @@ fn main() {
 ```
 </details>
 
-9. Crie um vetor de inteiros, imprima-o e solicite ao usuário um valor e remova a primeira ocorrência desse valor do vetor e imprima o resultado.
+09 - Crie um vetor de inteiros, imprima-o e solicite ao usuário um valor e remova a primeira ocorrência desse valor do vetor e imprima o resultado.
 
 [Playground!]()
 
@@ -397,7 +397,7 @@ fn main() {
 
 > Starting from the end: You remove from back to front, those in front stay in the same place: (5 → 0).
 
-10. Crie um vetor de strings e solicite ao usuário um valor. Verifique se esse valor está presente no vetor e exiba uma mensagem apropriada.
+10 - Crie um vetor de strings e solicite ao usuário um valor. Verifique se esse valor está presente no vetor e exiba uma mensagem apropriada.
 
 [Playground!]()
 
@@ -439,7 +439,7 @@ fn main() {
 
 > .contains(&input): the result will be different because the search considers any word.
 
-11. Dado um vetor com pelo menos 4 elementos, imprima os 2 primeiros e os 2 últimos valores.
+11 - Dado um vetor com pelo menos 4 elementos, imprima os 2 primeiros e os 2 últimos valores.
 
 [Playground!]()
 
@@ -524,7 +524,7 @@ fn main() {
 
 </details>
 
-12. Encontre e retorne o maior valor do vetor: [27, 3, 16, 8, 12, 7, 2, 19].
+12 - Encontre e retorne o maior valor do vetor: [27, 3, 16, 8, 12, 7, 2, 19].
 
 [Playground!]()
 
@@ -564,7 +564,7 @@ fn main() {
 
 </details>
 
-13. Copie os dados do vetor a seguir para outro vetor vazio: vector_a = [10, 20, 30, 40].
+13 - Copie os dados do vetor a seguir para outro vetor vazio: vector_a = [10, 20, 30, 40].
 
 [Playground!]()
 
@@ -633,7 +633,7 @@ fn main () {
 
 </details>
 
-15. Escreva um código que dobra o valor de todos os elementos de um vetor e adicione a outro vetor.
+14 - Escreva um código que dobra o valor de todos os elementos de um vetor e adicione a outro vetor.
 
 [Playground!]()
 
@@ -668,7 +668,7 @@ fn main() {
 ```
 </details>
 
-16. Escreva um codigo que recebe um vetor de inteiros e retorna um novo vetor contendo apenas os valores pares.
+15 - Escreva um codigo que recebe um vetor de inteiros e retorna um novo vetor contendo apenas os valores pares.
 
 [Playground!]()
 
@@ -692,7 +692,7 @@ fn main() {
 ```
 </details>
 
-17. Crie um vetor a parti do vetor a seguir e converta todos os dados para Lowercase ou Uppercase. Vec =  A, b, C, d, E, f, G.
+16 - Crie um vetor a parti do vetor a seguir e converta todos os dados para Lowercase ou Uppercase. Vec =  A, b, C, d, E, f, G.
 
 [Playground!]()
 
@@ -714,7 +714,7 @@ fn main() {
 ```
 </details>
 
-18. A parti do vetor a seguir: ["a", "d", "x", "y", "a", "u", "t", "y", "o", "e", "p", "b", "x", "q", "e"], crie um novo vetor com todos os valores repetidos. 
+17 - A parti do vetor a seguir: ["a", "d", "x", "y", "a", "u", "t", "y", "o", "e", "p", "b", "x", "q", "e"], crie um novo vetor com todos os valores repetidos. 
 
 [Playground!]()
 
@@ -743,7 +743,7 @@ fn main() {
 ```
 </details>
 
-19. Crie um codigo que pega todos os elementos repetidos de um vetor e adiciona a um vetor vazio. Vetor = "a", "a", "a", "b", "b", "c", "d", "d", "d", "e", "e", "e", "f", "g".
+18 - Crie um codigo que pega todos os elementos repetidos de um vetor e adiciona a um vetor vazio. Vetor = "a", "a", "a", "b", "b", "c", "d", "d", "d", "e", "e", "e", "f", "g".
 
 [Playground!]()
 
@@ -800,7 +800,7 @@ fn main() {
 ```
 </details>
 
-20. Crie uma solução que reverte a ordem dos elementos de um vetor usando o método .reverse().
+19 - Crie uma solução que reverte a ordem dos elementos de um vetor usando o método .reverse().
 
 [Playground!]()
 
@@ -818,7 +818,7 @@ fn main() {
 ```
 </details>
 
-23. Crie um codigo que divide um vetor em dois no índice especificado pelo usuário, retornando ambas as partes.
+20 - Crie um codigo que divide um vetor em dois no índice especificado pelo usuário, retornando ambas as partes.
 
 [Playground!]()
 
@@ -882,40 +882,3 @@ fn main() {
 ```
 
 </details>
-
-19. Crie uma função que remove todos os valores duplicados de um vetor, mantendo apenas a primeira ocorrência de cada valor.
-
-[Playground!]()
-
-<details>
-<summary>Answers</summary>
-
-```rust
-
-```
-</details>
-
-21. Inverta um vetor sem usar o método .reverse(). Implemente sua própria lógica de reversão.
-
-[Playground!]()
-
-<details>
-<summary>Answers</summary>
-
-```rust
-
-```
-</details>
-
-22. Dados dois vetores já ordenados, mescle-os em um único vetor que também esteja ordenado, sem usar .sort() no resultado final.
-
-[Playground!]()
-
-<details>
-<summary>Answers</summary>
-
-```rust
-
-```
-</details>
-

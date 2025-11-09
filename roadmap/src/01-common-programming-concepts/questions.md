@@ -167,7 +167,8 @@ fn main() {
 fn main() {
     // This would cause a compile-time error:
     // println!("{}", x);
-    // let x = 5;    
+    // let x = 5;
+} 
 ```
 </details>
 

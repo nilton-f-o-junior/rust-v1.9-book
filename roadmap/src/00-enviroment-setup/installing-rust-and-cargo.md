@@ -1,4 +1,4 @@
-# Install Rust
+# Installing Rust and Cargo
 
 To install on macOS, Linux, or other Unix-like operating system, run the following in your terminal and follow the on-screen instructions.
 
