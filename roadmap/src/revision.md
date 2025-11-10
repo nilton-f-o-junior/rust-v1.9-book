@@ -11,61 +11,20 @@
   [x] format.md
   [x] debug formatted
   [x] mutability.md
-
-
-line-break.md
-
-Adicionar outros caracteres de escape: \t (tab), \r (carriage return), \\ (backslash)
-Mostrar raw strings (r#"..."#) para evitar escape sequences
-Incluir exemplo prático onde line breaks melhoram legibilidade
-
-print.md
-
-Adicionar eprint! e eprintln! para stderr
-Mostrar dbg! macro para debugging
-Incluir exemplo de formatação inline: println!("Value: {}", value)
-Mencionar diferença de performance entre print! e println!
-
-questions.md
-
-scope.md
-
-Explicar lifetime de variáveis no contexto de scope
-Adicionar exemplo de scope em funções
-Mostrar como scope afeta borrowing
-Incluir diagrama visual ou exemplo mais complexo com múltiplos níveis
-
-shadowing.md
-
-Enfatizar que shadowing permite mudança de tipo (diferente de mut)
-Adicionar exemplo prático: parsing string → number
-Contrastar explicitamente shadowing vs mutabilidade
-Mostrar uso de shadowing com transformações sucessivas
-
-variables.md
-
-Expandir com type annotations explícitas: let x: i32 = 5;
-Adicionar explicação sobre type inference
-Mostrar declaração sem inicialização: let x: i32;
-Incluir exemplo de destructuring: let (x, y) = (1, 2);
-Mencionar convenções de nomenclatura (snake_case)
-
-Melhorias Gerais para Todos os Arquivos:
-
-Adicionar seção "Erros Comuns" em cada arquivo
-Incluir links cruzados entre conceitos relacionados
-Adicionar badges de dificuldade (Básico/Intermediário)
-Uniformizar formatação e estrutura
-Incluir seção "Na Prática" com uso real do conceito
-Adicionar comparações com outras linguagens (quando relevante)
-
-Quer que eu desenvolva algum arquivo específico com essas melhorias implementadas?
+  [X] shadowing.md
+  [x] questions.md
+  [x] scope.md
+  [x] line-break.md
+  [x] variables.md
+  [x] print.md
 
 
 
 
 
 
+
+#####################
 
 swap() (Trocar elementos de posição)
 

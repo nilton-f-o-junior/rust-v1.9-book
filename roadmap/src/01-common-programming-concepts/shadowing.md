@@ -23,3 +23,13 @@ println!("{}", animal);
 let animal = "Bird";
 println!("{}", animal);
 ```
+
+```rust
+let num: i8 = 2;
+println!("{}", num);
+
+let num: f32 = 4.;
+println!("{}", num);
+```
+
+> The topic of **data types** will be covered in the next chapter.
