@@ -57,22 +57,22 @@
     - [x] 7.3 Methods - Part 2
     - [x] 7.4 Methods - Part 3
     - [x] 7.5 Methods - Part 4
-    - [ ] 7.6 Questions
+    - [x] 7.6 Questions
 - [x] Constructs
     - [x] 8.1 Struct
-    - [ ] 8.2 Struct - Example
+    - [x] 8.2 Struct - Example
     - [x] 8.2 Impl
-    - [ ] 8.3 Impl - Example
-    - [ ] 8.4 Enum
-    - [ ] 8.5 Enum - Example
-    - [ ] 8.6 Traits
-    - [ ] 8.7 Traits - Example    
+    - [x] 8.3 Impl - Example
+    - [x] 8.4 Enum
+    - [x] 8.5 Enum - Example
+    - [x] 8.6 Traits
+    - [x] 8.7 Traits - Example    
     - [ ] 8.8 Questions
 - [x] 9. Functions and Method Syntax
     - [x] 9.1. Functions
-    - [ ] 9.2. Function - Input
+    - [x] 9.2. Function - Input
     - [x] 9.3. Expression
-    - [ ] 9.4. Methods
+    - [x] 9.4. Methods
     - [x] 9.5. Modules - Inline
     - [x] 9.6. Modules - Extern
     - [x] 9.7. Modules - mod.rs
