@@ -11,14 +11,16 @@
 - [x] 3. Common Programming Concepts
     - [x] 3.1. Comments
     - [x] 3.2. Print
-    - [x] 3.3. Line break
-    - [x] 3.4. Variables
-    - [x] 3.5. Mutability
-    - [x] 3.6. Constant
-    - [x] 3.7. Format
-    - [x] 3.8. Shadowing
-    - [x] 3.9. Scope
-    - [x] 3.10. Question
+    - [x] 3.3. Escape Characters
+    - [x] 3.4. Line break
+    - [x] 3.5. Variables
+    - [x] 3.6. Mutability
+    - [x] 3.7. Constant
+    - [x] 3.8. Format
+    - [x] 3.9. Debug Formatting
+    - [x] 3.10. Shadowing
+    - [x] 3.11. Scope
+    - [x] 3.12. Question
 - [x] 4. Data Structures
     - [x] 4.1. u - integers
     - [x] 4.2. i - integers
