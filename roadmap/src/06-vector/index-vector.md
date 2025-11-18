@@ -1,6 +1,6 @@
-# Index
+# Index - Vector
 
-Vectors can be accessed by index using square brackets [position].
+Vectors can be accessed by index using square brackets `[position]`.
 
 `index`
 
@@ -32,7 +32,6 @@ println!("{:#?}", vector_index);
 `repeat`
 
 ```rust
-//
 let vector_repeat: Vec<u8> = vec![0; 5];
 println!("Vector Repeat = {:#?}", vector_repeat);
 ```

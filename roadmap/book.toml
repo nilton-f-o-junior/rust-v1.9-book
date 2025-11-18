@@ -6,4 +6,4 @@ title = "Rust Developer - Roadmap"
 
 [output.html]
 git-repository-url = "https://github.com/nilton-f-o-junior/rust-developer"
-git-repository-icon = "fa-github"
+#git-repository-icon = "fa-github"
