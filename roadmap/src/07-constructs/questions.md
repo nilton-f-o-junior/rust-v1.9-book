@@ -34,6 +34,8 @@ fn main() {
 ```
 </details>
 
+> Ao adicionar `#[derive(Debug)]` acima do struct Book {}, voce pode imprimir a struct inteira.
+
 02 - Crie uma struct Carro com os campos:
 
 marca (String)
@@ -77,7 +79,6 @@ saldo (f64)
 
 Implemente um método verificar_saldo() que retorna o saldo atual.
 
-
 [Playground!]()
 
 <details>
@@ -108,9 +109,79 @@ fn main() {
 ```
 </details>
 
+04 - Crie duas structs:
 
+Endereco com:
 
-04 - Crie uma struct Contador com um único campo:
+rua (String)
+numero (u16)
+cidade (String)
+
+Cliente com:
+
+nome (String)
+email (String)
+endereco (Endereco)
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+#[derive(Debug)]
+struct Address {
+    city: String,
+    street: String,
+    number: u16,
+}
+
+impl Address {
+    fn new_address(city: String, street: String, number: u16) -> Self {
+        Self {
+            city,
+            street,
+            number,
+        }
+    }
+}
+
+#[derive(Debug)]
+struct User {
+    name: String,
+    email: String,
+    address: Address,
+}
+
+impl User {
+    fn new_user(name: String, email: String, address: Address) -> Self {
+        Self {
+            name,
+            email,
+            address,
+        }
+    }
+}
+
+fn main() {
+    let client = User {
+        name: String::from("Rodolfo Silva"),
+        email: String::from("rodolfo_silva@email.com"),
+        address: Address {
+            city: String::from("Rodolfo Silva"),
+            street: String::from("Manaus"),
+            number: 654,
+        },
+    };
+
+    println!("{:#?}", client);
+}
+```
+</details>
+
+Crie uma instância de Cliente que contenha um Endereco completo e imprima todas as informações.
+
+05 - Crie uma struct Contador com um único campo:
 
 valor (i32)
 
@@ -120,19 +191,227 @@ new() - cria um contador começando em 0
 incrementar(&mut self) - adiciona 1 ao valor
 obter_valor(&self) - retorna o valor atual
 
-05 - Crie duas structs:
+[Playground!]()
 
-Endereco com:
+<details>
+<summary>Answers</summary>
 
-rua (String)
-numero (u32)
-cidade (String)
+```rust
+struct Counter {
+    value: i32,
+}
 
+impl Counter {
+    fn counter() -> Counter {
+        Counter { value: 0 }
+    }
 
-Cliente com:
+    fn increment_counter(&mut self) {
+        self.value += 1;
+    }
 
+    fn print_value(&self) -> i32 {
+        self.value
+    }
+}
+
+fn main() {
+    let mut value = Counter::counter();
+
+    value.increment_counter();
+    println!("{:?}", value.print_value());
+
+    value.increment_counter();
+    println!("{:?}", value.print_value());
+}
+```
+</details>
+
+06 - Crie uma struct Retangulo com os campos:
+
+largura (f32)
+altura (f32)
+
+Implemente um método chamado calcular_area(&self) que retorna a área do retângulo. Crie uma instância, chame o método e imprima o resultado.
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+#[derive(Debug)]
+struct Rectangle {
+    height: f32,
+    width: f32,
+}
+
+impl Rectangle {
+    fn rectangle(height: f32, width: f32) -> Self {
+        Rectangle { height, width }
+    }
+
+    fn calculate_area(&self) -> f32 {
+        self.height * self.width
+    }
+}
+
+fn main() {
+    let value1 = Rectangle::rectangle(3.3, 5.7);
+    let result = value1.calculate_area();
+    println!("{:#?}", result);
+
+    // Or
+    // let value2 = Rectangle::calculate_area(&Rectangle::rectangle(3.3, 5.7));
+    // println!("{:#?}", value2);
+}
+```
+</details>
+
+07 - Crie uma struct Configuracao com os campos:
+
+timeout (u32)
+ativo (bool)
+
+Use um bloco impl para criar uma função associada chamada default() que retorne uma nova Configuracao com valores padrão: timeout: 3000 e ativo: true.
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+struct Settings {
+    timeout: u32,
+    active: bool,
+}
+
+impl Settings {
+    fn init(timeout: u32, active: bool) -> Self {
+        Settings { timeout, active }
+    }
+
+    fn default() -> Self {
+        Settings {
+            timeout: 3000,
+            active: true,
+        }
+    }
+}
+
+fn main() {
+    let result = Settings::init(100, false);
+    println!(
+        "Timeout: {:?}\nActive: {:?}\n",
+        result.timeout, result.active
+    );
+
+    let value_end = Settings::default();
+    println!(
+        "Timeout: {:?}\nActive: {:?}",
+        value_end.timeout, value_end.active
+    );
+}
+```
+</details>
+
+08 - Crie uma Struct de Tupla chamada CorRGB:
+Represente as cores Vermelho, Verde e Azul (tipos u8).
+
+Crie uma função associada preto() que retorne a cor preta (R=0, G=0, B=0). Crie uma instância dessa cor usando a função associada e imprima seus valores.
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+#[derive(Debug)]
+struct RGB(u8, u8, u8);
+
+impl RGB {
+    fn color(r: u8, g: u8, b: u8) -> Self {
+        RGB(r, g, b)
+    }
+}
+
+fn main() {
+    let black = RGB::color(0, 0, 0);
+    println!("Black: {:?}", black);
+
+    let white = RGB::color(255, 255, 255);
+    println!("Black: {:?}", white);
+}
+```
+</details>
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+#[derive(Debug)]
+struct RGB(u8, u8, u8);
+
+impl RGB {
+    fn color(r: u8, g: u8, b: u8) -> Self {
+        RGB(r, g, b)
+    }
+
+    fn get_red(&self) -> u8 {
+        self.0
+    }
+
+    fn set_red(&mut self, new_red: u8) {
+        self.0 = new_red;
+    }
+
+    fn get_green(&self) -> u8 {
+        self.1
+    }
+
+    fn set_green(&mut self, new_green: u8) {
+        self.1 = new_green;
+    }
+
+    fn get_blue(&self) -> u8 {
+        self.2
+    }
+
+    fn set_blue(&mut self, new_blue: u8) {
+        self.2 = new_blue;
+    }
+}
+
+fn main() {
+    let mut my_color = RGB::color(0, 0, 0);
+    println!("{:?}", my_color);
+
+    let red = my_color.get_red();
+    let green = my_color.get_green();
+    let blue = my_color.get_blue();
+    println!("RGB({:?}, {:?}, {:?})", red, green, blue);
+
+    my_color.set_red(255);
+    my_color.set_green(255);
+    my_color.set_blue(255);
+
+    println!("{:?}", my_color);
+}
+```
+</details>
+
+09 - Crie uma struct Funcionario com os campos:
 nome (String)
-email (String)
-endereco (Endereco)
 
-Crie uma instância de Cliente que contenha um Endereco completo e imprima todas as informações.
+salario (f64)
+
+Implemente um método mutável aumentar_salario(&mut self, percentual: f64) que aumente o salario do funcionário pelo percentual fornecido (ex: 0.10 para 10%).
+
+10 - Crie duas structs para praticar Composição:
+Status com o campo online (bool).
+
+Usuario com os campos nome (String) e status (Status).
+
+Implemente um método verificar_status(&self) na struct Usuario que retorna uma String dizendo se o usuário está 'Online' ou 'Offline', baseando-se no campo status interno.
