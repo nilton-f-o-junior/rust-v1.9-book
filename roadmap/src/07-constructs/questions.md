@@ -345,8 +345,6 @@ fn main() {
 ```
 </details>
 
-[Playground!]()
-
 <details>
 <summary>Answers</summary>
 
