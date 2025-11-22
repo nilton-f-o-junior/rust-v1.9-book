@@ -407,9 +407,105 @@ salario (f64)
 
 Implemente um método mutável aumentar_salario(&mut self, percentual: f64) que aumente o salario do funcionário pelo percentual fornecido (ex: 0.10 para 10%).
 
-10 - Crie duas structs para praticar Composição:
-Status com o campo online (bool).
+[Playground!]()
 
-Usuario com os campos nome (String) e status (Status).
+<details>
+<summary>Answers</summary>
 
-Implemente um método verificar_status(&self) na struct Usuario que retorna uma String dizendo se o usuário está 'Online' ou 'Offline', baseando-se no campo status interno.
+```rust
+#[derive(Debug)]
+struct Employee {
+    salary: f64,
+}
+
+impl Employee {
+    fn salary_init(salary: f64) -> Self {
+        Self { salary }
+    }
+
+    fn salary_increase(&self, percent: f64) -> f64 {
+        (self.salary * percent) + self.salary
+    }
+}
+
+fn main() {
+    let mut salary = Employee::salary_init(1500.);
+    println!("{:?}", salary);
+
+    let salary_end = Employee::salary_increase(&mut salary, 0.1);
+    let result = format!("{:.2}", salary_end);
+    println!("{}", result);
+}
+```
+</details>
+
+Crie um enum FormaPagamento que represente diferentes formas de pagamento: Dinheiro, CartaoCredito (com número de parcelas), CartaoDebito, e Pix (com chave). Implemente uma função que receba esse enum e retorne uma mensagem descrevendo o pagamento escolhido.
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+enum PaymentMethod {
+    Cash,
+    CreditCard { number_installments: u8 },
+    DebitCard,
+    Pix { pix_key: String },
+}
+
+impl PaymentMethod {
+    fn payment_impl(&self) {
+        match self {
+            PaymentMethod::Cash => {
+                println!("Method: Cash");
+            }
+
+            PaymentMethod::CreditCard {
+                number_installments,
+            } => {
+                println!(
+                    "Method: Credit Card - Installments = {:?}",
+                    number_installments
+                );
+            }
+
+            PaymentMethod::DebitCard => {
+                println!("Method: Debit Card");
+            }
+
+            PaymentMethod::Pix { pix_key } => {
+                println!("Method: Pix - Key = {:?}", pix_key);
+            }
+        }
+    }
+}
+
+fn main() {
+    let cash_payment = PaymentMethod::Cash;
+    let creditcard_payment = PaymentMethod::CreditCard {
+        number_installments: 3,
+    };
+    let debitcard_payment = PaymentMethod::DebitCard;
+    let pix_payment = PaymentMethod::Pix {
+        pix_key: String::from("123.123.123.07"),
+    };
+
+    cash_payment.payment_impl();
+    creditcard_payment.payment_impl();
+    debitcard_payment.payment_impl();
+    pix_payment.payment_impl();
+}
+```
+</details>
+
+Crie um enum ResultadoOperacao que pode ser: Sucesso (contendo um f64), ErroComDescricao (contendo uma String), ou ErroDesconhecido. Implemente uma função que tente dividir dois números e retorne esse enum. Use pattern matching para exibir o resultado apropriadamente.
+
+
+Crie um enum Notificacao com as variantes: Email (destinatário e assunto), SMS (número e mensagem), e Push (título e corpo). Implemente um método enviar() para cada tipo que simule o envio imprimindo as informações relevantes.
+
+
+Crie um enum EstadoRequisicao representando: Pendente, EmAndamento (com porcentagem de progresso), Concluida (com dados de resposta como String), e Falhou (com código de erro). Implemente métodos esta_finalizada() e obter_status() para esse enum.
+
+
+Crie um enum StatusPedido representando os diferentes estados de um pedido em um restaurante: Recebido (com número do pedido), EmPreparo (com tempo estimado em minutos), ProntoParaRetirada (com número da senha), Entregue, e Cancelado (com motivo da String). Implemente os métodos pode_cancelar() que retorna true apenas se o pedido ainda não foi entregue, e tempo_restante() que retorna Option<u32> com o tempo estimado (apenas para pedidos em preparo).
