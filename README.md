@@ -1,3 +1,7 @@
+<p align="center">
+	<img src="img/rust-logo.png">
+</p>
+
 # Rust Developer - Roadmap
 
 - [x] 1. The Rust Programming Language
