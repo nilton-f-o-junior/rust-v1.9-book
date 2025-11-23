@@ -263,9 +263,10 @@ fn main() {
 <summary>Answers</summary>
 
 ```rust
-fn main() {
-    const MAX_VALUE: i32 = 100;
-    MAX_VALUE = 200;
+const MAX_VALUE: i32 = 100;
+
+fn main() {    
+    let MAX_VALUE = 200;
 }
 ```
 </details>
@@ -325,10 +326,9 @@ fn main() {
 ```rust
 fn main() {
     let number = 7;
-
     let formatted = format!("{:04}", number);
-    println!("{}", formatted);
 
+    println!("{}", formatted);
     println!("{:04}", number);
 }
 ```
@@ -344,10 +344,9 @@ fn main() {
 ```rust
 fn main() {
     let pi = 3.14159265359;
-    
     let formatted = format!("{:.2}", pi);
+    
     println!("Pi with 2 decimals: {}", formatted);
-
     println!("Pi: {:.2}", pi);
 }
 ```

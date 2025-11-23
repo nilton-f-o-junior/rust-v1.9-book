@@ -35,7 +35,6 @@ println!("What is your name?\\My name is Rodolfo!\\");
 ```rust
 // horizontal tabulation
 println!("What is your name?\tMy name is \tRodolfo!");
-println!("What is your name?\rMy name is \rRodolfo!");
 ```
 
 `r`

@@ -1,12 +1,12 @@
 # Question - Constructs
 
-01 - Crie uma struct chamada Livro com os seguintes campos:
+01 - Create a struct named Book with the following fields:
 
-- titulo (String)
-- autor (String)
-- paginas (u32)
+title (String)
+author (String)
+pages (u32)
 
-Depois, crie uma instância dessa struct e imprima seus valores.
+Then, create an instance of this struct and print its values.
 
 [Playground!]()
 
@@ -34,15 +34,15 @@ fn main() {
 ```
 </details>
 
-> Ao adicionar `#[derive(Debug)]` acima do struct Book {}, voce pode imprimir a struct inteira.
+> By adding #[derive(Debug)] above the Book {} struct, you can print the entire struct.
 
-02 - Crie uma struct Carro com os campos:
+02 - Create a Car struct with the fields:
 
-marca (String)
-modelo (String)
-ano (u16)
+brand (String)
+model (String)
+year (u16)
 
-Use impl para criar uma função associada new() que facilite a criação de novos carros.
+Use impl to create an associated function new() to facilitate the creation of new cars.
 
 [Playground!]()
 
@@ -72,12 +72,12 @@ fn main() {
 ```
 </details>
 
-03 - Crie uma struct Conta com os campos:
+03 - Create an Account struct with the fields:
 
-titular (String)
-saldo (f64)
+holder (String)
+balance (f64)
 
-Implemente um método verificar_saldo() que retorna o saldo atual.
+Implement a check_balance() method that returns the current balance.
 
 [Playground!]()
 
@@ -109,19 +109,19 @@ fn main() {
 ```
 </details>
 
-04 - Crie duas structs:
+04 - Create two structs:
 
-Endereco com:
+Address with:
 
-rua (String)
-numero (u16)
-cidade (String)
+street (String)
+number (u16)
+city (String)
 
-Cliente com:
+Client with:
 
-nome (String)
+name (String)
 email (String)
-endereco (Endereco)
+address (Address)
 
 [Playground!]()
 
@@ -179,17 +179,15 @@ fn main() {
 ```
 </details>
 
-Crie uma instância de Cliente que contenha um Endereco completo e imprima todas as informações.
+05 - Create a Counter struct with a single field:
 
-05 - Crie uma struct Contador com um único campo:
+value (i32)
 
-valor (i32)
+Implement three methods:
 
-Implemente três métodos:
-
-new() - cria um contador começando em 0
-incrementar(&mut self) - adiciona 1 ao valor
-obter_valor(&self) - retorna o valor atual
+new() - creates a counter starting at 0
+increment(&mut self) - adds 1 to the value
+get_value(&self) - returns the current value
 
 [Playground!]()
 
@@ -227,12 +225,12 @@ fn main() {
 ```
 </details>
 
-06 - Crie uma struct Retangulo com os campos:
+06 - Create a Rectangle struct with the fields:
 
-largura (f32)
-altura (f32)
+width (f32)
+height (f32)
 
-Implemente um método chamado calcular_area(&self) que retorna a área do retângulo. Crie uma instância, chame o método e imprima o resultado.
+Implement a method named calculate_area(&self) that returns the rectangle's area. Create an instance, call the method, and print the result.
 
 [Playground!]()
 
@@ -268,12 +266,12 @@ fn main() {
 ```
 </details>
 
-07 - Crie uma struct Configuracao com os campos:
+07 - Create a Configuration struct with the fields:
 
 timeout (u32)
-ativo (bool)
+active (bool)
 
-Use um bloco impl para criar uma função associada chamada default() que retorne uma nova Configuracao com valores padrão: timeout: 3000 e ativo: true.
+Use an impl block to create an associated function named default() that returns a new Configuration with default values: timeout: 3000 and active: true.
 
 [Playground!]()
 
@@ -315,10 +313,11 @@ fn main() {
 ```
 </details>
 
-08 - Crie uma Struct de Tupla chamada CorRGB:
-Represente as cores Vermelho, Verde e Azul (tipos u8).
+08 - Create a Tuple Struct named ColorRGB:
 
-Crie uma função associada preto() que retorne a cor preta (R=0, G=0, B=0). Crie uma instância dessa cor usando a função associada e imprima seus valores.
+Represent the colors Red, Green, and Blue (u8 types).
+
+Create an associated function black() that returns the color black (R=0, G=0, B=0). Create an instance of this color using the associated function and print its values.
 
 [Playground!]()
 
@@ -400,12 +399,12 @@ fn main() {
 ```
 </details>
 
-09 - Crie uma struct Funcionario com os campos:
-nome (String)
+09 - Create an Employee struct with the fields:
 
-salario (f64)
+name (String)
+salary (f64)
 
-Implemente um método mutável aumentar_salario(&mut self, percentual: f64) que aumente o salario do funcionário pelo percentual fornecido (ex: 0.10 para 10%).
+Implement a mutable method increase_salary(&mut self, percentage: f64) that increases the employee's salary by the provided percentage (e.g., 0.10 for 10%).
 
 [Playground!]()
 
@@ -439,7 +438,14 @@ fn main() {
 ```
 </details>
 
-Crie um enum FormaPagamento que represente diferentes formas de pagamento: Dinheiro, CartaoCredito (com número de parcelas), CartaoDebito, e Pix (com chave). Implemente uma função que receba esse enum e retorne uma mensagem descrevendo o pagamento escolhido.
+10 - Create a PaymentMethod enum representing different payment forms:
+
+Cash
+CreditCard (with number of installments)
+DebitCard
+Pix (with key)
+
+Implement a function that receives this enum and returns a message describing the chosen payment.
 
 [Playground!]()
 
@@ -499,13 +505,38 @@ fn main() {
 ```
 </details>
 
-Crie um enum ResultadoOperacao que pode ser: Sucesso (contendo um f64), ErroComDescricao (contendo uma String), ou ErroDesconhecido. Implemente uma função que tente dividir dois números e retorne esse enum. Use pattern matching para exibir o resultado apropriadamente.
+11 - Create an OperationResult enum that can be:
+
+Success (containing an f64).
+ErrorWithDescription (containing a String).
+UnknownError.
+
+Implement a function that attempts to divide two numbers and returns this enum. Use pattern matching to display the result appropriately.
 
 
-Crie um enum Notificacao com as variantes: Email (destinatário e assunto), SMS (número e mensagem), e Push (título e corpo). Implemente um método enviar() para cada tipo que simule o envio imprimindo as informações relevantes.
+12 - Create a Notification enum with the variants:
 
+Email (recipient and subject).
+SMS (number and message).
+Push (title and body).
 
-Crie um enum EstadoRequisicao representando: Pendente, EmAndamento (com porcentagem de progresso), Concluida (com dados de resposta como String), e Falhou (com código de erro). Implemente métodos esta_finalizada() e obter_status() para esse enum.
+Implement a send() method for each type that simulates sending by printing the relevant information.
 
+13 - Create a RequestState enum representing:
 
-Crie um enum StatusPedido representando os diferentes estados de um pedido em um restaurante: Recebido (com número do pedido), EmPreparo (com tempo estimado em minutos), ProntoParaRetirada (com número da senha), Entregue, e Cancelado (com motivo da String). Implemente os métodos pode_cancelar() que retorna true apenas se o pedido ainda não foi entregue, e tempo_restante() que retorna Option<u32> com o tempo estimado (apenas para pedidos em preparo).
+Pending.
+InProgress (with progress percentage).
+Completed (with response data as String).
+Failed (with error code).
+
+Implement the methods is_finished() and get_status() for this enum.
+
+14 - Create an OrderStatus enum representing the different states of a restaurant order:
+
+Received (with order number).
+InPreparation (with estimated time in minutes).
+ReadyForPickup (with ticket number).
+Delivered.
+Canceled (with reason as String).
+
+Implement the methods can_cancel() which returns true only if the order has not yet been delivered, and time_remaining() which returns Option<u32> with the estimated time (only for orders in preparation).

@@ -11,11 +11,9 @@
 
 ```rust
 fn main() {
-    //
     let positive_only: u32 = 100;
     println!("{:?}", positive_only);
-
-    //
+   
     let can_be_negative: i32 = -100;
     println!("{:?}", can_be_negative);
 
@@ -84,11 +82,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let min_val_i8: i8 = i8::MIN;
     println!("{:?}", min_val_i8);
-
-    //
+   
     let max_val_i8: i8 = i8::MAX;
     println!("{:?}", max_val_i8);
 }
@@ -120,7 +116,7 @@ fn main() {
 ```rust
 fn main() {
     let transaction_value_cents: i64 = -12_345_678_900;
-    println!("Debit = {:.3} million", transaction_value_cents);
+    println!("Debit = {:?} million", transaction_value_cents);
 }
 
 /*
@@ -145,11 +141,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let value_a: u8 = 10;
     println!("{:?}", value_a);
 
-    //
     let value_b: u8 = -10;
     println!("{:?}", value_b);
 }
@@ -180,15 +174,12 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let limited_memory: f32 = 10.00;
     println!("{:?}", limited_memory);
 
-    //
     let limited_memory: f32 = -10.00;
     println!("{:?}", limited_memory);
 
-    //
     let sensor_reading: f32 = 7.89;
     println!("{:?}", sensor_reading);
 }
@@ -204,19 +195,15 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let char_ascii: char = 'Z';
     println!("{:?}", char_ascii);
 
-    //
     //let char_unicode: char = ' ';
     //println!("{:?}", char_unicode);
 
-    //
     let char_unicode: char = 'Ω';
     println!("{:?}", char_unicode);
 
-    //
     println!("{:?}", std::mem::size_of_val(&char_ascii));
     println!("{:?}", std::mem::size_of_val(&char_unicode));
 }
@@ -280,11 +267,9 @@ fn main() {
 
 ```rust
 fn main() {
-    //
     let is_file_loaded: bool = true;
     println!("{:?}", is_file_loaded);
 
-    //
     let has_errors: bool = false;
     println!("{:?}", has_errors);
 
@@ -337,16 +322,13 @@ fn main() {
     let product_info: (&str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
     let (name, price, quantity_and_stock) = product_info;
 
-    //
     println!(
         "Product: {} \nQuantity and Stock: {}",
         product_info.0, product_info.2
     );
 
-    //
     println!("{:#?}", product_info);
 
-    //
     println!(
         "Product: {} \nPrice: {:.3} \nQuantity and Stock: {}",
         name, price, quantity_and_stock
@@ -400,7 +382,6 @@ fn main() {
     //println!("{:?}", config);
     //config.1 = 8180; // cannot assign to `config.1`, as `config` is not declared as mutable  cannot assign
 
-    //
     let mut config: (&str, u16) = ("localhost", 8080);
     println!("{:?}", config);
 
@@ -458,11 +439,9 @@ fn main() {
 
 ```rust
 fn main () {
-    //
     let file_details: (String, u64, bool) = (String::from("test.txt"), 127, true);
     println!("{:#?}", file_details);
 
-    //
     let mut file_details_v2 = file_details;
     file_details_v2.0 = String::from("teste_v2.txt");
     file_details_v2.1 = 256;
@@ -513,14 +492,12 @@ fn main() {
 
 ```rust
 fn main () {
-    //
     let fixed_scores = [100, 90, 80];
     println!("{:?}", fixed_scores);
 
     // fixed_scores[1] = 95;
     // println!("{:?}", fixed_scores);
 
-    //
     let mut fixed_scores = [10, 30, 60];
     println!("{:?}", fixed_scores);
 

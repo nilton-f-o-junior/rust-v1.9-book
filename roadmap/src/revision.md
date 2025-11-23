@@ -5,18 +5,18 @@
   [x] installing-rust-and-cargo.md
   [x] rust-playground.md
   [x] uninstall-rust.md
-[] Common Programming Concepts
+[] Common Programming Concepts  
   [x] comments.md
+  [x] print.md
+  [x] escape Characters.md
+  [x] variables.md
+  [x] mutability.md
   [x] constant.md
   [x] format.md
-  [x] debug formatted
-  [x] mutability.md
-  [X] shadowing.md
-  [x] questions.md
+  [x] debug Formatting.md
+  [x] shadowing.md
   [x] scope.md
-  [x] line-break.md
-  [x] variables.md
-  [x] print.md
+  [ ] questions.md
 
 
 
