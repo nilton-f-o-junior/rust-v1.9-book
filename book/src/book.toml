@@ -1,0 +1,9 @@
+[book]
+authors = ["nilton-f-o-junior"]
+language = "pt-br"
+src = "src"
+title = "Rust v1.9 - Book"
+
+[output.html]
+git-repository-url = "https://github.com/nilton-f-o-junior/rust-developer"
+#git-repository-icon = "fa-github"
