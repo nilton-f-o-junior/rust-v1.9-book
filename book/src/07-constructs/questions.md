@@ -570,6 +570,58 @@ Push (title and body).
 
 Implement a send() method for each type that simulates sending by printing the relevant information.
 
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+enum Notification {
+    Email { recipient: String, message: String },
+    SMS { number: String, message: String },
+    Push { title: String, body: String },
+}
+
+impl Notification {
+    fn send(&self) {
+        match self {
+            Notification::Email { recipient, message } => {
+                println!("Email to: {}", recipient);
+                println!("Subject: {}\n", message);
+            }
+
+            Notification::SMS { number, message } => {
+                println!("SMS to: {}\n{}\n", number, message);
+            }
+            Notification::Push { title, body } => {
+                println!("Title: {}\n{}\n", title, body);
+            }
+        }
+    }
+}
+
+fn main() {
+    let email = Notification::Email {
+        recipient: String::from("e_mail@email.com"),
+        message: String::from("Welcome to Rust!"),
+    };
+
+    let sms = Notification::SMS {
+        number: String::from("8077777777"),
+        message: String::from("Your code is: 6784"),
+    };
+
+    let noti_push = Notification::Push {
+        title: String::from("New Payment"),
+        body: String::from("You receive: R$ 10,00"),
+    };
+
+    email.send();
+    sms.send();
+    noti_push.send();
+}
+```
+</details>
 
 13 - Create a RequestState enum representing:
 
@@ -578,8 +630,74 @@ InProgress (with progress percentage).
 Completed (with response data as String).
 Failed (with error code).
 
-Implement the methods is_finished() and get_status() for this enum.
+Implement the methods get_status() and is_finished() for this enum.
 
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+enum RequestState {
+    Pending,
+    InProgress { progress_percent: u8 },
+    Completed { data: String },
+    Failed { code: u32 },
+}
+
+impl RequestState {
+    fn get_status(&self) -> String {
+        match self {
+            RequestState::Pending => {
+                format!("Pending!")
+            }
+
+            RequestState::InProgress { progress_percent } => {
+                format!("In Progress: {}%", progress_percent)
+            }
+
+            RequestState::Completed { data } => {
+                format!("{}", data)
+            }
+
+            RequestState::Failed { code } => {
+                format!("Failed: {}", code)
+            }
+        }
+    }
+
+    fn is_finished(&self) -> bool {
+        match self {
+            RequestState::Pending { .. } | RequestState::InProgress { .. } => false,
+            RequestState::Completed { .. } | RequestState::Failed { .. } => true,
+        }
+    }
+}
+
+fn main() {
+    let pending = RequestState::Pending;
+    let in_progress = RequestState::InProgress {
+        progress_percent: 18,
+    };
+    let completed = RequestState::Completed {
+        data: String::from("Completed!"),
+    };
+    let failed = RequestState::Failed { code: 404 };
+
+    println!("Status: {}", pending.get_status());
+    println!("Finished: {}\n", pending.is_finished());
+
+    println!("Status: {}", in_progress.get_status());
+    println!("Finished: {}\n", in_progress.is_finished());
+
+    println!("Status: {}", completed.get_status());
+    println!("Finished: {}\n", completed.is_finished());
+
+    println!("Status: {}", failed.get_status());
+    println!("Finished: {}", failed.is_finished());
+}
+```
+</details>
 
 14 - Create an OrderStatus enum representing the different states of a restaurant order:
 
@@ -590,3 +708,13 @@ Delivered.
 Canceled (with reason as String).
 
 Implement the methods can_cancel() which returns true only if the order has not yet been delivered, and time_remaining() which returns Option<u32> with the estimated time (only for orders in preparation).
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+
+```
+</details>

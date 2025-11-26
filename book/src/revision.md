@@ -5,7 +5,7 @@
   [x] installing-rust-and-cargo.md
   [x] rust-playground.md
   [x] uninstall-rust.md
-[] Common Programming Concepts  
+[x] Common Programming Concepts  
   [x] comments.md
   [x] print.md
   [x] escape Characters.md
@@ -16,7 +16,7 @@
   [x] debug Formatting.md
   [x] shadowing.md
   [x] scope.md
-  [ ] questions.md
+  [x] questions.md
 
 
 
