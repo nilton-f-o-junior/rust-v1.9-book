@@ -72,44 +72,7 @@ fn main() {
 ```
 </details>
 
-03 - Create an Account struct with the fields:
-
-holder (String)
-balance (f64)
-
-Implement a check_balance() method that returns the current balance.
-
-[Playground!]()
-
-<details>
-<summary>Answers</summary>
-
-```rust
-struct BankAccount {
-    holder: String,
-    balance: f64,
-}
-
-impl BankAccount {
-    fn new_user(holder: String, balance: f64) -> Self {
-        BankAccount { holder, balance }
-    }
-
-    fn check_balance(&self) -> String {
-        format!("R$: {:.2}", self.balance)
-    }
-}
-
-fn main() {
-    let new_user = BankAccount::new_user(String::from("Rodolfo Silva"), 199.598);
-
-    println!("user: {:?}", new_user.holder);
-    println!("Balance: {:?}", new_user.check_balance());
-}
-```
-</details>
-
-04 - Create two structs:
+03 - Create two structs:
 
 Address with:
 
@@ -179,7 +142,7 @@ fn main() {
 ```
 </details>
 
-05 - Create a Counter struct with a single field:
+04 - Create a Counter struct with a single field:
 
 value (i32)
 
@@ -225,7 +188,7 @@ fn main() {
 ```
 </details>
 
-06 - Create a Rectangle struct with the fields:
+05 - Create a Rectangle struct with the fields:
 
 width (f32)
 height (f32)
@@ -266,54 +229,7 @@ fn main() {
 ```
 </details>
 
-07 - Create a Configuration struct with the fields:
-
-timeout (u32)
-active (bool)
-
-Use an impl block to create an associated function named default() that returns a new Configuration with default values: timeout: 3000 and active: true.
-
-[Playground!]()
-
-<details>
-<summary>Answers</summary>
-
-```rust
-struct Settings {
-    timeout: u32,
-    active: bool,
-}
-
-impl Settings {
-    fn init(timeout: u32, active: bool) -> Self {
-        Settings { timeout, active }
-    }
-
-    fn default() -> Self {
-        Settings {
-            timeout: 3000,
-            active: true,
-        }
-    }
-}
-
-fn main() {
-    let result = Settings::init(100, false);
-    println!(
-        "Timeout: {:?}\nActive: {:?}\n",
-        result.timeout, result.active
-    );
-
-    let value_end = Settings::default();
-    println!(
-        "Timeout: {:?}\nActive: {:?}",
-        value_end.timeout, value_end.active
-    );
-}
-```
-</details>
-
-08 - Create a Tuple Struct named ColorRGB:
+06 - Create a Tuple Struct named ColorRGB:
 
 Represent the colors Red, Green, and Blue (u8 types).
 
@@ -399,7 +315,7 @@ fn main() {
 ```
 </details>
 
-09 - Create an Employee struct with the fields:
+07 - Create an Employee struct with the fields:
 
 name (String)
 salary (f64)
@@ -438,7 +354,7 @@ fn main() {
 ```
 </details>
 
-10 - Create a PaymentMethod enum representing different payment forms:
+08 - Create a PaymentMethod enum representing different payment forms:
 
 Cash
 CreditCard (with number of installments)
@@ -505,64 +421,7 @@ fn main() {
 ```
 </details>
 
-11 - Create an OperationResult enum that can be:
-
-Success (containing an f64).
-ErrorWithDescription (containing a String).
-UnknownError.
-
-Implement a function that attempts to divide two numbers and returns this enum. Use pattern matching to display the result appropriately.
-
-[Playground!]()
-
-<details>
-<summary>Answers</summary>
-
-```rust
-#[allow(dead_code)]
-#[derive(Debug)]
-enum OperationResult {
-    Success(f64),
-    ErrorWithDescription(String),
-    UnknownError,
-}
-
-fn divide(numerator: f64, demoninator: f64) -> OperationResult {
-    if demoninator == 0. {
-        OperationResult::ErrorWithDescription(String::from("It is not possible to divide by zero!"))
-    } else {
-        let result = numerator / demoninator;
-        OperationResult::Success(result)
-    }
-}
-
-fn print_result(result: OperationResult) {
-    match result {
-        OperationResult::Success(value) => {
-            println!("Result: {:.2}", value);
-        }
-
-        OperationResult::ErrorWithDescription(error) => {
-            println!("Error: {}", error);
-        }
-
-        OperationResult::UnknownError => {
-            println!("Unknown Error!");
-        }
-    }
-}
-
-fn main() {
-    let test1 = divide(2., 2.);
-    print_result(test1);
-
-    let test2 = divide(2., 0.0);
-    print_result(test2);
-}
-```
-</details>
-
-12 - Create a Notification enum with the variants:
+09 - Create a Notification enum with the variants:
 
 Email (recipient and subject).
 SMS (number and message).
@@ -623,7 +482,7 @@ fn main() {
 ```
 </details>
 
-13 - Create a RequestState enum representing:
+10 - Create a RequestState enum representing:
 
 Pending.
 InProgress (with progress percentage).
@@ -699,7 +558,7 @@ fn main() {
 ```
 </details>
 
-14 - Create an OrderStatus enum representing the different states of a restaurant order:
+11 - Create an OrderStatus enum representing the different states of a restaurant order:
 
 Received (with order number).
 InPreparation (with estimated time in minutes).
@@ -715,6 +574,200 @@ Implement the methods can_cancel() which returns true only if the order has not 
 <summary>Answers</summary>
 
 ```rust
+enum OrderStatus {
+    Received { order: u32 },
+    InPreparation { minutes: u32 },
+    ReadyForPickup { ticket: u32 },
+    Delivered,
+    Canceled { reason: String },
+}
 
+impl OrderStatus {
+    fn can_cancel(&self) -> bool {
+        match self {
+            OrderStatus::Delivered => false,
+            _ => true,
+        }
+    }
+
+    fn time_remaining(&self) -> Option<u32> {
+        match self {
+            OrderStatus::InPreparation { minutes } => Some(*minutes),
+            _ => None,
+        }
+    }
+
+    fn status_description(&self) -> String {
+        match self {
+            OrderStatus::Received { order } => {
+                format!("Order received - N: {}", order)
+            }
+
+            OrderStatus::InPreparation { minutes } => {
+                format!("In preparation - Minutes: {}", minutes)
+            }
+
+            OrderStatus::ReadyForPickup { ticket } => {
+                format!("Ready for pickup - Ticket: {}", ticket)
+            }
+
+            OrderStatus::Delivered => {
+                format!("Delivered!")
+            }
+
+            OrderStatus::Canceled { reason } => {
+                format!("Canceled - Reason: {}", reason)
+            }
+        }
+    }
+}
+
+fn main() {
+    let order_recived = OrderStatus::Received { order: 7895 };
+    let order_prep = OrderStatus::InPreparation { minutes: 30 };
+    let order_delivered = OrderStatus::Delivered;
+    let order_pickup = OrderStatus::ReadyForPickup { ticket: 462 };
+    let order_canceled = OrderStatus::Canceled {
+        reason: String::from("The delivery took a long time!"),
+    };
+    let order_cancel = OrderStatus::Delivered;
+    let order_remaining = OrderStatus::InPreparation { minutes: 110 };
+
+    println!("{}", order_recived.status_description());
+    println!("{}", order_prep.status_description());
+    println!("{}", order_delivered.status_description());
+    println!("{}", order_pickup.status_description());
+    println!("{}", order_canceled.status_description());
+
+    println!("{}", order_cancel.can_cancel());
+    println!("{:?}", order_remaining.time_remaining());
+    println!("{:?}", order_cancel.time_remaining());
+}
 ```
 </details>
+
+12 - Create a trait named Shape that defines a method signature area(&self) -> f64. Then, create two structs:
+
+Rectangle with the fields width: f64 and height: f64.
+Circle with the field radius: f64.
+
+Implement the Shape trait for both:
+
+For the rectangle, return width * height.
+For the circle, return PI * radius * radius.
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+// use std::f64::consts::PI;
+const PI: f64 = 3.14;
+
+trait Shape {
+    fn area(&self) -> f64;
+}
+
+struct Rectangle {
+    width: f64,
+    height: f64,
+}
+
+impl Shape for Rectangle {
+      fn area(&self) -> f64 {
+          self.width * self.height
+      }
+}
+
+struct Circle {
+    radius: f64,
+}
+
+impl Shape for Circle {
+    fn area(&self) -> f64 {
+        self.radius * self.radius * PI
+    }
+}
+
+fn main() {
+    let rectangle = Rectangle {
+        width: 5.5,
+        height: 3.2,
+    };
+
+    let circle = Circle { radius: 4.4 };
+
+    println!("Rectangle: {:.2}", rectangle.area());
+    println!("Circle: {:.2}", circle.area());
+}
+```
+</details>
+
+13 - Create a trait named Student with two methods:
+
+name(&self) -> String: without a default implementation.
+greeting(&self) -> String: with a default implementation that returns "Olá, eu sou um estudante.".
+
+Create a struct UniversityStudent that implements the trait. Define the name method, but do not implement greeting, utilizing the default one. Then, create a struct Foreigner that implements both, overriding greeting to return "Hello, I am a student from abroad.".
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+trait Student {
+    fn name(&self) -> String;
+    fn greeting(&self) -> String;
+}
+
+struct UniversityStudent {
+    name: String,
+}
+
+impl Student for UniversityStudent {
+    fn name(&self) -> String {
+        format!("My name is: {}", self.name)
+    }
+
+    fn greeting(&self) -> String {
+        format!("Olá, eu sou um estudante.")
+    }
+}
+
+struct Foreigner {
+    name: String,
+}
+
+impl Student for Foreigner {
+    fn name(&self) -> String {
+        format!("My name is {}", self.name)
+    }
+
+    fn greeting(&self) -> String {
+        format!("Hello, I am a student from abroad.")
+    }
+}
+
+fn main() {
+    let university = UniversityStudent {
+        name: String::from("Roberto!"),
+    };
+
+    let foreigner = Foreigner {
+        name: String::from("Alice"),
+    };
+
+    println!("Name: {}", university.name);
+    println!("{}\n", university.greeting());
+
+    println!("Name: {}", foreigner.name);
+    println!("{}", foreigner.greeting());
+}
+```
+</details>
+
+14 - Define a simple trait named Summarizable with a method summary(&self) -> String. Implement it for a struct Article. Then, write a generic function named notify that receives a parameter item. Use Trait Bounds to ensure that the item passed to the function implements the Summarizable trait. The function must print "New notification: [return value of summary]".
+
+15 - Create a struct Point with fields x: i32 and y: i32. Rust does not allow printing structs directly with {} unless the std::fmt::Display trait is implemented. Implement the Display trait for Point so that, when formatted, it displays (x, y) (e.g., (10, 20)). Test it using println!("{}", point);.
