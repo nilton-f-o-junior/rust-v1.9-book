@@ -1,3 +1,1 @@
-#
-
-"The beauty that lives in the act of sharing something with others." – Monja Coen
+"A beleza que vive no ato de compartilhar algo com os outros." Monja Coen

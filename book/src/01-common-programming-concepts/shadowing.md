@@ -1,6 +1,6 @@
 # Shadowing
 
-You can declare a new variable with the same name as an existing one, but the previous one will have its value replaced.
+Você pode declarar uma nova variável com o mesmo nome de uma variável existente, mas o valor da variável anterior será substituído.
 
 ```rust
 let food = "bread";
@@ -31,5 +31,3 @@ println!("{}", num);
 let num: f32 = 4.;
 println!("{}", num);
 ```
-
-> The topic of **data types** will be covered in the next chapter.

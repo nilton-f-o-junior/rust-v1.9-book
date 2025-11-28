@@ -1,6 +1,6 @@
-# Debug Formatting
+# Formatação para Depuração
 
-In Rust, `{:?}` and `{:#?}` are format specifiers that use the `Debug` trait to format values.
+Em Rust, `{:?}` e `{:#?}` são especificadores de formato que utilizam o *trait* Debug para formatar valores.
 
 `{:?}`
 
@@ -24,7 +24,7 @@ println!("{person:#?}");
 
 ```
 
-`Error`
+`Erro`
 
 ```rust 
 let person: (&str, u8, f32) = ("Rodolfo", 40, 1.70);

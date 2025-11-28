@@ -1,6 +1,6 @@
-# Uninstalling Rust
+# Desinstalando Rust
 
-If at any point you would like to uninstall Rust:
+Se em algum momento você quiser desinstalar o Rust:
 
 ```md
 rustup self uninstall

@@ -1,12 +1,11 @@
-# Comments
+# Comentários
 
-Comments are used to document your code, making it more understandable for you and other developers. They
- are ignored by the compiler, meaning they don't affect how your program runs, only its readability.
+Comentários são usados para documentar seu código, tornando-o mais compreensível para você e outros desenvolvedores. Eles são ignorados pelo compilador, o que significa que não afetam como seu programa é executado, apenas a sua legibilidade.
 
 `//`
 
 ```rust
-// This is a single-line comment.
+// Este é um comentário de linha única.
 ```
 
 `/* */`
@@ -14,7 +13,7 @@ Comments are used to document your code, making it more understandable for you a
 ```rust
 /*
   ...
-  This is a multi-line comment.
+  Este é um comentário de múltiplas linhas.
   ...
 */
 ```
@@ -22,26 +21,25 @@ Comments are used to document your code, making it more understandable for you a
 `///`
 
 ```rust
-/// doc comments
-///  automatically generate documentation: cargo doc
-///  they are compatible with markdown
-///  the document the following item: function, module, struct ...
+/// Comentários de documentação (doc comments)
+///  geram documentação automaticamente: cargo doc
+///  são compatíveis com markdown
+///  documentam o item seguinte: função, módulo, struct ...
 ```
-
 
 `//!` 
 
 ```rust
-//! inner doc comment
-//!  document modules/crates: lib.rs
-//!  top of files
+//! Comentário de documentação interno (inner doc comment)
+//!  documenta módulos/crates: lib.rs
+//!  topo dos arquivos
 ```
 
 `/* // /**/ */`
 
 ```rust
-/* nested comments
-   // rust allows comments within the comment block 
-   /* ... */
+/* Comentários aninhados (nested comments)
+    // Rust permite comentários dentro do bloco de comentário
+    /* ... */
 */
 ```

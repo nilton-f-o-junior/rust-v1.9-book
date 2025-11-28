@@ -1,7 +1,7 @@
-# Introduction to Rust
+# Introdução ao Rust
 
-Rust was created by **Graydon Hoare** at Mozilla Research in **2010**. The first stable version, 1.0, was released in **2015**, marking the beginning of its popularity and broader adoption in the industry.
+Rust foi criado por **Graydon Hoare** na Mozilla Research em **2010**. A primeira versão estável, 1.0, foi lançada em 2015, marcando o início de sua popularidade e adoção mais ampla na indústria.
 
-Rust is a **systems programming language** that is compiled and open-source, meaning it is directly translated into machine code, which makes it extremely fast, without the need for an interpreter like Python or JavaScript. It positions itself as an alternative to languages like C and C++, which are known for their performance but are also more susceptible to memory errors, such as *null pointers* or *data races*.
+Rust é uma linguagem de programação de sistemas que é compilada e de código aberto (*open-source*), o que significa que é traduzida diretamente para código de máquina. Isso a torna extremamente rápida, sem a necessidade de um interpretador como Python ou JavaScript. Ela se posiciona como uma alternativa a linguagens como C e C++, que são conhecidas por sua performance, mas também são mais suscetíveis a erros de memória, como *null pointers* (ponteiros nulos) ou *data races* (condições de corrida de dados).
 
-Rust's major innovation is the **Ownership Model**, a system that guarantees memory safety at compile time. This means that the Rust compiler checks if your code is free of memory errors before it's even executed. The compiler becomes a memory "guardian," and if it doesn't approve your code, it won't compile. This approach eliminates an entire class of bugs that are common in other languages.
+A grande inovação do Rust é o Modelo de Posse (*Ownership Model*), um sistema que garante a segurança de memória em tempo de compilação. Isso significa que o compilador do Rust verifica se o seu código está livre de erros de memória antes mesmo de ser executado. O compilador se torna um "guardião" da memória, e se ele não aprovar o seu código, ele simplesmente não compila. Essa abordagem elimina toda uma classe de bugs que são comuns em outras linguagens.

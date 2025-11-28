@@ -1,32 +1,32 @@
-# Mutability
+# Mutabilidade
 
-Once a variable's value is set, you cannot change it later. However, using "mut" after "let" makes the created variable mutable.
+Uma vez que o valor de uma variável é definido, você não pode alterá-lo posteriormente. No entanto, usar mut após let torna a variável criada mutável.
 
 `let mut`
 
 ```rust
-let mut name = "Alice";
-println!("What is your name: {}", name);
+let mut nome = "Fulano";
+println!("Qual é o seu nome: {}", nome);
 
-name = "Roberto";
-println!("What is your name: {}", name);
+nome = "Ciclano";
+println!("Qual é o seu nome: {}", nome);
 ```
 
 ```rust
 let mut num = 24;
-println!("Which number did you choose? {}", num);
+println!("Qual número você escolheu? {}", num);
 
 num = 12;
-println!("Which number did you choose? {}", num);
+println!("Qual número você escolheu? {}", num);
 ```
 
 `not mut`
 
 ```rust
-// error
-let name = "Alice";
-println!("What is your name: {}", name);
+// erro
+let nome = "Fulano";
+println!("Qual é o seu nome: {}", nome);
 
-name = "Roberto";
-println!("What is your name: {}", name);
+nome = "Ciclano";
+println!("Qual é o seu nome: {}", nome);
 ```

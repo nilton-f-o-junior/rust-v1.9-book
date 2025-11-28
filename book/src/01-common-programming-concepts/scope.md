@@ -1,6 +1,6 @@
-# Scope
+# Escopo
 
-Enclosing a block of code within curly braces {} creates a new scope that limits the visibility of variables defined within it. Variables defined in outer scopes remain accessible, but can be "shadowed" by variables with the same name in the inner scope.
+Envolver um bloco de código entre chaves `{}` cria um novo escopo que limita a visibilidade das variáveis definidas dentro dele.
 
 ```rust
 let x = 1;

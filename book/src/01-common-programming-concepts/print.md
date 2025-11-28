@@ -1,42 +1,39 @@
 # Print
 
-The print! macro and its variations are used for debugging, informing the user, and generating formatted output.
+A macro print! e suas variações são usadas para depuração, informar o usuário e gerar saída formatada.
 
 `print!`
 
 ```rust
-// prints text without a line break
-print!("Hello,");
-print!("world!");
+// imprime o texto sem quebra de linha
+print!("Olá,");
+print!("mundo!");
 print!("...");
 ```
 
 `println!`
 
 ```rust
-// prints text with a line break
-println!("Hello,");
-println!("world!");
+// imprime o texto com quebra de linha
+println!("Olá,");
+println!("mundo!");
 println!("...");
 ```
 
 `eprint!`
 
 ```rust
-// prints the error text without a line break
-eprint!("ERROR:");
-eprint!("Failed to load file");
+// imprime o texto de erro sem quebra de linha
+eprint!("ERRO:");
+eprint!("Falha ao carregar arquivo!");
 ```
 
 `eprintln!`
 
 ```rust
-// prints the error text with a line break
-eprintln!("ERROR:");
-eprintln!("Failed to load file");
+// imprime o texto de erro com quebra de linha
+eprintln!("ERRO:");
+eprintln!("Falha ao carregar arquivo!");
 ```
 
-> Used for standard program output (stdout): print! and println!<br>
-> Used for output involving an error or diagnostics (stderr): eprint! and eprintln!
-
-> Note: The user can redirect the normal output of their program to a file using (>) and the error messages to the terminal.
+> Nota: O usuário pode redirecionar a saída normal de seu programa para um arquivo usando (>) e as mensagens de erro para o terminal.

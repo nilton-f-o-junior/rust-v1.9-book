@@ -1,38 +1,38 @@
-# Format
+# Formatação
 
-The format! macro in Rust is used to improve data output formatting by using curly braces "{}" as placeholders that will be filled with the information.
+A macro `format!` em Rust é usada para melhorar a formatação da saída de dados, utilizando `{}` como *placeholders* (espaços reservados) que serão preenchidos com a informação.
 
 `{}`
 
 ```rust
-let name = "Alice";
-let years = 30;
-println!("Hi, I'm {}, {} years old", name, years);
+let nome = "Fulano";
+let idade = 30;
+println!("Oi, eu sou {}, tenho {} anos", nome, idade);
 ```
 
 ```rust
-let name = "Alice";
-let years = 30;
-println!("Hi, I'm {name}, {years} years old");
+let nome = "Fulano";
+let idade = 30;
+println!("Oi, eu sou {nome}, tenho {idade} anos");
 ```
 
 `format!`
 
-Always returns a `String` with the formatted content.
+Sempre retorna uma `String` com o conteúdo formatado.
 
 ```rust
-let name = "Alice";
-let years = 30;
+let nome = "Fulano";
+let idade = 30;
 
-let text = format!("Hi, I'm {}, {} years old", name, years);
+let text = format!("Oi, eu sou {}, tenho {} anos", nome, idade);
 println!("{}", text);
 ```
 
 ```rust
-let name = "Alice";
+let name = "Fulano";
 let years = 30;
 
-let text = format!("Hi, I'm {name}, {years} years old");
+let text = format!("Oi, eu sou {nome}, tenho {idade} anos");
 println!("{}", text);
 ```
-> For more information, see the [Rust std::fmt documentation](https://doc.rust-lang.org/std/fmt/).
+> Para mais informações: [std::fmt](https://doc.rust-lang.org/std/fmt/)

@@ -1,6 +1,6 @@
-# Constant
+# Constante
 
-The constant is a variable with a fixed, immutable value, explicit type, and can be declared in any scope.
+A constante é uma variável com valor fixo e imutável, tipo explícito e pode ser declarada em qualquer escopo.
 
 ```rust
 const PI: f32 = 3.14159;
@@ -11,11 +11,11 @@ fn main () {
 ```
 
 ```rust
-const ERROR_404: &str = "Error 404!";
+const ERROR_404: &str = "Erro 404!";
 
 fn main () {
     println!("{}", ERROR_404);
 }
 ```
 
-> The topic of **data types** will be covered in the next chapter.
+> O tópico de **tipos de dados** será abordado no próximo capítulo.

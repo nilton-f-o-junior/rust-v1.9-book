@@ -1,24 +1,24 @@
-# Editors and IDEs
+# Editores e IDEs
 
 **Zed**
 
-A modern and extremely fast code editor, developed by the creators of Atom, focused on performance and real-time collaboration.
+Um editor de código moderno e extremamente rápido, desenvolvido pelos criadores do Atom, focado em desempenho e colaboração em tempo real.
 
 ```md
 https://zed.dev/
 ```
 
-**RustRover: Rust IDE by JetBrains**
+**RustRover: IDE Rust da JetBrains**
 
-Is JetBrains' dedicated IDE for Rust, offering advanced development features such as intelligent debugging, refactoring, and code analysis.
+É a IDE dedicada da JetBrains para Rust, oferecendo recursos avançados de desenvolvimento, como depuração inteligente, *refactoring* (refatoração) e análise de código.
 
 ```md
 https://www.jetbrains.com/rust/
 ```
 
-**VS Code: with the rust-analyzer extension**
+**VS Code: com a extensão rust-analyzer**
 
-Is a popular and lightweight combination for Rust development, offering intelligent autocomplete, real-time error checking, and integration with Rust ecosystem tools.
+É uma combinação popular e leve para o desenvolvimento em Rust, oferecendo *autocomplete* (autocompletar), verificação de erros em tempo real e integração com as ferramentas do ecossistema Rust.
 
 ```md
 https://code.visualstudio.com/
@@ -30,7 +30,7 @@ https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
 
 **Helix**
 
-Modern modal text editor inspired by Vim/Kakoune, with native LSP support and syntax highlighting, offering a fast and efficient editing experience without the need for initial configuration.
+Editor de texto modal moderno inspirado em Vim/Kakoune, com suporte nativo a LSP (*Language Server Protocol*) e destaque de sintaxe, oferecendo uma experiência de edição rápida e eficiente sem a necessidade de configuração inicial.
 
 ```md
 https://helix-editor.com/  
@@ -69,9 +69,9 @@ https://helix-editor.com/
    ```
 </details>
 
-**Neovim: with Rust-specific plugins**
+**Neovim: com plugins específicos para Rust**
 
-Modern evolution of Vim with native LSP support, asynchronous interface and extensibility via Lua, being highly customizable and ideal for developers seeking a powerful and efficient modal editor.
+Evolução moderna do Vim com suporte nativo a LSP, interface assíncrona e extensibilidade via Lua, sendo altamente customizável e ideal para desenvolvedores que buscam um editor modal poderoso e eficiente.
 
 ```md
 https://neovim.io/

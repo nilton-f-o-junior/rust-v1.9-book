@@ -1,15 +1,16 @@
-# A code journey, together.
+# Menos Teoria, Mais Rust
 
-Rust is known for its speed, safety, and ability to prevent compile-time bugs. But where to start? The official book is excellent, but sometimes all we want i
-s to get straight to the point.
+Rust é famosa por sua velocidade, segurança e prevenção de bugs. Mas por onde começar? O livro oficial é ótimo, mas às vezes queremos apenas ir direto ao ponto.
 
-That's why this book exists.
+É por isso que este livro existe.
 
-It was created to facilitate your introduction to the language, regardless of your knowledge level. It's the bridge between complex theory and functional code
-. The approach is simple: less theory, more practice. Here you'll find the essence of Rust in bite-sized doses, followed by numerous examples, questions, and
-projects that will solidify each new concept.
+Ele foi criado para ser sua ponte entre a teoria complexa e o código funcional, facilitando sua introdução à linguagem qualquer que seja seu nível. A abordagem é direta: menos teoria, mais prática.
 
-This isn't a reference guide; it's a guide for your journey. Get ready to build amazing things and discover why Rust is the language that's revolutionizing th
-e way we program.
+O que você encontrará aqui:
 
-Shall we start coding?
+- Inúmeros exemplos;
+- Perguntas rápidas de fixação (3 a 5 minutos);
+- Testes para validar seu conhecimento;
+- Projetos reais para por a mão na massa.
+
+Vamos começar a programar?

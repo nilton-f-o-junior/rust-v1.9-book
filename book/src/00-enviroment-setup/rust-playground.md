@@ -1,10 +1,10 @@
 # Rust Playground
 
-The Rust Playground is the quickest way to start experimenting with Rust. It's an online environment where you can:
+O Rust Playground é a maneira mais rápida de começar a experimentar com Rust. É um ambiente online onde você pode:
 
-- Write and run Rust code directly in your browser;
-- Test small examples and concepts;
-- Share code with other developers;
-- Experiment without needing to install anything.
+- Escrever e rodar código Rust diretamente no seu navegador;
+- Testar pequenos exemplos e conceitos;
+- Compartilhar código com outros desenvolvedores;
+- Experimentar sem a necessidade de instalar nada.
 
-> Access: [https://play.rust-lang.org](https://play.rust-lang.org)
+> Acesse: [https://play.rust-lang.org](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=af33bc1a9e97e7e4360131b09fa5d1e3)

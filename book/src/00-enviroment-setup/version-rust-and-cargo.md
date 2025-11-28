@@ -1,12 +1,12 @@
-# Version
+# Versão
 
-If you wish to see the Rust version:
+Se você deseja ver a versão do Rust:
 
 ```md
 rustc --version
 ```
 
-If you wish to see the Cargo version:
+Se você deseja ver a versão do Cargo:
 
 ```md
 cargo --version

@@ -1,77 +1,78 @@
-# Escape Characters
+# Caracteres de Escape
 
-Are those that start with \ and are used to represent special characters that we cannot (or should not) type literally in the code, such as line breaks, tabs, quotes inside strings, etc."
+São aqueles que começam com `\` e são usados para representar caracteres especiais que não podemos (ou não devemos) digitar literalmente no código, como quebras de linha, tabulações, aspas dentro de strings, etc.
 
 `\n`
 
 ```rust
-// line break
-println!("What is your name?\nMy name is Rodolfo!");
+// quebra de linha
+println!("Qual é o seu nome?\nMeu nome é Fulano!");
 ```
 
 `\'`
 
 ```rust
-// Single quotes
-println!("What is your name?\'My name is Rodolfo!\'");
+// aspas simples
+println!("Qual é o seu nome?\'Meu nome é Fulano!\'");
 ```
 
 `\"`
 
 ```rust
-// double quotes
-println!("What is your name?\"My name is Rodolfo!\"");
+// aspas duplas
+println!("Qual é o seu nome?\"Meu nome é Fulano!\"");
 ```
 
 `\\` 
 
 ```rust
-// backslash
-println!("What is your name?\\My name is Rodolfo!\\");
+// barra invertida
+println!("Qual é o seu nome?\\Meu nome é Fulano!\\");
 ```
 
 `\t`
 
 ```rust
-// horizontal tabulation
-println!("What is your name?\tMy name is \tRodolfo!");
+// tabulação horizontal
+println!("Qual é o seu nome?\tMeu nome é\tFulano!");
 ```
 
 `r`
 
 ```rust
-// raw strings
+// raw strings (string literal/sem processamento de escape)
 println!(r"C:\Users\Rodolfo\Documents");
 ```
 
 `r#...#`
 ```rust
-// add "" // '' \
+// adiciona "" // '' \
 println!(r#"
-  What is your name?
-  My name is "Rodolfo!"
+  Qual é o seu nome?
+  Meu nome é "Fulano!"
 "#);
 ```
 
 `\x`
 
 ```rust
-// 7-bit character ASCII - 0x00 e 0x7F
+// caractere ASCII de 7 bits - 0x00 e 0x7F
 println!("\x52\x6F\x64\x6F\x6C\x66\x6F");
 ```
 
 `\u{...}`
 
 ```rust
-// unicode
+// unicode (permite usar emojis ou caracteres especiais)
 println!("(\u{25D5}\u{2323}\u{25D5})");
 ```
 
 `\r`
 
 ```rust
-// moves the cursor back to the beginning of the line without advancing to the next one
-print!("Loading ...\r");
-print!("Completed!   \r");
+// move o cursor de volta para o início da linha sem avançar para a próxima
+print!("Carregando ...\r");
+print!("Concluído!   \r");
 ```
-> Commonly used for terminal animations: **(\r)**
+
+> Comumente usado para animações de terminal: **\r**

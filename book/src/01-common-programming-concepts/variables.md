@@ -1,14 +1,14 @@
-# Variables
+# Variáveis
 
-Variables are named spaces in memory that can hold a value.
+Variáveis são espaços nomeados na memória que podem armazenar um valor.
 
 ```rust
-let name = "Roberto";
-println!("What is your name: {}", name);
+let nome = "Fulano";
+println!("Qual é o seu nome: {}", nome);
 ```
 ```rust
-let num = 24;
-println!("What number did you choose? {}", num);
+let idade = 24;
+println!("Qual sua idade? {}", idade);
 ```
 
-> Learn more about [variables](https://play.rust-lang.org).
+> Saiba mais sobre [variáveis](https://play.rust-lang.org).

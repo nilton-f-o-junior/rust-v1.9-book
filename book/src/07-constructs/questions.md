@@ -2,9 +2,9 @@
 
 01 - Create a struct named Book with the following fields:
 
-title (String)
-author (String)
-pages (u32)
+- title (String)
+- author (String)
+- pages (u32)
 
 Then, create an instance of this struct and print its values.
 
@@ -38,9 +38,9 @@ fn main() {
 
 02 - Create a Car struct with the fields:
 
-brand (String)
-model (String)
-year (u16)
+- brand (String)
+- model (String)
+- year (u16)
 
 Use impl to create an associated function new() to facilitate the creation of new cars.
 
@@ -76,15 +76,15 @@ fn main() {
 
 Address with:
 
-street (String)
-number (u16)
-city (String)
+- street (String)
+- number (u16)
+- city (String)
 
 Client with:
 
-name (String)
-email (String)
-address (Address)
+- name (String)
+- email (String)
+- address (Address)
 
 [Playground!]()
 
@@ -144,13 +144,13 @@ fn main() {
 
 04 - Create a Counter struct with a single field:
 
-value (i32)
+- value (i32)
 
 Implement three methods:
 
-new() - creates a counter starting at 0
-increment(&mut self) - adds 1 to the value
-get_value(&self) - returns the current value
+- new() - creates a counter starting at 0
+- increment(&mut self) - adds 1 to the value
+- get_value(&self) - returns the current value
 
 [Playground!]()
 
@@ -190,8 +190,8 @@ fn main() {
 
 05 - Create a Rectangle struct with the fields:
 
-width (f32)
-height (f32)
+- width (f32)
+- height (f32)
 
 Implement a method named calculate_area(&self) that returns the rectangle's area. Create an instance, call the method, and print the result.
 
@@ -231,9 +231,9 @@ fn main() {
 
 06 - Create a Tuple Struct named ColorRGB:
 
-Represent the colors Red, Green, and Blue (u8 types).
-
-Create an associated function black() that returns the color black (R=0, G=0, B=0). Create an instance of this color using the associated function and print its values.
+- Represent the colors Red, Green, and Blue (u8 types).
+- Create an associated function black() that returns the color black (R=0, G=0, B=0).
+- Create an instance of this color using the associated function and print its values.
 
 [Playground!]()
 
@@ -317,8 +317,8 @@ fn main() {
 
 07 - Create an Employee struct with the fields:
 
-name (String)
-salary (f64)
+- name (String)
+- salary (f64)
 
 Implement a mutable method increase_salary(&mut self, percentage: f64) that increases the employee's salary by the provided percentage (e.g., 0.10 for 10%).
 
@@ -356,10 +356,10 @@ fn main() {
 
 08 - Create a PaymentMethod enum representing different payment forms:
 
-Cash
-CreditCard (with number of installments)
-DebitCard
-Pix (with key)
+- Cash
+- CreditCard (with number of installments)
+- DebitCard
+- Pix (with key)
 
 Implement a function that receives this enum and returns a message describing the chosen payment.
 
@@ -423,9 +423,9 @@ fn main() {
 
 09 - Create a Notification enum with the variants:
 
-Email (recipient and subject).
-SMS (number and message).
-Push (title and body).
+- Email (recipient and subject).
+- SMS (number and message).
+- Push (title and body).
 
 Implement a send() method for each type that simulates sending by printing the relevant information.
 
@@ -484,10 +484,10 @@ fn main() {
 
 10 - Create a RequestState enum representing:
 
-Pending.
-InProgress (with progress percentage).
-Completed (with response data as String).
-Failed (with error code).
+- Pending.
+- InProgress (with progress percentage).
+- Completed (with response data as String).
+- Failed (with error code).
 
 Implement the methods get_status() and is_finished() for this enum.
 
@@ -560,11 +560,11 @@ fn main() {
 
 11 - Create an OrderStatus enum representing the different states of a restaurant order:
 
-Received (with order number).
-InPreparation (with estimated time in minutes).
-ReadyForPickup (with ticket number).
-Delivered.
-Canceled (with reason as String).
+- Received (with order number).
+- InPreparation (with estimated time in minutes).
+- ReadyForPickup (with ticket number).
+- Delivered.
+- Canceled (with reason as String).
 
 Implement the methods can_cancel() which returns true only if the order has not yet been delivered, and time_remaining() which returns Option<u32> with the estimated time (only for orders in preparation).
 
@@ -648,13 +648,13 @@ fn main() {
 
 12 - Create a trait named Shape that defines a method signature area(&self) -> f64. Then, create two structs:
 
-Rectangle with the fields width: f64 and height: f64.
-Circle with the field radius: f64.
+- Rectangle with the fields width: f64 and height: f64.
+- Circle with the field radius: f64.
 
 Implement the Shape trait for both:
 
-For the rectangle, return width * height.
-For the circle, return PI * radius * radius.
+- For the rectangle, return width * height.
+- For the circle, return PI * radius * radius.
 
 [Playground!]()
 
@@ -704,12 +704,12 @@ fn main() {
 ```
 </details>
 
-13 - Create a trait named Student with two methods:
+13 - Create a trait named Student with two required methods (no default implementation):
 
-name(&self) -> String: without a default implementation.
-greeting(&self) -> String: with a default implementation that returns "Olá, eu sou um estudante.".
+name(&self) -> String and greeting(&self) -> String.
 
-Create a struct UniversityStudent that implements the trait. Define the name method, but do not implement greeting, utilizing the default one. Then, create a struct Foreigner that implements both, overriding greeting to return "Hello, I am a student from abroad.".
+- Create a UniversityStudent struct that implements the trait. The greeting method must return the fixed value "Olá, eu sou um estudante."
+- Create a Foreigner struct that implements the trait. The greeting method must return the value "Hello, I am a student from abroad.", overriding the behavior of UniversityStudent.
 
 [Playground!]()
 
@@ -728,7 +728,7 @@ struct UniversityStudent {
 
 impl Student for UniversityStudent {
     fn name(&self) -> String {
-        format!("My name is: {}", self.name)
+        format!("Meu nome é: {}", self.name)
     }
 
     fn greeting(&self) -> String {
@@ -759,15 +759,54 @@ fn main() {
         name: String::from("Alice"),
     };
 
-    println!("Name: {}", university.name);
+    println!("Name: {}", university.name());
     println!("{}\n", university.greeting());
 
-    println!("Name: {}", foreigner.name);
+    println!("Name: {}", foreigner.name());
     println!("{}", foreigner.greeting());
 }
 ```
 </details>
 
-14 - Define a simple trait named Summarizable with a method summary(&self) -> String. Implement it for a struct Article. Then, write a generic function named notify that receives a parameter item. Use Trait Bounds to ensure that the item passed to the function implements the Summarizable trait. The function must print "New notification: [return value of summary]".
+14 - Define a simple trait named Summarizable with a method summary(&self) -> String.
 
-15 - Create a struct Point with fields x: i32 and y: i32. Rust does not allow printing structs directly with {} unless the std::fmt::Display trait is implemented. Implement the Display trait for Point so that, when formatted, it displays (x, y) (e.g., (10, 20)). Test it using println!("{}", point);.
+- Implement it for a struct Article. Then, write a generic function named notify that receives a parameter item.
+- Use Trait Bounds to ensure that the item passed to the function implements the Summarizable trait. The function must print "New notification: [return value of summary]".
+
+[Playground!]()
+
+<details>
+<summary>Answers</summary>
+
+```rust
+trait Summarizable {
+    fn summary(&self) -> String;
+}
+
+struct Article {
+    headline: String,
+    author: String,
+    content: String,
+}
+
+impl Summarizable for Article {
+    fn summary(&self) -> String {
+        format!("{} \n{}(by {})", self.headline, self.content, self.author)
+    }
+}
+
+fn notify<T: Summarizable>(item: &T) {
+    println!("New notification: {}", item.summary());
+}
+
+fn main() {
+    let article = Article {
+        headline: String::from("Trait Bound!"),
+        author: String::from("The Developer"),
+        content: String::from("A brief text."),
+    };
+
+    notify(&article);
+}
+```
+</details>
