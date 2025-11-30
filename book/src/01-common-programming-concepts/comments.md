@@ -21,25 +21,25 @@ Comentários são usados para documentar seu código, tornando-o mais compreens�
 `///`
 
 ```rust
-/// Comentários de documentação (doc comments)
-///  geram documentação automaticamente: cargo doc
-///  são compatíveis com markdown
-///  documentam o item seguinte: função, módulo, struct ...
+/// Comentários de documentação (doc comments):
+///  - Geram documentação automaticamente: cargo doc;
+///  - São compatíveis com markdown;
+///  - Documentam o item seguinte: função, módulo, struct, etc.
 ```
 
 `//!` 
 
 ```rust
-//! Comentário de documentação interno (inner doc comment)
-//!  documenta módulos/crates: lib.rs
-//!  topo dos arquivos
+//! Comentário de documentação interno (inner doc comment):
+//!  - Documenta módulos/crates: lib.rs;
+//!  - Colocado no início dos arquivos.
 ```
 
 `/* // /**/ */`
 
 ```rust
-/* Comentários aninhados (nested comments)
-    // Rust permite comentários dentro do bloco de comentário
+/* Comentários aninhados (nested comments):
+    // Rust permite comentários dentro do bloco de comentário.
     /* ... */
 */
 ```
