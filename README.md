@@ -2,39 +2,41 @@
 	<img src="img/rust-logo.png">
 </p>
 
-# Rust Developer - Roadmap
+# Rust Developer
 
-- [x] 1. The Rust Programming Language
-    - [x] 1.1. Foreword
-    - [x] 1.2. Introduction
-- [x] 2. Getting Started
+- [x] 1. A Linguagem de Programação Rust
+    - [x] 1.1. Prefácio
+    - [x] 1.2. Introdução
+- [x] 2. Começando
     - [x] 2.1. Rust Playground
-    - [x] 2.2. Installing Rust
-    - [x] 2.3. Uninstall
-    - [x] 2.4. Editors and IDEs
-- [x] 3. Common Programming Concepts
-    - [x] 3.1. Comments
-    - [x] 3.2. Print
-    - [x] 3.3. Escape Characters
-    - [x] 3.4. Line break
-    - [x] 3.5. Variables
-    - [x] 3.6. Mutability
-    - [x] 3.7. Constant
-    - [x] 3.8. Format
-    - [x] 3.9. Debug Formatting
-    - [x] 3.10. Shadowing
-    - [x] 3.11. Scope
-    - [x] 3.12. Question
-- [x] 4. Data Structures
-    - [x] 4.1. u - integers
-    - [x] 4.2. i - integers
-    - [x] 4.3. Floating
-    - [x] 4.4. Boolean
-    - [x] 4.5. Char
-    - [x] 4.6. String and &str
-    - [x] 4.7. Tuples
-    - [x] 4.8. Arrays
-    - [x] 4.9. Questions
+    - [x] 2.2. Instalar Rust
+    - [x] 2.3. Versão - Rust e Cargo
+    - [x] 2.4. Desinstalar
+    - [x] 2.5. Editores e IDEs
+- [x] 3. Conceitos Comuns de Programação
+    - [x] 3.1.  Comentários
+    - [x] 3.2.  Print
+    - [x] 3.3.  Caracteres de Escape
+    - [x] 3.4.  Variáveis
+    - [x] 3.5.  Mutabilidade
+    - [x] 3.6.  Constantes
+    - [x] 3.7.  Formatação
+    - [x] 3.8.  Formatação para Debugging
+    - [x] 3.9.  Shadowing
+    - [x] 3.10. Escopo
+    - [x] 3.11. Perguntas
+- [x] 4. Estruturas de Dados
+    - [x] 4.1. u - inteiros
+    - [x] 4.2. i - inteiros
+    - [x] 4.3.  Ponto Flutuante
+    - [x] 4.4.  Booleanos
+    - [x] 4.5.  Char
+    - [x] 4.6.  String e &str
+    - [x] 4.7.  Tuplas
+    - [x] 4.8.  Modificando Tuplas
+    - [x] 4.9.  Arrays
+    - [x] 4.10. Modificando Arrays
+    - [x] 4.11. Perguntas
 - [x] 5. Operators
     - [x] 5.1. Arithmetic Operators
     - [x] 5.2. Assignment Operators
@@ -43,8 +45,8 @@
     - [x] 5.5. String and &str
     - [x] 5.6. Tuples
     - [x] 5.7. Array
-    - [x] 5.8. Questions
-- [x] 6. Control Flow
+    - [x] 5.8. Perguntas
+- [x] 6. Fluxo de Controle
     - [x] 6.1. If
     - [x] 6.2. Else
     - [x] 6.3. Else if
@@ -52,34 +54,34 @@
     - [x] 6.5. While
     - [x] 6.6. For
     - [x] 6.7. Match
-    - [x] 6.8. Questions - If and Else
-    - [x] 6.9. Questions - Loop
-    - [x] 6.10. Questions - While
-    - [x] 6.11. Questions - For
-    - [x] 6.12. Questions - Match
-- [x] 7. Vectors
-    - [x] 7.1 Index
-    - [x] 7.2 Methods - Part 1
-    - [x] 7.3 Methods - Part 2
-    - [x] 7.4 Methods - Part 3
-    - [x] 7.5 Methods - Part 4
-    - [x] 7.6 Questions
+    - [x] 6.8. Perguntas - If and Else
+    - [x] 6.9. Perguntas - Loop
+    - [x] 6.10. Perguntas - While
+    - [x] 6.11. Perguntas - For
+    - [x] 6.12. Perguntas - Match
+- [x] 7. Vetor
+    - [x] 7.1 Index (Índice)
+    - [x] 7.1 Introdução
+    - [x] 7.2 Métodos - Parte 1
+    - [x] 7.3 Métodos - Parte 2
+    - [x] 7.4 Métodos - Parte 3
+    - [x] 7.5 Métodos - Parte 4
+    - [x] 7.6 Perguntas
 - [x] Constructs
     - [x] 8.1 Struct
-    - [x] 8.2 Struct - Example
+    - [x] 8.2 Struct - Exemplo
     - [x] 8.2 Impl
-    - [x] 8.3 Impl - Example
+    - [x] 8.3 Impl - Exemplo
     - [x] 8.4 Enum
-    - [x] 8.5 Enum - Example
+    - [x] 8.5 Enum - Exemplo
     - [x] 8.6 Traits
-    - [x] 8.7 Traits - Example    
-    - [ ] 8.8 Questions
-- [x] 9. Functions and Method Syntax
-    - [x] 9.1. Functions
-    - [x] 9.2. Function - Input
-    - [x] 9.3. Expression
-    - [x] 9.4. Methods
-    - [x] 9.5. Modules - Inline
-    - [x] 9.6. Modules - Extern
-    - [x] 9.7. Modules - mod.rs
-    - [ ] 9.8. Modules - Questions
+    - [x] 8.7 Traits - Exemplo  
+    - [ ] 8.8 Perguntas
+- [x] 9. Funções e Módulos
+    - [x] 9.1. Funções
+    - [x] 9.2. Funções - Entrada
+    - [x] 9.3. Expressão
+    - [x] 9.4. Módulos - Inline
+    - [x] 9.5. Módulos - Extern
+    - [x] 9.6. Módulos - mod.rs
+    - [ ] 9.7. Perguntas
