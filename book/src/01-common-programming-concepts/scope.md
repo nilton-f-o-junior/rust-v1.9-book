@@ -1,27 +1,27 @@
 # Escopo
 
-Envolver um bloco de código entre chaves `{}` cria um novo escopo que limita a visibilidade das variáveis definidas dentro dele.
+Envolver um código entre chaves `{}` cria um novo escopo (bloco de código) que limita a visibilidade das variáveis definidas dentro dele, logo não pode ser acessada fora daquele bloco.
 
 ```rust
-let x = 1;
-println!("{}", x);
+let numero = 1;
+println!("{}", numero);
 
 {
-  let x = 2;
-  println!("{}", x);
+  let numero = 2;
+  println!("{}", numero);
 }
 
-println!("{}", x);
+println!("{}", numero);
 ```
 
 ```rust
-let name = "Alice";
-println!("{}", name);
+let nome = "Alice";
+println!("{}", nome);
 
 {
-  let name = "Rodolfo";
-  println!("{}", name);
+  let nome = "Rodolfo";
+  println!("{}", nome);
 }
 
-println!("{}", name);
+println!("{}", nome);
 ```
