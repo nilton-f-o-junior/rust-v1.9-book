@@ -1,6 +1,6 @@
 # Print
 
-A macro print! e suas variações são usadas para depuração, informar o usuário e gerar saída formatada.
+A macro `print!` e suas variações são usadas para depuração, informar o usuário e gerar saída formatada.
 
 `print!`
 
