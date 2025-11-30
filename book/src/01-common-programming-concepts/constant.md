@@ -1,6 +1,6 @@
 # Constante
 
-A constante é uma variável com valor fixo e imutável, tipo explícito e pode ser declarada em qualquer escopo.
+A constante é uma identificador com valor fixo e imutável, tipo explícito e pode ser declarada em qualquer escopo.
 
 ```rust
 const PI: f32 = 3.14159;
@@ -11,7 +11,7 @@ fn main () {
 ```
 
 ```rust
-const ERROR_404: &str = "Erro 404!";
+const ERROR_404: &str = "Erro 404";
 
 fn main () {
     println!("{}", ERROR_404);
