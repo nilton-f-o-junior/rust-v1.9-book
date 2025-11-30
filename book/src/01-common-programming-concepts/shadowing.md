@@ -1,33 +1,33 @@
-# Shadowing
+# Shadowing (Sombreamento)
 
 Você pode declarar uma nova variável com o mesmo nome de uma variável existente, mas o valor da variável anterior será substituído.
 
 ```rust
-let food = "bread";
-println!("{}", food);
+let comida = "pão";
+println!("{}", comida);
 
-let food = "milk";
-println!("{}", food);
+let comida = "leite";
+println!("{}", comida);
 
-let food = "pizza";
-println!("{}", food);
+let comida = "pizza";
+println!("{}", comida);
 ```
 
 ```rust
-let animal = "Cat";
+let animal = "gato";
 println!("{}", animal);
 
-let animal = "Dog";
+let animal = "cachorro";
 println!("{}", animal);
 
-let animal = "Bird";
+let animal = "pássaro";
 println!("{}", animal);
 ```
 
 ```rust
-let num: i8 = 2;
-println!("{}", num);
+let numero: i8 = 2;
+println!("{}", numero);
 
-let num: f32 = 4.;
-println!("{}", num);
+let numero: f32 = 4.;
+println!("{}", numero);
 ```
