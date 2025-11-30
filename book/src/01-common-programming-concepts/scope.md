@@ -15,11 +15,11 @@ println!("{}", numero);
 ```
 
 ```rust
-let nome = "Alice";
+let nome = "Fulano";
 println!("{}", nome);
 
 {
-  let nome = "Rodolfo";
+  let nome = "Siclano";
   println!("{}", nome);
 }
 
