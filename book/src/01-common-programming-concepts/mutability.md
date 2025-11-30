@@ -1,6 +1,6 @@
 # Mutabilidade
 
-Uma vez que o valor de uma variável é definido, você não pode alterá-lo posteriormente. No entanto, usar 'mut' após let torna a variável criada mutável.
+Uma vez que o valor de uma variável é definido, você não pode alterá-lo posteriormente. No entanto, usar `mut` após let torna a variável criada mutável.
 
 `let mut`
 
