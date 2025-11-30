@@ -20,7 +20,7 @@ num = 12;
 println!("Qual número você escolheu? {}", num);
 ```
 
-`not mut`
+`sem mut`
 
 ```rust
 // erro
