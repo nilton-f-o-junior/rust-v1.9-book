@@ -24,15 +24,15 @@ Sempre retorna uma `String` com o conteúdo formatado.
 let nome = "Fulano";
 let idade = 30;
 
-let text = format!("Oi, eu sou {}, tenho {} anos", nome, idade);
-println!("{}", text);
+let texto = format!("Oi, eu sou {}, tenho {} anos", nome, idade);
+println!("{}", texto);
 ```
 
 ```rust
-let name = "Fulano";
-let years = 30;
+let nome = "Fulano";
+let idade = 30;
 
-let text = format!("Oi, eu sou {nome}, tenho {idade} anos");
-println!("{}", text);
+let texto = format!("Oi, eu sou {nome}, tenho {idade} anos");
+println!("{}", texto);
 ```
 > Para mais informações: [std::fmt](https://doc.rust-lang.org/std/fmt/)
