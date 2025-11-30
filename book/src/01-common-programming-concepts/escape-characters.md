@@ -33,20 +33,20 @@ println!("Qual é o seu nome?\\Meu nome é Fulano!\\");
 `\t`
 
 ```rust
-// tabulação horizontal
+// tabulação horizontal (tab)
 println!("Qual é o seu nome?\tMeu nome é\tFulano!");
 ```
 
 `r`
 
 ```rust
-// raw strings (string literal/sem processamento de escape)
+// permite todas as barra invertidas
 println!(r"C:\Users\Rodolfo\Documents");
 ```
 
 `r#...#`
 ```rust
-// adiciona "" // '' \
+// raw strings (string literal/sem processamento de escape)
 println!(r#"
   Qual é o seu nome?
   Meu nome é "Fulano!"
