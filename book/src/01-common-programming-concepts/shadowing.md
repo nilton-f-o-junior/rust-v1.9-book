@@ -3,31 +3,31 @@
 Você pode declarar uma nova variável com o mesmo nome de uma variável existente, mas o valor da variável anterior será substituído.
 
 ```rust
-let comida = "pão";
+let comida = "Pizza";
 println!("{}", comida);
 
-let comida = "leite";
+let comida = "Biscoitos";
 println!("{}", comida);
 
-let comida = "pizza";
+let comida = "Sorvete";
 println!("{}", comida);
 ```
 
 ```rust
-let animal = "gato";
+let animal = "Cachorro";
 println!("{}", animal);
 
-let animal = "cachorro";
+let animal = "Pássaro";
 println!("{}", animal);
 
-let animal = "pássaro";
+let animal = "Gato";
 println!("{}", animal);
 ```
 
 ```rust
-let numero: i8 = 2;
+let numero: i8 = 80;
 println!("{}", numero);
 
-let numero: f32 = 4.;
+let numero: f32 = 2.;
 println!("{}", numero);
 ```

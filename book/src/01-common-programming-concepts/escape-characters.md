@@ -6,42 +6,42 @@ São aqueles que começam com `\` e são usados para representar caracteres espe
 
 ```rust
 // quebra de linha
-println!("Qual é o seu nome?\nMeu nome é Fulano!");
+println!("Qual é o seu nome?\nMeu nome é Snoopy!");
 ```
 
 `\'`
 
 ```rust
 // aspas simples
-println!("Qual é o seu nome?\'Meu nome é Fulano!\'");
+println!("Qual é o seu nome?\'Meu nome é Snoopy!\'");
 ```
 
 `\"`
 
 ```rust
 // aspas duplas
-println!("Qual é o seu nome?\"Meu nome é Fulano!\"");
+println!("Qual é o seu nome?\"Meu nome é Snoopy!\"");
 ```
 
 `\\` 
 
 ```rust
 // barra invertida
-println!("Qual é o seu nome?\\Meu nome é Fulano!\\");
+println!("Qual é o seu nome?\\Meu nome é Snoopy!\\");
 ```
 
 `\t`
 
 ```rust
 // tabulação horizontal (tab)
-println!("Qual é o seu nome?\tMeu nome é\tFulano!");
+println!("Qual é o seu nome?\tMeu nome é\tSnoopy!");
 ```
 
 `r`
 
 ```rust
 // permite todas as barra invertidas
-println!(r"C:\Users\Rodolfo\Documents");
+println!(r"C:\Users\Snoopy\Documents");
 ```
 
 `r#...#`
@@ -49,7 +49,7 @@ println!(r"C:\Users\Rodolfo\Documents");
 // raw strings (string literal/sem processamento de escape)
 println!(r#"
   Qual é o seu nome?
-  Meu nome é "Fulano!"
+  Meu nome é "Snoopy!"
 "#);
 ```
 
@@ -57,7 +57,7 @@ println!(r#"
 
 ```rust
 // caractere ASCII de 7 bits - 0x00 e 0x7F
-println!("\x52\x6F\x64\x6F\x6C\x66\x6F");
+println!("\x53\x6E\x6F\x6F\x70\x79\x21");
 ```
 
 `\u{...}`

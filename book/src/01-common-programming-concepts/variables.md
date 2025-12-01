@@ -3,11 +3,11 @@
 Variáveis são espaços nomeados na memória que podem armazenar um valor.
 
 ```rust
-let nome = "Fulano";
+let nome = "Woodstock";
 println!("Qual é o seu nome: {}", nome);
 ```
 ```rust
-let idade = 24;
+let idade = 9;
 println!("Qual sua idade? {}", idade);
 ```
 

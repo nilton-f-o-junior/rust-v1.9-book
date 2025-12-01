@@ -5,14 +5,14 @@ A macro `format!` em Rust é usada para melhorar a formatação da saída de dad
 `{}`
 
 ```rust
-let nome = "Fulano";
-let idade = 30;
+let nome = "Franklin";
+let idade = 8;
 println!("Oi, eu sou {}, tenho {} anos", nome, idade);
 ```
 
 ```rust
-let nome = "Fulano";
-let idade = 30;
+let nome = "Schroeder";
+let idade = 6;
 println!("Oi, eu sou {nome}, tenho {idade} anos");
 ```
 
@@ -21,18 +21,18 @@ println!("Oi, eu sou {nome}, tenho {idade} anos");
 Sempre retorna uma `String` com o conteúdo formatado.
 
 ```rust
-let nome = "Fulano";
-let idade = 30;
+let nome = "Marcie";
+let idade = 9;
 
 let texto = format!("Oi, eu sou {}, tenho {} anos", nome, idade);
 println!("{}", texto);
 ```
 
 ```rust
-let nome = "Fulano";
-let idade = 30;
+let nome = "Charlie Brown";
+let idade = 8;
 
-let texto = format!("Oi, eu sou {nome}, tenho {idade} anos");
+let texto = format!("Eu sou o {nome}, tenho {idade} anos");
 println!("{}", texto);
 ```
 > Para mais informações: [std::fmt](https://doc.rust-lang.org/std/fmt/)

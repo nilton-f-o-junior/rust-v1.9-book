@@ -3,11 +3,11 @@
 Envolver um código entre chaves `{}` cria um novo escopo (bloco de código) que limita a visibilidade das variáveis definidas dentro dele, logo não pode ser acessada fora daquele bloco.
 
 ```rust
-let numero = 1;
+let numero = 40;
 println!("{}", numero);
 
 {
-  let numero = 2;
+  let numero = 0;
   println!("{}", numero);
 }
 
@@ -15,11 +15,11 @@ println!("{}", numero);
 ```
 
 ```rust
-let nome = "Fulano";
+let nome = "Rerun";
 println!("{}", nome);
 
 {
-  let nome = "Siclano";
+  let nome = "Spike";
   println!("{}", nome);
 }
 

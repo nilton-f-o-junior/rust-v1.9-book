@@ -11,7 +11,7 @@
 
 ```rust
 fn main() {
-    // This is a single-line comment    
+    // Este é um comentário de linha única    
 }
 ```
 </details>
@@ -26,9 +26,9 @@ fn main() {
 ```rust
 fn main() {
     /*
-      This is a
-      block comment
-      that spans multiple lines
+      Este é um comentário de
+      bloco que abrange várias
+      linhas.
     */
 }
 ```
@@ -44,9 +44,9 @@ fn main() {
 ```rust
 fn main() {
     /*
-       This is an outer comment
-       /* This is a nested comment */
-       End of outer comment
+       Este é um comentário externo
+    // Este é um comentário aninhado
+       Fim do comentário externo
     */    
 }
 ```
@@ -61,7 +61,7 @@ fn main() {
 
 ```rust
 fn main() {
-    print!("Print without adding a newline at the end!");
+    print!("Imprimir sem adicionar uma nova linha no final!");
 }
 ```
 </details>
@@ -75,7 +75,7 @@ fn main() {
 
 ```rust
 fn main() {
-    println!("Print and add newline at the end!");
+    println!("Imprimir e adicionar nova linha no final!");
 }
 ```
 </details>
@@ -104,7 +104,7 @@ fn main() {
 
 ```rust
 fn main() {
-    println!("First line\nSecond line");
+    println!("Primeira linha\nSegunda linha");
 }
 ```
 </details>
@@ -118,10 +118,10 @@ fn main() {
 
 ```rust
 fn main() {
-    println!("Tab character:\tTabbed text");
-    println!("Backslash: \\");
-    println!("Quote: \"Hello\"");
-    println!("Carriage return:\rOverwritten");
+    println!("Caractere de tabulação:\tTexto tabulado");
+    println!("Barra invertida: \\");
+    println!("Olá \"mundo\"");
+    println!(r"C:\Usuários\Snoopy\Documentos\");
 }
 ```
 </details>
@@ -165,7 +165,7 @@ fn main() {
 
 ```rust
 fn main() {
-    // This would cause a compile-time error:
+    // Isto causaria um erro de tempo de compilação:
     println!("{}", x);
     let x = 5;
 } 
@@ -283,7 +283,7 @@ const GLOBAL_CONSTANT: i32 = 100;
 
 fn main() {
     let immutable_var = 200;
-    println!("Constant: {}, Variable: {}", GLOBAL_CONSTANT, immutable_var);
+    println!("Constante: {}, Variável: {}", GLOBAL_CONSTANT, immutable_var);
 
     // Constantes:
     // - Sempre imutáveis (a palavra-chave 'mut' não é permitida)

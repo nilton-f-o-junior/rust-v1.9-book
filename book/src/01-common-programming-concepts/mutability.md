@@ -5,28 +5,17 @@ Uma vez que o valor de uma variável é definido, você não pode alterá-lo pos
 `let mut`
 
 ```rust
-let mut nome = "Fulano";
+let mut nome = "Lucy";
 println!("Qual é o seu nome: {}", nome);
 
-nome = "Ciclano";
+nome = "Linus";
 println!("Qual é o seu nome: {}", nome);
 ```
 
 ```rust
-let mut num = 24;
-println!("Qual número você escolheu? {}", num);
+let mut idade = 8;
+println!("Qual sua idade? {}", idade);
 
-num = 12;
-println!("Qual número você escolheu? {}", num);
-```
-
-`sem mut`
-
-```rust
-// erro
-let nome = "Fulano";
-println!("Qual é o seu nome: {}", nome);
-
-nome = "Ciclano";
-println!("Qual é o seu nome: {}", nome);
+idade = 6;
+println!("Qual sua idade? {}", idade);
 ```
