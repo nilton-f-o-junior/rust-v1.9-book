@@ -37,6 +37,7 @@
     * [Operadores Aritméticos](03-operators/arithmetic-operators.md)
     * [Operadores de Atribuição](03-operators/assignment-operators.md)
     * [Precedência](03-operators/precedence.md)
+    * [Comparação](03-operators/comparison.md)
     * [Lógicos](03-operators/logical.md)
     * [String e &str](03-operators/string-and-str.md)
     * [Tuplas](03-operators/tuples.md)

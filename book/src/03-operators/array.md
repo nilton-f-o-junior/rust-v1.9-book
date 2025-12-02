@@ -1,6 +1,6 @@
 # Array
 
-A list of data items that are all of the same type and have a fixed size.
+Uma lista de itens de dados que são todos do mesmo tipo e têm um tamanho fixo.
 
 `array`
 

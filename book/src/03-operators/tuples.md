@@ -1,8 +1,8 @@
-# Tuples
+# Tuplas
 
-Store multiple data items of different types in a fixed-size structure.
+Armazenam múltiplos itens de dados de tipos diferentes em uma estrutura de tamanho fixo.
 
-`tuple`
+`tupla`
 
 ```rust
 let tup: (u8, u8) = (1, 4);
@@ -15,7 +15,7 @@ tup = (3, 8);
 println!("{:?}", tup.0 + tup.1);
 ```
 
-`tuple + tuple`
+`tupla + tupla`
 
 ```rust
 let tup: ((u8, u8),(u8, u8)) = ((2, 4),(6, 16));

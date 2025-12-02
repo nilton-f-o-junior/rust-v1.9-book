@@ -1,13 +1,13 @@
-# Questions - Operators
+# Perguntas - Operadores
 
 ---
 
-01 - Write a program that declares two integer variables, 'a' with the value 15 and 'b' with the value 7, and prints their sum.
+01 - Escreva um programa que declare duas variáveis inteiras, **a** com o valor **15** e **b** com o valor **7**, e imprima a soma delas.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2dd573923ebbe05a917740fd976012ae)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7feb7d291368ebf581aaab5742f75e27)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -19,12 +19,12 @@ fn main() {
 ```
 </details>
 
-02 - Create code that subtracts the value 3 from a variable called 'total' that initially equals 10, and displays the result.
+02 - Crie um código que subtraia o valor **3** de uma variável chamada **total** que é inicialmente igual a **10**, e exiba o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e9270331929212ac8e2c1abd17dfcecd)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a1e9b22a5c5153747a95ebb4fe8bf72c)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -40,12 +40,12 @@ fn main() {
 ```
 </details>
 
-03 - Develop a program that multiplies two variables, 'x' equals 6 and 'y' equals 8, and shows the product.
+03 - Desenvolva um programa que multiplique duas variáveis, **x** igual a **6** e **y** igual a **8**, e mostre o produto.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=02e9864b7aeb56fb1ea58bbf628b556d)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c8dee74c5746893c8162b93bbf9a2155)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -58,12 +58,12 @@ fn main() {
 ```
 </details>
 
-04 - Implement code that divides the number 20 by 5 and prints the quotient.
+04 - Implemente um código que divida o número **20** por **5** e imprima o quociente.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=82efdbfaf100e94137c547e0f8be4aad)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c9c0957a0ce8bf388f3afcad0a5403f7)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -73,29 +73,29 @@ fn main() {
 ```
 </details>
 
-05 - Write a program that calculates the remainder of the division of 23 by 4 and prints the result.
+05 - Escreva um programa que calcule o resto da divisão de **23** por **4** e imprima o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fadc1249e4d04ca1f03e12d3f4a11a88)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2e11eab852acf6f01dced1298323bfdc)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let mut remainder: u8 = 23;
-    remainder %= 4;
+    let mut resto: u8 = 23;
+    resto %= 4;
 
-    println!("{:?}", remainder);
+    println!("{:?}", resto);
 }
 ```
 </details>
 
-06 - Declare two variables num1 (12) and num2 (5) and print the result of their sum directly within the println! macro.
+06 - Declare duas variáveis **num1 = 12** e **num2 = 5** e imprima o resultado da soma delas diretamente dentro da macro println!.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bffa01732376c29ac6dfe7987f8aae36)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2f8d469756ef776809c7842fef0dd459)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -107,44 +107,44 @@ fn main() {
 ```
 </details>
 
-07 - Create an immutable variable called 'value' that is the sum of 9 and 2, and print its value.
+07 - Crie uma variável imutável chamada **valor** que seja a soma de **9** e **2**, e imprima seu valor.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=46978024506ccf4c2d94b9d689e765ef)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fc55a0910d4683d00f7128fb8354d510)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let value: u8 = 9 + 2;
-    println!("{:?}", value);
+    let valor: u8 = 9 + 2;
+    println!("{:?}", valor);
 }
 ```
 </details>
 
-08 - Declare two variables 'first' (7) and 'second' (3) and print the result of their multiplication.
+08 - Declare duas variáveis **prime = 7** e **segund = 3** e imprima o resultado da multiplicação delas.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1172562b9a9a328d2f754d4b4831598f)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=dff06e53764fc2e5887ca44cc21b662a)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let first: u8 = 7;
-    let second: u8 = 3;
+    let prime: u8 = 7;
+    let segund: u8 = 3;
 
-    println!("{:?}", first * second);
+    println!("{:?}", prime * segund);
 }
 ```
 </details>
 
-09 - Declare two variables 'dividend' (18) and 'divisor' (3) and store the result of the division in a variable called 'result', printing it.
+09 - Declare duas variáveis **dividend = 18** e **divisor = 3** e armazene o resultado da divisão em uma variável chamada **result**, imprimindo-a.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=01fa7e609b8970f7a92718dceda24ce1)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e9daea5ed375a0c0da4fdf985d253317)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -157,12 +157,12 @@ fn main() {
 ```
 </details>
 
-10 - Declare two variables n1 (25) and n2 (7). Calculate and print the remainder of the division of n1 by n2.
+10 - Declare duas variáveis **n1 = 25** e **n2 = 7**. Calcule e imprima o resto da divisão de **n1** por **n2**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5187f84f3dca36c039e36da25650bb4a)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2600d2d848d534e3aaa2bf2fb67abd88)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -174,29 +174,29 @@ fn main() {
 ```
 </details>
 
-11 - Declare a mutable variable named counter with an initial value of 5. Increment it by 3 using the addition assignment operator and print the new value.
+11 - Declare uma variável mutável chamada counter com um valor inicial de **5**. Incremente-a em **3** usando o operador de atribuição de **adição (+=)** e imprima o novo valor.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d5fe82ffa2b390fac2900b37aed7605e)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f63cbffddd3af57eec53c66b615d2fc7)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let mut counter: u8 = 5;
-    counter += 3;
+    let mut contador: u8 = 5;
+    contador += 3;
 
-    println!("{:?}", counter);
+    println!("{:?}", contador);
 }
 ```
 </details>
 
-12 - Create a mutable variable score initialized with 20. Decrement it by 5 using the subtraction assignment operator and display the final value.
+12 - Crie uma variável mutável **score** inicializada com **20**. Decremente-a em **5** usando o operador de atribuição de **subtração (-=)** e exiba o valor final.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e9f23c8fdfb324fd7daaef74d2714eb3)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=173aa5cf4bb453cd4c48454e92fb51df)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -208,29 +208,29 @@ fn main() {
 ```
 </details>
 
-13 - Declare a mutable variable number with the value 2. Multiply it by 4 using the multiplication assignment operator and print the result.
+13 - Declare uma variável mutável **numero** com o valor **2**. Multiplique-a por **4** usando o operador de atribuição de **multiplicação (*=)** e imprima o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8afd848dc184fbdb477fda1c20c51904)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=3861559d639cb683688dfd4ced1f0da6)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let mut number: u8 = 2;
-    number *= 4;
+    let mut numero: u8 = 2;
+    numero *= 4;
 
-    println!("{:?}", number);
+    println!("{:?}", numero);
 }
 ```
 </details>
 
-14 - Initialize a mutable variable size with 30. Divide it by 6 using the division assignment operator and show the resulting value.
+14 - Inicialize uma variável mutável **size** com **30**. Divida-a por **6** usando o operador de atribuição de **divisão (/=)** e mostre o valor resultante.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b64b7b3516a797a6d85c486276f0f301)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=59e6d707fff079efc0b6b7057462cf31)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -242,29 +242,29 @@ fn main() {
 ```
 </details>
 
-15 - Declare a mutable variable number with the value 17. Calculate the remainder of the division by 5 using the remainder assignment operator and print the value.
+15 - Declare uma variável mutável **numero** com o valor **17**. Calcule o resto da divisão por **5** usando o operador de atribuição de **resto (%=)** e imprima o valor.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9635857ef38c0adf2698dcda7200f237)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7c50cae8896363b58b3aa4c2433a9fae)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let mut number: u8 = 17;
-    number %= 5;
+    let mut numero: u8 = 17;
+    numero %= 5;
 
-    println!("{:?}", number);
+    println!("{:?}", numero);
 }
 ```
 </details>
 
-16 - Declare two variables of type &str, part1 with "Hello, " and part2 with "Rust!". Concatenate them and print the result.
+16 - Declare duas variáveis do tipo **&str**, **part1** com **Hello,** e **part2** com **Rust!**. Concatene-as e imprima o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=972a2c883ea82a9961dd7ec97cb07168)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=556b1d1022d50b922483af8c8310e934)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -276,12 +276,12 @@ fn main() {
 ```
 </details>
 
-17 - Create two String variables, s1 with "Language" and s2 with "Rust.". Concatenate them and print the resulting string.
+17 - Crie duas variáveis do tipo string, **s1 = "Language "** e **s2 = "Rust."**. Concatene-as e imprima a string resultante.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1e1f4ef4370cba2881ac35600134b161)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2c1d86e6e63b8cdfa868cba40b184208)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -293,63 +293,63 @@ fn main() {
 ```
 </details>
 
-18 - Declare a variable of type &str called number with the value "Number: ". Create a variable of type String called number_str with the value "42". Concatenate them and print the result.
+18 - Declare uma variável do tipo &str chamada **numero** com o valor **"Number: "**. Crie uma variável do tipo string chamada **numero_str** com o valor **"42"**. Concatene-as e imprima o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fcdad93b10119349d3d6161012274aad)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=576d6196a0dd17b14600dccd19c0e638)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let number: &str = "Number: ";
-    let number_str: String = String::from("42");
+    let numero: &str = "Numero: ";
+    let numero_str: String = String::from("42");
 
-    println!("{:?}", number.to_owned() + &number_str);
+    println!("{:?}", numero.to_owned() + &numero_str);
 }
 ```
 </details>
 
-19 - Create a String variable called initial_message with "Welcome ". Declare a &str variable called name with "User". Concatenate them and print the complete message.
+19 - Crie uma variável string chamada **mensagem_inicial = "Seja bem vindo, "**. Declare uma variável &str chamada **nome = "user"**. Concatene-as e imprima a mensagem completa.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d016bce7ce892b58002919ecb0a3b8c2)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4a22d4a8af416c12ad8080688d6ca62e)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let initial_message: String = String::from("Welcome ");
-    let name: &str = "User";
+    let mensagem_inicial: String = String::from("Seja bem vindo, ");
+    let nome: &str = "user";
 
-    println!("{:?}", initial_message.to_owned() + name);
+    println!("{:?}", mensagem_inicial.to_owned() + nome);
 }
 ```
 </details>
 
-20 - Declare two variables greeting of type String with "Good " and period of type &str with "day!". Concatenate them and print the complete greeting.
+20 - Declare duas variáveis **saudacao** do tipo String com **"Bom "** e **periodo** do tipo &str com **"dia!"**. Concatene-as e imprima a saudação completa.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=432caa3643846bc7f7c2bcbf459a6b85)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=401a3078bc45ccd764252e54dfbf5c96)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let greeting: String = String::from("Good ");
-    let period: &str = "day!";
+    let saudacao: String = String::from("Bom ");
+    let periodo: &str = "dia!";
 
-    println!("{}", greeting + period);
+    println!("{}", saudacao + periodo);
 }
 ```
 </details>
 
-21 - Declare a tuple of two i32. Initialize it with the values (5, -2). Print the multiplication of these two values.
+21 - Declare uma **tupla** com dois **i32**. Inicialize-a com os valores **(5, -2)**. Imprima a **multiplicação** desses dois valores.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ad8177f1f4af00bcb2fee8c41a5bfed2)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d110e75977388857d688199be35cb777)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -359,12 +359,12 @@ fn main() {
 ```
 </details>
 
-22 - Create a nested tuple: ((1, 2), (3, 4)). Add the first element of the first tuple to the second element of the second tuple and print the result.
+22 - Crie uma tupla aninhada: **((1, 2), (3, 4))**. Some o **primeiro elemento** da primeira tupla ao **segundo elemento** da segunda tupla e imprima o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d274b8f3143f7beabefd16fcac10127d)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5209b7b830df0fb7812b456fceb71859)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -374,12 +374,12 @@ fn main() {
 ```
 </details>
 
-23 - Declare two tuples, t1 with (2, 5) and t2 with (8, 1). Add all the elements of the two tuples and print the total.
+23 - Declare duas tuplas, **t1** com **(2, 5)** e **t2** com **(8, 1)**. Some todos os elementos das duas tuplas e imprima o total.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1d1f0675b3ed8617bef4d58195137271)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5edca084b59a561d5008595628ce75b3)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -391,12 +391,12 @@ fn main() {
 ```
 </details>
 
-24 - Create a tuple with an f32 and an i32. Print each element separately.
+24 - Crie uma **tupla** com um **f32** e um **i32**. Imprima cada elemento separadamente.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b0fb47f453ce24dcb7a6f0bf3a24f868)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=301d4c2a08ce8e387617265f5567d916)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -409,12 +409,12 @@ fn main() {
 ```
 </details>
 
-25 - Declare an array of 5 i32 with the values [1, 3, 5, 7, 9]. Print the sum of the first and last elements.
+25 - Declare um **array = [i32; 5]** com os valores **[1, 3, 5, 7, 9]**. Imprima a soma do primeiro e último elementos.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a3afc4e6bc32c2d85a8ce522363d7113)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e785d140df74a032c6dfe145444e0a47)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -424,12 +424,12 @@ fn main() {
 ```
 </details>
 
-26 - Create an array of 3 u16. Initialize it with the values [10, 20, 30]. Print the product of all elements.
+26 - Crie um **array** de **[u16; 3]**. Inicialize-o com os valores **[10, 20, 30]**. Imprima o produto de todos os elementos.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c0d710a477f36454e1f1df99d29ab8e6)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8247ad86766b335ad492562baa5d62d7)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -441,12 +441,12 @@ fn main() {
 ```
 </details>
 
-27 - Declare a 2x2 multidimensional array with integers.
+27 - Declare um **array** multidimensional 2x2 com **inteiros**. Multiplique todos os elementos e imprima o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=56dd598ff7acafc4a2905f65593ca8ef)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=888d54a798c7cd4e1e0339d95737956b)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -458,12 +458,12 @@ fn main() {
 ```
 </details>
 
-28 - Create two arrays of two f32. Sum the corresponding elements of the two arrays and print the results of the sums.
+28 - Crie dois **arrays** de dois **f32**. Some os elementos correspondentes dos dois arrays e imprima os resultados das somas.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d39f9a2b3a17a013005578db9b38d5cc)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=33bd55908dc18049ce5d27e8802aeab7)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -476,12 +476,12 @@ fn main() {
 ```
 </details>
 
-29 - Declare two arrays a1 with [4, 2] and a2 with [3, 6]. Calculate and print the product of all elements from both arrays.
+29 - Declare dois arrays **a1 = [4, 2]** e **a2 = [3, 6]**. Calcule e imprima o produto de todos os elementos de ambos os arrays.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1955fa70e8f372bef1d1b8ca61cb146c)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4f9b99177deee932ad099a64024325b5)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -493,12 +493,12 @@ fn main() {
 ```
 </details>
 
-30 - Declare a variable x with value 1. Create an inner block where you declare a variable y with value 2. Inside the block, print the sum of x and y. Outside the block, try to print y (what will happen?).
+30 - Declare uma variável **x** com valor **1**. Crie um bloco interno onde você declare uma variável **y** com valor **2**. Dentro do bloco, imprima a soma de x e y. Fora do bloco, tente imprimir y (o que acontecerá?).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a8eee9e045481c6225487c8d9e6ccf6b)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -509,17 +509,17 @@ fn main() {
     }
     
     println!("{:?}", x);
-    // println!("{:?}", y); cannot find value `y` in this scope
+    // println!("{:?}", y); // Erro: `y` fora escopo
 }
 ```
 </details>
 
-31 - Declare a variable level1 with value 10. Open a new block and declare a variable level2 with value 20. Inside this block, create another block and declare level3 with value 30. Print the sum of level1 and level3 inside the innermost block.
+31 - Declare uma variável **level1** com valor **10**. Abra um novo bloco e declare uma variável **level2** com valor **20**. Dentro deste bloco, crie outro bloco e declare **level3** com valor **30**. Imprima a soma de level1, level2 e level3 dentro do bloco mais interno.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f3c11d1e7f2f573ddee4c3588e12da5c)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -537,12 +537,12 @@ fn main() {
 ```
 </details>
 
-32 - Declare a main variable with value 100. Create a block where you declare a variable with the same name and assign the value 50.0. Print the value of the variable inside the block and outside the block.
+32 - Declare uma variável principal com valor **100**. Crie um bloco onde você declare uma variável com o mesmo nome e atribua o valor **50.0**. Imprima o valor da variável dentro do bloco e fora do bloco.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d6515b06f90570307789c304cdf7e5fa)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -557,12 +557,12 @@ fn main() {
 ```
 </details>
 
-33 - Using the same array values, write code that calculates and prints the result of (values[0] + values[1]) * values[1].
+33 - Usando os valores de um array **var = [2, 3]**, escreva um código que calcule e imprima o resultado de (var[0] + var[1]) * var[1].
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a72aa866f68f71460c7672fe734aef96)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -572,12 +572,12 @@ fn main() {
 ```
 </details>
 
-34 - Still with values, calculate and print values[0] * values[1] / values[1] % values[1].
+34 - Ainda com a variável **var = [2, 3]**, calcule e imprima var[0] * var[1] / var[1] % var[1].
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c03a4df0f1ea4dbcda0eeea3b498b629)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -587,12 +587,12 @@ fn main() {
 ```
 </details>
 
-35 - Calculate and print values[0] + values[1] − values[0] + values[0] * values[0].
+35 - Calcule e imprima var[0] + var[1] − var[0] + var[0] * var[0]. (Usando var com [2, 3]).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=73793964a7262dd2ad335e3bf39fae1d)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -602,12 +602,12 @@ fn main() {
 ```
 </details>
 
-36 - Calculate and print ((values[0] + values[1]) − (values[0] + values[0]) * values[0]).
+36 - Calcule e imprima ((var[0] + var[1]) − (var[0] + var[0]) * var[0]). (Usando var com [2, 3]).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a9ec68e45c8483fcd7439302bc965b14)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -617,12 +617,12 @@ fn main() {
 ```
 </details>
 
-37 - Declare two integer variables, num1 with value 10 and num2 with value 10. Write code that prints if num1 is equal to num2.
+37 - Declare duas variáveis inteiras, **num1** com valor **10** e **num2** com valor **10**. Escreva um código que imprima se num1 **é igual a** num2 (==).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5bcc69b905099a9fcb510768afd624fe)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -634,12 +634,12 @@ fn main() {
 ```
 </details>
 
-38 - Declare two floating-point variables, f1 with 3.14 and f2 with 2.71. Write code that prints if f1 is different from f2.
+38 - Declare duas variáveis de ponto flutuante, **f1** com **3.14** e **f2** com **2.71**. Escreva um código que imprima se f1 **é diferente de** f2 (!=).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=46592fd394907a22d60fa9be8cdd55d2)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -651,29 +651,29 @@ fn main() {
 ```
 </details>
 
-39 - Declare two integer variables, age1 with 25 and age2 with 30. Write code that prints if age1 is greater than age2.
+39 - Declare duas variáveis inteiras, **idade_a** com **25** e **idade_b** com **30**. Escreva um código que imprima se idade_a **é maior que** idade_b (>).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8b1bcf4bc47e307252523e8fe644435b)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let age1: u8 = 25;
-    let age2: u8 = 30;
+    let idade_a: u8 = 25;
+    let idade_b: u8 = 30;
 
-    println!("Age-1 > Age-2? {}", age1 > age2);
+    println!("Idade A > Idade B? {}", idade_a > idade_b);
 }
 ```
 </details>
 
-40 - Declare two integer variables, point1 with 5 and point2 with 8. Write code that prints if point1 is less than point2.
+40 - Declare duas variáveis inteiras, **point1** com **5** e **point2** com **8**. Escreva um código que imprima se point1 **é menor que** point2 (<).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=74b5c2baf83da2b9cc0d86de052a2ac8)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -685,46 +685,46 @@ fn main() {
 ```
 </details>
 
-41 - Declare two integer variables, grade1 with 7 and grade2 with 7. Write code that prints if grade1 is greater than or equal to grade2.
+41 - Declare duas variáveis inteiras, **nota_a** com **7** e **nota_b** com **7**. Escreva um código que imprima se nota_a **é maior ou igual a** nota_b (>=).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=70eac7d5e8bd5966ce5c5de43e90ea2f)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let grade_1: u8 = 7;
-    let grade_2: u8 = 7;
+    let nota_a: u8 = 7;
+    let nota_b: u8 = 7;
 
-    println!("Grade-1 >= Grade-2? {}", grade_1 >= grade_2);
+    println!("Nota A >= Nota B? {}", nota_a >= nota_b);
 }
 ```
 </details>
 
-42 - Declare two float variables, height1 with 1.70 and height2 with 1.65. Write code that prints if height1 is less than or equal to height2.
+42 - Declare duas variáveis float, **altura_a** com **1.70** e **altura_b** com **1.65**. Escreva um código que imprima se altura_a **é menor ou igual a** altura_b (<=).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=55c4862333201c4a96d61c1e671a590c)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let height_1: f32 = 1.70;
-    let height_2: f32 = 1.65;
+    let altura_a: f32 = 1.70;
+    let altura_b: f32 = 1.65;
 
-    println!("Height_1 <= Height_2? {}", height_1 <= height_2);
+    println!("Altura A <= Altura B? {}", altura_a <= altura_b);
 }
 ```
 </details>
 
-43 - Declare an integer variable x with 5 and another y with 10. Check if x is not equal to y and print the result.
+43 - Declare uma variável inteira **x** com **5** e outra **y** com **10**. Verifique se x **é diferente de** y (!=) e imprima o resultado.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2e94624a4eb43d0bdb03835551153edc)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -737,63 +737,63 @@ fn main() {
 ```
 </details>
 
-44 - Declare a variable temp1 with 22.5 and temp2 with 20.0. Check if temp1 is greater than temp2 and print.
+44 - Declare uma variável **temp_a** com **22.5** e **temp_b** com **20.0**. Verifique se temp_a **é maior que** temp_b (>) e imprima.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b36510d0c04af97cd8cd682761452929)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let temp_1: f32 = 22.5;
-    let temp_2: f32 = 20.;
+    let temp_a: f32 = 22.5;
+    let temp_b: f32 = 20.;
 
-    println!("Temp1 > Temp2? {}", temp_1 > temp_2);
+    println!("Temperatura A > Temperatura B? {}", temp_a > temp_b);
 }
 ```
 </details>
 
-45 - Declare a variable count1 with 100 and count2 with 99. Check if count1 is less than count2 and print.
+45 - Declare uma variável **count_a** com **100** e **count_b** com **99**. Verifique se count_a **é menor que** count_b (<) e imprima.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2463fcc21af0b4f059f6226c91b20f2e)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let count_1: u8 = 100;
-    let count_2: u8 = 99;
+    let count_a: u8 = 100;
+    let count_b: u8 = 99;
 
-    println!("Count 1 < Count 2? {}", count_1 < count_2);
+    println!("Count A < Count B? {}", count_a < count_b);
 }
 ```
 </details>
 
-46 - Declare two u8 variables, val1 with 8 and val2 with 3. Calculate the sum, subtract 1 from the result, and print.
+46 - Declare duas variáveis u8, **val_a** com **8** e **val_b** com **3**. Calcule a soma, subtraia 1 do resultado, e imprima.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=48e82f4f87c68414f88eabcab20c2873)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let val_1: u8 = 8;
-    let val_2: u8 = 3;
+    let val_a: u8 = 8;
+    let val_b: u8 = 3;
 
-    println!("{:?}", (val_1 + val_2) - 1);
+    println!("{:?}", (val_a + val_b) - 1);
 }
 ```
 </details>
 
-47 - Create a tuple (u32, u32) with values (5, 10). Multiply the two elements and assign the result to a new variable, then print it.
+47 - Crie uma tupla **(u32, u32)** com **valores (5, 10)**. Multiplique os dois elementos e atribua o resultado a uma nova variável, depois imprima-a.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4c4099f912452524978fea6aaa1f88c2)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -805,12 +805,12 @@ fn main() {
 ```
 </details>
 
-48 - Declare an array [i32; 3] with values [2, 4, 6]. Divide each element by 2 (using division assignment if applicable) and print the resulting array.
+48 - Declare um array **[i32; 3] = [2, 4, 6]**. Divida cada elemento por 2 (usando atribuição de divisão se aplicável) e imprima o array resultante.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a9fdeb1204fe8ea81ae7f236aa300b16)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -825,12 +825,12 @@ fn main() {
 ```
 </details>
 
-49 - Declare a tuple (f64, f64) with (2.5, 3.5). Sum the elements and print the result formatted to two decimal places.
+49 - Declare uma tupla **(f64, f64) = (2.5, 3.5)**. Some os elementos e imprima o resultado formatado com duas casas decimais.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a2dfc15481f15eea7e00239ece931c35)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -842,12 +842,12 @@ fn main() {
 ```
 </details>
 
-50 - Declare an array [u16; 2] with [100, 200]. Multiply the first element by 2 and the second by 3, then sum the results and print.
+50 - Declare um array **[u16; 2] =[100, 200]**. Multiplique o **primeiro** elemento por **2** e o **segundo** por **3**, em seguida, some os resultados e imprima.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=480b70cf7845c463d094a209999d9851)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -857,33 +857,32 @@ fn main() {
 ```
 </details>
 
-51 - Declare a variable message with "&str" "Start". Append to it the String " -> End". Print the final value of message.
+51 - Declare uma variável **mensagem** do tipo &str com **"Start"**. Anexe a ela a String **" -> End"**. Imprima o valor final de mensagem.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c81873c4170bc7d9d94636972e079df9)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
     //&str
-    let message: &str = "Start";
-    println!("{}", message.to_owned() + " -> End");
+    let mensagem: &str = "Start";
+    println!("{}", mensagem.to_owned() + " -> End");
 
-    // string
-    let mut message: String = String::from("Start");
-    message += " -> End";
-    println!("{}", message);
+    let mut mensagem: String = String::from("Start");
+    mensagem += " -> End";
+    println!("{}", mensagem);
 }
 ```
 </details>
 
-52 - Create a tuple (i8, i8, i8) with (1, 2, 3). Sum all three numbers and print the result.
+52 - Crie uma tupla **(i8, i8, i8)** com **(1, 2, 3)**. Some todos os três números e imprima o resultado.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d78efbf191f8c64e77c2a06f7212be8a)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -893,12 +892,12 @@ fn main() {
 ```
 </details>
 
-53 - Given an array data with [3, 2], calculate and print the result of data[0] + data[1] * 5 . Then, calculate and print (data[0] + data[1]) * 5.
+53 - Dado um array **data = [3, 2]**, calcule e imprima o resultado de data[0] + data[1] * 5. Em seguida, calcule e imprima (data[0] + data[1]) * 5.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=daf576a80983021df67723b1b36bd21b)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -910,38 +909,19 @@ fn main() {
 ```
 </details>
 
-54 - Given an array calc_values with [10, 3, 2], calculate and print calc_values[0] / calc_values[1] + calc_values[2]. Then, calculate and print calc_values[0] / (calc_values[1] + calc_values[2]).
+54 - Dado um array **calc_valor = [10, 3, 2]**, calcule e imprima calc_valor[0] / calc_valor[1] + calc_valor[2]. Em seguida, calcule e imprima calc_valor[0] / (calc_valor[1] + calc_valor[2]).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=55a82c237b746e0ce32693392866149b)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let calc_values: [u8; 3] = [10, 3, 2];
+    let calc_valor: [u8; 3] = [10, 3, 2];
 
-    println!("{:?}", calc_values[0] / calc_values[1] + calc_values[2]);
-    println!("{:?}", calc_values[0] / (calc_values[1] + calc_values[2]));
-}
-```
-</details>
-
-55 - Declare a global_factor variable with 2. Inside a block, declare an array nums with [1, 2, 3]. Sum the array elements and multiply the result by global_factor, printing the final result inside the block.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4deda5e29a4261aeec7e13b490873669)
-
-<details>
-<summary>Answers</summary>
-
-```rust
-fn main() {
-    let global_factor: u8 = 2;
-    {
-        let block: [u8; 3] = [1, 2, 3];
-        let result = (block[0] + block[1] + block[2]) * global_factor;
-        println!("{:?}", result);
-    }
+    println!("{:?}", calc_valor[0] / calc_valor[1] + calc_valor[2]);
+    println!("{:?}", calc_valor[0] / (calc_valor[1] + calc_valor[2]));
 }
 ```
 </details>

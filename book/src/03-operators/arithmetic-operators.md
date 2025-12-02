@@ -1,39 +1,38 @@
-# Arithmetic Operators
+# Operadores Aritméticos
 
-Used for basic mathematical calculations.
+Usados para cálculos matemáticos básicos.
 
 `+`
 
 ```rust
-let sum = 1 + 1;
-println!("Sum = {:?}", sum);
+let som = 1 + 1;
+println!("Soma = {:?}", som);
 ```
 
 `-`
 
 ```rust
 let sub = 2 - 2;
-println!("Sub = {:?}", sub);
+println!("Subtração = {:?}", sub);
 ```
 
 `*`
 
 ```rust
 let mul = 3 * 3;
-println!("Mul = {:?}", mul);
+println!("Multiplicação = {:?}", mul);
 ```
 
 `/`
 
 ```rust
 let div = 4 / 4;
-println!("Div = {:?}", div);
+println!("Divisão = {:?}", div);
 ```
 
 `%`
 
 ```rust
-// remainder: %
-let rem = 5 % 5;
-println!("Rem = {:?}", rem);
+let rest = 5 % 5;
+println!("Resto Divisão = {:?}", rest);
 ```

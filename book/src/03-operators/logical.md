@@ -1,31 +1,31 @@
-# Logical
+# Lógicos
 
-Relating to operations that combine or modify Boolean (true/false) values to produce a single Boolean result.
+Relacionados a operações que combinam ou modificam valores Booleanos (verdadeiro/falso) para produzir um único resultado Booleano.
 
-`AND - Only true when both are true`
+`AND (E) - Somente verdadeiro quando ambos são verdadeiros`
 
 ```rust
 // AND = &&
-println!("true && true = {}", true && true);
-println!("true && false = {}", true && false);
-println!("false && true = {}", false && true);
-println!("false && false = {}", false && false);
+println!("Verdadeiro && Verdadeiro = {}", true && true);
+println!("Verdadeiro && Falso = {}", true && false);
+println!("Falso && Verdadeiro = {}", false && true);
+println!("Falso && Falso = {}", false && false);
 ```
 
-`OR - True when at least one is true`
+`OR (OU) - Verdadeiro quando pelo menos um é verdadeiro`
 
 ```rust
 // OR = ||
-println!("true || true = {}", true || true);
-println!("true || false = {}", true || false);
-println!("false || true = {}", false || true);
-println!("false || false = {}", false || false);
+println!("Verdadeiro || Verdadeiro = {}", true || true);
+println!("Verdadeiro || Falso = {}", true || false);
+println!("Falso || Verdadeiro = {}", false || true);
+println!("Falso || Falso = {}", false || false);
 ```
 
-`NOT - Always invert the value`
+`NOT (NÃO) - Sempre inverte o valor`
 
 ```rust
 // NOT = !
-println!("!true = {}", !true);
-println!("!false = {}", !false);
+println!("!Verdadeiro = {}", !true);
+println!("!Falso = {}", !false);
 ```

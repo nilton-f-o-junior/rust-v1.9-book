@@ -1,35 +1,35 @@
-# String and &str
+# String e &str
 
-String and &str concatenation is the process of joining character sequences. In Rust, you can use the + operator or the format!() macro to concatenate strings
+A concatenação de String e &str é o processo de unir sequências de caracteres. Em Rust, você pode usar o operador + ou a macro format!() para concatenar strings.
 
 `string`
 
 ```rust
-let conc_text1: String = String::from("1");
-let conc_text2: String = String::from("2");
-println!("{:?}", conc_text1 + &conc_text2);
+let conc_texto_a: String = String::from("1");
+let conc_texto_b: String = String::from("2");
+println!("{}", conc_texto_a + &conc_texto_b);
 ```
 
 `&str`
 
 ```rust
-let conc_text1: &str = "1";
-let conc_text2: &str = "2";
-println!("{:?}", conc_text1.to_owned() + conc_text2);
+let conc_texto_a: &str = "Calvin";
+let conc_texto_b: &str = " e Haroldo";
+println!("{}", conc_texto_a.to_owned() + conc_texto_b);
 ```
 
 `string + &str`
 
 ```rust
-let part_01: &str = "10";
-let part_02: String = String::from("20");
-println!("{}", part_01.to_owned() + &part_02);
+let parte_a: &str = "O Menino";
+let parte_b: String = String::from("Maluquinho");
+println!("{}", parte_a.to_owned() + " " + &parte_b);
 ```
 
 ```rust
-let part_01: String = String::from("Hello, ");
-let part_02: &str = "World";
+let parte_a: String = String::from("Mickey ");
+let parte_b: &str = "Mouse";
 
-let result: String =  part_01 + part_02;
-println!("Reseult = {}", result);
+let resultado: String =  parte_a + parte_b;
+println!("{}", resultado);
 ```

@@ -1,6 +1,6 @@
-# Precedence
+# Precedência
 
-The order in which operations are performed in an expression.
+A ordem na qual as operações são realizadas em uma expressão.
 
 `()`
 
@@ -11,13 +11,11 @@ println!("{:?}", preced[0] + preced[1] * preced[1]);
 // ()
 println!("{:?}", (preced[0] + preced[1]) * preced[1]);
 ```
+
 `*, / and %`
 
 ```rust
 let preced: [i8; 2] = [5, 3];
-println!("{:?}", preced[0] + preced[1] * preced[1]);
-
-// *, / and %
 println!("{:?}", preced[0] * preced[1] / preced[1] % preced[1]);
 ```
 
@@ -25,8 +23,5 @@ println!("{:?}", preced[0] * preced[1] / preced[1] % preced[1]);
 
 ```rust
 let preced: [i8; 2] = [5, 3];
-println!("{:?}", preced[0] + preced[1] * preced[1]);
-
-// + and -
 println!("{:?}", preced[0] + preced[1] - preced[0] + preced[0] * preced[0]);
 ```
