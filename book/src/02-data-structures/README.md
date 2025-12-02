@@ -1,5 +1,5 @@
-# Data Types
+# Tipos de Dados
 
-This chapter explores the fundamental data types available in Rust, covering the essential building blocks you will use to store and manipulate information in your programs. Understanding these data types is crucial for writing efficient Rust code, as each type has specific characteristics, memory requirements, and use cases.
+Este capítulo explora os tipos de dados fundamentais disponíveis no Rust, cobrindo os blocos de construção essenciais que você usará para armazenar e manipular informações em seus programas. Compreender esses tipos de dados é crucial para escrever código Rust eficiente, pois cada tipo possui características específicas, requisitos de memória e casos de uso.
 
-One of Rust's main strengths is its static typing system, meaning the compiler knows the exact type of each variable at compile time, providing benefits in both safety and performance. As in previous chapters, practical exercises are provided at the end to reinforce your understanding and ensure you are ready to proceed with confidence.
+Uma das principais forças do Rust é o seu sistema de tipagem estática, o que significa que o compilador sabe o tipo exato de cada variável em tempo de compilação, proporcionando benefícios tanto em segurança quanto em desempenho. Assim como nos capítulos anteriores, exercícios práticos são fornecidos no final para reforçar sua compreensão e garantir que você esteja pronto para prosseguir com confiança.

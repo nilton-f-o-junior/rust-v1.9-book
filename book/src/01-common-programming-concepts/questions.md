@@ -141,17 +141,17 @@ fn main() {
 ```
 </details>
 
-10 - Escreva uma linha de código que declare uma variável *city* com o valor "Recife" e a imprima na tela.
+10 - Escreva uma linha de código que declare uma variável cidade com o valor "Recife" e a imprima na tela.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5ba29a0a05ba7b82799df56e02a7680b)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=3bf95ed5a3ce8e2bd76d177b47506128)
 
 <details>
 <summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let city = "Recife";
-    println!("City: {}", city);
+    let cidade = "Recife";
+    println!("Cidade: {}", cidade);
 }
 ```
 </details>
@@ -204,20 +204,20 @@ fn main() {
 ```
 </details>
 
-14 - Declare uma variável mutável chamada *counter* inicializada com 0. Em seguida, escreva o código para alterar o valor para 5 e imprimi-lo.
+14 - Declare uma variável mutável chamada contador inicializada com 0. Em seguida, escreva o código para alterar o valor para 5 e imprimi-lo.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=75d127d7701f7c062579f53571038a68)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=047bb0b1dfa60caeec2ecea4f4ecf1a4)
 
 <details>
 <summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let mut counter = 0;
-    println!("Counter = {}", counter);
+    let mut contador = 0;
+    println!("Contador = {}", contador);
     
-    counter = 5;
-    println!("Counter = {}", counter);
+    contador = 5;
+    println!("Contador = {}", contador);
 }
 ```
 </details>
@@ -263,10 +263,10 @@ fn main() {
 <summary>Resposta</summary>
 
 ```rust
-const MAX_VALUE: i32 = 100;
+const MAX_SPEED: i32 = 100;
 
 fn main() {    
-    let MAX_VALUE = 200;
+    let MAX_SPEED = 200;
 }
 ```
 </details>
@@ -279,11 +279,11 @@ fn main() {
 <summary>Resposta</summary>
 
 ```rust
-const GLOBAL_CONSTANT: i32 = 100;
+const CONSTANTE_GLOBAL: i32 = 100;
 
 fn main() {
-    let immutable_var = 200;
-    println!("Constante: {}, Variável: {}", GLOBAL_CONSTANT, immutable_var);
+    let variavel_imutavel = 200;
+    println!("Constante: {}, Variável: {}", CONSTANTE_GLOBAL, variavel_imutavel);
 
     // Constantes:
     // - Sempre imutáveis (a palavra-chave 'mut' não é permitida)
@@ -300,7 +300,7 @@ fn main() {
 ```
 </details>
 
-19 - Como você usaria a macro format! para criar a string "The value is: 42" a partir do número 42?
+19 - Como você usaria a macro format! para criar a string "O valor é: 42" a partir do número 42?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=24f80a59dd012a5e583fa1255213c3f5)
 
@@ -309,9 +309,9 @@ fn main() {
 
 ```rust
 fn main() {
-    let number = 42;
-    let formatted = format!("The value is: {}", number);
-    println!("{}", formatted);
+    let numero = 42;
+    let numero_formatado = format!("O valor é: {}", numero);
+    println!("{}", numero_formatado);
 }
 ```
 </details>
@@ -325,11 +325,10 @@ fn main() {
 
 ```rust
 fn main() {
-    let number = 7;
-    let formatted = format!("{:04}", number);
+    let numero = 7;
+    let numero_formatado = format!("{:04}", numero);
 
-    println!("{}", formatted);
-    println!("{:04}", number);
+    println!("{}", numero_formatado);
 }
 ```
 </details>
@@ -344,10 +343,10 @@ fn main() {
 ```rust
 fn main() {
     let pi = 3.14159265359;
-    let formatted = format!("{:.2}", pi);
-    
-    println!("Pi with 2 decimals: {}", formatted);
     println!("Pi: {:.2}", pi);
+
+    let pi_formatado = format!("{:.2}", pi);
+    println!("Pi: {}", pi_formatado);    
 }
 ```
 </details>
@@ -361,18 +360,18 @@ fn main() {
 
 ```rust
 fn main() {
-    let name = "Alice";
-    let age = 30;
-    let city = "New York";
+    let nome = "Snoopy";
+    let idade = 8;
+    let cidade = "Califórnia";
     
-    // Positional arguments
-    println!("{0} is {1} years old and lives in {2}", name, age, city);
+    // Argumentos posicionais
+    println!("{0} tem {1} anos e mora na {2}", nome, idade, cidade);
     
-    // Named arguments
-    println!("{name} is {age} years old and lives in {city}");
+    // Argumentos nomeados
+    println!("{nome} tem {idade} anos e mora na {cidade}");
              
-    // Mixed
-    println!("{} is {age} years old and lives in {city}", name);
+    // Misturado
+    println!("{} tem {idade} anos e mora na {cidade}", nome);
 }
 ```
 </details>
@@ -387,23 +386,23 @@ fn main() {
 ```rust
 fn main() {
     let x = 5;
-    println!("First x: {}", x);
+    println!("Primeiro x: {}", x);
 
     let x = x + 1;
-    println!("Second x: {}", x);
+    println!("Segundo x: {}", x);
 
     let x = x * 2;
-    println!("Third x: {}", x);
+    println!("Terceiro x: {}", x);
 
-    let x = "hello";
-    println!("Fourth x: {}", x);
+    let x = "Olá";
+    println!("Quarto x: {}", x);
 }
 ```
 </details>
 
 24 - Qual será a saída do seguinte código?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=34b86c6d376560db9dea038c55f372c4)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ee0b6fbf2f1f20acad9fc4e688aa7f42)
 
 ```rust
 fn main () {
@@ -411,9 +410,9 @@ fn main () {
     let x = x + 1;
     {
         let x = x * 2;
-        println!("The inner value of x is: {}", x);
+        println!("O valor interno de x é: {}", x);
     }
-    println!("The outer value of x is: {}", x);
+    println!("O valor externo de x é: {}", x);
 }
 ```
 <details>
@@ -425,24 +424,24 @@ fn main() {
     let x = x + 1; // x = 6
     {
         let x = x * 2; // x = 12 
-        println!("The inner value of x is: {}", x); // Output: 12
+        println!("O valor interno de x é: {}", x); // Saida: 12
     }
-    println!("The outer value of x is: {}", x); // Output: 6
+    println!("O valor externo de x é: {}", x); // Saida: 6
 }
 ```
 </details>
 
 25 - Qual será a saída do seguinte código? Explique por quê.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6957cbb293ce12d4649b251c6e0eb909)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2dad8a48b1c9733652739c0171e7a67d)
 
 ```rust
 let a = 10;
 {
     let b = 20;
-    println!("Inside the block: a = {}, b = {}", a, b);
+    println!("Dentro do bloco: a = {}, b = {}", a, b);
 }
-println!("Outside the block: b = {}", b);
+println!("Fora do bloco: b = {}", b);
 ```
 <details>
 <summary>Resposta</summary>
@@ -452,11 +451,11 @@ fn main() {
     let a = 10;
     {
         let b = 20;
-        println!("Inside the block: a = {}, b = {}", a, b);
-        // Output: Inside the block: a = 10, b = 20
+        println!("Dentro do bloco: a = {}, b = {}", a, b);
+        // Saida: Dentro do bloco: a = 10, b = 20
     }
-    // println!("Outside the block: b = {}", b);
-    // b is not in scope outside the block where it was declared
+    // println!("Fora do bloco: b = {}", b);
+    // Erro: b não está no escopo
 }
 ```
 </details>
