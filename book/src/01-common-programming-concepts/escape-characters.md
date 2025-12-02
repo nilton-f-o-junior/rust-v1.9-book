@@ -6,42 +6,42 @@ São aqueles que começam com `\` e são usados para representar caracteres espe
 
 ```rust
 // quebra de linha
-println!("Qual é o seu nome?\nMeu nome é Snoopy!");
+println!("Qual é o seu nome?\nMeu nome é Alice!");
 ```
 
 `\'`
 
 ```rust
 // aspas simples
-println!("Qual é o seu nome?\'Meu nome é Snoopy!\'");
+println!("Qual é o seu nome?\'Meu nome é Alice!\'");
 ```
 
 `\"`
 
 ```rust
 // aspas duplas
-println!("Qual é o seu nome?\"Meu nome é Snoopy!\"");
+println!("Qual é o seu nome?\"Meu nome é Alice!\"");
 ```
 
 `\\` 
 
 ```rust
 // barra invertida
-println!("Qual é o seu nome?\\Meu nome é Snoopy!\\");
+println!("Qual é o seu nome?\\Meu nome é Alice!\\");
 ```
 
 `\t`
 
 ```rust
 // tabulação horizontal (tab)
-println!("Qual é o seu nome?\tMeu nome é\tSnoopy!");
+println!("Qual é o seu nome?\tMeu nome é\tAlice!");
 ```
 
 `r`
 
 ```rust
 // permite todas as barra invertidas
-println!(r"C:\Users\Snoopy\Documents");
+println!(r"C:\Users\Alice\Documents");
 ```
 
 `r#...#`
@@ -49,7 +49,7 @@ println!(r"C:\Users\Snoopy\Documents");
 // raw strings (string literal/sem processamento de escape)
 println!(r#"
   Qual é o seu nome?
-  Meu nome é "Snoopy!"
+  Meu nome é "Alice!"
 "#);
 ```
 

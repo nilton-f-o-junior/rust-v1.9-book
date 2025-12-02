@@ -1,39 +1,42 @@
-# Modifying Arrays
+# Modificando Arrays
 
-When changing array values, you need to specify the index of the element you want to modify. Array indices start at 0 and correspond to the position of each element:
+Ao alterar valores de array, você precisa especificar o índice do elemento que deseja modificar. Os índices do array começam em 0 e correspondem à posição de cada elemento:
 
 ```rust
-//                 0   1   2   3   4
-let mut scores = [85, 92, 78, 90, 88];
+//                0   1   2   3   4
+let mut scores = [40, 50, 60, 70, 80];
 
-println!("First score: {}", scores[0]);
-println!("Second score: {}", scores[1]);
-println!("Third score: {}\n", scores[2]);
+println!("Score [0]: {}", scores[0]);
+println!("Score [1]: {}", scores[1]);
+println!("Score [2]: {}\n", scores[2]);
 
-scores[0] = 90;
-scores[2] = 82;
+scores[0] = 10;
+scores[1] = 20;
+scores[2] = 30;
 
-println!("First score: {}", scores[0]);
-println!("Second score: {}", scores[1]);
-println!("Third score: {}\n", scores[2]);
+println!("Score [0]: {}", scores[0]);
+println!("Score [1]: {}", scores[1]);
+println!("Score [2]: {}", scores[2]);
 ```
 
 ```rust
-let mut number: [i32; 5] = [10, 20, 30, 40, 50];
-println!("{:?}", number);
+let mut numero: [i32; 5] = [1, 2, 3, 4, 5];
+println!("{:#?}", numero);
 
-number[0] = 100;
-number[2] = 300;
+numero[0] = 10;
+numero[2] = 30;
+numero[4] = 50;
 
-println!("{:?}", number);
+println!("{:#?}", numero);
 ```
 
 ```rust
-let mut names: [&str; 3] = ["Alice", "Bob", "Charlie"];
-println!("{:?}", names);
+let mut nomes: [&str; 3] = ["Cecília", "Maite", "Helena"];
+println!("{:#?}", nomes);
 
-names[0] = "Ane";
-names[1] = "Bren";
+nomes[0] = "Gael";
+nomes[1] = "Theo";
+nomes[2] = "Rafael";
 
-println!("{:?}", names);
+println!("{:#?}", nomes);
 ```

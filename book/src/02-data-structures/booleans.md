@@ -1,17 +1,17 @@
-# bool: boolean
+# bool: booleano
 
-Represents only two types of values: true or false.
+Representa apenas dois tipos de valores: *true* (verdadeiro) ou *false* (falso).
 
 `true`
 
 ```rust
-let checked: bool = true;
-println!("The data was checked? {}", checked);
+let booleano: bool = true;
+println!("1 + 1 = 2? {}", booleano);
 ```
 
 `false`
 
 ```rust
-let checked: bool = false;
-println!("The data was checked? {}", checked);
+let booleano: bool = false;
+println!("1 + 1 = 2? {}", booleano);
 ```

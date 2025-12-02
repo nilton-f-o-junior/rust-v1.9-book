@@ -1,37 +1,37 @@
-# Tuples
+# Tuplas
 
-Combine multiple values of different types into a single compound data structure with a fixed size.
+Combinam múltiplos valores de tipos diferentes em uma única estrutura de dados composta com um tamanho fixo.
 
 ```rust
-let data_types = ("a", 1);
-println!("{:?}", data_types);
+let tipos_dados = ("a", 1);
+println!("{:#?}", tipos_dados);
 ```
 
 ```rust
-let data_types = (1., 2);
-println!("{:#?}", data_types);
+let tipos_dados = (1., 2);
+println!("{:#?}", tipos_dados);
 ```
 
 ```rust
-let data_types : (char, u8);
-data_types = ('c', 3);
-println!("{:?}", data_types);
+let tipos_dados : (char, u8);
+tipos_dados = ('c', 3);
+println!("{:#?}", tipos_dados);
 ```
 
 ```rust
-let (name, num) : (&str, i8);
-(name, num) = ("Alice", 4);
-println!("{} and {}", name, num);
+let (nome, idade) : (&str, i8);
+(nome, idade) = ("Noah", 4);
+println!("{}\n{}", nome, idade);
 ```
 
 ```rust
-let (letter, yes) : (char, bool) = ('d', true);
-let test =  (letter, yes);
-println!("{:?}", test);
+let (letra, verdadeiro) : (char, bool) = ('d', true);
+let saida =  (letra, verdadeiro);
+println!("{:#?}", saida);
 ```
 
 ```rust
-let person = ("Gregor", 64, 1.82);
-let (name, weight, height) = person;
-println!("My name is {}, i'm {} years old and my height is {}", name, weight, height);
+let pessoa = ("Gregorio", 64, 1.82);
+let (nome, idade, altura) = pessoa;
+println!("{}\n{}\n{}", nome, idade, altura);
 ```

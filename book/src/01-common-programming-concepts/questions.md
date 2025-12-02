@@ -80,7 +80,7 @@ fn main() {
 ```
 </details>
 
-06 - Escreva um código que imprima *"Hello"* e *"World"* na mesma linha usando a macro print!.
+06 - Escreva um código que imprima ***Hello*** e ***World*** na mesma linha usando a macro print!.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d174087e2631977598df97dacc77b60a)
 
@@ -126,7 +126,7 @@ fn main() {
 ```
 </details>
 
-09 - Como você declara uma variável chamada *score* e atribui a ela o valor 100?
+09 - Como você declara uma variável chamada ***score*** e atribui a ela o valor 100?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=73d2eb236a8f514c24351b3df50b7d0d)
 
@@ -141,7 +141,7 @@ fn main() {
 ```
 </details>
 
-10 - Escreva uma linha de código que declare uma variável cidade com o valor "Recife" e a imprima na tela.
+10 - Escreva uma linha de código que declare uma variável **cidade** com o valor **Recife** e a imprima na tela.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=3bf95ed5a3ce8e2bd76d177b47506128)
 
@@ -239,7 +239,7 @@ fn main() {
 ```
 </details>
 
-16 - Como você declara uma constante chamada *MAX_SPEED* com o valor 9000 do tipo i32?
+16 - Como você declara uma constante chamada ***MAX_SPEED*** com o valor 9000 do tipo i32?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6227aaa8c70bb460da2bb235c6c5b55c)
 
@@ -266,7 +266,7 @@ fn main() {
 const MAX_SPEED: i32 = 100;
 
 fn main() {    
-    let MAX_SPEED = 200;
+    MAX_SPEED = 200;
 }
 ```
 </details>
@@ -300,7 +300,7 @@ fn main() {
 ```
 </details>
 
-19 - Como você usaria a macro format! para criar a string "O valor é: 42" a partir do número 42?
+19 - Como você usaria a macro format! para criar a string **O valor é: 42** a partir do número **42**?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=24f80a59dd012a5e583fa1255213c3f5)
 
@@ -316,7 +316,7 @@ fn main() {
 ```
 </details>
 
-20 - Como você pode formatar o número 7 para que ele seja exibido como "0007" usando format!?
+20 - Como você pode formatar o número **7** para que ele seja exibido como **0007** usando format!?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=cd79ba22370b8d65b5c4f8628b4b0d56)
 
@@ -376,7 +376,7 @@ fn main() {
 ```
 </details>
     
-23 - O que é *"shadowing"* em Rust? Explique com um exemplo de código e qual seria a saída.
+23 - O que é ***shadowing*** em Rust? Explique com um exemplo de código e qual seria a saída.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=59a2a70416a82fd3a3d8946ed7392c90)
 
@@ -436,12 +436,14 @@ fn main() {
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2dad8a48b1c9733652739c0171e7a67d)
 
 ```rust
-let a = 10;
-{
-    let b = 20;
-    println!("Dentro do bloco: a = {}, b = {}", a, b);
+fn main () {    
+    let a = 10;
+    {
+        let b = 20;
+        println!("Dentro do bloco: a = {}, b = {}", a, b);
+    }
+    println!("Fora do bloco: b = {}", b);
 }
-println!("Fora do bloco: b = {}", b);
 ```
 <details>
 <summary>Resposta</summary>

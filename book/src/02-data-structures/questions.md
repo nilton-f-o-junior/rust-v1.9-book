@@ -1,69 +1,68 @@
-# Questions - Data Structures
+# Perguntas - Estruturas de Dados
 
 ---
 
-01 - Declare a variable positive_only of type u32 with the value 100. Declare another variable can_be_negative of type i32 with the value -100. Print both. Now, try to assign -5 to the positive_only variable. What happens when you try to compile and why?
+01 - Declare uma variável com nome **positivo** do tipo **u32** com o valor **100**. Declare outra variável com nome **negativo** do tipo **i32** com o valor **-100**. Imprima ambas. Agora, tente atribuir **-5** à variável **positivo**. O que acontece ao tentar compilar e por quê?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e234672215be4a964b847798d0d36b9a)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let positive_only: u32 = 100;
-    println!("{:?}", positive_only);
+    let positivo: u32 = 100;
+    println!("{:?}", positivo);
    
-    let can_be_negative: i32 = -100;
-    println!("{:?}", can_be_negative);
+    let negativo: i32 = -100;
+    println!("{:?}", negativo);
 
-    // error: attempt to compute `u8::MAX + 1_u8`, which would overflow
-    // let positive_only: u32 = -5;
-    // println!("{:?}", positive_only);
+    // Erro:
+    // let positivo: u32 = -5;
 }
 ```
 </details>
 
-02 - Write Rust code to declare a variable max_u8 of type u8 and assign it the largest possible value for this type. Print this value. Then, in your code, try to assign max_u8 + 1 to a new u8 variable. What happens during compilation or execution (especially in debug vs. release mode, if you know)?
+02 - Escreva código Rust para declarar uma variável **max_u8** do tipo **u8** e atribua a ela o maior valor possível para esse tipo. Imprima esse valor e em seguida, no seu código, tente atribuir **max_u8 + 1** a uma nova variável **u8**. O que acontece durante a execução?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bc0095a362d7352255ab863df698bbf9)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
     let max_u8: u8 = u8::MAX;
     println!("{:?}", max_u8);
 
-    // error: attempt to compute `u8::MAX + 1_u8`, which would overflow
+    // erro: causaria um overflow (estouro)
     // let max_u8: u8 = u8::MAX + 1;
     // println!("{:?}");
 }
 ```
 </details>
 
-03 - Declare a variable named world_population of type u64 and assign it the value 7800000000. Then, print the variable's value formatted with thousand separators (research how to do this if necessary, or just print the number).
+03 - Declare uma variável chamada **populacao** do tipo **u64** e atribua a ela o valor **7_800_000_000**. Em seguida, imprima o valor da variável formatada.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=837583c25287bc90d5d70d5b88471041)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let world_population: u64 = 7_800_000_000;
-    println!("World Population: {world_population:?}");
+    let populacao: u64 = 7_800_000_000;
+    println!("População: {populacao:?}");
 }
 ```
 </details>
 
-04 - You need to store the number of video views, which can reach billions but will never be negative. Choose the most appropriate unsigned type (u32 or u64). Declare a variable video_views with this type, assign 2500000000 to it, and print.
+04 - Você precisa armazenar a contagem de visualizações de vídeos, que pode chegar a bilhões, mas nunca será negativo. Escolha o tipo não assinado mais apropriado (**u32** ou **u64**). Declare uma variável **video_views** com este tipo, atribua **2500000000** a ela e imprima.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=000d4cacf88ec0136ee00771e6e96098)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -73,12 +72,12 @@ fn main() {
 ```
 </details>
 
-05 - Declare two variables, min_val_i8 and max_val_i8, both of type i8. Assign them the smallest an largest possible value, respectively, for the i8 type. Print both values.
+05 - Declare duas variáveis, **min_val_i8** e **max_val_i8**, ambas do tipo **i8**. Atribua a elas, respectivamente, o **menor** e o **maior** valor possível para o tipo **i8**. Imprima ambos os valores.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=64c38f068bb7a3bd4c20446600eaba94)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -91,90 +90,45 @@ fn main() {
 ```
 </details>
 
-06 - Declare a variable named current_altitude_change of type i16 to represent an altitude change in meters. Assign it the value -350 (a descent of 350 meters). Print this value.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5fefa9d7ce4cc1d65c3f62254be008ee)
-
-<details>
-<summary>Answers</summary>
-
-```rust
-fn main() {
-    let current_altitude_change: i16 = -350;
-    println!("Altitude: {:?} meters", current_altitude_change);
-}
-```
-</details>
-
-07 - You are processing financial transactions where the values can be very large and represent both credits and debits (in cents, to avoid floating-point issues). Declare a variable transaction_value_cents of type i64 and assign it a value like -12345678900 (representing a debit of over 123million). Print it.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=867ba34d76a855770a2b244eae1c3706)
-
-<details>
-<summary>Answers</summary>
-
-```rust
-fn main() {
-    let transaction_value_cents: i64 = -12_345_678_900;
-    println!("Debit = {:?} million", transaction_value_cents);
-}
-```
-</details>
-
-08 - Try declaring a variable value_a of type u8 with 10 and value_b of type u8 with -10. What happens to value_b during compilation?
+06 - Tente declarar uma variável **valor_a** do tipo **u8** com **10** e **valor_b** do tipo **u8** com **-10**. O que acontece com **valor_b** durante a compilação?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d22d2b41277ecb5d06e61a19b994c7d8)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let value_a: u8 = 10;
-    println!("{:?}", value_a);
+    let valor_a: u8 = 10;
+    println!("{:?}", valor_a);
 
-    let value_b: u8 = -10;
-    println!("{:?}", value_b);
+    let valor_b: u8 = -10;
+    println!("{:?}", valor_b);
 }
 ```
 </details>
 
-09 - Declare a variable precise_measurement of type f64 with the value 123.456789123456. Print it.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=774ca7ceba9370f8c4efd0e791727faf)
-
-<details>
-<summary>Answers</summary>
-
-```rust
-fn main() {  
-    let precise_measurement: f64 = 123.456_789_123_456;
-    println!("{:?}", precise_measurement);
-}
-```
-</details>
-
-10 - In an embedded system with limited memory, you need to store a sensor reading that ranges from -10.0 to +10.0 with two decimal places of precision. Declare a variable sensor_reading using f32 and assign 7.89. Print it. Justify why f32 might be suitable here.
+07 - Em um sistema embarcado com memória limitada, você precisa armazenar uma leitura de sensor que varia de **-10.0** a **+10.0** com duas casas decimais de precisão. Declare uma variável **leitura_do_sensor** usando **f32** e atribua **7.89**.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4fbf9ae6f66c00ea0a62f776a2a0a64b)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let sensor_reading: f32 = 7.89;
-    println!("{:?}", sensor_reading);
+    let leitura_do_sensor: f32 = 7.89;
+    println!("{:?}", leitura_do_sensor);
 }
 ```
 </details>
 
-11 - Declare a character char_ascii = 'Z'; and a Unicode character char_unicode = 'Ω'; (Greek letter Omega). Use std::mem::size_of_val(&char_ascii) and std::mem::size_of_val(&char_unicode) to print the size in bytes of each. What do you observe?
+08 - Declare um caractere ASCII **char_ascii = 'Z';** e um caractere Unicode **char_unicode = 'Ω';** (letra grega Omega). Use **std::mem::size_of_val(&char_ascii)** e **std::mem::size_of_val(&char_unicode)** para imprimir o tamanho em bytes de cada um. O que você observa?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9a25a88b9bf2bd2fddf69e5dd32e8bfe)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -190,97 +144,65 @@ fn main() {
 ```
 </details>
 
-12 - Declare a variable my_initial of type char and assign it the first letter of your name. Print it.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b146d46c965a35609541cc2ce8a0fa56)
-
-<details>
-<summary>Answers</summary>
-
-```rust
-fn main() {    
-    let my_ini: char = 'n';      
-    println!("{}", my_ini);
-}
-```
-</details>
-
-13 - Declare three char variables: emoji_char with '😊', math_symbol with '∑', and arrow_char with '→'. Print all of them.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b26ad1efbfb8a3599d6a0cddaaade0b9)
-
-<details>
-<summary>Answers</summary>
-
-```rust
-fn main() {
-    let emoji_char: char = '😊';
-    let math_symbol: char = '∑';
-    let arrow_char: char = '→';
-
-    println!("{}\n{}\n{}", emoji_char, math_symbol, arrow_char);
-}
-```
-</details>
-
-14 - Try to declare a char variable with more than one character, for example: let not_a_char: char = 'ab';. What happens when you try to compile?
+09 - Tente declarar uma variável **char** com mais de um caractere, por exemplo: **let not_a_char: char = 'ab';**. O que acontece ao tentar compilar?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f5c00b54ac22ede25fb827b4b0a5e772)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    // syntax Error: Literal must be one character long
+    // erro: deve ter apenas um caractere
     let not_a_char : char = 'ab';
+    println!("{:?}", not_a_char);
 }
 ```
 </details>
 
-15 - Declare a variable is_file_loaded and assign it true. Declare has_errors and assign false. Print both. Then, try to assign the integer 1 to a boolean variable. What does the Rust compiler say?
+10 - Declare uma variável **arquivo_carregado** e atribua **true**. Declare **apresenta_erro** e atribua **false**. Imprima ambas e em seguida, tente atribuir o inteiro **1** a uma variável booleana. O que o compilador Rust diz?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=dbef312edf852d777c30b58ff75f0f70)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let is_file_loaded: bool = true;
-    println!("{:?}", is_file_loaded);
+    let arquivo_carregado: bool = true;
+    println!("{:?}", arquivo_carregado);
 
-    let has_errors: bool = false;
-    println!("{:?}", has_errors);
+    let apresenta_erro: bool = false;
+    println!("{:?}", apresenta_erro);
 
-    // mismatched types  expected `bool`, found integer
-    // let assing: bool = 1;
-    // println!("{:?}", assing);
+    // Tipos incompatíveis, esperava-se `bool`, encontrado inteiro
+    // let valor: bool = 1;
+    // println!("{:?}", valor);
 }
 ```
 </details>
 
-16 - Create a tuple record that contains a name (&str), an age (u8), and a passing grade (f32). For example: ("Maria", 22, 7.5). Print the entire tuple.
+11 - Crie uma tupla **registro** que contenha um **nome (&str)**, uma **idade (u8)**, e uma **nota de aprovação (f32)**. Exemplo: ("Maria", 22, 7.5). Imprima a tupla inteira.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0c600bfa3b6760850c4ead99dba25809)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let record: (&str, u8, f32) = ("Maria", 22, 7.5);
-    println!("{:#?}", record);
+    let registro: (&str, u8, f32) = ("Maria", 22, 7.5);
+    println!("{:#?}", registro);
 }
 ```
 </details>
 
-17 - Create a tuple called server_response that contains an HTTP status code (u16) and a response message (&str), such as (404, "Not Found"). Print the tuple.
+12 - Crie uma tupla chamada **server_response** que contenha um código de status **HTTP (u16)** e uma mensagem de resposta **(&str)**, como (404, "Not Found"). Imprima a tupla.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=868e32891563fa84cf656dec9b178ba2)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -290,39 +212,32 @@ fn main() {
 ```
 </details>
 
-18 - Given the tuple let product_info = ("Laptop XPTO", 1250.99, 15); (name, price, quantity in stock), access and print the product price and the quantity in stock using tuple indexing (e.g., product_info.1).
+13 - Dada a tupla **let produto_info = ("Laptop XPTO", 1250.99, 15);** (nome, preço, quantidade em estoque), acesse e imprima o **preço** e a **quantidade** usando a indexação de tupla (ex: product_info.1).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=df771a044efc4bb68545d2c998176266)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {    
-    let product_info: (&str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
-    let (name, price, quantity_and_stock) = product_info;
+    let produto_info: (&str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
+    let (nome, preco, quantidade_estoque) = produto_info;
 
     println!(
-        "Product: {} \nQuantity and Stock: {}",
-        product_info.0, product_info.2
-    );
-
-    println!("{:#?}", product_info);
-
-    println!(
-        "Product: {} \nPrice: {:.3} \nQuantity and Stock: {}",
-        name, price, quantity_and_stock
-    );
+        "Produto: {} \nQuantidade em Estoque: {}",
+        produto_info.0, produto_info.2
+    );    
 }
 ```
 </details>
 
-19 - Given the tuple let color_rgb = (255, 128, 0); (representing Orange), destructure it into the variables red, green, and blue. Print each variable separately.
+14 - Dada a tupla **let color_rgb = (255, 128, 0);**, desestruture-a nas variáveis **red**, **green** e **blue**. Imprima cada variável separadamente.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c5c1f723885d4f0b13a77de39255b301)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -334,12 +249,12 @@ fn main() {
 ```
 </details>
 
-20 - Declare a tuple api_result with a boolean indicating success, a u64 for an ID, and a String for a message. Ex: (true, 1234567890, String::from("Successful operation")). Print using {:#?}.
+15 - Declare uma tupla **api_result** com um **booleano** indicando sucesso, um **u64** para um **ID** e uma **String** para uma **mensagem**. Ex: (true, 1234567890, String::from("Successful operation")). Imprima usando {:#?}.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9e4ed3d61f81b80b5c2569ddba149db3)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -349,15 +264,19 @@ fn main() {
 ```
 </details>
 
-21 - Declare a tuple let config = ("localhost", 8080);. Try to modify the second element to 8081 (e.g., config.1 = 8081;). What happens when compiling? Now, redeclare it as let mut config = ("localhost", 8080); and try the same modification. Print config.
+16 - Declare uma tupla **let config = ("localhost", 8080);**. Tente modificar o **segundo** elemento para **8081** (ex: config.1 = 8081;). O que acontece ao compilar? Agora, redeclare-a como **let mut config = ("localhost", 8080);** e tente a mesma modificação.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4ddd90d53cc03f303e21cdafa712ca4e)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
+    // erro: 
+    // let config: (&str, u16) = ("localhost", 8080);
+    // config.1 = 8180;
+    
     let mut config: (&str, u16) = ("localhost", 8080);
     println!("{:?}", config);
 
@@ -367,31 +286,31 @@ fn main() {
 ```
 </details>
 
-22 - Declare a mutable tuple player_stats to store name (&str), score (i32), and lives (u8). Initialize with ("Hero", 0, 3). Then, modify the score to 1500 and the lives to 2. Print the updated tuple.
+17 - Declare uma tupla mutável **player_status** para armazenar **nome (&str)**, **score (i32)** e **vidas (u8)**. Inicialize com **("Hero", 0, 3)**. Em seguida, modifique a **pontuação** para **1500** e as **vidas** para **2**. Imprima a tupla atualizada.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=afe9fd02595b65c96f93d8c0b1a0889d)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
-    let player_stats: (&str, i32, u8) = ("Hero", 0, 3);
-    let (name, mut score, lives) = player_stats;
-    println!("Name: {name}\nScore: {score}\nLives: {lives}\n");
+    let player_status: (&str, i32, u8) = ("Hero", 0, 3);
+    let (nome, mut score, vidas) = player_status;
+    println!("Name: {nome}\nScore: {score}\nLives: {vidas}\n");
     
     score = 1500;
-    println!("Name: {name}\nScore: {score}\nLives: {lives}");
+    println!("Name: {nome}\nScore: {score}\nLives: {vidas}");
 }
 ```
 </details>
 
-23 - Create a mutable tuple let mut point = (10.0, 20.0);. Modify the first element to 15.5 and the second to 25.0 using index access syntax. Imprint the tuple.
+18 - Crie uma tupla mutável **let mut point = (10.0, 20.0);**. Modifique o **primeiro** elemento para **15.5** e o **segundo** para **25.0** usando a sintaxe de acesso por índice. Imprima a tupla.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=158f2254800b8b22ebc49564654e724d)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -405,12 +324,12 @@ fn main() {
 ```
 </details>
 
-24 - Create a mutable tuple file_details containing file name (String), size (u64), and whether it's editable (bool). Initialize it. Then, modify the file name (appending "_v2" to the original name) and change the editable status. Print the tuple.
+19 - Crie uma tupla mutável **file_details** contendo **nome do arquivo (String)**, **tamanho (u64)** e se é **editável (bool)**. Inicialize-a. Em seguida, modifique o **nome** do arquivo (anexando "_v2" ao nome original) e mude o **status** de editável. Imprima a tupla.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fd54c369b8a7c0f6471c06c07461f15b)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
@@ -419,129 +338,135 @@ fn main () {
 
     let mut file_details_v2 = file_details;
     file_details_v2.0 = String::from("teste_v2.txt");
-    file_details_v2.1 = 256;
+    file_details_v2.2 = false;
 
     println!("{:#?}", file_details_v2);
 }
 ```
 </details>
 
-25 - Declare an array months containing the names of the first three months of the year as string slices. Print the name of the second month (remember zero-basedindexing).
+20 - Declare um array **meses** contendo os **nomes** dos três primeiros meses do ano como **string slices**. Imprima o **nome** do segundo mês (lembre-se da indexação baseada em zero).
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9a2be874096ce8f12a83c7f28e609e7b)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
-    let months: [&str; 3] = ["January", "February", "March"];
+    let meses: [&str; 3] = ["Janeiro", "Fevereiro", "Março"];
 
-    println!("{:#?}\n", months);
-    println!("{:#?}", months[1])
+    println!("{:#?}\n", meses);
+    println!("{:#?}", meses[1])
 }
 ```
 </details>
 
-26 - Declare an array powers_of_two of 6 elements of type u32. Initialize it with the values [1, 2, 4, 8, 16, 32]. Print the last element of the array using indexing.
+21 - Declare um array **numeros** de **6 elementos** do tipo **u32**. Inicialize-o com os valores **[1, 2, 4, 8, 16, 32]**. Imprima o **último** elemento do array usando indexação.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8292c18f34221aa2a44d6ff6f0233b03)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
-    let powers_of_two: [u8; 6] = [1, 2, 4, 8, 16, 32];
-    println!("{powers_of_two:#?}\n");
+    let numeros: [u8; 6] = [1, 2, 4, 8, 16, 32];
+    println!("{numeros:#?}\n");
     
-    let powers_of_two: [u8; 6] = [1, 2, 4, 8, 16, 32];
-    println!("{:#?}", powers_of_two[5]);
+    let numeros: [u8; 6] = [1, 2, 4, 8, 16, 32];
+    println!("{:#?}", numeros[5]);
 }
 ```
 </details>
 
-27 - Declare an array let fixed_scores = [100, 90, 80];. Try to modify the second element to 95 (e.g., fixed_scores[1] = 95;). What happens? Now, declare it as let mut fixed_scores = [100, 90, 80];, make the modification, and print it.
+22 - Declare um array **let scores = [100, 90, 80];**. Tente modificar o **segundo** elemento para **95**. O que acontece? Agora, declare-o como **mut**, faça a modificação e imprima.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=06c01117ac75e40389b4e78e4c2acdb4)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
-    let fixed_scores = [100, 90, 80];
-    println!("{:?}", fixed_scores);
+    let scores = [100, 90, 80];
+    println!("{:?}", scores);
 
-    // fixed_scores[1] = 95;
-    // println!("{:?}", fixed_scores);
+    // scores[1] = 95;
+    // println!("{:?}", scores);
 
-    let mut fixed_scores = [10, 30, 60];
-    println!("{:?}", fixed_scores);
+    let mut scores = [10, 30, 60];
+    println!("{:?}", scores);
 
-    fixed_scores[1] = 0;
-    println!("{:?}", fixed_scores);
+    scores[1] = 0;
+    println!("{:?}", scores);
 }
 ```
 </details>
 
-28 - Declare a mutable array inventory_counts of 4 elements of type u16, initialized with [10, 25, 5, 30]. Modify the count of the first item to 12 and the third to 8. Print the updated array.
+23 - Declare um array mutável **contador** de **4 elementos** do tipo **u16**, inicializado com **[10, 25, 5, 30]**. Modifique a contagem do **primeiro** item para **12** e do **terceiro** para **8**. Imprima o array atualizado.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9dffc18405335409699ed4f444113923)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
-    let mut inventory_counts: [u16; 4] = [10, 25, 5, 30];
+    let mut contador: [u16; 4] = [10, 25, 5, 30];
 
-    inventory_counts[0] = 12;
-    inventory_counts[3] = 8;
+    contador[0] = 12;
+    contador[3] = 8;
 
-    println!("{:?}", inventory_counts);
+    println!("{:?}", contador);
 }
 ```
 </details>
 
-29 - Create a mutable array active_services: [bool; 3] initialized as [true, false, true]. Modify the second service to true and the last to false. Print the array.
+24 - Crie um array mutável **servicos_ativos: [bool; 3]** inicializado como **[true, false, true]**. Modifique o **segundo** serviço para **true** e o **último** para **false**. Imprima o array.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b9df12fc30ffb9767ef0c67908dd667e)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
-    let mut active_services:[bool; 3] = [true, false, true];
-    println!("{:?}", active_services);
+    let mut servicos_ativos:[bool; 3] = [true, false, true];
+    println!("{:?}", servicos_ativos);
 
-    active_services[1] = true;
-    active_services[2] = false;
-    println!("{:?}", active_services);
-
-    println!("{:?}, {:?}, {:?}", active_services[0], active_services[1], active_services[2]);
+    servicos_ativos[1] = true;
+    servicos_ativos[2] = false;
+    println!("{:?}", servicos_ativos);
 }
 ```
 </details>
 
-30 - Create a mutable array pixel_colors: [[u8; 3]; 2] to represent two pixels, each with R, G, B components. Initialize it as [[255, 0, 0], [0, 255, 0]] (one red pixel, one green). Modify the first pixel to be blue ([0, 0, 255]) and the second to be yellow ([255, 255, 0]). Print the pixel array.
+25 - Crie um array mutável **pixel_colors: [[u8; 3]; 2]** para representar dois pixels, cada um com componentes **R**, **G**, **B**. Inicialize-o como **[[255, 0, 0], [0, 255, 0]]** (um pixel vermelho, um verde). Modifique o **primeiro** pixel para ser **azul ([0, 0, 255])** e o **segundo** para ser **amarelo ([255, 255, 0])**. Imprima o array de pixels.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c6f8dcaaef0ad4bc945db471d36818cd)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
-    let mut pixel_colors: [[u8; 3]; 3] = [[255, 0, 0], [0, 255, 0], [0, 0, 255]];
-    println!("{:#?}", pixel_colors);
+    let mut pixel_colors: [[u8; 3]; 2] = [[255, 0, 0], [0, 255, 0]];
+    println!("Vermelho: {:?}", pixel_colors[0]);
+    println!("Verde: {:?}", pixel_colors[1]);
 
+    // Red > Blue
     pixel_colors[0][0] = 0;
-    pixel_colors[0][1] = 255;
+    pixel_colors[0][1] = 0;
+    pixel_colors[0][2] = 255;
+
+    // Green > Yellow
     pixel_colors[1][0] = 255;
+    pixel_colors[1][1] = 255;
+    pixel_colors[1][2] = 0;
     
-    println!("{:#?}", pixel_colors);
+    println!("Azul: {:?}", pixel_colors[0]);    
+    println!("Amarelo: {:?}", pixel_colors[1]);
 }
 ```
 </details>

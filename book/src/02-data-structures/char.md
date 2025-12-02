@@ -1,14 +1,14 @@
-# char: character
+# char: caractere
 
-Used to represent a single character and requires the use of single quotes (e.g., 'a').
+Usado para representar um único caractere e requer o uso de aspas simples (por exemplo, 'a').
 
 ```rust
-let character: char = 'a';
-println!("{}", character);
+let caractere: char = 'a';
+println!("{}", caractere);
 ```
 
 ```rust
-let symbol: char = ' ';
-println!("{}", symbol);
+let simbolo: char = '';
+println!("{}", simbolo);
 ```
 

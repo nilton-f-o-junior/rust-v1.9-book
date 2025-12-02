@@ -1,19 +1,19 @@
-# String and &str
+# String e &str
 
-Sequence of UTF-8 characters that can form a word or a phrase, including letters, numbers, symbols, or any other type of special character.
+Sequência de caracteres UTF-8 que pode formar uma palavra ou frase, incluindo letras, números, símbolos ou qualquer outro tipo de caractere especial.
 
 `String`
 
 ```rust
-let name: String = String::from("Alice");
-println!("{:?}", name);
+let frase: String = String::from("Um pouco de Rust para hoje!");
+println!("{:?}", frase);
 ```
 
 `&str`
 
 ```rust
-let name: &str = "Rodolfo";
-println!("{:?}", name);
+let frase: &str = "Chega de Rust por hoje!";
+println!("{:?}", frase);
 ```
 
-> The topic **String and &str** will be covered better in a later chapter.
+> O tópico **String e &str** será abordado melhor em um capítulo posterior.

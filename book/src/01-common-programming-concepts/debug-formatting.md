@@ -5,21 +5,21 @@ Em Rust, `{:?}` e `{:#?}` são especificadores de formato que utilizam o *trait*
 `{:?}`
 
 ```rust
-let person: (&str, u8, f32) = ("Peppermint", 9, 1.37);
-println!("{:?}", person);
+let pessoa: (&str, u8, f32) = ("Laura", 19, 1.77);
+println!("{:?}", pessoa);
 ```
 
 `{:#?}`
 
 ```rust
-let person: (&str, u8, f32) = ("Sally", 5, 1.12);
-println!("{:#?}", person);
+let pessoa: (&str, u8, f32) = ("Pedro", 90, 1.90);
+println!("{:#?}", pessoa);
 ```
 
 `{var:?}`
 
 ```rust
-let person: (&str, u8, f32) = ("Violet", 8, 1.28);
-println!("{person:#?}");
+let pessoa: (&str, u8, f32) = ("Violet", 28, 1.28);
+println!("{pessoa:#?}");
 
 ```

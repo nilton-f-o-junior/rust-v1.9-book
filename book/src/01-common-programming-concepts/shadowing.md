@@ -1,6 +1,6 @@
 # Shadowing (Sombreamento)
 
-Você pode declarar uma nova variável com o mesmo nome de uma variável existente, mas o valor da variável anterior será substituído.
+Você pode declarar uma nova variável com o mesmo nome de uma variável existente, mas a variável anterior é ocultada (*shadowed*) pela nova.
 
 ```rust
 let comida = "Pizza";

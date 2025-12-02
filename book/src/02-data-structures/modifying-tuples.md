@@ -1,30 +1,30 @@
-# Modifying Tuples
+# Modificando Tuplas
 
-When changing tuple values, you need to specify the index of the element you want to modify. Tuple indices start at 0 and correspond to the position of each element.
+Ao alterar valores de tupla, você precisa especificar o índice do elemento que deseja modificar. Os índices da tupla começam em 0 e correspondem à posição de cada elemento.
 
 ```rust
 //                   0      1    2
-let mut person = ("Alice", 25, 1.70);
+let mut perfil = ("Alice", 25, 1.70);
 
-println!("Name: {:?}", person.0);
-println!("Age: {:?}", person.1);
-println!("Height: {:?}\n", person.2);
+println!("Nome: {:?}", perfil.0);
+println!("Idade: {:?}", perfil.1);
+println!("Altura: {:?}\n", perfil.2);
 
-person.1 = 40;
-person.2 = 1.55;
+perfil.1 = 40;
+perfil.2 = 1.55;
 
-println!("Name: {:?}", person.0);
-println!("Age: {:?}", person.1);
-println!("Height: {:?}", person.2);
+println!("Nome: {:?}", perfil.0);
+println!("Idade: {:?}", perfil.1);
+println!("Altura: {:?}", perfil.2);
 ```
 
 ```rust
-let mut person = ("Roberto", 90, 1.98);
-println!("{:#?}", person);
+let mut perfil = ("Julio", 90, 1.98);
+println!("{:#?}", perfil);
 
-person.0 = "Moana";
-person.1 = 58;
-person.2 = 1.62;
+perfil.0 = "Moana";
+perfil.1 = 58;
+perfil.2 = 1.62;
 
-println!("{:#?}", person);
+println!("{:#?}", perfil);
 ```
