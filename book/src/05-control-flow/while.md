@@ -1,17 +1,14 @@
 # While
 
-Repeats a block of code as long as a condition remains true.
-
-Checks the condition before each iteration.
+Repete um bloco de código enquanto uma condição permanecer verdadeira. Verifica a condição antes de cada iteração.
 
 `while`
 
 ```rust
-//
 let mut count = 0;
 
 while count <= 5 {
-    println!("Count = {}", count);
+    println!("Valor = {}", count);
     count += 1;
 }
 ```
@@ -19,16 +16,14 @@ while count <= 5 {
 `while + continue`
 
 ```rust
-//
 let mut count = 0;
 let max_value = 4;
 
 while count <= max_value {
-    //
     count += 1;
 
     if count % 2 == 0 {
-        println!("Count is even! Value = {}", count);
+        println!("Valor = {} é par!", count);
         continue;
     }
     println!("---");

@@ -1,66 +1,66 @@
 # Questions - If and Else
 
-> The code repetition in the answers is intentional. When we get to the chapter on "Functions and Modules", we will return to these questions to refactor them.
+> A repetição de código nas respostas é intencional. Quando chegarmos ao capítulo sobre "Funções e Módulos", retornaremos a essas perguntas para refatorá-las.
 
-01 - Write a program that asks the user for an integer and determines whether it's even or odd.
+01 - Escreva um programa que solicite ao usuário um número inteiro e determine se ele é par ou ímpar.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=97e4e828d33e883d10af3ee733cc7b5c)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=742275e9c04a8c6e7e928f9a0ac1b8dd)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter a number:");
+    println!("Digite um número:");
 
     let mut input: String = String::new();
     io::stdin()
         .read_line(&mut input)
-        .expect("Error in the value entered!");
+        .expect("Erro no valor digitado!");
 
     let num: i32 = match input.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting data!");
+            println!("Erro ao converter dados!");
             return;
         }
     };
 
     if num % 2 == 0 {
-        println!("Num = {}\nEven!", num);
+        println!("Num = {}\nPar!", num);
     } else {
-        println!("Num = {}\nOdd!", num);
+        println!("Num = {}\nÍmpar!", num);
     }
 }
 ```
 </details>
 
-02 - Create a program that reads a number and prints whether it's positive, negative, or zero.
+02 - Crie um programa que leia um número e imprima se ele é positivo, negativo ou zero.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=79a01aa358a23b7f6c9c08b588baa183)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fb05af80427459253ff20c4a89274261)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter a number: ");
+    println!("Digite um número: ");
 
     let mut input_num: String = String::new();
     io::stdin()
         .read_line(&mut input_num)
-        .expect("Error in the value entered!");
+        .expect("Erro no valor digitado!");
 
-    let num: i8 = input_num.trim().parse().expect("Error converting data!");
+    let num: i8 = input_num.trim().parse().expect("Erro ao converter dados!");
 
     if num > 0 {
-        println!("Num = {}!\nPositive", num);
+        println!("Num = {}!\nPositivo", num);
     } else if num < 0 {
-        println!("Num = {}!\nNegative", num);
+        println!("Num = {}!\nNegativo", num);
     } else {
         println!("Num = {}!\nZero", num);
     }
@@ -68,33 +68,33 @@ fn main() {
 ```
 </details>
 
-03 - Develop a program that receives two numbers and shows which one is larger.
+03 - Desenvolva um programa que receba dois números e mostre qual deles é o maior.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6f981cff940e9c27ec515c3596d8517f)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=cf5f06a8c735970f7dc9f43dc426ac4e)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter a number (a):");
+    println!("Digite um número (a):");
     let mut input_num_a: String = String::new();
     io::stdin()
         .read_line(&mut input_num_a)
-        .expect("Error in the value entered!");
+        .expect("Erro no valor digitado!");
 
-    println!("Enter a number (b):");
+    println!("Digite um número (b):");
     let mut input_num_b: String = String::new();
     io::stdin()
         .read_line(&mut input_num_b)
-        .expect("Error in the value entered!");
+        .expect("Erro no valor digitado!");
     
     let num_a: i8 = match input_num_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting data (A)!");
+            println!("Erro ao converter dados (A)!");
             return;
         }
     };
@@ -102,7 +102,7 @@ fn main() {
     let num_b: i8 = match input_num_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting data (B)!");
+            println!("Erro ao converter dados (B)!");
             return;
         }
     };
@@ -118,53 +118,53 @@ fn main() {
 ```
 </details>
 
-04 - Create a program that receives 3 grades from a student (from 0 to 10) and then calculates the average of the grades and reports:
+04 - Crie um programa que receba 3 notas de um aluno (de 0 a 10) e, em seguida, calcule a média das notas e informe:
 
-|              |             |
-|--------------|-------------|
-| >= 7         | passed      |
-| < 5          | failed      |
-| >= 5 and < 7 | in recovery |
+|              |                |
+|--------------|----------------|
+| >= 7         | aprovado       |
+| < 5          | reprovado      |
+| >= 5 and < 7 | em recuperação |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=645abb78749d46a9decba5847f228398)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=148985dff3c722784ea8c63ae30cf2b8)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
+use std::io;
+
 fn main() {
-    //
-    println!("Enter you grade for your first test:");
+    println!("Digite sua nota para o primeiro teste:");
     let mut input_test_a: String = String::new();
     io::stdin()
         .read_line(&mut input_test_a)
-        .expect("Error entering the first grade!");
+        .expect("Erro ao digitar a primeira nota!");
 
-    println!("Enter the grade for your second test:");
+    println!("Digite a nota para o segundo teste:");
     let mut input_test_b: String = String::new();
     io::stdin()
         .read_line(&mut input_test_b)
-        .expect("Error entering the second grade!");
+        .expect("Erro ao digitar a segunda nota!");
 
-    println!("Enter the grade for your third test:");
+    println!("Digite a nota para o terceiro teste:");
     let mut input_test_c: String = String::new();
     io::stdin()
         .read_line(&mut input_test_c)
-        .expect("Error entering the third test!");
+        .expect("Erro ao digitar o terceiro teste!");
 
-    //
     let test_a: f32 = match input_test_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting: Test A!");
-            <!-- return; -->
+            println!("Erro ao converter: Teste A!");
+            return; // Adicionado 'return' para interromper o programa em caso de erro de conversão. O código original continha um comentário ''.
         }
     };
 
     let test_b: f32 = match input_test_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting: Test B!");
+            println!("Erro ao converter: Teste B!");
             return;
         }
     };
@@ -172,99 +172,98 @@ fn main() {
     let test_c: f32 = match input_test_c.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting: Test C!");
+            println!("Erro ao converter: Teste C!");
             return;
         }
     };
 
-    //
     let ava: f32 = (test_a + test_b + test_c) / 3.;
 
     if ava < 5. {
-        println!("You failed!");
+        println!("Você foi reprovado!");
     } else if ava >= 5. && ava < 7. {
-        println!("You are in recovery!");
+        println!("Você está em recuperação!");
     } else {
-        println!("You passed!");
+        println!("Você foi aprovado!");
     }
 }
 ```
 </details>
 
-05 - Write a program that reads a person's age and determines if they can vote (16 years or older).
+05 - Escreva um programa que leia a idade de uma pessoa e determine se ela pode votar (16 anos ou mais).
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=79880f1fab49c523e122dea6d6f16217)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a80b88a89c5b5b69bdbc6de475a89982)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter your age:");
+    println!("Digite sua idade:");
 
     let mut input_age: String = String::new();
     io::stdin()
         .read_line(&mut input_age)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     let age: u8 = match input_age.trim().parse() {
         Ok(age) => age,
         Err(_) => {
-            println!("Error converting age!");
+            println!("Erro ao converter idade!");
             return;
         }
     };
 
     if age >= 16 && age <= 59 {
-        println!("You are required to vote!");
+        println!("Você é obrigado a votar!");
     } else if age >= 60 && age <= 100 {
-        println!("Your vote is optional!");
+        println!("Seu voto é opcional!");
     } else {
-        println!("You cannot vote!");
+        println!("Você não pode votar!");
     }
 }
 ```
 </details>
 
-06 - Develop a program that asks for three numbers and determines which one is the largest.
+06 - Desenvolva um programa que solicite três números e determine qual deles é o maior.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=28e60e8023f481072e02e3e27c5f44de)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c409c528df58bf2aa718c03515185663)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
     // a
-    println!("Enter with number! A: ");
+    println!("Digite um número! A: ");
     let mut input_a: String = String::new();
     io::stdin()
         .read_line(&mut input_a)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     // b
-    println!("Enter with number! B: ");
+    println!("Digite um número! B: ");
     let mut input_b: String = String::new();
     io::stdin()
         .read_line(&mut input_b)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     // c
-    println!("Enter with number! C: ");
+    println!("Digite um número! C: ");
     let mut input_c: String = String::new();
     io::stdin()
         .read_line(&mut input_c)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     //
     let num_a: i8 = match input_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting num A!");
+            println!("Erro ao converter número A!");
             return;
         }
     };
@@ -272,7 +271,7 @@ fn main() {
     let num_b: i8 = match input_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting num B!");
+            println!("Erro ao converter número B!");
             return;
         }
     };
@@ -280,7 +279,7 @@ fn main() {
     let num_c: i8 = match input_c.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting num C!");
+            println!("Erro ao converter número C!");
             return;
         }
     };
@@ -311,7 +310,7 @@ fn main() {
 ```
 </details>
 
-07 - Ceate a program that converts a numerical score (0 to 100) to a letter grade, following these rules:
+07 - Crie um programa que converta uma pontuação numérica (0 a 100) em uma nota literal, seguindo estas regras:
 
 |   |          |
 |---|----------|
@@ -321,25 +320,25 @@ fn main() {
 | D | 60 - 69  |
 | F | 0 - 59   |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1b309cc5140306ea58e2be3a2c7a3361)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e63c1ea4601fc215e17d1d2b2cf85f20)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter with number (0 - 100):");
+    println!("Digite um número (0 - 100):");
     let mut input_num: String = String::new();
     io::stdin()
         .read_line(&mut input_num)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     let num: u8 = match input_num.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting num:");
+            println!("Erro ao converter número:");
             return;
         }
     };
@@ -355,49 +354,48 @@ fn main() {
     } else if num >= 90 && num <= 100 {
         println!("A");
     } else {
-        println!("Error!");
+        println!("Erro!");
     }
 }
 ```
 </details>
 
-08 - Write a program that receives the lengths of the three sides of a triangle and determines if it is equilateral (all sides equal), isosceles (two sides equal), or scalene (all sides different).
+08 - Escreva um programa que receba os comprimentos dos três lados de um triângulo e determine se ele é equilátero (todos os lados iguais), isósceles (dois lados iguais) ou escaleno (todos os lados diferentes).
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=599fd9484afe3d370b725789bc57bd29)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=995d58dc32cb7147adf8b3b2b1a87174)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
     // a
-    println!("Enter the size of side A:");
+    println!("Digite o tamanho do lado A:");
     let mut input_a: String = String::new();
     io::stdin()
         .read_line(&mut input_a)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     // b
-    println!("Enter the size of side B:");
+    println!("Digite o tamanho do lado B:");
     let mut input_b: String = String::new();
     io::stdin()
         .read_line(&mut input_b)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     // c
-    println!("Enter the size of side C:");
+    println!("Digite o tamanho do lado C:");
     let mut input_c: String = String::new();
     io::stdin()
         .read_line(&mut input_c)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
-    //
     let a: f32 = match input_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting num A:");
+            println!("Erro ao converter número A:");
             return;
         }
     };
@@ -405,7 +403,7 @@ fn main() {
     let b: f32 = match input_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting num B:");
+            println!("Erro ao converter número B:");
             return;
         }
     };
@@ -413,153 +411,150 @@ fn main() {
     let c: f32 = match input_c.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting num C:");
+            println!("Erro ao converter número C:");
             return;
         }
     };
 
-    //
     if a == b && b == c {
-        println!("Equilateral");
+        println!("Equilátero");
     } else if a == b || b == c || a == c {
-        println!("Isosceles");
+        println!("Isósceles");
     } else {
-        println!("Scalene");
+        println!("Escaleno");
     }
 }
 ```
 </details>
 
-09 - Write a program that receives a number from 1 to 7 and prints the corresponding day of the week (1 for Sunday, 2 for Monday, etc.), also indicating if it's a "Weekday" or "Weekend." use std::io;
+09 - Crie um programa que receba um número de 1 a 7 e imprima o dia da semana correspondente (1 para Domingo, 2 para Segunda, etc.), indicando também se é "Dia útil" ou "Fim de semana".
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=47e510e0e0ebebc1b97e6e4a202cdee3)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ad122c1106d0d2ce04979c095bf6e158)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter a number from 1 to 7:");
+    println!("Digite um número de 1 a 7:");
     let mut input_day: String = String::new();
     io::stdin()
         .read_line(&mut input_day)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     let day: u8 = match input_day.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting day!");
+            println!("Erro ao converter dia!");
             return;
         }
     };
 
     if day == 1 || day == 7 {
         if day == 1 {
-            println!("Sunday - Weekend!");
+            println!("Domingo - Fim de semana!");
         } else {
-            println!("Saturday - Weekend!");
+            println!("Sábado - Fim de semana!");
         }
     } else if day == 2 {
-        println!("Monday - Weekday!");
+        println!("Segunda-feira - Dia útil!");
     } else if day == 3 {
-        println!("Tuesday - Weekday!");
+        println!("Terça-feira - Dia útil!");
     } else if day == 4 {
-        println!("Wednesday - Weekday!");
+        println!("Quarta-feira - Dia útil!");
     } else if day == 5 {
-        println!("Thursday - Weekday!");
+        println!("Quinta-feira - Dia útil!");
     } else if day == 6 {
-        println!("Friday - Weekday!");
+        println!("Sexta-feira - Dia útil!");
     } else {
-        println!("Error!");
+        println!("Erro!");
     }
 }
 ```
 </details>
 
-10 - Write a program that reads a person's age and classifies them into the following categories:
+10 - Escreva um programa que leia a idade de uma pessoa e a classifique nas seguintes categorias:
 
-|          |               |
-|----------|---------------|
-| Child    | 0 - 12 years  |
-| Teenager | 13 - 17 years |
-| Adult    | 18 - 59 years |
-| Elderly  | + 60 years    |
+|             |               |
+|-------------|---------------|
+| Criança     | 0 - 12 anos   |
+| Adolescente | 13 - 17 anos  |
+| Adulto      | 18 - 59 anos  |
+| Idoso       | + 60 anos     |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0203eeb863ed9e094be119f90475cf9f)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fca9f43bb0eff0f8f98445fcb2bb80a9)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter you age:");
+    println!("Digite sua idade:");
     let mut input_age: String = String::new();
     io::stdin()
         .read_line(&mut input_age)
-        .expect("Error in the entered!");
+        .expect("Erro na entrada!");
 
     let age: u8 = match input_age.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting age!");
+            println!("Erro ao converter idade!");
             return;
         }
     };
 
     if age >= 1 && age <= 12 {
-        println!("Child!");
+        println!("Criança!");
     } else if age >= 13 && age <= 17 {
-        println!("Teenager!");
+        println!("Adolescente!");
     } else if age >= 18 && age <= 59 {
-        println!("Adult");
+        println!("Adulto");
     } else if age >= 60 && age <= 112 {
-        println!("Elderly!");
+        println!("Idoso!");
     } else {
-        println!("Error: Age > 112!");
+        println!("Erro: Idade > 112!");
     }
 }
 ```
 </details>
 
-11 - Create a program that functions as a calculator. It should receive two numbers and an operator (+, -, *, /). The program should perform the corresponding operation and show the result. Also, handle division by zero.
+11 - Crie um programa que funcione como uma calculadora. Ele deve receber dois números e um operador (+, -, *, /). O programa deve realizar a operação correspondente e mostrar o resultado. Além disso, trate a divisão por zero.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=226bff4c0339736480c98919c2b4e8a9)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ebffc6e0b413595fc2b869feca254324)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    //
-    println!("Enter the first number:");
+    println!("Digite o primeiro número:");
     let mut input_first_number: String = String::new();
     io::stdin()
         .read_line(&mut input_first_number)
-        .expect("Error receiving first number!");
+        .expect("Erro ao receber o primeiro número!");
 
-    println!("Enter the second number:");
+    println!("Digite o segundo número:");
     let mut input_second_number: String = String::new();
     io::stdin()
         .read_line(&mut input_second_number)
-        .expect("Error receiving first number!");
+        .expect("Erro ao receber o primeiro número!");
 
-    println!("Insert the mathematical operator:");
+    println!("Insira o operador matemático:");
     let mut input_operator: String = String::new();
     io::stdin()
         .read_line(&mut input_operator)
-        .expect("Error receiving mathematical operator!");
+        .expect("Erro ao receber o operador matemático!");
 
-    //
     let first_number: f32 = match input_first_number.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting number!");
+            println!("Erro ao converter número!");
             return;
         }
     };
@@ -567,7 +562,7 @@ fn main() {
     let second_number: f32 = match input_second_number.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting number!");
+            println!("Erro ao converter número!");
             return;
         }
     };
@@ -575,12 +570,11 @@ fn main() {
     let operator: char = match input_operator.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting number!");
+            println!("Erro ao converter número!");
             return;
         }
     };
 
-    //
     if operator == '+' {
         println!(
             "{} {} {} = {}",
@@ -607,7 +601,7 @@ fn main() {
         );
     } else if operator == '/' {
         if second_number == 0. {
-            println!("[Error] Second number equal 0.");
+            println!("[Erro] Segundo número igual a 0.");
         } else {
             println!(
                 "{} {} {} = {}",
@@ -618,79 +612,78 @@ fn main() {
             );
         }
     } else {
-        println!("[Error] Mathematical operator not allowed!");
+        println!("[Erro] Operador matemático não permitido!");
     }
 }
-
 ```
 </details>
 
-12 - Develop a program that calculates a discount based on the purchase amount:
+12 - Desenvolva um programa que calcule um desconto com base no valor da compra:
 
-- Purchases below R$ 100: no discount;
-- Purchases from R$ 100 to R$ 500: 10% discount;
-- Purchases above R$ 500: 20% discount.
+- Compras abaixo de R$ 100: sem desconto;
+- Compras de R$ 100 a R$ 500: 10% de desconto;
+- Compras acima de R$ 500: 20% de desconto.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8b7eb0b78868337a82244e3795ca03e3)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8deff62212992da84e2fb0e47148982c)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter the value:");
+    println!("Digite o valor:");
     let mut input_value: String = String::new();
     io::stdin()
         .read_line(&mut input_value)
-        .expect("Error receiving value!");
+        .expect("Erro ao receber valor!");
 
     let value: f32 = match input_value.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Error converting value!");
+            println!("Erro ao converter valor!");
             return;
         }
     };
 
     if value < 100. {
-        println!("Value: {} - No discount!", value);
+        println!("Valor: {} - Sem desconto!", value);
     } else if value >= 100. && value <= 500. {
         let discount = value - ((value * 10.) / 100.);
-        println!("Value: {} - Discount 10%\nNew value: {}", value, discount);
+        println!("Valor: {} - Desconto 10%\nNovo valor: {}", value, discount);
     } else if value > 500. {
         let discount = value - ((value * 20.) / 100.);
-        println!("Value: {} - Discount 20%\nNew value: {}", value, discount);
+        println!("Valor: {} - Desconto 20%\nNovo valor: {}", value, discount);
     } else {
-        println!("Error!");
+        println!("Erro!");
     }
 }
 ```
 </details>
 
-13 - Write a program that calculates a person's BMI (weight / height²) and classifies the result:
+13 - Escreva um programa que calcule o IMC (Índice de Massa Corporal) de uma pessoa (peso / altura²) e classifique o resultado:
 
-|              |               |
-|--------------|---------------|
-| Below 18.5   | Underweight   |
-| 18.5 - 24.9  | Normal weight |
-| 25.0 - 29.9  | Overweight    |
-| + 30.0       | Obesity       |
+|                |               |
+|----------------|---------------|
+| Abaixo de 18.5 | Abaixo do peso|
+| 18.5 - 24.9    | Peso normal   |
+| 25.0 - 29.9    | Sobrepeso     |
+| + 30.0         | Obesidade     |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1a227e44686000dd59904e7a7890a7e5)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=03e5f62966813198574f7758f5d0f1ac)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    const ERROR_INPUT: &str = "Error receiving valeu!";
-    const ERROR_CONVERTING: &str = "Error converting value!";
+    const ERROR_INPUT: &str = "Erro na entrada de dados!";
+    const ERROR_CONVERTING: &str = "Erro ao converter valor!";
 
-    println!("Enter the Weight:");
+    println!("Digite o Peso:");
     let mut input_weight: String = String::new();
     io::stdin().read_line(&mut input_weight).expect(ERROR_INPUT);
 
@@ -702,7 +695,7 @@ fn main() {
         }
     };
 
-    println!("Enter the Height:");
+    println!("Digite a Altura:");
     let mut input_height: String = String::new();
     io::stdin().read_line(&mut input_height).expect(ERROR_INPUT);
 
@@ -717,41 +710,41 @@ fn main() {
     let bmi: f32 = weight / (height * height);
 
     if bmi <= 18.5 {
-        println!("Underweight!");
+        println!("Abaixo do peso!");
     } else if bmi <= 24.9 {
-        println!("Normal weight!");
+        println!("Peso normal!");
     } else if bmi <= 29.9 {
-        println!("Overweight!");
+        println!("Sobrepeso!");
     } else if bmi >= 30.0 {
-        println!("Obesity!");
+        println!("Obesidade!");
     } else {
-        println!("Error calculating BMI or invalid range!");
+        println!("Erro ao calcular IMC ou faixa inválida!");
     }
 }
 ```
 </details>
 
-14 - Create a program that asks for a username and a password. If the username is "admin" and the password is "1234", display "Access granted". Otherwise, display "Access denied".
+14 - Crie um programa que solicite um nome de usuário e uma senha. Se o nome de usuário for "admin" e a senha for "1234", exiba "Acesso concedido". Caso contrário, exiba "Acesso negado".
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=423565c03a65c22e3d490eb497d5529a)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6d082576f1e5a2df6b15028f0c9d984e)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
-const ERROR_INPUT: &str = "Data entry error!";
+const ERROR_INPUT: &str = "Erro na entrada de dados!";
 
 fn main() {
-    println!("Username:");
+    println!("Nome de usuário:");
     let mut input_username: String = String::new();
     io::stdin()
         .read_line(&mut input_username)
         .expect(ERROR_INPUT);
     let username: &str = input_username.trim();
 
-    println!("Password:");
+    println!("Senha:");
     let mut input_password: String = String::new();
     io::stdin()
         .read_line(&mut input_password)
@@ -759,20 +752,20 @@ fn main() {
     let password: &str = input_password.trim();
 
     if username == "admin" && password == "1234" {
-        println!("Access Granted!");
+        println!("Acesso Concedido!");
     } else {
-        println!("Access Denied!");
+        println!("Acesso Negado!");
     }
 }
 ```
 </details>
 
-15 - Create the game "Rock, Paper, Scissors." Ask for the choices of two players and determine the winner based on the classic rules.
+15 - Crie o jogo "Pedra, Papel, Tesoura." Peça as escolhas de dois jogadores e determine o vencedor com base nas regras clássicas.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0b9e056c8bd22574241d0d5dd7002412)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=29168d4cc32db4c03e59b06893ed90af)
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -780,17 +773,17 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 fn main() {
     //
-    println!("--- Start ---");
-    println!("Player 1");
-    println!("Computer");
+    println!("--- Início ---");
+    println!("Jogador 1");
+    println!("Computador");
     println!("");
 
-    println!("-- Select --");
-    println!("  Player 1  ");
+    println!("-- Selecionar --");
+    println!("  Jogador 1  ");
     println!("");
-    println!("[1] Rock");
-    println!("[2] Paper");
-    println!("[3] Scissors");
+    println!("[1] Pedra");
+    println!("[2] Papel");
+    println!("[3] Tesoura");
     println!("");
     println!("1 | 2 | 3");
 
@@ -798,76 +791,76 @@ fn main() {
     let mut input_player1: String = String::new();
     io::stdin()
         .read_line(&mut input_player1)
-        .expect("Data entry error!");
+        .expect("Erro na entrada de dados!");
     let mut player1: &str = input_player1.trim();
 
     //
     if player1 == "1" {
-        player1 = "Rock";
+        player1 = "Pedra";
     } else if player1 == "2" {
-        player1 = "Paper";
+        player1 = "Papel";
     } else {
-        player1 = "Scissors";
+        player1 = "Tesoura";
     }
 
     //
     println!("");
-    println!("-- Select --");
-    println!("  Player 2  ");
+    println!("-- Selecionar --");
+    println!("  Jogador 2  ");
     println!("");
-    println!("-- Raffling --");
-    println!("[1] Rock");
-    println!("[2] Paper");
-    println!("[3] Scissors");
+    println!("-- Sorteando --");
+    println!("[1] Pedra");
+    println!("[2] Papel");
+    println!("[3] Tesoura");
     println!("");
 
     //
     let nanos = SystemTime::now()
         .duration_since(UNIX_EPOCH)
-        .expect("Error")
+        .expect("Erro")
         .as_nanos();
 
     let nano_computer = (nanos % 3 + 1) as u8;
     let computer: &str;
 
     if nano_computer == 1 {
-        computer = "Rock";
+        computer = "Pedra";
     } else if nano_computer == 2 {
-        computer = "Paper";
+        computer = "Papel";
     } else {
-        computer = "Scissors";
+        computer = "Tesoura";
     }
 
     //
     if player1 == computer {
-        println!("Player 1: {} and Computer: {}", player1, computer);
-        println!("The game is a draw!");
-    } else if player1 == "Rock" {
-        if computer == "Paper" {
-            println!("Player 1: {} and Computer: {}", player1, computer);
-            println!("Player 1: You Loser!");
+        println!("Jogador 1: {} e Computador: {}", player1, computer);
+        println!("O jogo é um empate!");
+    } else if player1 == "Pedra" {
+        if computer == "Papel" {
+            println!("Jogador 1: {} e Computador: {}", player1, computer);
+            println!("Jogador 1: Você Perdeu!");
         }
-        if computer == "Scissors" {
-            println!("Player 1: {} and Computer: {}", player1, computer);
-            println!("Player 1: You Win!");
+        if computer == "Tesoura" {
+            println!("Jogador 1: {} e Computador: {}", player1, computer);
+            println!("Jogador 1: Você Venceu!");
         }
-    } else if player1 == "Paper" {
-        if computer == "Rock" {
-            println!("Player 1: {} and Computer: {}", player1, computer);
-            println!("Player 1: You Win!");
+    } else if player1 == "Papel" {
+        if computer == "Pedra" {
+            println!("Jogador 1: {} e Computador: {}", player1, computer);
+            println!("Jogador 1: Você Venceu!");
         }
-        if computer == "Scissors" {
-            println!("Player 1: {} and Computer: {}", player1, computer);
-            println!("Player 1: You Loser!");
+        if computer == "Tesoura" {
+            println!("Jogador 1: {} e Computador: {}", player1, computer);
+            println!("Jogador 1: Você Perdeu!");
         }
-    } else {
-        if computer == "Rock" {
-            println!("Player 1: {} and Computer: {}", player1, computer);
-            println!("Player 1: You Loser!");
+    } else { // player1 == "Tesoura"
+        if computer == "Pedra" {
+            println!("Jogador 1: {} e Computador: {}", player1, computer);
+            println!("Jogador 1: Você Perdeu!");
         }
-        if computer == "Paper" {
-            println!("Player 1: {} and Computer: {}", player1, computer);
-            println!("Player 1: You Win!");
+        if computer == "Papel" {
+            println!("Jogador 1: {} e Computador: {}", player1, computer);
+            println!("Jogador 1: Você Venceu!");
         }
     }
 }

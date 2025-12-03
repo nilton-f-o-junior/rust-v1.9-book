@@ -1,8 +1,8 @@
 # Match
 
-Match compares a value against different patterns and executes the code corresponding to the first pattern that matches. It's like a more powerful and safer switch. 
+O match compara um valor contra diferentes padrões (patterns) e executa o código correspondente ao primeiro padrão que corresponde. É como um switch mais poderoso e mais seguro.
 
-It ensures that all possible cases are covered, preventing common bugs. Unlike traditional switch, it doesn't need break and always returns a value.
+Ele garante que todos os casos possíveis são cobertos, prevenindo erros comuns. Diferente do switch tradicional, ele não precisa de break e sempre retorna um valor.
 
 ```rust
 let a = 3;
@@ -11,46 +11,46 @@ match a {
   1 => println!("1"),
   2 => println!("2"),
   3 => println!("3"),
-  _ => println!("else"),
+  _ => println!("Nenhuma!"),
 };
 ```
 
 `range`
 
 ```rust
-let age = 63;
+let idade = 63;
 
-let category = match age {
-  0..=11 => "child",
-  12..=17 => "teenager",
-  18..=64 => "adult",
-  _ => "elderly",
+let categoria = match idade {
+  0..=11 => "Criança",
+  12..=17 => "Adolescente",
+  18..=64 => "Adulto",
+  _ => "Idoso",
 };
 
-println!("{}", category);
+println!("{}", categoria);
 ```
 
 `println!()`
 
 ```rust
-let alph = 'g';
+let letra = 'g';
 
-println!("{:?}", match alph {
+println!("{:?}", match letra {
   'A'..='Z' => "A ... Z",
   'a'..='z' => "a ... z",
-  _ => "other",
+  _ => "Outro",
 });
 ```
 
 `operation`
 
 ```rust
-let number = 20;
+let numero = 20;
 
-let result = match number {
-  1 | 3 | 5 | 7 | 9 => "odd",
-  2 | 4 | 6 | 8 | 10 => "even",
-  _=> "else",
+let result = match numero {
+  1 | 3 | 5 | 7 | 9 => "Ímpar",
+  2 | 4 | 6 | 8 | 10 => "Par",
+  _=> "Nenhum!",
 };
 
 println!("{}", result);
@@ -62,9 +62,9 @@ println!("{}", result);
 let even = (2, -2);
 
 let result = match even {
-  (x, y) if x == y => "equal",
-  (x, _) if x % 2 == 0 => "first even",
-  _=> "none",
+  (x, y) if x == y => "x é igual a y",
+  (x, _) if x % 2 == 0 => "o valor x é par",
+  _=> "Nenhuma!",
 };
 
 println!("{:?}", result);

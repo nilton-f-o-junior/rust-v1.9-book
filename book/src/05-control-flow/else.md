@@ -1,11 +1,10 @@
 # Else
 
-Now that we understand how "if" works, "else" is the complement. Think of it like this: if something is true, do this; otherwise, do that.
+Agora que entendemos como o "if" funciona, o "else" é o complemento. Pense assim: se algo for verdadeiro, faça isto; senão, faça aquilo.
 
-If 1 + 1 equals 2, print "Hello, world!"; otherwise, print "Goodbye, World."
+`Se 1 + 1 for igual a 2, imprima "Hello, world!"; senão, imprima "Goodbye, World.".`
 
 ```rust
-//
 let num_1 = 1;
 let num_2 = 1;
 
@@ -18,15 +17,13 @@ else {
 }
 ```
 
-
 `if and else`
 
 ```rust
-//
 let num: u8 = 5;
 
 if num >= 6 {
-    println!("Num > or = 6!");
+    println!("Num > ou = 6!");
 } else {
     println!("Num <= 5!");
 };
@@ -35,23 +32,20 @@ if num >= 6 {
 `expression`
 
 ```rust
-//
 let score = 51;
-let grade = if score >= 50 { "+50"} else { "-50" };
-println!("{}", grade);
-
+let nota = if score >= 50 { "+50"} else { "-50" };
+println!("{}", nota);
 ```
 
 ```rust
-//
 let num: u8 = 24;
 
 let result: String = if num > 20 || num <= 30 {
-      String::from("Temp > 20 or <= 30!")
+      String::from("Temperatura > 20 ou <= 30!")
 } else {
-      String::from("Temp < 20 or >= 30!")
+      String::from("Temperatura < 20 ou >= 30!")
 };
 
-println!("Temp: {}", num);
+println!("Temperatura: {}", num);
 println!("{}", result);
 ```
