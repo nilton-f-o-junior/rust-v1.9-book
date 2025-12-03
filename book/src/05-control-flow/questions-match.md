@@ -2,10 +2,10 @@
 
 01 - Write a program that inputs a character and indicates whether it is a vowel (a, e, i, o, u) or a consonant. Use match to validate.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4a083a004ec7b5f6ca4b4ddb393b9510)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -40,10 +40,10 @@ fn main() {
 | E | 1 - 2  |
 | F |   0    |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=73982e827eda1f6ac231ec9b0efb3fb4)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -86,10 +86,10 @@ fn main() {
 | 18 - 59  | Adult     |
 |   +60    | Senior    |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2c16bc60eb88ad00cb81ef516e3a0089)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -129,10 +129,10 @@ fn main() {
 | ("user", "pass")  | User logged         |
 |        _          | Invalid credentials |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=271c2d14814579f5521d1b98fb07c366)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -171,10 +171,10 @@ fn main() {
 | 26 - 35  | Warm      |
 | Above 35 | Very warm |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bd6854ea08c65ab5b05bb9429aca8d62)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -218,10 +218,10 @@ fn main() {
 |6| Friday   |
 |7| Saturday |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=575e0c3d4f772c17f42807eb4d5d928f)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -261,10 +261,10 @@ fn main() {
 - Month name
 - How many days does it have (consider February with 28)
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ae07367c7e3ed29d3d203e3349981302)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -314,10 +314,10 @@ fn main() {
 |'&nbsp;&nbsp;' | Space |
 | _    | Special Symbol |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=70ed86af2cd4f451693fa897b9022ad7)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -351,10 +351,10 @@ fn main() {
 | (negative, negative) | Quadrant III|
 | (positive, negative) | Quadrant IV |
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5453d9ba570618c2d20683bd346516c9)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -408,10 +408,10 @@ fn main() {
 - VIP: 20% discount always
 - Normal: 10% if purchasing 10+ items, 5% if 5-9 items, no discount if less
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0feed8258308895eef51077f8b2056d6)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::{io, u8};
@@ -456,10 +456,10 @@ fn main() {
 
 11 - Make a calculator that takes two numbers and an operator (+, -, *, /) and returns the result using match for the operator.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a889b682d749bb15ad92761dc6eedbdd)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -520,10 +520,10 @@ fn main() {
 
 12 - Receive the choices of two players (1 = Rock, 2 = Paper, 3 = Scissors) and determine the winner using tuple matching: match(player1, player2) { ... }
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2894bb2a020555eb7bc2bd1e1897f0a1)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;

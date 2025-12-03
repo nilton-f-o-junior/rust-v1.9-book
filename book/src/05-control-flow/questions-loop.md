@@ -1,11 +1,13 @@
 # Questions - Loop
 
-01 - Create a program that uses a loop to count from 1 to 5. For each number, print the counter's value. The loop should stop when the counter reaches 6.
+---
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=867fd7cb75b2b7622583dacb97977227)
+01 - Crie um programa que use um loop para contar de 1 a 5. Para cada número, imprima o valor do contador. O loop deve parar quando o contador chegar a 6.
+
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -22,13 +24,12 @@ fn main() {
 ```
 </details>
 
-02 - Define a constant LIMIT with the value 100. Use a loop to add numbers to a mutable variable sum starting from 1. Stop the loop when the value of sum exce
-eds LIMIT and print the final value of sum.
+02 - Defina uma constante LIMIT com o valor 100. Use um loop para somar números a uma variável mutável sum começando de 1. Pare o loop quando o valor de sum exceder LIMIT e imprima o valor final de sum.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6369cdd1db88650cc1a6bb61a62ec7ea)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 const LIMIT: u8 = 100;
@@ -49,13 +50,12 @@ fn main() {
 ```
 </details>
 
-03 - Write a loop that repeatedly prints the message "I'm stuck in a loop!". Use a counter variable and an if statement to break the loop after the 3rd iterat
-ion.
+03 - Escreva um loop que imprima repetidamente a mensagem "I'm stuck in a loop!" (Estou preso em um loop!). Use uma variável contadora e uma declaração if para interromper (break) o loop após a 3ª iteração.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c73780d5b46ff6f81aae1caa7245a37f)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -74,13 +74,12 @@ fn main() {
 ```
 </details>
 
-04 - Use a loop to iterate from 1 to 10. Inside the loop, check if the current number is even or odd using the modulo operator (%). Print the formatted result
-, such as "The number 3 is odd.". The loop should stop after the number 10.
+04 - Use um loop para iterar de 1 a 10. Dentro do loop, verifique se o número atual é par ou ímpar usando o operador de módulo (%). Imprima o resultado formatado, como "The number 3 is odd." (O número 3 é ímpar). O loop deve parar após o número 10.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=edfe6853280ab749a8958a379ad1185d)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -103,13 +102,12 @@ fn main() {
 ```
 </details>
 
-05 - Initialize a mutable variable of type f32 with 0.0. In a loop, add 0.5 to this variable in each iteration. Print the value at each step and stop the loop
- when the value is greater than or equal to 5.0.
+05 - Inicialize uma variável mutável do tipo f32 com 0.0. Em um loop, adicione 0.5 a essa variável em cada iteração. Imprima o valor em cada passo e pare o loop quando o valor for maior ou igual a 5.0.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bf06125d5593625f1c4c406230dbe135)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -127,24 +125,23 @@ fn main() {
 ```
 </details>
 
-06 - Create a turn-based game between player and monster:
+06 - Crie um jogo baseado em turnos entre jogador e monstro:
 
 HP: 100 <br>
-Attack: 10 <br>
-Defense: 10
+Ataque: 10 <br>
+Defesa: 10
 
-- Player Attack and Monster Attack: Double damage for both 
-- Player Attack and Monster Defend: Player takes half damage and monster takes no damage 
-- Player Defend and Monster Attack: Player takes no damage and monster takes half damage 
-- Player Defend and Monster Defend: Both block 
+- Ataque do Jogador e Ataque do Monstro: Dano duplo para ambos
+- Ataque do Jogador e Defesa do Monstro: Jogador recebe metade do dano e monstro não recebe dano
+- Defesa do Jogador e Ataque do Monstro: Jogador não recebe dano e monstro recebe metade do dano
+- Defesa do Jogador e Defesa do Monstro: Ambos bloqueiam
 
-Using only loop, if/else/else if and rand (SystemTime, UNIX_EPOCH)
+Usando apenas loop, if/else/else if e rand (SystemTime, UNIX_EPOCH)
 
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c826248086b4f66572399802c194237d)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -255,19 +252,18 @@ fn main() {
 ```
 </details>
 
-07 - Create a counter that starts from 1 and goes onwards. Inside a loop, check the following conditions:
+07 - Crie um contador que comece de 1 e avance. Dentro de um loop, verifique as seguintes condições:
 
-- If the number is divisible by both 3 and 5, print "FizzBuzz".
-- If it's only divisible by 3, print "Fizz".
-- If it's only divisible by 5, print "Buzz".
-- Otherwise, print the number.
-- Break the loop when the counter reaches 100.
+- Se o número for divisível por 3 e 5, imprima "FizzBuzz";
+- Se for divisível apenas por 3, imprima "Fizz";
+- Se for divisível apenas por 5, imprima "Buzz";
+- Caso contrário, imprima o número;
+- Pare o loop quando o contador chegar a 100.
 
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9754ff3112bbd3c3d7cb5299e743af89)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -295,12 +291,12 @@ fn main() {
 ```
 </details>
 
-08 - Start with capital = 1000.0 and goal = 2000.0. Each "year" (loop iteration), the capital increases by 7% (capital *= 1.07;). The loop should count how many years it takes for the capital to reach or exceed the goal. When the goal is reached, the loop should break, returning the number of years. Print the result.
+08 - Comece com capital = 1000.0 e goal = 2000.0 (meta). A cada "ano" (iteração do loop), o capital aumenta em 7% (capital *= 1.07;). O loop deve contar quantos anos leva para o capital atingir ou exceder a meta. Quando a meta for atingida, o loop deve parar, retornando o número de anos. Imprima o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a25c0cbd3da158963b7ecbee36186210)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -322,12 +318,12 @@ fn main() {
 ```
 </details>
 
-09 - Create a loop that starts with the character 'a' and prints each character up to 'f'. Use a mutable variable of type char and increment it. To increment, you can convert the char to u8, add 1, and convert back to char. Stop when the character is greater than 'f'.
+09 - Crie um loop que comece com o caractere 'a' e imprima cada caractere até 'f'. Use uma variável mutável do tipo char e incremente-a. Para incrementar, você pode converter o char para u8, adicionar 1 e converter de volta para char. Pare quando o caractere for maior que 'f'.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2f2f96b7c5bdd75f8191bcf4b49c51b3)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -348,12 +344,12 @@ fn main() {
 ```
 </details>
 
-10 - Declare a mutable tuple let mut data = (0, false);. Create a loop that increments the first element of the tuple by 1 in each iteration. When the first element reaches the value 5, change the second element to true and break the loop. Print the final tuple outside the loop.
+10 - Declare uma tupla mutável let mut data = (0, false);. Crie um loop que incremente o primeiro elemento da tupla em 1 a cada iteração. Quando o primeiro elemento atingir o valor 5, altere o segundo elemento para true e pare o loop. Imprima a tupla final fora do loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ea69a77ddaab3ae8c204184853930c7b)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -373,12 +369,12 @@ fn main() {
 ```
 </details>
 
-11 - Create a tuple named person with the values (Person, 0, 0.0). Then, change its data 3 times using a loop, prompting the user for the name, age, and height, and print the values.
+11 - Crie uma tupla chamada person com os valores (Person, 0, 0.0). Em seguida, altere seus dados 3 vezes usando um loop, solicitando ao usuário o nome, idade e altura, e imprima os valores.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f0d0d5271153cb6ed31eb70f45bb48ca)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -424,12 +420,12 @@ fn main() {
 ```
 </details>
 
-12 - Use a loop to display the elements of the following array: [u8; 5] = [10, 20, 30, 40, 50]
+12 - Use um loop para exibir os elementos do seguinte array: [u8; 5] = [10, 20, 30, 40, 50]
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=35b2aa19ba013aba1fb4bc5e061157c0)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -448,12 +444,12 @@ fn main() {
 ```
 </details>
 
-13 - Use a loop to display the elements in reverse order of the following array: [u8; 5] = [1, 2, 3, 4, 5]
+13 - Use um loop para exibir os elementos na ordem inversa do seguinte array: [u8; 5] = [1, 2, 3, 4, 5]
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f89ad0722eddecf65cd92ce5468114b9)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -473,12 +469,12 @@ fn main() {
 ```
 </details>
 
-14 - Could you create code to print the following four arrays: [u8; 2] = [1, 2];, [f32; 3] = [2.5, 7.3, 9.2];, [char; 4] = ['A', 'B', 'C', 'D'];, and [&str; 5] = ["Ana", "Bruno", "Carla", "Daniel", "Elza"];"
+14 - Você poderia criar um código para imprimir os quatro arrays a seguir: [u8; 2] = [1, 2];, [f32; 3] = [2.5, 7.3, 9.2];, [char; 4] = ['A', 'B', 'C', 'D']; e [&str; 5] = ["Ana", "Bruno", "Carla", "Daniel", "Elza"];
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=318f3ee9f4004181ea62b7f54180e5c8)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -537,12 +533,12 @@ fn main() {
 ```
 </details>
 
-15 - Create a code that sums the data in an array using a loop, here is an array: [u8; 4] = [1, 2, 4, 5]"
+15 - Crie um código que some os dados em um array usando um loop; aqui está o array: [u8; 4] = [1, 2, 4, 5]
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9a958d6a636e016adb85842d9f329a76)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -565,12 +561,12 @@ fn main() {
 ```
 </details>
 
-16 - Declare a mutable array of 5 positions of type i32, initialized with zeros: let mut my_array = [0; 5];. Use a loop and an index variable to fill the array with the values [10, 20, 30, 40, 50]. The loop should stop when the array is complete. Print the final array.
+16 - Declare um array mutável de 5 posições do tipo i32, inicializado com zeros: let mut my_array = [0; 5];. Use um loop e uma variável de índice para preencher o array com os valores [10, 20, 30, 40, 50]. O loop deve parar quando o array estiver completo. Imprima o array final.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=dd46a736a7ce41bebafbb59864b556f0)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
  fn main() {
@@ -591,12 +587,12 @@ fn main() {
 ```
 </details>
 
-17 - Calculate the factorial of 5 using a loop. You will need two mutable variables: one for the counter (from 1 to 5) and another to store the factorial result. Print the final result.
+17 - Calcule o fatorial de 5 usando um loop. Você precisará de duas variáveis mutáveis: uma para o contador (de 1 a 5) e outra para armazenar o resultado do fatorial. Imprima o resultado final.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=dc7d965aa4e4766b33e4895598461b97)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -619,12 +615,12 @@ fn main() {
 ```
 </details>
 
-18 - Start with a variable number equal to 123. In a loop, divide the number by 2 and print the division result and the remainder (%). Continue the loop until the number is less than 1.
+18 - Comece com uma variável number igual a 123. Em um loop, divida o número por 2 e imprima o resultado da divisão e o resto (%). Continue o loop até que o número seja menor que 1.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0024afeedc640391c45e5c8a8d4ae190)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -646,12 +642,12 @@ fn main() {
 ```
 </details>
 
-19 - Inside a loop, calculate and print the result of the expression 5+counter∗2, where counter is a variable that starts at 0 and is incremented in each iteration. Use parentheses to change the precedence and calculate (5 + counter)∗2 in a second print. Stop the loop when the counter reaches 5.
+19 - Dentro de um loop, calcule e imprima o resultado da expressão 5 + counter * 2, onde counter é uma variável que começa em 0 e é incrementada em cada iteração. Use parênteses para alterar a precedência e calcule (5 + counter) * 2 em uma segunda impressão. Pare o loop quando o contador chegar a 5.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=443eba26ed317a7cd49a85a6c60eed48)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -670,12 +666,12 @@ fn main() {
 ```
 </details>
 
-20 - Define a constant SECRET_NUMBER: u8 = 42;. Create a loop that simulates guessing attempts. An attempt variable should be incremented in each iteration. Use if/else if/else to print "Too low", "Too high", or "You got it!" when the attempt is equal to SECRET_NUMBER. Break the loop when you guess correctly.
+20 - Defina uma constante SECRET_NUMBER: u8 = 42;. Crie um loop que simule tentativas de adivinhação. Uma variável de tentativa deve ser incrementada em cada iteração. Use if/else if/else para imprimir "Too low" (Muito baixo), "Too high" (Muito alto) ou "You got it!" (Você acertou!) quando a tentativa for igual ao SECRET_NUMBER. Pare o loop (break) quando você adivinhar corretamente.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=03afec011f69112f495007c00436d370)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -722,12 +718,12 @@ fn main() {
 ```
 </details>
 
-21 - Count down from 10 to 1. Use a loop and the format! macro to print messages like "Countdown: 10", "Countdown: 9", etc. When the counter reaches 0, print "Launch!" and break the loop.
+21 - Faça uma contagem regressiva de 10 a 1. Use um loop e a macro format! para imprimir mensagens como "Countdown: 10", "Countdown: 9", etc. Quando o contador chegar a 0, imprima "Launch!" e pare o loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2704726e927ec8d04e26926862ff645d)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -747,13 +743,12 @@ fn main() {
 ```
 </details>
 
-22 - Declare a mutable array of 10 positions ([0; 10]). Use a loop with a counter to fill it. If the array index is even, fill it with the index value itself.
- If it's odd, fill it with twice the index value. Stop the loop when the array is complete.
+22 - Declare um array mutável de 10 posições ([0; 10]). Use um loop com um contador para preenchê-lo. Se o índice do array for par, preencha-o com o próprio valor do índice. Se for ímpar, preencha-o com o dobro do valor do índice. Pare o loop quando o array estiver completo.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=3682989bb8c6be462a4c38aa6363d432)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {

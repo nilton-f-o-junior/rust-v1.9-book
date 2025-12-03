@@ -1,11 +1,11 @@
 # Questions - While
 
-01 - Write a Rust program that uses a while loop to print numbers from 1 to 5, one per line.
+01 - Escreva um programa em Rust que use um loop while para imprimir os números de 1 a 5, um por linha.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6c606193a0612c9484434406017eff98)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -19,12 +19,12 @@ fn main() {
 ```
 </details>
 
-02 - Using a while loop, create a program that prints a countdown from 10 to 1, and then the message "Launch!".
+02 - Usando um loop while, crie um programa que imprima uma contagem regressiva de 10 a 1 e, em seguida, a mensagem "Launch!" (Lançar!).
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=af0ecf913e30cf4e96042d5bc31f5570)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -42,12 +42,12 @@ fn main() {
 ```
 </details>
 
-03 - Write a program that calculates the sum of all integers from 1 to 100, using a while loop. Print the final result.
+03 - Escreva um programa que calcule a soma de todos os números inteiros de 1 a 100, usando um loop while. Imprima o resultado final.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f17968f81015350d5d69a32adb5fe38f)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -63,13 +63,12 @@ fn main() {
 ```
 </details>
 
-04 - Create a while loop that is intentionally infinite, but uses the break keyword to exit the loop when a counter reaches the value 7. Print the counter's value
-in each iteration before checking the exit condition.
+04 - Crie um loop while que seja intencionalmente infinito, mas use a palavra-chave break para sair do loop quando um contador atingir o valor 7. Imprima o valor do contador em cada iteração antes de verificar a condição de saída.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=cb3b6772003cd26fc05f75d3ecff21b8)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -87,12 +86,12 @@ fn main() {
 ```
 </details>
 
-05 - Check if a given number (e.g., num = 32) is a power of 2 using a while loop. Print true or false.
+05 - Verifique se um determinado número (por exemplo, num = 32) é uma potência de 2 usando um loop while. Imprima true (verdadeiro) ou false (falso).
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=84ede3138e7c8a3570712d1bfff7eddf)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -125,13 +124,12 @@ fn main() {
 ```
 </details>
 
-06 - Write a program with a while loop that iterates from 0 to 10. If the current number is odd, use continue to skip printing that number. Print only the even num
-bers.
+06 - Escreva um programa com um loop while que itere de 0 a 10. Se o número atual for ímpar, use continue para pular a impressão desse número. Imprima apenas os números pares.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=26e94d0fdc56bc1a8e18a1954b142007)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -150,12 +148,12 @@ fn main() {
 ```
 </details>
 
-07 - Write a program that asks the user to enter a number greater than 10. Use a while loop to keep asking for input until a valid number is provided.
+07 - Escreva um programa que peça ao usuário para inserir um número maior que 10. Use um loop while para continuar pedindo a entrada até que um número válido seja fornecido.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d2ef6ded76e0c624916c42dd0039ae05)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -185,12 +183,12 @@ fn main() {
 ```
 </details>
 
-08 - Calculate the factorial of a number (e.g., 5!) using a while loop. Print the result.
+08 - Calcule o fatorial de um número (por exemplo, 5!) usando um loop while. Imprima o resultado.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=12eeeb3aaa2ea442b27a068766ed040a)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -222,12 +220,12 @@ fn main() {
 ```
 </details>
 
-09 - Given an integer (e.g., 12345), use a while loop to print it in reverse (i.e., 54321). Hint: use the % (modulo) and / (division) operators.
+09 - Dado um número inteiro (por exemplo, 12345), use um loop while para imprimi-lo ao contrário (ou seja, 54321). Dica: use os operadores % (módulo) e / (divisão).
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e18fea358b844939d6d963c1f23df47f)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -259,12 +257,12 @@ fn main() {
 ```
 </details>
 
-10 - Write a program that counts the number of digits in a positive integer using a while loop. For example, 12345 has 5 digits.
+10 - Escreva um programa que conte o número de dígitos em um número inteiro positivo usando um loop while. Por exemplo, 12345 tem 5 dígitos.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=84d604c67276b5442d1de02035c1d3ba)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -294,12 +292,12 @@ fn main() {
 ```
 </details>
 
-11 - Print the squares of numbers from 1 to 7 using a while loop.
+11 - Imprima os quadrados dos números de 1 a 7 usando um loop while.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f4b8bf705ddbc9a7d4175f825df9fef7)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -314,12 +312,12 @@ fn main() {
 ```
 </details>
 
-12 - Given a number let mut num = 64;, use a while loop to repeatedly divide it by 2 until the result is less than or equal to 1. Print each division result.
+12 - Dado um número let mut num = 64;, use um loop while para dividi-lo repetidamente por 2 até que o resultado seja menor ou igual a 1. Imprima cada resultado da divisão.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1a35c940aa55015ab3d60fec178b295a)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -333,12 +331,12 @@ fn main() {
 ```
 </details>
 
-13 - Find and print the first even number greater than 50 using a while loop.
+13 - Encontre e imprima o primeiro número par maior que 50 usando um loop while.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4a7ad5515ab4546ff981a00eb2dceb97)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -352,13 +350,12 @@ fn main() {
 ```
 </details>
 
-14 - Create a secret number (e.g., secret = 42). Ask the user to guess the number. Use a while loop to continue the game until the user guesses correctly. Give hin
-ts ("too high", "too low"). (Requires std::io for user input).
+14 - Crie um número secreto (por exemplo, secret = 42). Peça ao usuário para adivinhar o número. Use um loop while para continuar o jogo até que o usuário adivinhe corretamente. Dê dicas ("muito alto", "muito baixo"). (Requer std::io para entrada do usuário).
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f1f171bfec92179a17e67b78a000252f)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -390,12 +387,12 @@ fn main() {
 ```
 </details>
 
-15 - Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
+15 - Peça um número ao usuário e, usando um loop while, imprima os primeiros 5 múltiplos desse número.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6cdacad8eb74c441d0b2d67486c32dc8)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -423,12 +420,12 @@ fn main() {
 ```
 </details>
 
-16 - Using nested while loops to print a 3x3 square of asterisks.
+16 - Use loops while aninhados para imprimir um quadrado 3x3 de asteriscos.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9b9d56184faad52a32e6150cffeb5f21)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -464,13 +461,12 @@ fn main() {
 ```
 </details>
 
-17 - Write a Rust program that prompts the user to enter a positive integer. Then, find and display the first five divisors of that number. If fewer than five divi
-sors are found, the program should state that 'This is first 5 multiple numbers were not found!'.
+17 - Escreva um programa em Rust que solicite ao usuário a inserção de um número inteiro positivo. Em seguida, encontre e exiba os primeiros cinco divisores desse número. Se menos de cinco divisores forem encontrados, o programa deve informar que 'This is first 5 multiple numbers were not found!' (Os primeiros 5 números múltiplos não foram encontrados!).
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c58a3551f1c999359e625eb943958a92)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;

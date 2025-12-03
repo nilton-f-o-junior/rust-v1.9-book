@@ -2,10 +2,10 @@
 
 01 - Write a program that prints numbers from 1 to 10 using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8e0c132681340ae51c97ed8b778980a2)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -18,10 +18,10 @@ fn main() {
 
 02 - Create a program that calculates the sum of numbers from 1 to 100 using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=aaaa202b0cab697d983548c550bf21cc)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -41,10 +41,10 @@ fn main() {
 
 03 - Develop a program that prints all even numbers from 0 to 20 using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=71a5ccec53e79980a0587bf223852ae2)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -59,10 +59,10 @@ fn main() {
 
 04 - Write a program that prints all numbers in binary up to the requested number entered.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=1b1cb4491734804add978c883c1e8c19)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -83,10 +83,10 @@ fn main() {
 
 05 - Develop a program that generates all possible combinations of two digits (00 to 99) using nested for loops.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=986c0b7b44e1e0fb6b6a5f78ab44baa9)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -112,10 +112,10 @@ fn main() {
 
 06 - Write a program that prints the multiplication table for a user-provided number (from 1 to 10) using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=72a448bf52b52c55fd2dfd6827e2ada3)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -140,10 +140,10 @@ fn main() {
 
 07 - Create a program that reverses a user-provided string using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=97d4126348ad5f7e7ab840c1a1ff2994)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -171,10 +171,10 @@ fn main() {
 
 08 - Create a program that calculates the sum of the digits of an integer using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f8a165d4e84d226e6f8b65aaf83797bf)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -198,10 +198,10 @@ fn main() {
 
 09 - Develop a program that counts how many vowels (a, e, i, o, u) are in a string using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=caf29564628427f1e7442ff40bc58081)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -230,10 +230,10 @@ fn main() {
 
 10 - Write a program that finds the largest number in a list of numbers using a for loop. List = [17, 43, 5, 54, 93]
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f7a61e61eb5ce664621a685bfb436ce7)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -253,10 +253,10 @@ fn main() {
 
 11 - Create a program that finds the smallest number in a list of numbers using a for loop. List = [63, 36, 57, 7, 82]
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bda230ea0dc0dfdb6e9465733067531b)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -276,10 +276,10 @@ fn main() {
 
 12 - Develop a program that calculates the factorial of a positive integer provided by the user using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b34833e25dede8eb3cde7a29a29fc919)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -304,10 +304,10 @@ fn main() {
 
 13 - Write a program that prints the elements of a list in reverse order using a for loop. List = [1, 2, 3, 4, 5];
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ad9505d0f9d386871b70a4854f97984e)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -322,10 +322,10 @@ fn main() {
 
 14 - Create a program that checks if a word is a palindrome (reads the same forwards and backward) using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bc06987eee4b704705dc157b75a53a6a)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -356,10 +356,10 @@ fn main() {
 
 15 - Write a program that counts how many times a specific character appears in a string using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=db6822cea7a7033395e87e354c2b727d)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -402,10 +402,10 @@ fn main() {
 
 16 - Create a program that calculates the product of all numbers in a list using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ccc27fdc5847a0515476b176eb8c56d2)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -422,10 +422,10 @@ fn main() {
 
 17 - Write a program that receives 5 integer values, entered by the user, using an array and for.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4eb86145005ddd4e94c44f60258e439e)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -448,10 +448,10 @@ fn main() {
 
 18 - Develop a program that finds the average of a list of numbers using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fd6698594ecdf61600e5e1ddcce27b9d)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -480,10 +480,10 @@ fn main() {
 
 19 - Develop a program that counts the number of negative numbers in a list using a for loop.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=85421c114bab58b35002a8ed1a6283d4)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -513,10 +513,10 @@ fn main() {
 
 20 - Write a code that receives 5 numbers entered by the user and adds them to an empty tuple, checks if there are even numbers and if so, adds them to another empty list.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8573114a8109e94e03d51cd3b298fff8)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -546,10 +546,10 @@ fn main() {
 
 21 - Write a program that receives the name and age of a user and stores them in a tuple using for.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8b21fbfdba4cdfbf94b1013d5ee6012c)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
