@@ -1,11 +1,11 @@
-# Methods - Part 1
+# Métodos - Parte 1
 
-Used for manipulating and modifying text content.
+Usados para manipular e modificar o conteúdo de texto.
 
 `push()`
 
 ```rust
-// adds a character
+// adiciona um caractere
 let mut text = String::from("Hello");
 text.push(',');
 text.push(' ');
@@ -20,7 +20,7 @@ println!("{:?}", text);
 `push_str()`
 
 ```rust
-// adds a string slice
+// adiciona uma fatia de string
 let mut text = String::from("Hello");
 text.push_str(", word!");
 println!("{:?}", text);
@@ -29,7 +29,7 @@ println!("{:?}", text);
 `pop()`
 
 ```rust
-// removes the last character
+// remove o último caractere
 let mut text = String::from("Hello, word!");
 let _text_last = text.pop();
 let _text_last = text.pop();
@@ -41,14 +41,14 @@ println!("{:?}", text);
 `insert()`
 
 ```rust
-// inserts character at specific position
+// insere caracteres em uma posição especifica
 // 0 1 2 3 4 5 6
 // H e e l l o ,
 let mut text = String::from("Hello,");
-text.insert(6, ' ');
-text.insert(7, 'w');
-text.insert(8, 'o');
-text.insert(9, 'r');
+text.insert(6,  ' ');
+text.insert(7,  'w');
+text.insert(8,  'o');
+text.insert(9,  'r');
 text.insert(10, 'd');
 text.insert(11, '!');
 println!("{:?}", text);
@@ -57,7 +57,7 @@ println!("{:?}", text);
 `remove()`
 
 ```rust
-// removes character at specific position
+// remove caracteres em uma posição especifica
 // 1 2 3 4 5 6 7 8 9 10 11 12
 // H e l l o ,   w o r  d  !
 let mut text: String = String::from("Hello, word!");
@@ -70,7 +70,7 @@ println!("{}", text);c
 `len()`
 
 ```rust
-// returns the length of the string in bytes
+// retorna o comprimento da string em bytes
 // 1 2 3 4 5 6 7 8 9 10 11 12
 // H e l l o ,   w o r  d  !
 let text: String = String::from("Hello, word!");
@@ -81,7 +81,7 @@ println!("{}", number);
 `clear()`
 
 ```rust
-// removes all content
+// remove todo o conteúdo
 let mut text: String = String::from("Hello, word!");
 text.clear();
 println!("{}", text);
@@ -90,7 +90,7 @@ println!("{}", text);
 `truncate()`
 
 ```rust
-// cuts the string at a given index
+// corta a string em um índice específico
 // 1 2 3 4 5 6 7 8 9 10 11 12 
 // H e l l o ,   w o r  d  !
 let mut text: String = String::from("Hello, word");

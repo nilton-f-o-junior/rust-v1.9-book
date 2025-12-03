@@ -1,60 +1,60 @@
-# Questions - String and &str
+# Perguntas - String and &str
 
-01 - Write code that creates an empty String and prints it.
+01 - Escreva um código que crie uma **string vazia** e a imprima.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7aea145765bf6be2bbefce651de75e4e)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let empty_string: String = String::new();
-    println!("{}", empty_string);
+    let cria_string: String = String::new();
+    println!("{}", cria_string);
 }
 ```
 </details>
 
-02 - Create a String from the string literal "Hello, Rust!".
+02 - Crie uma string a partir do literal de string **Pequeno, texto!**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fdaad16ebb9588c436f8a9501d9c03d7)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let literal_string: String = String::from("Hello, Rust!");
+    let literal_string: String = String::from("Pequeno, texto!");
     println!("{}", literal_string);
 }
 ```
 </details>
 
-03 - Declare a variable that holds a string slice (&str) with the value "Learning Rust".
+03 - Declare uma variável que contenha uma fatia de string (&str) com o valor **Aprendendo Rust**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d1b8ee95f41e7ab974d2a5f8b46d1aad)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let hold_string: &str = "Learning Rust";
-    println!("{}", hold_string);
+    let contem_string: &str = "Aprendendo Rust";
+    println!("{}", contem_string);
 }
 ```
 </details>
 
-04 - Given a String, write the code to get a &str that represents the entire String.
+04 - Dada uma string, escreva o código para obter um **&str** que represente toda a string.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=bdd1e7a349470247951f7f8471d3b2b0)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let input_string: String = String::from("Learning Rust!");
+    let input_string: String = String::from("Aprendendo Rust!");
     let input_str: &str = &input_string;
     println!("{}", input_str);
 }
@@ -62,47 +62,46 @@ fn main() {
 
 ```rust
 fn main() {
-    let input_string: String = String::from("Learning Rust!");
+    let input_string: String = String::from("Aprendendo Rust!");
     let input_str: &str = input_string.as_str();
     println!("{}", input_str);
 }
 ```
 </details>
 
-05 - Write a code that receives a text in "string" and converts it to "str" and then prints it on the screen.
+05 - Escreva um código que receba um texto em **string** e o converta para **&str** e, em seguida, o imprima na tela.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c550cdd209d4af05269027de2ccae961)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    //
-    println!("Enter text:");
+    println!("Entre com texto:");
     let mut input_string: String = String::new();
     io::stdin()
         .read_line(&mut input_string)
-        .expect("Data entry error!");
+        .expect("Erro de entrada de dados!");
     let text_string: &str = input_string.as_str();
-    println!("\nText converted to &str: {}", text_string.trim());
+    println!("\nTexto convertido para &str: {}", text_string.trim());
 }
 ```
 </details>
 
-06 - Convert the integer 123 into a String.
+06 - Converta um **string = 123** em um inteiro.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f2c46ec186b839b95ceee748af3c19ad)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {    
     let text: &str = "123";
-    let num: u8 = text.parse().expect("Error converting data!");
+    let num: u8 = text.parse().expect("Erro ao converter dados!");
     println!("{}", num);    
 }
 ```
@@ -114,7 +113,7 @@ fn main() {
     let num = match text.parse::<u8>() {
         Ok(num) => num,
         Err(_) => {
-            println!("Error converting data!");
+            println!("Erro ao converter dados!");
             return;
         }
     };
@@ -123,72 +122,71 @@ fn main() {
 ```
 </details>
 
-07 - Use the .to_string() method or String::from() to create a new String by concatenating a &str and an existing String.
+07 - Use o método **.to_string()** ou **String::from()** para criar uma nova string concatenando um **&str** e uma **string** existente.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9f3097900ca8be5c2062bfb29c933bd8)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter text:");
+    println!("Entre com texto:");
     let mut input_text: String = String::new();
     io::stdin()
         .read_line(&mut input_text)
-        .expect("Data entry error!");
+        .expect("Erro de entrada de dados!");
 
-    let text_01: &str = &input_text.as_str();
-    let text_02: String = String::from("string");
+    let text_01: &str = &input_text.as_str().trim();
+    let text_02: String = String::from("+ string!");
 
-    println!("\n{}", text_01.to_string() + &text_02);
+    println!("{}", text_01.to_string() + &text_02);
 }
 ```
 </details>
 
-08 - Create a mutable String and append a &str to it using the push_str() method.
+08 - Crie uma **string mutável** e anexe um **&str** a ela usando o método **push_str()**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=15f4cd05746c4bb68bd931b88fb6ca85)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let mut mutable_string: String = String::from("Hello, ");
-    mutable_string.push_str("word!");
-
-    println!("{}", mutable_string);
+    let mut string_mutavel: String = String::from("Pequeno, ");
+    string_mutavel.push_str("texto!");
+    println!("{}", string_mutavel);
 }
 ```
 </details>
 
-09 - Add a single character (char) to the end of a mutable String.
+09 - Adicione um **único caractere** (char) ao final de uma string mutável.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0cb500fc28e7fa7999fd8352a9d67dd3)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {    
-    let mut single_char: String = String::from("Hello, word");
-    let character: char = '!';
+    let mut unico_char: String = String::from("Pequeno, texto");
+    let caractere: char = '!';
 
-    single_char.push(character);
-    println!("{}", single_char);
+    unico_char.push(caractere);
+    println!("{}", unico_char);
 }
 ```
 </details>
 
-10 - Combine a &str, a String, and a number into a new String using the format! macro.
+10 - Combine um **&str**, uma **string** e um número em uma nova string usando a macro format!.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4efe44c7f1f6e9f4e0f3102ba03d9ebd)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -196,45 +194,46 @@ fn main() {
     let var_string: String = String::from("2");
     let var_u8: u8 = 3;
 
+    // a macro format! cria uma nova string
     let result = format!("{}{}{}", var_str, var_string, var_u8);
     println!("{}", result);
 }
 ```
 </details>
 
-11 - Create a new String by removing all whitespace from a string.
+11 - Crie uma nova **string** removendo todos os espaços em branco de uma string.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=5044fbae8e51c1fa3a04564aa01ca3db)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter text:");
+    println!("Entre com texto:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
-    let remove_wspace = input_text.replace(" ", "");
-    println!("\nFirst Letter = {}", remove_wspace.trim());
+    let remove_espaco = input_text.replace(" ", "");
+    println!("\nSem espaços = {}", remove_espaco.trim());
 }
 ```
 </details>
 
-12 - Replace all occurrences of the substring "error" with "success" in a &str, creating a new String.
+12 - Substitua todas as ocorrências da substring **error** por **success** em um &str, criando uma nova string.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=69904616c1b31cd39677788ab6adc0c9)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter text:");
+    println!("Entre com texto:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
@@ -244,111 +243,111 @@ fn main() {
 ```
 </details>
 
-13 - Replace only the first occurrence of "old" with "new" in a &str, creating a new String.
+13 - Substitua apenas a **primeira** ocorrência de **antes** por **depois** em um &str, criando uma nova string.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6338d0e70e6dfedca8c0b7d538548cdc)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter phrase:");
+    println!("Entre com uma frase:");
     let mut input_phrase: String = String::new();
     io::stdin().read_line(&mut input_phrase).err();
 
-    let phrase = input_phrase.replacen("old", "new", 1);
+    let phrase = input_phrase.replacen("antes", "depois", 1);
     println!("{}", phrase.trim());
 }
 ```
 </details>
 
-14 - Check if a &str contains the substring "Rust".
+14 - Verifique se um **&str** contém a substring **Rust**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f644247e1effd0423311eff7923b0af8)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter text:");
+    println!("Entre com uma frase:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
     if input_text.contains("Rust") {
-        println!("\n'{}' contains 'Rust'", input_text.trim());
+        println!("\n{} - contém 'Rust'", input_text.trim());
     } else {
-        println!("\n'{}' does not contain 'Rust'", input_text.trim());
+        println!("\n{} - não contém 'Rust'", input_text.trim());
     }
 }
 ```
 </details>
 
-15 - Check if a filename in a string ends with the suffix .rs.
+15 - Verifique se um **nome** de arquivo em uma string **termina** com o sufixo **.rs**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=63ae48f98d8297989711d77629590cdb)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter filename:");
+    println!("Entre com o nome do arquivo:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
     if input_text.trim().ends_with(".rs") {
-        println!("\n'{}' ends with '.rs'", input_text.trim());
+        println!("\n{} - termina com '.rs'", input_text.trim());
     } else {
-        println!("\n'{}' does not ends with '.rs'", input_text.trim());
+        println!("\n{} - não termina com '.rs'", input_text.trim());
     }
 }
 ```
 </details>
 
-16 - Check if a &str starts with the prefix "https://".
+16 - Verifique se um **&str** começa com o prefixo **https://**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=37f9d53e128b026be4633253019abec9)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter text:");
+    println!("Entra com link:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
     if input_text.starts_with("https://") {
-        println!("\n'{}' start with 'https://'", input_text.trim());
+        println!("\n{} - começa com 'https://'", input_text.trim());
     } else {
-        println!("\n'{}' does not start with 'https://'", input_text.trim());
+        println!("\n{} - não começa com 'https://'", input_text.trim());
     }
 }
 ```
 </details>
 
-17 - Create code that takes a String and returns a slice containing only the first word. Assume that words are separated by spaces.
+17 - Crie um código que receba uma **string** e retorne uma **fatia** contendo apenas a **primeira** palavra. Assuma que as palavras são separadas por espaços.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=596417527fb58dee641d99f0acf0a156)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter phrase:");
+    println!("Entre com uma frase:");
     let mut input_phrase: String = String::new();
     io::stdin().read_line(&mut input_phrase).err();
 
@@ -358,36 +357,36 @@ fn main() {
 ```
 </details>
 
-18 - Find the starting byte index of the first occurrence of the substring "world".
+18 - Encontre o **índice** de byte inicial da **primeira** ocorrência da substring **rust**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d0ab76c70724e09ff4d36f1b17f52ab3)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter filename:");
+    println!("Entre com a frase:");
     let mut input_text: String = String::new();
     io::stdin().read_line(&mut input_text).err();
 
-    if let Some(index) = input_text.find("world") {
-        println!("\nByte index: world = {}", index);
+    if let Some(index) = input_text.find("rust") {
+        println!("\nÍndice de bytes: rust = {}", index);
     } else {
-        println!("\nNo word: world");
+        println!("\nNão tem: rust");
     }
 }
 ```
 </details>
 
-19 - Write a function that accepts a String and returns its first character as a char.
+19 - Escreva uma função que aceite uma string e retorne seu **primeiro** caractere como um char.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0004b9c07066ea8dab69835372d9b4c6)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -401,7 +400,7 @@ fn main() {
         first_letter = i;
         break;
     }
-    println!("First Letter = {}", first_letter);
+    println!("Primeira letra = {}", first_letter);
 }
 ```
 
@@ -413,23 +412,23 @@ fn main() {
     io::stdin().read_line(&mut input_word).err();
 
     let first_letter: char = input_word.trim_start().chars().next().unwrap_or(' ');
-    println!("First Letter = {}", first_letter);
+    println!("Primeira letra = {}", first_letter);
 }
 ```
 </details>
 
-20 - Write a code that counts the number of characters (char) in a &str, not the number of bytes.
+20 - Escreva um código que **conte** o número de **caracteres (char)** em um &str, não o número de **bytes**.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=767d85d4c8aec2d9174642527c749407)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter word:");
+    println!("Entre com uma palavra:");
     let mut input_word: String = String::new();
     io::stdin().read_line(&mut input_word).err();
 
@@ -443,7 +442,7 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Enter word:");
+    println!("Entre com uma palavra:");
     let mut input_word: String = String::new();
     io::stdin().read_line(&mut input_word).err();
 
@@ -459,86 +458,43 @@ fn main() {
 ```
 </details>
 
-21 - Write a code that counts the number of characters (char) in a sentence, excluding whitespace.
+21 - Escreva um código que **receba** um &mut string e substitua **todos* os caracteres **a** minúsculos por **A** maiúsculos, modificando a string original.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=090220e67985598ea2d1697a2bf94134)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter phrase:");
-    let mut input_phrase: String = String::new();
-    io::stdin().read_line(&mut input_phrase).err();
-
-    let phrase = input_phrase.trim().replace(" ", "");
-    let mut count: u8 = 0;
-
-    for _i in phrase.chars() {
-        count += 1;
-    }
-
-    println!("{}", count);
-}
-```
-</details>
-
-22 - Write a code that takes a &mut String and replaces all lowercase 'a' characters with uppercase 'A's, modifying the original String.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f08072efb40d187ad8c63c2211896178)
-
-<details>
-<summary>Answers</summary>
-
-```rust
-use std::io;
-
-fn main() {
-    // create new var
-    println!("Enter phrase:");
+    println!("Entre com uma frase:");
     let mut input_phrase: String = String::new();
     io::stdin().read_line(&mut input_phrase).err();
 
     let phrase = input_phrase.trim().replace("a", "A");
-    println!("{}", phrase);
-
-    // mut input_phrase
-    println!("Enter phrase:");
-    let mut input_phrase: String = String::new();
-    io::stdin().read_line(&mut input_phrase).err();
-
-    let bytes = unsafe { input_phrase.as_bytes_mut() };
-
-    for i in bytes.iter_mut() {
-        if *i == b'a' {
-            *i = b'A';
-        }
-    }
-    
-    println!("{}", phrase);
+    println!("{}", phrase);    
 }
 ```
 </details>
 
-23 - Write code that removes the last character from a String.
+22 - Escreva um código que remova o **último** caractere de uma string.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0d60d14338cc1beb77035891ff3b4f9b)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
 
 fn main() {
-    println!("Enter text:");
+    println!("Entre com texto:");
     let mut input_character: String = String::new();
     io::stdin()
         .read_line(&mut input_character)
-        .expect("Data entry erro!");
+        .expect("Erro de entrada de dados!");
 
     let mut character: String = input_character.trim_end().to_string();
     character.pop();
@@ -550,11 +506,11 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Enter text:");
+    println!("Entre com texto:");
     let mut input_character: String = String::new();
     io::stdin()
         .read_line(&mut input_character)
-        .expect("Data entry erro!");
+        .expect("Erro de entrada de dados!");
 
     let mut count = 0;
     let mut character: String = String::new();
@@ -571,27 +527,27 @@ fn main() {
 ```
 </details>
 
-24 - Use the .clear() method to empty a String without deallocating its memory capacity.
+23 - Use o método **.clear()** para limpar uma string sem **desalocar** sua capacidade de memória.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7916fc43c5baff6074f486aa90fd94b7)
+[Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
     let mut var_string: String = String::with_capacity(50);
-    var_string.push_str("Hello, world!");
+    var_string.push_str("Pequeno, grande texto!");
 
     println!("String = {}", var_string);
-    println!("Capacity = {}", var_string.capacity());
-    println!("Len = {}", var_string.len());
+    println!("Capacidade = {}", var_string.capacity());
+    println!("Tamanho = {}", var_string.len());
     println!("");
 
     var_string.clear();
     println!("String = {}", var_string);
-    println!("Capacity = {}", var_string.capacity());
-    println!("Len = {}", var_string.len());
+    println!("Capacidade = {}", var_string.capacity());
+    println!("Tamanho = {}", var_string.len());
 }
 ```
 </details>

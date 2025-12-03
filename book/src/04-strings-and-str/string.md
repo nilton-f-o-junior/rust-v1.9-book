@@ -1,38 +1,37 @@
 # Strings
 
-Sequence of UTF-8 characters that can form a word or a phrase, including letters, numbers, symbols, or any other type of special character.
-
-Think of your memory as a cabinet, a variable as a drawer, and a string as a piece of paper.
-
-When you create a "string" variable, you use the entire drawer. But when you create a "&str" variable, you use a piece of paper to write down the information and then put it inside the drawer.
+Strings são sequências de caracteres UTF-8 que podem formar uma palavra ou frase, incluindo letras, números, símbolos ou qualquer outro tipo de caractere especial.
 
 `new()`
 
 ```rust
-let create_string: String = String::new();
-println!("{}", create_string);
+// cria uma string vazia
+let cria_string: String = String::new();
+println!("{}", cria_string);
 ```
 
 `from()`
 
 ```rust
-let create_string: String = String::from("Create text!");
-println!("{}", create_string);
+// cria uma string a partir de um literal de string (&str)
+let cria_string: String = String::from("Grande texto!");
+println!("{}", cria_string);
 ```
 
 `to_string()`
 
 ```rust
-let create_string: String = "Create text!".to_string();
-println!("{}", create_string);
+// converte um literal de string (&str) em uma string
+let cria_string: String = "Mais um grande texto!".to_string();
+println!("{}", cria_string);
 ```
 
 `mut`
 
 ```rust
-let mut create_string: String = String::from("Create text!");
-println!("{}", create_string);
+let mut cria_string: String = String::from("Quase um grande texto!");
+println!("{}", cria_string);
 
-create_string = "Create new text!".to_string();
-println!("{}", create_string);
+cria_string = "Último grande texto!".to_string();
+println!("{}", cria_string);
 ```

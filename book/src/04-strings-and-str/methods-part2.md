@@ -1,11 +1,11 @@
-# Methods - Part 2
+# Métodos - Parte 2
 
-Used for manipulating and modifying text content.
+Usados para manipulação e modificação de conteúdo de texto.
 
 `is_empty()`
 
 ```rust
-// verifica se está vazia
+// verifica se a string está vazia
 let text = "Hello, word!";
 println!("{}", text.is_empty());
 ```
@@ -21,7 +21,7 @@ println!("{}", text.contains("ello"));
 `starts_with() and ends_with()`
 
 ```rust
-// verifica início/fim
+// verifica se a string começa/termina com a substring fornecida
 let text = "Hello, word!";
 println!("{}", text.starts_with("He"));
 println!("{}", text.ends_with("d!"));
@@ -30,7 +30,7 @@ println!("{}", text.ends_with("d!"));
 `find()`
 
 ```rust
-// encontra posição de substring
+// encontra posição(índice) de substring
 let text = "Hello, word!";
 println!("{:?}", text.find("H"));
 ```
@@ -38,7 +38,7 @@ println!("{:?}", text.find("H"));
 `to_uppercase() and to_lowercase()`
 
 ```rust
-// conversão de case
+// conversão para maiúsculas/minúsculas
 let text = "Hello, word!";
 println!("{:?}", text.to_uppercase());
 println!("{:?}", text.to_lowercase());

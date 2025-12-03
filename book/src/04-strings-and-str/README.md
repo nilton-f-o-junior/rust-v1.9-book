@@ -1,10 +1,7 @@
-# String and &str
+# String e &str
 
-This chapter covers Rust's string types – the fundamental tools for handling text data in your programs.
+Este capítulo aborda os tipos de string do Rust – as ferramentas fundamentais para lidar com dados de texto em seus programas.
 
-We'll start with string literals: &str for compile-time text, string slices for referencing parts of strings, and their immutable nature. Then we
-'ll explore owned strings: String for dynamic text creation, push and push_str for building strings, and methods for manipulation and transformation.
+Começaremos com literais de string: &str para texto em tempo de compilação, slices de string para referenciar partes de strings, e sua natureza imutável. Em seguida, exploraremos strings de propriedade (owned strings): String para criação dinâmica de texto, push e push_str para construir strings, e métodos para manipulação e transformação.
 
-We'll also cover conversions – Rust's seamless transitions between &str and String, when to use each type, and how ownership affects your choice.
-
-Each section includes practice questions to reinforce your understanding of these essential text-handling constructs.
+Cada seção inclui perguntas de prática para reforçar sua compreensão desses construtos essenciais de manipulação de texto.
