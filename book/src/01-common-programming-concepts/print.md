@@ -36,4 +36,4 @@ eprintln!("ERRO:");
 eprintln!("Falha ao carregar arquivo!");
 ```
 
-> Nota: O usuário pode redirecionar a saída normal de seu programa para um arquivo usando (>) e as mensagens de erro para o terminal.
+> Nota: Quando estiver desenvolvendo um programa, pode redirecionar a saída normal para um arquivo usando (>) e as mensagens de erro para o terminal usando (eprint).

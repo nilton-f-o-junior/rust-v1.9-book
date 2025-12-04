@@ -1,8 +1,8 @@
 # Perguntas - String and &str
 
-01 - Escreva um código que crie uma **string vazia** e a imprima.
+01 - Escreva um código que crie uma string vazia e a imprima.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=04697b24c6706d3d04a675d55693d184)
 
 <details>
 <summary>Resposta</summary>
@@ -15,9 +15,9 @@ fn main() {
 ```
 </details>
 
-02 - Crie uma string a partir do literal de string **Pequeno, texto!**.
+02 - Crie uma string a partir do literal de string "Pequeno, texto!".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=4db7cde9056a6f5aedff39c44bf042b7)
 
 <details>
 <summary>Resposta</summary>
@@ -30,9 +30,9 @@ fn main() {
 ```
 </details>
 
-03 - Declare uma variável que contenha uma fatia de string (&str) com o valor **Aprendendo Rust**.
+03 - Declare uma variável que contenha uma fatia de string (&str) com o valor "Aprendendo Rust".
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a0dd76fb9cabaa21d63a02cc7d85726a)
 
 <details>
 <summary>Resposta</summary>
@@ -45,9 +45,9 @@ fn main() {
 ```
 </details>
 
-04 - Dada uma string, escreva o código para obter um **&str** que represente toda a string.
+04 - Dada uma string, escreva o código para obter um &str que represente toda a string.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f55333f92be2d15599c6216497f318db)
 
 <details>
 <summary>Resposta</summary>
@@ -69,9 +69,9 @@ fn main() {
 ```
 </details>
 
-05 - Escreva um código que receba um texto em **string** e o converta para **&str** e, em seguida, o imprima na tela.
+05 - Escreva um código que receba um texto em string e o converta para &str e, em seguida, o imprima na tela.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=45661d7a96858a6849c87cca119d35cb)
 
 <details>
 <summary>Resposta</summary>
@@ -91,9 +91,9 @@ fn main() {
 ```
 </details>
 
-06 - Converta um **string = 123** em um inteiro.
+06 - Converta um string = 123 em um inteiro.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b169066c7c9b4ebf6ac2ace822c32e63)
 
 <details>
 <summary>Resposta</summary>
@@ -122,9 +122,9 @@ fn main() {
 ```
 </details>
 
-07 - Use o método **.to_string()** ou **String::from()** para criar uma nova string concatenando um **&str** e uma **string** existente.
+07 - Use o método .to_string() ou String::from() para criar uma nova string concatenando um &str e uma string existente.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f56a26d7a9431731e1bac8713d29de4d)
 
 <details>
 <summary>Resposta</summary>
@@ -147,9 +147,9 @@ fn main() {
 ```
 </details>
 
-08 - Crie uma **string mutável** e anexe um **&str** a ela usando o método **push_str()**.
+08 - Crie uma string mutável e anexe um &str a ela usando o método push_str().
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=374a7767faa92d6933d7bfd559619754)
 
 <details>
 <summary>Resposta</summary>
@@ -163,9 +163,9 @@ fn main() {
 ```
 </details>
 
-09 - Adicione um **único caractere** (char) ao final de uma string mutável.
+09 - Adicione um único caractere (char) ao final de uma string mutável.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ebb09ff00d5882a8997a05495188fe53)
 
 <details>
 <summary>Resposta</summary>
@@ -181,9 +181,9 @@ fn main() {
 ```
 </details>
 
-10 - Combine um **&str**, uma **string** e um número em uma nova string usando a macro format!.
+10 - Combine um &str, uma string e um número em uma nova string usando a macro format!.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0a4d681c9bf4b7c88d0dc8e758743b99)
 
 <details>
 <summary>Resposta</summary>
@@ -201,9 +201,9 @@ fn main() {
 ```
 </details>
 
-11 - Crie uma nova **string** removendo todos os espaços em branco de uma string.
+11 - Crie uma nova string removendo todos os espaços em branco de uma string.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e9bc2bba7b75db8bb89be0ab362019d0)
 
 <details>
 <summary>Resposta</summary>
@@ -222,9 +222,9 @@ fn main() {
 ```
 </details>
 
-12 - Substitua todas as ocorrências da substring **error** por **success** em um &str, criando uma nova string.
+12 - Substitua todas as ocorrências da substring *error* por *success* em um &str, criando uma nova string.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a51483277e7c8b3fd2da1e427539e24e)
 
 <details>
 <summary>Resposta</summary>
@@ -243,9 +243,9 @@ fn main() {
 ```
 </details>
 
-13 - Substitua apenas a **primeira** ocorrência de **antes** por **depois** em um &str, criando uma nova string.
+13 - Substitua apenas a primeira ocorrência de antes por depois em um &str, criando uma nova string.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=39113e025edc73e94a85bcc58e85618b)
 
 <details>
 <summary>Resposta</summary>
@@ -264,9 +264,9 @@ fn main() {
 ```
 </details>
 
-14 - Verifique se um **&str** contém a substring **Rust**.
+14 - Verifique se um &str contém a substring Rust.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fd50790891d0c374ac75e1e446de9fd0)
 
 <details>
 <summary>Resposta</summary>
@@ -288,9 +288,9 @@ fn main() {
 ```
 </details>
 
-15 - Verifique se um **nome** de arquivo em uma string **termina** com o sufixo **.rs**.
+15 - Verifique se um nome de arquivo em uma string termina com o sufixo .rs
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ab027074b26fe1a2914b27a3dde30176)
 
 <details>
 <summary>Resposta</summary>
@@ -312,9 +312,9 @@ fn main() {
 ```
 </details>
 
-16 - Verifique se um **&str** começa com o prefixo **https://**.
+16 - Verifique se um &str começa com o prefixo https://.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=00d799357ef4fa049b8d4a9b76791184)
 
 <details>
 <summary>Resposta</summary>
@@ -336,9 +336,9 @@ fn main() {
 ```
 </details>
 
-17 - Crie um código que receba uma **string** e retorne uma **fatia** contendo apenas a **primeira** palavra. Assuma que as palavras são separadas por espaços.
+17 - Crie um código que receba uma string e retorne uma fatia contendo apenas a primeira palavra. Assuma que as palavras são separadas por espaços.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e4cab2460584da834264f11abc2d91ba)
 
 <details>
 <summary>Resposta</summary>
@@ -357,9 +357,9 @@ fn main() {
 ```
 </details>
 
-18 - Encontre o **índice** de byte inicial da **primeira** ocorrência da substring **rust**.
+18 - Encontre o índice de byte inicial da primeira ocorrência da substring rust.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0db8d18b8e76e9891aad5aa8f434dc9a)
 
 <details>
 <summary>Resposta</summary>
@@ -381,9 +381,9 @@ fn main() {
 ```
 </details>
 
-19 - Escreva uma função que aceite uma string e retorne seu **primeiro** caractere como um char.
+19 - Escreva uma função que aceite uma string e retorne seu primeiro caractere como um char.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=42eaabc11ffc01f2811238c706cbcd85)
 
 <details>
 <summary>Resposta</summary>
@@ -417,9 +417,9 @@ fn main() {
 ```
 </details>
 
-20 - Escreva um código que **conte** o número de **caracteres (char)** em um &str, não o número de **bytes**.
+20 - Escreva um código que conte o número de caracteres (char) em um &str, não o número de bytes.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=385b60b95507868496987576ed0ac020)
 
 <details>
 <summary>Resposta</summary>
@@ -458,9 +458,9 @@ fn main() {
 ```
 </details>
 
-21 - Escreva um código que **receba** um &mut string e substitua **todos* os caracteres **a** minúsculos por **A** maiúsculos, modificando a string original.
+21 - Escreva um código que receba um &mut string e substitua todos os caracteres a minúsculos por A maiúsculos, modificando a string original.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=37e24bee866c827120c3c76c6fdcc3ce)
 
 <details>
 <summary>Resposta</summary>
@@ -479,9 +479,9 @@ fn main() {
 ```
 </details>
 
-22 - Escreva um código que remova o **último** caractere de uma string.
+22 - Escreva um código que remova o último caractere de uma string.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=dd5087a9cb5fbb96a7f7fa4b0a2f6966)
 
 <details>
 <summary>Resposta</summary>
@@ -527,9 +527,9 @@ fn main() {
 ```
 </details>
 
-23 - Use o método **.clear()** para limpar uma string sem **desalocar** sua capacidade de memória.
+23 - Use o método .clear() para limpar uma string sem desalocar sua capacidade de memória.
 
-[Playground!]()
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=90c6e5c3cf23474740e21cf534acf57f)
 
 <details>
 <summary>Resposta</summary>

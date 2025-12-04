@@ -1,6 +1,8 @@
 # Questions - for
 
-01 - Write a program that prints numbers from 1 to 10 using a for loop.
+---
+
+01 - Escreva um programa que imprime os números de 1 a 10 usando um laço for.
 
 [Playground!]()
 
@@ -16,7 +18,7 @@ fn main() {
 ```
 </details>
 
-02 - Create a program that calculates the sum of numbers from 1 to 100 using a for loop.
+02 - Crie um programa que calcula a soma dos números de 1 a 100 usando um laço for.
 
 [Playground!]()
 
@@ -39,7 +41,7 @@ fn main() {
 ```
 </details>
 
-03 - Develop a program that prints all even numbers from 0 to 20 using a for loop.
+03 - Desenvolva um programa que imprime todos os números pares de 0 a 20 usando um laço for.
 
 [Playground!]()
 
@@ -57,7 +59,7 @@ fn main() {
 ```
 </details>
 
-04 - Write a program that prints all numbers in binary up to the requested number entered.
+04 - Escreva um programa que imprime todos os números em binário até o número solicitado inserido.
 
 [Playground!]()
 
@@ -81,7 +83,7 @@ fn main() {
 ```
 </details>
 
-05 - Develop a program that generates all possible combinations of two digits (00 to 99) using nested for loops.
+05 - Desenvolva um programa que gera todas as combinações possíveis de dois dígitos (00 a 99) usando laços for aninhados.
 
 [Playground!]()
 
@@ -110,7 +112,7 @@ fn main() {
 
 </details>
 
-06 - Write a program that prints the multiplication table for a user-provided number (from 1 to 10) using a for loop.
+06 - Escreva um programa que imprime a tabuada de um número fornecido pelo usuário (de 1 a 10) usando um laço for.
 
 [Playground!]()
 
@@ -138,7 +140,7 @@ fn main() {
 ```
 </details>
 
-07 - Create a program that reverses a user-provided string using a for loop.
+07 - Crie um programa que inverte uma string fornecida pelo usuário usando um laço for.
 
 [Playground!]()
 
@@ -169,7 +171,7 @@ fn main() {
 ```
 </details>
 
-08 - Create a program that calculates the sum of the digits of an integer using a for loop.
+08 - Crie um programa que calcula a soma dos dígitos de um inteiro usando um laço for.
 
 [Playground!]()
 
@@ -196,7 +198,7 @@ fn main() {
 ```
 </details>
 
-09 - Develop a program that counts how many vowels (a, e, i, o, u) are in a string using a for loop.
+09 - Desenvolva um programa que conta quantas vogais (a, e, i, o, u) estão em uma string usando um laço for.
 
 [Playground!]()
 
@@ -228,7 +230,7 @@ fn main() {
 ```
 </details>
 
-10 - Write a program that finds the largest number in a list of numbers using a for loop. List = [17, 43, 5, 54, 93]
+10 - Escreva um programa que encontra o maior número em uma lista de números usando um laço for. Lista = [17, 43, 5, 54, 93]
 
 [Playground!]()
 
@@ -251,7 +253,7 @@ fn main() {
 ```
 </details>
 
-11 - Create a program that finds the smallest number in a list of numbers using a for loop. List = [63, 36, 57, 7, 82]
+11 - Crie um programa que encontra o menor número em uma lista de números usando um laço for. Lista = [63, 36, 57, 7, 82]
 
 [Playground!]()
 
@@ -274,7 +276,7 @@ fn main() {
 ```
 </details>
 
-12 - Develop a program that calculates the factorial of a positive integer provided by the user using a for loop.
+12 - Desenvolva um programa que calcula o fatorial de um inteiro positivo fornecido pelo usuário usando um laço for.
 
 [Playground!]()
 
@@ -302,7 +304,7 @@ fn main() {
 ```
 </details>
 
-13 - Write a program that prints the elements of a list in reverse order using a for loop. List = [1, 2, 3, 4, 5];
+13 - Escreva um programa que imprime os elementos de uma lista em ordem inversa usando um laço for. Lista = [1, 2, 3, 4, 5];
 
 [Playground!]()
 
@@ -320,7 +322,7 @@ fn main() {
 ```
 </details>
 
-14 - Create a program that checks if a word is a palindrome (reads the same forwards and backward) using a for loop.
+14 - Crie um programa que verifica se uma palavra é um palíndromo (lê-se da mesma forma de frente para trás e de trás para frente) usando um laço for.
 
 [Playground!]()
 
@@ -354,7 +356,7 @@ fn main() {
 ```
 </details>
 
-15 - Write a program that counts how many times a specific character appears in a string using a for loop.
+15 - Escreva um programa que conta quantas vezes um caractere específico aparece em uma string usando um laço for.
 
 [Playground!]()
 
@@ -400,7 +402,7 @@ fn main() {
 ```
 </details>
 
-16 - Create a program that calculates the product of all numbers in a list using a for loop.
+16 - Crie um programa que calcula o produto de todos os números em uma lista usando um laço for.
 
 [Playground!]()
 
@@ -420,7 +422,7 @@ fn main() {
 ```
 </details>
 
-17 - Write a program that receives 5 integer values, entered by the user, using an array and for.
+17 - Escreva um programa que recebe 5 valores inteiros, inseridos pelo usuário, usando um array e for.
 
 [Playground!]()
 
@@ -446,7 +448,7 @@ fn main() {
 ```
 </details>
 
-18 - Develop a program that finds the average of a list of numbers using a for loop.
+18 - Desenvolva um programa que encontra a média de uma lista de números usando um laço for.
 
 [Playground!]()
 
@@ -478,7 +480,7 @@ fn main() {
 ```
 </details>
 
-19 - Develop a program that counts the number of negative numbers in a list using a for loop.
+19 - Desenvolva um programa que conta o número de números negativos em uma lista usando um laço for.
 
 [Playground!]()
 
@@ -511,7 +513,7 @@ fn main() {
 ```
 </details>
 
-20 - Write a code that receives 5 numbers entered by the user and adds them to an empty tuple, checks if there are even numbers and if so, adds them to another empty list.
+20 - Escreva um código que recebe 5 números inseridos pelo usuário e os adiciona a uma tupla vazia, verifica se há números pares e, se sim, os adiciona a outra lista vazia.
 
 [Playground!]()
 
@@ -544,7 +546,7 @@ fn main() {
 ```
 </details>
 
-21 - Write a program that receives the name and age of a user and stores them in a tuple using for.
+21 - Escreva um programa que recebe o nome e a idade de um usuário e os armazena em uma tupla usando for.
 
 [Playground!]()
 

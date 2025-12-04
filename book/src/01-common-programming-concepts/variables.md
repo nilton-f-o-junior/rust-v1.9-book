@@ -11,4 +11,4 @@ let idade = 29;
 println!("Qual sua idade? {}", idade);
 ```
 
-> Saiba mais sobre [variáveis](https://play.rust-lang.org).
+> Saiba mais sobre [variáveis](https:).

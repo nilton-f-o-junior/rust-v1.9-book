@@ -1,3 +1,4 @@
 # Começando
 
-Este projeto foi concebido e desenvolvido para que você possa estudar junto comigo, escrevendo código e criando projetos práticos. Para tornar isso possível, preciso ensinar sobre as ferramentas e recursos que permitirão colocar em prática o que você está aprendendo.
+Este projeto foi criado para você aprender comigo através da prática: escrevendo código e desenvolvendo projetos reais. Para isso, vou apresentar as ferramentas e recursos necessários para você aplicar o conhecimento adquirido de forma efetiva.
+

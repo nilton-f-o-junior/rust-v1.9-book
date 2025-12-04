@@ -44,8 +44,8 @@ fn main() {
 ```rust
 fn main() {
     /*
-       Este é um comentário externo
-    // Este é um comentário aninhado
+       Inicio do comentário externo
+       // Este é um comentário aninhado
        Fim do comentário externo
     */    
 }
@@ -80,7 +80,7 @@ fn main() {
 ```
 </details>
 
-06 - Escreva um código que imprima ***Hello*** e ***World*** na mesma linha usando a macro print!.
+06 - Escreva um código que imprima "*Hello*" e "*World*" na mesma linha usando a macro print!.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7f19b20530592369971fba8bf265a206)
 
@@ -89,7 +89,7 @@ fn main() {
 
 ```rust
 fn main() {
-    print!("Hello ");
+    print!("Hello, ");
     print!("World");
 }
 ```
@@ -118,7 +118,6 @@ fn main() {
 
 ```rust
 fn main() {
-    println!("Caractere de tabulação:\tTexto tabulado");
     println!("Barra invertida: \\");
     println!("Olá \"mundo\"");
     println!(r"C:\Usuários\Snoopy\Documentos\");
@@ -126,7 +125,7 @@ fn main() {
 ```
 </details>
 
-09 - Como você declara uma variável chamada ***score*** e atribui a ela o valor 100?
+09 - Como você declara uma variável chamada score e atribui a ela o valor 100?
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e2483e071f7668c29ab6d4c43e93d5bc)
 
@@ -141,7 +140,7 @@ fn main() {
 ```
 </details>
 
-10 - Escreva uma linha de código que declare uma variável **cidade** com o valor **Recife** e a imprima na tela.
+10 - Escreva uma linha de código que declare uma variável cidade com o valor Recife e a imprima na tela.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=534c15c5dd3777cd8b43f590b00e6898)
 
@@ -188,25 +187,9 @@ fn main() {
 ```
 </details>
 
-13 - Qual palavra-chave é usada para declarar uma variável que pode ter seu valor alterado após a inicialização?
+13 - Declare uma variável mutável chamada contador inicializada com 0. Em seguida, escreva o código para alterar o valor para 5 e imprima.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2dbb60ce1e47e1dba0338bd9926cc431)
-
-<details>
-<summary>Resposta</summary>
-
-```rust
-fn main() {
-    let mut x = 5;
-    x = 10;
-    println!("x = {}", x);
-}
-```
-</details>
-
-14 - Declare uma variável mutável chamada contador inicializada com 0. Em seguida, escreva o código para alterar o valor para 5 e imprimi-lo.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=56db79c16dad160a119f64d290534508)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0470104c01ad820b44ea02bf1f9b0619)
 
 <details>
 <summary>Resposta</summary>
@@ -222,26 +205,25 @@ fn main() {
 ```
 </details>
 
-15 - O que acontece se você tentar modificar uma variável imutável em Rust?
+14 - O que acontece se você tentar modificar uma variável imutável em Rust?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e2a10647f401827475c04cdef7c1d0f7)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=6a85529111197c9537205effe189f958)
 
 <details>
 <summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let x = 1;
-    
+    let x = 1;    
     x = 2;
     println!("x = {}", x);
 }
 ```
 </details>
 
-16 - Como você declara uma constante chamada ***MAX_SPEED*** com o valor **9000** do tipo **i32**?
+15 - Como você declara uma constante chamada *MAX_SPEED* com o valor "9000" do tipo i32?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=04fd3ef402fdf49beb8bb112117619dd)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=3ca1e4c69ef20b6654436f608fe50592)
 
 <details>
 <summary>Resposta</summary>
@@ -255,9 +237,9 @@ fn main() {
  ```
 </details>
 
-17 - É possível alterar o valor de uma constante após sua declaração?
+16 - É possível alterar o valor de uma constante após sua declaração?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=88dc1eb25c3206e999c93e8851beba15)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=db9590e32122bc2e839341fd5f2d6402)
 
 <details>
 <summary>Resposta</summary>
@@ -271,9 +253,9 @@ fn main() {
 ```
 </details>
 
-18 - Quais são as principais diferenças entre constantes e variáveis imutáveis em Rust?
+17 - Quais são as principais diferenças entre constantes e variáveis imutáveis em Rust?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=cd49fa3f7ed5e93e1c2b09a1c32ec5f7)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=3d4e03767d7986a810cc961681f3b7eb)
 
 <details>
 <summary>Resposta</summary>
@@ -286,23 +268,22 @@ fn main() {
     println!("Constante: {}, Variável: {}", CONSTANTE_GLOBAL, variavel_imutavel);
 
     // Constantes:
-    // - Sempre imutáveis (a palavra-chave 'mut' não é permitida)
-    // - Devem ter anotação de tipo explícita (ex: : i32)
-    // - Podem ser declaradas em escopo global (fora de funções)
-    // - Devem ser definidas apenas por expressões constantes (não o resultado de uma função, por exemplo)
+    // - Sempre imutáveis (a palavra-chave 'mut' não é permitida);
+    // - Tipo explícito (ex: : i32);
+    // - Podem ser declaradas em escopo global (fora de funções).
     
     // Variáveis Imutáveis (let):
-    // - Podem ser tornadas mutáveis com 'mut'
-    // - O tipo pode ser inferido
-    // - Locais ao seu escopo
-    // - Podem ser definidas como o resultado de qualquer expressão
+    // - Podem ser tornadas mutáveis com 'mut';
+    // - O tipo pode ser inferido;
+    // - Locais ao seu escopo;
+    // - Podem ser definidas como o resultado de qualquer expressão.
 }
 ```
 </details>
 
-19 - Como você usaria a macro format! para criar a string **O valor é: 42** a partir do número **42**?
+18 - Como você usaria a macro format! para criar a string "O valor é: 42" a partir do número 42?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e8bf00347866354a8846b7856e928e96)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=8369e2438b56bc2abda06aff8bc3c285)
 
 <details>
 <summary>Resposta</summary>
@@ -316,9 +297,9 @@ fn main() {
 ```
 </details>
 
-20 - Como você pode formatar o número **7** para que ele seja exibido como **0007** usando format!?
+19 - Como você pode formatar o número "7" para que ele seja exibido como "0007" usando format!?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fa6ff56c34b23f750006cf361bdfee9d)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b9fb3b5c41ed8919cabd2aecd712f4e3)
 
 <details>
 <summary>Resposta</summary>
@@ -327,15 +308,14 @@ fn main() {
 fn main() {
     let numero = 7;
     let numero_formatado = format!("{:04}", numero);
-
     println!("{}", numero_formatado);
 }
 ```
 </details>
 
-21 - Como você formataria um número de ponto flutuante para mostrar exatamente 2 casas decimais?
+20 - Como você formataria um número de ponto flutuante para mostrar exatamente 2 casas decimais?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7f5c318b55b23ad8c67664d73553952e)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f7731cabfc66bf0003f674f81c79d382)
 
 <details>
 <summary>Resposta</summary>
@@ -351,9 +331,9 @@ fn main() {
 ```
 </details>
 
-22 - Demonstre como usar argumentos posicionais em format strings.
+21 - Demonstre como usar argumentos posicionais em format strings.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=0617076301d0e8a941832aca4336aa09)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=cd343f4c9020844b7b181f431570417f)
 
 <details>
 <summary>Resposta</summary>
@@ -376,9 +356,9 @@ fn main() {
 ```
 </details>
     
-23 - O que é ***shadowing*** em Rust? Explique com um exemplo de código e qual seria a saída.
+22 - O que é *shadowing* em Rust? Explique com um exemplo de código e qual seria a saída.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a84aab3292962c745db08df5f13872e4)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f482540cb33e01d48f2a776d37773d87)
 
 <details>
 <summary>Resposta</summary>
@@ -400,9 +380,9 @@ fn main() {
 ```
 </details>
 
-24 - Qual será a saída do seguinte código?
+23 - Qual será a saída do seguinte código?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=ea29c33947406e6a40ca664127148c08)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=7e38fa1f3187c185c9c24902bb40bb9d)
 
 ```rust
 fn main () {
@@ -431,9 +411,9 @@ fn main() {
 ```
 </details>
 
-25 - Qual será a saída do seguinte código? Explique por quê.
+24 - Qual será a saída do seguinte código? Explique por quê.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=efa60d3eeeae35d853049364b2106950)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=59ac6475810ab64b4bf02825573cff00)
 
 ```rust
 fn main () {    

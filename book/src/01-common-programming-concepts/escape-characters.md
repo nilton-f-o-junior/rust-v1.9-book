@@ -72,7 +72,6 @@ println!("(\u{25D5}\u{2323}\u{25D5})");
 ```rust
 // move o cursor de volta para o início da linha sem avançar para a próxima
 print!("Carregando ...\r");
-print!("Concluído!   \r");
 ```
 
 > Comumente usado para animações de terminal: **\r**
