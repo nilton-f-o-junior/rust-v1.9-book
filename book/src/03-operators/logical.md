@@ -1,6 +1,6 @@
 # Lógicos
 
-Relacionados a operações que combinam ou modificam valores Booleanos (verdadeiro/falso) para produzir um único resultado Booleano.
+Relacionados a operações que combinam ou modificam valores booleanos (verdadeiro/falso) para produzir um único resultado booleano.
 
 `AND (E) - Somente verdadeiro quando ambos são verdadeiros`
 
@@ -29,3 +29,5 @@ println!("Falso || Falso = {}", false || false);
 println!("!Verdadeiro = {}", !true);
 println!("!Falso = {}", !false);
 ```
+
+> Você entenderá melhor seu uso quando estiver estudando estruturas de controle.

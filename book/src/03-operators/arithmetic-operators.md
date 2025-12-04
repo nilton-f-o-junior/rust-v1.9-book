@@ -5,8 +5,8 @@ Usados para cálculos matemáticos básicos.
 `+`
 
 ```rust
-let som = 1 + 1;
-println!("Soma = {:?}", som);
+let adi = 1 + 1;
+println!("Adição = {:?}", adi);
 ```
 
 `-`

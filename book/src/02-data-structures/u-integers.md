@@ -1,43 +1,43 @@
-# u: inteiros não-assinados (unsigned integers)
+# u: inteiros não-assinados
 
-Números inteiros que podem ser apenas positivos.
+São tipos de dados que só podem armazenar números inteiros positivos ou zero.
 
 `u8`
 
 ```rust
-// u8 = 0 - 255
-let inteiro: u8 = 1;
+// u8 = 0 a 255
+let inteiro: u8 = 16;
 println!("{}", inteiro);
 ```
 
 `u16`
 
 ```rust
-// u16 = 0 - 65.535
-let inteiro: u16 = 81;
+// u16 = 0 a 65_535
+let inteiro: u16 = 32;
 println!("{}", inteiro);
 ```
 
 `u32`
 
 ```rust
-// u32 = 0 - 4.294.967.295
-let inteiro: u32 = 100;
+// u32 = 0 a 4_294_967_295
+let inteiro: u32 = 64;
 println!("{}", inteiro);
 ```
 
 `u64`
 
 ```rust
-// u64 = 0 - 18.446.744.073.709.551.615
-let inteiro: u64 = 216;
+// u64 = 0 a 18_446_744_073_709_551_615
+let inteiro: u64 = 128;
 println!("{}", inteiro);
 ```
 
 `u128`
 
 ```rust
-// u128 = 0 - ...
-let inteiro: u128 = 398;
+// u128 = 0 a ...
+let inteiro: u128 = 256;
 println!("{}", inteiro);
 ```

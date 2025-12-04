@@ -144,9 +144,9 @@ fn main() {
 ```
 </details>
 
-09 - Tente declarar uma variável char com mais de um caractere, por exemplo: let not_a_char: char = 'ab';. O que acontece ao tentar compilar?
+09 - Tente declarar uma variável char com mais de um caractere, por exemplo: let letra: char = 'ab';. O que acontece ao tentar compilar?
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=b99af6bc24264ae2d407a06cda9a6b08)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f9c9a395b3121b389790b424ce9408db)
 
 <details>
 <summary>Resposta</summary>
@@ -154,8 +154,8 @@ fn main() {
 ```rust
 fn main() {
     // erro: deve ter apenas um caractere
-    let not_a_char : char = 'ab';
-    println!("{:?}", not_a_char);
+    let letra: char = 'ab';
+    println!("{:?}", letra);
 }
 ```
 </details>
@@ -297,10 +297,10 @@ fn main() {
 fn main () {
     let player_status: (&str, i32, u8) = ("Hero", 0, 3);
     let (nome, mut score, vidas) = player_status;
-    println!("Name: {nome}\nScore: {score}\nLives: {vidas}\n");
+    println!("Name: {nome}\nScore: {score}\nVidas: {vidas}\n");
     
     score = 1500;
-    println!("Name: {nome}\nScore: {score}\nLives: {vidas}");
+    println!("Name: {nome}\nScore: {score}\nVidas: {vidas}");
 }
 ```
 </details>

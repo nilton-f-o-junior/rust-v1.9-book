@@ -8,7 +8,7 @@ println!("{}", caractere);
 ```
 
 ```rust
-let simbolo: char = '';
+let simbolo: char = '⭐';
 println!("{}", simbolo);
 ```
 

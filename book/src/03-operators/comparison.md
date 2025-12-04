@@ -2,10 +2,9 @@
 
 O ato de verificar se dois ou mais itens são iguais, diferentes ou ordenados em relação um ao outro.
 
-`==`
+`== (igual a)`
 
 ```rust
-// igual
 let a = 1;
 let b = 1;
 println!("{}", a == b);
@@ -17,10 +16,9 @@ let b = 3;
 println!("{}", a == b);
 ```
 
-`!=`
+`!= (diferente de)`
 
 ```rust
-// diferente
 let a = 1;
 let b = 1;
 println!("{}", a != b);
@@ -32,10 +30,9 @@ let b = 3;
 println!("{}", a != b);
 ```
 
-`>`
+`> (maior que)`
 
 ```rust
-// maior que
 let a = 1;
 let b = 1;
 println!("{}", a > b);
@@ -47,10 +44,9 @@ let b = 3;
 println!("{}", a > b);
 ```
 
-`<`
+`< (menor que)`
 
 ```rust
-// menor que
 let a = 1;
 let b = 1;
 println!("{}", a < b);
@@ -62,10 +58,9 @@ let b = 3;
 println!("{}", a < b);
 ```
 
-`>=`
+`>= (maior ou igual)`
 
 ```rust
-// maior ou igual
 let a = 1;
 let b = 1;
 println!("{}", a >= b);
@@ -77,10 +72,9 @@ let b = 3;
 println!("{}", a >= b);
 ```
 
-`<=`
+`<= (menor ou igual)`
 
 ```rust
-// menor ou igual
 let a = 1;
 let b = 1;
 println!("{}", a <= b);

@@ -174,9 +174,9 @@ fn main() {
 ```
 </details>
 
-11 - Declare uma variável mutável chamada *counter* com um valor inicial de 5. Incremente-a em 3 usando o operador de atribuição de adição (+=) e imprima o novo valor.
+11 - Declare uma variável mutável chamada contador com um valor inicial de 5. Incremente-a em 3 usando o operador de atribuição de adição (+=) e imprima o novo valor.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=f63cbffddd3af57eec53c66b615d2fc7)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=cb3f3c5f2cc161b22514e4ca5a978efb)
 
 <details>
 <summary>Resposta</summary>
@@ -276,16 +276,16 @@ fn main() {
 ```
 </details>
 
-17 - Crie duas variáveis do tipo string, s1 = "Language " e s2 = "Rust.". Concatene-as e imprima a string resultante.
+17 - Crie duas variáveis do tipo string, s1 = "Linguagem " e s2 = "Rust.". Concatene-as e imprima a string resultante.
 
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=2c1d86e6e63b8cdfa868cba40b184208)
+[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=289c63190745ce6a8f14f39af15c0193)
 
 <details>
 <summary>Resposta</summary>
 
 ```rust
 fn main() {
-    let s1: String = String::from("Language ");
+    let s1: String = String::from("Linguagem ");
     let s2: String = String::from("Rust.");
 
     println!("{:?}", s1 + &s2);

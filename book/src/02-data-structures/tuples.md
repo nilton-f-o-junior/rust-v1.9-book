@@ -2,36 +2,54 @@
 
 Combinam múltiplos valores de tipos diferentes em uma única estrutura de dados composta com um tamanho fixo.
 
+`inferência de tipos`
+
 ```rust
 let tipos_dados = ("a", 1);
-println!("{:#?}", tipos_dados);
+println!("{:?}", tipos_dados);
 ```
 
 ```rust
-let tipos_dados = (1., 2);
-println!("{:#?}", tipos_dados);
+let tipos_dados = ('b', 2.);
+println!("{:?}", tipos_dados);
+```
+
+`inferência com atribuição explícita`
+
+```rust
+let tipos_dados: (&str, u8) = ("c", 3);
+println!("{:?}", tipos_dados);
 ```
 
 ```rust
-let tipos_dados : (char, u8);
-tipos_dados = ('c', 3);
-println!("{:#?}", tipos_dados);
+let tipos_dados: (String, bool) = (String::from("d"), true);
+println!("{:?}", tipos_dados);
+```
+
+`Desestruturação com tipos explícitos`
+
+```rust
+let (texto, numero): (&str, i8);
+(texto, numero) = ("e", 44);
+println!("{}, {}", texto, numero);
 ```
 
 ```rust
-let (nome, idade) : (&str, i8);
-(nome, idade) = ("Noah", 4);
-println!("{}\n{}", nome, idade);
+let (texto, numero): (String, f64);
+(texto, numero) = (String::from("f"), 128.5);
+println!("{}, {}", texto, numero);
 ```
 
+`Desestruturação simples`
+
 ```rust
-let (letra, verdadeiro) : (char, bool) = ('d', true);
-let saida =  (letra, verdadeiro);
-println!("{:#?}", saida);
+let (letra, falso): (char, bool) = ('e', false);
+let saida =  (letra, falso);
+println!("{:?}", saida);
 ```
 
 ```rust
 let pessoa = ("Gregorio", 64, 1.82);
 let (nome, idade, altura) = pessoa;
-println!("{}\n{}\n{}", nome, idade, altura);
+println!("{}, {}, {}", nome, idade, altura);
 ```

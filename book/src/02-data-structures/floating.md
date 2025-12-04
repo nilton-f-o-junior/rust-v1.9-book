@@ -1,12 +1,12 @@
-# f32 e f64: ponto flutuante (floating-point)
+# f32 e f64: ponto flutuante
 
-Números que possuem uma parte fracionária ou números reais.
+São tipos de dados que só podem armazenar números que possuem uma parte fracionária ou números reais, positivos, negativos ou zero.
 
 `f32`
 
 ```rust
-// f32 = -3.4e+38 to +3.4e+38
-let flutuante: f32 =  179.76;
+// f32 = -3.4e+38 a +3.4e+38
+let flutuante: f32 =  64.;
 println!("{}", flutuante);
 ```
 
@@ -14,6 +14,6 @@ println!("{}", flutuante);
 
 ```rust
 // f64 = -1.8e+308 to +1.8e+308
-let flutuante: f64 =  490.76;
+let flutuante: f64 =  128.;
 println!("{}", flutuante);
 ```
