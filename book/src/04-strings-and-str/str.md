@@ -1,6 +1,6 @@
 # &str
 
-Também conhecido como string slice ou fatia de string, representa uma referência imutável a uma sequência de texto UTF-8. É usado como string sem a necessidade de alocar memória no heap.
+Também conhecido como string *slice* ou fatia de string, representa uma referência imutável a uma sequência de texto UTF-8. É usado como string sem a necessidade de alocar memória no *heap*.
 
 `&str`
 

@@ -11,12 +11,12 @@
 
 ```rust
 fn main() {
-    let mut count_number: u8 = 0;
+    let mut contador: u8 = 0;
 
     loop {
-        count_number += 1;
-        println!("Count = {}", count_number);
-        if count_number >= 5 {
+        contador += 1;
+        println!("Contagem = {}", contador);
+        if contador >= 5 {
             break;
         }
     }
@@ -24,7 +24,7 @@ fn main() {
 ```
 </details>
 
-02 - Defina uma constante LIMIT com o valor 100. Use um loop para somar números a uma variável mutável sum começando de 1. Pare o loop quando o valor de sum exceder LIMIT e imprima o valor final de sum.
+02 - Defina uma constante LIMITE com o valor 100. Use um loop para somar números a uma variável mutável sum começando de 1. Pare o loop quando o valor de sum exceder LIMIT e imprima o valor final de sum.
 
 [Playground!]()
 
@@ -32,49 +32,25 @@ fn main() {
 <summary>Resposta</summary>
 
 ```rust
-const LIMIT: u8 = 100;
+const LIMITE: u8 = 100; 
 
 fn main() {
-    let mut start_sum: u8 = 1;
+    let mut soma_atual: u8 = 1; 
 
     loop {
-        println!("{}", start_sum);
+        println!("{}", soma_atual);
 
-        if start_sum >= LIMIT {
+        if soma_atual >= LIMITE {
             break;
         }
 
-        start_sum += start_sum;
+        soma_atual += soma_atual; 
     }
 }
 ```
 </details>
 
-03 - Escreva um loop que imprima repetidamente a mensagem "I'm stuck in a loop!" (Estou preso em um loop!). Use uma variável contadora e uma declaração if para interromper (break) o loop após a 3ª iteração.
-
-[Playground!]()
-
-<details>
-<summary>Resposta</summary>
-
-```rust
-fn main() {
-    let mut count_num: u8 = 0;
-
-    loop {
-        count_num += 1;
-
-        if count_num >= 4 {
-            break;
-        }
-
-        println!("I'm stuck in a loop!");
-    }
-}
-```
-</details>
-
-04 - Use um loop para iterar de 1 a 10. Dentro do loop, verifique se o número atual é par ou ímpar usando o operador de módulo (%). Imprima o resultado formatado, como "The number 3 is odd." (O número 3 é ímpar). O loop deve parar após o número 10.
+03 - Escreva um loop que imprima repetidamente a mensagem "Estou preso em um loop!". Use uma variável contadora e uma declaração if para interromper (*break*) o loop após a 3ª iteração.
 
 [Playground!]()
 
@@ -83,18 +59,42 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut count_number: u8 = 0;
+    let mut contador: u8 = 0;
 
     loop {
-        count_number += 1;
+        contador += 1; 
 
-        if count_number % 2 == 0 {
-            println!("The number {} is even.", count_number);
+        if contador >= 4 { 
+            break;
+        }
+
+        println!("Estou preso em um loop!"); 
+    }
+}
+```
+</details>
+
+04 - Use um loop para iterar de 1 a 10. Dentro do loop, verifique se o número atual é par ou ímpar usando o operador de módulo (%). Imprima o resultado formatado, como "O número 3 é ímpar." O loop deve parar após o número 10.
+
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
+
+```rust
+fn main() {
+    let mut contador: u8 = 0; 
+
+    loop {
+        contador += 1;
+
+        if contador % 2 == 0 { 
+            println!("O número {} é par.", contador);
         } else {
-            println!("The number {} is odd.", count_number);
+            println!("O número {} é ímpar.", contador);
         }
 
-        if count_number >= 10 {
+        if contador >= 10 { 
             break;
         }
     }
@@ -111,13 +111,13 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut count_number: f32 = 0.;
+    let mut contador: f32 = 0.0; 
 
     loop {
-        count_number += 0.5;
-        println!("{}", count_number);
+        contador += 0.5; 
+        println!("{}", contador);
 
-        if count_number >= 5. {
+        if contador >= 5.0 { 
             break;
         }
     }
@@ -147,104 +147,99 @@ Usando apenas loop, if/else/else if e rand (SystemTime, UNIX_EPOCH)
 use std::io;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-const DAMAGE: i8 = 10;
+const DANO: i8 = 10;
 
 fn main() {
-    //
-    let mut health_player: i8 = 100;
-    let mut health_monster: i8 = 100;
+    
+    let mut vida_jogador: i8 = 100; 
+    let mut vida_monstro: i8 = 100; 
 
-    let mut round = 0;
+    let mut rodada = 0; 
 
-    println!("--- Start Game ---");
-    println!("Player vs Monster");
+    println!("--- Início do Jogo ---");
+    println!("Jogador vs Monstro");
     println!("");
-
-    //
+    
     loop {
-        round += 1;
+        rodada += 1;
 
-        println!("---- Statistics ----");
+        println!("---- Estatísticas ----");
         println!(
-            "Player:\n HP: {}\n Damage: 10\n Defense: 10\n",
-            health_player
+            "Jogador:\n HP: {}\n Dano: 10\n Defesa: 10\n",
+            vida_jogador 
         );
         println!(
-            "Monster:\n HP: {}\n Damage: 10\n Defense: 10\n",
-            health_monster
+            "Monstro:\n HP: {}\n Dano: 10\n Defesa: 10\n",
+            vida_monstro 
         );
 
-        println!("--- Player ---");
-        println!("[1] Attack!\n[2] Defense\n");
+        println!("--- Jogador ---");
+        println!("[1] Atacar!\n[2] Defender\n");
 
-        // player 1
-        let mut input_select_player: String = String::new();
+        let mut entrada_selecao_jogador: String = String::new(); 
         io::stdin()
-            .read_line(&mut input_select_player)
-            .expect("Error entered data!");
-        let select_player: i8 = input_select_player
+            .read_line(&mut entrada_selecao_jogador)
+            .expect("Erro ao inserir dados!"); 
+        let selecao_jogador: i8 = entrada_selecao_jogador 
             .trim()
             .parse()
-            .expect("Error converting data!");
-
-        // monster
-        let input_select_monster = SystemTime::now()
+            .expect("Erro ao converter dados!"); 
+        
+        let entrada_selecao_monstro = SystemTime::now() 
             .duration_since(UNIX_EPOCH)
-            .expect("Error time!")
+            .expect("Erro de tempo!") 
             .as_nanos();
+        
+        let selecao_monstro = (entrada_selecao_monstro % 2 + 1) as i8; 
 
-        // random
-        let select_monster = (input_select_monster % 2 + 1) as i8;
-
-        if select_player == 1 && select_monster == 1 {
-            health_player = health_player - (DAMAGE * 2);
-            health_monster = health_monster - (DAMAGE * 2);
-            println!("---- Round {} ----", round);
-            println!("Player: Attack\nMonster: Attack\n");
-            println!("*** SUPER DAMAGE! ***\n");
-        } else if select_player == 1 && select_monster == 2 {
-            health_player = health_player - (DAMAGE / 2);
-            println!("---- Round {} ----", round);
-            println!("Player: Attack\nMonster: Defend\n");
-            println!("*** PLAYER BLOCK! ***\n");
-        } else if select_player == 2 && select_monster == 1 {
-            health_monster = health_monster - (DAMAGE / 2);
-            println!("---- Round {} ----", round);
-            println!("Player: Defend\nMonster: Attack\n");
-            println!("*** MONSTER BLOCK! ***\n");
-        } else if select_player == 2 && select_monster == 2 {
-            health_player = health_player - (DAMAGE * 2);
-            health_monster = health_monster - (DAMAGE * 2);
-            println!("---- Round {} ----", round);
-            println!("Player: Defend\nMonster: Defend\n");
-            println!("*** SUPER BLOCK! ***\n");
+        if selecao_jogador == 1 && selecao_monstro == 1 {
+            vida_jogador = vida_jogador - (DANO * 2);
+            vida_monstro = vida_monstro - (DANO * 2);
+            println!("---- Rodada {} ----", rodada);
+            println!("Jogador: Atacar\nMonstro: Atacar\n");
+            println!("*** DANO DUPLO! ***\n"); 
+        } else if selecao_jogador == 1 && selecao_monstro == 2 {
+            vida_jogador = vida_jogador - (DANO / 2);
+            println!("---- Rodada {} ----", rodada);
+            println!("Jogador: Atacar\nMonstro: Defender\n");
+            println!("*** JOGADOR BLOQUEADO! ***\n"); 
+        } else if selecao_jogador == 2 && selecao_monstro == 1 {
+            vida_monstro = vida_monstro - (DANO / 2);
+            println!("---- Rodada {} ----", rodada);
+            println!("Jogador: Defender\nMonstro: Atacar\n");
+            println!("*** MONSTRO BLOQUEADO! ***\n"); 
+        } else if selecao_jogador == 2 && selecao_monstro == 2 {
+            vida_jogador = vida_jogador - (DANO * 2);
+            vida_monstro = vida_monstro - (DANO * 2);
+            println!("---- Rodada {} ----", rodada);
+            println!("Jogador: Defender\nMonstro: Defender\n");
+            println!("*** BLOQUEIO DUPLO! ***\n");
         }
 
-        //
-        if health_player <= 0 {
-            println!("---- Statistics ----");
+        if vida_jogador <= 0 {
+            println!("---- Estatísticas Finais ----");
             println!(
-                "Player:\n HP: {}\n Damage: 10\n Defense: 10\n",
-                health_player
+                "Jogador:\n HP: {}\n Dano: 10\n Defesa: 10\n",
+                vida_jogador
             );
             println!(
-                "Monster:\n HP: {}\n Damage: 10\n Defense: 10\n",
-                health_monster
+                "Monstro:\n HP: {}\n Dano: 10\n Defesa: 10\n",
+                vida_monstro
             );
-            println!("--- Player ---\n*** YOU LOSE! ***");
+            println!("--- Jogador ---\n*** VOCÊ PERDEU! ***");
             break;
         }
-        if health_monster <= 0 {
-            println!("---- Statistics ----");
+        if vida_monstro <= 0 {
+            println!("---- Estatísticas Finais ----");
             println!(
-                "Player:\n HP: {}\n Damage: 10\n Defense: 10\n",
-                health_player
+                "Jogador:\n HP: {}\n Dano: 10\n Defesa: 10\n",
+                vida_jogador
             );
             println!(
-                "Monster:\n HP: {}\n Damage: 10\n Defense: 10\n",
-                health_monster
+                "Monstro:\n HP: {}\n Dano: 10\n Defesa: 10\n",
+                vida_monstro
             );
-            println!("--- Player ---\n*** YOU WIN! ***");
+            println!("--- Jogador ---\n*** VOCÊ VENCEU! ***"); 
             break;
         }
     }
@@ -267,23 +262,26 @@ fn main() {
 
 ```rust
 fn main() {
-    println!("Count 1 .. 100!");
-    let mut count_number: u8 = 0;
+    println!("Contando de 1 .. 100!");
+    let mut contador: u8 = 0;
 
     loop {
-        count_number += 1;
+        contador += 1;
 
-        if count_number % 3 == 0 && count_number % 5 == 0 {
+        if contador % 3 == 0 && contador % 5 == 0 {
             println!("FizzBuzz");
-        } else if count_number % 3 == 0 {
+
+        } else if contador % 3 == 0 {
             println!("Fizz");
-        } else if count_number % 5 == 0 {
+
+        } else if contador % 5 == 0 {
             println!("Buzz");
+
         } else {
-            println!("{}", count_number);
+            println!("{}", contador);
         }
 
-        if count_number > 100 {
+        if contador > 100 {
             break;
         }
     }
@@ -291,7 +289,7 @@ fn main() {
 ```
 </details>
 
-08 - Comece com capital = 1000.0 e goal = 2000.0 (meta). A cada "ano" (iteração do loop), o capital aumenta em 7% (capital *= 1.07;). O loop deve contar quantos anos leva para o capital atingir ou exceder a meta. Quando a meta for atingida, o loop deve parar, retornando o número de anos. Imprima o resultado.
+08 - Comece com capital = 1000.0 e a meta = 2000.0. A cada ano (iteração do loop), o capital aumenta em 7% (capital *= 1.07;). O loop deve contar quantos anos leva para o capital atingir ou exceder a meta. Quando a meta for atingida, o loop deve parar, retornando o número de anos. Imprima o resultado.
 
 [Playground!]()
 
@@ -299,18 +297,18 @@ fn main() {
 <summary>Resposta</summary>
 
 ```rust
-fn main() {
-    let mut cap: f32 = 1000.;
-    let mut year: u8 = 0;
+fn main() {  
+    let mut capital: f32 = 1000.0; 
+    let mut ano: u8 = 0; 
 
     loop {
-        cap *= 1.07;
-        year += 1;
-        println!("Cap = {} and Year = {}", cap, year);
+        capital *= 1.07; 
+        ano += 1;
+        println!("Capital = {} e Ano = {}", capital, ano); 
 
-        if cap >= 2000. {
-            println!("Cap. = {}", cap);
-            println!("Year = {}", year);
+        if capital >= 2000.0 {
+            println!("Capital final = {}", capital);
+            println!("Anos necessários = {}", ano);
             break;
         }
     }
@@ -327,16 +325,16 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut input_char: char = 'a';
-    println!("-- Start --");
+    let mut caractere_atual: char = 'a'; 
+    println!("-- Início --"); 
 
     loop {
-        println!("Char: {}", input_char);
-        let char_init = input_char as u8;
-        let char_next = char_init + 1;
-        input_char = char_next as char;
+        println!("Caractere: {}", caractere_atual); 
+        let valor_inicial_char = caractere_atual as u8; 
+        let proximo_valor_char = valor_inicial_char + 1;      
+        caractere_atual = proximo_valor_char as char; 
 
-        if input_char > 'f' {
+        if caractere_atual > 'f' {
             break;
         }
     }
@@ -353,15 +351,15 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut data: (u8, bool) = (0, false);
+    let mut estado: (u8, bool) = (0, false); 
 
     loop {
-        println!("{:?}", data);
-        data.0 += 1;
+        println!("{:?}", estado);
+        estado.0 += 1; 
 
-        if data.0 > 5 {
-            data.1 = true;
-            println!("{:?}", data);
+        if estado.0 > 5 {
+            estado.1 = true; 
+            println!("{:?}", estado);
             break;
         }
     }
@@ -380,39 +378,39 @@ fn main() {
 use std::io;
 
 fn main() {
-    let mut person: (String, u8, f32) = ("Person".to_string(), 0, 0.);
-    println!("{:#?}", person);
+    let mut pessoa: (String, u8, f32) = ("Pessoa".to_string(), 0, 0.0);
+    println!("{:#?}", pessoa);
 
-    let mut amount: u8 = 0;
+    let mut quantidade: u8 = 0; 
 
     loop {
-        println!("Whats your name?");
-        let mut input_person: String = String::new();
+        println!("Qual é o seu nome?"); 
+        let mut entrada_nome: String = String::new(); 
         io::stdin()
-            .read_line(&mut input_person)
-            .expect("Error entered data!");
-        let name: String = input_person.trim().to_string();
+            .read_line(&mut entrada_nome)
+            .expect("Erro ao inserir dados!"); 
+        let nome: String = entrada_nome.trim().to_string(); 
 
-        println!("Whats your age?");
-        let mut input_age: String = String::new();
+        println!("Qual é a sua idade?"); 
+        let mut entrada_idade: String = String::new(); 
         io::stdin()
-            .read_line(&mut input_age)
-            .expect("Error entered data!");
-        let age: u8 = input_age.trim().parse().expect("Error convert data!");
+            .read_line(&mut entrada_idade)
+            .expect("Erro ao inserir dados!");
+        let idade: u8 = entrada_idade.trim().parse().expect("Erro ao converter dados!"); 
 
-        println!("Whats your height?");
-        let mut input_height: String = String::new();
+        println!("Qual é a sua altura?"); 
+        let mut entrada_altura: String = String::new(); 
         io::stdin()
-            .read_line(&mut input_height)
-            .expect("Error entered data!");
-        let height: f32 = input_height.trim().parse().expect("Error convert data!");
+            .read_line(&mut entrada_altura)
+            .expect("Erro ao inserir dados!");
+        let altura: f32 = entrada_altura.trim().parse().expect("Erro ao converter dados!"); 
 
-        amount += 1;
+        quantidade += 1;
 
-        person = (name, age, height);
-        println!("{:#?}", person);
+        pessoa = (nome, idade, altura);
+        println!("{:#?}", pessoa);
 
-        if amount >= 3 {
+        if quantidade >= 3 { 
             break;
         }
     }
@@ -429,16 +427,17 @@ fn main() {
 
 ```rust
 fn main() {
-    let init_array: [u8; 5] = [10, 20, 30, 40, 50];
-    let mut i = 0;
+
+    let array_inicial: [u8; 5] = [10, 20, 30, 40, 50];   
+    let mut indice = 0; 
 
     loop {
-        if i >= init_array.len() {
+        if indice >= array_inicial.len() {
             break;
         }
 
-        println!("{}", init_array[i]);
-        i += 1;
+        println!("{}", array_inicial[indice]);
+        indice += 1;
     }
 }
 ```
@@ -453,17 +452,19 @@ fn main() {
 
 ```rust
 fn main() {
-    let init_array: [u8; 5] = [1, 2, 3, 4, 5];
-    let mut i = init_array.len() - 1;
+
+    let array_inicial: [u8; 5] = [1, 2, 3, 4, 5];
+    
+    let mut indice = array_inicial.len() - 1; 
 
     loop {
-        if i <= 0 {
-            println!("{}", init_array[i]);
+        if indice <= 0 {
+            println!("{}", array_inicial[indice]);
             break;
         }
 
-        println!("{}", init_array[i]);
-        i -= 1;
+        println!("{}", array_inicial[indice]); 
+        indice -= 1;
     }
 }
 ```
@@ -478,56 +479,56 @@ fn main() {
 
 ```rust
 fn main() {
-    let init_array_int: [u8; 2] = [1, 2];
-    let init_array_float: [f32; 3] = [2.5, 7.3, 9.2];
-    let init_array_char: [char; 4] = ['A', 'B', 'C', 'D'];
-    let init_array_str: [&str; 5] = ["Ana", "Bruno", "Carla", "Daniel", "Elza"];
+    let array_int_inicial: [u8; 2] = [1, 2];
+    let array_float_inicial: [f32; 3] = [2.5, 7.3, 9.2];
+    let array_char_inicial: [char; 4] = ['A', 'B', 'C', 'D'];
+    let array_str_inicial: [&str; 5] = ["Ana", "Bruno", "Carla", "Daniel", "Elza"];
 
-    let mut i = 0;
-    
+    let mut indice = 0;
+
     loop {
-        if i >= init_array_int.len() {
+        if indice >= array_int_inicial.len() {
             break;
         }
 
-        println!("{}", init_array_int[i]);
-        i += 1;
+        println!("{}", array_int_inicial[indice]);
+        indice += 1;
     }
     println!("");
 
-    i = 0;
+    indice = 0;
+   
     loop {
-        //
-        if i >= init_array_float.len() {
+        if indice >= array_float_inicial.len() {
             break;
         }
 
-        println!("{}", init_array_float[i]);
-        i += 1;
+        println!("{}", array_float_inicial[indice]);
+        indice += 1;
     }
     println!("");
 
-    i = 0;
+    indice = 0;
+   
     loop {
-        //
-        if i >= init_array_char.len() {
+        if indice >= array_char_inicial.len() {
             break;
         }
 
-        println!("{}", init_array_char[i]);
-        i += 1;
+        println!("{}", array_char_inicial[indice]);
+        indice += 1;
     }
     println!("");
 
-    i = 0;
+    indice = 0;
+  
     loop {
-        //
-        if i >= init_array_str.len() {
+        if indice >= array_str_inicial.len() {
             break;
         }
 
-        println!("{}", init_array_str[i]);
-        i += 1;
+        println!("{}", array_str_inicial[indice]);
+        indice += 1;
     }
 }
 ```
@@ -542,21 +543,20 @@ fn main() {
 
 ```rust
 fn main() {
-    let init_array: [u8; 4] = [1, 2, 4, 5];
+    let array_inicial: [u8; 4] = [1, 2, 4, 5]; 
+    let mut indice = 0;
+    let mut soma = 0;
 
-    let mut i = 0;
-    let mut sum = 0;
-
-    loop {
-        if i >= init_array.len() {
+    loop { 
+        if indice >= array_inicial.len() {
             break;
         }
 
-        println!("Values = {:?}", init_array[i]);
-        sum = sum + init_array[i];
-        i += 1;
-    }
-    println!("Sum = {}", sum);
+        println!("Valor = {:?}", array_inicial[indice]);
+        soma = soma + array_inicial[indice];
+        indice += 1;
+    }      
+    println!("Soma = {}", soma);
 }
 ```
 </details>
@@ -569,20 +569,18 @@ fn main() {
 <summary>Resposta</summary>
 
 ```rust
- fn main() {
-    let mut init_array: [i32; 5] = [0; 5];
-    let mut i = 0;
+fn main() {
+    let mut array_preencher: [i32; 5] = [0; 5];
+    let mut indice = 0;
 
     loop {
-        if i >= init_array.len() {
+        if indice >= array_preencher.len() {
             break;
         }
-
-        init_array[i] = (i as i32 + 1) * 10;
-        i += 1;
+        array_preencher[indice] = (indice as i32 + 1) * 10;
+        indice += 1;
     }
-
-    println!("Array = {:?}", init_array);
+    println!("Array = {:?}", array_preencher);
 }
 ```
 </details>
@@ -596,21 +594,20 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut count: u8 = 1;
-    let mut factorial: u8 = 1;
+    let mut contador: u8 = 1; 
+    let mut fatorial: u8 = 1; 
 
     loop {
-        println!("Facto = {}", factorial);
+        println!("Fatorial Parcial = {}", fatorial); 
 
-        factorial *= count;
-        count += 1;
+        fatorial *= contador;
+        contador += 1;
 
-        if count > 5 {
+        if contador > 5 { 
             break;
         }
     }
-
-    println!("Factorial = {}", factorial);
+    println!("Resultado do Fatorial = {}", fatorial);
 }
 ```
 </details>
@@ -624,17 +621,16 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut number: f32 = 123.;
+    let mut numero: f32 = 123.0; 
 
     loop {
-        let division = number / 2.;
-        let remainder = number % 2.;
+        let divisao = numero / 2.0; 
+        let resto = numero % 2.0;
 
-        number = division;
+        numero = divisao; 
+        println!("123 / 2 = {:.2}\n123 % 2 = {:.2}\n", divisao, resto);
 
-        println!("123 / 2 = {:.2}\n123 % 2 = {:.2}\n", division, remainder);
-
-        if number < 1. {
+        if numero < 1.0 { 
             break;
         }
     }
@@ -651,14 +647,23 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut count: u8 = 0;
+    let mut contador: u8 = 0; 
 
     loop {
-        println!("Count = {} | 5 + count * 2 = {}", count, 5 + count * 2);
-        println!("Count = {} | (5 + count) * 2 = {}", count, (5 + count) * 2);
+        println!(
+            "Contador = {} | 5 + contador * 2 = {}", 
+            contador, 
+            5 + contador * 2
+        );
+        
+        println!(
+            "Contador = {} | (5 + contador) * 2 = {}", 
+            contador, 
+            (5 + contador) * 2
+        );
 
-        count += 1;
-        if count > 5 {
+        contador += 1;        
+        if contador > 5 {
             break;
         }
     }
@@ -666,7 +671,7 @@ fn main() {
 ```
 </details>
 
-20 - Defina uma constante SECRET_NUMBER: u8 = 42;. Crie um loop que simule tentativas de adivinhação. Uma variável de tentativa deve ser incrementada em cada iteração. Use if/else if/else para imprimir "Too low" (Muito baixo), "Too high" (Muito alto) ou "You got it!" (Você acertou!) quando a tentativa for igual ao SECRET_NUMBER. Pare o loop (break) quando você adivinhar corretamente.
+20 - Defina uma constante NUMERO_SECRETO: u8 = 42;. Crie um loop que simule tentativas de adivinhação. Uma variável de tentativa deve ser incrementada em cada iteração. Use if/else if/else para imprimir "Muito Baixo", "Muito Alto" ou "Você acertou!" quando a tentativa for igual ao NUMERO_SECRETO. Pare o loop (break) quando você adivinhar corretamente.
 
 [Playground!]()
 
@@ -676,41 +681,46 @@ fn main() {
 ```rust
 use std::io;
 
-const SECRET_NUMBER: u8 = 42;
+const NUMERO_SECRETO: u8 = 42;
 
 fn main() {
-    println!("------- Start -------");
-    println!("Player 1 VS Computer");
+    println!("------- Início -------");
+    println!("Jogador 1 VS Computador");
     println!("");
     println!("---------------------");
-    println!("You have 3 attempts!");
+    println!("Você tem 3 tentativas!");
 
-    let mut attempts: u8 = 0;
+    let mut tentativas: u8 = 0;
 
     loop {
-        println!("\nEnter a number:");
-        let mut input_number: String = String::new();
+        println!("\nInsira um número:");
+        
+        let mut entrada_numero: String = String::new();
         io::stdin()
-            .read_line(&mut input_number)
-            .expect("Error entered data!");
-        let player_number: u8 = input_number.trim().parse().expect("Error converting data!");
+            .read_line(&mut entrada_numero)
+            .expect("Erro ao inserir dados!");
+            
+        let numero_jogador: u8 = entrada_numero 
+            .trim()
+            .parse()
+            .expect("Erro ao converter dados!");
 
-        if player_number > SECRET_NUMBER {
-            println!("Too High!");
-        } else if player_number < SECRET_NUMBER {
-            println!("Too Low!");
+        if numero_jogador > NUMERO_SECRETO {
+            println!("Muito Alto!"); 
+        } else if numero_jogador < NUMERO_SECRETO {
+            println!("Muito Baixo!"); 
         } else {
-            println!("\nYou Win!");
+            println!("\nVocê Venceu!"); 
             break;
         }
 
-        attempts += 1;
-        if attempts == 1 {
-            println!("You have 2 attempts remaining!");
-        } else if attempts == 2 {
-            println!("You have 1 attempt remaining!");
-        } else if attempts == 3 {
-            println!("YOU LOSE!");
+        tentativas += 1;
+        if tentativas == 1 {
+            println!("Você tem 2 tentativas restantes!"); 
+        } else if tentativas == 2 {
+            println!("Você tem 1 tentativa restante!");
+        } else if tentativas == 3 {
+            println!("VOCÊ PERDEU!");
             break;
         }
     }
@@ -718,7 +728,7 @@ fn main() {
 ```
 </details>
 
-21 - Faça uma contagem regressiva de 10 a 1. Use um loop e a macro format! para imprimir mensagens como "Countdown: 10", "Countdown: 9", etc. Quando o contador chegar a 0, imprima "Launch!" e pare o loop.
+21 - Faça uma contagem regressiva de 10 a 1. Use um loop e a macro format! para imprimir mensagens como:"Contagem Regressiva: 10", "Contagem Regressiva: 9", etc. Quando o contador chegar a 0, imprima "Lançamento!" e pare o loop.
 
 [Playground!]()
 
@@ -727,15 +737,14 @@ fn main() {
 
 ```rust
 fn main() {
-    println!("-- Start --");
-    let mut init_count: i8 = 10;
+    println!("-- Início --");
+    let mut contador: i8 = 10; 
 
     loop {
-        println!("Countdown: {}", init_count);
-
-        init_count -= 1;
-        if init_count < 1 {
-            println!("Lauch!");
+        println!("Contagem Regressiva: {}", contador);
+        contador -= 1; 
+        if contador < 1 { 
+            println!("Lançamento!");
             break;
         }
     }
@@ -752,22 +761,22 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut init_array: [i8; 10] = [0; 10];
-    let mut i = 0;
+    let mut array_preencher: [i8; 10] = [0; 10];   
+    let mut indice = 0; 
 
     loop {
-        if i >= init_array.len() {
+        if indice >= array_preencher.len() {
             break;
         }
 
-        if i % 2 == 0 {
-            init_array[i] = i as i8;
+        if indice % 2 == 0 {
+            array_preencher[indice] = indice as i8;
         } else {
-            init_array[i] = i as i8 * 2;
+            array_preencher[indice] = indice as i8 * 2;
         }
 
-        println!("Array = {:?}", init_array);
-        i += 1;
+        println!("Array = {:?}", array_preencher);
+        indice += 1;
     }
 }
 ```

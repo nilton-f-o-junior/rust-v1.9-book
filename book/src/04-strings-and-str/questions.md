@@ -395,22 +395,6 @@ fn main() {
     let mut input_word: String = String::new();
     io::stdin().read_line(&mut input_word).err();
 
-    let mut first_letter: char = ' ';
-    for i in input_word.trim_start().chars() {
-        first_letter = i;
-        break;
-    }
-    println!("Primeira letra = {}", first_letter);
-}
-```
-
-```rust
-use std::io;
-
-fn main() {
-    let mut input_word: String = String::new();
-    io::stdin().read_line(&mut input_word).err();
-
     let first_letter: char = input_word.trim_start().chars().next().unwrap_or(' ');
     println!("Primeira letra = {}", first_letter);
 }
@@ -435,25 +419,6 @@ fn main() {
     let word = input_word.trim().replace(" ", "");
     println!("{}", word);
     println!("{:?}", word.len());
-}
-```
-
-```rust
-use std::io;
-
-fn main() {
-    println!("Entre com uma palavra:");
-    let mut input_word: String = String::new();
-    io::stdin().read_line(&mut input_word).err();
-
-    let word = input_word.trim();
-    let mut count: u8 = 0;
-
-    for _i in word.chars() {
-        count += 1;
-    }
-
-    println!("{}", count);
 }
 ```
 </details>
@@ -498,30 +463,6 @@ fn main() {
 
     let mut character: String = input_character.trim_end().to_string();
     character.pop();
-    println!("{}", character);
-}
-```
-
-```rust
-use std::io;
-
-fn main() {
-    println!("Entre com texto:");
-    let mut input_character: String = String::new();
-    io::stdin()
-        .read_line(&mut input_character)
-        .expect("Erro de entrada de dados!");
-
-    let mut count = 0;
-    let mut character: String = String::new();
-
-    for i in input_character.trim_end().chars() {
-        count += 1;
-
-        if count < input_character.len() - 1 {
-            character.push(i);
-        }
-    }
     println!("{}", character);
 }
 ```

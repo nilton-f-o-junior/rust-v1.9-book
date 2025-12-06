@@ -58,20 +58,20 @@ println!("{:?}", text);
 
 ```rust
 // remove caracteres em uma posição especifica
-// 1 2 3 4 5 6 7 8 9 10 11 12
+// 0 1 2 3 4 5 6 7 8 9 10 11
 // H e l l o ,   w o r  d  !
 let mut text: String = String::from("Hello, word!");
 let _text_letter = text.remove(11);
 let _text_letter = text.remove(10);
 let _text_letter = text.remove(9);
-println!("{}", text);c
+println!("{}", text);
 ```
 
 `len()`
 
 ```rust
 // retorna o comprimento da string em bytes
-// 1 2 3 4 5 6 7 8 9 10 11 12
+// 0 1 2 3 4 5 6 7 8 9 10 11
 // H e l l o ,   w o r  d  !
 let text: String = String::from("Hello, word!");
 let number = text.len();
@@ -91,7 +91,7 @@ println!("{}", text);
 
 ```rust
 // corta a string em um índice específico
-// 1 2 3 4 5 6 7 8 9 10 11 12 
+// 0 1 2 3 4 5 6 7 8 9 10 11
 // H e l l o ,   w o r  d  !
 let mut text: String = String::from("Hello, word");
 text.truncate(5);

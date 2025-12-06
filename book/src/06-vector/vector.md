@@ -1,54 +1,54 @@
-# Vector
+# Vetor
 
-A vector in Rust is a dynamic, homogeneous collection that can be initialized empty and allows values to be added, modified, or removed at runtime.
+Um vetor em Rust é uma coleção dinâmica e homogênea que pode ser inicializada vazia e permite que valores sejam adicionados, modificados ou removidos em tempo de execução.
 
-`vector =`
+`vec![]`
 
 ```rust
-let vector_str = vec!["a", "b", "c"];
-println!("Vector = {:#?}", vector_str);
+let vetor_str = vec!["a", "b", "c"];
+println!("Vetor = {:#?}", vetor_str);
 ```
 
 `Vec<type>`
 
 ```rust
-let vector_u8: Vec<u8> = vec![1, 2, 3];
-println!("Vector = {:#?}", vector_u8);
+let vetor_u8: Vec<u8> = vec![1, 2, 3];
+println!("Vetor = {:#?}", vetor_u8);
 ```
 
 `Vec::new()`
 
 ```rust
-let mut vector_i16: Vec<i16> = Vec::new();
-vector_i16.push(10);
-println!("Vector = {:#?}", vector_i16);
+let mut vetor_i16: Vec<i16> = Vec::new();
+vetor_i16.push(10);
+println!("Vetor = {:#?}", vetor_i16);
 ```
 
 `Vec<_>`
 
 ```rust
-let vector_no_type: Vec<_> = vec!["A", "B", "C"];
-println!("Vector = {:#?}", vector_no_type);
+let vetor_sem_tipo: Vec<_> = vec!["A", "B", "C"];
+println!("Vetor = {:#?}", vetor_sem_tipo);
 ```
 
-`vec![value; quantity]`
+`vec![valor; quantidade]`
 
 ```rust
-let vector_default = vec![0; 6];
-println!("Vector = {:#?}", vector_default);
+let vetor_padrao = vec![0; 6];
+println!("Vetor = {:#?}", vetor_padrao);
 ```
 
 `vector = array`
 
 ```rust
-let vector_array = [10, 20, 30];
-let vector = Vec::from(vector_array);
-println!("Vector = {:#?}", vector);
+let vetor_array = [10, 20, 30];
+let vetor = Vec::from(vetor_array);
+println!("Vetor = {:#?}", vetor);
 ```
 
 `vector = tuple`
 
 ```rust
-let vector_tuple: Vec<(f32, &str)> = vec![(2., "Vector 1"), (7., "Vector 2")];
-println!("{:#?}", vector_tuple);
+let vetor_tupla: Vec<(f32, &str)> = vec![(2., "Vetor 1"), (7., "Vetor 2")];
+println!("{:#?}", vetor_tupla);
 ```

@@ -1,5 +1,7 @@
 # Questions - While
 
+---
+
 01 - Escreva um programa em Rust que use um loop while para imprimir os números de 1 a 5, um por linha.
 
 [Playground!]()
@@ -9,11 +11,11 @@
 
 ```rust
 fn main() {
-    let mut count: u8 = 0;
+    let mut contador: u8 = 0;
 
-    while count <= 5 {
-        println!("Count = {}", count);
-        count += 1;
+    while contador <= 5 { 
+        println!("Contador = {}", contador);
+        contador += 1;
     }
 }
 ```
@@ -28,14 +30,14 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut count: u8 = 10;
+    let mut contador: u8 = 10; 
 
-    while count >= 1 {
-        println!("{}", count);
-        count -= 1;
+    while contador >= 1 { 
+        println!("{}", contador);
+        contador -= 1;
 
-        if count < 1 {
-            println!("Lauch!");
+        if contador < 1 { 
+            println!("Lançamento!");
         }
     }
 }
@@ -51,14 +53,15 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut sum: u16 = 0;
-    let mut count: u8 = 1;
-
-    while count <= 100 {
-        sum += count as u16;
-        count += 1;
+    let mut soma: u16 = 0;    
+    let mut contador: u8 = 1;
+    
+    while contador <= 100 { 
+        soma += contador as u16; 
+        contador += 1; 
     }
-    println!("Sum = {}", sum);
+    
+    println!("Soma = {}", soma);
 }
 ```
 </details>
@@ -72,14 +75,14 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut count: u8 = 0;
+    let mut contador: u8 = 0;
 
-    while count >= 0 {
-        count += 1;
-        println!("Count = {}", count);
+    while contador >= 0 { 
+        contador += 1; 
+        println!("Contador = {}", contador);
 
-        if count >= 7 {
-            break;
+        if contador >= 7 {
+            break; 
         }
     }
 }
@@ -97,24 +100,25 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Enter number:");
-    let mut input_number: String = String::new();
+    println!("Insira um número:");
+    
+    let mut entrada_numero: String = String::new(); 
     io::stdin()
-        .read_line(&mut input_number)
-        .expect("Data entry error!");
+        .read_line(&mut entrada_numero)
+        .expect("Erro de entrada de dados!"); 
 
-    let mut number: u16 = input_number.trim().parse().expect("Converting error data!");
+    let mut numero: u16 = entrada_numero.trim().parse().expect("Erro na conversão de dados!"); 
 
-    if number <= 0 {
-        println!("{}", false);
-    } else if number == 1 {
-        println!("{}", true);
+    if numero <= 0 { 
+        println!("{}", false); 
+    } else if numero == 1 {
+        println!("{}", true); 
     } else {
-        while number % 2 == 0 {
-            number /= 2;
+        while numero % 2 == 0 {
+            numero /= 2;
         }
 
-        if number == 1 {
+        if numero == 1 {
             println!("{}", true);
         } else {
             println!("{}", false);
@@ -133,16 +137,16 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut count: u8 = 0;
-
-    while count <= 10 {
-        if count % 2 != 0 {
-            count += 1;
+    let mut contador: u8 = 0; 
+    while contador <= 10 { 
+        
+        if contador % 2 != 0 {
+            contador += 1; 
             continue;
         }
 
-        println!("Number even: {}", count);
-        count += 1;
+        println!("Número par: {}", contador); 
+        contador += 1; 
     }
 }
 ```
@@ -159,24 +163,24 @@ fn main() {
 use std::io;
 
 fn main() {
-    let mut cond: u8 = 0;
-
-    while cond <= 10 {
-        println!("Enter number:");
-        let mut input_number: String = String::new();
+    let mut condicao: u8 = 0;  
+    while condicao <= 10 { 
+        println!("Insira um número:");        
+        let mut entrada_numero: String = String::new();         
         io::stdin()
-            .read_line(&mut input_number)
-            .expect("Data entry error!");
-        let number: u8 = input_number.trim().parse().expect("Erro converting data!");
+            .read_line(&mut entrada_numero)
+            .expect("Erro de entrada de dados!"); 
+            
+        let numero: u8 = entrada_numero.trim().parse().expect("Erro na conversão de dados!");
         println!("");
 
-        cond = number;
+        condicao = numero; 
 
-        if cond <= 10 {
-            println!("Number < 10");
-            println!("Try again!\n");
+        if condicao <= 10 {
+            println!("Número <= 10.");
+            println!("Tente novamente!\n");
         } else {
-            println!("Number > 10!");
+            println!("Número > 10!");
         }
     }
 }
@@ -194,27 +198,27 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Enter number:");
-    let mut input_number: String = String::new();
+    println!("Insira um número:");
+    let mut entrada_numero: String = String::new(); 
     io::stdin()
-        .read_line(&mut input_number)
-        .expect("Data entry error!!");
+        .read_line(&mut entrada_numero)
+        .expect("Erro de entrada de dados!!");
 
-    let number: u16 = input_number.trim().parse().expect("Error conveting data!");
+    let numero: u16 = entrada_numero.trim().parse().expect("Erro na conversão de dados!"); 
 
-    if number == 0 {
-        println!("Factorial: 0 = 1");
+    if numero == 0 {
+        println!("Fatorial: 0 = 1");
     } else {
 
-        let mut factorial: u16 = 1;
+        let mut fatorial: u16 = 1;
         let mut i: u16 = 1;
 
-        while i <= number {
-            factorial *= i;
+        while i <= numero {
+            fatorial *= i;
             i += 1;
         }
 
-        println!("Factorial: {} = {}", number, factorial);
+        println!("Fatorial: {} = {}", numero, fatorial);
     }
 }
 ```
@@ -231,28 +235,28 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Enter number:");
-    let mut input_number: String = String::new();
+    println!("Insira um número:");
+
+    let mut entrada_numero: String = String::new();
     io::stdin()
-        .read_line(&mut input_number)
-        .expect("Code entry error!");
+        .read_line(&mut entrada_numero)
+        .expect("Erro na entrada de dados!");
 
-    let mut number: u16 = input_number.trim().parse().expect("Error converting data!");
-    let save_number = number;
-    let mut reverse_count: u16 = 0;
+    let mut numero: u16 = entrada_numero.trim().parse().expect("Erro na conversão de dados!");
+    let numero_salvo = numero;
+    let mut numero_invertido: u16 = 0; 
 
-    if number == 0 {
-        reverse_count = number;
+    if numero == 0 {
+        numero_invertido = numero;
     } else {
-        while number > 0 {
-            let digit = number % 10;
-            reverse_count = (reverse_count * 10) + digit;
-            number /= 10;
+        while numero > 0 {
+            let digito = numero % 10; 
+             numero_invertido = (numero_invertido * 10) + digito; 
+             numero /= 10;
         }
     }
-
-    println!("Original number: {}", save_number);
-    println!("Reverse number: {}", reverse_count);
+    println!("Número original: {}", numero_salvo);
+    println!("Número invertido: {}", numero_invertido);
 }
 ```
 </details>
@@ -268,26 +272,25 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Enter number:");
-    let mut input_number: String = String::new();
+    println!("Insira um número:");     
+    let mut entrada_numero: String = String::new();
     io::stdin()
-        .read_line(&mut input_number)
-        .expect("Code entry error!");
+        .read_line(&mut entrada_numero)
+        .expect("Erro na entrada de dados!");
 
-    let mut number: u16 = input_number.trim().parse().expect("Error converting data!");
-    let save_number: u16 = number;
-    let mut count: u8 = 0;
+    let mut numero: u16 = entrada_numero.trim().parse().expect("Erro na conversão de dados!");
+    let numero_salvo: u16 = numero;
+    let mut contagem: u8 = 0;
 
-    if number == 0 {
-        count = 1;
+    if numero == 0 {
+        contagem = 1; 
     } else {
-        while number > 0 {
-            number /= 10;
-            count += 1;
+        while numero > 0 {
+            numero /= 10;
+            contagem += 1;
         }
     }
-
-    println!("Count numbers {} = {}", save_number, count);
+    println!("Contagem de dígitos de {} = {}", numero_salvo, contagem);
 }
 ```
 </details>
@@ -301,12 +304,11 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut count: u16 = 0;
-
-    while count <= 7 {
-        let number: u16 = count * count;
-        println!("Square: {} = {}", count, number);
-        count += 1;
+    let mut contador: u16 = 0;
+    while contador <= 7 { 
+        let quadrado: u16 = contador * contador;
+        println!("Quadrado: {} = {}", contador, quadrado);
+        contador += 1; 
     }
 }
 ```
@@ -321,11 +323,10 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut number: u8 = 64;
-
-    while number > 1 {
-        number /= 2;
-        println!("Result = {}", number);
+    let mut numero: u8 = 64; 
+    while numero > 1 { 
+        numero /= 2; 
+        println!("Resultado = {}", numero); 
     }
 }
 ```
@@ -340,17 +341,16 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut number: u8 = 51;
-
-    while number % 2 > 0 {
-        number += 1;
+    let mut numero: u8 = 51; 
+    while numero % 2 > 0 { 
+        numero += 1;
     }
-    println!("Result = {}", number);
+    println!("Resultado = {}", numero); 
 }
 ```
 </details>
 
-14 - Crie um número secreto (por exemplo, secret = 42). Peça ao usuário para adivinhar o número. Use um loop while para continuar o jogo até que o usuário adivinhe corretamente. Dê dicas ("muito alto", "muito baixo"). (Requer std::io para entrada do usuário).
+14 - Crie um número secreto (por exemplo, secreto = 42). Peça ao usuário para adivinhar o número. Use um loop while para continuar o jogo até que o usuário adivinhe corretamente. Dê dicas ("muito alto", "muito baixo"). (Requer std::io para entrada do usuário).
 
 [Playground!]()
 
@@ -361,28 +361,29 @@ fn main() {
 use std::io;
 
 fn main() {
-    let mut number: u8 = 0;
-    let sort_number: u8 = 42;
+    let mut numero: u8 = 0;
+    let numero_secreto: u8 = 42; 
 
-    while number != sort_number {
-        println!("Enter number:");
-        let mut input_number: String = String::new();
+    while numero != numero_secreto { 
+        println!("Insira um número:");
+        
+        let mut entrada_numero: String = String::new(); 
         io::stdin()
-            .read_line(&mut input_number)
-            .expect("Data entry error!");
+            .read_line(&mut entrada_numero)
+            .expect("Erro na entrada de dados!");
 
-        number = input_number
+        numero = entrada_numero
             .trim()
             .parse()
-            .expect("Converting error number!");
+            .expect("Erro na conversão do número!");
 
-        if number > sort_number {
-            println!("Too High!!!");
+        if numero > numero_secreto {
+            println!("Muito Alto!!!");
         } else {
-            println!("Too Low!!!");
+            println!("Muito Baixo!!!");
         }
     }
-    println!("YOU WIN!");
+    println!("VOCÊ VENCEU!");
 }
 ```
 </details>
@@ -398,23 +399,22 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Entry number:");
-    let mut input_number: String = String::new();
+    println!("Insira um número:");
+    let mut entrada_numero: String = String::new();
     io::stdin()
-        .read_line(&mut input_number)
-        .expect("Data entry error!");
+        .read_line(&mut entrada_numero)
+        .expect("Erro na entrada de dados!");
 
-    let number: u8 = input_number.trim().parse().expect("Error converting data!");
-    let mut count: u8 = 0;
-    let mut result: u8;
-
+    let numero_base: u8 = entrada_numero.trim().parse().expect("Erro na conversão de dados!");
+    let mut contador: u8 = 0;
+    let mut resultado: u8;
     println!();
 
-    while count < 5 {
-        count += 1;
-        result = count * number;
+    while contador < 5 { 
+        contador += 1;
+        resultado = contador * numero_base;
 
-        println!("{}", result);
+        println!("{}", resultado);
     }
 }
 ```
@@ -431,37 +431,37 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Enter number of rows: ");
-    let mut input_row: String = String::new();
+    println!("Insira o número de linhas:");    
+    let mut entrada_linha: String = String::new(); 
     io::stdin()
-        .read_line(&mut input_row)
-        .expect("Data entry error!");
+        .read_line(&mut entrada_linha)
+        .expect("Erro na entrada de dados!");
 
-    println!("Enter number of columns: ");
-    let mut input_column: String = String::new();
+    println!("Insira o número de colunas:"); 
+    let mut entrada_coluna: String = String::new(); 
     io::stdin()
-        .read_line(&mut input_column)
-        .expect("Data entry error!");
+        .read_line(&mut entrada_coluna)
+        .expect("Erro na entrada de dados!");
 
-    let number_row: u8 = input_row.trim().parse().expect("Error converting data!");
-    let number_column: u8 = input_column.trim().parse().expect("Error converting data!");
-    let symbol: String = String::from("*");
-
-    let mut row_count: u8 = 0;
-    while row_count < number_row {
-        let mut column_count: u8 = 0;
-        while column_count < number_column {
-            print!("{}", symbol);
-            column_count += 1;
+    let num_linhas: u8 = entrada_linha.trim().parse().expect("Erro na conversão de dados!"); 
+    let num_colunas: u8 = entrada_coluna.trim().parse().expect("Erro na conversão de dados!"); 
+    let simbolo: String = String::from("*");
+    let mut contador_linha: u8 = 0;
+    
+    while contador_linha < num_linhas {      
+        let mut contador_coluna: u8 = 0; 
+        while contador_coluna < num_colunas {
+            print!("{}", simbolo); 
+            contador_coluna += 1;
         }
-        println!();
-        row_count += 1;
+        println!(); 
+        contador_linha += 1;
     }
 }
 ```
 </details>
 
-17 - Escreva um programa em Rust que solicite ao usuário a inserção de um número inteiro positivo. Em seguida, encontre e exiba os primeiros cinco divisores desse número. Se menos de cinco divisores forem encontrados, o programa deve informar que 'This is first 5 multiple numbers were not found!' (Os primeiros 5 números múltiplos não foram encontrados!).
+17 - Escreva um programa em Rust que solicite ao usuário a inserção de um número inteiro positivo. Em seguida, encontre e exiba os primeiros cinco divisores desse número. Se menos de cinco divisores forem encontrados, o programa deve informar que "Os primeiros 5 números múltiplos não foram encontrados!".
 
 [Playground!]()
 
@@ -472,31 +472,30 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Entry number:");
-    let mut input_number: String = String::new();
+    println!("Insira um número:");
+    let mut entrada_numero: String = String::new();
     io::stdin()
-        .read_line(&mut input_number)
-        .expect("Data entry error!");
+        .read_line(&mut entrada_numero)
+        .expect("Erro na entrada de dados!");
 
-    let number: u8 = input_number.trim().parse().expect("Error converting data!");
-    let mut count: u8 = 0;
-    let mut count_division: u8 = 0;
+    let numero_base: u8 = entrada_numero.trim().parse().expect("Erro na conversão de dados!");
+    let mut candidato_divisor: u8 = 0;
+    let mut divisores_encontrados: u8 = 0;
 
-    while count_division < 5 {
-        count += 1;
+    while divisores_encontrados < 5 {
+        candidato_divisor += 1;
 
-        if count == 0 {
+        if candidato_divisor == 0 {
             continue;
         }
 
-        if number % count == 0 {
-            count_division += 1;
-
-            println!("{} % {} = 0", number, count);
+        if numero_base % candidato_divisor == 0 {
+            divisores_encontrados += 1;
+            println!("{} % {} = 0", numero_base, candidato_divisor);
         }
-
-        if count > number && count_division < 5 {
-            println!("This is first 5 multiple numbers were not found!");
+ 
+        if candidato_divisor > numero_base && divisores_encontrados < 5 {
+            println!("Os primeiros 5 múltiplos não foram encontrados!");
             break;
         }
     }

@@ -1,5 +1,7 @@
 # Questions - If and Else
 
+---
+
 > A repetição de código nas respostas é intencional. Quando chegarmos ao capítulo sobre "Funções e Módulos", retornaremos a essas perguntas para refatorá-las.
 
 01 - Escreva um programa que solicite ao usuário um número inteiro e determine se ele é par ou ímpar.
@@ -120,11 +122,11 @@ fn main() {
 
 04 - Crie um programa que receba 3 notas de um aluno (de 0 a 10) e, em seguida, calcule a média das notas e informe:
 
-|              |                |
+| Média        | Classificação  |
 |--------------|----------------|
 | >= 7         | aprovado       |
 | < 5          | reprovado      |
-| >= 5 and < 7 | em recuperação |
+| >= 5 e < 7   | em recuperação |
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=148985dff3c722784ea8c63ae30cf2b8)
 
@@ -312,13 +314,13 @@ fn main() {
 
 07 - Crie um programa que converta uma pontuação numérica (0 a 100) em uma nota literal, seguindo estas regras:
 
-|   |          |
-|---|----------|
-| A | 90 - 100 |
-| B | 80 - 89  |
-| C | 70 - 79  |
-| D | 60 - 69  |
-| F | 0 - 59   |
+| Conceito  | Notas    |
+|-----------|----------|
+| A         | 90 - 100 |
+| B         | 80 - 89  |
+| C         | 70 - 79  |
+| D         | 60 - 69  |
+| F         | 0 - 59   |
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=e63c1ea4601fc215e17d1d2b2cf85f20)
 
@@ -477,12 +479,12 @@ fn main() {
 
 10 - Escreva um programa que leia a idade de uma pessoa e a classifique nas seguintes categorias:
 
-|             |               |
-|-------------|---------------|
-| Criança     | 0 - 12 anos   |
-| Adolescente | 13 - 17 anos  |
-| Adulto      | 18 - 59 anos  |
-| Idoso       | + 60 anos     |
+| Classificação  | Idade         |
+|----------------|---------------|
+| Criança        | 0 - 12 anos   |
+| Adolescente    | 13 - 17 anos  |
+| Adulto         | 18 - 59 anos  |
+| Idoso          | + 60 anos     |
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=fca9f43bb0eff0f8f98445fcb2bb80a9)
 
@@ -664,7 +666,7 @@ fn main() {
 
 13 - Escreva um programa que calcule o IMC (Índice de Massa Corporal) de uma pessoa (peso / altura²) e classifique o resultado:
 
-|                |               |
+| IMC            | Classificação |
 |----------------|---------------|
 | Abaixo de 18.5 | Abaixo do peso|
 | 18.5 - 24.9    | Peso normal   |
@@ -853,7 +855,7 @@ fn main() {
             println!("Jogador 1: {} e Computador: {}", player1, computer);
             println!("Jogador 1: Você Perdeu!");
         }
-    } else { // player1 == "Tesoura"
+    } else { 
         if computer == "Pedra" {
             println!("Jogador 1: {} e Computador: {}", player1, computer);
             println!("Jogador 1: Você Perdeu!");

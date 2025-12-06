@@ -1,54 +1,59 @@
-# Methods
+# Métodos - Parte 3
 
-`len() and capacity()`
-
-```rust
-let mut vector_methods: Vec<u8> = Vec::with_capacity(10);
-
-println!(
-    "len = {:?} \ncapacity = {:?}",
-    vector_methods.len(),
-    vector_methods.capacity()
-);
-
-vector_methods.push(1);
-vector_methods.push(2);
-
-println!(
-    "\nlen = {:?} \ncapacity = {:?}",
-    vector_methods.len(),
-    vector_methods.capacity()
-);
-```
-
-`is_empty()`
+`.len()`
 
 ```rust
-let vector_methods: Vec<&str> = vec![];
-println!("{:?}", vector_methods.is_empty());
-
-let vector_methods: Vec<&str> = vec!["a", "b", "c"];
-println!("{:?}", vector_methods.is_empty());
+// retorna o número de elementos
+let mut vetor_metodos: Vec<u8> = vec![1, 2, 3];
+println!("Tamanho: {}", vetor_metodos.len());
 ```
 
-`clear()`
+`.capacity()`
 
 ```rust
-let mut vector_methods: Vec<&str> = vec!["a", "b", "c"];
-println!("{:?}", vector_methods);
+// retorna o número de elementos que o vetor pode armazenar
+// antes de precisar realocar a memória (crescer).
+let mut vetor_metodos: Vec<char> = Vec::with_capacity(3);
+println!("Capacidade: {}\n", vetor_metodos.capacity());
 
-vector_methods.clear();
-println!("{:?}", vector_methods.is_empty());
+vetor_metodos.push('a');
+vetor_metodos.push('b');
+
+println!("Capacidade: {}", vetor_metodos.capacity());
+println!("Tamanho: {}", vetor_metodos.len());
 ```
 
-
-`contains()`
+`.is_empty()`
 
 ```rust
-let vector_methods: Vec<&str> = vec!["a", "b", "c"];
-println!("{:?}", vector_methods.contains(&"c"));
-
-let vector_methods: Vec<f32> = vec![1., 7.];
-println!("{:?}", vector_methods.contains(&6.));
+// indica se o vetor contém elementos
+let vetor_metodos_vazio: Vec<&str> = vec![];
+println!("{:?}", vetor_metodos_vazio.is_empty());
+```
+```rust
+let vetor_metodos_preenchido: Vec<&str> = vec!["a", "b", "c"];
+println!("{:?}", vetor_metodos_preenchido.is_empty());
 ```
 
+`.clear()`
+
+```rust
+// remove todos os elementos de um vetor
+let mut vetor_metodos: Vec<&str> = vec!["a", "b", "c"];
+println!("{:?}", vetor_metodos);
+
+vetor_metodos.clear();
+println!("{:?}", vetor_metodos.is_empty());
+```
+
+`.contains()`
+
+```rust
+// retorna true se o vetor contiver o elemento especificado
+let vetor_metodos: Vec<&str> = vec!["a", "b", "c"];
+println!("{:?}", vetor_metodos.contains(&"c"));
+```
+```rust
+let vetor_metodos: Vec<f32> = vec![1., 7.];
+println!("{:?}", vetor_metodos.contains(&6.));
+```

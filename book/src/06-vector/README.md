@@ -1,7 +1,5 @@
-# Vector
+# Vetor
 
-This chapter covers Rust's Vec`<T>` type – the fundamental dynamic collection for storing and manipulating sequences of values.
+O Vec\<T\> é a coleção dinâmica fundamental do Rust para armazenar e manipular sequências de valores. Este capítulo cobre o essencial, começando pela criação de vetores e o acesso a elementos por indexação. Exploraremos as operações de adição, veremos as operações de remoção, entre outros assuntos.
 
-We'll start with the basics: creating vectors and accessing elements through indexing. Then we'll explore adding elements: push for appending to the end and insert for placing values at specific positions. Finally, we'll cover removing elements: pop for taking the last item and remove for deleting elements by index.
-
-You'll find practice questions to reinforce your understanding of these fundamental programming concepts.
+Você encontrará perguntas práticas para reforçar sua compreensão desses conceitos de programação fundamentais.

@@ -6,7 +6,7 @@
 use std::io;
 
 fn function_input(prompt: &str) -> f32 {
-    //
+
     loop {
         println!("{}", prompt);
         let mut input = String::new();

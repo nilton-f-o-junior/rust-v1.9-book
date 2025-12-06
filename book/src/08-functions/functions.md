@@ -10,7 +10,6 @@ fn basic() {
 }
 
 fn main() {
-    // 
     basic();
 }
 ```
@@ -25,7 +24,6 @@ fn parameter(x: i8) {
 }
 
 fn main() {
-    // 
     parameter(1);
 }
 ```
@@ -36,12 +34,10 @@ We can pass multiple parameters separated by commas
 
 ```rust
 fn parameter_00(x: i8, y: i8) {
-    // 
     println!("{} + {} = {}", x, y, x + y);
 }
 
 fn main() {
-    // 
     parameter_00(1, 2);
 }    
 ```

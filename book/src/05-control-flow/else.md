@@ -25,7 +25,7 @@ let num: u8 = 5;
 if num >= 6 {
     println!("Num > ou = 6!");
 } else {
-    println!("Num <= 5!");
+    println!("Num < ou = 5!");
 };
 ```
 

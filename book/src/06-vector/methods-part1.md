@@ -1,53 +1,47 @@
-# Methods
+# Métodos - Parte 1
 
-`push`
-
-Adds an element to the end of the vector.
+`.push()`
 
 ```rust
-let mut vector_push_add: Vec<u8> = Vec::new();
+// adiciona um elemento ao final
+let mut vetor_push_add: Vec<u8> = Vec::new();
 
-vector_push_add.push(0);
-println!("{:?}", vector_push_add);
+vetor_push_add.push(0);
+println!("{:?}", vetor_push_add);
 
-vector_push_add.push(1);
-println!("{:?}", vector_push_add);
+vetor_push_add.push(1);
+println!("{:?}", vetor_push_add);
 
-vector_push_add.push(2);
-println!("{:?}", vector_push_add);
+vetor_push_add.push(2);
+println!("{:?}", vetor_push_add);
 ```
 
-`insert`
-
-Adds an element at a specific index, shifting all elements after it to the right.
-
-`vector.insert[index, element]`
+`.insert(indice, elemento)`
 
 ```rust
-let mut vector_add: Vec<u8> = Vec::new();
+// adiciona um elemento em um índice específico, deslocando os outros para a direita
+let mut vetor_adicionar: Vec<u8> = Vec::new();
 
-vector_add.insert(0, 10);
-vector_add.insert(1, 20);
+vetor_adicionar.insert(0, 10);
+vetor_adicionar.insert(1, 20);
 
 println!(
-  "Vector[0] = {:#?} \nVector[1] = {:#?}",
-  vector_add[0], vector_add[1]
+  "Vetor[0] = {:#?} \nVetor[1] = {:#?}",
+  vetor_adicionar[0], vetor_adicionar[1]
 );
 ```
 
-`Error`
-
-When adding an index that does not exist or does not follow the order.
+Usar o método .insert() com um índice que não existe ou que não segue a ordem sequencial de índices pode causar um erro fatal (panic).
 
 ```rust
-let mut vector_add: Vec<u8> = Vec::new();
+let mut vetor_adicionar: Vec<u8> = Vec::new();
 
-vector_add.insert(0, 10);
-vector_add.insert(10, 20);
+vetor_adicionar.insert(0, 10);
+vetor_adicionar.insert(10, 20);
 
 println!(
-  "Vector[0] = {:#?} \nVector[1] = {:#?}",
-  vector_add[0], vector_add[10]  
+  "Vetor[0] = {:#?} \nVetor[1] = {:#?}",
+  vetor_adicionar[0], vetor_adicionar[10]
 );
 ```
 

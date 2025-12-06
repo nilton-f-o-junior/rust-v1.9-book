@@ -1,65 +1,72 @@
-# Methods
+# Métodos - Parte 4
 
-`first() and last()`
+`.first() e .last()`
 
 ```rust
-let vector_methods: Vec<&str> = vec!["a", "b", "c"];
+// retornam uma referência ao primeiro e ao último elemento
+// do vetor, respectivamente, encapsulados em um Option<T>.
+let vetor_metodos: Vec<&str> = vec!["a", "b", "c"];
 
-println!("{:?}", vector_methods.first());
-println!("{:?}", vector_methods.last());
+println!("{:?}", vetor_metodos.first());
+println!("{:?}", vetor_metodos.last());
 ```
 
-`[0] != first()`
+`[0] != .first()`
 
 ```rust
-// [0]
-let vector_methods: Vec<&str> = vec![];
-println!("{:?}", vector_methods[0]);
+// [0] - causa panic em tempo de execução
+let vetor_metodos: Vec<&str> = vec![];
+println!("{:?}", vetor_metodos[0]); 
 ```
 ```rust
-// first()
-let vector_methods: Vec<&str> = vec![];
-println!("{:?}", vector_methods.first());
+// first() - retorna none
+let vetor_metodos: Vec<&str> = vec![];
+println!("{:?}", vetor_metodos.first());
 ```
 
-`swap()`
+`.swap(indice_a, indice_b)`
 
 ```rust
-let mut vector_methods: Vec<&str> = vec!["a", "b", "c", "d"];
-vector_methods.swap(0, 3);
-println!("{:?}", vector_methods);
+// troca a posição de dois elementos dentro do vetor
+let mut vetor_metodos: Vec<&str> = vec!["a", "b", "c", "d"];
+vetor_metodos.swap(0, 3); 
+println!("{:?}", vetor_metodos);
 ```
 
-`reverse()`
+`.reverse()`
 
 ```rust
-let mut vector_methods: Vec<char> = vec!['1', '2', '3', '4'];
-vector_methods.reverse();
-println!("{:?}", vector_methods);
+// inverte a ordem de todos os elementos no vetor
+let mut vetor_metodos: Vec<char> = vec!['1', '2', '3', '4'];
+vetor_metodos.reverse();
+println!("{:?}", vetor_metodos);
 ```
 
-`[0..n].reverse()`
+`[i..n].reverse()`
 
 ```rust
-let mut vector_methods: Vec<char> = vec!['1', '2', '3', '4', '5', '6'];
-vector_methods[3..5].reverse();
-println!("{:?}", vector_methods);
+// inverte apenas uma seção (slice) do vetor
+let mut vetor_metodos: Vec<char> = vec!['1', '2', '3', '4', '5', '6'];
+vetor_metodos[3..5].reverse();
+println!("{:?}", vetor_metodos);
 ```
 
 `sort()`
 
 ```rust
-let mut vector_methods: Vec<char> = vec!['6', '2', '4', '1', '3', '5'];
-vector_methods.sort();
-println!("{:?}", vector_methods);
+// implementa uma ordenação estável
+let mut vetor_metodos: Vec<char> = vec!['6', '2', '4', '1', '3', '5'];
+vetor_metodos.sort();
+println!("{:?}", vetor_metodos);
 ```
 
 `sort_unstable()`
 
 ```rust
-let mut vector_methods: Vec<char> = vec!['6', '2', '4', '1', '3', '5'];
-vector_methods.sort();
-println!("{:?}", vector_methods);  
+// implementa uma ordenação instável, é mais rápida
+let mut vetor_metodos: Vec<char> = vec!['6', '2', '4', '1', '3', '5'];
+vetor_metodos.sort_unstable(); 
+println!("{:?}", vetor_metodos);
 ```
 
-> Even though `sort()` and `sort_unstable()` generate similar results, they are recommended in different situations. We will discuss this in more detail in the Methods chapter after studying Constructs.
+> Nota: Embora `.sort()` e `.sort_unstable()` gerem resultados semelhantes para elementos simples, eles são recomendados em situações diferentes.

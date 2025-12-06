@@ -18,7 +18,7 @@ let text = "Hello, word!";
 println!("{}", text.contains("ello"));
 ```
 
-`starts_with() and ends_with()`
+`starts_with() / ends_with()`
 
 ```rust
 // verifica se a string começa/termina com a substring fornecida
@@ -35,7 +35,7 @@ let text = "Hello, word!";
 println!("{:?}", text.find("H"));
 ```
 
-`to_uppercase() and to_lowercase()`
+`to_uppercase() / to_lowercase()`
 
 ```rust
 // conversão para maiúsculas/minúsculas
@@ -57,7 +57,7 @@ println!("{:?}", text.trim());
 ```rust
 // substitui todas as ocorrências
 let text = "Hello, word!";
-println!("{:?}", text.replace("word", "hello"));
+println!("{:?}", text.replace("word", "Snoopy"));
 ```
 
 `replacen()`

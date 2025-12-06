@@ -13,19 +13,19 @@
 use std::io;
 
 fn main() {
-    println!("Insira um caractere:");
+    println!("Insira um caractere (a-z):");
 
-    let mut input: String = String::new();
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
-        .expect("Erro no valor inserido!");
+        .read_line(&mut entrada)
+        .expect("Erro na leitura da entrada!");
 
-    let character = input.trim();
+    let caractere = entrada.trim();
 
-    match character {
-        "a" | "e" | "i" | "o" | "u" => println!("O caractere '{}' é uma vogal!", character),
+    match caractere {
+        "a" | "e" | "i" | "o" | "u" => println!("O caractere '{}' é uma vogal!", caractere),
         "" => println!("Nenhum caractere foi inserido!"),
-        _ => println!("O caractere {} é uma consoante!", character),
+        _ => println!("O caractere '{}' é uma consoante!", caractere),
     };
 }
 ```
@@ -51,29 +51,29 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Insira sua nota:");
+    println!("Insira sua nota (0 a 10):");
 
-    let mut input: String = String::new();
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
-        .expect("Erro na inserção de dados!");
+        .read_line(&mut entrada)
+        .expect("Erro na leitura da entrada!");
 
-    let note: u8 = match input.trim().parse() {
-        Ok(val) => val,
+    let nota: u8 = match entrada.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
-            println!("Erro na conversão de dados!");
+            println!("Erro: O dado inserido não é um número válido!");
             return;
         }
     };
 
-    match note {
-        9 | 10 => println!("Sua nota é: '{}' = 'A'", note),
-        7 | 8 => println!("Sua nota é: '{}' = 'B'", note),
-        5 | 6 => println!("Sua nota é: '{}' = 'C'", note),
-        3 | 4 => println!("Sua nota é: '{}' = 'D'", note),
-        1 | 2 => println!("Sua nota é: '{}' = 'E'", note),
-        0 => println!("Sua nota é: '{}' = 'F'", note),
-        _ => println!("O dado fornecido não é válido!"),
+    match nota {
+        9 | 10 => println!("Sua nota é: '{}' = 'A'", nota),
+        7 | 8 => println!("Sua nota é: '{}' = 'B'", nota),
+        5 | 6 => println!("Sua nota é: '{}' = 'C'", nota),
+        3 | 4 => println!("Sua nota é: '{}' = 'D'", nota),
+        1 | 2 => println!("Sua nota é: '{}' = 'E'", nota),
+        0 => println!("Sua nota é: '{}' = 'F'", nota),
+        _ => println!("A nota '{}' fornecida não é válida (fora do intervalo 0-10)!", nota),
     };
 }
 ```
@@ -81,7 +81,7 @@ fn main() {
 
 03 - Insira uma idade e classifique-a como:
 
-|   Idade  | Classificação  |
+| Idade    | Classificação  |
 |----------|----------------|
 |  0 - 12  | Criança        |
 | 13 - 17  | Adolescente    |
@@ -99,25 +99,25 @@ use std::io;
 fn main() {
     println!("Insira sua idade:");
 
-    let mut input: String = String::new();
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
-        .expect("Erro na inserção de dados!");
+        .read_line(&mut entrada)
+        .expect("Erro na leitura da entrada!");
 
-    let age: u8 = match input.trim().parse() {
-        Ok(valid) => valid,
+    let idade: u8 = match entrada.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
-            println!("Erro na conversão de dados!");
+            println!("Erro: O dado inserido não é um número válido!");
             return;
         }
     };
 
-    match age {
+    match idade {
         0..=12 => println!("Criança!"),
         13..=17 => println!("Adolescente!"),
         18..=59 => println!("Adulto!"),
         60..=120 => println!("Idoso!"),
-        _ => println!("Morto!"),
+        _ => println!("Idade fora do limite de análise!"),
     };
 }
 ```
@@ -184,20 +184,20 @@ use std::io;
 fn main() {
     println!("Insira a temperatura:");
 
-    let mut input: String = String::new();
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
+        .read_line(&mut entrada)
         .expect("Erro na inserção de dados!");
 
-    let temperature: f32 = match input.trim().parse() {
-        Ok(valid) => valid,
+    let temperatura: f32 = match entrada.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
         }
     };
 
-    match temperature {
+    match temperatura {
         f32::MIN..=-1.0 => println!("Congelante"),
         0.0..=15.0 => println!("Frio"),
         16.0..=25.0 => println!("Agradável"),
@@ -231,20 +231,20 @@ use std::io;
 fn main() {
     println!("Insira o número");
 
-    let mut input: String = String::new();
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
+        .read_line(&mut entrada)
         .expect("Erro na inserção de dados!");
 
-    let number: u8 = match input.trim().parse() {
-        Ok(value) => value,
+    let numero: u8 = match entrada.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
         }
     };
 
-    match number {
+    match numero {
         1 => println!("Domingo"),
         2 => println!("Segunda-feira"),
         3 => println!("Terça-feira"),
@@ -260,7 +260,7 @@ fn main() {
 
 07 - Receba o número do mês (1-12) e retorne:
 
- - Nome do mês
+- Nome do mês
 - Quantos dias ele tem (considere Fevereiro com 28)
 
 [Playground!]()
@@ -274,20 +274,20 @@ use std::io;
 fn main() {
     println!("Insira o número");
 
-    let mut input: String = String::new();
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
+        .read_line(&mut entrada)
         .expect("Erro na inserção de dados!");
 
-    let number: u8 = match input.trim().parse() {
-        Ok(value) => value,
+    let numero:u8 = match entrada.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
         }
     };
 
-    match number {
+    match numero {
         1 => println!("Janeiro - 31 Dias"),
         2 => println!("Fevereiro - 28 Dias"),
         3 => println!("Março - 31 Dias"),
@@ -364,13 +364,13 @@ use std::io;
 fn main() {
     println!("Insira a coordenada (x):");
 
-    let mut input_x = String::new();
+    let mut entrada_x = String::new();
     io::stdin()
-        .read_line(&mut input_x)
+        .read_line(&mut entrada_x)
         .expect("Erro na inserção de dados!");
 
-    let x: i16 = match input_x.trim().parse() {
-        Ok(value) => value,
+    let coordenada_x: i16 = match entrada_x.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
@@ -379,20 +379,20 @@ fn main() {
 
     println!("Insira a coordenada (y):");
 
-    let mut input_y = String::new();
+    let mut entrada_y = String::new();
     io::stdin()
-        .read_line(&mut input_y)
+        .read_line(&mut entrada_y)
         .expect("Erro na inserção de dados!");
 
-    let y: i16 = match input_y.trim().parse() {
-        Ok(value) => value,
+    let coordenada_y: i16 = match entrada_y.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
         }
     };
 
-    match (x, y) {
+    match (coordenada_x, coordenada_y) {
         (0, 0) => println!("Origem"),
         (x, y) if x > 0 && y > 0 => println!("Quadrante I"),
         (x, y) if x < 0 && y > 0 => println!("Quadrante II"),
@@ -419,31 +419,31 @@ fn main() {
 use std::{io, u8};
 
 fn main() {
-    println!("Insira o tipo:");
+    println!("Insira o tipo (V ou N):");
 
-    let mut input_type: String = String::new();
+    let mut entrada_tipo: String = String::new();
     io::stdin()
-        .read_line(&mut input_type)
+        .read_line(&mut entrada_tipo)
         .expect("Erro na inserção de dados!");
 
-    let ty: char = input_type.chars().next().unwrap();
+    let tipo: char = entrada_tipo.chars().next().unwrap();
 
     println!("Insira a quantidade:");
 
-    let mut input_quantity: String = String::new();
+    let mut entrada_quantidade: String = String::new();
     io::stdin()
-        .read_line(&mut input_quantity)
+        .read_line(&mut entrada_quantidade)
         .expect("Erro na inserção de dados!");
 
-    let quantity: u8 = match input_quantity.trim().parse() {
-        Ok(value) => value,
+    let quantidade: u8 = match entrada_quantidade.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
         }
     };
 
-    match (ty, quantity) {
+    match (tipo, quantidade) {
         ('V' | 'v', u8::MIN..=u8::MAX) => println!("20% de desconto sempre!"),
         ('N' | 'n', 10..=u8::MAX) => println!("10% de desconto!"),
         ('N' | 'n', 5..=9) => println!("5% de desconto!"),
@@ -464,53 +464,50 @@ fn main() {
 use std::io;
 
 fn main() {
-    // a
     println!("Insira o número (A):");
 
-    let mut input_a: String = String::new();
+    let mut entrada_a: String = String::new();
     io::stdin()
-        .read_line(&mut input_a)
+        .read_line(&mut entrada_a)
         .expect("Erro na inserção de dados!");
 
-    let a: f32 = match input_a.trim().parse() {
-        Ok(value) => value,
+    let numero_a: f32 = match entrada_a.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
         }
     };
 
-    // b
     println!("Insira o número (B):");
 
-    let mut input_b: String = String::new();
+    let mut entrada_b: String = String::new();
     io::stdin()
-        .read_line(&mut input_b)
+        .read_line(&mut entrada_b)
         .expect("Erro na inserção de dados!");
 
-    let b: f32 = match input_b.trim().parse() {
-        Ok(value) => value,
+    let numero_b: f32 = match entrada_b.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
         }
     };
 
-    //
     println!("Insira o operador: +, -, *, /");
 
-    let mut input_operator: String = String::new();
+    let mut entrada_operador: String = String::new();
     io::stdin()
-        .read_line(&mut input_operator)
+        .read_line(&mut entrada_operador)
         .expect("Erro na inserção de dados!");
 
-    let operator: char = input_operator.trim().chars().next().unwrap();
+    let operador: char = entrada_operador.trim().chars().next().unwrap();
 
-    let _result = match operator {
-        '+' => println!("\n{} + {} = {}", a, b, a + b),
-        '-' => println!("\n{} - {} = {}", a, b, a - b),
-        '*' => println!("\n{} * {} = {}", a, b, a * b),
-        '/' => println!("\n{} / {} = {}", a, b, a / b),
+    let _resultado = match operador {
+        '+' => println!("\n{} + {} = {}", numero_a, numero_b, numero_a + numero_b),
+        '-' => println!("\n{} - {} = {}", numero_a, numero_b, numero_a - numero_b),
+        '*' => println!("\n{} * {} = {}", numero_a, numero_b, numero_a * numero_b),
+        '/' => println!("\n{} / {} = {}", numero_a, numero_b, numero_a / numero_b),
         _ => println!("\nErro de cálculo!"),
     };
 }
@@ -528,7 +525,7 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("-- Start Game --");
+    println!("-- Início do Jogo --");
     println!("");
     println!("Selecione:");
     println!("[1] Pedra");
@@ -537,13 +534,13 @@ fn main() {
     println!("");
 
     println!("Jogador 1:");
-    let mut input_player1: String = String::new();
+    let mut entrada_jogador1: String = String::new();
     io::stdin()
-        .read_line(&mut input_player1)
+        .read_line(&mut entrada_jogador1)
         .expect("Erro na inserção de dados!");
 
-    let player1: u8 = match input_player1.trim().parse() {
-        Ok(value) => value,
+    let escolha_jogador1: u8 = match entrada_jogador1.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
@@ -551,20 +548,20 @@ fn main() {
     };
 
     println!("\nJogador 2:");
-    let mut input_player2: String = String::new();
+    let mut entrada_jogador2: String = String::new();
     io::stdin()
-        .read_line(&mut input_player2)
+        .read_line(&mut entrada_jogador2)
         .expect("Erro na inserção de dados!");
 
-    let player2: u8 = match input_player2.trim().parse() {
-        Ok(value) => value,
+    let escolha_jogador2: u8 = match entrada_jogador2.trim().parse() {
+        Ok(valor) => valor,
         Err(_) => {
             println!("Erro na conversão de dados!");
             return;
         }
     };
 
-    let _result = match (player1, player2) {
+    let _resultado = match (escolha_jogador1, escolha_jogador2) {
         (1, 1) => println!("Jogo empatado!"),
         (1, 2) => println!("Jogador 2 - Vence!"),
         (1, 3) => println!("Jogador 1 - Vence!"),

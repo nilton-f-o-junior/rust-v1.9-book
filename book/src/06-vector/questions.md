@@ -5,21 +5,12 @@
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    //
-    let vector: Vec<u8> = vec![];
-    println!("{:?}", vector);
-
-    //
-    let vector: Vec<&str> = Vec::new();
-    println!("{:?}", vector);
-
-    //
-    let vector: Vec<f32> = Vec::with_capacity(4);
-    println!("{:?}", vector);
+    let vetor: Vec<u8> = vec![];
+    println!("{:?}", vetor);
 }
 ```
 </details>
@@ -29,32 +20,39 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
-    //
-    let vector: Vec<u8> = vec![1, 2, 3, 4];
-    println!("{:?}", vector);
-
-    // .collect()
-    let vector: Vec<u8> = (1..=4).collect();
-    println!("{:?}", vector);
-
-    // .push
-    let mut vector: Vec<u8> = vec![];
-    vector.push(1);
-    vector.push(2);
-    vector.push(3);
-    vector.push(4);
-    println!("{:?}", vector);
-
-    // convert array
-    let vector: Vec<u8> = Vec::from([1, 2, 3, 4]);
-    println!("{:?}", vector);
+    let vetor: Vec<u8> = vec![1, 2, 3, 4];
+    println!("{:?}", vetor);   
 }
 ```
 
+```rust
+fn main() {    
+    let vetor: Vec<u8> = (1..=4).collect();
+    println!("{:?}", vetor);    
+}
+```
+
+```rust
+fn main() {
+    let mut vetor: Vec<u8> = vec![];
+    vetor.push(1);
+    vetor.push(2);
+    vetor.push(3);
+    vetor.push(4);
+    println!("{:?}", vetor);
+}
+```
+
+```rust
+fn main() {
+    let vetor: Vec<u8> = Vec::from([1, 2, 3, 4]);
+    println!("{:?}", vetor);
+}
+```
 </details>
 
 03 - Crie um vetor contendo os números de 1 a 10 e imprima cada elemento usando um loop.
@@ -62,29 +60,13 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
-
-```rust
-fn main() {
-    let vector: Vec<u8> = (1..=10).collect();
-    let mut i = 0;
-
-    loop {
-        println!("{:?}", vector[i]);
-        i += 1;
-
-        if i >= vector.len() {
-            break;
-        }
-    }
-}
-```
+<summary>Resposta</summary>
 
 ```rust
 fn main () {
-    let vector: Vec<u8> = (1..=10).collect();
+    let vetor: Vec<u8> = (1..=10).collect();
 
-    for i in &vector {
+    for i in &vetor {
         println!("{:?}", i);
     }
 }
@@ -92,45 +74,15 @@ fn main () {
 
 ```rust
 fn main () {
-    let vector: Vec<u8> = (1..=10).collect();
-
-    for i in 0..vector.len() {
-        println!("{:?}", vector[i]);
-    }
-}
-```
-
-```rust
-fn main () {
-    let vector: Vec<u8> = (1..=10).collect();
+    let vetor: Vec<u8> = (1..=10).collect();
     let mut i = 0;
 
-    while i < vector.len() {
-        println!("{:?}", vector[i]);
+    while i < vetor.len() {
+        println!("{:?}", vetor[i]);
         i += 1;
     }
 }
 ```
-
-```rust
-fn main() {    
-    let input_vector_mult: Vec<f64> = vec![3.2, 5.8, 1.2];
-    let mut result: f64 = input_vector_mult[0];
-    let mut i = 1;
-
-    loop {
-        result *= input_vector_mult[i];
-        i += 1;
-
-        if i >= input_vector_mult.len() {
-            break;
-        }
-    }
-    
-    println!("Mult = {:.2}", result);
-}
-```
-
 </details>
 
 04 - Crie um vetor vazio e solicite ao usuário 3 valores inteiros. Adicione esses valores ao vetor e imprima o resultado final.
@@ -138,7 +90,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -175,7 +127,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -200,7 +152,7 @@ fn main () {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -273,7 +225,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -320,7 +272,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -366,7 +318,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -402,7 +354,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -444,7 +396,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -529,7 +481,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -569,7 +521,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 // .clone()
@@ -638,7 +590,7 @@ fn main () {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -673,7 +625,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -697,7 +649,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -719,7 +671,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -748,7 +700,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -805,7 +757,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 fn main() {
@@ -823,7 +775,7 @@ fn main() {
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 // for
