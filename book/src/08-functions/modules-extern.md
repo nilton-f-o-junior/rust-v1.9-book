@@ -1,44 +1,44 @@
-# Modules - Extern
+# Módulos - Externos
 
-Allow importing functionalities from external libraries to the project.
+Permitem a importação de funcionalidades de arquivos/módulos externos (fora do main.rs) para o projeto.
 
 ```rust
-// Tree
+// Estrutura de Arquivos
 /*
-project/
+projeto/
 ├── Cargo.toml
 └── src/
     ├── main.rs
-    ├── sum.rs
+    ├── soma.rs
     ├── sub.rs
     ├── mult.rs
     └── div.rs
 */
 
-// sum.rs
-pub fn cal_sum(a: i8, b: i8) -> i8 { a + b }
+// soma.rs
+pub fn calcular_soma(a: i8, b: i8) -> i8 { a + b }
 
 // sub.rs
-pub fn cal_sub(c: i8, d: i8) -> i8 { c - d }
+pub fn calcular_sub(c: i8, d: i8) -> i8 { c - d }
 
 // mult.rs
-pub fn cal_mult(e: i8, f: i8) -> i8 { e * f }
+pub fn calcular_mult(e: i8, f: i8) -> i8 { e * f }
 
 // div.rs
-pub fn cal_div(g: i8, h: i8) -> i8 { g / h }
+pub fn calcular_div(g: i8, h: i8) -> i8 { g / h }
 
 // main.rs
-mod sum;
+mod soma;
 mod sub;
 mod mult;
 mod div;
 
-use {sum::cal_sum, sub::cal_sub, mult::cal_mult, div::cal_div};
+use {soma::calcular_soma, sub::calcular_sub, mult::calcular_mult, div::calcular_div};
 
 fn main() {
-   println!("Sum: {}", cal_sum(1, 1));
-   println!("Sub: {}", cal_sub(2, 2));
-   println!("Mult: {}", cal_mult(3, 3));
-   println!("Div: {}", cal_div(4, 4));
+   println!("Soma: {}", calcular_soma(1, 1));
+   println!("Subtração: {}", calcular_sub(2, 2));
+   println!("Multiplicação: {}", calcular_mult(3, 3));
+   println!("Divisão: {}", calcular_div(4, 4));
 }
 ```

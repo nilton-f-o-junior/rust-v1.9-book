@@ -1,45 +1,44 @@
-# Modules - mod.rs
+# Módulos - mod.rs
 
-Special file used to define a module in a directory, making it public and serving as an entry point for hierarchical structures.
+Arquivo especial usado para definir um módulo em um diretório, tornando-o público e servindo como ponto de entrada para estruturas hierárquicas.
 
 ```rust
-// Tree
+// Estrutura de Arquivos
 /*
-project/
+projeto/
 ├── Cargo.toml
 └── src/
     ├── main.rs
     └── calc/
         ├── mod.rs
-        ├── sum.rs
+        ├── soma.rs
         └── sub.rs
 */
 
 // calc/mod.rs
 pub mod sub;
-pub mod sum;
+pub mod soma;
 
-pub use sub::cal_sub;
-pub use sum::cal_sum;
+pub use sub::calcular_sub;
+pub use soma::calcular_soma;
 
-// calc/sum.rs
-pub fn cal_sum(a: i8, b: i8) -> i8 {
+// calc/soma.rs
+pub fn calcular_soma(a: i8, b: i8) -> i8 {
     a + b
 }
 
 // calc/sub.rs
-pub fn cal_sub(c: i8, d: i8) -> i8 {
+pub fn calcular_sub(c: i8, d: i8) -> i8 {
     c - d
 }
 
 // main.rs
 mod calc;
 
-// use
-use calc::{cal_sub, cal_sum};
+use calc::{calcular_sub, calcular_soma};
 
 fn main() {
-    println!("Sum: {}", cal_sum(7, 7));
-    println!("Sub: {}", cal_sub(7, 7));
+    println!("Soma: {}", calcular_soma(7, 7));
+    println!("Subtração: {}", calcular_sub(7, 7));
 }
 ```

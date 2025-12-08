@@ -1,26 +1,24 @@
-# Function - Input
-
-`input`
+# Função - Entrada
 
 ```rust
 use std::io;
 
-fn function_input(prompt: &str) -> f32 {
+fn funcao_entrada(aviso: &str) -> f32 {
 
     loop {
-        println!("{}", prompt);
-        let mut input = String::new();
+        println!("{}", aviso);
+        let mut entrada = String::new();
 
-        match io::stdin().read_line(&mut input) {
+        match io::stdin().read_line(&mut entrada) {
             Err(_) => {
-                println!("Data entry error!");
+                println!("Erro na entrada de dados!");
                 continue;
             }
 
-            Ok(_) => match input.trim().parse::<f32>() {
-                Ok(number) => return number,
+            Ok(_) => match entrada.trim().parse::<f32>() {
+                Ok(numero) => return numero,
                 Err(_) => {
-                    println!("'{}' is not a valid number!", input.trim());
+                    println!("'{}' não é um número válido!", entrada.trim());
                     continue;
                 }
             },
@@ -29,9 +27,8 @@ fn function_input(prompt: &str) -> f32 {
 }
 
 fn main() {
-    //
-    let number = function_input("Enter number:");
-    println!("Number chosen: {}", number);
+    let numero = funcao_entrada("Insira um número:");
+    println!("Número escolhido: {}", numero);
 }
 ```
 

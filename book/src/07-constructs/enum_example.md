@@ -1,99 +1,99 @@
-# Enum - Example
+# Enum - Exemplo
 
 ```rust
-enum PaymentStatus {
-    Pending,
-    Procesing {
-        processing_method: String,
-        value: f64,
+enum StatusDoPagamento {
+    Pendente,
+    Processando {
+        metodo_processamento: String,
+        valor: f64,
     },
-    Approved {
-        transaction_id: String,
-        date: String,
+    Aprovado {
+        id_transacao: String,
+        data: String,
     },
-    Declined {
-        error_code: String,
-        reason: String,
+    Recusado {
+        codigo_erro: String,
+        motivo: String,
     },
-    Refunded {
-        value: f64,
-        refund_date: String,
+    Estornado {
+        valor: f64,
+        data_estorno: String,
     },
 }
 
-fn verify_payment(payment: &PaymentStatus) {
-    match payment {
-        PaymentStatus::Pending => {
-            println!("Awaiting payment confirmation.");
+fn verificar_pagamento(pagamento: &StatusDoPagamento) {
+    match pagamento {
+        StatusDoPagamento::Pendente => {
+            println!("Aguardando confirmação do pagamento.");
         }
 
-        PaymentStatus::Procesing {
-            processing_method,
-            value,
+        StatusDoPagamento::Processando {
+            metodo_processamento,
+            valor,
         } => {
-            println!("Processing payment by: {}", processing_method);
-            println!("Value: R$ {:.2}", value);
+            println!("Processando pagamento por: {}", metodo_processamento);
+            println!("Valor: R$ {:.2}", valor);
         }
 
-        PaymentStatus::Approved {
-            transaction_id,
-            date,
+        StatusDoPagamento::Aprovado {
+            id_transacao,
+            data,
         } => {
-            println!("Payment approved!");
-            println!("Transaction ID: {}", transaction_id);
-            println!("Date: {}", date);
+            println!("Pagamento aprovado!");
+            println!("ID da Transação: {}", id_transacao);
+            println!("Data: {}", data);
         }
 
-        PaymentStatus::Declined { error_code, reason } => {
-            println!("Payment refused!");
-            println!("Code: {}", error_code);
-            println!("Reason: {}", reason);
+        StatusDoPagamento::Recusado { codigo_erro, motivo } => {
+            println!("Pagamento recusado!");
+            println!("Código: {}", codigo_erro);
+            println!("Motivo: {}", motivo);
         }
 
-        PaymentStatus::Refunded { value, refund_date } => {
-            println!("Payment Refunded!");
-            println!("Amount reversed: R$ {:.2}", value);
-            println!("Date of reversal: {}", refund_date);
+        StatusDoPagamento::Estornado { valor, data_estorno } => {
+            println!("Pagamento Estornado!");
+            println!("Valor estornado: R$ {:.2}", valor);
+            println!("Data do estorno: {}", data_estorno);
         }
     }
 }
 
 fn main() {
-    // Example 1
-    let payment1 = PaymentStatus::Pending;
-    verify_payment(&payment1);
+    // Exemplo 1
+    let pagamento1 = StatusDoPagamento::Pendente;
+    verificar_pagamento(&pagamento1);
     println!();
 
-    // Example2
-    let payment2 = PaymentStatus::Procesing {
-        processing_method: String::from("Credit Card"),
-        value: 150.50,
+    // Exemplo 2
+    let pagamento2 = StatusDoPagamento::Processando {
+        metodo_processamento: String::from("Cartão de Crédito"),
+        valor: 150.50,
     };
-    verify_payment(&payment2);
+    verificar_pagamento(&pagamento2);
     println!();
 
-    // Example3
-    let payment3 = PaymentStatus::Approved {
-        transaction_id: String::from("TXN-224-987652"),
-        date: String::from("06/11/2025 17:00"),
+    // Exemplo 3
+    let pagamento3 = StatusDoPagamento::Aprovado {
+        id_transacao: String::from("TXN-224-987652"),
+        data: String::from("06/11/2025 17:00"),
     };
-    verify_payment(&payment3);
+    verificar_pagamento(&pagamento3);
     println!();
 
-    // Example4
-    let payment4 = PaymentStatus::Declined {
-        error_code: String::from("ERR-401"),
-        reason: String::from("Insufficient balance"),
+    // Exemplo 4
+    let pagamento4 = StatusDoPagamento::Recusado {
+        codigo_erro: String::from("ERRO-401"),
+        motivo: String::from("Saldo insuficiente"),
     };
-    verify_payment(&payment4);
+    verificar_pagamento(&pagamento4);
     println!();
 
-    // Example5
-    let payment5 = PaymentStatus::Refunded {
-        value: 150.50,
-        refund_date: String::from("07/11/2025 08:10"),
+    // Exemplo 5
+    let pagamento5 = StatusDoPagamento::Estornado {
+        valor: 150.50,
+        data_estorno: String::from("07/11/2025 08:10"),
     };
-    verify_payment(&payment5);
+    verificar_pagamento(&pagamento5);
     println!();
 }
 ```

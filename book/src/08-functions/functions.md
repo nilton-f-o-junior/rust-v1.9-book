@@ -1,43 +1,43 @@
-# Functions and Parameters
+# Funções e Parâmetros
 
-To declare a function in Rust just use:
+Para declarar uma função em Rust, basta usar:
 
-`fn name( ) { }`
+`fn nome( ) { }`
 
 ```rust
-fn basic() {
-    println!("Hello, world!");
+fn basica() {
+    println!("Olá, mundo!");
 }
 
 fn main() {
-    basic();
+    basica();
 }
 ```
 
-Within the parentheses we can add the input parameters, which are variables with their respective data types that the function will receive and use in its body.
+Dentro dos parênteses, podemos adicionar os parâmetros de entrada, que são variáveis com seus respectivos tipos de dados que a função receberá e usará em seu corpo.
 
-`(let:type)`
+`(variavel:tipo)`
 
 ```rust
-fn parameter(x: i8) {
+fn parametro(x: i8) {
     println!("x = {}", x);
 }
 
 fn main() {
-    parameter(1);
+    parametro(1);
 }
 ```
 
-We can pass multiple parameters separated by commas
+Podemos passar múltiplos parâmetros separados por vírgulas:
 
-`(let: type, let: type)`
+`(variavel: tipo, variavel: tipo)`
 
 ```rust
-fn parameter_00(x: i8, y: i8) {
+fn parametro_00(x: i8, y: i8) {
     println!("{} + {} = {}", x, y, x + y);
 }
 
 fn main() {
-    parameter_00(1, 2);
-}    
+    parametro_00(1, 2);
+}
 ```

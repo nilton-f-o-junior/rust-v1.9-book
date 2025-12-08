@@ -1,62 +1,62 @@
-# Struct - Example
+# Struct - Exemplo
 
 ```rust
 #[derive(Clone)]
-struct Book {
-    title: String,
-    author: String,
-    publisher: String,
-    age: u16,
-    pages: u16,
+struct Livro {
+    titulo: String,
+    autor: String,
+    editora: String,
+    ano: u16,
+    paginas: u16,
 }
 
-struct Store {
-    name: String,
-    books: Vec<Book>,
+struct Loja {
+    nome: String,
+    livros: Vec<Livro>,
 }
 
 fn main() {
-    let book_a = Book {
-        title: String::from("The Bridge Builder"),
-        author: String::from("Markus Zusak"),
-        publisher: String::from("Intrínseca"),
-        age: 2019,
-        pages: 528,
+    let livro_a = Livro {
+        titulo: String::from("O Construtor de Pontes"),
+        autor: String::from("Markus Zusak"),
+        editora: String::from("Intrínseca"),
+        ano: 2019,
+        paginas: 528,
     };
 
-    let book_b = Book {
-        title: String::from("Alice no País das Maravilhas"),
-        author: String::from("Lewis Carroll"),
-        publisher: String::from("Darkside Books"),
-        age: 2019,
-        pages: 208,
+    let livro_b = Livro {
+        titulo: String::from("Alice no País das Maravilhas"),
+        autor: String::from("Lewis Carroll"),
+        editora: String::from("Darkside Books"),
+        ano: 2019,
+        paginas: 208,
     };
 
-    let store_a = Store {
-        name: String::from("Amazon"),
-        books: vec![book_a, book_b.clone()],
+    let loja_a = Loja {
+        nome: String::from("Amazon"),
+        livros: vec![livro_a, livro_b.clone()],
     };
 
-    let store_b = Store {
-        name: String::from("Darkside Books"),
-        books: vec![book_b.clone()],
+    let loja_b = Loja {
+        nome: String::from("Darkside Books"),
+        livros: vec![livro_b.clone()],
     };
 
-    println!("-- Books --");
+    println!("-- Livros --");
     println!(
-        "Store: {} \n Book: {} \n Author: {} \n Pages: {} \n Publisher: {} \n Age: {}",
-        store_b.name, book_b.title, book_b.author, book_b.pages, book_b.publisher, book_b.age,
+        "Loja: {} \nLivro: {} \nAutor: {} \nPáginas: {} \nEditora: {} \nAno: {}",
+        loja_b.nome, livro_b.titulo, livro_b.autor, livro_b.paginas, livro_b.editora, livro_b.ano,
     );
 
-    for (_index, book) in store_a.books.iter().enumerate() {
-        println!("\nStore: {}", store_a.name);
-        println!(" Book: {}", book.title);
-        println!(" Author: {}", book.author);
-        println!(" Pages: {}", book.pages);
-        println!(" Publisher: {}", book.publisher);
-        println!(" Age: {}", book.age);
+    for (_indice, livro) in loja_a.livros.iter().enumerate() {
+        println!("\nLoja: {}", loja_a.nome);
+        println!("Livro: {}", livro.titulo);
+        println!("Autor: {}", livro.autor);
+        println!("Páginas: {}", livro.paginas);
+        println!("Editora: {}", livro.editora);
+        println!("Ano: {}", livro.ano);
     }
 }
 ```
 
-> The same book is being used in two different stores. This would cause an ownership error in Rust, so we added #[derive(Clone)] to be able to clone the data. If you remove this line, the code won't compile. Later on, we'll see other ways to solve this.
+> O mesmo livro está sendo usado em duas lojas diferentes. Isso causaria um erro de posse (ownership) no Rust, então adicionamos `#[derive(Clone)]` para poder clonar os dados. Se você remover esta linha, o código não irá compilar. Mais tarde, veremos outras maneiras de resolver isso.

@@ -1,52 +1,52 @@
-# Expression
+# Expressão
 
-Receives parameters and returns a value
+Recebe parâmetros e retorna um valor
 
-`(let:type, let:type) → type`
+`(variavel:tipo, variavel:tipo) -> tipo`
 
 ```rust
-fn expression_01(x: i8, y: i8) -> i8 {    
+fn expressao_01(x: i8, y: i8) -> i8 {    
     x + y
 }
 
 fn main() {    
-    println!("{}", expression_01(7, 7));
+    println!("{}", expressao_01(7, 7));
 }
 ```
 
-`not return`
+`sem retorno`
 
 ```rust
-fn sum (x: i16, y: i16) -> i16 {
-   let result = x + y;
-   result
+fn soma (x: i16, y: i16) -> i16 {
+   let resultado = x + y;
+   resultado
 }
 
 fn main () {
-  println!("{}", sum(7, 7));
+  println!("{}", soma(7, 7));
 }
 ```
 
-`return + ;`
+`return`
 
 ```rust
-fn sum (x: i16, y: i16) -> i16 {
-	 let result = x + y;
-	 return result;
+fn soma (x: i16, y: i16) -> i16 {
+	 let resultado = x + y;
+	 return resultado;
 }
 
 fn main () {
-	println!("{}", sum(7, 7));
+	println!("{}", soma(7, 7));
 }
 ```
 
-
-`Not use: indicates that the function will not be used`
+`Não vai usar`
 
 ```rust
+// indica que a função não será usada
 #[allow(dead_code)]
-fn hello () {
-	println!("Hello, world!");
+fn ola () {
+	println!("Olá, mundo!");
 }
 
 fn main () {

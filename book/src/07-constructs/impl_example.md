@@ -1,114 +1,114 @@
-# Impl - Example
+# Impl - Exemplo
 
 `impl`
 
 ```rust
-struct User {
-    name: String,
-    password: String,
-    logged_in: bool,
+struct Usuario {
+    nome: String,
+    senha: String,
+    logado: bool,
 }
 
-impl User {
+impl Usuario {
    
-    fn new_user(name: String, password: String) -> User {
-        User {
-            name,
-            password,
-            logged_in: false,
+    fn novo_usuario(nome: String, senha: String) -> Usuario {
+        Usuario {
+            nome,
+            senha,
+            logado: false,
         }
     }
 
-   fn login(&mut self, input_password: String) -> bool {
-        if self.password == input_password {
-            self.logged_in = true;
-            println!("Login Successful!");
+   fn fazer_login(&mut self, senha_inserida: String) -> bool {
+        if self.senha == senha_inserida {
+            self.logado = true;
+            println!("Login realizado com sucesso!");
             true
         } else {
-            println!("Check the information entered!");
+            println!("Verifique as informações inseridas!");
             false
         }
     }
   
-    fn logout(&self) -> bool {
-        self.logged_in
+    fn esta_logado(&self) -> bool {
+        self.logado
     }
 
-    fn forgot_my_password(&mut self, old_password: String, new_password: String) {
-        if self.password == old_password {
-            self.password = new_password;
-            println!("Password changed successfully!");
+    fn esqueci_minha_senha(&mut self, senha_antiga: String, nova_senha: String) {
+        if self.senha == senha_antiga {
+            self.senha = nova_senha;
+            println!("Senha alterada com sucesso!");
         } else {
-            println!("Incorrect old password!");
+            println!("Senha antiga incorreta!");
         }
     }
 }
 
 fn main() {
 
-    let mut user = User::new_user(String::from("Rodolfo"), String::from("admin"));
-    user.login(String::from("admin"));
+    let mut usuario = Usuario::novo_usuario(String::from("Rodolfo"), String::from("admin"));
+    usuario.fazer_login(String::from("admin"));
 
-    if user.logout() {
-        println!("Login successful!");
+    if usuario.esta_logado() {
+        println!("Login realizado com sucesso!");
     }
 
-    user.forgot_my_password(String::from("admn"), String::from("1234"));
-    user.logout();
+    usuario.esqueci_minha_senha(String::from("admn"), String::from("1234"));
+    usuario.esta_logado();
 }
 ```
 
-`not impl`
+`sem impl`
 
 ```rust
-struct User {
-    name: String,
-    password: String,
-    logged_in: bool,
+struct Usuario {
+    nome: String,
+    senha: String,
+    logado: bool,
 }
 
-fn new_user(name: String, password: String) -> User {
-    User {
-        name,
-        password,
-        logged_in: false,
+fn novo_usuario(nome: String, senha: String) -> Usuario {
+    Usuario {
+        nome,
+        senha,
+        logado: false,
     }
 }
 
-fn login(name: &mut User, input_password: String) -> bool {
-    if name.password == input_password {
-        name.logged_in = true;
-        println!("Login Successful!");
+fn fazer_login(usuario: &mut Usuario, senha_inserida: String) -> bool {
+    if usuario.senha == senha_inserida {
+        usuario.logado = true;
+        println!("Login realizado com sucesso!");
         true
     } else {
-        println!("Check the information entered!");
+        println!("Verifique as informações inseridas!");
         false
     }
 }
 
-fn loggout(user: &mut User) -> bool {
-    user.logged_in
+fn esta_logado(usuario: &Usuario) -> bool {
+    usuario.logado
 }
 
-fn forgot_my_password(user: &mut User, old_password: String, new_password: String) {
-    if user.password == old_password {
-        user.password = new_password;
-        println!("Password changed successfully!");
+fn esqueci_minha_senha(usuario: &mut Usuario, senha_antiga: String, nova_senha: String) {
+    if usuario.senha == senha_antiga {
+        usuario.senha = nova_senha;
+        println!("Senha alterada com sucesso!");
     } else {
-        println!("Incorrect old password!");
+        println!("Senha antiga incorreta!");
     }
 }
 
 fn main() {
   
-    let mut user = new_user(String::from("Rodolfo"), String::from("admin"));
-    login(&mut user, String::from("admin"));
+    let mut usuario = novo_usuario(String::from("Rodolfo"), String::from("admin"));
+    fazer_login(&mut usuario, String::from("admin"));
 
-    if loggout(&mut user) {
-        println!("Login successful!");
+    if esta_logado(&usuario) {
+        println!("Login realizado com sucesso!");
     }
 
-    forgot_my_password(&mut user, String::from("admn"), String::from("1234"));
-    loggout(&mut user);
+    esqueci_minha_senha(&mut usuario, String::from("admn"), String::from("1234"));
+    esta_logado(&usuario);
 }
 ```

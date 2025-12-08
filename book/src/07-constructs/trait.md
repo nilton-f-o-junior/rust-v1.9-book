@@ -1,32 +1,32 @@
 # Trait
 
-Is like a list of abilities (methods) that you teach to different types. All of them need to have the same abilities, but each type implements them in its own way. This allows writing generic code that works with any type that has those abilities.
+É como uma lista de habilidades (métodos) que você ensina a diferentes tipos. Todos eles precisam ter as mesmas habilidades, mas cada tipo as implementa à sua própria maneira. Isso permite escrever código genérico que funciona com qualquer tipo que possua essas habilidades.
 
 ```rust
-trait MakesNoise {
-    fn noise(&self) -> String;
+trait FazBarulho {
+    fn barulho(&self) -> String;
 }
 
-struct Dog;
-struct Cat;
+struct Cachorro;
+struct Gato;
 
-impl MakesNoise for Dog {
-    fn noise(&self) -> String {
+impl FazBarulho for Cachorro {
+    fn barulho(&self) -> String {
         String::from("Au au!")
     }
 }
 
-impl MakesNoise for Cat {
-    fn noise(&self) -> String {
+impl FazBarulho for Gato {
+    fn barulho(&self) -> String {
         String::from("Miauuu!")
     }
 }
 
 fn main() {
-    let dog = Dog;
-    let cat = Cat;
+    let cachorro = Cachorro;
+    let gato = Gato;
 
-    println!("{}", dog.noise());
-    println!("{}", cat.noise());
+    println!("{}", cachorro.barulho());
+    println!("{}", gato.barulho());
 }
 ```

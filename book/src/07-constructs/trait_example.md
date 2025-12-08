@@ -1,179 +1,176 @@
-# Trait - Example
+# Trait - Exemplo
 
 ```rust
-trait PaymentMethod {
-    fn process_payment(&self, value: f64) -> Result<String, String>;
+trait MetodoDePagamento {
+    fn processar_pagamento(&self, valor: f64) -> Result<String, String>;
 
-    fn validate(&self) -> bool;
+    fn validar(&self) -> bool;
 
-    fn fee(&self) -> f64;
+    fn taxa(&self) -> f64;
 
-    fn final_amount(&self, value: f64) -> f64 {
-        value + (value * self.fee())
+    fn valor_final(&self, valor: f64) -> f64 {
+        valor + (valor * self.taxa())
     }
 }
 
-struct CreditCard {
-    number: String,
-    card_holder: String,
-    expiration_date: String,
+struct CartaoDeCredito {
+    numero: String,
+    portador_cartao: String,
+    data_validade: String,
     cvv: String,
 }
 
-impl PaymentMethod for CreditCard {
-    fn process_payment(&self, value: f64) -> Result<String, String> {
-        if !self.validate() {
-            return Err(String::from("Invalid Card"));
+impl MetodoDePagamento for CartaoDeCredito {
+    fn processar_pagamento(&self, valor: f64) -> Result<String, String> {
+        if !self.validar() {
+            return Err(String::from("Cartão Inválido"));
         }
 
-        let amount_with_fee = self.final_amount(value);
+        let valor_com_taxa = self.valor_final(valor);
         Ok(format!(
-            "Payment of R${:.2} processed on card ****{}",
-            amount_with_fee,
-            &self.number[self.number.len() - 4..],
+            "Pagamento de R${:.2} processado no cartão ****{}",
+            valor_com_taxa,
+            &self.numero[self.numero.len() - 4..],
         ))
     }
 
-    fn validate(&self) -> bool {
-        self.number.len() == 16
-            && !self.card_holder.is_empty()
-            && !self.expiration_date.is_empty()
+    fn validar(&self) -> bool {
+        self.numero.len() == 16
+            && !self.portador_cartao.is_empty()
+            && !self.data_validade.is_empty()
             && self.cvv.len() == 3
     }
 
-    fn fee(&self) -> f64 {
+    fn taxa(&self) -> f64 {
         0.029
     }
 }
 
 struct Pix {
-    pix_key: String,
-    key_type: String,
+    chave_pix: String,
+    tipo_chave: String,
 }
 
-impl PaymentMethod for Pix {
-    fn process_payment(&self, value: f64) -> Result<String, String> {
-        if !self.validate() {
-            return Err(String::from("Invalid Pix Key"));
+impl MetodoDePagamento for Pix {
+    fn processar_pagamento(&self, valor: f64) -> Result<String, String> {
+        if !self.validar() {
+            return Err(String::from("Chave Pix Inválida"));
         }
 
         Ok(format!(
-            "Pix of R${:.2} sent to {} ({})",
-            value, self.pix_key, self.key_type
+            "Pix de R${:.2} enviado para {} ({})",
+            valor, self.chave_pix, self.tipo_chave
         ))
     }
 
-    fn validate(&self) -> bool {
-        !self.pix_key.is_empty()
+    fn validar(&self) -> bool {
+        !self.chave_pix.is_empty()
     }
 
-    fn fee(&self) -> f64 {
+    fn taxa(&self) -> f64 {
         0.0
     }
 }
 
-struct PaymentSlip {
-    barcode: String,
-    expiration_date: String,
+struct Boleto {
+    codigo_barras: String,
+    data_vencimento: String,
 }
 
-impl PaymentMethod for PaymentSlip {
-    fn process_payment(&self, value: f64) -> Result<String, String> {
-        if !self.validate() {
-            return Err(String::from("Invalid Payment Slip"));
+impl MetodoDePagamento for Boleto {
+    fn processar_pagamento(&self, valor: f64) -> Result<String, String> {
+        if !self.validar() {
+            return Err(String::from("Boleto Inválido"));
         }
 
-        let amount_with_fee = self.final_amount(value);
+        let valor_com_taxa = self.valor_final(valor);
         Ok(format!(
-            "Payment slip generated for the amount of R${:.2}. Due date: {}",
-            amount_with_fee, self.expiration_date
+            "Boleto gerado para o valor de R${:.2}. Vencimento: {}",
+            valor_com_taxa, self.data_vencimento
         ))
     }
 
-    fn validate(&self) -> bool {
-        self.barcode.len() == 47
+    fn validar(&self) -> bool {
+        self.codigo_barras.len() == 47
     }
 
-    fn fee(&self) -> f64 {
+    fn taxa(&self) -> f64 {
         2.50 / 100.0
     }
 }
 
-struct Order {
+struct Pedido {
     id: u32,
-    items: Vec<String>,
-    total_value: f64,
+    itens: Vec<String>,
+    valor_total: f64,
 }
 
-impl Order {
-    fn new_order(id: u32, items: Vec<String>, total_value: f64) -> Self {
-        Order {
+impl Pedido {
+    fn novo_pedido(id: u32, itens: Vec<String>, valor_total: f64) -> Self {
+        Pedido {
             id,
-            items,
-            total_value,
+            itens,
+            valor_total,
         }
     }
 
-    fn complete_purchase(&self, pay_method: &impl PaymentMethod) {
-        println!("\n --- Process Order ---");
+    fn finalizar_compra(&self, metodo_pagamento: &impl MetodoDePagamento) {
+        println!("\n --- Processar Pedido ---");
         println!("Id: {:?}", self.id);
-        println!("Items: {:?}", self.items);
-        println!("Total Value: R${:.2}", self.total_value);
+        println!("Itens: {:?}", self.itens);
+        println!("Valor Total: R${:.2}", self.valor_total);
 
-        match pay_method.process_payment(self.total_value) {
-            Ok(message) => println!("{}", message),
-            Err(error) => println!("{}", error),
+        match metodo_pagamento.processar_pagamento(self.valor_total) {
+            Ok(mensagem) => println!("{}", mensagem),
+            Err(erro) => println!("{}", erro),
         }
     }
 }
 
 fn main() {
-    let order = Order::new_order(
+    let pedido = Pedido::novo_pedido(
         1004,
         vec![
-            String::from("Bread"),
+            String::from("Pão"),
             String::from("Banana"),
-            String::from("Coffe"),
-            String::from("Milk"),
+            String::from("Café"),
+            String::from("Leite"),
         ],
         144.00,
     );
 
-    //
-    let card = CreditCard {
-        number: String::from("1234567891234567"),
-        card_holder: String::from("Rodolf Pig"),
-        expiration_date: String::from("08/32"),
+    let cartao = CartaoDeCredito {
+        numero: String::from("1234567891234567"),
+        portador_cartao: String::from("Rodolfo Porco"),
+        data_validade: String::from("08/32"),
         cvv: String::from("123"),
     };
 
-    order.complete_purchase(&card);
+    pedido.finalizar_compra(&cartao);
 
-    //
     let pix = Pix {
-        pix_key: String::from("rodolfo_pig@hotmail.com"),
-        key_type: String::from("email"),
+        chave_pix: String::from("rodolfo_pig@hotmail.com"),
+        tipo_chave: String::from("email"),
     };
 
-    order.complete_purchase(&pix);
+    pedido.finalizar_compra(&pix);
 
-    //
-    let payment_slip = PaymentSlip {
-        barcode: String::from("12345678912345678912345678912345678912345678912"),
-        expiration_date: String::from("07/11/2025"),
+    let boleto = Boleto {
+        codigo_barras: String::from("12345678912345678912345678912345678912345678912"),
+        data_vencimento: String::from("07/11/2025"),
     };
 
-    order.complete_purchase(&payment_slip);
+    pedido.finalizar_compra(&boleto);
 
-    // invalid
-    println!("\n --- Process Invalid ---");
-    let invalid_card = CreditCard {
-        number: String::from("123"),
-        card_holder: String::from("Alice"),
-        expiration_date: String::from("04/28"),
+    // inválido
+    println!("\n --- Processar Inválido ---");
+    let cartao_invalido = CartaoDeCredito {
+        numero: String::from("123"),
+        portador_cartao: String::from("Alice"),
+        data_validade: String::from("04/28"),
         cvv: String::from("49"),
     };
 
-    order.complete_purchase(&invalid_card);
+    pedido.finalizar_compra(&cartao_invalido);
 }
 ```

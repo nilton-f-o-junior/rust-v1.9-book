@@ -1,13 +1,13 @@
-# Modules - Inline
+# Módulos - Internos
 
-Modules defined directly in the same file, useful for organizing without creating separate files.
+Módulos definidos diretamente no mesmo arquivo, úteis para organização sem a criação de arquivos separados.
 
 `mod`
 
 ```rust
-mod cal {
+mod calculo {
 
-    pub fn sum(a: i8, b: i8) -> i8 {
+    pub fn soma(a: i8, b: i8) -> i8 {
         a + b
     }
 
@@ -16,22 +16,20 @@ mod cal {
     }
 }
 
-mod text {
+mod texto {
 
-    pub fn tprint() {
-        println!("Hello, world!");
+    pub fn imprimir() {
+        println!("Olá, mundo!");
     }
 }
 
 fn main() {
-    //
-    let sum = cal::sum(1, 2);
-    println!("Result: {}", sum);
+    let soma = calculo::soma(1, 2);
+    println!("Resultado: {}", soma);
 
-    let sub = cal::sub(5, 2);
-    println!("Result: {}", sub);
+    let subtracao = calculo::sub(5, 2);
+    println!("Resultado: {}", subtracao);
 
-    //
-    text::tprint();
+    texto::imprimir();
 }
 ```

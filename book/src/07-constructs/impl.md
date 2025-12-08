@@ -1,62 +1,62 @@
 # Impl
 
-Your create the data structure with struct, and then use impl to say what that structure can do.
+Você cria a estrutura de dados com struct e, em seguida, usa impl para definir o que essa estrutura pode fazer.
 
 `impl`
 
 ```rust
-struct Coordinate {
+struct Coordenada {
       x: f32,
       y: f32,
 
 }
 
-impl Coordinate {
+impl Coordenada {
     
-    fn coordinate_x(&self) {
-        println!("Point X: {}", self.x);
+    fn coordenada_x(&self) {
+        println!("Ponto X: {}", self.x);
     }
 
-    fn coordinate_y(&self) {
-        println!("Point Y: {}", self.y);
+    fn coordenada_y(&self) {
+        println!("Ponto Y: {}", self.y);
     }
 
-    fn new_coordinate(x: f32, y: f32) -> Coordinate {
-        Coordinate { x, y }
+    fn nova_coordenada(x: f32, y: f32) -> Coordenada {
+        Coordenada { x, y }
     }
 }
 
 fn main() {  
-    let init_coordinate = Coordinate::new_coordinate(10., 10.);
+    let coordenada_inicial = Coordenada::nova_coordenada(10., 10.);
 
-    init_coordinate.coordinate_x();
-    init_coordinate.coordinate_y();
+    coordenada_inicial.coordenada_x();
+    coordenada_inicial.coordenada_y();
 }
 ```
 
-`not impl`
+`sem impl`
 
 ```rust
-struct Coordinate {
+struct Coordenada {
     x: f32,
     y: f32,
 }
 
-fn coordinate_x(point: &Coordinate) {
-    println!("Point X: {:?}", point.x);
+fn coordenada_x(ponto: &Coordenada) {
+    println!("Ponto X: {}", ponto.x);
 }
 
-fn coordinate_y(point: &Coordinate) {
-    println!("Point Y: {:?}", point.y);
+fn coordenada_y(ponto: &Coordenada) {
+    println!("Ponto Y: {}", ponto.y);
 }
 
-fn new_coordinate(x: f32, y: f32) -> Coordinate {
-    Coordinate { x, y }
+fn nova_coordenada(x: f32, y: f32) -> Coordenada {
+    Coordenada { x, y }
 }
 
 fn main() {
-    let init_coordinate = new_coordinate(10., 10.);
-    coordinate_x(&init_coordinate);
-    coordinate_y(&init_coordinate);
+    let coordenada_inicial = nova_coordenada(10., 10.);
+    coordenada_x(&coordenada_inicial);
+    coordenada_y(&coordenada_inicial);
 }
 ```

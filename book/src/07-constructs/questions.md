@@ -1,812 +1,814 @@
-# Question - Constructs
+# Questões - Construtos
 
-01 - Create a struct named Book with the following fields:
+---
 
-- title (String)
-- author (String)
-- pages (u32)
+01 - Crie uma struct chamada Livro com os seguintes campos:
 
-Then, create an instance of this struct and print its values.
+- titulo (String);
+- autor (String);
+- paginas (u32).
+
+Em seguida, crie uma instância dessa struct e imprima seus valores.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
-struct Book {
-    title: String,
-    author: String,
-    pages: u16,
+struct Livro {
+    titulo: String,
+    autor: String,
+    paginas: u16,
 }
 
 fn main() {
-    let book = Book {
-        title: String::from("Overlord - O Rei Morto-vivo"),
-        author: String::from("Kugane Maruyama"),
-        pages: 272,
+    let livro = Livro {
+        titulo: String::from("Overlord - O Rei Morto-vivo"),
+        autor: String::from("Kugane Maruyama"),
+        paginas: 272,
     };
 
-    println!("Title: {}", book.title);
-    println!("Author: {}", book.author);
-    println!("Pages: {}", book.pages);
+    println!("Título: {}", livro.titulo);
+    println!("Autor: {}", livro.autor);
+    println!("Páginas: {}", livro.paginas);
 }
 ```
 </details>
 
-> By adding #[derive(Debug)] above the Book {} struct, you can print the entire struct.
+> Adicionando `#[derive(Debug)]` acima da struct Livro {}, você pode imprimir a struct inteira.
 
-02 - Create a Car struct with the fields:
+02 - Crie uma struct Carro com os campos:
 
-- brand (String)
-- model (String)
-- year (u16)
+- marca (String);
+- modelo (String);
+- ano (u16).
 
-Use impl to create an associated function new() to facilitate the creation of new cars.
+Use impl para criar uma função associada novo() para facilitar a criação de novos carros.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
-struct Car {
-    brand: String,
-    model: String,
-    age: u16,
+struct Carro {
+    marca: String,
+    modelo: String,
+    ano: u16,
 }
 
-impl Car {
-    fn new_car(brand: String, model: String, age: u16) -> Self {
-        Car { brand, model, age }
+impl Carro {
+    fn novo_carro(marca: String, modelo: String, ano: u16) -> Self {
+        Carro { marca, modelo, ano }
     }
 }
 
 fn main() {
-    let car = Car::new_car(String::from("Volkswagen"), String::from("Fusca"), 1959);
+    let carro = Carro::novo_carro(String::from("Volkswagen"), String::from("Fusca"), 1959);
 
-    println!("Brand: {:?}", car.brand);
-    println!("Model: {:?}", car.model);
-    println!("Age: {:?}", car.age);
+    println!("Marca: {:?}", carro.marca);
+    println!("Modelo: {:?}", carro.modelo);
+    println!("Ano: {:?}", carro.ano);
 }
 ```
 </details>
 
-03 - Create two structs:
+03 - Crie duas structs:
 
-Address with:
+Endereco com:
 
-- street (String)
-- number (u16)
-- city (String)
+- rua (String);
+- numero (u16);
+- cidade (String).
 
-Client with:
+Cliente com:
 
-- name (String)
-- email (String)
-- address (Address)
+- nome (String);
+- email (String);
+- endereco (Endereco).
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 #[derive(Debug)]
-struct Address {
-    city: String,
-    street: String,
-    number: u16,
+struct Endereco {
+    cidade: String,
+    rua: String,
+    numero: u16,
 }
 
-impl Address {
-    fn new_address(city: String, street: String, number: u16) -> Self {
+impl Endereco {
+    fn novo_endereco(cidade: String, rua: String, numero: u16) -> Self {
         Self {
-            city,
-            street,
-            number,
+            cidade,
+            rua,
+            numero,
         }
     }
 }
 
 #[derive(Debug)]
-struct User {
-    name: String,
+struct Cliente {
+    nome: String,
     email: String,
-    address: Address,
+    endereco: Endereco,
 }
 
-impl User {
-    fn new_user(name: String, email: String, address: Address) -> Self {
+impl Cliente {
+    fn novo_cliente(nome: String, email: String, endereco: Endereco) -> Self {
         Self {
-            name,
+            nome,
             email,
-            address,
+            endereco,
         }
     }
 }
 
 fn main() {
-    let client = User {
-        name: String::from("Rodolfo Silva"),
+    let cliente = Cliente {
+        nome: String::from("Rodolfo Silva"),
         email: String::from("rodolfo_silva@email.com"),
-        address: Address {
-            city: String::from("Rodolfo Silva"),
-            street: String::from("Manaus"),
-            number: 654,
+        endereco: Endereco {
+            cidade: String::from("Manaus"),
+            rua: String::from("Rua das Flores"),
+            numero: 654,
         },
     };
 
-    println!("{:#?}", client);
+    println!("{:#?}", cliente);
 }
 ```
 </details>
 
-04 - Create a Counter struct with a single field:
+04 - Crie uma struct Contador com um único campo:
 
-- value (i32)
+- valor (i32)
 
-Implement three methods:
+Implemente três métodos:
 
-- new() - creates a counter starting at 0
-- increment(&mut self) - adds 1 to the value
-- get_value(&self) - returns the current value
+- novo() - cria um contador começando em 0;
+- incrementar(&mut self) - adiciona 1 ao valor;
+- obter_valor(&self) - retorna o valor atual.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
-struct Counter {
-    value: i32,
+struct Contador {
+    valor: i32,
 }
 
-impl Counter {
-    fn counter() -> Counter {
-        Counter { value: 0 }
+impl Contador {
+    fn novo() -> Contador {
+        Contador { valor: 0 }
     }
 
-    fn increment_counter(&mut self) {
-        self.value += 1;
+    fn incrementar(&mut self) {
+        self.valor += 1;
     }
 
-    fn print_value(&self) -> i32 {
-        self.value
+    fn obter_valor(&self) -> i32 {
+        self.valor
     }
 }
 
 fn main() {
-    let mut value = Counter::counter();
+    let mut contador = Contador::novo();
 
-    value.increment_counter();
-    println!("{:?}", value.print_value());
+    contador.incrementar();
+    println!("{:?}", contador.obter_valor());
 
-    value.increment_counter();
-    println!("{:?}", value.print_value());
+    contador.incrementar();
+    println!("{:?}", contador.obter_valor());
 }
 ```
 </details>
 
-05 - Create a Rectangle struct with the fields:
+05 - Crie uma struct Retangulo com os campos:
 
-- width (f32)
-- height (f32)
+- largura (f32);
+- altura (f32).
 
-Implement a method named calculate_area(&self) that returns the rectangle's area. Create an instance, call the method, and print the result.
-
-[Playground!]()
-
-<details>
-<summary>Answers</summary>
-
-```rust
-#[derive(Debug)]
-struct Rectangle {
-    height: f32,
-    width: f32,
-}
-
-impl Rectangle {
-    fn rectangle(height: f32, width: f32) -> Self {
-        Rectangle { height, width }
-    }
-
-    fn calculate_area(&self) -> f32 {
-        self.height * self.width
-    }
-}
-
-fn main() {
-    let value1 = Rectangle::rectangle(3.3, 5.7);
-    let result = value1.calculate_area();
-    println!("{:#?}", result);
-
-    // Or
-    // let value2 = Rectangle::calculate_area(&Rectangle::rectangle(3.3, 5.7));
-    // println!("{:#?}", value2);
-}
-```
-</details>
-
-06 - Create a Tuple Struct named ColorRGB:
-
-- Represent the colors Red, Green, and Blue (u8 types).
-- Create an associated function black() that returns the color black (R=0, G=0, B=0).
-- Create an instance of this color using the associated function and print its values.
+Implemente um método chamado calcular_area(&self) que retorna a área do retângulo. Crie uma instância, chame o método e imprima o resultado.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 #[derive(Debug)]
-struct RGB(u8, u8, u8);
+struct Retangulo {
+    altura: f32,
+    largura: f32,
+}
 
-impl RGB {
-    fn color(r: u8, g: u8, b: u8) -> Self {
-        RGB(r, g, b)
+impl Retangulo {
+    fn novo(altura: f32, largura: f32) -> Self {
+        Retangulo { altura, largura }
+    }
+
+    fn calcular_area(&self) -> f32 {
+        self.altura * self.largura
     }
 }
 
 fn main() {
-    let black = RGB::color(0, 0, 0);
-    println!("Black: {:?}", black);
+    let valor1 = Retangulo::novo(3.3, 5.7);
+    let resultado = valor1.calcular_area();
+    println!("{:#?}", resultado);
 
-    let white = RGB::color(255, 255, 255);
-    println!("Black: {:?}", white);
+    // Ou
+    // let valor2 = Retangulo::calcular_area(&Retangulo::novo(3.3, 5.7));
+    // println!("{:#?}", valor2);
 }
 ```
 </details>
 
+06 - Crie uma Struct Tupla chamada CorRGB:
+
+- Represente as cores Vermelho, Verde e Azul (tipos u8);
+- Crie uma função associada preto() que retorne a cor preta (R=0, G=0, B=0);
+- Crie uma instância desta cor usando a função associada e imprima seus valores.
+
+[Playground!]()
+
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 #[derive(Debug)]
 struct RGB(u8, u8, u8);
 
 impl RGB {
-    fn color(r: u8, g: u8, b: u8) -> Self {
+    fn cor(r: u8, g: u8, b: u8) -> Self {
+        RGB(r, g, b)
+    }
+}
+
+fn main() {
+    let preto = RGB::cor(0, 0, 0);
+    println!("Preto: {:?}", preto);
+
+    let branco = RGB::cor(255, 255, 255);
+    println!("Branco: {:?}", branco);
+}
+```
+</details>
+
+<details>
+<summary>Resposta</summary>
+
+```rust
+#[derive(Debug)]
+struct RGB(u8, u8, u8);
+
+impl RGB {
+    fn cor(r: u8, g: u8, b: u8) -> Self {
         RGB(r, g, b)
     }
 
-    fn get_red(&self) -> u8 {
+    fn obter_vermelho(&self) -> u8 {
         self.0
     }
 
-    fn set_red(&mut self, new_red: u8) {
-        self.0 = new_red;
+    fn definir_vermelho(&mut self, novo_vermelho: u8) {
+        self.0 = novo_vermelho;
     }
 
-    fn get_green(&self) -> u8 {
+    fn obter_verde(&self) -> u8 {
         self.1
     }
 
-    fn set_green(&mut self, new_green: u8) {
-        self.1 = new_green;
+    fn definir_verde(&mut self, novo_verde: u8) {
+        self.1 = novo_verde;
     }
 
-    fn get_blue(&self) -> u8 {
+    fn obter_azul(&self) -> u8 {
         self.2
     }
 
-    fn set_blue(&mut self, new_blue: u8) {
-        self.2 = new_blue;
+    fn definir_azul(&mut self, novo_azul: u8) {
+        self.2 = novo_azul;
     }
 }
 
 fn main() {
-    let mut my_color = RGB::color(0, 0, 0);
-    println!("{:?}", my_color);
+    let mut minha_cor = RGB::cor(0, 0, 0);
+    println!("{:?}", minha_cor);
 
-    let red = my_color.get_red();
-    let green = my_color.get_green();
-    let blue = my_color.get_blue();
-    println!("RGB({:?}, {:?}, {:?})", red, green, blue);
+    let vermelho = minha_cor.obter_vermelho();
+    let verde = minha_cor.obter_verde();
+    let azul = minha_cor.obter_azul();
+    println!("RGB({:?}, {:?}, {:?})", vermelho, verde, azul);
 
-    my_color.set_red(255);
-    my_color.set_green(255);
-    my_color.set_blue(255);
+    my_color.definir_vermelho(255);
+    my_color.definir_verde(255);
+    my_color.definir_azul(255);
 
-    println!("{:?}", my_color);
+    println!("{:?}", minha_cor);
 }
 ```
 </details>
 
-07 - Create an Employee struct with the fields:
+07 - Crie uma struct Funcionario com os campos:
 
-- name (String)
-- salary (f64)
+- nome (String);
+- salario (f64).
 
-Implement a mutable method increase_salary(&mut self, percentage: f64) that increases the employee's salary by the provided percentage (e.g., 0.10 for 10%).
+Implemente um método mutável aumentar_salario(&mut self, porcentagem: f64) que aumenta o salário do funcionário pela porcentagem fornecida (ex: 0.10 para 10%).
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 #[derive(Debug)]
-struct Employee {
-    salary: f64,
+struct Funcionario {
+    salario: f64,
 }
 
-impl Employee {
-    fn salary_init(salary: f64) -> Self {
-        Self { salary }
+impl Funcionario {
+    fn inicializar_salario(salario: f64) -> Self {
+        Self { salario }
     }
 
-    fn salary_increase(&self, percent: f64) -> f64 {
-        (self.salary * percent) + self.salary
+    fn aumentar_salario(&self, porcentagem: f64) -> f64 {
+        (self.salario * porcentagem) + self.salario
     }
 }
 
 fn main() {
-    let mut salary = Employee::salary_init(1500.);
-    println!("{:?}", salary);
+    let mut salario = Funcionario::inicializar_salario(1500.);
+    println!("{:?}", salario);
 
-    let salary_end = Employee::salary_increase(&mut salary, 0.1);
-    let result = format!("{:.2}", salary_end);
-    println!("{}", result);
+    let salario_final = Funcionario::aumentar_salario(&mut salario, 0.1);
+    let resultado = format!("{:.2}", salario_final);
+    println!("{}", resultado);
 }
 ```
 </details>
 
-08 - Create a PaymentMethod enum representing different payment forms:
+08 - Crie um enum MetodoDePagamento representando diferentes formas de pagamento:
 
-- Cash
-- CreditCard (with number of installments)
-- DebitCard
-- Pix (with key)
+- Dinheiro;
+- CartaoDeCredito (com número de parcelas);
+- CartaoDeDebito;
+- Pix (com chave).
 
-Implement a function that receives this enum and returns a message describing the chosen payment.
+Implemente uma função que receba este enum e retorne uma mensagem descrevendo o pagamento escolhido.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
-enum PaymentMethod {
-    Cash,
-    CreditCard { number_installments: u8 },
-    DebitCard,
-    Pix { pix_key: String },
+enum MetodoDePagamento {
+    Dinheiro,
+    CartaoDeCredito { numero_parcelas: u8 },
+    CartaoDeDebito,
+    Pix { chave_pix: String },
 }
 
-impl PaymentMethod {
-    fn payment_impl(&self) {
+impl MetodoDePagamento {
+    fn detalhar_pagamento(&self) {
         match self {
-            PaymentMethod::Cash => {
-                println!("Method: Cash");
+            MetodoDePagamento::Dinheiro => {
+                println!("Método: Dinheiro");
             }
 
-            PaymentMethod::CreditCard {
-                number_installments,
+            MetodoDePagamento::CartaoDeCredito {
+                numero_parcelas,
             } => {
                 println!(
-                    "Method: Credit Card - Installments = {:?}",
-                    number_installments
+                    "Método: Cartão de Crédito - Parcelas = {:?}",
+                    numero_parcelas
                 );
             }
 
-            PaymentMethod::DebitCard => {
-                println!("Method: Debit Card");
+            MetodoDePagamento::CartaoDeDebito => {
+                println!("Método: Cartão de Débito");
             }
 
-            PaymentMethod::Pix { pix_key } => {
-                println!("Method: Pix - Key = {:?}", pix_key);
-            }
-        }
-    }
-}
-
-fn main() {
-    let cash_payment = PaymentMethod::Cash;
-    let creditcard_payment = PaymentMethod::CreditCard {
-        number_installments: 3,
-    };
-    let debitcard_payment = PaymentMethod::DebitCard;
-    let pix_payment = PaymentMethod::Pix {
-        pix_key: String::from("123.123.123.07"),
-    };
-
-    cash_payment.payment_impl();
-    creditcard_payment.payment_impl();
-    debitcard_payment.payment_impl();
-    pix_payment.payment_impl();
-}
-```
-</details>
-
-09 - Create a Notification enum with the variants:
-
-- Email (recipient and subject).
-- SMS (number and message).
-- Push (title and body).
-
-Implement a send() method for each type that simulates sending by printing the relevant information.
-
-[Playground!]()
-
-<details>
-<summary>Answers</summary>
-
-```rust
-enum Notification {
-    Email { recipient: String, message: String },
-    SMS { number: String, message: String },
-    Push { title: String, body: String },
-}
-
-impl Notification {
-    fn send(&self) {
-        match self {
-            Notification::Email { recipient, message } => {
-                println!("Email to: {}", recipient);
-                println!("Subject: {}\n", message);
-            }
-
-            Notification::SMS { number, message } => {
-                println!("SMS to: {}\n{}\n", number, message);
-            }
-            Notification::Push { title, body } => {
-                println!("Title: {}\n{}\n", title, body);
+            MetodoDePagamento::Pix { chave_pix } => {
+                println!("Método: Pix - Chave = {:?}", chave_pix);
             }
         }
     }
 }
 
 fn main() {
-    let email = Notification::Email {
-        recipient: String::from("e_mail@email.com"),
-        message: String::from("Welcome to Rust!"),
+    let pagamento_dinheiro = MetodoDePagamento::Dinheiro;
+    let pagamento_cartao_credito = MetodoDePagamento::CartaoDeCredito {
+        numero_parcelas: 3,
+    };
+    let pagamento_cartao_debito = MetodoDePagamento::CartaoDeDebito;
+    let pagamento_pix = MetodoDePagamento::Pix {
+        chave_pix: String::from("123.123.123.07"),
     };
 
-    let sms = Notification::SMS {
-        number: String::from("8077777777"),
-        message: String::from("Your code is: 6784"),
-    };
-
-    let noti_push = Notification::Push {
-        title: String::from("New Payment"),
-        body: String::from("You receive: R$ 10,00"),
-    };
-
-    email.send();
-    sms.send();
-    noti_push.send();
+    pagamento_dinheiro.detalhar_pagamento();
+    pagamento_cartao_credito.detalhar_pagamento();
+    pagamento_cartao_debito.detalhar_pagamento();
+    pagamento_pix.detalhar_pagamento();
 }
 ```
 </details>
 
-10 - Create a RequestState enum representing:
+09 - Crie um enum Notificacao com os variantes:
 
-- Pending.
-- InProgress (with progress percentage).
-- Completed (with response data as String).
-- Failed (with error code).
+- Email (destinatario e mensagem);
+- SMS (numero e mensagem);
+- Push (titulo e corpo).
 
-Implement the methods get_status() and is_finished() for this enum.
+Implemente um método enviar() para cada tipo que simule o envio imprimindo a informação relevante.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
-enum RequestState {
-    Pending,
-    InProgress { progress_percent: u8 },
-    Completed { data: String },
-    Failed { code: u32 },
+enum Notificacao {
+    Email { destinatario: String, mensagem: String },
+    SMS { numero: String, mensagem: String },
+    Push { titulo: String, corpo: String },
 }
 
-impl RequestState {
-    fn get_status(&self) -> String {
+impl Notificacao {
+    fn enviar(&self) {
         match self {
-            RequestState::Pending => {
-                format!("Pending!")
+            Notificacao::Email { destinatario, mensagem } => {
+                println!("Email para: {}", destinatario);
+                println!("Assunto: {}\n", mensagem);
             }
 
-            RequestState::InProgress { progress_percent } => {
-                format!("In Progress: {}%", progress_percent)
+            Notificacao::SMS { numero, mensagem } => {
+                println!("SMS para: {}\n{}\n", numero, mensagem);
             }
-
-            RequestState::Completed { data } => {
-                format!("{}", data)
+            Notificacao::Push { titulo, corpo } => {
+                println!("Título: {}\n{}\n", titulo, corpo);
             }
-
-            RequestState::Failed { code } => {
-                format!("Failed: {}", code)
-            }
-        }
-    }
-
-    fn is_finished(&self) -> bool {
-        match self {
-            RequestState::Pending { .. } | RequestState::InProgress { .. } => false,
-            RequestState::Completed { .. } | RequestState::Failed { .. } => true,
         }
     }
 }
 
 fn main() {
-    let pending = RequestState::Pending;
-    let in_progress = RequestState::InProgress {
-        progress_percent: 18,
+    let email = Notificacao::Email {
+        destinatario: String::from("e_mail@email.com"),
+        mensagem: String::from("Bem-vindo ao Rust!"),
     };
-    let completed = RequestState::Completed {
-        data: String::from("Completed!"),
+
+    let sms = Notificacao::SMS {
+        numero: String::from("8077777777"),
+        mensagem: String::from("Seu código é: 6784"),
     };
-    let failed = RequestState::Failed { code: 404 };
 
-    println!("Status: {}", pending.get_status());
-    println!("Finished: {}\n", pending.is_finished());
+    let noti_push = Notificacao::Push {
+        titulo: String::from("Novo Pagamento"),
+        corpo: String::from("Você recebeu: R$ 10,00"),
+    };
 
-    println!("Status: {}", in_progress.get_status());
-    println!("Finished: {}\n", in_progress.is_finished());
-
-    println!("Status: {}", completed.get_status());
-    println!("Finished: {}\n", completed.is_finished());
-
-    println!("Status: {}", failed.get_status());
-    println!("Finished: {}", failed.is_finished());
+    email.enviar();
+    sms.enviar();
+    noti_push.enviar();
 }
 ```
 </details>
 
-11 - Create an OrderStatus enum representing the different states of a restaurant order:
+10 - Crie um enum EstadoDaRequisicao representando:
 
-- Received (with order number).
-- InPreparation (with estimated time in minutes).
-- ReadyForPickup (with ticket number).
-- Delivered.
-- Canceled (with reason as String).
+- Pendente;
+- EmProgresso (com porcentagem de progresso);
+- Concluido (com dados de resposta como String);
+- Falhou (com código de erro).
 
-Implement the methods can_cancel() which returns true only if the order has not yet been delivered, and time_remaining() which returns Option<u32> with the estimated time (only for orders in preparation).
+Implemente os métodos obter_status() e esta_finalizado() para este enum.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
-enum OrderStatus {
-    Received { order: u32 },
-    InPreparation { minutes: u32 },
-    ReadyForPickup { ticket: u32 },
-    Delivered,
-    Canceled { reason: String },
+enum EstadoDaRequisicao {
+    Pendente,
+    EmProgresso { porcentagem_progresso: u8 },
+    Concluido { dados: String },
+    Falhou { codigo: u32 },
 }
 
-impl OrderStatus {
-    fn can_cancel(&self) -> bool {
+impl EstadoDaRequisicao {
+    fn obter_status(&self) -> String {
         match self {
-            OrderStatus::Delivered => false,
+            EstadoDaRequisicao::Pendente => {
+                format!("Pendente!")
+            }
+
+            EstadoDaRequisicao::EmProgresso { porcentagem_progresso } => {
+                format!("Em Progresso: {}%", porcentagem_progresso)
+            }
+
+            EstadoDaRequisicao::Concluido { dados } => {
+                format!("{}", dados)
+            }
+
+            EstadoDaRequisicao::Falhou { codigo } => {
+                format!("Falhou: {}", codigo)
+            }
+        }
+    }
+
+    fn esta_finalizado(&self) -> bool {
+        match self {
+            EstadoDaRequisicao::Pendente { .. } | EstadoDaRequisicao::EmProgresso { .. } => false,
+            EstadoDaRequisicao::Concluido { .. } | EstadoDaRequisicao::Falhou { .. } => true,
+        }
+    }
+}
+
+fn main() {
+    let pendente = EstadoDaRequisicao::Pendente;
+    let em_progresso = EstadoDaRequisicao::EmProgresso {
+        porcentagem_progresso: 18,
+    };
+    let concluido = EstadoDaRequisicao::Concluido {
+        dados: String::from("Concluído!"),
+    };
+    let falhou = EstadoDaRequisicao::Falhou { codigo: 404 };
+
+    println!("Status: {}", pendente.obter_status());
+    println!("Finalizado: {}\n", pendente.esta_finalizado());
+
+    println!("Status: {}", em_progresso.obter_status());
+    println!("Finalizado: {}\n", em_progresso.esta_finalizado());
+
+    println!("Status: {}", concluido.obter_status());
+    println!("Finalizado: {}\n", concluido.esta_finalizado());
+
+    println!("Status: {}", falhou.obter_status());
+    println!("Finalizado: {}", falhou.esta_finalizado());
+}
+```
+</details>
+
+11 - Crie um enum StatusDoPedido representando os diferentes estados de um pedido de restaurante:
+
+- Recebido (com número do pedido);
+- EmPreparacao (com tempo estimado em minutos);
+- ProntoParaRetirada (com número da senha);
+- Entregue;
+- Cancelado (com motivo como String).
+
+Implemente os métodos pode_cancelar() que retorna true apenas se o pedido ainda não tiver sido entregue, e tempo_restante() que retorna Option<u32> com o tempo estimado (apenas para pedidos em preparação).
+
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
+
+```rust
+enum StatusDoPedido {
+    Recebido { pedido: u32 },
+    EmPreparacao { minutos: u32 },
+    ProntoParaRetirada { senha: u32 },
+    Entregue,
+    Cancelado { motivo: String },
+}
+
+impl StatusDoPedido {
+    fn pode_cancelar(&self) -> bool {
+        match self {
+            StatusDoPedido::Entregue => false,
             _ => true,
         }
     }
 
-    fn time_remaining(&self) -> Option<u32> {
+    fn tempo_restante(&self) -> Option<u32> {
         match self {
-            OrderStatus::InPreparation { minutes } => Some(*minutes),
+            StatusDoPedido::EmPreparacao { minutos } => Some(*minutos),
             _ => None,
         }
     }
 
-    fn status_description(&self) -> String {
+    fn descricao_status(&self) -> String {
         match self {
-            OrderStatus::Received { order } => {
-                format!("Order received - N: {}", order)
+            StatusDoPedido::Recebido { pedido } => {
+                format!("Pedido recebido - N°: {}", pedido)
             }
 
-            OrderStatus::InPreparation { minutes } => {
-                format!("In preparation - Minutes: {}", minutes)
+            StatusDoPedido::EmPreparacao { minutos } => {
+                format!("Em preparação - Minutos: {}", minutos)
             }
 
-            OrderStatus::ReadyForPickup { ticket } => {
-                format!("Ready for pickup - Ticket: {}", ticket)
+            StatusDoPedido::ProntoParaRetirada { senha } => {
+                format!("Pronto para retirada - Senha: {}", senha)
             }
 
-            OrderStatus::Delivered => {
-                format!("Delivered!")
+            StatusDoPedido::Entregue => {
+                format!("Entregue!")
             }
 
-            OrderStatus::Canceled { reason } => {
-                format!("Canceled - Reason: {}", reason)
+            StatusDoPedido::Cancelado { motivo } => {
+                format!("Cancelado - Motivo: {}", motivo)
             }
         }
     }
 }
 
 fn main() {
-    let order_recived = OrderStatus::Received { order: 7895 };
-    let order_prep = OrderStatus::InPreparation { minutes: 30 };
-    let order_delivered = OrderStatus::Delivered;
-    let order_pickup = OrderStatus::ReadyForPickup { ticket: 462 };
-    let order_canceled = OrderStatus::Canceled {
-        reason: String::from("The delivery took a long time!"),
+    let pedido_recebido = StatusDoPedido::Recebido { pedido: 7895 };
+    let pedido_prep = StatusDoPedido::EmPreparacao { minutos: 30 };
+    let pedido_entregue = StatusDoPedido::Entregue;
+    let pedido_retirada = StatusDoPedido::ProntoParaRetirada { senha: 462 };
+    let pedido_cancelado = StatusDoPedido::Cancelado {
+        motivo: String::from("A entrega demorou muito!"),
     };
-    let order_cancel = OrderStatus::Delivered;
-    let order_remaining = OrderStatus::InPreparation { minutes: 110 };
+    let pedido_cancela = StatusDoPedido::Entregue;
+    let pedido_restante = StatusDoPedido::EmPreparacao { minutos: 110 };
 
-    println!("{}", order_recived.status_description());
-    println!("{}", order_prep.status_description());
-    println!("{}", order_delivered.status_description());
-    println!("{}", order_pickup.status_description());
-    println!("{}", order_canceled.status_description());
+    println!("{}", pedido_recebido.descricao_status());
+    println!("{}", pedido_prep.descricao_status());
+    println!("{}", pedido_entregue.descricao_status());
+    println!("{}", pedido_retirada.descricao_status());
+    println!("{}", pedido_cancelado.descricao_status());
 
-    println!("{}", order_cancel.can_cancel());
-    println!("{:?}", order_remaining.time_remaining());
-    println!("{:?}", order_cancel.time_remaining());
+    println!("{}", pedido_cancela.pode_cancelar());
+    println!("{:?}", pedido_restante.tempo_restante());
+    println!("{:?}", pedido_cancela.tempo_restante());
 }
 ```
 </details>
 
-12 - Create a trait named Shape that defines a method signature area(&self) -> f64. Then, create two structs:
+12 - Crie um trait chamado Forma que defina uma assinatura de método area(&self) -> f64. Em seguida, crie duas structs:
 
-- Rectangle with the fields width: f64 and height: f64.
-- Circle with the field radius: f64.
+- Retangulo com os campos largura: f64 e altura: f64;
+- Circulo com o campo raio: f64.
 
-Implement the Shape trait for both:
+Implemente o trait Forma para ambos:
 
-- For the rectangle, return width * height.
-- For the circle, return PI * radius * radius.
+- Para o retângulo, retorne largura * altura;
+- Para o círculo, retorne PI * raio * raio.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
 // use std::f64::consts::PI;
 const PI: f64 = 3.14;
 
-trait Shape {
+trait Forma {
     fn area(&self) -> f64;
 }
 
-struct Rectangle {
-    width: f64,
-    height: f64,
+struct Retangulo {
+    largura: f64,
+    altura: f64,
 }
 
-impl Shape for Rectangle {
+impl Forma for Retangulo {
       fn area(&self) -> f64 {
-          self.width * self.height
+          self.largura * self.altura
       }
 }
 
-struct Circle {
-    radius: f64,
+struct Circulo {
+    raio: f64,
 }
 
-impl Shape for Circle {
+impl Forma for Circulo {
     fn area(&self) -> f64 {
-        self.radius * self.radius * PI
+        self.raio * self.raio * PI
     }
 }
 
 fn main() {
-    let rectangle = Rectangle {
-        width: 5.5,
-        height: 3.2,
+    let retangulo = Retangulo {
+        largura: 5.5,
+        altura: 3.2,
     };
 
-    let circle = Circle { radius: 4.4 };
+    let circulo = Circulo { raio: 4.4 };
 
-    println!("Rectangle: {:.2}", rectangle.area());
-    println!("Circle: {:.2}", circle.area());
+    println!("Retângulo: {:.2}", retangulo.area());
+    println!("Círculo: {:.2}", circulo.area());
 }
 ```
 </details>
 
-13 - Create a trait named Student with two required methods (no default implementation):
+13 - Crie um trait chamado Estudante com dois métodos obrigatórios (sem implementação padrão):
 
-name(&self) -> String and greeting(&self) -> String.
+nome(&self) -> String e saudacao(&self) -> String.
 
-- Create a UniversityStudent struct that implements the trait. The greeting method must return the fixed value "Olá, eu sou um estudante."
-- Create a Foreigner struct that implements the trait. The greeting method must return the value "Hello, I am a student from abroad.", overriding the behavior of UniversityStudent.
+- Crie uma struct EstudanteUniversitario que implemente o trait. O método saudacao deve retornar o valor fixo "Olá, eu sou um estudante."
+- Crie uma struct Estrangeiro que implemente o trait. O método saudacao deve retornar o valor "Hello, I am a student from abroad.", sobrescrevendo o comportamento de EstudanteUniversitario.
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
-trait Student {
-    fn name(&self) -> String;
-    fn greeting(&self) -> String;
+trait Estudante {
+    fn nome(&self) -> String;
+    fn saudacao(&self) -> String;
 }
 
-struct UniversityStudent {
-    name: String,
+struct EstudanteUniversitario {
+    nome: String,
 }
 
-impl Student for UniversityStudent {
-    fn name(&self) -> String {
-        format!("Meu nome é: {}", self.name)
+impl Estudante for EstudanteUniversitario {
+    fn nome(&self) -> String {
+        format!("Meu nome é: {}", self.nome)
     }
 
-    fn greeting(&self) -> String {
+    fn saudacao(&self) -> String {
         format!("Olá, eu sou um estudante.")
     }
 }
 
-struct Foreigner {
-    name: String,
+struct Estrangeiro {
+    nome: String,
 }
 
-impl Student for Foreigner {
-    fn name(&self) -> String {
-        format!("My name is {}", self.name)
+impl Estudante for Estrangeiro {
+    fn nome(&self) -> String {
+        format!("My name is {}", self.nome)
     }
 
-    fn greeting(&self) -> String {
+    fn saudacao(&self) -> String {
         format!("Hello, I am a student from abroad.")
     }
 }
 
 fn main() {
-    let university = UniversityStudent {
-        name: String::from("Roberto!"),
+    let universitario = EstudanteUniversitario {
+        nome: String::from("Roberto!"),
     };
 
-    let foreigner = Foreigner {
-        name: String::from("Alice"),
+    let estrangeiro = Estrangeiro {
+        nome: String::from("Alice"),
     };
 
-    println!("Name: {}", university.name());
-    println!("{}\n", university.greeting());
+    println!("Nome: {}", universitario.nome());
+    println!("{}\n", universitario.saudacao());
 
-    println!("Name: {}", foreigner.name());
-    println!("{}", foreigner.greeting());
+    println!("Nome: {}", estrangeiro.nome());
+    println!("{}", estrangeiro.saudacao());
 }
 ```
 </details>
 
-14 - Define a simple trait named Summarizable with a method summary(&self) -> String.
+14 - Defina um trait simples chamado Sumarizavel com um método resumo(&self) -> String.
 
-- Implement it for a struct Article. Then, write a generic function named notify that receives a parameter item.
-- Use Trait Bounds to ensure that the item passed to the function implements the Summarizable trait. The function must print "New notification: [return value of summary]".
+- Implemente-o para uma struct Artigo. Em seguida, escreva uma função genérica chamada notificar que recebe um parâmetro item;
+- Use Trait Bounds (Limites de Trait) para garantir que o item passado para a função implemente o trait Sumarizavel. A função deve imprimir "Nova notificação: [valor de retorno de resumo]".
 
 [Playground!]()
 
 <details>
-<summary>Answers</summary>
+<summary>Resposta</summary>
 
 ```rust
-trait Summarizable {
-    fn summary(&self) -> String;
+trait Sumarizavel {
+    fn resumo(&self) -> String;
 }
 
-struct Article {
-    headline: String,
-    author: String,
-    content: String,
+struct Artigo {
+    manchete: String,
+    autor: String,
+    conteudo: String,
 }
 
-impl Summarizable for Article {
-    fn summary(&self) -> String {
-        format!("{} \n{}(by {})", self.headline, self.content, self.author)
+impl Sumarizavel for Artigo {
+    fn resumo(&self) -> String {
+        format!("{} \n{}(por {})", self.manchete, self.conteudo, self.autor)
     }
 }
 
-fn notify<T: Summarizable>(item: &T) {
-    println!("New notification: {}", item.summary());
+fn notificar<T: Sumarizavel>(item: &T) {
+    println!("Nova notificação: {}", item.resumo());
 }
 
 fn main() {
-    let article = Article {
-        headline: String::from("Trait Bound!"),
-        author: String::from("The Developer"),
-        content: String::from("A brief text."),
+    let artigo = Artigo {
+        manchete: String::from("Trait Bound! (Limite de Trait!)"),
+        autor: String::from("O Desenvolvedor"),
+        conteudo: String::from("Um breve texto."),
     };
 
-    notify(&article);
+    notificar(&artigo);
 }
 ```
 </details>

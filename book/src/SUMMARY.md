@@ -71,7 +71,7 @@
     * [Métodos - Parte 3](06-vector/methods-part3.md)
     * [Métodos - Parte 4](06-vector/methods-part4.md)   
     * [Perguntas](06-vector/questions.md)
-* [Constructs](07-constructs/README.md)
+* [Construtos](07-constructs/README.md)
     * [Struct](07-constructs/struct.md)
     * [Struct - Exemplo](07-constructs/struct_example.md)
     * [Impl](07-constructs/impl.md)
