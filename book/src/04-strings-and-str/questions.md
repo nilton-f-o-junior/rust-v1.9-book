@@ -30,7 +30,7 @@ fn main() {
 ```
 </details>
 
-03 - Declare uma variável que contenha uma fatia de string (&str) com o valor "Aprendendo Rust".
+03 - Declare uma variável que contenha &str com o valor "Aprendendo Rust".
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a0dd76fb9cabaa21d63a02cc7d85726a)
 
@@ -39,8 +39,8 @@ fn main() {
 
 ```rust
 fn main() {
-    let contem_string: &str = "Aprendendo Rust";
-    println!("{}", contem_string);
+    let texto: &str = "Aprendendo Rust";
+    println!("{}", texto);
 }
 ```
 </details>
@@ -54,17 +54,17 @@ fn main() {
 
 ```rust
 fn main() {
-    let input_string: String = String::from("Aprendendo Rust!");
-    let input_str: &str = &input_string;
-    println!("{}", input_str);
+    let entrada_string: String = String::from("Aprendendo Rust!");
+    let entrada_str: &str = &entrada_string;
+    println!("{}", entrada_str);
 }
 ```
 
 ```rust
 fn main() {
-    let input_string: String = String::from("Aprendendo Rust!");
-    let input_str: &str = input_string.as_str();
-    println!("{}", input_str);
+    let entrada_string: String = String::from("Aprendendo Rust!");
+    let entrada_str: &str = entrada_string.as_str();
+    println!("{}", entrada_str);
 }
 ```
 </details>
@@ -81,12 +81,12 @@ use std::io;
 
 fn main() {
     println!("Entre com texto:");
-    let mut input_string: String = String::new();
+    let mut entrada_string: String = String::new();
     io::stdin()
-        .read_line(&mut input_string)
+        .read_line(&mut entrada_string)
         .expect("Erro de entrada de dados!");
-    let text_string: &str = input_string.as_str();
-    println!("\nTexto convertido para &str: {}", text_string.trim());
+    let texto_string: &str = entrada_string.as_str();
+    println!("\nTexto convertido para &str: {}", texto_string.trim());
 }
 ```
 </details>
@@ -134,15 +134,15 @@ use std::io;
 
 fn main() {
     println!("Entre com texto:");
-    let mut input_text: String = String::new();
+    let mut entrada_texto: String = String::new();
     io::stdin()
-        .read_line(&mut input_text)
+        .read_line(&mut entrada_texto)
         .expect("Erro de entrada de dados!");
 
-    let text_01: &str = &input_text.as_str().trim();
-    let text_02: String = String::from("+ string!");
+    let texto_a: &str = &entrada_texto.as_str().trim();
+    let texto_b: String = String::from(" + string!");
 
-    println!("{}", text_01.to_string() + &text_02);
+    println!("{}", texto_a.to_string() + &texto_b);
 }
 ```
 </details>
@@ -213,16 +213,16 @@ use std::io;
 
 fn main() {
     println!("Entre com texto:");
-    let mut input_text: String = String::new();
-    io::stdin().read_line(&mut input_text).err();
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&mut entrada_texto).err();
 
-    let remove_espaco = input_text.replace(" ", "");
+    let remove_espaco = entrada_texto.replace(" ", "");
     println!("\nSem espaços = {}", remove_espaco.trim());
 }
 ```
 </details>
 
-12 - Substitua todas as ocorrências da substring *error* por *success* em um &str, criando uma nova string.
+12 - Substitua todas as ocorrências da substring erro por sucesso em um &str, criando uma nova string.
 
 [Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=a51483277e7c8b3fd2da1e427539e24e)
 
@@ -234,11 +234,11 @@ use std::io;
 
 fn main() {
     println!("Entre com texto:");
-    let mut input_text: String = String::new();
-    io::stdin().read_line(&mut input_text).err();
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&mut entrada_texto).err();
 
-    let new_text = input_text.replace("error", "success");
-    println!("{}", new_text.trim());
+    let novo_texto = entrada_texto.replace("erro", "sucesso");
+    println!("{}", novo_texto);
 }
 ```
 </details>
@@ -255,11 +255,11 @@ use std::io;
 
 fn main() {
     println!("Entre com uma frase:");
-    let mut input_phrase: String = String::new();
-    io::stdin().read_line(&mut input_phrase).err();
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&mut entrada_frase).err();
 
-    let phrase = input_phrase.replacen("antes", "depois", 1);
-    println!("{}", phrase.trim());
+    let frase = entrada_frase.replacen("antes", "depois", 1);
+    println!("{}", frase);
 }
 ```
 </details>
@@ -276,13 +276,13 @@ use std::io;
 
 fn main() {
     println!("Entre com uma frase:");
-    let mut input_text: String = String::new();
-    io::stdin().read_line(&mut input_text).err();
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&mut entrada_texto).err();
 
-    if input_text.contains("Rust") {
-        println!("\n{} - contém 'Rust'", input_text.trim());
+    if entrada_texto.contains("Rust") {
+        println!("\n{} - contém 'Rust'", entrada_texto.trim());
     } else {
-        println!("\n{} - não contém 'Rust'", input_text.trim());
+        println!("\n{} - não contém 'Rust'", entrada_texto.trim());
     }
 }
 ```
@@ -300,13 +300,13 @@ use std::io;
 
 fn main() {
     println!("Entre com o nome do arquivo:");
-    let mut input_text: String = String::new();
-    io::stdin().read_line(&mut input_text).err();
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&mut entrada_texto).err();
 
-    if input_text.trim().ends_with(".rs") {
-        println!("\n{} - termina com '.rs'", input_text.trim());
+    if entrada_texto.trim().ends_with(".rs") {
+        println!("\n{} - termina com '.rs'", entrada_texto.trim());
     } else {
-        println!("\n{} - não termina com '.rs'", input_text.trim());
+        println!("\n{} - não termina com '.rs'", entrada_texto.trim());
     }
 }
 ```
@@ -324,13 +324,13 @@ use std::io;
 
 fn main() {
     println!("Entra com link:");
-    let mut input_text: String = String::new();
-    io::stdin().read_line(&mut input_text).err();
+    let mut entrada_link: String = String::new();
+    io::stdin().read_line(&mut entrada_link).err();
 
-    if input_text.starts_with("https://") {
-        println!("\n{} - começa com 'https://'", input_text.trim());
+    if entrada_link.starts_with("https://") {
+        println!("\n{} - começa com 'https://'", entrada_link.trim());
     } else {
-        println!("\n{} - não começa com 'https://'", input_text.trim());
+        println!("\n{} - não começa com 'https://'", entrada_link.trim());
     }
 }
 ```
@@ -348,11 +348,11 @@ use std::io;
 
 fn main() {
     println!("Entre com uma frase:");
-    let mut input_phrase: String = String::new();
-    io::stdin().read_line(&mut input_phrase).err();
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&mut entrada_frase).err();
 
-    let phrase = input_phrase.split_whitespace().next();
-    println!("{}", phrase.unwrap());
+    let frase = entrada_frase.split_whitespace().next();
+    println!("{}", frase.unwrap());
 }
 ```
 </details>
@@ -369,11 +369,11 @@ use std::io;
 
 fn main() {
     println!("Entre com a frase:");
-    let mut input_text: String = String::new();
-    io::stdin().read_line(&mut input_text).err();
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&mut entrada_frase).err();
 
-    if let Some(index) = input_text.find("rust") {
-        println!("\nÍndice de bytes: rust = {}", index);
+    if let Some(indice) = entrada_frase.find("rust") {
+        println!("\nÍndice de bytes: {}", indice);
     } else {
         println!("\nNão tem: rust");
     }
@@ -392,11 +392,12 @@ fn main() {
 use std::io;
 
 fn main() {
-    let mut input_word: String = String::new();
-    io::stdin().read_line(&mut input_word).err();
+    println!("Entre com a palavra:");
+    let mut entrada_palavra: String = String::new();
+    io::stdin().read_line(&mut entrada_palavra).err();
 
-    let first_letter: char = input_word.trim_start().chars().next().unwrap_or(' ');
-    println!("Primeira letra = {}", first_letter);
+    let primeira_letra: char = entrada_palavra.trim_start().chars().next().unwrap_or(' ');
+    println!("Primeira letra = {}", primeira_letra);
 }
 ```
 </details>
@@ -413,12 +414,12 @@ use std::io;
 
 fn main() {
     println!("Entre com uma palavra:");
-    let mut input_word: String = String::new();
-    io::stdin().read_line(&mut input_word).err();
+    let mut entrada_palavra: String = String::new();
+    io::stdin().read_line(&mut entrada_palavra).err();
 
-    let word = input_word.trim().replace(" ", "");
-    println!("{}", word);
-    println!("{:?}", word.len());
+    let palavra = entrada_palavra.trim().replace(" ", "");
+    println!("{}", palavra);
+    println!("{:?}", palavra.len());
 }
 ```
 </details>
@@ -435,11 +436,11 @@ use std::io;
 
 fn main() {
     println!("Entre com uma frase:");
-    let mut input_phrase: String = String::new();
-    io::stdin().read_line(&mut input_phrase).err();
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&mut entrada_frase).err();
 
-    let phrase = input_phrase.trim().replace("a", "A");
-    println!("{}", phrase);    
+    let frase = entrada_frase.trim().replace("a", "A");
+    println!("{}", frase);    
 }
 ```
 </details>
@@ -456,14 +457,14 @@ use std::io;
 
 fn main() {
     println!("Entre com texto:");
-    let mut input_character: String = String::new();
+    let mut entrada_palavra: String = String::new();
     io::stdin()
-        .read_line(&mut input_character)
+        .read_line(&mut entrada_palavra)
         .expect("Erro de entrada de dados!");
 
-    let mut character: String = input_character.trim_end().to_string();
-    character.pop();
-    println!("{}", character);
+    let mut palavra: String = entrada_palavra.trim_end().to_string();
+    palavra.pop();
+    println!("{}", palavra);
 }
 ```
 </details>

@@ -96,28 +96,28 @@ fn main () {
 use std::io;
 
 fn main() {
-    let mut input_vector: Vec<i8> = vec![];
+    let mut vetor_entrada: Vec<i8> = vec![];
 
-    while input_vector.len() < 3 {
-        println!("Enter new number {}/3: ", input_vector.len() + 1);
-        let mut input = String::new();
+    while vetor_entrada.len() < 3 {
+        println!("Digite o novo número {}/3: ", vetor_entrada.len() + 1);
+        let mut entrada = String::new();
 
-        match io::stdin().read_line(&mut input) {
+        match io::stdin().read_line(&mut entrada) {
             Err(_) => {
-                println!("Data entry error!");
+                println!("Erro na leitura de dados!");
             }
-            Ok(_) => match input.trim().parse::<i8>() {
-                Ok(number) => {
-                    input_vector.push(number);
-                    println!("Number {} added!\n", number);
+            Ok(_) => match entrada.trim().parse::<i8>() {
+                Ok(numero) => {
+                    vetor_entrada.push(numero);
+                    println!("Número {} adicionado!\n", numero);
                 }
                 Err(_) => {
-                    println!("'{}' is not a valid number!", input.trim());
+                    println!("'{}' não é um número válido!", entrada.trim());
                 }
             },
         }
     }
-    println!("Vector complete: {:?}", input_vector);
+    println!("Vetor completo: {:?}", vetor_entrada);
 }
 ```
 </details>
@@ -131,17 +131,17 @@ fn main() {
 
 ```rust
 fn main() {
-    let vector: Vec<f32> = vec![3.2, 5.8, 1.2];
-    let sum: f32 = vector.iter().sum();
-    println!("{}", sum);
+    let vetor: Vec<f32> = vec![3.2, 5.8, 1.2];
+    let soma: f32 = vetor.iter().sum();
+    println!("{}", soma);
 }
 ```
 
 ```rust
 fn main () {
-    let vector: Vec<f32> = vec![3.2, 5.8, 1.2];
-    let product: f32 = vector.iter().product();
-    println!("Product = {:.2}", product);
+    let vetor: Vec<f32> = vec![3.2, 5.8, 1.2];
+    let produto: f32 = vetor.iter().product();
+    println!("Produto = {:.2}", produto);
 }
 ```
 
@@ -156,65 +156,60 @@ fn main () {
 
 ```rust
 fn main() {
-    // sum
-    let input_vector: Vec<f64> = vec![3.2, 5.8, 1.2];
-    let mut result: f64 = 0.0;
+    let vetor_entrada: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut resultado: f64 = 0.0;
 
-    for &i in &input_vector {
-        result += i;
+    for &i in &vetor_entrada {
+        resultado += i;
     }
 
-    println!("Sum = {:?}", result);
+    println!("Soma = {:?}", resultado);
 }
 ```
 
 ```rust
 fn main() {
-    // sub
-    let input_vector_sub: Vec<f64> = vec![3.2, 5.8, 1.2];
-    let mut result: f64 = input_vector_sub[0];
+    let vetor_entrada_sub: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut resultado: f64 = vetor_entrada_sub[0];
     let mut i = 1;
 
-    while i < input_vector_sub.len() {
-        result -= input_vector_sub[i];
+    while i < vetor_entrada_sub.len() {
+        resultado -= vetor_entrada_sub[i];
         i += 1;
     }
-    println!("Sub = {:?}", result);
+    println!("Subtração = {:?}", resultado);
 }
 ```
 
 ```rust
 fn main() {
-    // mult
-    let input_vector_mult: Vec<f64> = vec![3.2, 5.8, 1.2];
-    let mut result: f64 = input_vector_mult[0];
+    let vetor_entrada_mult: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut resultado: f64 = vetor_entrada_mult[0];
     let mut i = 1;
 
     loop {
-        result *= input_vector_mult[i];
+        resultado *= vetor_entrada_mult[i];
         i += 1;
 
-        if i >= input_vector_mult.len() {
+        if i >= vetor_entrada_mult.len() {
             break;
         }
     }
 
-    println!("Mult = {:.2}", result);
+    println!("Multiplicação = {:.2}", resultado);
 }
 ```
 
 ```rust
 fn main() {
-    // div
-    let input_vector_div: Vec<f64> = vec![3.2, 5.8, 1.2];
-    let mut result = input_vector_div[0];
+    let vetor_entrada_div: Vec<f64> = vec![3.2, 5.8, 1.2];
+    let mut resultado = vetor_entrada_div[0];
 
-    // for &i in input_vector_div.iter().skip(1) {
-    for &i in &input_vector_div[1..] {
-        result /= i;
+    for &i in &vetor_entrada_div[1..] {
+        resultado /= i;
     }
 
-    println!("Div = {:.2}", result);
+    println!("Divisão = {:.2}", resultado);
 }
 ```
 
@@ -229,42 +224,37 @@ fn main() {
 
 ```rust
 fn main() {
-    // pop
-    let mut input_vector: Vec<&str> = vec!["a", "b", "c", "d"];
-    input_vector.pop();
-    input_vector.pop();
-    println!("{:?}", input_vector);
+    let mut vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d"];
+    vetor_entrada.pop();
+    vetor_entrada.pop();
+    println!("{:?}", vetor_entrada);
 }
 ```
 
 ```rust
 fn main() {
-    // remove
-    let mut input_vector: Vec<&str> = vec!["a", "b", "c", "d"];
-    input_vector.remove(3);
-    input_vector.remove(2);
-    println!("{:?}", input_vector);
+    let mut vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d"];
+    vetor_entrada.remove(3);
+    vetor_entrada.remove(2);
+    println!("{:?}", vetor_entrada);
 }
 ```
 
 ```rust
 fn main() {
-    // truncate
-    let mut input_vector: Vec<&str> = vec!["a", "b", "c", "d"];
-    input_vector.truncate(2);
-    println!("{:?}", input_vector);    
+    let mut vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d"];
+    vetor_entrada.truncate(2);
+    println!("{:?}", vetor_entrada);
 }
 ```
 
 ```rust
 fn main() {
-    // drain
-    let mut input_vector: Vec<&str> = vec!["a", "b", "c", "d"];
-    input_vector.drain(2..);
-    println!("{:?}", input_vector);
+    let mut vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d"];
+    vetor_entrada.drain(2..);
+    println!("{:?}", vetor_entrada);
 }
 ```
-
 </details>
 
 08 - Crie um vetor com alguns valores e adicione dois novos elementos ao vetor. Adicione tambem usando um índice específico (por exemplo, (2, 0)).
@@ -276,39 +266,35 @@ fn main() {
 
 ```rust
 fn main() {
-    // push
-    let mut input_vector: Vec<u8> = vec![10, 20, 30, 40];
-    input_vector.push(90);
-    println!("{:?}", input_vector);
+    let mut vetor_entrada: Vec<u8> = vec![10, 20, 30, 40];
+    vetor_entrada.push(90);
+    println!("{:?}", vetor_entrada);
 }
 ```
 
 ```rust
 fn main() {
-    // insert
-    let mut input_vector: Vec<u8> = vec![10, 20, 30, 40];
-    input_vector.insert(2, 70);
-    println!("{:?}", input_vector);  
+    let mut vetor_entrada: Vec<u8> = vec![10, 20, 30, 40];
+    vetor_entrada.insert(2, 70);
+    println!("{:?}", vetor_entrada);
 }
 ```
 
 ```rust
 fn main() {
-    // extend
-    let mut input_vector: Vec<u8> = vec![10, 20, 30, 40];
-    input_vector.extend([50, 60, 70]);
-    println!("{:?}", input_vector);    
+    let mut vetor_entrada: Vec<u8> = vec![10, 20, 30, 40];
+    vetor_entrada.extend([50, 60, 70]);
+    println!("{:?}", vetor_entrada);
 }
 ```
 
 ```rust
 fn main() {
-    // append
-    let mut vector_a: Vec<u8> = vec![10, 20, 30];
-    let mut vector_b: Vec<u8> = vec![40, 50, 60];
-    vector_a.append(&mut vector_b);
-    println!("{:?}", vector_a);
-    println!("{:?}", vector_b);
+    let mut vetor_a: Vec<u8> = vec![10, 20, 30];
+    let mut vetor_b: Vec<u8> = vec![40, 50, 60];
+    vetor_a.append(&mut vetor_b);
+    println!("{:?}", vetor_a);
+    println!("{:?}", vetor_b);
 }
 ```
 </details>
@@ -324,30 +310,30 @@ fn main() {
 use std::io;
 
 fn main() {
-    let mut vector: Vec<u8> = vec![2, 4, 6, 8, 10, 12];
-    println!("{:?}", vector);
+    let mut vetor: Vec<u8> = vec![2, 4, 6, 8, 10, 12];
+    println!("{:?}", vetor);
 
-    let mut input: String = String::new();
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
-        .expect("Data entry error!");
+        .read_line(&mut entrada)
+        .expect("Erro na entrada de dados!");
 
-    let num: u8 = input.trim().parse().expect("Error converting data!");
+    let num: u8 = entrada.trim().parse().expect("Erro ao converter dados!");
 
-    for i in (0..vector.len()).rev() {
-        if vector[i] == num {
-            vector.remove(i);
+    for i in (0..vetor.len()).rev() {
+        if vetor[i] == num {
+            vetor.remove(i);
         }
     }
 
-    println!("\n{:?}", vector);
+    println!("\n{:?}", vetor);
 }
 ```
 </details>
 
-> Starting from the beginning: If you remove someone, everyone behind moves forward and you lose track: (0 → 5).
+> Começando do início: Se você remover um elemento, todos os elementos seguintes se movem para a frente e você perde o controle do índice: (0 → 5).
 
-> Starting from the end: You remove from back to front, those in front stay in the same place: (5 → 0).
+> Começando do fim: Você remove de trás para frente, e os elementos que estão na frente permanecem no mesmo lugar: (5 → 0).
 
 10 - Crie um vetor de strings e solicite ao usuário um valor. Verifique se esse valor está presente no vetor e exiba uma mensagem apropriada.
 
@@ -360,7 +346,7 @@ fn main() {
 use std::io;
 
 fn main() {
-    let vector: Vec<&str> = vec![
+    let vetor: Vec<&str> = vec![
         "Boa Noite Punpun",
         "Alice no País das Maravilhas",
         "Gravity Falls",
@@ -368,28 +354,28 @@ fn main() {
         "Musashi",
     ];
 
-    println!("Enter the book title:");
-    let mut input: String = String::new();
+    println!("Digite o título do livro:");
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
-        .expect("Data entry error!");
+        .read_line(&mut entrada)
+        .expect("Erro na entrada de dados!");
 
-    let input = input.trim().to_lowercase();
-    let mut book: &str = "Book not found!";
+    let entrada = entrada.trim().to_lowercase();
+    let mut livro: &str = "Livro não encontrado!";
 
-    for i in &vector {
-        if i.to_lowercase() == input {
-     // if i.to_lowercase().contains(&input) {
-            book = "Book found!";
+    for i in &vetor {
+        if i.to_lowercase() == entrada {
+            // if i.to_lowercase().contains(&input) {
+            livro = "Livro encontrado!";
             break;
         }
     }
-    println!("\n{}", book)
+    println!("\n{}", livro)
 }
 ```
 </details>
 
-> .contains(&input): the result will be different because the search considers any word.
+> .contains(&input): o resultado será diferente porque a busca considera qualquer palavra.
 
 11 - Dado um vetor com pelo menos 4 elementos, imprima os 2 primeiros e os 2 últimos valores.
 
@@ -400,60 +386,60 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
-    println!("{:?}", vector_input[0]);
-    println!("{:?}", vector_input[1]);
+    let mut vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    println!("{:?}", vetor_entrada[0]);
+    println!("{:?}", vetor_entrada[1]);
 
-    vector_input.reverse();
-    println!("{:?}", vector_input[0]);
-    println!("{:?}", vector_input[1]);
+    vetor_entrada.reverse();
+    println!("{:?}", vetor_entrada[0]);
+    println!("{:?}", vetor_entrada[1]);
 }
 ```
 
 ```rust
 fn main() {
-    let vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
-    let len = vector_input.len();
+    let vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    let tam = vetor_entrada.len();
 
-    println!("{:?}", vector_input[0]);
-    println!("{:?}", vector_input[1]);
-    println!("{:?}", vector_input[len - 2]);
-    println!("{:?}", vector_input[len - 1]);
+    println!("{:?}", vetor_entrada[0]);
+    println!("{:?}", vetor_entrada[1]);
+    println!("{:?}", vetor_entrada[tam - 2]);
+    println!("{:?}", vetor_entrada[tam - 1]);
 }
 ```
 
 ```rust
 fn main() {
-    let vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
-    let len = vector_input.len();
+    let vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    let tam = vetor_entrada.len();
 
-    println!("{:?}", &vector_input[..2]);
-    println!("{:?}", &vector_input[len - 2..]);
+    println!("{:?}", &vetor_entrada[..2]);
+    println!("{:?}", &vetor_entrada[tam - 2..]);
 }
 ```
 
 ```rust
 fn main() {
-    let mut vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
-    let mut count = 0;
+    let mut vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    let mut contador = 0;
 
-    for i in &vector_input {
+    for i in &vetor_entrada {
         println!("{:?}", i);
-        count += 1;
+        contador += 1;
 
-        if count >= 2 {
+        if contador >= 2 {
             break;
         }
     }
 
-    vector_input.reverse();
-    count = 0;
+    vetor_entrada.reverse();
+    contador = 0;
 
-    for i in &vector_input {
+    for i in &vetor_entrada {
         println!("{:?}", i);
-        count += 1;
+        contador += 1;
 
-        if count >= 2 {
+        if contador >= 2 {
             break;
         }
     }
@@ -462,18 +448,17 @@ fn main() {
 
 ```rust
 fn main() {
-    let vector_input: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    let vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
 
-    for i in &vector_input[..2] {
+    for i in &vetor_entrada[..2] {
         println!("{:?}", i);
     }
 
-    for i in &vector_input[vector_input.len() - 2..] {
+    for i in &vetor_entrada[vetor_entrada.len() - 2..] {
         println!("{:?}", i);
     }
 }
 ```
-
 </details>
 
 12 - Encontre e retorne o maior valor do vetor: [27, 3, 16, 8, 12, 7, 2, 19].
@@ -485,35 +470,34 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut vector: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
-    vector.sort();
-    vector.reverse();
-    println!("{:?}", vector[0]);
+    let mut vetor: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    vetor.sort();
+    vetor.reverse();
+    println!("{:?}", vetor[0]);
 }
 ```
 
 ```rust
 fn main() {
-    let vector: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
-    println!("{:?}", vector.iter().max());
+    let vetor: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    println!("{:?}", vetor.iter().max());
 }
 ```
 
 ```rust
 fn main() {
-    let input_vector: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
-    let mut value = &input_vector[0];
+    let vetor_entrada: Vec<u8> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    let mut valor = &vetor_entrada[0];
 
-    for i in &input_vector {
-        if i > value {
-            value = i;
+    for i in &vetor_entrada {
+        if i > valor {
+            valor = i;
         }
     }
 
-    println!("{:?}", value);
+    println!("{:?}", valor);
 }
 ```
-
 </details>
 
 13 - Copie os dados do vetor a seguir para outro vetor vazio: vector_a = [10, 20, 30, 40].
@@ -524,62 +508,57 @@ fn main() {
 <summary>Resposta</summary>
 
 ```rust
-// .clone()
 fn main () {
-    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
-    let vector_b = vector_a.clone();
+    let vetor_a: Vec<u8> = vec![10, 20, 30, 40];
+    let vetor_b = vetor_a.clone();
     
-    println!("{:?}", vector_a);
-    println!("{:?}", vector_b);
+    println!("{:?}", vetor_a);
+    println!("{:?}", vetor_b);
 }
 ```
 
 ```rust
-// .to_vec
 fn main () {
-    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
-    let vector_b: Vec<u8> = vector_a.to_vec();
+    let vetor_a: Vec<u8> = vec![10, 20, 30, 40];
+    let vetor_b: Vec<u8> = vetor_a.to_vec();
 
-    println!("{:?}", vector_a);
-    println!("{:?}", vector_b);
+    println!("{:?}", vetor_a);
+    println!("{:?}", vetor_b);
 }
 ```
 
 ```rust
-// iter().copied().collect()
 fn main () {
-    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
-    let vector_b: Vec<u8> = vector_a.iter().copied().collect();
+    let vetor_a: Vec<u8> = vec![10, 20, 30, 40];
+    let vetor_b: Vec<u8> = vetor_a.iter().copied().collect();
 
-    println!("{:?}", vector_a);
-    println!("{:?}", vector_b);
+    println!("{:?}", vetor_a);
+    println!("{:?}", vetor_b);
 }
 ```
 
 ```rust
-// .extend()
 fn main () {
-    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
-    let mut vector_b: Vec<u8> = Vec::new();
-    vector_b.extend(&vector_a);
+    let vetor_a: Vec<u8> = vec![10, 20, 30, 40];
+    let mut vetor_b: Vec<u8> = Vec::new();
+    vetor_b.extend(&vetor_a);
 
-    println!("{:?}", vector_a);
-    println!("{:?}", vector_b);
+    println!("{:?}", vetor_a);
+    println!("{:?}", vetor_b);
 }
 ```
 
 ```rust
-// for
 fn main () {
-    let vector_a: Vec<u8> = vec![10, 20, 30, 40];
-    let mut vector_b: Vec<u8> = Vec::new();
+    let vetor_a: Vec<u8> = vec![10, 20, 30, 40];
+    let mut vetor_b: Vec<u8> = Vec::new();
 
-    for i in &vector_a {
-        vector_b.push(*i);
+    for i in &vetor_a {
+        vetor_b.push(*i);
     }
 
-    println!("{:?}", vector_a);
-    println!("{:?}", vector_b);
+    println!("{:?}", vetor_a);
+    println!("{:?}", vetor_b);
 }
 ```
 
@@ -594,28 +573,28 @@ fn main () {
 
 ```rust
 fn main() {
-    let input_vector: Vec<i16> = vec![27, 3, 16, 8, 12, 7, 2, 19];
-    let mut vector: Vec<i16> = vec![];
+    let vetor_entrada: Vec<i16> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    let mut vetor: Vec<i16> = vec![];
 
-    for i in &input_vector {
-        vector.push(i * 2);
+    for i in &vetor_entrada {
+        vetor.push(i * 2);
     }
 
-    println!("{:?}", input_vector);
-    println!("{:?}", vector);
+    println!("{:?}", vetor_entrada);
+    println!("{:?}", vetor);
 }
 ```
 
 ```rust
 fn main() {
-    let input_vector: Vec<i16> = vec![27, 3, 16, 8, 12, 7, 2, 19];
-    let mut vector: Vec<i16> = input_vector.clone();
+    let vetor_entrada: Vec<i16> = vec![27, 3, 16, 8, 12, 7, 2, 19];
+    let mut vetor: Vec<i16> = vetor_entrada.clone();
 
-    for i in 0..vector.len() {
-        vector[i] *= 2;
+    for i in 0..vetor.len() {
+        vetor[i] *= 2;
     }
 
-    println!("Vector 01 = {:?} \nVector 02 = {:?}", input_vector, vector);
+    println!("Vetor 01 = {:?} \nVetor 02 = {:?}", vetor_entrada, vetor);
 }
 ```
 </details>
@@ -629,17 +608,17 @@ fn main() {
 
 ```rust
 fn main() {
-    let vector: Vec<u8> = vec![1, 2, 3, 4, 5, 6, 7];
-    let mut vector_even: Vec<u8> = vec![];
+    let vetor: Vec<u8> = vec![1, 2, 3, 4, 5, 6, 7];
+    let mut vetor_pares: Vec<u8> = vec![];
 
-    for i in &vector {
+    for i in &vetor {
         if i % 2 == 0 {
-            vector_even.push(*i);
+            vetor_pares.push(*i);
         }
     }
 
-    println!("{:?}", vector);
-    println!("{:?}", vector_even);
+    println!("{:?}", vetor);
+    println!("{:?}", vetor_pares);
 }
 ```
 </details>
@@ -653,15 +632,15 @@ fn main() {
 
 ```rust
 fn main() {
-    let vector: Vec<&str> = vec!["A", "b", "C", "d", "E", "f", "G"];
-    let mut vector_lowercase: Vec<String> = Vec::new();
+    let vetor: Vec<&str> = vec!["A", "b", "C", "d", "E", "f", "G"];
+    let mut vetor_minusculo: Vec<String> = Vec::new();
 
-    for i in &vector {
-        vector_lowercase.push(i.to_lowercase());
+    for i in &vetor {
+        vetor_minusculo.push(i.to_lowercase());
     }
 
-    println!("{:?}", vector);
-    println!("{:?}", vector_lowercase);
+    println!("{:?}", vetor);
+    println!("{:?}", vetor_minusculo);
 }
 ```
 </details>
@@ -675,22 +654,22 @@ fn main() {
 
 ```rust
 fn main() {
-    let vector: Vec<&str> = vec![
+    let vetor: Vec<&str> = vec![
         "a", "d", "x", "y", "a", "u", "t", "y", "o", "e", "p", "b", "x", "q", "e",
     ];
-    let mut vector_duplicates = Vec::new();
+    let mut vetor_duplicados = Vec::new();
 
-    println!("{:?}", vector);
+    println!("{:?}", vetor);
 
-    for i in 0..vector.len() {
-        for j in (i + 1)..vector.len() {
-            if vector[i] == vector[j] {
-                vector_duplicates.push(vector[i]);
+    for i in 0..vetor.len() {
+        for j in (i + 1)..vetor.len() {
+            if vetor[i] == vetor[j] {
+                vetor_duplicados.push(vetor[i]);
             }
         }
     }
     
-    println!("{:?}", vector_duplicates);
+    println!("{:?}", vetor_duplicados);
 }
 ```
 </details>
@@ -704,50 +683,50 @@ fn main() {
 
 ```rust
 fn main() {
-    let vector: Vec<&str> = vec![
+    let vetor: Vec<&str> = vec![
         "a", "a", "a", "b", "b", "c", "d", "d", "d", "e", "e", "e", "f", "g",
     ];
-    let mut vector_duplicates = Vec::new();
+    let mut vetor_duplicados = Vec::new();
 
-    println!("{:?}", vector);
+    println!("{:?}", vetor);
 
-    for i in 0..vector.len() {
-        if vector_duplicates.contains(&vector[i]) {
+    for i in 0..vetor.len() {
+        if vetor_duplicados.contains(&vetor[i]) {
             continue;
         }
 
-        for j in (i + 1)..vector.len() {
-            if vector[i] == vector[j] {
-                vector_duplicates.push(vector[i]);
+        for j in (i + 1)..vetor.len() {
+            if vetor[i] == vetor[j] {
+                vetor_duplicados.push(vetor[i]);
                 break;
             }
         }
     }
 
-    println!("{:?}", vector_duplicates);
+    println!("{:?}", vetor_duplicados);
 }
 ```
 
 ```rust
 fn main() {
-    let vector: Vec<&str> = vec![
+    let vetor: Vec<&str> = vec![
         "a", "a", "a", "b", "b", "c", "d", "d", "d", "e", "e", "e", "f", "g",
     ];
-    let mut vector_duplicates = Vec::new();
+    let mut vetor_duplicados = Vec::new();
 
-    println!("{:?}", vector);
+    println!("{:?}", vetor);
 
-    for i in 0..vector.len() {
-        for j in (i + 1)..vector.len() {
-            if vector[i] == vector[j] {
-                if !vector_duplicates.contains(&vector[i]) {
-                    vector_duplicates.push(&vector[i])
+    for i in 0..vetor.len() {
+        for j in (i + 1)..vetor.len() {
+            if vetor[i] == vetor[j] {
+                if !vetor_duplicados.contains(&vetor[i]) {
+                    vetor_duplicados.push(&vetor[i])
                 };
             }
         }
     }
 
-    println!("{:?}", vector_duplicates);
+    println!("{:?}", vetor_duplicados);
 }
 ```
 </details>
@@ -761,11 +740,11 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut vector: Vec<&str> = vec!["a", "e", "i", "o", "u"];
-    println!("{:?}", vector);
+    let mut vetor: Vec<&str> = vec!["a", "e", "i", "o", "u"];
+    println!("{:?}", vetor);
 
-    vector.reverse();
-    println!("{:?}", vector);
+    vetor.reverse();
+    println!("{:?}", vetor);
 }
 ```
 </details>
@@ -778,59 +757,57 @@ fn main() {
 <summary>Resposta</summary>
 
 ```rust
-// for
 use std::io;
 
 fn main() {
-    let vector: Vec<&str> = vec!["a", "c", "e", "g", "i", "k", "m", "o", "q"];
-    println!("{:?}", vector);
+    let vetor: Vec<&str> = vec!["a", "c", "e", "g", "i", "k", "m", "o", "q"];
+    println!("{:?}", vetor);
 
-    let mut vector_part1: Vec<&str> = Vec::new();
-    let mut vector_part2: Vec<&str> = Vec::new();
+    let mut vetor_parte1: Vec<&str> = Vec::new();
+    let mut vetor_parte2: Vec<&str> = Vec::new();
 
-    println!("\nEnter the vector index:");
-    let mut input: String = String::new();
+    println!("\nDigite o índice do vetor:");
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
-        .expect("Data entry error!");
-    let vector_index: usize = input.trim().parse().expect("Error converting data!");
+        .read_line(&mut entrada)
+        .expect("Erro na entrada de dados!");
+    let indice_vetor: usize = entrada.trim().parse().expect("Erro ao converter dados!");
 
-    for i in 0..vector.len() {
-        if i < vector_index {
-            vector_part1.push(vector[i]);
+    for i in 0..vetor.len() {
+        if i < indice_vetor {
+            vetor_parte1.push(vetor[i]);
         } else {
-            vector_part2.push(vector[i]);
+            vetor_parte2.push(vetor[i]);
         }
     }
 
-    println!("\n{:?}", vector_part1);
-    println!("{:?}", vector_part2);
+    println!("\n{:?}", vetor_parte1);
+    println!("{:?}", vetor_parte2);
 }
 ```
 
 ```rust
-// split_at
 use std::io;
 
 fn main() {
-    let vector: Vec<&str> = vec!["a", "c", "e", "g", "i", "k", "m", "o", "q"];
-    println!("{:?}", vector);
+    let vetor: Vec<&str> = vec!["a", "c", "e", "g", "i", "k", "m", "o", "q"];
+    println!("{:?}", vetor);
 
-    let _vector_part1: Vec<&str> = Vec::new();
-    let _vector_part2: Vec<&str> = Vec::new();
+    let _vetor_parte1: Vec<&str> = Vec::new();
+    let _vetor_parte2: Vec<&str> = Vec::new();
 
-    println!("\nEnter the vector index:");
-    let mut input: String = String::new();
+    println!("\nDigite o índice do vetor:");
+    let mut entrada: String = String::new();
     io::stdin()
-        .read_line(&mut input)
-        .expect("Data entry error!");
-    let vector_index: usize = input.trim().parse().expect("Error converting data!");
+        .read_line(&mut entrada)
+        .expect("Erro na entrada de dados!");
+    let indice_vetor: usize = entrada.trim().parse().expect("Erro ao converter dados!");
 
-    let (vector_part1, vector_part2) = vector.split_at(vector_index);
+    // o método split_at() retorna duas fatias (slices) &[&str]
+    let (vetor_parte1, vetor_parte2) = vetor.split_at(indice_vetor);
 
-    println!("\n{:?}", vector_part1);
-    println!("{:?}", vector_part2);
+    println!("\nParte 1 (Índices < {}): {:?}", indice_vetor, vetor_parte1);
+    println!("Parte 2 (Índices >= {}): {:?}", indice_vetor, vetor_parte2);
 }
 ```
-
 </details>

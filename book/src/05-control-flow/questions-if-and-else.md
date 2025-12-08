@@ -15,25 +15,25 @@
 use std::io;
 
 fn main() {
-    println!("Digite um número:");
+    println!("Digite um número inteiro:");
 
-    let mut input: String = String::new();
+    let mut entrada_texto: String = String::new();
     io::stdin()
-        .read_line(&mut input)
-        .expect("Erro no valor digitado!");
+        .read_line(&mut entrada_texto)
+        .expect("Erro na leitura do valor digitado!");
 
-    let num: i32 = match input.trim().parse() {
+    let numero: i32 = match entrada_texto.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter dados!");
+            println!("Erro ao converter o dado para número!");
             return;
         }
     };
 
-    if num % 2 == 0 {
-        println!("Num = {}\nPar!", num);
+    if numero % 2 == 0 {
+        println!("Número {} é Par!", numero);
     } else {
-        println!("Num = {}\nÍmpar!", num);
+        println!("Número {} é Ímpar!", numero);
     }
 }
 ```
@@ -52,19 +52,25 @@ use std::io;
 fn main() {
     println!("Digite um número: ");
 
-    let mut input_num: String = String::new();
+    let mut entrada_num: String = String::new();
     io::stdin()
-        .read_line(&mut input_num)
-        .expect("Erro no valor digitado!");
+        .read_line(&mut entrada_num)
+        .expect("Erro na leitura do valor digitado!");
 
-    let num: i8 = input_num.trim().parse().expect("Erro ao converter dados!");
+    let numero: i8 = match entrada_num.trim().parse() {
+        Ok(val) => val,
+        Err(_) => {
+            println!("Erro ao converter o dado para número!");
+            return;
+        }
+    };
 
-    if num > 0 {
-        println!("Num = {}!\nPositivo", num);
-    } else if num < 0 {
-        println!("Num = {}!\nNegativo", num);
+    if numero > 0 {
+        println!("O número {} é Positivo.", numero);
+    } else if numero < 0 {
+        println!("O número {} é Negativo.", numero);
     } else {
-        println!("Num = {}!\nZero", num);
+        println!("O número é Zero.");
     }
 }
 ```
@@ -81,40 +87,40 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Digite um número (a):");
-    let mut input_num_a: String = String::new();
+    println!("Digite o primeiro número (A):");
+    let mut entrada_num_a: String = String::new();
     io::stdin()
-        .read_line(&mut input_num_a)
-        .expect("Erro no valor digitado!");
+        .read_line(&mut entrada_num_a)
+        .expect("Erro na leitura de A!");
 
-    println!("Digite um número (b):");
-    let mut input_num_b: String = String::new();
+    println!("Digite o segundo número (B):");
+    let mut entrada_num_b: String = String::new();
     io::stdin()
-        .read_line(&mut input_num_b)
-        .expect("Erro no valor digitado!");
+        .read_line(&mut entrada_num_b)
+        .expect("Erro na leitura de B!");
     
-    let num_a: i8 = match input_num_a.trim().parse() {
+    let num_a: i8 = match entrada_num_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter dados (A)!");
+            println!("Erro ao converter número A!");
             return;
         }
     };
 
-    let num_b: i8 = match input_num_b.trim().parse() {
+    let num_b: i8 = match entrada_num_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter dados (B)!");
+            println!("Erro ao converter número B!");
             return;
         }
     };
 
     if num_a > num_b {
-        println!("Num A > Num B");
+        println!("O Número A ({}) é o maior.", num_a);
     } else if num_a < num_b {
-        println!("Num A < Num B");
+        println!("O Número B ({}) é o maior.", num_b);
     } else {
-        println!("Num A == Num B");
+        println!("Os números são iguais ({}).", num_a);
     }
 }
 ```
@@ -137,33 +143,33 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Digite sua nota para o primeiro teste:");
-    let mut input_test_a: String = String::new();
+    println!("Digite sua nota para o Teste A (0-10):");
+    let mut entrada_teste_a: String = String::new();
     io::stdin()
-        .read_line(&mut input_test_a)
+        .read_line(&mut entrada_teste_a)
         .expect("Erro ao digitar a primeira nota!");
 
-    println!("Digite a nota para o segundo teste:");
-    let mut input_test_b: String = String::new();
+    println!("Digite a nota para o Teste B (0-10):");
+    let mut entrada_teste_b: String = String::new();
     io::stdin()
-        .read_line(&mut input_test_b)
+        .read_line(&mut entrada_teste_b)
         .expect("Erro ao digitar a segunda nota!");
 
-    println!("Digite a nota para o terceiro teste:");
-    let mut input_test_c: String = String::new();
+    println!("Digite a nota para o Teste C (0-10):");
+    let mut entrada_teste_c: String = String::new();
     io::stdin()
-        .read_line(&mut input_test_c)
+        .read_line(&mut entrada_teste_c)
         .expect("Erro ao digitar o terceiro teste!");
 
-    let test_a: f32 = match input_test_a.trim().parse() {
+    let teste_a: f32 = match entrada_teste_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter: Teste A!");
-            return; // Adicionado 'return' para interromper o programa em caso de erro de conversão. O código original continha um comentário ''.
+            return;
         }
     };
 
-    let test_b: f32 = match input_test_b.trim().parse() {
+    let teste_b: f32 = match entrada_teste_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter: Teste B!");
@@ -171,7 +177,7 @@ fn main() {
         }
     };
 
-    let test_c: f32 = match input_test_c.trim().parse() {
+    let teste_c: f32 = match entrada_teste_c.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter: Teste C!");
@@ -179,14 +185,15 @@ fn main() {
         }
     };
 
-    let ava: f32 = (test_a + test_b + test_c) / 3.;
+    let media: f32 = (teste_a + teste_b + teste_c) / 3.0;
+    println!("Sua média é: {:.2}", media);
 
-    if ava < 5. {
-        println!("Você foi reprovado!");
-    } else if ava >= 5. && ava < 7. {
-        println!("Você está em recuperação!");
+    if media < 5.0 {
+        println!("Situação: Reprovado!");
+    } else if media >= 5.0 && media < 7.0 {
+        println!("Situação: Recuperação!");
     } else {
-        println!("Você foi aprovado!");
+        println!("Situação: Aprovado!");
     }
 }
 ```
@@ -205,25 +212,25 @@ use std::io;
 fn main() {
     println!("Digite sua idade:");
 
-    let mut input_age: String = String::new();
+    let mut entrada_idade: String = String::new();
     io::stdin()
-        .read_line(&mut input_age)
+        .read_line(&mut entrada_idade)
         .expect("Erro na entrada!");
 
-    let age: u8 = match input_age.trim().parse() {
-        Ok(age) => age,
+    let idade: u8 = match entrada_idade.trim().parse() {
+        Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter idade!");
             return;
         }
     };
 
-    if age >= 16 && age <= 59 {
-        println!("Você é obrigado a votar!");
-    } else if age >= 60 && age <= 100 {
-        println!("Seu voto é opcional!");
+    if idade >= 18 && idade <= 59 {
+        println!("Idade: {}\nVocê é obrigado(a) a votar!", idade);
+    } else if idade >= 16 || idade >= 60 {
+        println!("Idade: {}\nSeu voto é opcional!", idade);
     } else {
-        println!("Você não pode votar!");
+        println!("Idade: {}\nVocê não pode votar!", idade);
     }
 }
 ```
@@ -240,29 +247,29 @@ fn main() {
 use std::io;
 
 fn main() {
-    // a
-    println!("Digite um número! A: ");
-    let mut input_a: String = String::new();
+    //
+    println!("Digite o número A: ");
+    let mut entrada_a: String = String::new();
     io::stdin()
-        .read_line(&mut input_a)
-        .expect("Erro na entrada!");
-
-    // b
-    println!("Digite um número! B: ");
-    let mut input_b: String = String::new();
-    io::stdin()
-        .read_line(&mut input_b)
-        .expect("Erro na entrada!");
-
-    // c
-    println!("Digite um número! C: ");
-    let mut input_c: String = String::new();
-    io::stdin()
-        .read_line(&mut input_c)
+        .read_line(&mut entrada_a)
         .expect("Erro na entrada!");
 
     //
-    let num_a: i8 = match input_a.trim().parse() {
+    println!("Digite o número B: ");
+    let mut entrada_b: String = String::new();
+    io::stdin()
+        .read_line(&mut entrada_b)
+        .expect("Erro na entrada!");
+
+    //
+    println!("Digite o número C: ");
+    let mut entrada_c: String = String::new();
+    io::stdin()
+        .read_line(&mut entrada_c)
+        .expect("Erro na entrada!");
+
+    //
+    let num_a: i8 = match entrada_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter número A!");
@@ -270,7 +277,7 @@ fn main() {
         }
     };
 
-    let num_b: i8 = match input_b.trim().parse() {
+    let num_b: i8 = match entrada_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter número B!");
@@ -278,7 +285,7 @@ fn main() {
         }
     };
 
-    let num_c: i8 = match input_c.trim().parse() {
+    let num_c: i8 = match entrada_c.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter número C!");
@@ -331,32 +338,32 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Digite um número (0 - 100):");
-    let mut input_num: String = String::new();
+    println!("Digite a pontuação (0 - 100):");
+    let mut entrada_pontuacao: String = String::new();
     io::stdin()
-        .read_line(&mut input_num)
+        .read_line(&mut entrada_pontuacao)
         .expect("Erro na entrada!");
 
-    let num: u8 = match input_num.trim().parse() {
+    let pontuacao: u8 = match entrada_pontuacao.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter número:");
+            println!("Erro ao converter pontuação!");
             return;
         }
     };
 
-    if num > 0 && num <= 59 {
-        println!("F");
-    } else if num >= 60 && num <= 69 {
-        println!("D");
-    } else if num >= 70 && num <= 79 {
-        println!("C");
-    } else if num >= 80 && num <= 89 {
-        println!("B");
-    } else if num >= 90 && num <= 100 {
-        println!("A");
+    if pontuacao <= 59 {
+        println!("Nota: F");
+    } else if pontuacao <= 69 {
+        println!("Nota: D");
+    } else if pontuacao <= 79 {
+        println!("Nota: C");
+    } else if pontuacao <= 89 {
+        println!("Nota: B");
+    } else if pontuacao <= 100 {
+        println!("Nota: A");
     } else {
-        println!("Erro!");
+        println!("Pontuação fora do intervalo (0-100)!");
     }
 }
 ```
@@ -373,57 +380,57 @@ fn main() {
 use std::io;
 
 fn main() {
-    // a
-    println!("Digite o tamanho do lado A:");
-    let mut input_a: String = String::new();
+    // lado_a
+    println!("Digite o tamanho do Lado A:");
+    let mut entrada_a: String = String::new();
     io::stdin()
-        .read_line(&mut input_a)
-        .expect("Erro na entrada!");
+        .read_line(&mut entrada_a)
+        .expect("Erro na entrada A!");
 
-    // b
-    println!("Digite o tamanho do lado B:");
-    let mut input_b: String = String::new();
+    // lado_b
+    println!("Digite o tamanho do Lado B:");
+    let mut entrada_b: String = String::new();
     io::stdin()
-        .read_line(&mut input_b)
-        .expect("Erro na entrada!");
+        .read_line(&mut entrada_b)
+        .expect("Erro na entrada B!");
 
-    // c
-    println!("Digite o tamanho do lado C:");
-    let mut input_c: String = String::new();
+    // lado_c
+    println!("Digite o tamanho do Lado C:");
+    let mut entrada_c: String = String::new();
     io::stdin()
-        .read_line(&mut input_c)
-        .expect("Erro na entrada!");
+        .read_line(&mut entrada_c)
+        .expect("Erro na entrada C!");
 
-    let a: f32 = match input_a.trim().parse() {
+    let lado_a: f32 = match entrada_a.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter número A:");
+            println!("Erro ao converter lado A!");
             return;
         }
     };
 
-    let b: f32 = match input_b.trim().parse() {
+    let lado_b: f32 = match entrada_b.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter número B:");
+            println!("Erro ao converter lado B!");
             return;
         }
     };
 
-    let c: f32 = match input_c.trim().parse() {
+    let lado_c: f32 = match entrada_c.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter número C:");
+            println!("Erro ao converter lado C!");
             return;
         }
     };
 
-    if a == b && b == c {
-        println!("Equilátero");
-    } else if a == b || b == c || a == c {
-        println!("Isósceles");
+    if lado_a == lado_b && lado_b == lado_c {
+        println!("O triângulo é Equilátero (todos os lados iguais).");
+    } else if lado_a == lado_b || lado_b == lado_c || lado_a == lado_c {
+        println!("O triângulo é Isósceles (dois lados iguais).");
     } else {
-        println!("Escaleno");
+        println!("O triângulo é Escaleno (todos os lados diferentes).");
     }
 }
 ```
@@ -440,13 +447,13 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Digite um número de 1 a 7:");
-    let mut input_day: String = String::new();
+    println!("Digite um número para o dia da semana:");
+    let mut entrada_dia: String = String::new();
     io::stdin()
-        .read_line(&mut input_day)
+        .read_line(&mut entrada_dia)
         .expect("Erro na entrada!");
 
-    let day: u8 = match input_day.trim().parse() {
+    let dia: u8 = match entrada_dia.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter dia!");
@@ -454,21 +461,21 @@ fn main() {
         }
     };
 
-    if day == 1 || day == 7 {
-        if day == 1 {
+    if dia == 1 || dia == 7 {
+        if dia == 1 {
             println!("Domingo - Fim de semana!");
         } else {
             println!("Sábado - Fim de semana!");
         }
-    } else if day == 2 {
+    } else if dia == 2 {
         println!("Segunda-feira - Dia útil!");
-    } else if day == 3 {
+    } else if dia == 3 {
         println!("Terça-feira - Dia útil!");
-    } else if day == 4 {
+    } else if dia == 4 {
         println!("Quarta-feira - Dia útil!");
-    } else if day == 5 {
+    } else if dia == 5 {
         println!("Quinta-feira - Dia útil!");
-    } else if day == 6 {
+    } else if dia == 6 {
         println!("Sexta-feira - Dia útil!");
     } else {
         println!("Erro!");
@@ -496,12 +503,12 @@ use std::io;
 
 fn main() {
     println!("Digite sua idade:");
-    let mut input_age: String = String::new();
+    let mut entrada_idade: String = String::new();
     io::stdin()
-        .read_line(&mut input_age)
+        .read_line(&mut entrada_idade)
         .expect("Erro na entrada!");
 
-    let age: u8 = match input_age.trim().parse() {
+    let idade: u8 = match entrada_idade.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter idade!");
@@ -509,16 +516,16 @@ fn main() {
         }
     };
 
-    if age >= 1 && age <= 12 {
-        println!("Criança!");
-    } else if age >= 13 && age <= 17 {
-        println!("Adolescente!");
-    } else if age >= 18 && age <= 59 {
-        println!("Adulto");
-    } else if age >= 60 && age <= 112 {
-        println!("Idoso!");
+    if idade >= 1 && idade <= 12 {
+        println!("Classificação: Criança!");
+    } else if idade >= 13 && idade <= 17 {
+        println!("Classificação: Adolescente!");
+    } else if idade >= 18 && idade <= 59 {
+        println!("Classificação: Adulto!");
+    } else if idade >= 60 {
+        println!("Classificação: Idoso!");
     } else {
-        println!("Erro: Idade > 112!");
+        println!("Idade inválida!");
     }
 }
 ```
@@ -536,85 +543,61 @@ use std::io;
 
 fn main() {
     println!("Digite o primeiro número:");
-    let mut input_first_number: String = String::new();
+    let mut entrada_primeiro_num: String = String::new();
     io::stdin()
-        .read_line(&mut input_first_number)
+        .read_line(&mut entrada_primeiro_num)
         .expect("Erro ao receber o primeiro número!");
 
     println!("Digite o segundo número:");
-    let mut input_second_number: String = String::new();
+    let mut entrada_segundo_num: String = String::new();
     io::stdin()
-        .read_line(&mut input_second_number)
-        .expect("Erro ao receber o primeiro número!");
+        .read_line(&mut entrada_segundo_num)
+        .expect("Erro ao receber o segundo número!");
 
-    println!("Insira o operador matemático:");
-    let mut input_operator: String = String::new();
+    println!("Insira o operador (+, -, *, /):");
+    let mut entrada_operador: String = String::new();
     io::stdin()
-        .read_line(&mut input_operator)
+        .read_line(&mut entrada_operador)
         .expect("Erro ao receber o operador matemático!");
 
-    let first_number: f32 = match input_first_number.trim().parse() {
+    let primeiro_numero: f32 = match entrada_primeiro_num.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter número!");
+            println!("Erro ao converter o primeiro número!");
             return;
         }
     };
 
-    let second_number: f32 = match input_second_number.trim().parse() {
+    let segundo_numero: f32 = match entrada_segundo_num.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter número!");
+            println!("Erro ao converter o segundo número!");
             return;
         }
     };
 
-    let operator: char = match input_operator.trim().parse() {
+    let operador: char = match entrada_operador.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("Erro ao converter número!");
+            println!("Erro ao converter o operador!");
             return;
         }
     };
 
-    if operator == '+' {
-        println!(
-            "{} {} {} = {}",
-            first_number,
-            operator,
-            second_number,
-            first_number + second_number
-        );
-    } else if operator == '-' {
-        println!(
-            "{} {} {} = {}",
-            first_number,
-            operator,
-            second_number,
-            first_number - second_number
-        );
-    } else if operator == '*' {
-        println!(
-            "{} {} {} = {}",
-            first_number,
-            operator,
-            second_number,
-            first_number * second_number
-        );
-    } else if operator == '/' {
-        if second_number == 0. {
-            println!("[Erro] Segundo número igual a 0.");
+    if operador == '+' {
+        println!("Resultado: {} {} {} = {}", primeiro_numero, operador, segundo_numero, primeiro_numero + segundo_numero);
+    } else if operador == '-' {
+        println!("Resultado: {} {} {} = {}", primeiro_numero, operador, segundo_numero, primeiro_numero - segundo_numero);
+    } else if operador == '*' {
+        println!("Resultado: {} {} {} = {}", primeiro_numero, operador, segundo_numero, primeiro_numero * segundo_numero);
+    } else if operador == '/' {
+        if segundo_numero == 0.0 {
+            println!("[Erro] Divisão por zero não é permitida.");
         } else {
-            println!(
-                "{} {} {} = {}",
-                first_number,
-                operator,
-                second_number,
-                first_number / second_number
-            );
+            println!("Resultado: {} {} {} = {}", primeiro_numero, operador, segundo_numero, primeiro_numero / segundo_numero);
         }
     } else {
-        println!("[Erro] Operador matemático não permitido!");
+        println!("[Erro] Operador matemático não reconhecido!");
     }
 }
 ```
@@ -635,13 +618,13 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Digite o valor:");
-    let mut input_value: String = String::new();
+    println!("Digite o valor total da compra:");
+    let mut entrada_valor: String = String::new();
     io::stdin()
-        .read_line(&mut input_value)
-        .expect("Erro ao receber valor!");
+        .read_line(&mut entrada_valor)
+        .expect("Erro ao receber o valor!");
 
-    let value: f32 = match input_value.trim().parse() {
+    let valor_compra: f32 = match entrada_valor.trim().parse() {
         Ok(val) => val,
         Err(_) => {
             println!("Erro ao converter valor!");
@@ -649,16 +632,18 @@ fn main() {
         }
     };
 
-    if value < 100. {
-        println!("Valor: {} - Sem desconto!", value);
-    } else if value >= 100. && value <= 500. {
-        let discount = value - ((value * 10.) / 100.);
-        println!("Valor: {} - Desconto 10%\nNovo valor: {}", value, discount);
-    } else if value > 500. {
-        let discount = value - ((value * 20.) / 100.);
-        println!("Valor: {} - Desconto 20%\nNovo valor: {}", value, discount);
+    if valor_compra < 100.0 {
+        println!("Valor: R$ {:.2} - Sem desconto!", valor_compra);
+    } else if valor_compra >= 100.0 && valor_compra <= 500.0 {
+        let valor_desconto: f32 = valor_compra * 0.10; // 10%
+        let novo_valor: f32 = valor_compra - valor_desconto;
+        println!("Valor: R$ {:.2} - Desconto de 10% (R$ {:.2})\nNovo valor: R$ {:.2}", valor_compra, valor_desconto, novo_valor);
+    } else if valor_compra > 500.0 {
+        let valor_desconto: f32 = valor_compra * 0.20; // 20%
+        let novo_valor: f32 = valor_compra - valor_desconto;
+        println!("Valor: R$ {:.2} - Desconto de 20% (R$ {:.2})\nNovo valor: R$ {:.2}", valor_compra, valor_desconto, novo_valor);
     } else {
-        println!("Erro!");
+        println!("Valor inválido!");
     }
 }
 ```
@@ -681,44 +666,45 @@ fn main() {
 ```rust
 use std::io;
 
+const MSG_ERRO_ENTRADA: &str = "Erro na leitura de dados!";
+const MSG_ERRO_CONVERSAO: &str = "Erro ao converter valor para número!";
+
 fn main() {
-    const ERROR_INPUT: &str = "Erro na entrada de dados!";
-    const ERROR_CONVERTING: &str = "Erro ao converter valor!";
+    println!("Digite o Peso (em kg):");
+    let mut entrada_peso: String = String::new();
+    io::stdin().read_line(&mut entrada_peso).expect(MSG_ERRO_ENTRADA);
 
-    println!("Digite o Peso:");
-    let mut input_weight: String = String::new();
-    io::stdin().read_line(&mut input_weight).expect(ERROR_INPUT);
-
-    let weight: f32 = match input_weight.trim().parse() {
+    let peso: f32 = match entrada_peso.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("{}", ERROR_CONVERTING);
+            println!("{}", MSG_ERRO_CONVERSAO);
             return;
         }
     };
 
-    println!("Digite a Altura:");
-    let mut input_height: String = String::new();
-    io::stdin().read_line(&mut input_height).expect(ERROR_INPUT);
+    println!("Digite a Altura (em metros):");
+    let mut entrada_altura: String = String::new();
+    io::stdin().read_line(&mut entrada_altura).expect(MSG_ERRO_ENTRADA);
 
-    let height: f32 = match input_height.trim().parse() {
+    let altura: f32 = match entrada_altura.trim().parse() {
         Ok(val) => val,
         Err(_) => {
-            println!("{}", ERROR_CONVERTING);
+            println!("{}", MSG_ERRO_CONVERSAO);
             return;
         }
     };
 
-    let bmi: f32 = weight / (height * height);
+    let imc: f32 = peso / (altura * altura);
+    println!("Seu IMC é: {:.2}", imc);
 
-    if bmi <= 18.5 {
-        println!("Abaixo do peso!");
-    } else if bmi <= 24.9 {
-        println!("Peso normal!");
-    } else if bmi <= 29.9 {
-        println!("Sobrepeso!");
-    } else if bmi >= 30.0 {
-        println!("Obesidade!");
+    if imc <= 18.5 {
+        println!("Classificação: Abaixo do Peso!");
+    } else if imc <= 24.9 {
+        println!("Classificação: Peso Normal!");
+    } else if imc <= 29.9 {
+        println!("Classificação: Sobrepeso!");
+    } else if imc >= 30.0 {
+        println!("Classificação: Obesidade!");
     } else {
         println!("Erro ao calcular IMC ou faixa inválida!");
     }
@@ -736,27 +722,28 @@ fn main() {
 ```rust
 use std::io;
 
-const ERROR_INPUT: &str = "Erro na entrada de dados!";
+const USERNAME_CORRETO: &str = "admin";
+const PASSWORD_CORRETA: &str = "1234";
 
 fn main() {
-    println!("Nome de usuário:");
-    let mut input_username: String = String::new();
+    println!("Digite o Nome de Usuário:");
+    let mut entrada_usuario: String = String::new();
     io::stdin()
-        .read_line(&mut input_username)
-        .expect(ERROR_INPUT);
-    let username: &str = input_username.trim();
+        .read_line(&mut entrada_usuario)
+        .expect("Erro na leitura!");
+    let nome_usuario: &str = entrada_usuario.trim();
 
-    println!("Senha:");
-    let mut input_password: String = String::new();
+    println!("Digite a Senha:");
+    let mut entrada_senha: String = String::new();
     io::stdin()
-        .read_line(&mut input_password)
-        .expect(ERROR_INPUT);
-    let password: &str = input_password.trim();
+        .read_line(&mut entrada_senha)
+        .expect("Erro na leitura!");
+    let senha: &str = entrada_senha.trim();
 
-    if username == "admin" && password == "1234" {
-        println!("Acesso Concedido!");
+    if nome_usuario == USERNAME_CORRETO && senha == PASSWORD_CORRETA {
+        println!("Acesso Concedido! Bem-vindo(a), {}!", nome_usuario);
     } else {
-        println!("Acesso Negado!");
+        println!("Acesso Negado! Verifique seu usuário e senha.");
     }
 }
 ```
@@ -790,19 +777,19 @@ fn main() {
     println!("1 | 2 | 3");
 
     //
-    let mut input_player1: String = String::new();
+    let mut entrada_jogador: String = String::new();
     io::stdin()
-        .read_line(&mut input_player1)
+        .read_line(&mut entrada_jogador)
         .expect("Erro na entrada de dados!");
-    let mut player1: &str = input_player1.trim();
+    let mut jogador: &str = entrada_jogador.trim();
 
     //
-    if player1 == "1" {
-        player1 = "Pedra";
-    } else if player1 == "2" {
-        player1 = "Papel";
+    if jogador == "1" {
+        jogador = "Pedra";
+    } else if jogador == "2" {
+        jogador = "Papel";
     } else {
-        player1 = "Tesoura";
+        jogador = "Tesoura";
     }
 
     //
@@ -822,46 +809,46 @@ fn main() {
         .expect("Erro")
         .as_nanos();
 
-    let nano_computer = (nanos % 3 + 1) as u8;
-    let computer: &str;
+    let nano_computador = (nanos % 3 + 1) as u8;
+    let computador: &str;
 
-    if nano_computer == 1 {
-        computer = "Pedra";
-    } else if nano_computer == 2 {
-        computer = "Papel";
+    if nano_computador == 1 {
+        computador = "Pedra";
+    } else if nano_computador == 2 {
+        computador = "Papel";
     } else {
-        computer = "Tesoura";
+        computador = "Tesoura";
     }
 
     //
-    if player1 == computer {
-        println!("Jogador 1: {} e Computador: {}", player1, computer);
+    if jogador == computador {
+        println!("Jogador 1: {} e Computador: {}", jogador, computador);
         println!("O jogo é um empate!");
-    } else if player1 == "Pedra" {
-        if computer == "Papel" {
-            println!("Jogador 1: {} e Computador: {}", player1, computer);
+    } else if jogador == "Pedra" {
+        if computador == "Papel" {
+            println!("Jogador 1: {} e Computador: {}", jogador, computador);
             println!("Jogador 1: Você Perdeu!");
         }
-        if computer == "Tesoura" {
-            println!("Jogador 1: {} e Computador: {}", player1, computer);
+        if computador == "Tesoura" {
+            println!("Jogador 1: {} e Computador: {}", jogador, computador);
             println!("Jogador 1: Você Venceu!");
         }
-    } else if player1 == "Papel" {
-        if computer == "Pedra" {
-            println!("Jogador 1: {} e Computador: {}", player1, computer);
+    } else if jogador == "Papel" {
+        if computador == "Pedra" {
+            println!("Jogador 1: {} e Computador: {}", jogador, computador);
             println!("Jogador 1: Você Venceu!");
         }
-        if computer == "Tesoura" {
-            println!("Jogador 1: {} e Computador: {}", player1, computer);
+        if computador == "Tesoura" {
+            println!("Jogador 1: {} e Computador: {}", jogador, computador);
             println!("Jogador 1: Você Perdeu!");
         }
     } else { 
-        if computer == "Pedra" {
-            println!("Jogador 1: {} e Computador: {}", player1, computer);
+        if computador == "Pedra" {
+            println!("Jogador 1: {} e Computador: {}", jogador, computador);
             println!("Jogador 1: Você Perdeu!");
         }
-        if computer == "Papel" {
-            println!("Jogador 1: {} e Computador: {}", player1, computer);
+        if computador == "Papel" {
+            println!("Jogador 1: {} e Computador: {}", jogador, computador);
             println!("Jogador 1: Você Venceu!");
         }
     }
