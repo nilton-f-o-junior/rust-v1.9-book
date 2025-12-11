@@ -207,8 +207,8 @@ fn main() {
 
 A - Crie duas listas/arrays vazias:
 
-- Lista A e B.
-- Ambas as listas devem ter capacidade para exatamente 3 elementos cada.
+- Lista A e B;
+- Ambas as listas devem ter capacidade para exatamente 3 elementos cada;
 - Inicialize duas variáveis de pontuação, Ponto_a e Ponto_b, com o valor inicial de 0.
 
 B - O programa deve:
@@ -219,9 +219,9 @@ B - O programa deve:
 
 C - O programa deve realizar 3 comparações sequenciais, baseadas no índice de cada elemento (i= 0, 1, 2):
 
-- Comparação 1: Lista A [0] vs. Lista B [0]
-- Comparação 2: Lista A [1] vs. Lista B [1]
-- Comparação 3: Lista A [2] vs. Lista B [2]
+- Comparação 1: Lista A [0] vs. Lista B [0];
+- Comparação 2: Lista A [1] vs. Lista B [1];
+- Comparação 3: Lista A [2] vs. Lista B [2].
 
 D - Atribuição de Pontos:
 
@@ -233,7 +233,7 @@ E - Pontuação Final:
 
 - Total de pontos da Lista A;
 - Total de pontos da Lista B;
-- O vencendor foi: " "
+- O vencendor foi: " ".
 
 ```rust
 use std::io;
@@ -340,7 +340,7 @@ fn comparacao() {
         }
     }
 
-    println!("\n--- Resultado Final ---");
+    println!("");
     println!("Total de pontos da Lista A: {}", pontuacao_a);
     println!("Total de pontos da Lista B: {}", pontuacao_b);
 
@@ -360,3 +360,139 @@ fn main() {
     comparacao();
 }
 ```
+
+07 - Crie uma matriz de 3x3. Solicite ao usuário que insira 9 valores inteiros, um de cada vez, para preencher todas as posições da matriz.
+
+Após o preenchimento, o programa deve calcular e imprimir as seguintes somas:
+
+A - Somas das Linhas:
+
+- Soma da Linha 1;
+- Soma da Linha 2;
+- Soma da Linha 3.
+
+B - Somas das Colunas:
+
+- Soma da Coluna 1;
+- Soma da Coluna 2;
+- Soma da Coluna 3.
+
+C - Somas das Diagonais:
+
+- Diagonal Principal;
+- Diagonal Secundária.
+
+```rust
+
+```
+
+08 - Criar um programa que:
+
+Deve preencher um array com 6 números inteiros:
+
+- Array: {3, 4, -4, -9, 0, 0}
+
+O programa deve percorrer o array e realizar a contagem para as seguintes categorias:
+
+- Positivos (> 0): 3, 4. (Contagem = 2)
+- Negativos (< 0): -4, -9. (Contagem = 2)
+- Zeros (= 0): 0. (Contagem = 2)
+
+Divida a quantidade de cada categoria pelo tamanho do array:
+
+- Proporção de Positivos: 2/6 = 0.4 
+- Proporção de Negativos: 2/6 = 0.4
+- Proporção de Zeros: 2/6 = 0.4
+
+Saída Formatada (6 casas decimais):
+
+- Positivos: 0.333333
+- Negativos: 0.333333
+- Zeros: 0.333333
+
+```rust
+
+```
+
+09 - Crie um programa que de construir e imprimir uma escadaria de tamanho N usando o símbolo # e:
+
+- A escadaria deve ter N linhas;
+- A escadaria deve ser alinhada à direita;
+- A cada linha, o número de símbolos # aumenta em 1, e o número de espaços diminui em 1.
+
+```
+   #
+  ##
+ ###
+####
+```
+
+```rust
+
+```
+
+10 - Crie um programa que:
+
+Receberá cinco números inteiros positivos em uma única linha: 1 2 3 4 5
+
+- Soma Mínima - Excluir o maior (5) | 1 + 2 + 3 + 4 = 10
+- Soma Máxima - Excluir o menor (1) | 2 + 3 + 4 + 5 = 14
+
+```rust
+
+```
+
+11 - Crie um programa que:
+
+Receberá uma lista (ou array) de números inteiros, onde cada número representa a altura de uma pilha: 3, 2, 1, 3
+
+- Identificar a altura máxima: 3
+- Contar ocorrências: 2
+
+O programa deve retornar a contagem das pilhas mais altas: 2
+
+```rust
+
+```
+
+12 - Crie um programa para conversão de horário (12h para 24h):
+
+Entrada:
+
+- HH:MM:SS AM/PM : 07:05:45 PM
+
+Saída:
+
+- HH:MM:SS AM/PM : 19:05:45
+
+4 Regras Essenciais de Conversão:
+
+| Cenário     | Entrada (12h) | Regra de Conversão | Saída (24h) |
+|-------------|---------------|--------------------|---------|
+| Meia-noite  | 12:##:## AM  | A hora 12 vira 00. | 00:##:##|
+| Manhã	      | 01:##:## AM a 11:##:## AM  | A hora permanece a mesma. | 01:##:## a 11:##:##|
+| Meio-dia    | 12:##:## PM  | A hora 12 permanece a mesma. | 12:##:##|
+| Tarde/Noite |	01:##:## PM a 11:##:## PM 	| Adicione 12 à hora.	| 13:##:## a 23:##:##|
+
+```rust
+
+```
+
+13 - Implementar um algoritmo que revise as notas de uma lista de alunos e aplique um arredondamento especial, baseado em múltiplos de 5, seguindo regras estritas.
+
+Lista de Notas: [73, 67, 38, 33]
+
+Três Regras de Arredondamento:
+
+Regra A: Nota de Corte - menor que 40, ela é uma nota de reprovação. Nenhum arredondamento deve ser feito;
+Regra B: Proximidade do Múltiplo de 5 - Você só pode arredondar a nota se a diferença entre a nota atual e o próximo múltiplo de 5 for menor que 3;
+Regra C: Ação do Arredondamento - Se as Regras A e B forem atendidas, a nota deve ser arredondada para cima para o próximo múltiplo de 5.
+
+|Nota Inicial | Regra A? > ou = 40 | Múltiplo de 5                         | Resultado             | Final |
+|-------------|----------------|-------------------------------------------|-----------------------|-------|
+|73           | Sim            |Próximo 5 é 75. Diferença: 75 - 73 = 2.    | 2 < 3. Arredondar.    | 75    |
+|67           | Sim            |Próximo 5 é 70. Diferença: 70 - 67 = 3.    | 3 = 3. Não arredondar.| 67    |
+|38           | Não            |38 < 40. (Reprovada).                      | Não arredondar.       | 38    |
+|33           | Não            |33 < 40. (Reprovada).                      | Não arredondar.       | 33    |
+
+Saída para o Exemplo: [75, 67, 38, 33]
