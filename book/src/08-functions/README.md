@@ -1,5 +1,3 @@
 # Funções
 
-Este capítulo aborda funções e organização de código, as ferramentas essenciais para estruturar programas reutilizáveis e de fácil manutenção, exploraremos: definir funções e passar dados através de parâmetros, expressões e módulos. 
-
-Você encontrará perguntas práticas para reforçar sua compreensão desses conceitos fundamentais de programação.
+Este capítulo aborda funções e organização de código, as ferramentas essenciais para estruturar programas reutilizáveis e de fácil manutenção, exploraremos: definir funções e passar dados através de parâmetros, expressões e módulos.

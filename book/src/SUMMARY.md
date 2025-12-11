@@ -88,4 +88,5 @@
     * [Módulos - Inline](08-functions/modules-inline.md)
     * [Módulos - Extern](08-functions/modules-extern.md)
     * [Módulos - mod.rs](08-functions/modules-mod.md)
-    * [Perguntas](08-functions/questions.md)
+* [Problemas](09-problems/README.md)
+    * [Fácil](09-problems/easy.md)
