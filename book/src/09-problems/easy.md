@@ -1,4 +1,4 @@
-# Fácil
+# Básico
 
 01 - Crie uma função simples apenas para imprimir "Olá, mundo!" na tela.
 
@@ -414,23 +414,6 @@ Saída Formatada (6 casas decimais):
 
 ```
 
-09 - Crie um programa que de construir e imprimir uma escadaria de tamanho N usando o símbolo # e:
-
-- A escadaria deve ter N linhas;
-- A escadaria deve ser alinhada à direita;
-- A cada linha, o número de símbolos # aumenta em 1, e o número de espaços diminui em 1.
-
-```
-   #
-  ##
- ###
-####
-```
-
-```rust
-
-```
-
 10 - Crie um programa que:
 
 Receberá cinco números inteiros positivos em uma única linha: 1 2 3 4 5
@@ -477,22 +460,3 @@ Saída:
 ```rust
 
 ```
-
-13 - Implementar um algoritmo que revise as notas de uma lista de alunos e aplique um arredondamento especial, baseado em múltiplos de 5, seguindo regras estritas.
-
-Lista de Notas: [73, 67, 38, 33]
-
-Três Regras de Arredondamento:
-
-Regra A: Nota de Corte - menor que 40, ela é uma nota de reprovação. Nenhum arredondamento deve ser feito;
-Regra B: Proximidade do Múltiplo de 5 - Você só pode arredondar a nota se a diferença entre a nota atual e o próximo múltiplo de 5 for menor que 3;
-Regra C: Ação do Arredondamento - Se as Regras A e B forem atendidas, a nota deve ser arredondada para cima para o próximo múltiplo de 5.
-
-|Nota Inicial | Regra A? > ou = 40 | Múltiplo de 5                         | Resultado             | Final |
-|-------------|----------------|-------------------------------------------|-----------------------|-------|
-|73           | Sim            |Próximo 5 é 75. Diferença: 75 - 73 = 2.    | 2 < 3. Arredondar.    | 75    |
-|67           | Sim            |Próximo 5 é 70. Diferença: 70 - 67 = 3.    | 3 = 3. Não arredondar.| 67    |
-|38           | Não            |38 < 40. (Reprovada).                      | Não arredondar.       | 38    |
-|33           | Não            |33 < 40. (Reprovada).                      | Não arredondar.       | 33    |
-
-Saída para o Exemplo: [75, 67, 38, 33]
