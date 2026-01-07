@@ -1,4 +1,4 @@
-# Perguntas - Conceitos Comuns de Programação
+# Questões - Conceitos Comuns de Programação
 
 ---
 

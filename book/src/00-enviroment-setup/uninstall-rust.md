@@ -1,4 +1,4 @@
-# Desinstalando Rust
+# Desinstalando
 
 Se em algum momento você quiser desinstalar o Rust:
 

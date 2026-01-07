@@ -1,4 +1,4 @@
-# Instalando Rust e Cargo
+# Instalando
 
 Para instalar no macOS, Linux ou em outros sistemas operacionais tipo Unix, execute o seguinte em seu terminal e siga as instruções na tela:
 

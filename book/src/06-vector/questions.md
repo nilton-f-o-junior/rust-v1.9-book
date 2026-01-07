@@ -1,4 +1,6 @@
-# Questions
+# Questões - Vetor
+
+---
 
 01 - Crie um vetor vazio de inteiros em Rust.
 

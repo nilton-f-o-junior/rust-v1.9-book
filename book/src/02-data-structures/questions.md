@@ -1,4 +1,4 @@
-# Perguntas - Estruturas de Dados
+# Questões - Estruturas de Dados
 
 ---
 

@@ -568,7 +568,7 @@ fn main() {
 - Entregue;
 - Cancelado (com motivo como String).
 
-Implemente os métodos pode_cancelar() que retorna true apenas se o pedido ainda não tiver sido entregue, e tempo_restante() que retorna Option<u32> com o tempo estimado (apenas para pedidos em preparação).
+Implemente os métodos pode_cancelar() que retorna true apenas se o pedido ainda não tiver sido entregue, e tempo_restante() que retorna Option(u32) com o tempo estimado (apenas para pedidos em preparação).
 
 [Playground!]()
 

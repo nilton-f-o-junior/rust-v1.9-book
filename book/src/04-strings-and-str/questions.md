@@ -1,4 +1,6 @@
-# Perguntas - String and &str
+# Questões - String and &str
+
+---
 
 01 - Escreva um código que crie uma string vazia e a imprima.
 

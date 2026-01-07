@@ -1,6 +1,13 @@
-# Básico
+# Questões - Funções e Módulos
+
+----
 
 01 - Crie uma função simples apenas para imprimir "Olá, mundo!" na tela.
+
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
 
 ```rust
 fn texto() {
@@ -11,8 +18,14 @@ fn main() {
     texto();
 }
 ```
+</details>
 
 02 - Crie uma função para imprimir um valor fornecido pelo usuário.
+
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -44,12 +57,18 @@ fn main() {
     println!("\nTexto digitado: {}", mensagem_usuario);
 }
 ```
+</details>
 
 03 - Crie um programa que:
 
 - Solicite e receba dois valores numéricos digitados pelo usuário;
 - Defina um módulo que implemente as quatro operações aritméticas básicas (adição, subtração, multiplicação e divisão);
 - Utilize o módulo com os valores fornecidos e exiba o resultado de cada operação na tela.
+
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -112,8 +131,14 @@ fn main() {
     }
 }
 ```
+</details>
 
 04 - Crie uma funcao apenas para usar o dead_code
+
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
 
 ```rust
 #[allow(dead_code)]
@@ -125,12 +150,18 @@ fn main() {
     println!("Um código que não vai ser usado!");
 }
 ```
+</details>
 
 05 - Desenvolva um código que realize as seguintes ações:
 
-- Crie um array (ou lista) vazio(a) com capacidade para 6 elementos.
-- Solicite ao usuário que insira os 6 valores para preencher o array.
-t- Calcule e imprima a soma de todos os elementos contidos no array.
+- Crie um array (ou lista) vazio(a) com capacidade para 6 elementos;
+- Solicite ao usuário que insira os 6 valores para preencher o array;
+- Calcule e imprima a soma de todos os elementos contidos no array.
+
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -191,10 +222,62 @@ fn main() {
     println!("{}", array_soma);
 }
 ```
+</details>
 
 // or
 
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
+
 ```rust
+use std::io;
+
+fn entrada_dados(mensagem: &str) -> i16 {
+    loop {
+        println!("{}", mensagem);
+        let mut entrada = String::new();
+        match io::stdin().read_line(&mut entrada) {
+            Ok(_) => match entrada.trim().parse::<i16>() {
+                Ok(numero) => return numero,
+                Err(_) => {
+                    println!("'{}' não é um número válido!", entrada.trim());
+                    continue;
+                }
+            },
+            Err(_) => {
+                println!("Erro na entrada de dados!");
+                continue;
+            }
+        }
+    }
+}
+
+fn array_vazio() -> [i16; 6] {
+    let mut array_vazio: [i16; 6] = [0; 6];
+    let mut index_array: usize = 0;
+
+    loop {
+        println!();
+        array_vazio[index_array] = entrada_dados("Entre com o valor:");
+
+        println!(
+            "Array - Index: {} | Valor: {}",
+            index_array, array_vazio[index_array]
+        );
+
+        index_array += 1;
+
+        if index_array > 5 {
+            println!("Array foi completamente preenchido!");
+            break;
+        }
+    }
+
+    array_vazio
+}
+
 fn main() {
     let array = array_vazio();
     let array_soma: i16 = array.iter().sum();
@@ -202,6 +285,7 @@ fn main() {
     println!("A soma dos valores do array = {}", array_soma);
 }
 ```
+</details>
 
 06 - Crie um programa que realize as seguintes tarefas:
 
@@ -217,7 +301,7 @@ B - O programa deve:
 - Tem que ser positivos;
 - Menor que 100.
 
-C - O programa deve realizar 3 comparações sequenciais, baseadas no índice de cada elemento (i= 0, 1, 2):
+C - O programa deve realizar 3 comparações sequenciais, baseadas no índice de cada elemento (i = 0, 1, 2):
 
 - Comparação 1: Lista A [0] vs. Lista B [0];
 - Comparação 2: Lista A [1] vs. Lista B [1];
@@ -234,6 +318,11 @@ E - Pontuação Final:
 - Total de pontos da Lista A;
 - Total de pontos da Lista B;
 - O vencendor foi: " ".
+
+[Playground!]()
+
+<details>
+<summary>Resposta</summary>
 
 ```rust
 use std::io;
@@ -360,6 +449,7 @@ fn main() {
     comparacao();
 }
 ```
+</details>
 
 07 - Crie uma matriz de 3x3. Solicite ao usuário que insira 9 valores inteiros, um de cada vez, para preencher todas as posições da matriz.
 
@@ -382,9 +472,12 @@ C - Somas das Diagonais:
 - Diagonal Principal;
 - Diagonal Secundária.
 
-```rust
+[Playground!]()
 
-```
+<details>
+<summary>Resposta</summary>
+
+</details>
 
 08 - Criar um programa que:
 
@@ -394,13 +487,13 @@ Deve preencher um array com 6 números inteiros:
 
 O programa deve percorrer o array e realizar a contagem para as seguintes categorias:
 
-- Positivos (> 0): 3, 4. (Contagem = 2)
-- Negativos (< 0): -4, -9. (Contagem = 2)
-- Zeros (= 0): 0. (Contagem = 2)
+- Positivos (> 0): 3, 4. (Contagem = 2);
+- Negativos (< 0): -4, -9. (Contagem = 2);
+- Zeros (= 0): 0. (Contagem = 2).
 
 Divida a quantidade de cada categoria pelo tamanho do array:
 
-- Proporção de Positivos: 2/6 = 0.4 
+- Proporção de Positivos: 2/6 = 0.4
 - Proporção de Negativos: 2/6 = 0.4
 - Proporção de Zeros: 2/6 = 0.4
 
@@ -410,22 +503,28 @@ Saída Formatada (6 casas decimais):
 - Negativos: 0.333333
 - Zeros: 0.333333
 
-```rust
+[Playground!]()
 
-```
+<details>
+<summary>Resposta</summary>
 
-10 - Crie um programa que:
+</details>
+
+09 - Crie um programa que:
 
 Receberá cinco números inteiros positivos em uma única linha: 1 2 3 4 5
 
 - Soma Mínima - Excluir o maior (5) | 1 + 2 + 3 + 4 = 10
 - Soma Máxima - Excluir o menor (1) | 2 + 3 + 4 + 5 = 14
 
-```rust
+[Playground!]()
 
-```
+<details>
+<summary>Resposta</summary>
 
-11 - Crie um programa que:
+</details>
+
+10 - Crie um programa que:
 
 Receberá uma lista (ou array) de números inteiros, onde cada número representa a altura de uma pilha: 3, 2, 1, 3
 
@@ -434,11 +533,14 @@ Receberá uma lista (ou array) de números inteiros, onde cada número represent
 
 O programa deve retornar a contagem das pilhas mais altas: 2
 
-```rust
+[Playground!]()
 
-```
+<details>
+<summary>Resposta</summary>
 
-12 - Crie um programa para conversão de horário (12h para 24h):
+</details>
+
+11 - Crie um programa para conversão de horário (12h para 24h):
 
 Entrada:
 
@@ -457,6 +559,9 @@ Saída:
 | Meio-dia    | 12:##:## PM  | A hora 12 permanece a mesma. | 12:##:##|
 | Tarde/Noite |	01:##:## PM a 11:##:## PM 	| Adicione 12 à hora.	| 13:##:## a 23:##:##|
 
-```rust
+[Playground!]()
 
-```
+<details>
+<summary>Resposta</summary>
+
+</details>

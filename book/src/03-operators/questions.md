@@ -1,4 +1,4 @@
-# Perguntas - Operadores
+# Questões - Operadores
 
 ---
 

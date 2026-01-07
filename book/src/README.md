@@ -10,7 +10,7 @@ O que você encontrará aqui:
 
 - Inúmeros exemplos;
 - Perguntas rápidas de fixação (3 a 5 minutos);
-- Testes para validar seu conhecimento;
-- Projetos reais para por a mão na massa.
+- Projetos para por a mão na massa;
+- Links com material complementar.
 
 Vamos começar a programar?

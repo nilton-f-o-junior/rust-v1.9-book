@@ -1,8 +1,6 @@
-# Questions - If and Else
+# Questões - If e Else
 
 ---
-
-> A repetição de código nas respostas é intencional. Quando chegarmos ao capítulo sobre "Funções e Módulos", retornaremos a essas perguntas para refatorá-las.
 
 01 - Escreva um programa que solicite ao usuário um número inteiro e determine se ele é par ou ímpar.
 
