@@ -5,8 +5,8 @@ A concatenação de String e &str é o processo de unir sequências de caractere
 `string`
 
 ```rust
-let conc_texto_a: String = String::from("1");
-let conc_texto_b: String = String::from("2");
+let conc_texto_a: String = String::from("Sense");
+let conc_texto_b: String = String::from(" Life");
 println!("{}", conc_texto_a + &conc_texto_b);
 ```
 
@@ -27,9 +27,9 @@ println!("{}", parte_a.to_owned() + " " + &parte_b);
 ```
 
 ```rust
-let parte_a: String = String::from("Mickey ");
-let parte_b: &str = "Mouse";
+let parte_a: String = String::from("Rei de");
+let parte_b: &str = "Lata";
 
-let resultado: String =  parte_a + parte_b;
+let resultado: String =  parte_a + " " +parte_b;
 println!("{}", resultado);
 ```
