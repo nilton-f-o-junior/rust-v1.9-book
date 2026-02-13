@@ -1,6 +1,6 @@
 # Loop 
 
-Para repetições infinitas que continuam até serem explicitamente paradas com break.
+Para repetições infinitas que continuam até serem explicitamente paradas com *break*.
 
 > Acesse: [Loop sem break](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=9b6c6ebd14320801175b48fba7a10b6c)
 

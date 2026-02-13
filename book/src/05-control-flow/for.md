@@ -1,6 +1,6 @@
 # For
 
-Itera sobre coleções, intervalos (ranges), ou qualquer iterável, sendo mais seguro que indexação manual, lida com limites automaticamente.
+Itera sobre coleções, intervalos (*ranges*), ou qualquer iterável, sendo mais seguro que indexação manual, lida com limites automaticamente.
 
 `for`
 

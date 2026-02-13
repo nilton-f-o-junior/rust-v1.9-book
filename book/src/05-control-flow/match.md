@@ -1,6 +1,6 @@
 # Match
 
-O match compara um valor contra diferentes padrões (*patterns*) e executa o código correspondente ao primeiro padrão que corresponde. É como um *switch* mais poderoso e mais seguro.
+Compara um valor contra diferentes padrões (*patterns*) e executa o código correspondente ao primeiro padrão que corresponde. É como um *switch* mais poderoso e mais seguro.
 
 Ele garante que todos os casos possíveis são cobertos, prevenindo erros comuns. Diferente do *switch* tradicional, ele não precisa de *break* e sempre retorna um valor.
 

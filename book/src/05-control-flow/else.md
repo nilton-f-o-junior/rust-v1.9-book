@@ -1,23 +1,23 @@
 # Else
 
-Agora que entendemos como o "if" funciona, o "else" é o complemento. Pense assim: se algo for verdadeiro, faça isto; senão, faça aquilo.
+Agora que entendemos como o `if` funciona, o `else` é o complemento.<br>
 
-`Se 1 + 1 for igual a 2, imprima "Hello, world!"; senão, imprima "Goodbye, World.".`
+`Se 1 + 1 for igual a 2, imprima "Igual a dois!"; senão, imprima "Diferente de dois!".`
 
 ```rust
 let num_1 = 1;
-let num_2 = 1;
+let num_2 = 2;
 
-if num_1 + num_2 == 3 {
-    println!("Hello, world!");
+if num_1 + num_2 == 2 {
+    println!("Igual a dois!");
 }
 
 else {
-    println!("Goodbye, World!");
+    println!("Diferente de dois!");
 }
 ```
 
-`if and else`
+`if e else`
 
 ```rust
 let num: u8 = 5;
@@ -32,20 +32,20 @@ if num >= 6 {
 `expression`
 
 ```rust
-let score = 51;
-let nota = if score >= 50 { "+50"} else { "-50" };
-println!("{}", nota);
+let valor = 51;
+let resultado = if valor > 50 { "Maior que 50"} else { "Menor que 50" };
+println!("{}", resultado);
 ```
 
 ```rust
-let num: u8 = 24;
+let temperatura: u8 = 24;
 
-let result: String = if num > 20 || num <= 30 {
-      String::from("Temperatura > 20 ou <= 30!")
+let valor: String = if temperatura >= 20 || temperatura <= 30 {
+      String::from("Temperatura >= 20 ou <= 30!")
 } else {
-      String::from("Temperatura < 20 ou >= 30!")
+      String::from("Temperatura < 20 ou > 30!")
 };
 
-println!("Temperatura: {}", num);
-println!("{}", result);
+println!("Temperatura: {}", temperatura);
+println!("{}", valor);
 ```

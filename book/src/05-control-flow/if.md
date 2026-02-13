@@ -1,15 +1,15 @@
 # If
 
-A declaração "if" funciona de forma simples: se uma condição for atendida, execute algum código.
+A declaração `if` funciona de forma simples: se uma condição for atendida, execute o código.
 
-`if 1 + 1 for igual a 2, print "Hello, world!"`
+`if 1 + 1 for igual a 2, print "É igual a dois!"`
 
 ```rust
 let num_1 = 1;
 let num_2 = 1;
 
 if num_1 + num_2 == 2 {
-    println!("Hello, world!");
+    println!("É igual a dois!");
 };
 ```
 

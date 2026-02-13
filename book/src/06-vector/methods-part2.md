@@ -3,7 +3,7 @@
 `.pop()`
 
 ```rust
-// remove e retorna o último elemento do vetor
+// remove o último elemento do vetor
 let mut vetor_deletar: Vec<char> = vec!['a', 'b', 'c', 'd'];
 println!("{:?}", vetor_deletar);
 
@@ -16,10 +16,8 @@ println!("{:?}", vetor_deletar);
 
 `.remove(indice)`
 
-Removes the element at a specific index, shifting all elements after it to the left.
-
 ```rust
-// remove e retorna o elemento no índice específico
+// remove o elemento do indice especificado
 let mut vetor_deletar: Vec<&str> = vec!["A", "B", "C", "D", "E"];
 println!("{:?}", vetor_deletar);
 

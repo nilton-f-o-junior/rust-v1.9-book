@@ -59,4 +59,4 @@ fn main() {
 }
 ```
 
-> O mesmo livro está sendo usado em duas lojas diferentes. Isso causaria um erro de posse (ownership) no Rust, então adicionamos `#[derive(Clone)]` para poder clonar os dados. Se você remover esta linha, o código não irá compilar. Mais tarde, veremos outras maneiras de resolver isso.
+> O mesmo livro está sendo usado em duas lojas diferentes. Isso causaria um erro de posse (*ownership*) no Rust, então adicionamos `#[derive(Clone)]` para poder clonar os dados. Se você remover esta linha, o código não irá compilar. Mais tarde, veremos outras maneiras de resolver isso.

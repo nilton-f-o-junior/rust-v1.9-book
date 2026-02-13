@@ -31,7 +31,7 @@ println!(
 );
 ```
 
-Usar o método .insert() com um índice que não existe ou que não segue a ordem sequencial de índices pode causar um erro fatal (panic).
+> Usar o método `.insert()` com um índice que não existe ou que não segue a ordem sequencial de índices pode causar um erro fatal (panic).
 
 ```rust
 let mut vetor_adicionar: Vec<u8> = Vec::new();

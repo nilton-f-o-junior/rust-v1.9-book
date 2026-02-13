@@ -4,7 +4,6 @@
 
 ```rust
 // retornam uma referência ao primeiro e ao último elemento
-// do vetor, respectivamente, encapsulados em um Option<T>.
 let vetor_metodos: Vec<&str> = vec!["a", "b", "c"];
 
 println!("{:?}", vetor_metodos.first());
