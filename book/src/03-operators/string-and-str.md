@@ -21,6 +21,12 @@ println!("{}", conc_texto_a.to_owned() + conc_texto_b);
 `string + &str`
 
 ```rust
+let parte_a: &str = "ão";
+let parte_b: String = String::from("Lampi");
+println!("{}", parte_b + parte_a);
+```
+
+```rust
 let parte_a: &str = "O Menino";
 let parte_b: String = String::from("Maluquinho");
 println!("{}", parte_a.to_owned() + " " + &parte_b);
