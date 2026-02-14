@@ -540,28 +540,3 @@ O programa deve retornar a contagem das pilhas mais altas: 2
 
 </details>
 
-11 - Crie um programa para conversão de horário (12h para 24h):
-
-Entrada:
-
-- HH:MM:SS AM/PM : 07:05:45 PM
-
-Saída:
-
-- HH:MM:SS AM/PM : 19:05:45
-
-4 Regras Essenciais de Conversão:
-
-| Cenário     | Entrada (12h) | Regra de Conversão | Saída (24h) |
-|-------------|---------------|--------------------|---------|
-| Meia-noite  | 12:##:## AM  | A hora 12 vira 00. | 00:##:##|
-| Manhã	      | 01:##:## AM a 11:##:## AM  | A hora permanece a mesma. | 01:##:## a 11:##:##|
-| Meio-dia    | 12:##:## PM  | A hora 12 permanece a mesma. | 12:##:##|
-| Tarde/Noite |	01:##:## PM a 11:##:## PM 	| Adicione 12 à hora.	| 13:##:## a 23:##:##|
-
-[Playground!]()
-
-<details>
-<summary>Resposta</summary>
-
-</details>

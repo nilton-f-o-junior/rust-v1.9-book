@@ -13,11 +13,3 @@ println!("{}", cria_str);
 let cria_str = "Outro pequeno texto!";
 println!("{}", cria_str);
 ```
-
-`slice`
-
-```rust
-let cria_str = "Último pequeno texto!";
-let slice_str = &cria_str[0..8];
-println!("{}", slice_str);
-```
