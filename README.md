@@ -4,84 +4,105 @@
 
 # Rust Developer
 
-- [x] 1. A Linguagem de Programação Rust
-    - [x] 1.1. Prefácio
-    - [x] 1.2. Introdução
-- [x] 2. Começando
-    - [x] 2.1. Rust Playground
-    - [x] 2.2. Instalar Rust
-    - [x] 2.3. Versão - Rust e Cargo
-    - [x] 2.4. Desinstalar
-    - [x] 2.5. Editores e IDEs
-- [x] 3. Conceitos Comuns de Programação
-    - [x] 3.1.  Comentários
-    - [x] 3.2.  Print
-    - [x] 3.3.  Caracteres de Escape
-    - [x] 3.4.  Variáveis
-    - [x] 3.5.  Mutabilidade
-    - [x] 3.6.  Constantes
-    - [x] 3.7.  Formatação
-    - [x] 3.8.  Formatação para Debugging
-    - [x] 3.9.  Shadowing
-    - [x] 3.10. Escopo
-    - [x] 3.11. Perguntas
-- [x] 4. Estruturas de Dados
-    - [x] 4.1. u - inteiros
-    - [x] 4.2. i - inteiros
-    - [x] 4.3.  Ponto Flutuante
-    - [x] 4.4.  Booleanos
-    - [x] 4.5.  Char
-    - [x] 4.6.  String e &str
-    - [x] 4.7.  Tuplas
-    - [x] 4.8.  Modificando Tuplas
-    - [x] 4.9.  Arrays
-    - [x] 4.10. Modificando Arrays
-    - [x] 4.11. Perguntas
-- [x] 5. Operators
-    - [x] 5.1. Arithmetic Operators
-    - [x] 5.2. Assignment Operators
-    - [x] 5.3. Precedence
-    - [x] 5.4. Logical
-    - [x] 5.5. String and &str
-    - [x] 5.6. Tuples
-    - [x] 5.7. Array
-    - [x] 5.8. Perguntas
-- [x] 6. Fluxo de Controle
-    - [x] 6.1. If
-    - [x] 6.2. Else
-    - [x] 6.3. Else if
-    - [x] 6.4. Loop
-    - [x] 6.5. While
-    - [x] 6.6. For
-    - [x] 6.7. Match
-    - [x] 6.8. Perguntas - If and Else
-    - [x] 6.9. Perguntas - Loop
-    - [x] 6.10. Perguntas - While
-    - [x] 6.11. Perguntas - For
-    - [x] 6.12. Perguntas - Match
-- [x] 7. Vetor
-    - [x] 7.1 Index (Índice)
-    - [x] 7.1 Introdução
-    - [x] 7.2 Métodos - Parte 1
-    - [x] 7.3 Métodos - Parte 2
-    - [x] 7.4 Métodos - Parte 3
-    - [x] 7.5 Métodos - Parte 4
-    - [x] 7.6 Perguntas
-- [x] Constructs
-    - [x] 8.1 Struct
-    - [x] 8.2 Struct - Exemplo
-    - [x] 8.2 Impl
-    - [x] 8.3 Impl - Exemplo
-    - [x] 8.4 Enum
-    - [x] 8.5 Enum - Exemplo
-    - [x] 8.6 Traits
-    - [x] 8.7 Traits - Exemplo  
-    - [ ] 8.8 Perguntas
-- [x] 9. Funções e Módulos
-    - [x] 9.1. Funções
-    - [x] 9.2. Funções - Entrada
-    - [x] 9.3. Expressão
-    - [x] 9.4. Módulos - Inline
-    - [x] 9.5. Módulos - Extern
-    - [x] 9.6. Módulos - mod.rs
-    - [ ] 9.7. Perguntas
+> Um guia completo em português para aprender a linguagem de programação Rust, desde os fundamentos até conceitos avançados.
+
+## 📚 Sobre o Projeto
+
+Este é um livro gratuito e em constante evolução sobre Rust, escrito em português. Meu objetivo com esse projeto é tentar facilitar o aprendizado de rust para qualquer pessoa, além de criar um material simples e direto, com muitos exemplos, execícios para cada conteúdo com resposta, projetos e material complementar, todo o projeto está seguindo a documentação mais atual e vai receber atualizações. 
+
+## 🚀 Status do Projeto
+
+✅ Capítulos 1-6 já disponíveis online!  
+🔄 Próxima atualização em 42 dias
+
+## 📖 Índice
+
+### ✅ 1. A Linguagem de Programação Rust
+- 1.1. Prefácio
+- 1.2. Introdução
+
+### ✅ 2. Começando
+- 2.1. Rust Playground
+- 2.2. Instalar Rust
+- 2.3. Versão - Rust e Cargo
+- 2.4. Desinstalar
+- 2.5. Editores e IDEs
+
+### ✅ 3. Conceitos Comuns de Programação
+- 3.1. Comentários
+- 3.2. Print
+- 3.3. Caracteres de Escape
+- 3.4. Variáveis
+- 3.5. Mutabilidade
+- 3.6. Constantes
+- 3.7. Formatação
+- 3.8. Formatação para Debugging
+- 3.9. Shadowing
+- 3.10. Escopo
+- 3.11. Perguntas
+
+### ✅ 4. Estruturas de Dados
+- 4.1. u - inteiros
+- 4.2. i - inteiros
+- 4.3. Ponto Flutuante
+- 4.4. Booleanos
+- 4.5. Char
+- 4.6. String e &str
+- 4.7. Tuplas
+- 4.8. Modificando Tuplas
+- 4.9. Arrays
+- 4.10. Modificando Arrays
+- 4.11. Perguntas
+
+### ✅ 5. Operadores
+- 5.1. Operadores Aritméticos
+- 5.2. Operadores de Atribuição
+- 5.3. Precedência
+- 5.4. Operadores Lógicos
+- 5.5. String e &str
+- 5.6. Tuplas
+- 5.7. Arrays
+- 5.8. Perguntas
+
+### ✅ 6. Fluxo de Controle
+- 6.1. If
+- 6.2. Else
+- 6.3. Else if
+- 6.4. Loop
+- 6.5. While
+- 6.6. For
+- 6.7. Match
+- 6.8-6.12. Perguntas
+
+## 🎯 Para Quem é Este Livro?
+
+- Desenvolvedores iniciantes que querem aprender Rust;
+- Programadores experientes migrando para Rust;
+- Qualquer pessoa interessada em programação de sistemas segura e eficiente.
+
+## 🤝 Como Contribuir
+
+Sua contribuição é muito importante para este projeto! Você pode ajudar de várias formas:
+
+- ⭐ **Dê uma estrela no repositório** - isso nos motiva a continuar!
+- 🔖 **Adicione aos favoritos** - para acompanhar as atualizações;
+- 📧 **Entre em contato** - Tem sugestões, dúvidas ou encontrou algum erro? Envie um email para: **[nilton.f.o.junior@gmail.com]**
+- 🐛 **Reporte problemas** - Abra uma issue descrevendo o que encontrou;
+- ✍️ **Sugira melhorias** - Todo feedback é bem-vindo!
+
+## 📝 Licença
+
+Este projeto está licenciado sob a MIT License.
+
+## 🔗 Links Úteis
+
+- [https://rust-v1-9-book.vercel.app/](E-book)
+- [Vídeo de apresentação]()
+
+---
+
+## 📅 Ciclo de Atualizações
+
+**Novos capítulos e conteúdos são publicados a cada 42 dias.** Acompanhe o repositório para receber notificações das atualizações!
+
+> **Nota:** Este projeto está em desenvolvimento ativo. Seu feedback é fundamental para melhorar o conteúdo!
