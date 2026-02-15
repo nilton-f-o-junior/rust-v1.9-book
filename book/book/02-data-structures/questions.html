@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Questões - Rust v1.9 - Book</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Rust v1.9 - Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/nilton-f-o-junior/rust-developer" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="questões---estruturas-de-dados"><a class="header" href="#questões---estruturas-de-dados">Questões - Estruturas de Dados</a></h1>
+<hr />
+<p>01 - Declare uma variável com nome positivo do tipo u32 com o valor 100. Declare outra variável com nome negativo do tipo i32 com o valor -100. Imprima ambas. Agora, tente atribuir -5 à variável positivo. O que acontece ao tentar compilar e por quê?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=762fa5a6ee5fbd6a01e4f6a2e2352c32">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let positivo: u32 = 100;
+    println!("{:?}", positivo);
+   
+    let negativo: i32 = -100;
+    println!("{:?}", negativo);
+
+    // Erro:
+    // let positivo: u32 = -5;
+}</code></pre></pre>
+</details>
+<p>02 - Escreva código Rust para declarar uma variável max_u8 do tipo u8 e atribua a ela o maior valor possível para esse tipo. Imprima esse valor e em seguida, no seu código, tente atribuir max_u8 + 1 a uma nova variável u8. O que acontece durante a execução?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=9c7ceb057a84ff7406593de10f9f7510">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let max_u8: u8 = u8::MAX;
+    println!("{:?}", max_u8);
+
+    // erro: causaria um overflow (estouro)
+    // let max_u8: u8 = u8::MAX + 1;
+    // println!("{:?}");
+}</code></pre></pre>
+</details>
+<p>03 - Declare uma variável chamada populacao do tipo u64 e atribua a ela o valor "7_800_000_000". Em seguida, imprima o valor da variável formatada.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=7b2dd4c30f41e8af103bc111ce4435e2">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let populacao: u64 = 7_800_000_000;
+    println!("População: {populacao:?}");
+}</code></pre></pre>
+</details>
+<p>04 - Você precisa armazenar a contagem de visualizações de vídeos, que pode chegar a bilhões, mas nunca será negativo. Escolha o tipo não assinado mais apropriado (u32 ou u64). Declare uma variável <em>video_views</em> com este tipo, atribua "2500000000" a ela e imprima.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=792bc57f2e1170e4f56d620ef8a50e03">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let video_views: u64 = 2_500_000_000;
+    println!("{:?}", video_views);
+}</code></pre></pre>
+</details>
+<p>05 - Declare duas variáveis, min_val_i8 e max_val_i8, ambas do tipo i8. Atribua a elas, respectivamente, o menor e o maior valor possível para o tipo i8. Imprima ambos os valores.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=2b058d76b81eb1c618eced7c71c8a57a">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let min_val_i8: i8 = i8::MIN;
+    println!("{:?}", min_val_i8);
+   
+    let max_val_i8: i8 = i8::MAX;
+    println!("{:?}", max_val_i8);
+}</code></pre></pre>
+</details>
+<p>06 - Tente declarar uma variável valor_a do tipo u8 com 10 e valor_b do tipo u8 com -10. O que acontece com valor_b durante a compilação?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=907d8d41de48f2274b8870609cfba41d">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let valor_a: u8 = 10;
+    println!("{:?}", valor_a);
+
+    let valor_b: u8 = -10;
+    println!("{:?}", valor_b);
+}</code></pre></pre>
+</details>
+<p>07 - Em um sistema embarcado com memória limitada, você precisa armazenar uma leitura de sensor que varia de -10.0 a +10.0 com duas casas decimais de precisão. Declare uma variável leitura_do_sensor usando f32 e atribua 7.89.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=467533d3ecf12c2ae3e70b631e1a3eae">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let leitura_do_sensor: f32 = 7.89;
+    println!("{:?}", leitura_do_sensor);
+}</code></pre></pre>
+</details>
+<p>08 - Declare um caractere ASCII char_ascii = 'Z'; e um caractere unicode char_unicode = 'Ω';. Use std::mem::size_of_val(&amp;char_ascii) e std::mem::size_of_val(&amp;char_unicode) para imprimir o tamanho em bytes de cada um. O que você observa?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=acd43048cb353bfa61f91d7365acc8e1">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let char_ascii: char = 'Z';
+    println!("{:?}", char_ascii);
+
+    let char_unicode: char = 'Ω';
+    println!("{:?}", char_unicode);
+
+    println!("{:?}", std::mem::size_of_val(&amp;char_ascii));
+    println!("{:?}", std::mem::size_of_val(&amp;char_unicode));
+}</code></pre></pre>
+</details>
+<p>09 - Tente declarar uma variável char com mais de um caractere, por exemplo: let letra: char = 'ab';. O que acontece ao tentar compilar?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=f9c9a395b3121b389790b424ce9408db">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // erro: deve ter apenas um caractere
+    let letra: char = 'ab';
+    println!("{:?}", letra);
+}</code></pre></pre>
+</details>
+<p>10 - Declare uma variável arquivo_carregado e atribua <em>true</em>. Declare apresenta_erro e atribua <em>false</em>. Imprima ambas e em seguida, tente atribuir o inteiro 1 a uma variável booleana. O que o compilador Rust diz?</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=161a6b2bace3e1c68a191753f6d36ed8">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let arquivo_carregado: bool = true;
+    println!("{:?}", arquivo_carregado);
+
+    let apresenta_erro: bool = false;
+    println!("{:?}", apresenta_erro);
+
+    // Tipos incompatíveis, esperava-se `bool`, encontrado inteiro
+    // let valor: bool = 1;
+    // println!("{:?}", valor);
+}</code></pre></pre>
+</details>
+<p>11 - Crie uma tupla registro que contenha um nome (&amp;str), uma idade (u8), e uma nota de aprovação (f32). Exemplo: ("Maria", 22, 7.5). Imprima a tupla inteira.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a27d1e2e86a5c02a258dfc2720bb45ac">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let registro: (&amp;str, u8, f32) = ("Maria", 22, 7.5);
+    println!("{:#?}", registro);
+}</code></pre></pre>
+</details>
+<p>12 - Crie uma tupla chamada <em>server_response</em> que contenha um código de <em>status</em> HTTP (u16) e uma mensagem de resposta (&amp;str), como (404, <em>"Not Found"</em>). Imprima a tupla.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=90d02b310161c18de79d363f2a22cb7e">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let server_response: (u16, &amp;str) = (404, "Not Found");
+    println!("{:?}", server_response);
+}</code></pre></pre>
+</details>
+<p>13 - Dada a tupla let produto_info = ("Laptop XPTO", 1250.99, 15); (nome, preço, quantidade em estoque), acesse e imprima o preço e a quantidade usando a indexação de tupla (ex: product_info.1).</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=01fa6de60ad2dbc546bbd6b56515aff0">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {    
+    let produto_info: (&amp;str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
+    let (nome, preco, quantidade_estoque) = produto_info;
+
+    println!(
+        "Produto: {} \nQuantidade em Estoque: {}",
+        produto_info.0, produto_info.2
+    );    
+}</code></pre></pre>
+</details>
+<p>14 - Dada a tupla let color_rgb = (255, 128, 0);, desestruture-a nas variáveis <em>red</em>, <em>green</em> e <em>blue</em>. Imprima cada variável separadamente.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=1d5e4e4f745e9761ae5f508f8623fc1b">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let color_rgb: (u8, u8, u8) = (255, 128, 0);
+    let (red, green, blue) = color_rgb;
+
+    println!("Red: {} \nGreen: {} \nBlue: {}", red, green, blue);
+}</code></pre></pre>
+</details>
+<p>15 - Declare uma tupla <em>api_result</em> com um booleano indicando sucesso, um u64 para um ID e uma string para uma mensagem. Ex: (true, 1234567890, String::from(<em>"Successful operation"</em>)). Imprima usando {:#?}.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=d0e73bd37751172ffc26a518f8ce02a0">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let api_result: (bool, u64, String) = (true, 1234567890, String::from("Successful operation"));
+    println!("{:#?}", api_result);
+}</code></pre></pre>
+</details>
+<p>16 - Declare uma tupla let config = ("localhost", 8080);. Tente modificar o segundo elemento para 8081 (ex: config.1 = 8081;). O que acontece ao compilar? Agora, redeclare-a como let mut config = ("localhost", 8080); e tente a mesma modificação.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=d9e75d648eceacf486e6ec446ac74680">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // erro: 
+    // let config: (&amp;str, u16) = ("localhost", 8080);
+    // config.1 = 8180;
+    
+    let mut config: (&amp;str, u16) = ("localhost", 8080);
+    println!("{:?}", config);
+
+    config.1 = 8180;
+    println!("{:?}", config);
+}</code></pre></pre>
+</details>
+<p>17 - Declare uma tupla mutável <em>player_status</em> para armazenar nome (&amp;str), <em>score</em> (i32) e vidas (u8). Inicialize com (<em>"Hero"</em>, 0, 3). Em seguida, modifique a pontuação para 1500 e as vidas para 2. Imprima a tupla atualizada.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=1055b59be9f51a685510763916bd06c5">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let player_status: (&amp;str, i32, u8) = ("Hero", 0, 3);
+    let (nome, mut score, vidas) = player_status;
+    println!("Name: {nome}\nScore: {score}\nVidas: {vidas}\n");
+    
+    score = 1500;
+    println!("Name: {nome}\nScore: {score}\nVidas: {vidas}");
+}</code></pre></pre>
+</details>
+<p>18 - Crie uma tupla mutável let mut point = (10.0, 20.0);. Modifique o primeiro elemento para 15.5 e o segundo para 25.0 usando a sintaxe de acesso por índice. Imprima a tupla.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=c6a2ff5f58b690c5a472c583ef40f49d">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut point: (f32, f32) = (10., 20.);
+    println!("{:#?}", point);
+
+    point.0 = 15.5;
+    point.1 = 25.;
+    println!("{:#?}", point);
+}</code></pre></pre>
+</details>
+<p>19 - Crie uma tupla mutável <em>file_details</em> contendo nome do arquivo (String), tamanho (u64) e se é editável (bool). Inicialize-a. Em seguida, modifique o nome do arquivo (anexando "_v2" ao nome original) e mude o <em>status</em> de editável. Imprima a tupla.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=4aa72a46e7ea4f52e828af74395573ce">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let file_details: (String, u64, bool) = (String::from("test.txt"), 127, true);
+    println!("{:#?}", file_details);
+
+    let mut file_details_v2 = file_details;
+    file_details_v2.0 = String::from("teste_v2.txt");
+    file_details_v2.2 = false;
+
+    println!("{:#?}", file_details_v2);
+}</code></pre></pre>
+</details>
+<p>20 - Declare um array meses contendo os nomes dos três primeiros meses do ano como string <em>slices</em>. Imprima o nome do segundo mês (lembre-se da indexação baseada em zero).</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=26393a352228d5e79fd2d317aa890a16">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let meses: [&amp;str; 3] = ["Janeiro", "Fevereiro", "Março"];
+
+    println!("{:#?}\n", meses);
+    println!("{:#?}", meses[1])
+}</code></pre></pre>
+</details>
+<p>21 - Declare um array numeros de 6 elementos do tipo u32. Inicialize-o com os valores [1, 2, 4, 8, 16, 32]. Imprima o último elemento do array usando indexação.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=308cda5bbd20145c7e609b90d3be56d7">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let numeros: [u8; 6] = [1, 2, 4, 8, 16, 32];
+    println!("{numeros:#?}\n");
+    
+    let numeros: [u8; 6] = [1, 2, 4, 8, 16, 32];
+    println!("{:#?}", numeros[5]);
+}</code></pre></pre>
+</details>
+<p>22 - Declare um array let <em>scores</em> = [100, 90, 80];. Tente modificar o segundo elemento para 95. O que acontece? Agora, declare-o como mut, faça a modificação e imprima.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=51f6763c194ff3e39be5e8a1bae04af0">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let scores = [100, 90, 80];
+    println!("{:?}", scores);
+
+    // scores[1] = 95;
+    // println!("{:?}", scores);
+
+    let mut scores = [10, 30, 60];
+    println!("{:?}", scores);
+
+    scores[1] = 0;
+    println!("{:?}", scores);
+}</code></pre></pre>
+</details>
+<p>23 - Declare um array mutável contador de 4 elementos do tipo u16, inicializado com [10, 25, 5, 30]. Modifique a contagem do primeiro item para 12 e do terceiro para 8. Imprima o array atualizado.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a535592a4b7e3a8858732b7890f5f27e">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let mut contador: [u16; 4] = [10, 25, 5, 30];
+
+    contador[0] = 12;
+    contador[3] = 8;
+
+    println!("{:?}", contador);
+}</code></pre></pre>
+</details>
+<p>24 - Crie um array mutável servicos_ativos: [bool; 3] inicializado como [true, false, true]. Modifique o segundo serviço para <em>true</em> e o último para <em>false</em>. Imprima o array.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=4b380922973da309b12e0085d2798fa0">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let mut servicos_ativos:[bool; 3] = [true, false, true];
+    println!("{:?}", servicos_ativos);
+
+    servicos_ativos[1] = true;
+    servicos_ativos[2] = false;
+    println!("{:?}", servicos_ativos);
+}</code></pre></pre>
+</details>
+<p>25 - Crie um array mutável pixel_colors: [[u8; 3]; 2] para representar dois pixels, cada um com componentes R, G, B. Inicialize-o como [[255, 0, 0], [0, 255, 0]] (um pixel vermelho, um verde). Modifique o primeiro pixel para ser azul ([0, 0, 255]) e o segundo para ser amarelo ([255, 255, 0]). Imprima o array de pixels.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=d4c64d7affe4fe5a1f01f576394ca5dd">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main () {
+    let mut pixel_colors: [[u8; 3]; 2] = [[255, 0, 0], [0, 255, 0]];
+    println!("Vermelho: {:?}", pixel_colors[0]);
+    println!("Verde: {:?}", pixel_colors[1]);
+
+    // Red &gt; Blue
+    pixel_colors[0][0] = 0;
+    pixel_colors[0][1] = 0;
+    pixel_colors[0][2] = 255;
+
+    // Green &gt; Yellow
+    pixel_colors[1][0] = 255;
+    pixel_colors[1][1] = 255;
+    pixel_colors[1][2] = 0;
+    
+    println!("Azul: {:?}", pixel_colors[0]);    
+    println!("Amarelo: {:?}", pixel_colors[1]);
+}</code></pre></pre>
+</details>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../02-data-structures/modifying-arrays.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../03-operators/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../02-data-structures/modifying-arrays.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../03-operators/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
