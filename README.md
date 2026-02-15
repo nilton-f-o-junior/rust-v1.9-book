@@ -20,7 +20,7 @@
 
 Este é um livro gratuito e em constante evolução sobre Rust, escrito em português. Meu objetivo com esse projeto é tentar facilitar o aprendizado de rust para qualquer pessoa, além de criar um material simples e direto, com muitos exemplos, execícios para cada conteúdo com resposta, projetos e material complementar, todo o projeto está seguindo a documentação mais atual e vai receber atualizações. 
 
-<p>Acesse: <a href="https://rust-v1-9-book.vercel.app/" target="_blank">https://rust-v1-9-book.vercel.app/</a></p>
+Acesse: https://rust-v1-9-book.vercel.app/
 
 ## 📖 Índice
 
