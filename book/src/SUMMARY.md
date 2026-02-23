@@ -21,7 +21,7 @@
     * [Shadowing](01-common-programming-concepts/shadowing.md)
     * [Escopo](01-common-programming-concepts/scope.md)
     * [Questões](01-common-programming-concepts/questions.md)
-* [Estruturas de Dados](02-data-structures/README.md)
+* [Tipos de Dados](02-data-structures/README.md)
     * [u - inteiros](02-data-structures/u-integers.md)
     * [i - inteiros](02-data-structures/i-integers.md)
     * [Ponto Flutuante](02-data-structures/floating.md)
