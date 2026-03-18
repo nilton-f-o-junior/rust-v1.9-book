@@ -23,7 +23,7 @@ println!("Qual é o seu nome?\'Meu nome é Alice!\'");
 println!("Qual é o seu nome?\"Meu nome é Alice!\"");
 ```
 
-`\\` 
+`\\`
 
 ```rust
 // barra invertida
@@ -40,7 +40,7 @@ println!("Qual é o seu nome?\tMeu nome é\tAlice!");
 `r`
 
 ```rust
-// permite todas as barra invertidas
+// raw string: trata a barra invertida literalmente, sem processar sequências de escape
 println!(r"C:\Users\Alice\Documents");
 ```
 
@@ -74,4 +74,4 @@ println!("(\u{25D5}\u{2323}\u{25D5})");
 print!("Carregando ...\r");
 ```
 
-> Comumente usado para animações de terminal: **\r**
+> Comumente usado para animações de terminal: `\r` o efeito pode variar conforme o terminal ou sistema operacional.

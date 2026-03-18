@@ -36,4 +36,7 @@ eprintln!("ERRO:");
 eprintln!("Falha ao carregar arquivo!");
 ```
 
-> Nota: Quando estiver desenvolvendo um programa, pode redirecionar a saída normal para um arquivo usando (>) e as mensagens de erro para o terminal usando (eprint).
+> Em terminais Unix, você pode redirecionar a saída padrão com `>` e a saída de erro com `2>`:
+ > ```bash
+ > cargo run > saida.txt 2> erros.txt
+ > ```

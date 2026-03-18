@@ -6,9 +6,16 @@ Variáveis são espaços nomeados na memória que podem armazenar um valor.
 let nome = "Maria";
 println!("Qual é o seu nome: {}", nome);
 ```
+
 ```rust
 let idade = 29;
 println!("Qual sua idade? {}", idade);
+```
+
+```rust
+let nome = "Maria";
+let idade = 29;
+println!("{} tem {} anos", nome, idade);
 ```
 
 > Saiba mais sobre [variáveis](https://www.foj.dev.br/src/pages/posts-rust/rust-variables.html).

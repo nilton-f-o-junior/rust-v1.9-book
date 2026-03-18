@@ -44,9 +44,9 @@ fn main() {
 ```rust
 fn main() {
     /*
-       Inicio do comentário externo
-       // Este é um comentário aninhado
-       Fim do comentário externo
+       Início do comentário externo
+       /* Este é um comentário de bloco aninhado */
+       Fim do comentário externo
     */    
 }
 ```
@@ -248,9 +248,11 @@ fn main() {
 const MAX_SPEED: i32 = 100;
 
 fn main() {    
-    MAX_SPEED = 200;
+    MAX_SPEED = 200; // erro: cannot assign to this expression
 }
 ```
+
+Não. Constantes são sempre imutáveis — a palavra-chave `mut` não pode ser usada com `const` de forma alguma. Qualquer tentativa de reatribuição resulta em erro de compilação.
 </details>
 
 17 - Quais são as principais diferenças entre constantes e variáveis imutáveis em Rust?
@@ -268,8 +270,9 @@ fn main() {
     println!("Constante: {}, Variável: {}", CONSTANTE_GLOBAL, variavel_imutavel);
 
     // Constantes:
-    // - Sempre imutáveis (a palavra-chave 'mut' não é permitida);
-    // - Tipo explícito (ex: : i32);
+    // - Sempre imutáveis: 'mut' não é permitido de forma alguma (nem como tentativa);
+    // - Tipo explícito obrigatório (ex: : i32);
+    // - Avaliadas em tempo de compilação;
     // - Podem ser declaradas em escopo global (fora de funções).
     
     // Variáveis Imutáveis (let):

@@ -27,7 +27,9 @@ Comentários são usados para documentar seu código, tornando-o mais compreens�
 ///  - Documentam o item seguinte: função, módulo, struct, etc.
 ```
 
-`//!` 
+> Execute `cargo doc --open` para gerar e abrir a documentação do seu projeto no navegador.
+
+`//!`
 
 ```rust
 //! Comentário de documentação interno (inner doc comment):

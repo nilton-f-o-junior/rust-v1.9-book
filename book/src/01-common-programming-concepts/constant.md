@@ -1,6 +1,6 @@
 # Constante
 
-A constante é uma identificador com valor fixo e imutável, tipo explícito e pode ser declarada em qualquer escopo.
+A constante é um identificador com valor fixo e imutável, avaliado em tempo de compilação. Por convenção, o nome de constantes em Rust é escrito em `SCREAMING_SNAKE_CASE`.
 
 ```rust
 const PI: f32 = 3.14159;
@@ -18,4 +18,4 @@ fn main () {
 }
 ```
 
-> O tópico de **tipos de dados** será abordado no próximo capítulo.
+> O tópico de **tipos de dados** será abordado em detalhes no próximo capítulo.
