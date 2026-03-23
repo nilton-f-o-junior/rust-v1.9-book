@@ -325,7 +325,7 @@ fn main() {
 use std::io;
 
 fn main() {
-    println!("Entra com link:");
+    println!("Entre com link:");
     let mut entrada_link: String = String::new();
     io::stdin().read_line(&mut entrada_link).err();
 
@@ -421,7 +421,7 @@ fn main() {
 
     let palavra = entrada_palavra.trim().replace(" ", "");
     println!("{}", palavra);
-    println!("{:?}", palavra.len());
+    println!("{:?}", palavra.chars().count());
 }
 ```
 </details>

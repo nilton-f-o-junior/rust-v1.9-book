@@ -6,7 +6,7 @@ Usados para manipulação e modificação de conteúdo de texto.
 
 ```rust
 // verifica se a string está vazia
-let text = "Hello, word!";
+let text = "Hello, world!";
 println!("{}", text.is_empty());
 ```
 
@@ -14,7 +14,7 @@ println!("{}", text.is_empty());
 
 ```rust
 // verifica se contém substring
-let text = "Hello, word!";
+let text = "Hello, world!";
 println!("{}", text.contains("ello"));
 ```
 
@@ -22,7 +22,7 @@ println!("{}", text.contains("ello"));
 
 ```rust
 // verifica se a string começa/termina com a substring fornecida
-let text = "Hello, word!";
+let text = "Hello, world!";
 println!("{}", text.starts_with("He"));
 println!("{}", text.ends_with("d!"));
 ```
@@ -31,7 +31,7 @@ println!("{}", text.ends_with("d!"));
 
 ```rust
 // encontra posição(índice) de substring
-let text = "Hello, word!";
+let text = "Hello, world!";
 println!("{:?}", text.find("H"));
 ```
 
@@ -39,7 +39,7 @@ println!("{:?}", text.find("H"));
 
 ```rust
 // conversão para maiúsculas/minúsculas
-let text = "Hello, word!";
+let text = "Hello, world!";
 println!("{:?}", text.to_uppercase());
 println!("{:?}", text.to_lowercase());
 ```
@@ -48,7 +48,7 @@ println!("{:?}", text.to_lowercase());
 
 ```rust
 // remove espaços das extremidades
-let text = "  Hello, word!  ";
+let text = "  Hello, world!  ";
 println!("{:?}", text.trim());
 ```
 
@@ -56,7 +56,7 @@ println!("{:?}", text.trim());
 
 ```rust
 // substitui todas as ocorrências
-let text = "Hello, word!";
+let text = "Hello, world!";
 println!("{:?}", text.replace("word", "Snoopy"));
 ```
 
@@ -64,6 +64,6 @@ println!("{:?}", text.replace("word", "Snoopy"));
 
 ```rust
 // substitui apenas N ocorrências
-let text = "Hello, word!";
+let text = "Hello, world!";
 println!("{:?}", text.replacen("o", "a", 1));
 ```

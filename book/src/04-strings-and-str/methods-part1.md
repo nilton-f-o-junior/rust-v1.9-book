@@ -55,7 +55,7 @@ println!("{:?}", text);
 ```rust
 // insere caracteres em uma posição especifica
 // 0 1 2 3 4 5 6
-// H e e l l o ,
+// H e l l o ,  
 let mut text = String::from("Hello,");
 text.insert(6,  ' ');
 text.insert(7,  'w');

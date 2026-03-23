@@ -9,9 +9,8 @@ Refere-se à entrada de dados, ou seja, à sua captura, validação e processame
 use std::io;
 
 fn main () {
-    //
     println!("Entrada de texto:");
-    let mut input:String = Sring::new();
+    let mut input:String = String::new();
     io::stdin().read_line(&mut input).expect("Erro de entrada de dados!");
     // io::stdin().read_line(&mut input).unwrap();
 }
