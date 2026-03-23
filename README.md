@@ -5,12 +5,12 @@
 > Um guia completo em português para aprender a linguagem de programação Rust, desde os fundamentos até conceitos avançados.
 
 <p align="center">
-  <a href="https://rust-v1-9-book.vercel.app/">
-    <img src="https://img.shields.io/badge/Status-Cap%C3%ADtulos%201--6-blue" alt="Status">
-  </a>
-  <a href="https://rust-v1-9-book.vercel.app/">
-    <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-30%2F04%2F26-orange" alt="Próxima Atualização">
-  </a>
+   <a href="https://rust-v1-9-book.vercel.app/">
+  <img src="https://img.shields.io/badge/Status-Cap%C3%ADtulos%201--6-blue" alt="Status">
+</a>
+<a href="https://rust-v1-9-book.vercel.app/">
+  <img src="https://img.shields.io/badge/Atualizado-31%2F03%2F26-orange" alt="Última Atualização">
+</a>
 </p>
 
 ## 📚 Sobre o Projeto
@@ -100,6 +100,6 @@ Sua contribuição é muito importante para este projeto! Você pode ajudar de v
 
 ## 📅 Ciclo de Atualizações
 
-**Novos capítulos e conteúdos são publicados a cada 42 dias.** Acompanhe o repositório para receber notificações das atualizações!
+Novos capítulos e conteúdos são publicados mensalmente, sempre no último dia de cada mês. Acompanhe o repositório para não perder as novidades e receber notificações de cada nova versão!
 
 > **Nota:** Este projeto está em desenvolvimento ativo. Seu feedback é fundamental para melhorar o conteúdo!
