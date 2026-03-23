@@ -200,7 +200,6 @@
     let sub = total - 3;
     println!("{:?}", sub);
 
-    //
     let mut total = 10;
     total -= 3;
     println!("{:?}", total);
@@ -389,7 +388,7 @@
 <details>
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    let arr: [i32; 3];
+    let arr: [u16; 3];
     arr = [10, 20, 30];
 
     println!("{:?}", arr[0] * arr[1] * arr[2]);
@@ -418,7 +417,7 @@
     }
     
     println!("{:?}", x);
-    // println!("{:?}", y); // Erro: `y` fora escopo
+    // println!("{:?}", y); // Erro: `y` fora do escopo
 }</code></pre></pre>
 </details>
 <p>23 - Declare uma variável level1 com valor 10. Abra um novo bloco e declare uma variável level2 com valor 20. Dentro deste bloco, crie outro bloco e declare level3 com valor 30. Imprima a soma de level1, level2 e level3 dentro do bloco mais interno.</p>
@@ -443,13 +442,13 @@
 <details>
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    let num: u8 = 100;
-    println!("{:?}", num);
+    let principal: u8 = 100;
+    println!("{:?}", principal);
     {
-      let num: f32 = 50.;
-      println!("{:?}", num);
+      let principal: f32 = 50.;
+      println!("{:?}", principal);
     }
-    println!("{:?}", num);
+    println!("{:?}", principal);
 }</code></pre></pre>
 </details>
 <p>25 - Usando os valores de um array var = [2, 3], escreva um código que calcule e imprima o resultado de (var[0] + var[1]) * var[1].</p>
@@ -526,10 +525,10 @@
 <details>
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    let point_1: u8 = 5;
-    let point_2: u8 = 8;
+    let point1: u8 = 5;
+    let point2: u8 = 8;
 
-    println!("Point-1 &lt; Point-2? {}", point_1 &lt; point_2);
+    println!("Point1 &lt; Point2? {}", point1 &lt; point2);
 }</code></pre></pre>
 </details>
 <p>33 - Declare duas variáveis inteiras, nota_a com 7 e nota_b com 7. Escreva um código que imprima se nota_a é maior ou igual a nota_b (&gt;=).</p>
@@ -622,7 +621,7 @@
     println!("{}", mensagem.to_owned() + " -&gt; End");
 }</code></pre></pre>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    // String
+    // string
     let mut mensagem: String = String::from("Start");
     mensagem += " -&gt; End";
     println!("{}", mensagem);
@@ -637,6 +636,9 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next prefetch" href="../04-strings-and-str/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -648,6 +650,9 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next prefetch" href="../04-strings-and-str/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

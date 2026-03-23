@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>i - inteiros - Rust v1.9 - Book</title>
+        <title>&amp;str - Rust v1.9 - Book</title>
 
 
         <!-- Custom HTML head -->
@@ -178,53 +178,29 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="i-inteiros-assinados"><a class="header" href="#i-inteiros-assinados">i: inteiros assinados</a></h1>
-<p>São tipos de dados que só podem armazenar números inteiros positivos, negativos ou zero.</p>
-<p><code>i8</code></p>
+                        <h1 id="str"><a class="header" href="#str">&amp;str</a></h1>
+<p>Também conhecido como string <em>slice</em> ou fatia de string, representa uma referência imutável a uma sequência de texto UTF-8. É usado como string sem a necessidade de alocar memória no <em>heap</em>.</p>
+<p><code>&amp;str</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>// i8 = -128 a 127
-let inteiro: i8 = -16;
-println!("{}", inteiro);
+</span>let cria_str: &amp;str = "Pequeno texto!";
+println!("{}", cria_str);
 <span class="boring">}</span></code></pre></pre>
-<p><code>i16</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>// i16 = -32_768 a 32_767
-let inteiro: i16 = -32;
-println!("{}", inteiro);
-<span class="boring">}</span></code></pre></pre>
-<p><code>i32</code></p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>// i32 = -2_147_483_648 a 2_147_483_647
-let inteiro: i32 = -64;
-println!("{}", inteiro);
-<span class="boring">}</span></code></pre></pre>
-<p><code>i64</code></p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>// i64 = -9_223_372_036_854_775_808 a 9_223_372_036_854_775_807
-let inteiro: i64 = -128;
-println!("{}", inteiro);
-<span class="boring">}</span></code></pre></pre>
-<p><code>i128</code></p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>// i128 =  ... a ...
-let inteiro: i128 = -256;
-println!("{}", inteiro);
+</span>let cria_str = "Outro pequeno texto!";
+println!("{}", cria_str);
 <span class="boring">}</span></code></pre></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../02-data-structures/u-integers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../04-strings-and-str/string.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../02-data-structures/floating.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../04-strings-and-str/methods-part1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -234,11 +210,11 @@ println!("{}", inteiro);
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../02-data-structures/u-integers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../04-strings-and-str/string.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../02-data-structures/floating.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../04-strings-and-str/methods-part1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

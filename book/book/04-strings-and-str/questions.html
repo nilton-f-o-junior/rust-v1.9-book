@@ -1,0 +1,595 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Questões - Rust v1.9 - Book</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Rust v1.9 - Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/nilton-f-o-junior/rust-developer" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="questões---string-and-str"><a class="header" href="#questões---string-and-str">Questões - String and &amp;str</a></h1>
+<hr />
+<p>01 - Escreva um código que crie uma string vazia e a imprima.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=04697b24c6706d3d04a675d55693d184">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let cria_string: String = String::new();
+    println!("{}", cria_string);
+}</code></pre></pre>
+</details>
+<p>02 - Crie uma string a partir do literal de string "Pequeno, texto!".</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=4db7cde9056a6f5aedff39c44bf042b7">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let literal_string: String = String::from("Pequeno, texto!");
+    println!("{}", literal_string);
+}</code></pre></pre>
+</details>
+<p>03 - Declare uma variável que contenha &amp;str com o valor "Aprendendo Rust".</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a0dd76fb9cabaa21d63a02cc7d85726a">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let texto: &amp;str = "Aprendendo Rust";
+    println!("{}", texto);
+}</code></pre></pre>
+</details>
+<p>04 - Dada uma string, escreva o código para obter um &amp;str que represente toda a string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=f55333f92be2d15599c6216497f318db">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let entrada_string: String = String::from("Aprendendo Rust!");
+    let entrada_str: &amp;str = &amp;entrada_string;
+    println!("{}", entrada_str);
+}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let entrada_string: String = String::from("Aprendendo Rust!");
+    let entrada_str: &amp;str = entrada_string.as_str();
+    println!("{}", entrada_str);
+}</code></pre></pre>
+</details>
+<p>05 - Escreva um código que receba um texto em string e o converta para &amp;str e, em seguida, o imprima na tela.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=45661d7a96858a6849c87cca119d35cb">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_string: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut entrada_string)
+        .expect("Erro de entrada de dados!");
+    let texto_string: &amp;str = entrada_string.as_str();
+    println!("\nTexto convertido para &amp;str: {}", texto_string.trim());
+}</code></pre></pre>
+</details>
+<p>06 - Converta um string = 123 em um inteiro.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=b169066c7c9b4ebf6ac2ace822c32e63">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {    
+    let text: &amp;str = "123";
+    let num: u8 = text.parse().expect("Erro ao converter dados!");
+    println!("{}", num);    
+}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let text: &amp;str = "123";
+     
+    let num = match text.parse::&lt;u8&gt;() {
+        Ok(num) =&gt; num,
+        Err(_) =&gt; {
+            println!("Erro ao converter dados!");
+            return;
+        }
+    };
+    println!("{}", num);
+}</code></pre></pre>
+</details>
+<p>07 - Use o método .to_string() ou String::from() para criar uma nova string concatenando um &amp;str e uma string existente.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=f56a26d7a9431731e1bac8713d29de4d">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_texto: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut entrada_texto)
+        .expect("Erro de entrada de dados!");
+
+    let texto_a: &amp;str = &amp;entrada_texto.as_str().trim();
+    let texto_b: String = String::from(" + string!");
+
+    println!("{}", texto_a.to_string() + &amp;texto_b);
+}</code></pre></pre>
+</details>
+<p>08 - Crie uma string mutável e anexe um &amp;str a ela usando o método push_str().</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=374a7767faa92d6933d7bfd559619754">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut string_mutavel: String = String::from("Pequeno, ");
+    string_mutavel.push_str("texto!");
+    println!("{}", string_mutavel);
+}</code></pre></pre>
+</details>
+<p>09 - Adicione um único caractere (char) ao final de uma string mutável.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=ebb09ff00d5882a8997a05495188fe53">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {    
+    let mut unico_char: String = String::from("Pequeno, texto");
+    let caractere: char = '!';
+
+    unico_char.push(caractere);
+    println!("{}", unico_char);
+}</code></pre></pre>
+</details>
+<p>10 - Combine um &amp;str, uma string e um número em uma nova string usando a macro format!.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=0a4d681c9bf4b7c88d0dc8e758743b99">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let var_str: &amp;str = "1";
+    let var_string: String = String::from("2");
+    let var_u8: u8 = 3;
+
+    // a macro format! cria uma nova string
+    let result = format!("{}{}{}", var_str, var_string, var_u8);
+    println!("{}", result);
+}</code></pre></pre>
+</details>
+<p>11 - Crie uma nova string removendo todos os espaços em branco de uma string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=e9bc2bba7b75db8bb89be0ab362019d0">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_texto).err();
+
+    let remove_espaco = entrada_texto.replace(" ", "");
+    println!("\nSem espaços = {}", remove_espaco.trim());
+}</code></pre></pre>
+</details>
+<p>12 - Substitua todas as ocorrências da substring erro por sucesso em um &amp;str, criando uma nova string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a51483277e7c8b3fd2da1e427539e24e">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_texto).err();
+
+    let novo_texto = entrada_texto.replace("erro", "sucesso");
+    println!("{}", novo_texto);
+}</code></pre></pre>
+</details>
+<p>13 - Substitua apenas a primeira ocorrência de antes por depois em um &amp;str, criando uma nova string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=39113e025edc73e94a85bcc58e85618b">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma frase:");
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_frase).err();
+
+    let frase = entrada_frase.replacen("antes", "depois", 1);
+    println!("{}", frase);
+}</code></pre></pre>
+</details>
+<p>14 - Verifique se um &amp;str contém a substring Rust.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=fd50790891d0c374ac75e1e446de9fd0">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma frase:");
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_texto).err();
+
+    if entrada_texto.contains("Rust") {
+        println!("\n{} - contém 'Rust'", entrada_texto.trim());
+    } else {
+        println!("\n{} - não contém 'Rust'", entrada_texto.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>15 - Verifique se um nome de arquivo em uma string termina com o sufixo .rs</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=ab027074b26fe1a2914b27a3dde30176">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com o nome do arquivo:");
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_texto).err();
+
+    if entrada_texto.trim().ends_with(".rs") {
+        println!("\n{} - termina com '.rs'", entrada_texto.trim());
+    } else {
+        println!("\n{} - não termina com '.rs'", entrada_texto.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>16 - Verifique se um &amp;str começa com o prefixo https://.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=00d799357ef4fa049b8d4a9b76791184">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com link:");
+    let mut entrada_link: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_link).err();
+
+    if entrada_link.starts_with("https://") {
+        println!("\n{} - começa com 'https://'", entrada_link.trim());
+    } else {
+        println!("\n{} - não começa com 'https://'", entrada_link.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>17 - Crie um código que receba uma string e retorne uma fatia contendo apenas a primeira palavra. Assuma que as palavras são separadas por espaços.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=e4cab2460584da834264f11abc2d91ba">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma frase:");
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_frase).err();
+
+    let frase = entrada_frase.split_whitespace().next();
+    println!("{}", frase.unwrap());
+}</code></pre></pre>
+</details>
+<p>18 - Encontre o índice de byte inicial da primeira ocorrência da substring rust.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=0db8d18b8e76e9891aad5aa8f434dc9a">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com a frase:");
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_frase).err();
+
+    if let Some(indice) = entrada_frase.find("rust") {
+        println!("\nÍndice de bytes: {}", indice);
+    } else {
+        println!("\nNão tem: rust");
+    }
+}</code></pre></pre>
+</details>
+<p>19 - Escreva uma função que aceite uma string e retorne seu primeiro caractere como um char.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=42eaabc11ffc01f2811238c706cbcd85">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com a palavra:");
+    let mut entrada_palavra: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_palavra).err();
+
+    let primeira_letra: char = entrada_palavra.trim_start().chars().next().unwrap_or(' ');
+    println!("Primeira letra = {}", primeira_letra);
+}</code></pre></pre>
+</details>
+<p>20 - Escreva um código que conte o número de caracteres (char) em um &amp;str, não o número de bytes.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=385b60b95507868496987576ed0ac020">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma palavra:");
+    let mut entrada_palavra: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_palavra).err();
+
+    let palavra = entrada_palavra.trim().replace(" ", "");
+    println!("{}", palavra);
+    println!("{:?}", palavra.chars().count());
+}</code></pre></pre>
+</details>
+<p>21 - Escreva um código que receba um &amp;mut string e substitua todos os caracteres a minúsculos por A maiúsculos, modificando a string original.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=37e24bee866c827120c3c76c6fdcc3ce">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma frase:");
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_frase).err();
+
+    let frase = entrada_frase.trim().replace("a", "A");
+    println!("{}", frase);    
+}</code></pre></pre>
+</details>
+<p>22 - Escreva um código que remova o último caractere de uma string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=dd5087a9cb5fbb96a7f7fa4b0a2f6966">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_palavra: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut entrada_palavra)
+        .expect("Erro de entrada de dados!");
+
+    let mut palavra: String = entrada_palavra.trim_end().to_string();
+    palavra.pop();
+    println!("{}", palavra);
+}</code></pre></pre>
+</details>
+<p>23 - Use o método .clear() para limpar uma string sem desalocar sua capacidade de memória.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=90c6e5c3cf23474740e21cf534acf57f">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut var_string: String = String::with_capacity(50);
+    var_string.push_str("Pequeno, grande texto!");
+
+    println!("String = {}", var_string);
+    println!("Capacidade = {}", var_string.capacity());
+    println!("Tamanho = {}", var_string.len());
+    println!("");
+
+    var_string.clear();
+    println!("String = {}", var_string);
+    println!("Capacidade = {}", var_string.capacity());
+    println!("Tamanho = {}", var_string.len());
+}</code></pre></pre>
+</details>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../04-strings-and-str/data-entry.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../04-strings-and-str/data-entry.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -179,27 +179,29 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="editores-e-ides"><a class="header" href="#editores-e-ides">Editores e IDEs</a></h1>
+<p>A seguir, alguns editores e IDEs recomendados para desenvolvimento em Rust.</p>
 <p><strong>Zed</strong></p>
 <p>Um editor de código moderno e extremamente rápido, desenvolvido pelos criadores do Atom, focado em desempenho e colaboração em tempo real.</p>
-<pre><code class="language-md">https://zed.dev/
+<pre><code>https://zed.dev/
 </code></pre>
 <p><strong>RustRover: IDE Rust da JetBrains</strong></p>
 <p>É a IDE dedicada da JetBrains para Rust, oferecendo recursos avançados de desenvolvimento, como depuração inteligente, <em>refactoring</em> (refatoração) e análise de código.</p>
-<pre><code class="language-md">https://www.jetbrains.com/rust/
+<pre><code>https://www.jetbrains.com/rust/
 </code></pre>
 <p><strong>VS Code: com a extensão rust-analyzer</strong></p>
 <p>É uma combinação popular e leve para o desenvolvimento em Rust, oferecendo <em>autocomplete</em> (autocompletar), verificação de erros em tempo real e integração com as ferramentas do ecossistema Rust.</p>
-<pre><code class="language-md">https://code.visualstudio.com/
+<pre><code>https://code.visualstudio.com/
 </code></pre>
-<pre><code class="language-md">https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer  
+<pre><code>https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
 </code></pre>
 <p><strong>Helix</strong></p>
 <p>Editor de texto modal moderno inspirado em Vim/Kakoune, com suporte nativo a LSP (<em>Language Server Protocol</em>) e destaque de sintaxe, oferecendo uma experiência de edição rápida e eficiente sem a necessidade de configuração inicial.</p>
-<pre><code class="language-md">https://helix-editor.com/  
+<pre><code>https://helix-editor.com/
 </code></pre>
 <details>
   <summary>Config: languages.toml</summary>
-<pre><code class="language-md">[[language]]
+<p>O arquivo de configuração deve ser colocado em <code>~/.config/helix/languages.toml</code>.</p>
+<pre><code class="language-toml">[[language]]
 name = "rust"
 auto-format = true
 
@@ -224,15 +226,22 @@ inlayHints.closingBraceHints.minLines = 10
 inlayHints.closureReturnTypeHints.enable = "with_block"
 inlayHints.discriminantHints.enable = "fieldless"
 inlayHints.lifetimeElisionHints.enable = "skip_trivial"
-inlayHints.typeHints.hideClosureInitialization = false    
+inlayHints.typeHints.hideClosureInitialization = false
 </code></pre>
 </details>
 <p><strong>Neovim: com plugins específicos para Rust</strong></p>
 <p>Evolução moderna do Vim com suporte nativo a LSP, interface assíncrona e extensibilidade via Lua, sendo altamente customizável e ideal para desenvolvedores que buscam um editor modal poderoso e eficiente.</p>
-<pre><code class="language-md">https://neovim.io/
+<pre><code>https://neovim.io/
 </code></pre>
-<pre><code class="language-md">https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
+<details>
+  <summary>Config:</summary>
+<p>Entre os plugins mais recomendados para Rust no Neovim estão o <code>rustaceanvim</code> (integração completa com rust-analyzer) e o <code>crates.nvim</code> (gerenciamento de dependências do Cargo diretamente no editor).</p>
+<blockquote>
+<p><strong>Nota:</strong> O guia externo abaixo pode ficar desatualizado com o tempo. Prefira consultar a documentação oficial dos plugins para configurações mais recentes.</p>
+</blockquote>
+<pre><code>  https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
 </code></pre>
+</details>
 
                     </main>
 

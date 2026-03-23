@@ -207,54 +207,63 @@
 <li>Escrever e rodar código Rust diretamente no seu navegador;</li>
 <li>Testar pequenos exemplos e conceitos;</li>
 <li>Compartilhar código com outros desenvolvedores;</li>
-<li>Experimentar sem a necessidade de instalar nada.</li>
+<li>Verificar como o compilador se comporta em diferentes edições do Rust.</li>
 </ul>
 <blockquote>
-<p>Acesse: <a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=af33bc1a9e97e7e4360131b09fa5d1e3">https://play.rust-lang.org</a></p>
+<p>Acesse: <a href="https://play.rust-lang.org">https://play.rust-lang.org</a></p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="instalando"><a class="header" href="#instalando">Instalando</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="instalar"><a class="header" href="#instalar">Instalar</a></h1>
+<p>O <code>rustup</code> é o instalador oficial e gerenciador de versões do Rust. Ele permite instalar e atualizar o compilador, o Cargo e outras ferramentas do ecossistema com facilidade.</p>
 <p>Para instalar no macOS, Linux ou em outros sistemas operacionais tipo Unix, execute o seguinte em seu terminal e siga as instruções na tela:</p>
-<pre><code class="language-md">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+<pre><code class="language-bash">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 </code></pre>
 <p>Certifique-se de visitar o site oficial do Rust para melhor entender o processo de instalação e outras ferramentas:</p>
-<pre><code class="language-md">https://www.rust-lang.org/tools/install
+<pre><code class="language-bash">https://www.rust-lang.org/tools/install
 </code></pre>
 <p>Se você estiver no Windows, procure por "Outros Métodos de Instalação":</p>
-<pre><code class="language-md">https://forge.rust-lang.org/infra/other-installation-methods.html
+<pre><code class="language-bash">https://forge.rust-lang.org/infra/other-installation-methods.html
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="versão"><a class="header" href="#versão">Versão</a></h1>
 <p>Se você deseja ver a versão do Rust:</p>
-<pre><code class="language-md">rustc --version
+<pre><code class="language-bash">rustc --version
 </code></pre>
 <p>Se você deseja ver a versão do Cargo:</p>
-<pre><code class="language-md">cargo --version
+<pre><code class="language-bash">cargo --version
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="desinstalando"><a class="header" href="#desinstalando">Desinstalando</a></h1>
-<p>Se em algum momento você quiser desinstalar o Rust:</p>
-<pre><code class="language-md">rustup self uninstall
+<p>Para visualizar informações completas sobre o ambiente Rust instalado, incluindo toolchains ativos e componentes, utilize:</p>
+<pre><code class="language-bash">rustup show
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="desinstalar"><a class="header" href="#desinstalar">Desinstalar</a></h1>
+<p>Se em algum momento você quiser desinstalar o Rust, execute:</p>
+<pre><code class="language-bash">rustup self uninstall
+</code></pre>
+<blockquote>
+<p><strong>Atenção:</strong> Isso removerá o Rust, o Cargo e todas as ferramentas instaladas via <code>rustup</code> do seu sistema.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="editores-e-ides"><a class="header" href="#editores-e-ides">Editores e IDEs</a></h1>
+<p>A seguir, alguns editores e IDEs recomendados para desenvolvimento em Rust.</p>
 <p><strong>Zed</strong></p>
 <p>Um editor de código moderno e extremamente rápido, desenvolvido pelos criadores do Atom, focado em desempenho e colaboração em tempo real.</p>
-<pre><code class="language-md">https://zed.dev/
+<pre><code>https://zed.dev/
 </code></pre>
 <p><strong>RustRover: IDE Rust da JetBrains</strong></p>
 <p>É a IDE dedicada da JetBrains para Rust, oferecendo recursos avançados de desenvolvimento, como depuração inteligente, <em>refactoring</em> (refatoração) e análise de código.</p>
-<pre><code class="language-md">https://www.jetbrains.com/rust/
+<pre><code>https://www.jetbrains.com/rust/
 </code></pre>
 <p><strong>VS Code: com a extensão rust-analyzer</strong></p>
 <p>É uma combinação popular e leve para o desenvolvimento em Rust, oferecendo <em>autocomplete</em> (autocompletar), verificação de erros em tempo real e integração com as ferramentas do ecossistema Rust.</p>
-<pre><code class="language-md">https://code.visualstudio.com/
+<pre><code>https://code.visualstudio.com/
 </code></pre>
-<pre><code class="language-md">https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer  
+<pre><code>https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
 </code></pre>
 <p><strong>Helix</strong></p>
 <p>Editor de texto modal moderno inspirado em Vim/Kakoune, com suporte nativo a LSP (<em>Language Server Protocol</em>) e destaque de sintaxe, oferecendo uma experiência de edição rápida e eficiente sem a necessidade de configuração inicial.</p>
-<pre><code class="language-md">https://helix-editor.com/  
+<pre><code>https://helix-editor.com/
 </code></pre>
 <details>
   <summary>Config: languages.toml</summary>
-<pre><code class="language-md">[[language]]
+<p>O arquivo de configuração deve ser colocado em <code>~/.config/helix/languages.toml</code>.</p>
+<pre><code class="language-toml">[[language]]
 name = "rust"
 auto-format = true
 
@@ -279,18 +288,25 @@ inlayHints.closingBraceHints.minLines = 10
 inlayHints.closureReturnTypeHints.enable = "with_block"
 inlayHints.discriminantHints.enable = "fieldless"
 inlayHints.lifetimeElisionHints.enable = "skip_trivial"
-inlayHints.typeHints.hideClosureInitialization = false    
+inlayHints.typeHints.hideClosureInitialization = false
 </code></pre>
 </details>
 <p><strong>Neovim: com plugins específicos para Rust</strong></p>
 <p>Evolução moderna do Vim com suporte nativo a LSP, interface assíncrona e extensibilidade via Lua, sendo altamente customizável e ideal para desenvolvedores que buscam um editor modal poderoso e eficiente.</p>
-<pre><code class="language-md">https://neovim.io/
+<pre><code>https://neovim.io/
 </code></pre>
-<pre><code class="language-md">https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
+<details>
+  <summary>Config:</summary>
+<p>Entre os plugins mais recomendados para Rust no Neovim estão o <code>rustaceanvim</code> (integração completa com rust-analyzer) e o <code>crates.nvim</code> (gerenciamento de dependências do Cargo diretamente no editor).</p>
+<blockquote>
+<p><strong>Nota:</strong> O guia externo abaixo pode ficar desatualizado com o tempo. Prefira consultar a documentação oficial dos plugins para configurações mais recentes.</p>
+</blockquote>
+<pre><code>  https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
 </code></pre>
+</details>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="conceitos-comuns-de-programação"><a class="header" href="#conceitos-comuns-de-programação">Conceitos Comuns de Programação</a></h1>
 <p>Este capítulo foi desenvolvido para apresentar os conceitos fundamentais da linguagem de programação Rust. No entanto, os tópicos abordados aqui também estão presentes em outras linguagens de programação. Se esta é a primeira vez que você se depara com esses conceitos, espero que você possa entender cada ponto claramente, pois isso forma a base essencial para o que virá nos próximos capítulos.</p>
-<p>No final, você encontrará alguns exercícios práticos, permitindo que você verifique se perdeu algum conceito durante seus estudos. Mas não se preocupe, as perguntas são muito simples e incluem as respostas.</p>
+<p>No final, você encontrará alguns exercícios práticos, permitindo que você verifique se perdeu algum conceito durante seus estudos. Mas não se preocupe, as perguntas são objetivas e incluem as respostas.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="comentários"><a class="header" href="#comentários">Comentários</a></h1>
 <p>Comentários são usados para documentar seu código, tornando-o mais compreensível para você e outros desenvolvedores. Eles são ignorados pelo compilador, o que significa que não afetam como seu programa é executado, apenas a sua legibilidade.</p>
 <p><code>//</code></p>
@@ -315,6 +331,9 @@ inlayHints.typeHints.hideClosureInitialization = false
 ///  - São compatíveis com markdown;
 ///  - Documentam o item seguinte: função, módulo, struct, etc.
 <span class="boring">}</span></code></pre></pre>
+<blockquote>
+<p>Execute <code>cargo doc --open</code> para gerar e abrir a documentação do seu projeto no navegador.</p>
+</blockquote>
 <p><code>//!</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -363,7 +382,9 @@ eprintln!("ERRO:");
 eprintln!("Falha ao carregar arquivo!");
 <span class="boring">}</span></code></pre></pre>
 <blockquote>
-<p>Nota: Quando estiver desenvolvendo um programa, pode redirecionar a saída normal para um arquivo usando (&gt;) e as mensagens de erro para o terminal usando (eprint).</p>
+<p>Em terminais Unix, você pode redirecionar a saída padrão com <code>&gt;</code> e a saída de erro com <code>2&gt;</code>:</p>
+<pre><code class="language-bash">cargo run &gt; saida.txt 2&gt; erros.txt
+</code></pre>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="caracteres-de-escape"><a class="header" href="#caracteres-de-escape">Caracteres de Escape</a></h1>
 <p>São aqueles que começam com <code>\</code> e são usados para representar caracteres especiais que não podemos (ou não devemos) digitar literalmente no código, como quebras de linha, tabulações, aspas dentro de strings, etc.</p>
@@ -400,7 +421,7 @@ println!("Qual é o seu nome?\tMeu nome é\tAlice!");
 <p><code>r</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>// permite todas as barra invertidas
+</span>// raw string: trata a barra invertida literalmente, sem processar sequências de escape
 println!(r"C:\Users\Alice\Documents");
 <span class="boring">}</span></code></pre></pre>
 <p><code>r#...#</code></p>
@@ -431,7 +452,7 @@ println!("(\u{25D5}\u{2323}\u{25D5})");
 print!("Carregando ...\r");
 <span class="boring">}</span></code></pre></pre>
 <blockquote>
-<p>Comumente usado para animações de terminal: <strong>\r</strong></p>
+<p>Comumente usado para animações de terminal: <code>\r</code> o efeito pode variar conforme o terminal ou sistema operacional.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="variáveis"><a class="header" href="#variáveis">Variáveis</a></h1>
 <p>Variáveis são espaços nomeados na memória que podem armazenar um valor.</p>
@@ -444,6 +465,12 @@ println!("Qual é o seu nome: {}", nome);
 </span><span class="boring">fn main() {
 </span>let idade = 29;
 println!("Qual sua idade? {}", idade);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let nome = "Maria";
+let idade = 29;
+println!("{} tem {} anos", nome, idade);
 <span class="boring">}</span></code></pre></pre>
 <blockquote>
 <p>Saiba mais sobre <a href="https://www.foj.dev.br/src/pages/posts-rust/rust-variables.html">variáveis</a>.</p>
@@ -461,14 +488,14 @@ println!("Qual é o seu nome: {}", nome);
 <span class="boring">}</span></code></pre></pre>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>let mut idade = 87;
+</span>let mut idade: u8 = 87;
 println!("Qual sua idade? {}", idade);
-
+ 
 idade = 49;
 println!("Qual sua idade? {}", idade);
 <span class="boring">}</span></code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="constante"><a class="header" href="#constante">Constante</a></h1>
-<p>A constante é uma identificador com valor fixo e imutável, tipo explícito e pode ser declarada em qualquer escopo.</p>
+<p>A constante é um identificador com valor fixo e imutável, avaliado em tempo de compilação. Por convenção, o nome de constantes em Rust é escrito em <code>SCREAMING_SNAKE_CASE</code>.</p>
 <pre><pre class="playground"><code class="language-rust">const PI: f32 = 3.14159;
 
 fn main () {
@@ -480,7 +507,7 @@ fn main () {
     println!("{}", ERROR_404);
 }</code></pre></pre>
 <blockquote>
-<p>O tópico de <strong>tipos de dados</strong> será abordado no próximo capítulo.</p>
+<p>O tópico de <strong>tipos de dados</strong> será abordado em detalhes no próximo capítulo.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="formatação"><a class="header" href="#formatação">Formatação</a></h1>
 <p>A macro <code>format!</code> em Rust é usada para melhorar a formatação da saída de dados, utilizando <code>{}</code> como <em>placeholders</em> (espaços reservados) que serão preenchidos com a informação.</p>
@@ -631,9 +658,9 @@ println!("{}", numero);
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     /*
-       Inicio do comentário externo
-       // Este é um comentário aninhado
-       Fim do comentário externo
+       Início do comentário externo
+       /* Este é um comentário de bloco aninhado */
+       Fim do comentário externo
     */    
 }</code></pre></pre>
 </details>
@@ -757,8 +784,9 @@ fn main() {
 <pre><pre class="playground"><code class="language-rust">const MAX_SPEED: i32 = 100;
 
 fn main() {    
-    MAX_SPEED = 200;
+    MAX_SPEED = 200; // erro: cannot assign to this expression
 }</code></pre></pre>
+<p>Não. Constantes são sempre imutáveis — a palavra-chave <code>mut</code> não pode ser usada com <code>const</code> de forma alguma. Qualquer tentativa de reatribuição resulta em erro de compilação.</p>
 </details>
 <p>17 - Quais são as principais diferenças entre constantes e variáveis imutáveis em Rust?</p>
 <p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=3d4e03767d7986a810cc961681f3b7eb">Playground!</a></p>
@@ -771,8 +799,9 @@ fn main() {
     println!("Constante: {}, Variável: {}", CONSTANTE_GLOBAL, variavel_imutavel);
 
     // Constantes:
-    // - Sempre imutáveis (a palavra-chave 'mut' não é permitida);
-    // - Tipo explícito (ex: : i32);
+    // - Sempre imutáveis: 'mut' não é permitido de forma alguma (nem como tentativa);
+    // - Tipo explícito obrigatório (ex: : i32);
+    // - Avaliadas em tempo de compilação;
     // - Podem ser declaradas em escopo global (fora de funções).
     
     // Variáveis Imutáveis (let):
@@ -943,36 +972,35 @@ println!("{}", inteiro);
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// i8 = -128 a 127
-let inteiro: i8 = 16;
+let inteiro: i8 = -16;
 println!("{}", inteiro);
 <span class="boring">}</span></code></pre></pre>
 <p><code>i16</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// i16 = -32_768 a 32_767
-let inteiro: i16 = 32;
+let inteiro: i16 = -32;
 println!("{}", inteiro);
 <span class="boring">}</span></code></pre></pre>
 <p><code>i32</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// i32 = -2_147_483_648 a 2_147_483_647
-let inteiro: i32 = 64;
+let inteiro: i32 = -64;
 println!("{}", inteiro);
 <span class="boring">}</span></code></pre></pre>
 <p><code>i64</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// i64 = -9_223_372_036_854_775_808 a 9_223_372_036_854_775_807
-let inteiro: i64 = 128;
-let inteiro: i64 = 9_223_372_036_854_775_807;
+let inteiro: i64 = -128;
 println!("{}", inteiro);
 <span class="boring">}</span></code></pre></pre>
 <p><code>i128</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// i128 =  ... a ...
-let inteiro: i128 = 256;
+let inteiro: i128 = -256;
 println!("{}", inteiro);
 <span class="boring">}</span></code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="f32-e-f64-ponto-flutuante"><a class="header" href="#f32-e-f64-ponto-flutuante">f32 e f64: ponto flutuante</a></h1>
@@ -1074,8 +1102,8 @@ println!("{}, {}", texto, numero);
 <p><code>Desestruturação simples</code></p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>let (letra, falso): (char, bool) = ('e', false);
-let saida =  (letra, falso);
+</span>let (letra, ativo): (char, bool) = ('e', false);
+let saida =  (letra, ativo);
 println!("{:?}", saida);
 <span class="boring">}</span></code></pre></pre>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
@@ -1211,7 +1239,7 @@ println!("{:#?}", nomes);
 
     // erro: causaria um overflow (estouro)
     // let max_u8: u8 = u8::MAX + 1;
-    // println!("{:?}");
+    // println!("{:?}", max_u8);
 }</code></pre></pre>
 </details>
 <p>03 - Declare uma variável chamada populacao do tipo u64 e atribua a ela o valor "7_800_000_000". Em seguida, imprima o valor da variável formatada.</p>
@@ -1330,7 +1358,6 @@ println!("{:#?}", nomes);
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main() {    
     let produto_info: (&amp;str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
-    let (nome, preco, quantidade_estoque) = produto_info;
 
     println!(
         "Produto: {} \nQuantidade em Estoque: {}",
@@ -1365,12 +1392,12 @@ println!("{:#?}", nomes);
 <pre><pre class="playground"><code class="language-rust">fn main() {
     // erro: 
     // let config: (&amp;str, u16) = ("localhost", 8080);
-    // config.1 = 8180;
+    // config.1 = 8081;
     
     let mut config: (&amp;str, u16) = ("localhost", 8080);
     println!("{:?}", config);
 
-    config.1 = 8180;
+    config.1 = 8081;
     println!("{:?}", config);
 }</code></pre></pre>
 </details>
@@ -1379,12 +1406,12 @@ println!("{:#?}", nomes);
 <details>
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main () {
-    let player_status: (&amp;str, i32, u8) = ("Hero", 0, 3);
-    let (nome, mut score, vidas) = player_status;
-    println!("Name: {nome}\nScore: {score}\nVidas: {vidas}\n");
+    let mut player_status: (&amp;str, i32, u8) = ("Hero", 0, 3);
+    println!("Name: {}\nScore: {}\nVidas: {}\n", player_status.0, player_status.1, player_status.2);
     
-    score = 1500;
-    println!("Name: {nome}\nScore: {score}\nVidas: {vidas}");
+    player_status.1 = 1500;
+    player_status.2 = 2;
+    println!("Name: {}\nScore: {}\nVidas: {}", player_status.0, player_status.1, player_status.2);
 }</code></pre></pre>
 </details>
 <p>18 - Crie uma tupla mutável let mut point = (10.0, 20.0);. Modifique o primeiro elemento para 15.5 e o segundo para 25.0 usando a sintaxe de acesso por índice. Imprima a tupla.</p>
@@ -1431,10 +1458,10 @@ println!("{:#?}", nomes);
 <details>
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main () {
-    let numeros: [u8; 6] = [1, 2, 4, 8, 16, 32];
+    let numeros: [u32; 6] = [1, 2, 4, 8, 16, 32];
     println!("{numeros:#?}\n");
     
-    let numeros: [u8; 6] = [1, 2, 4, 8, 16, 32];
+    let numeros: [u32; 6] = [1, 2, 4, 8, 16, 32];
     println!("{:#?}", numeros[5]);
 }</code></pre></pre>
 </details>
@@ -1464,7 +1491,7 @@ println!("{:#?}", nomes);
     let mut contador: [u16; 4] = [10, 25, 5, 30];
 
     contador[0] = 12;
-    contador[3] = 8;
+    contador[2] = 8;
 
     println!("{:?}", contador);
 }</code></pre></pre>
@@ -1754,7 +1781,7 @@ println!("{}", parte_a.to_owned() + " " + &amp;parte_b);
 </span>let parte_a: String = String::from("Rei de");
 let parte_b: &amp;str = "Lata";
 
-let resultado: String =  parte_a + " " +parte_b;
+let resultado: String =  parte_a + " " + parte_b;
 println!("{}", resultado);
 <span class="boring">}</span></code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tuplas-1"><a class="header" href="#tuplas-1">Tuplas</a></h1>
@@ -1843,7 +1870,6 @@ println!("{:?}", result);
     let sub = total - 3;
     println!("{:?}", sub);
 
-    //
     let mut total = 10;
     total -= 3;
     println!("{:?}", total);
@@ -2032,7 +2058,7 @@ println!("{:?}", result);
 <details>
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    let arr: [i32; 3];
+    let arr: [u16; 3];
     arr = [10, 20, 30];
 
     println!("{:?}", arr[0] * arr[1] * arr[2]);
@@ -2061,7 +2087,7 @@ println!("{:?}", result);
     }
     
     println!("{:?}", x);
-    // println!("{:?}", y); // Erro: `y` fora escopo
+    // println!("{:?}", y); // Erro: `y` fora do escopo
 }</code></pre></pre>
 </details>
 <p>23 - Declare uma variável level1 com valor 10. Abra um novo bloco e declare uma variável level2 com valor 20. Dentro deste bloco, crie outro bloco e declare level3 com valor 30. Imprima a soma de level1, level2 e level3 dentro do bloco mais interno.</p>
@@ -2086,13 +2112,13 @@ println!("{:?}", result);
 <details>
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    let num: u8 = 100;
-    println!("{:?}", num);
+    let principal: u8 = 100;
+    println!("{:?}", principal);
     {
-      let num: f32 = 50.;
-      println!("{:?}", num);
+      let principal: f32 = 50.;
+      println!("{:?}", principal);
     }
-    println!("{:?}", num);
+    println!("{:?}", principal);
 }</code></pre></pre>
 </details>
 <p>25 - Usando os valores de um array var = [2, 3], escreva um código que calcule e imprima o resultado de (var[0] + var[1]) * var[1].</p>
@@ -2169,10 +2195,10 @@ println!("{:?}", result);
 <details>
 <summary>Resposta</summary>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    let point_1: u8 = 5;
-    let point_2: u8 = 8;
+    let point1: u8 = 5;
+    let point2: u8 = 8;
 
-    println!("Point-1 &lt; Point-2? {}", point_1 &lt; point_2);
+    println!("Point1 &lt; Point2? {}", point1 &lt; point2);
 }</code></pre></pre>
 </details>
 <p>33 - Declare duas variáveis inteiras, nota_a com 7 e nota_b com 7. Escreva um código que imprima se nota_a é maior ou igual a nota_b (&gt;=).</p>
@@ -2265,10 +2291,631 @@ println!("{:?}", result);
     println!("{}", mensagem.to_owned() + " -&gt; End");
 }</code></pre></pre>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    // String
+    // string
     let mut mensagem: String = String::from("Start");
     mensagem += " -&gt; End";
     println!("{}", mensagem);
+}</code></pre></pre>
+</details>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="string-e-str-2"><a class="header" href="#string-e-str-2">String e &amp;str</a></h1>
+<p>Este capítulo aborda os tipos de string no Rust para manipulação de texto. Você aprenderá sobre literais de string (&amp;str) e slices imutáveis, além de strings de propriedade (String) para criação dinâmica, incluindo métodos como push e push_str.</p>
+<p>Cada seção inclui perguntas de prática para reforçar sua compreensão desses construtos essenciais de manipulação de texto.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="strings"><a class="header" href="#strings">Strings</a></h1>
+<p>Strings são sequências de caracteres UTF-8 que podem formar uma palavra ou frase, incluindo letras, números, símbolos ou qualquer outro tipo de caractere especial.</p>
+<p><code>new()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// cria uma string vazia
+let cria_string: String = String::new();
+println!("{}", cria_string);
+<span class="boring">}</span></code></pre></pre>
+<p><code>from()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// cria uma string a partir de um literal de string (&amp;str)
+let cria_string: String = String::from("Grande texto!");
+println!("{}", cria_string);
+<span class="boring">}</span></code></pre></pre>
+<p><code>to_string()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// converte um literal de string (&amp;str) em uma string
+let cria_string: String = "Mais um grande texto!".to_string();
+println!("{}", cria_string);
+<span class="boring">}</span></code></pre></pre>
+<p><code>mut</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut cria_string: String = String::from("Quase um grande texto!");
+println!("{}", cria_string);
+
+cria_string = "Último grande texto!".to_string();
+println!("{}", cria_string);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="str"><a class="header" href="#str">&amp;str</a></h1>
+<p>Também conhecido como string <em>slice</em> ou fatia de string, representa uma referência imutável a uma sequência de texto UTF-8. É usado como string sem a necessidade de alocar memória no <em>heap</em>.</p>
+<p><code>&amp;str</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let cria_str: &amp;str = "Pequeno texto!";
+println!("{}", cria_str);
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let cria_str = "Outro pequeno texto!";
+println!("{}", cria_str);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="métodos---parte-1"><a class="header" href="#métodos---parte-1">Métodos - Parte 1</a></h1>
+<p>Usados para manipular e modificar o conteúdo de texto.</p>
+<p><code>push()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// adiciona um caractere
+let mut text = String::from("Hello");
+text.push(',');
+text.push(' ');
+text.push('w');
+text.push('o');
+text.push('r');
+text.push('l');
+text.push('d');
+text.push('!');
+println!("{:?}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>push_str()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// adiciona uma fatia de string
+let mut text = String::from("Hello");
+text.push_str(", world!");
+println!("{:?}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>slice()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// retorna só uma parte da string
+// 0 1 2 3 4 5 6 7 8 9 10 11 12
+// H e l l o ,   w o r l  d  !
+let cria_str = "Hello, world!!";
+let slice_str = &amp;cria_str[0..3];
+println!("{}", slice_str);
+<span class="boring">}</span></code></pre></pre>
+<p><code>pop()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// remove o último caractere
+let mut text = String::from("Hello, world!");
+let _text_last = text.pop();
+let _text_last = text.pop();
+let text_last = text.pop();
+println!("{:?}", text_last);
+println!("{:?}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>insert()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// insere caracteres em uma posição especifica
+// 0 1 2 3 4 5 6
+// H e l l o ,  
+let mut text = String::from("Hello,");
+text.insert(6,  ' ');
+text.insert(7,  'w');
+text.insert(8,  'o');
+text.insert(9,  'r');
+text.insert(10, 'l');
+text.insert(11, 'd');
+text.insert(12, '!');
+println!("{:?}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>remove()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// remove caracteres em uma posição especifica
+// 0 1 2 3 4 5 6 7 8 9 10 11 12
+// H e l l o ,   w o r l  d  !
+let mut text: String = String::from("Hello, world!");
+let _text_letter = text.remove(11);
+let _text_letter = text.remove(10);
+let _text_letter = text.remove(9);
+println!("{}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>len()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// retorna o comprimento da string em bytes
+// 0 1 2 3 4 5 6 7 8 9 10 11 12
+// H e l l o ,   w o r l  d  !
+let text: String = String::from("Hello, world!");
+let number = text.len();
+println!("{}", number);
+<span class="boring">}</span></code></pre></pre>
+<p><code>clear()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// remove todo o conteúdo
+let mut text: String = String::from("Hello, world!");
+text.clear();
+println!("{}", text);
+<span class="boring">}</span></code></pre></pre>
+<p><code>truncate()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// corta a string em um índice específico
+// 0 1 2 3 4 5 6 7 8 9 10 11 12
+// H e l l o ,   w o r l  d  !
+let mut text: String = String::from("Hello, world");
+text.truncate(5);
+println!("{}", text);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="métodos---parte-2"><a class="header" href="#métodos---parte-2">Métodos - Parte 2</a></h1>
+<p>Usados para manipulação e modificação de conteúdo de texto.</p>
+<p><code>is_empty()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// verifica se a string está vazia
+let text = "Hello, world!";
+println!("{}", text.is_empty());
+<span class="boring">}</span></code></pre></pre>
+<p><code>contains()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// verifica se contém substring
+let text = "Hello, world!";
+println!("{}", text.contains("ello"));
+<span class="boring">}</span></code></pre></pre>
+<p><code>starts_with() / ends_with()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// verifica se a string começa/termina com a substring fornecida
+let text = "Hello, world!";
+println!("{}", text.starts_with("He"));
+println!("{}", text.ends_with("d!"));
+<span class="boring">}</span></code></pre></pre>
+<p><code>find()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// encontra posição(índice) de substring
+let text = "Hello, world!";
+println!("{:?}", text.find("H"));
+<span class="boring">}</span></code></pre></pre>
+<p><code>to_uppercase() / to_lowercase()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// conversão para maiúsculas/minúsculas
+let text = "Hello, world!";
+println!("{:?}", text.to_uppercase());
+println!("{:?}", text.to_lowercase());
+<span class="boring">}</span></code></pre></pre>
+<p><code>trim()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// remove espaços das extremidades
+let text = "  Hello, world!  ";
+println!("{:?}", text.trim());
+<span class="boring">}</span></code></pre></pre>
+<p><code>replace()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// substitui todas as ocorrências
+let text = "Hello, world!";
+println!("{:?}", text.replace("word", "Snoopy"));
+<span class="boring">}</span></code></pre></pre>
+<p><code>replacen()</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// substitui apenas N ocorrências
+let text = "Hello, world!";
+println!("{:?}", text.replacen("o", "a", 1));
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="entrada-de-dados"><a class="header" href="#entrada-de-dados">Entrada de Dados</a></h1>
+<p>Refere-se à entrada de dados, ou seja, à sua captura, validação e processamento.</p>
+<p><code>std::io</code></p>
+<pre><pre class="playground"><code class="language-rust">// importa o módulo io
+use std::io;
+
+fn main () {
+    println!("Entrada de texto:");
+    let mut input:String = String::new();
+    io::stdin().read_line(&amp;mut input).expect("Erro de entrada de dados!");
+    // io::stdin().read_line(&amp;mut input).unwrap();
+}</code></pre></pre>
+<ul>
+<li>unwrap() - Se ocorrer um erro, o programa trava com um panic;</li>
+<li>expect() - Se ocorrer um erro, ele trava, mas com a sua mensagem personalizada.</li>
+</ul>
+<p><code>char</code></p>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entrada do caractere:");
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&amp;mut input)
+        .expect("Erro de entrada de dados!");
+
+    // trim() remove espaços em branco, chars() itera sobre caracteres, next() pega o primeiro
+    let ch: char = input.trim().chars().next().unwrap();
+    println!("{}", ch);
+}</code></pre></pre>
+<p><code>match</code></p>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    let mut input = String::new();
+    io::stdin().read_line(&amp;mut input).unwrap();
+
+    match input.trim().parse::&lt;u8&gt;() {
+        Ok(input) =&gt; input,
+        Err(_) =&gt; {
+            println!("Erro!");
+            return;
+        }
+    };
+}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main () {
+    let mut input = String::new();
+    io::stdin().read_line(&amp;mut input).expect("Erro de entrada de dados!");
+
+    let ch: u8 = match input.trim().parse() {
+        Ok(n) =&gt; n,
+        Err(_) =&gt; {
+          println!("Erro de entrada!");
+          return;
+        }
+    };  
+}</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="questões---string-and-str"><a class="header" href="#questões---string-and-str">Questões - String and &amp;str</a></h1>
+<hr />
+<p>01 - Escreva um código que crie uma string vazia e a imprima.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=04697b24c6706d3d04a675d55693d184">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let cria_string: String = String::new();
+    println!("{}", cria_string);
+}</code></pre></pre>
+</details>
+<p>02 - Crie uma string a partir do literal de string "Pequeno, texto!".</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=4db7cde9056a6f5aedff39c44bf042b7">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let literal_string: String = String::from("Pequeno, texto!");
+    println!("{}", literal_string);
+}</code></pre></pre>
+</details>
+<p>03 - Declare uma variável que contenha &amp;str com o valor "Aprendendo Rust".</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a0dd76fb9cabaa21d63a02cc7d85726a">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let texto: &amp;str = "Aprendendo Rust";
+    println!("{}", texto);
+}</code></pre></pre>
+</details>
+<p>04 - Dada uma string, escreva o código para obter um &amp;str que represente toda a string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=f55333f92be2d15599c6216497f318db">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let entrada_string: String = String::from("Aprendendo Rust!");
+    let entrada_str: &amp;str = &amp;entrada_string;
+    println!("{}", entrada_str);
+}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let entrada_string: String = String::from("Aprendendo Rust!");
+    let entrada_str: &amp;str = entrada_string.as_str();
+    println!("{}", entrada_str);
+}</code></pre></pre>
+</details>
+<p>05 - Escreva um código que receba um texto em string e o converta para &amp;str e, em seguida, o imprima na tela.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=45661d7a96858a6849c87cca119d35cb">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_string: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut entrada_string)
+        .expect("Erro de entrada de dados!");
+    let texto_string: &amp;str = entrada_string.as_str();
+    println!("\nTexto convertido para &amp;str: {}", texto_string.trim());
+}</code></pre></pre>
+</details>
+<p>06 - Converta um string = 123 em um inteiro.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=b169066c7c9b4ebf6ac2ace822c32e63">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {    
+    let text: &amp;str = "123";
+    let num: u8 = text.parse().expect("Erro ao converter dados!");
+    println!("{}", num);    
+}</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let text: &amp;str = "123";
+     
+    let num = match text.parse::&lt;u8&gt;() {
+        Ok(num) =&gt; num,
+        Err(_) =&gt; {
+            println!("Erro ao converter dados!");
+            return;
+        }
+    };
+    println!("{}", num);
+}</code></pre></pre>
+</details>
+<p>07 - Use o método .to_string() ou String::from() para criar uma nova string concatenando um &amp;str e uma string existente.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=f56a26d7a9431731e1bac8713d29de4d">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_texto: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut entrada_texto)
+        .expect("Erro de entrada de dados!");
+
+    let texto_a: &amp;str = &amp;entrada_texto.as_str().trim();
+    let texto_b: String = String::from(" + string!");
+
+    println!("{}", texto_a.to_string() + &amp;texto_b);
+}</code></pre></pre>
+</details>
+<p>08 - Crie uma string mutável e anexe um &amp;str a ela usando o método push_str().</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=374a7767faa92d6933d7bfd559619754">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut string_mutavel: String = String::from("Pequeno, ");
+    string_mutavel.push_str("texto!");
+    println!("{}", string_mutavel);
+}</code></pre></pre>
+</details>
+<p>09 - Adicione um único caractere (char) ao final de uma string mutável.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=ebb09ff00d5882a8997a05495188fe53">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {    
+    let mut unico_char: String = String::from("Pequeno, texto");
+    let caractere: char = '!';
+
+    unico_char.push(caractere);
+    println!("{}", unico_char);
+}</code></pre></pre>
+</details>
+<p>10 - Combine um &amp;str, uma string e um número em uma nova string usando a macro format!.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=0a4d681c9bf4b7c88d0dc8e758743b99">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let var_str: &amp;str = "1";
+    let var_string: String = String::from("2");
+    let var_u8: u8 = 3;
+
+    // a macro format! cria uma nova string
+    let result = format!("{}{}{}", var_str, var_string, var_u8);
+    println!("{}", result);
+}</code></pre></pre>
+</details>
+<p>11 - Crie uma nova string removendo todos os espaços em branco de uma string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=e9bc2bba7b75db8bb89be0ab362019d0">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_texto).err();
+
+    let remove_espaco = entrada_texto.replace(" ", "");
+    println!("\nSem espaços = {}", remove_espaco.trim());
+}</code></pre></pre>
+</details>
+<p>12 - Substitua todas as ocorrências da substring erro por sucesso em um &amp;str, criando uma nova string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=a51483277e7c8b3fd2da1e427539e24e">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_texto).err();
+
+    let novo_texto = entrada_texto.replace("erro", "sucesso");
+    println!("{}", novo_texto);
+}</code></pre></pre>
+</details>
+<p>13 - Substitua apenas a primeira ocorrência de antes por depois em um &amp;str, criando uma nova string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=39113e025edc73e94a85bcc58e85618b">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma frase:");
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_frase).err();
+
+    let frase = entrada_frase.replacen("antes", "depois", 1);
+    println!("{}", frase);
+}</code></pre></pre>
+</details>
+<p>14 - Verifique se um &amp;str contém a substring Rust.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=fd50790891d0c374ac75e1e446de9fd0">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma frase:");
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_texto).err();
+
+    if entrada_texto.contains("Rust") {
+        println!("\n{} - contém 'Rust'", entrada_texto.trim());
+    } else {
+        println!("\n{} - não contém 'Rust'", entrada_texto.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>15 - Verifique se um nome de arquivo em uma string termina com o sufixo .rs</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=ab027074b26fe1a2914b27a3dde30176">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com o nome do arquivo:");
+    let mut entrada_texto: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_texto).err();
+
+    if entrada_texto.trim().ends_with(".rs") {
+        println!("\n{} - termina com '.rs'", entrada_texto.trim());
+    } else {
+        println!("\n{} - não termina com '.rs'", entrada_texto.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>16 - Verifique se um &amp;str começa com o prefixo https://.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=00d799357ef4fa049b8d4a9b76791184">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com link:");
+    let mut entrada_link: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_link).err();
+
+    if entrada_link.starts_with("https://") {
+        println!("\n{} - começa com 'https://'", entrada_link.trim());
+    } else {
+        println!("\n{} - não começa com 'https://'", entrada_link.trim());
+    }
+}</code></pre></pre>
+</details>
+<p>17 - Crie um código que receba uma string e retorne uma fatia contendo apenas a primeira palavra. Assuma que as palavras são separadas por espaços.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=e4cab2460584da834264f11abc2d91ba">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma frase:");
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_frase).err();
+
+    let frase = entrada_frase.split_whitespace().next();
+    println!("{}", frase.unwrap());
+}</code></pre></pre>
+</details>
+<p>18 - Encontre o índice de byte inicial da primeira ocorrência da substring rust.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=0db8d18b8e76e9891aad5aa8f434dc9a">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com a frase:");
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_frase).err();
+
+    if let Some(indice) = entrada_frase.find("rust") {
+        println!("\nÍndice de bytes: {}", indice);
+    } else {
+        println!("\nNão tem: rust");
+    }
+}</code></pre></pre>
+</details>
+<p>19 - Escreva uma função que aceite uma string e retorne seu primeiro caractere como um char.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=42eaabc11ffc01f2811238c706cbcd85">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com a palavra:");
+    let mut entrada_palavra: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_palavra).err();
+
+    let primeira_letra: char = entrada_palavra.trim_start().chars().next().unwrap_or(' ');
+    println!("Primeira letra = {}", primeira_letra);
+}</code></pre></pre>
+</details>
+<p>20 - Escreva um código que conte o número de caracteres (char) em um &amp;str, não o número de bytes.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=385b60b95507868496987576ed0ac020">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma palavra:");
+    let mut entrada_palavra: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_palavra).err();
+
+    let palavra = entrada_palavra.trim().replace(" ", "");
+    println!("{}", palavra);
+    println!("{:?}", palavra.chars().count());
+}</code></pre></pre>
+</details>
+<p>21 - Escreva um código que receba um &amp;mut string e substitua todos os caracteres a minúsculos por A maiúsculos, modificando a string original.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=37e24bee866c827120c3c76c6fdcc3ce">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com uma frase:");
+    let mut entrada_frase: String = String::new();
+    io::stdin().read_line(&amp;mut entrada_frase).err();
+
+    let frase = entrada_frase.trim().replace("a", "A");
+    println!("{}", frase);    
+}</code></pre></pre>
+</details>
+<p>22 - Escreva um código que remova o último caractere de uma string.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=dd5087a9cb5fbb96a7f7fa4b0a2f6966">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!("Entre com texto:");
+    let mut entrada_palavra: String = String::new();
+    io::stdin()
+        .read_line(&amp;mut entrada_palavra)
+        .expect("Erro de entrada de dados!");
+
+    let mut palavra: String = entrada_palavra.trim_end().to_string();
+    palavra.pop();
+    println!("{}", palavra);
+}</code></pre></pre>
+</details>
+<p>23 - Use o método .clear() para limpar uma string sem desalocar sua capacidade de memória.</p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2024&amp;gist=90c6e5c3cf23474740e21cf534acf57f">Playground!</a></p>
+<details>
+<summary>Resposta</summary>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut var_string: String = String::with_capacity(50);
+    var_string.push_str("Pequeno, grande texto!");
+
+    println!("String = {}", var_string);
+    println!("Capacidade = {}", var_string.capacity());
+    println!("Tamanho = {}", var_string.len());
+    println!("");
+
+    var_string.clear();
+    println!("String = {}", var_string);
+    println!("Capacidade = {}", var_string.capacity());
+    println!("Tamanho = {}", var_string.len());
 }</code></pre></pre>
 </details>
 
