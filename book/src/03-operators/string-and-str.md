@@ -36,6 +36,6 @@ println!("{}", parte_a.to_owned() + " " + &parte_b);
 let parte_a: String = String::from("Rei de");
 let parte_b: &str = "Lata";
 
-let resultado: String =  parte_a + " " +parte_b;
+let resultado: String =  parte_a + " " + parte_b;
 println!("{}", resultado);
 ```

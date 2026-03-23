@@ -37,7 +37,7 @@ fn main() {
 
     // erro: causaria um overflow (estouro)
     // let max_u8: u8 = u8::MAX + 1;
-    // println!("{:?}");
+    // println!("{:?}", max_u8);
 }
 ```
 </details>
@@ -222,7 +222,6 @@ fn main() {
 ```rust
 fn main() {    
     let produto_info: (&str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
-    let (nome, preco, quantidade_estoque) = produto_info;
 
     println!(
         "Produto: {} \nQuantidade em Estoque: {}",
@@ -275,12 +274,12 @@ fn main() {
 fn main() {
     // erro: 
     // let config: (&str, u16) = ("localhost", 8080);
-    // config.1 = 8180;
+    // config.1 = 8081;
     
     let mut config: (&str, u16) = ("localhost", 8080);
     println!("{:?}", config);
 
-    config.1 = 8180;
+    config.1 = 8081;
     println!("{:?}", config);
 }
 ```
@@ -295,12 +294,12 @@ fn main() {
 
 ```rust
 fn main () {
-    let player_status: (&str, i32, u8) = ("Hero", 0, 3);
-    let (nome, mut score, vidas) = player_status;
-    println!("Name: {nome}\nScore: {score}\nVidas: {vidas}\n");
+    let mut player_status: (&str, i32, u8) = ("Hero", 0, 3);
+    println!("Name: {}\nScore: {}\nVidas: {}\n", player_status.0, player_status.1, player_status.2);
     
-    score = 1500;
-    println!("Name: {nome}\nScore: {score}\nVidas: {vidas}");
+    player_status.1 = 1500;
+    player_status.2 = 2;
+    println!("Name: {}\nScore: {}\nVidas: {}", player_status.0, player_status.1, player_status.2);
 }
 ```
 </details>
@@ -371,10 +370,10 @@ fn main () {
 
 ```rust
 fn main () {
-    let numeros: [u8; 6] = [1, 2, 4, 8, 16, 32];
+    let numeros: [u32; 6] = [1, 2, 4, 8, 16, 32];
     println!("{numeros:#?}\n");
     
-    let numeros: [u8; 6] = [1, 2, 4, 8, 16, 32];
+    let numeros: [u32; 6] = [1, 2, 4, 8, 16, 32];
     println!("{:#?}", numeros[5]);
 }
 ```
@@ -416,7 +415,7 @@ fn main () {
     let mut contador: [u16; 4] = [10, 25, 5, 30];
 
     contador[0] = 12;
-    contador[3] = 8;
+    contador[2] = 8;
 
     println!("{:?}", contador);
 }

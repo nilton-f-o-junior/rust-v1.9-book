@@ -11,7 +11,7 @@
 
 ```rust
 fn main() {
-    let mut contador: u8 = 0;
+    let mut contador: u8 = 1;
 
     while contador <= 5 { 
         println!("Contador = {}", contador);
@@ -77,7 +77,7 @@ fn main() {
 fn main() {
     let mut contador: u8 = 0;
 
-    while contador >= 0 { 
+    loop { 
         contador += 1; 
         println!("Contador = {}", contador);
 
@@ -109,9 +109,7 @@ fn main() {
 
     let mut numero: u16 = entrada_numero.trim().parse().expect("Erro na conversão de dados!"); 
 
-    if numero <= 0 { 
-        println!("{}", false); 
-    } else if numero == 1 {
+    if numero == 1 {
         println!("{}", true); 
     } else {
         while numero % 2 == 0 {
@@ -304,7 +302,7 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut contador: u16 = 0;
+    let mut contador: u16 = 1;
     while contador <= 7 { 
         let quadrado: u16 = contador * contador;
         println!("Quadrado: {} = {}", contador, quadrado);
@@ -379,11 +377,13 @@ fn main() {
 
         if numero > numero_secreto {
             println!("Muito Alto!!!");
-        } else {
+        } else if numero < numero_secreto {
             println!("Muito Baixo!!!");
+        } else {
+            println!("VOCÊ VENCEU!");
+            break;
         }
     }
-    println!("VOCÊ VENCEU!");
 }
 ```
 </details>

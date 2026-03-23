@@ -135,14 +135,8 @@ fn main() {
 fn main() {
     let vetor: Vec<f32> = vec![3.2, 5.8, 1.2];
     let soma: f32 = vetor.iter().sum();
-    println!("{}", soma);
-}
-```
-
-```rust
-fn main () {
-    let vetor: Vec<f32> = vec![3.2, 5.8, 1.2];
     let produto: f32 = vetor.iter().product();
+    println!("Soma = {:.2}", soma);
     println!("Produto = {:.2}", produto);
 }
 ```
@@ -325,6 +319,7 @@ fn main() {
     for i in (0..vetor.len()).rev() {
         if vetor[i] == num {
             vetor.remove(i);
+            break;
         }
     }
 
@@ -388,13 +383,14 @@ fn main() {
 
 ```rust
 fn main() {
-    let mut vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
+    let vetor_entrada: Vec<&str> = vec!["a", "b", "c", "d", "e", "f"];
     println!("{:?}", vetor_entrada[0]);
     println!("{:?}", vetor_entrada[1]);
 
-    vetor_entrada.reverse();
-    println!("{:?}", vetor_entrada[0]);
-    println!("{:?}", vetor_entrada[1]);
+    let mut vetor_invertido = vetor_entrada.clone();
+    vetor_invertido.reverse();
+    println!("{:?}", vetor_invertido[0]);
+    println!("{:?}", vetor_invertido[1]);
 }
 ```
 

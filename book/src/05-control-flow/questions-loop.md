@@ -281,7 +281,7 @@ fn main() {
             println!("{}", contador);
         }
 
-        if contador > 100 {
+        if contador >= 100 {
             break;
         }
     }

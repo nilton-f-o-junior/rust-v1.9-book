@@ -34,6 +34,7 @@ println!(
 > Usar o método `.insert()` com um índice que não existe ou que não segue a ordem sequencial de índices pode causar um erro fatal (panic).
 
 ```rust
+// panic: índice fora dos limites — insert(10) falha pois o vetor só tem 1 elemento
 let mut vetor_adicionar: Vec<u8> = Vec::new();
 
 vetor_adicionar.insert(0, 10);
@@ -44,5 +45,3 @@ println!(
   vetor_adicionar[0], vetor_adicionar[10]
 );
 ```
-
-

@@ -225,7 +225,7 @@ fn main() {
 
     if idade >= 18 && idade <= 59 {
         println!("Idade: {}\nVocê é obrigado(a) a votar!", idade);
-    } else if idade >= 16 || idade >= 60 {
+    } else if (idade >= 16 && idade < 18) || idade >= 60 {
         println!("Idade: {}\nSeu voto é opcional!", idade);
     } else {
         println!("Idade: {}\nVocê não pode votar!", idade);
@@ -360,8 +360,6 @@ fn main() {
         println!("Nota: B");
     } else if pontuacao <= 100 {
         println!("Nota: A");
-    } else {
-        println!("Pontuação fora do intervalo (0-100)!");
     }
 }
 ```

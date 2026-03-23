@@ -43,7 +43,7 @@ Acesse: https://rust-v1-9-book.vercel.app/
 - 3.8. Formatação para Debugging
 - 3.9. Shadowing
 - 3.10. Escopo
-- 3.11. Perguntas
+- 3.11. Questões
 
 ### 4. Estruturas de Dados
 - 4.1. u - inteiros
@@ -56,7 +56,7 @@ Acesse: https://rust-v1-9-book.vercel.app/
 - 4.8. Modificando Tuplas
 - 4.9. Arrays
 - 4.10. Modificando Arrays
-- 4.11. Perguntas
+- 4.11. Questões
 
 ### 5. Operadores
 - 5.1. Operadores Aritméticos
@@ -66,7 +66,15 @@ Acesse: https://rust-v1-9-book.vercel.app/
 - 5.5. String e &str
 - 5.6. Tuplas
 - 5.7. Arrays
-- 5.8. Perguntas
+- 5.8. Questões
+
+### 6. String e &str
+- 6.1. Strings
+- 6.2. &str
+- 6.3. Métodos - Parte 1
+- 6.4. Métodos - Parte 2
+- 6.5. Entrada de Dados
+- 6.6. Questões
 
 ## 🎯 Para Quem é Este Livro?
 

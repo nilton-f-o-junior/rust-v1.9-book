@@ -43,8 +43,8 @@ println!("{}, {}", texto, numero);
 `Desestruturação simples`
 
 ```rust
-let (letra, falso): (char, bool) = ('e', false);
-let saida =  (letra, falso);
+let (letra, ativo): (char, bool) = ('e', false);
+let saida =  (letra, ativo);
 println!("{:?}", saida);
 ```
 

@@ -32,7 +32,6 @@ fn main() {
     let sub = total - 3;
     println!("{:?}", sub);
 
-    //
     let mut total = 10;
     total -= 3;
     println!("{:?}", total);
@@ -329,7 +328,7 @@ fn main() {
 
 ```rust
 fn main() {
-    let arr: [i32; 3];
+    let arr: [u16; 3];
     arr = [10, 20, 30];
 
     println!("{:?}", arr[0] * arr[1] * arr[2]);
@@ -370,7 +369,7 @@ fn main() {
     }
     
     println!("{:?}", x);
-    // println!("{:?}", y); // Erro: `y` fora escopo
+    // println!("{:?}", y); // Erro: `y` fora do escopo
 }
 ```
 </details>
@@ -407,13 +406,13 @@ fn main() {
 
 ```rust
 fn main() {
-    let num: u8 = 100;
-    println!("{:?}", num);
+    let principal: u8 = 100;
+    println!("{:?}", principal);
     {
-      let num: f32 = 50.;
-      println!("{:?}", num);
+      let principal: f32 = 50.;
+      println!("{:?}", principal);
     }
-    println!("{:?}", num);
+    println!("{:?}", principal);
 }
 ```
 </details>
@@ -538,10 +537,10 @@ fn main() {
 
 ```rust
 fn main() {
-    let point_1: u8 = 5;
-    let point_2: u8 = 8;
+    let point1: u8 = 5;
+    let point2: u8 = 8;
 
-    println!("Point-1 < Point-2? {}", point_1 < point_2);
+    println!("Point1 < Point2? {}", point1 < point2);
 }
 ```
 </details>
@@ -596,11 +595,6 @@ fn main() {
 }
 ```
 </details>
-
-
-
-
-
 
 36 - Declare uma variável count_a com 100 e count_b com 99. Verifique se count_a é menor que count_b (<) e imprima.
 
@@ -690,7 +684,7 @@ fn main() {
 
 ```rust
 fn main() {
-    // String
+    // string
     let mut mensagem: String = String::from("Start");
     mensagem += " -> End";
     println!("{}", mensagem);

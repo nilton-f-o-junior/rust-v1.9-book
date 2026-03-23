@@ -13,9 +13,9 @@ println!("Qual é o seu nome: {}", nome);
 ```
 
 ```rust
-let mut idade = 87;
+let mut idade: u8 = 87;
 println!("Qual sua idade? {}", idade);
-
+ 
 idade = 49;
 println!("Qual sua idade? {}", idade);
 ```
