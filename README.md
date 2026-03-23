@@ -6,10 +6,10 @@
 
 <p align="center">
   <a href="https://rust-v1-9-book.vercel.app/">
-    <img src="https://img.shields.io/badge/Status-Cap%C3%ADtulos%201--5-blue" alt="Status">
+    <img src="https://img.shields.io/badge/Status-Cap%C3%ADtulos%201--6-blue" alt="Status">
   </a>
   <a href="https://rust-v1-9-book.vercel.app/">
-    <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-31%2F03%2F26-orange" alt="Próxima Atualização">
+    <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-30%2F04%2F26-orange" alt="Próxima Atualização">
   </a>
 </p>
 
