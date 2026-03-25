@@ -133,7 +133,7 @@ fn main() {
 ```
 </details>
 
-04 - Crie uma funcao apenas para usar o dead_code
+04 - Crie uma função que não será chamada em nenhum momento. Use o atributo adequado para suprimir o aviso do compilador.
 
 [Playground!]()
 
@@ -334,7 +334,13 @@ fn entrada(mensagem: &str) -> u8 {
         let mut entrada: String = String::new();
         match io::stdin().read_line(&mut entrada) {
             Ok(_) => match entrada.trim().parse::<u8>() {
-                Ok(numero) => return numero,
+                Ok(numero) => {
+                    if numero == 0 || numero >= 100 {
+                        println!("O valor deve ser positivo e menor que 100!");
+                        continue;
+                    }
+                    return numero;
+                }
                 Err(_) => {
                     println!("'{}' não é número válido!", entrada.trim());
                     continue;
@@ -493,9 +499,9 @@ O programa deve percorrer o array e realizar a contagem para as seguintes catego
 
 Divida a quantidade de cada categoria pelo tamanho do array:
 
-- Proporção de Positivos: 2/6 = 0.4
-- Proporção de Negativos: 2/6 = 0.4
-- Proporção de Zeros: 2/6 = 0.4
+- Proporção de Positivos: 2/6 = 0.333...
+- Proporção de Negativos: 2/6 = 0.333...
+- Proporção de Zeros: 2/6 = 0.333...
 
 Saída Formatada (6 casas decimais):
 
@@ -539,4 +545,3 @@ O programa deve retornar a contagem das pilhas mais altas: 2
 <summary>Resposta</summary>
 
 </details>
-

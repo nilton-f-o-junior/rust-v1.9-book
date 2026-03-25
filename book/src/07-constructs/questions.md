@@ -19,7 +19,7 @@ Em seguida, crie uma instância dessa struct e imprima seus valores.
 struct Livro {
     titulo: String,
     autor: String,
-    paginas: u16,
+    paginas: u32,
 }
 
 fn main() {
@@ -250,29 +250,6 @@ impl RGB {
     fn cor(r: u8, g: u8, b: u8) -> Self {
         RGB(r, g, b)
     }
-}
-
-fn main() {
-    let preto = RGB::cor(0, 0, 0);
-    println!("Preto: {:?}", preto);
-
-    let branco = RGB::cor(255, 255, 255);
-    println!("Branco: {:?}", branco);
-}
-```
-</details>
-
-<details>
-<summary>Resposta</summary>
-
-```rust
-#[derive(Debug)]
-struct RGB(u8, u8, u8);
-
-impl RGB {
-    fn cor(r: u8, g: u8, b: u8) -> Self {
-        RGB(r, g, b)
-    }
 
     fn obter_vermelho(&self) -> u8 {
         self.0
@@ -308,9 +285,9 @@ fn main() {
     let azul = minha_cor.obter_azul();
     println!("RGB({:?}, {:?}, {:?})", vermelho, verde, azul);
 
-    my_color.definir_vermelho(255);
-    my_color.definir_verde(255);
-    my_color.definir_azul(255);
+    minha_cor.definir_vermelho(255);
+    minha_cor.definir_verde(255);
+    minha_cor.definir_azul(255);
 
     println!("{:?}", minha_cor);
 }
@@ -332,26 +309,26 @@ Implemente um método mutável aumentar_salario(&mut self, porcentagem: f64) que
 ```rust
 #[derive(Debug)]
 struct Funcionario {
+    nome: String,
     salario: f64,
 }
 
 impl Funcionario {
-    fn inicializar_salario(salario: f64) -> Self {
-        Self { salario }
+    fn novo(nome: String, salario: f64) -> Self {
+        Self { nome, salario }
     }
 
-    fn aumentar_salario(&self, porcentagem: f64) -> f64 {
-        (self.salario * porcentagem) + self.salario
+    fn aumentar_salario(&mut self, porcentagem: f64) {
+        self.salario += self.salario * porcentagem;
     }
 }
 
 fn main() {
-    let mut salario = Funcionario::inicializar_salario(1500.);
-    println!("{:?}", salario);
+    let mut funcionario = Funcionario::novo(String::from("Rodolfo"), 1500.);
+    println!("{:?}", funcionario);
 
-    let salario_final = Funcionario::aumentar_salario(&mut salario, 0.1);
-    let resultado = format!("{:.2}", salario_final);
-    println!("{}", resultado);
+    funcionario.aumentar_salario(0.1);
+    println!("Salário após aumento: {:.2}", funcionario.salario);
 }
 ```
 </details>
@@ -529,7 +506,7 @@ impl EstadoDaRequisicao {
 
     fn esta_finalizado(&self) -> bool {
         match self {
-            EstadoDaRequisicao::Pendente { .. } | EstadoDaRequisicao::EmProgresso { .. } => false,
+            EstadoDaRequisicao::Pendente | EstadoDaRequisicao::EmProgresso { .. } => false,
             EstadoDaRequisicao::Concluido { .. } | EstadoDaRequisicao::Falhou { .. } => true,
         }
     }
@@ -711,7 +688,7 @@ fn main() {
 nome(&self) -> String e saudacao(&self) -> String.
 
 - Crie uma struct EstudanteUniversitario que implemente o trait. O método saudacao deve retornar o valor fixo "Olá, eu sou um estudante."
-- Crie uma struct Estrangeiro que implemente o trait. O método saudacao deve retornar o valor "Hello, I am a student from abroad.", sobrescrevendo o comportamento de EstudanteUniversitario.
+- Crie uma struct Estrangeiro que implemente o trait. O método saudacao deve retornar o valor "Hello, I am a student from abroad.".
 
 [Playground!]()
 

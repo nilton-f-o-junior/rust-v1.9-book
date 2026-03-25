@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-`sem retorno`
+`retorno por variável`
 
 ```rust
 fn soma (x: i16, y: i16) -> i16 {
@@ -45,6 +45,7 @@ fn main () {
 ```rust
 // indica que a função não será usada
 #[allow(dead_code)]
+
 fn ola () {
 	println!("Olá, mundo!");
 }
