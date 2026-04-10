@@ -440,32 +440,3 @@ fn main () {
 }
 ```
 </details>
-
-25 - Crie um array mutável pixel_colors: [[u8; 3]; 2] para representar dois pixels, cada um com componentes R, G, B. Inicialize-o como [[255, 0, 0], [0, 255, 0]] (um pixel vermelho, um verde). Modifique o primeiro pixel para ser azul ([0, 0, 255]) e o segundo para ser amarelo ([255, 255, 0]). Imprima o array de pixels.
-
-[Playground!](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=d4c64d7affe4fe5a1f01f576394ca5dd)
-
-<details>
-<summary>Resposta</summary>
-
-```rust
-fn main () {
-    let mut pixel_colors: [[u8; 3]; 2] = [[255, 0, 0], [0, 255, 0]];
-    println!("Vermelho: {:?}", pixel_colors[0]);
-    println!("Verde: {:?}", pixel_colors[1]);
-
-    // Red > Blue
-    pixel_colors[0][0] = 0;
-    pixel_colors[0][1] = 0;
-    pixel_colors[0][2] = 255;
-
-    // Green > Yellow
-    pixel_colors[1][0] = 255;
-    pixel_colors[1][1] = 255;
-    pixel_colors[1][2] = 0;
-    
-    println!("Azul: {:?}", pixel_colors[0]);    
-    println!("Amarelo: {:?}", pixel_colors[1]);
-}
-```
-</details>
